@@ -1,0 +1,9 @@
+body {
+    padding-top: 10px;
+}
+.angular-google-map-container {
+    height: 400px;
+}
+.building-info {
+    height: inherit;
+}
