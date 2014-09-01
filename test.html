@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="public/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body,
+        #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing"></script>
+    <script>
+        var polygons = [];
+
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+
+            var drawingManager = new google.maps.drawing.DrawingManager({
+                drawingControl: true,
+                drawingControlOptions: {
+                    position: google.maps.ControlPosition.TOP_CENTER,
+                    drawingModes: [
+        google.maps.drawing.OverlayType.POLYGON
+      ]
+                },
+                markerOptions: {
+                    icon: 'images/beachflag.png'
+                },
+                circleOptions: {
+                    fillColor: '#ffff00',
+                    fillOpacity: 1,
+                    strokeWeight: 5,
+                    clickable: false,
+                    editable: true,
+                    zIndex: 1
+                }
+            });
+            drawingManager.setMap(map);
+            google.maps.event.addDomListener(drawingManager, 'polygoncomplete', function (polygon) {
+                polygon.setEditable(false);
+                var polygonBounds = polygon.getPath();
+                var coordinates = {
+                    "lat": [],
+                    "long": []
+                };
+                for (var i = 0; i < polygonBounds.length; i++) {
+                    coordinates.lat.push(polygonBounds.getAt(i).lat());
+                    coordinates.long.push(polygonBounds.getAt(i).lng());
+                }
+                console.log(coordinates);
+                console.log(distance(coordinates.lat[0], coordinates.lat[1], coordinates.long[0], coordinates.long[1]));
+                polygons.push(polygon);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="public/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
