@@ -3,6 +3,7 @@ var app = angular.module('bldr', ['google-maps']);
 
 app.controller('bldrController', ['$scope',
     function ($scope) {
+        $scope.building;
         $scope.clickedMarker = [];
         $scope.buildings = [];
 
@@ -23,11 +24,6 @@ app.controller('bldrController', ['$scope',
                     var e = originalEventArgs[0];
                     var lat = e.latLng.lat(),
                         lon = e.latLng.lng();
-                    console.log("lat: " + lat + "   Long: " + lon);
-                    var path = {
-                        latitude: lat,
-                        longitude: lon
-                    }
                     var marker = {
                         id: $scope.clickedMarker.length + 1,
                         coords: {
@@ -36,24 +32,19 @@ app.controller('bldrController', ['$scope',
                         }
                     };
                     $scope.clickedMarker.push(marker);
-                    //$scope.polygon.path.push(path);
                     //scope apply required because this event handler is outside of the angular domain
                     $scope.$apply();
                 }
             }
         }
         $scope.addBuilding = function () {
-            var buildingName = $scope.buildingName;
-            $scope.buildingName = "";
-            var buildingAddress = $scope.buildingAddress;
-            $scope.buildingAddress = "";
-            var buildingHeight = $scope.buildingHeight;
-            $scope.buildingHeight = "";
 
             var building = {
-                buildingName: buildingName,
-                buildingAddress: buildingAddress,
-                buildingHeight: buildingHeight,
+                buildingID: $scope.buildings.length + 1,
+                buildingName: $scope.building.name,
+                buildingAddress: $scope.building.address,
+                buildingHeight: $scope.building.height,
+                buildingColor: $scope.building.color,
                 polygon: {
                     path: [],
                     stroke: {
@@ -65,17 +56,21 @@ app.controller('bldrController', ['$scope',
                     geodesic: false,
                     visible: true,
                     fill: {
-                        color: $scope.buildingColor,
+                        color: $scope.building.color,
                         opacity: 0.6
                     }
-                }
+                },
+                latitude: [],
+                longitude: [],
+                cartesian: []
             };
             for (i in $scope.clickedMarker) {
-                building.polygon.path.push($scope.clickedMarker[i].coords)
+                building.polygon.path.push($scope.clickedMarker[i].coords);
+                building.latitude.push($scope.clickedMarker[i].coords.latitude);
+                building.longitude.push($scope.clickedMarker[i].coords.longitude);
             }
-            $scope.clickedMarker = [];
-            console.log(building);
             $scope.buildings.push(building);
-            console.log($scope.buildings);
+            $scope.building = {};
+            $scope.clickedMarker = [];
         };
 }]);
