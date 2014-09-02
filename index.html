@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div class="building-info panel panel-default">
+                <div class="building-info panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">Building Info</h3>
                     </div>
@@ -54,6 +54,15 @@
                                 </div>
 
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Building Color</label>
+                                <div class=" col-sm-9">
+                                    <input type="color" class="form-control" ng-model="buildingColor">
+                                    <small>Visualization Purposes Only</small>
+                                </div>
+
+                            </div>
+
                         </form>
                     </div>
                     <div class="panel-footer">
@@ -61,8 +70,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 half">
-                <div class="panel panel-default">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Map</h3>
                     </div>
@@ -70,7 +79,7 @@
                         <google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
 
                             <marker ng-repeat="m in clickedMarker track by m.id" coords="m.coords" idKey="m.id"></marker>
-                            <polygon static="true" ng-repeat="b in buildings" path="b.polygon.path" stroke="b.polygon.stroke" visible="v.visible" geodesic="v.geodesic" fill="v.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
+                            <polygon static="true" ng-repeat="b in buildings" path="b.polygon.path" stroke="b.polygon.stroke" visible="b.polygon.visible" geodesic="b.polygon.geodesic" fill="b.polygon.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
                         </google-map>
                     </div>
                 </div>
@@ -99,9 +108,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!--Javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="public/libs/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -8,10 +8,10 @@ app.controller('bldrController', ['$scope',
 
         $scope.map = {
             center: {
-                latitude: 40.1451,
-                longitude: -99.6680
+                latitude: 38.987597,
+                longitude: -76.940163
             },
-            zoom: 4,
+            zoom: 17,
             bounds: {},
             clickedMarker: {
                 id: 0,
@@ -57,16 +57,16 @@ app.controller('bldrController', ['$scope',
                 polygon: {
                     path: [],
                     stroke: {
-                        color: '#6060FB',
-                        weight: 3
+                        color: '#222222',
+                        weight: 1
                     },
                     editable: true,
                     draggable: true,
                     geodesic: false,
                     visible: true,
                     fill: {
-                        color: '#ff0000',
-                        opacity: 0.8
+                        color: $scope.buildingColor,
+                        opacity: 0.6
                     }
                 }
             };
