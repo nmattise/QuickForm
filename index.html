@@ -35,20 +35,20 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Building Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" ng-model="buildingName">
+                                    <input type="text" class="form-control" ng-model="building.name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Address</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" ng-model="buildingAddress" id="autocomplete" placeholder="Enter your address" type="text">
+                                    <input class="form-control" ng-model="building.address" id="autocomplete" placeholder="Enter your address" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Building Height</label>
                                 <div class=" col-sm-9">
                                     <div class="input-group">
-                                        <input type="number" min="0" step="0.1" class="form-control" ng-model="buildingHeight">
+                                        <input type="number" min="0" step="0.1" class="form-control" ng-model="building.height">
                                         <span class="input-group-addon">m</span>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Building Color</label>
                                 <div class=" col-sm-9">
-                                    <input type="color" class="form-control" ng-model="buildingColor">
+                                    <input type="color" class="form-control" ng-model="building.color">
                                     <small>Visualization Purposes Only</small>
                                 </div>
 
@@ -79,7 +79,7 @@
                         <google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
 
                             <marker ng-repeat="m in clickedMarker track by m.id" coords="m.coords" idKey="m.id"></marker>
-                            <polygon static="true" ng-repeat="b in buildings" path="b.polygon.path" stroke="b.polygon.stroke" visible="b.polygon.visible" geodesic="b.polygon.geodesic" fill="b.polygon.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
+                            <polygon static="true" ng-repeat="b in buildings track by b.building.buildingID" path="b.polygon.path" stroke="b.polygon.stroke" visible="b.polygon.visible" geodesic="b.polygon.geodesic" fill="b.polygon.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
                         </google-map>
                     </div>
                 </div>
@@ -102,7 +102,26 @@
                         <h3 class="panel-title">Building List</h3>
                     </div>
                     <div class="panel-body">
-                        {{buildings}}
+
+                        <table class="table table-responsive">
+
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ID #</th>
+                                    <th class="text-center">Building Name</th>
+                                    <th class="text-center">Building Height</th>
+                                    <th class="text-center">Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="b in buildings">
+                                    <th class="text-center">{{b.buildingID}}</th>
+                                    <th class="text-center">{{b.buildingName}}</th>
+                                    <th class="text-center">{{b.buildingHeight}} m</th>
+                                    <th style="background-color:{{b.buildingColor}};">&nbsp;</th>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
