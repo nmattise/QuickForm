@@ -28,7 +28,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         dist = dist * 1609.344;
         break
     case "FT":
-        dist = dist *5280;
+        dist = dist * 5280;
         break
     default:
         dist = dist;
@@ -36,5 +36,4 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     return dist
 }
 
-console.log(distance(lat[0], long[0], lat[1], long[1], 'FT'));
-
+console.log(distance(38.98741996725684 , -76.94109611213207 , 38.98742934902934 , -76.94059319794178 ,'FT'));
