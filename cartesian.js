@@ -51,3 +51,12 @@ var p1 = new LatLon(38.98741996725684, -76.94109611213207),
 
 console.log(p1.coordinatesTo(p2));
 console.log(p1.coordinatesTo(p3));
+
+var markers = [{"id":1,"coords":{"latitude":38.987426221772004,"longitude":-76.94108068943024}},{"id":2,"coords":{"latitude":38.98740120370816,"longitude":-76.94060862064362}},{"id":3,"coords":{"latitude":38.9867757492385,"longitude":-76.94050133228302}},{"id":4,"coords":{"latitude":38.98673405207736,"longitude":-76.94108068943024}},{"id":5,"coords":{"latitude":38.986892501159,"longitude":-76.94162786006927}},{"id":6,"coords":{"latitude":38.98682578579945,"longitude":-76.94170296192169}},{"id":7,"coords":{"latitude":38.98682578579945,"longitude":-76.9415956735611}},{"id":8,"coords":{"latitude":38.98682578579945,"longitude":-76.94167077541351}},{"id":9,"coords":{"latitude":38.986892501159,"longitude":-76.94202482700348}},{"id":10,"coords":{"latitude":38.98732614946358,"longitude":-76.94201409816742}},{"id":11,"coords":{"latitude":38.98785986680692,"longitude":-76.94175660610199}}];
+
+var m1 = new LatLon(markers[0].coords.latitude, markers[0].coords.longitude);
+
+for (var i = 1; i < markers.length; i++) {
+    var m2 = new LatLon(markers[i].coords.latitude, markers[i].coords.longitude);
+    console.log(m1.coordinatesTo(m2));
+}
