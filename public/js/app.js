@@ -5,7 +5,8 @@ Number.prototype.toRadians = function () {
 Number.prototype.toDegrees = function () {
     return this * 180 / Math.PI;
 };
-var coordinatesTo = function (origin, point) {
+
+function coordinatesTo(origin, point) {
     var R = 6371;
     var φ1 = origin.latitude.toRadians(),
         λ1 = origin.longitude.toRadians();
@@ -27,7 +28,19 @@ var coordinatesTo = function (origin, point) {
     var X = d * Math.sin(θ);
     var Y = d * Math.cos(θ);
     return [X, Y];
-};
+}
+
+function polygonArea(coords) {
+    var numPoints = coords.length,
+        area = 0,
+        j = numPoints - 1;
+
+    for (i = 0; i < numPoints; i++) {
+        area += (coords[j][0] + coords[i][0]) * (coords[j][1] - coords[i][1]);
+        j = i;
+    }
+    return area / 2;
+}
 
 var app = angular.module('bldr', ['google-maps']);
 
@@ -77,6 +90,8 @@ app.controller('bldrController', ['$scope',
                 buildingName: $scope.building.name,
                 buildingAddress: $scope.building.address,
                 buildingHeight: $scope.building.height,
+                floors: $scope.building.floors,
+                buildingArea: '',
                 buildingColor: $scope.building.color,
                 polygon: {
                     path: [],
@@ -84,8 +99,8 @@ app.controller('bldrController', ['$scope',
                         color: '#222222',
                         weight: 1
                     },
-                    editable: true,
-                    draggable: true,
+                    editable: false,
+                    draggable: false,
                     geodesic: false,
                     visible: true,
                     fill: {
@@ -95,16 +110,32 @@ app.controller('bldrController', ['$scope',
                 },
                 latitude: [],
                 longitude: [],
-                cartesian: []
+                footprintCoords: [[0, 0]],
+                footprintArea: ''
+
             };
             for (i in $scope.clickedMarker) {
                 building.polygon.path.push($scope.clickedMarker[i].coords);
                 building.latitude.push($scope.clickedMarker[i].coords.latitude);
                 building.longitude.push($scope.clickedMarker[i].coords.longitude);
-                /*building.cartesian.push(coordinatesTo($scope.clickedMarker[0].coords, $scope.clickedMarker[i].coords));*/
             }
-            while (i < $scope.clickedMarker.length) {
-                building.cartesian.push(coordinatesTo($scope.clickedMarker[0].coords, $scope.clickedMarker[i].coords));
+            for (var i = 1; i < $scope.clickedMarker.length; i++) {
+                var coordinates = coordinatesTo($scope.clickedMarker[0].coords, $scope.clickedMarker[i].coords);
+                building.footprintCoords.push(coordinates);
+            }
+            building.footprintArea = polygonArea(building.footprintCoords);
+            building.buildingArea = building.footprintArea * building.floors;
+            if (building.footprintArea <= 0) {
+                console.log("reverse");
+                $scope.clickedMarker.reverse();
+                building.latitude.reverse();
+                building.longitude.reverse();
+                for (var i = 1; i < $scope.clickedMarker.length; i++) {
+                    var coordinates = coordinatesTo($scope.clickedMarker[0].coords, $scope.clickedMarker[i].coords);
+                    building.footprintCoords.push(coordinates);
+                }
+                building.footprintArea = polygonArea(building.footprintCoords);
+                building.buildingArea = building.footprintArea * building.floors;
             }
             console.log(building);
             $scope.buildings.push(building);
