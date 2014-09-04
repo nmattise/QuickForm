@@ -35,7 +35,7 @@ function polygonArea(coords) {
         area = 0,
         j = numPoints - 1;
 
-    for (i = 0; i < numPoints; i++) {
+    for (var i = 0; i < numPoints; i++) {
         area += (coords[j][0] + coords[i][0]) * (coords[j][1] - coords[i][1]);
         j = i;
     }
