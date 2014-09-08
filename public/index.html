@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>BLDR</title>
 
     <!-- Bootstrap -->
     <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,58 +26,248 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div class="building-info panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Building Info</h3>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Building Info
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body form-horizontal">
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Building Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" ng-model="building.name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Address</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" ng-model="building.address" id="autocomplete" placeholder="Map will zoom to address entered" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Function</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" ng-model="building.function">
+                                            <option value="Small Office">Small Office</option>
+                                            <option value="Medium Office">Medium Office</option>
+                                            <option value="Large Office">Large Office</option>
+                                            <option value="warehouse" disabled>Warehouse (non-refrigerated)</option>
+                                            <option value="coreRetail" disabled>Core-Retail</option>
+                                            <option value="standAloneRetail" disabled>Stand-alone Retail</option>
+                                            <option value="stripMall" disabled>Strip Mall</option>
+                                            <option value="primarySchool" disabled>Primary School</option>
+                                            <option value="secondarySchool" disabled>Secondary School</option>
+                                            <option value="outpatientHealthcare" disabled>Outpatient Healthcare</option>
+                                            <option value="hospital" disabled>Hospital</option>
+                                            <option value="smallHotel" disabled>Small hotel</option>
+                                            <option value="largeHotel" disabled>Large Hotel</option>
+                                            <option value="quickServiceRestaurant" disabled>Quick Service Restaurant</option>
+                                            <option value="fullServiceRestaurant" disabled>Full Service Restaurant</option>
+                                            <option value="midRiseApt" disabled>Mid-Rise Apartment</option>
+                                            <option value="highRiseApt" disabled>High-Rise Apartment</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Building Color</label>
+                                    <div class=" col-sm-9">
+                                        <input type="color" class="form-control" ng-model="building.color">
+                                        <small>Visualization Purposes Only</small>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Building Name</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" ng-model="building.name">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Building Architecture
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Building Height</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.height">
+                                            <span class="input-group-addon">m</span>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Address</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" ng-model="building.address" id="autocomplete" placeholder="Enter your address" type="text">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Number of Floors</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" class="form-control" ng-model="building.floors">
+                                            <span class="input-group-addon">Floors</span>
+                                        </div>
+                                    </div>
+
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Floor To Floor Height</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.floorToFloorHeight">
+                                            <span class="input-group-addon">m</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Building Orientation</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="range" min="0" max="360" step="1" class="form-control" ng-model="building.orientation">
+                                            <span class="input-group-addon">{{building.orientation}}&deg;</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Window To Wall Ratio</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="range" min="0" max="1.0" step="0.01" class="form-control" ng-model="building.windowToWall">
+                                            <span class="input-group-addon">{{building.windowToWall *100 | number:0}}%</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Building Height</label>
-                                <div class=" col-sm-9">
-                                    <div class="input-group">
-                                        <input type="number" min="0" step="0.1" class="form-control" ng-model="building.height">
-                                        <span class="input-group-addon">m</span>
+                        </div>
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Mechanical Systems
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Mechanical System Type</label>
+                                    <div class=" col-sm-9">
+                                        <select name="systemType" ng-model="building.mechanical.systemType" class="form-control">
+                                            <option value="SystemType1" disabled="">PTAC Packaged Terminal Air Conditioner</option>
+                                            <option value="SystemType2" disabled="">PTHP Packaged Terminal Heat Pump</option>
+                                            <option value="SystemType3" disabled="">Packaged Rooftop Air Conditioner + DX</option>
+                                            <option value="SystemType4" disabled="">Packaged Rooftop Heat Pump + DX</option>
+                                            <option value="SystemType5">Packaged Rooftop VAV with Reheat + DX</option>
+                                            <option value="SystemType6" disabled="">Packaged Rooftop VAV with parallel fan power boxes &amp; reheat + DX</option>
+                                            <option value="SystemType7" disabled="">Packaged Rooftop VAV with Reheat &amp; Chiller Water</option>
+                                            <option value="SystemType8" disabled="">VAV with parallel fan-powered boxes and reheat</option>
+                                            <option value="SystemType9" disabled="">Warm Air Furnace Gas Fired</option>
+                                            <option value="SystemType10" disabled="">Warm Air Furnace Electric</option>
+                                        </select>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Number of Floors</label>
-                                <div class=" col-sm-9">
-                                    <div class="input-group">
-                                        <input type="number" min="0" class="form-control" ng-model="building.floors">
-                                        <span class="input-group-addon">Floors</span>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Fan Efficiency</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="range" min="0" max="1.0" step="0.01" class="form-control" ng-model="building.mechanical.fanEfficiency">
+                                            <span class="input-group-addon">{{building.mechanical.fanEfficiency *100 | number:0}}%</span>
+                                        </div>
                                     </div>
+
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Boiler Efficiency</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="range" min="0" max="1.0" step="0.01" class="form-control" ng-model="building.mechanical.boilerEfficiency">
+                                            <span class="input-group-addon">{{building.mechanical.boilerEfficiency *100 | number:0}}%</span>
+                                        </div>
+                                    </div>
 
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Building Color</label>
-                                <div class=" col-sm-9">
-                                    <input type="color" class="form-control" ng-model="building.color">
-                                    <small>Visualization Purposes Only</small>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Economizer Type</label>
+                                    <div class=" col-sm-9">
 
+
+                                        <select class="form-control" ng-model="building.mechanical.economizerType">
+                                            <option value="noEconomizer">No Economizer</option>
+                                            <option value="economizer">Economizer</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Boiler Fuel Type</label>
+                                    <div class=" col-sm-9">
+
+
+                                        <select class="form-control" ng-model="building.mechanical.boilerFuelType">
+                                            <option value="NaturalGas">Natural Gas</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">High Speed Cooling Coil COP</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.mechanical.highSpeedCOP">
+                                            <span class="input-group-addon">Ratio</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Low Speed Cooling Coil COP</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.mechanical.lowSpeedCOP">
+                                            <span class="input-group-addon">Ratio</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Heating Setpoint</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.mechanical.heatingSetpoint">
+                                            <span class="input-group-addon">&deg;C</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Cooling Setpoint</label>
+                                    <div class=" col-sm-9">
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.mechanical.coolingSetpoint">
+                                            <span class="input-group-addon">&deg;C</span>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-
-
-                        </form>
+                        </div>
                     </div>
                     <div class="panel-footer">
-                        <button class="btn btn-success" ng-click="addBuilding()">Add Building</button>
+                        <button class="btn btn-primary" ng-click="addBuilding()">Add Building</button>
                     </div>
                 </div>
             </div>
@@ -97,8 +287,9 @@
             </div>
         </div>
         <div class="row">
+
             <div class="col-md-12">
-                <div class="panel panel-default">
+                <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">Building List</h3>
                     </div>
@@ -110,20 +301,36 @@
                                 <tr>
                                     <th class="text-center">ID #</th>
                                     <th class="text-center">Building Name</th>
+                                    <th class="text-center">Building Function</th>
                                     <th class="text-center">Building Height</th>
-                                    <th class="text-center">Footprint Area</th>
                                     <th class="text-center">Total Building Area</th>
                                     <th class="text-center">Color</th>
+                                    <th class="text-center">Mechanical</th>
+                                    <th class="text-center">Simulation</th>
+                                    <th class="text-center">Edit</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="b in buildings">
                                     <th class="text-center">{{b.buildingID}}</th>
                                     <th class="text-center">{{b.buildingName}}</th>
+                                    <th class="text-center">{{b.buildingFunction}}</th>
                                     <th class="text-center">{{b.buildingHeight}} m</th>
-                                    <th class="text-center">{{b.footprintArea | number:2}} m&sup2;</th>
                                     <th class="text-center">{{b.buildingArea| number:2}} m&sup2;</th>
                                     <th style="background-color:{{b.buildingColor}};">&nbsp;</th>
+                                    <th class="text-center">{{b.mechanical.systemType}}</th>
+                                    <th>
+                                        <div ng-hide="b.simulationResults">
+                                            <button class="btn btn-block btn-success">Run Energy Simulation</button>
+                                        </div>
+                                        <div ng-show="b.simulationResults">Simulation Successful</div>
+                                    </th>
+                                    <th>
+                                        <div class="btn-group btn-block">
+                                            <button type="button" class="btn btn-default">Edit</button>
+                                            <button type="button" class="btn btn-default ">Remove</button>
+                                        </div>
+                                    </th>
                                 </tr>
                             </tbody>
                         </table>
