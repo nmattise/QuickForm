@@ -89,6 +89,7 @@ app.controller('bldrController', ['$scope',
                 buildingID: $scope.buildings.length + 1,
                 buildingName: $scope.building.name,
                 buildingAddress: $scope.building.address,
+                buildingFunction: $scope.building.function,
                 buildingHeight: $scope.building.height,
                 floors: $scope.building.floors,
                 buildingArea: '',
@@ -111,7 +112,12 @@ app.controller('bldrController', ['$scope',
                 latitude: [],
                 longitude: [],
                 footprintCoords: [[0, 0]],
-                footprintArea: ''
+                footprintArea: '',
+                mechanical:{
+                    systemType: $scope.building.mechanical.systemType,
+                    boilerEfficiency :$scope.building.mechanical.boilerEfficiency,
+                    fanEfficiency: $scope.building.mechanical.fanEfficiency
+                }
 
             };
             for (i in $scope.clickedMarker) {
