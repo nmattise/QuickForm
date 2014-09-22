@@ -1,11 +1,12 @@
 {
-  "name": "bldr",
-  "version": "0.0.1",
-  "dependencies": {
-    "bootstrap": "latest",
-    "angular": "latest",
-    "ui-router": "https://github.com/angular-ui/ui-router.git",
-    "angular-scroll": "latest",
-    "angular-google-maps": "~1.2.1"
-  }
+    "name": "bldr",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "latest",
+        "angular": "latest",
+        "ui-router": "https://github.com/angular-ui/ui-router.git",
+        "angular-scroll": "latest",
+        "angular-google-maps": "~1.2.1",
+        "ngAutocomplete": "latest"
+    }
 }

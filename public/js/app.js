@@ -42,7 +42,7 @@ function polygonArea(coords) {
     return area / 2;
 }
 
-var app = angular.module('bldr', ['google-maps']);
+var app = angular.module('bldr', ['google-maps', 'ngAutocomplete']);
 
 
 app.controller('bldrController', ['$scope',
@@ -54,8 +54,8 @@ app.controller('bldrController', ['$scope',
 
         $scope.map = {
             center: {
-                latitude: 38.987597,
-                longitude: -76.940163
+                latitude: $scope.building.address.details.geometry.location.k,
+                longitude: $scope.building.address.details.geometry.location.B
             },
             zoom: 17,
             bounds: {},
@@ -113,9 +113,9 @@ app.controller('bldrController', ['$scope',
                 longitude: [],
                 footprintCoords: [[0, 0]],
                 footprintArea: '',
-                mechanical:{
+                mechanical: {
                     systemType: $scope.building.mechanical.systemType,
-                    boilerEfficiency :$scope.building.mechanical.boilerEfficiency,
+                    boilerEfficiency: $scope.building.mechanical.boilerEfficiency,
                     fanEfficiency: $scope.building.mechanical.fanEfficiency
                 }
 
