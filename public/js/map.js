@@ -95,7 +95,8 @@ app.controller('mapController', ['$scope',
             $scope.polygons[$scope.polygons.length - 1].editable = false;
             $scope.polygons[$scope.polygons.length - 1].static = true;
         };
-        $scope.build3D = function () {
+        $scope.build3D = function (footprintShape) {
+            console.log(footprintShape);
             //Create Cartesian Coorinates
             var polygon = $scope.polygons[$scope.polygons.length - 1].path;
             var coords = [];
@@ -104,10 +105,14 @@ app.controller('mapController', ['$scope',
                 var point = new latLon(polygon[i].latitude, polygon[i].longitude);
                 coords.push(origin.coordinatesTo(point))
             };
+
             console.log(coords);
+            $scope.coords = coords;
             var x = (coords[0][0] + coords[1][0]) / 2;
             var y = (coords[0][1] + coords[1][1]) / 2;
-            console.log("x: " + x + "\ny: " + y);
+
+            var rect = [[0, 0], [x, 0], [x, y], [0, y]];
+            console.log(rect);
         };
         $scope.map = {
             center: {
@@ -123,32 +128,227 @@ app.controller('mapController', ['$scope',
                     console.log(e);
                     $scope.latitude = lat;
                     $scope.longitude = lng;
-                    $scope.zoomScale = 591657550.500000 / Math.pow(2, $scope.map.zoom - 1);
-                    var y = ($scope.zoomScale / 60) / 111111;
-                    var x = ($scope.zoomScale / 60 * Math.cos(lat)) / (111111 * Math.cos(lat));
+                    var zoomScale = 591657550.500000 / Math.pow(2, $scope.map.zoom - 1);
+                    var y = (zoomScale / 60) / 111111;
+                    var x = (zoomScale / 60 * Math.cos(lat)) / (111111 * Math.cos(lat));
                     var center = new latLon(lat, lng);
-                    var pt1 = new latLon(lat + y, lng - x);
-                    var pt2 = new latLon(lat + y, lng + x);
-                    var pt3 = new latLon(lat - y, lng + x);
-                    var pt4 = new latLon(lat - y, lng - x);
+                    switch ($scope.buildingShape) {
+                    case "rectangle":
+                        var pt1 = new latLon(lat + y, lng - x),
+                            pt2 = new latLon(lat + y, lng + x),
+                            pt3 = new latLon(lat - y, lng + x),
+                            pt4 = new latLon(lat - y, lng - x);
 
-                    $scope.points = [pt1, pt2, pt3, pt4];
-                    var polygon = {
-                        id: 1,
-                        path: $scope.points,
-                        stroke: {
-                            color: '#6060FB',
-                            weight: 3
-                        },
-                        editable: true,
-                        draggable: true,
-                        geodesic: false,
-                        visible: true,
-                        fill: {
-                            color: '#ff0000',
-                            opacity: 0.8
-                        }
-                    };
+                        var points = [pt1, pt2, pt3, pt4];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "lShape":
+                        var pt1 = new latLon(lat + y, lng - x / 2),
+                            pt2 = new latLon(lat + y, lng + x / 2),
+                            pt3 = new latLon(lat, lng + x / 2),
+                            pt4 = new latLon(lat, lng + x),
+                            pt5 = new latLon(lat - y, lng + x),
+                            pt6 = new latLon(lat - y, lng - x / 2);
+                        var points = [pt1, pt2, pt3, pt4, pt5, pt6];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "tShape":
+                        var pt1 = new latLon(lat + y / 2, lng - x),
+                            pt2 = new latLon(lat + y / 2, lng + x),
+                            pt3 = new latLon(lat, lng + x),
+                            pt4 = new latLon(lat, lng + x / 2),
+                            pt5 = new latLon(lat - y, lng + x / 2),
+                            pt6 = new latLon(lat - y, lng - x / 2),
+                            pt7 = new latLon(lat, lng - x / 2),
+                            pt8 = new latLon(lat, lng - x);
+                        var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "uShape":
+                        var pt1 = new latLon(lat + y, lng - x),
+                            pt2 = new latLon(lat + y, lng - x / 2),
+                            pt3 = new latLon(lat, lng - x / 2),
+                            pt4 = new latLon(lat, lng + x / 2),
+                            pt5 = new latLon(lat + y, lng + x / 2),
+                            pt6 = new latLon(lat + y, lng + x),
+                            pt7 = new latLon(lat - y / 2, lng + x),
+                            pt8 = new latLon(lat - y / 2, lng - x);
+                        var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "hShape":
+                        var pt1 = new latLon(lat + y, lng - x),
+                            pt2 = new latLon(lat + y, lng - x / 2),
+                            pt3 = new latLon(lat + y / 2, lng - x / 2),
+                            pt4 = new latLon(lat + y / 2, lng + x / 2),
+                            pt5 = new latLon(lat + y, lng + x / 2),
+                            pt6 = new latLon(lat + y, lng + x),
+                            pt7 = new latLon(lat - y, lng + x),
+                            pt8 = new latLon(lat - y, lng + x / 2),
+                            pt9 = new latLon(lat - y / 2, lng + x / 2),
+                            pt10 = new latLon(lat - y / 2, lng - x / 2),
+                            pt11 = new latLon(lat - y, lng - x / 2),
+                            pt12 = new latLon(lat - y, lng - x);
+
+                        var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "crossShape":
+                        var pt1 = new latLon(lat + y, lng - x / 2),
+                            pt2 = new latLon(lat + y, lng + x / 2),
+                            pt3 = new latLon(lat + y / 2, lng + x / 2),
+                            pt4 = new latLon(lat + y / 2, lng + x),
+                            pt5 = new latLon(lat - y / 2, lng + x),
+                            pt6 = new latLon(lat - y / 2, lng + x / 2),
+                            pt7 = new latLon(lat - y, lng + x / 2),
+                            pt8 = new latLon(lat - y, lng - x / 2),
+                            pt9 = new latLon(lat - y / 2, lng - x / 2),
+                            pt10 = new latLon(lat - y / 2, lng - x),
+                            pt11 = new latLon(lat + y / 2, lng - x),
+                            pt12 = new latLon(lat + y / 2, lng - x / 2);
+
+                        var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "trapezoid":
+                        var pt1 = new latLon(lat + y / 2, lng - x / 2),
+                            pt2 = new latLon(lat + y / 2, lng + x / 2),
+                            pt3 = new latLon(lat - y / 2, lng + x),
+                            pt4 = new latLon(lat - y / 2, lng - x);
+
+                        var points = [pt1, pt2, pt3, pt4];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    case "triangle":
+                        var pt1 = new latLon(lat + y, lng - x),
+                            pt2 = new latLon(lat - y, lng + x),
+                            pt3 = new latLon(lat - y, lng - x);
+
+                        var points = [pt1, pt2, pt3];
+                        var polygon = {
+                            id: 1,
+                            path: points,
+                            stroke: {
+                                color: '#6060FB',
+                                weight: 3
+                            },
+                            editable: true,
+                            draggable: true,
+                            geodesic: false,
+                            visible: true,
+                            fill: {
+                                color: '#ff0000',
+                                opacity: 0.8
+                            }
+                        };
+                        break;
+                    }
+
                     $scope.polygons.push(polygon);
                     $scope.$apply()
                 }
