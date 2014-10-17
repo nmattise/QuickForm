@@ -66,7 +66,7 @@ function createFacet(verts) {
 
 function createPlane(p1, p2, h) {
     var tri1 = [[p1[0], p1[1], 0], [p2[0], p2[1], 0], [p2[0], p2[1], h]];
-    var tri2 = [[p1[0], p1[1], 0], [p1[0], p1[1], h], [p2[0], p2[1], h]];
+    var tri2 = [[p1[0], p1[1], 0], [p2[0], p2[1], h], [p1[0], p1[1], h]];
     var facets = [createFacet(tri1), createFacet(tri2)];
     return facets;
 }
