@@ -1,0 +1,18 @@
+{
+    "name": "bldr",
+    "description": "Create 2D and 3D models of Buildings",
+    "version": "0.1.0",
+    "private": true,
+    "contributors": [
+        {
+            "name": "Nicholas Mattise",
+            "email": "nmattise@umd.edu"
+    }
+  ],
+    "dependencies": {
+        "stl": "1.1.1"
+    },
+    "keywords": [
+  ],
+    "readmeFilename": "README.md"
+}
