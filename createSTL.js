@@ -94,11 +94,10 @@ var swctx = new poly2tri.SweepContext(contour);
 swctx.triangulate();
 var triangles = swctx.getTriangles();
 
-
-bottomTriangles = triangles.reverse();
 //Create Bottom Plane
-bottomTriangles.forEach(function (tri) {
+triangles.forEach(function (tri) {
     var verts = [];
+    tri.points_.reverse();
     tri.points_.forEach(function (points) {
         verts.push([points.x, points.y, 0]);
     });
@@ -113,7 +112,7 @@ triangles.forEach(function (tri) {
     });
     facets.push(createFacet(verts));
 });
-console.log(facets);
+//console.log(facets);
 
 var stlObj = {
     description: 'modelTest',
