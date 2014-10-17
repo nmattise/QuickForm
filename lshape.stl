@@ -1,86 +1,86 @@
-solid modelTest
+solid lShape
   facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex 0e+0 0e+0 0e+0
       vertex 1e+1 0e+0 0e+0
-      vertex 1e+1 0e+0 1e+1
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex 0e+0 0e+0 0e+0
-      vertex 1e+1 0e+0 1e+1
-      vertex 0e+0 0e+0 1e+1
+      vertex 1e+1 0e+0 2e+1
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
     outer loop
       vertex 1e+1 0e+0 0e+0
       vertex 1e+1 3e+1 0e+0
-      vertex 1e+1 3e+1 1e+1
+      vertex 1e+1 3e+1 2e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
     outer loop
       vertex 1e+1 0e+0 0e+0
-      vertex 1e+1 3e+1 1e+1
-      vertex 1e+1 0e+0 1e+1
+      vertex 1e+1 3e+1 2e+1
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
       vertex 1e+1 3e+1 0e+0
       vertex 5e+0 3e+1 0e+0
-      vertex 5e+0 3e+1 1e+1
+      vertex 5e+0 3e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
       vertex 1e+1 3e+1 0e+0
-      vertex 5e+0 3e+1 1e+1
-      vertex 1e+1 3e+1 1e+1
+      vertex 5e+0 3e+1 2e+1
+      vertex 1e+1 3e+1 2e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
     outer loop
       vertex 5e+0 3e+1 0e+0
       vertex 5e+0 1e+1 0e+0
-      vertex 5e+0 1e+1 1e+1
+      vertex 5e+0 1e+1 2e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
     outer loop
       vertex 5e+0 3e+1 0e+0
-      vertex 5e+0 1e+1 1e+1
-      vertex 5e+0 3e+1 1e+1
+      vertex 5e+0 1e+1 2e+1
+      vertex 5e+0 3e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
       vertex 5e+0 1e+1 0e+0
       vertex 0e+0 1e+1 0e+0
-      vertex 0e+0 1e+1 1e+1
+      vertex 0e+0 1e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
       vertex 5e+0 1e+1 0e+0
-      vertex 0e+0 1e+1 1e+1
-      vertex 5e+0 1e+1 1e+1
+      vertex 0e+0 1e+1 2e+1
+      vertex 5e+0 1e+1 2e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
     outer loop
       vertex 0e+0 1e+1 0e+0
       vertex 0e+0 0e+0 0e+0
-      vertex 0e+0 0e+0 1e+1
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
     outer loop
       vertex 0e+0 1e+1 0e+0
-      vertex 0e+0 0e+0 1e+1
-      vertex 0e+0 1e+1 1e+1
+      vertex 0e+0 0e+0 2e+1
+      vertex 0e+0 1e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
@@ -113,30 +113,30 @@ solid modelTest
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 5e+0 1e+1 1e+1
-      vertex 0e+0 1e+1 1e+1
-      vertex 0e+0 0e+0 1e+1
+      vertex 5e+0 1e+1 2e+1
+      vertex 0e+0 1e+1 2e+1
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 1e+1 0e+0 1e+1
-      vertex 5e+0 1e+1 1e+1
-      vertex 0e+0 0e+0 1e+1
+      vertex 1e+1 0e+0 2e+1
+      vertex 5e+0 1e+1 2e+1
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 1e+1 3e+1 1e+1
-      vertex 5e+0 1e+1 1e+1
-      vertex 1e+1 0e+0 1e+1
+      vertex 1e+1 3e+1 2e+1
+      vertex 5e+0 1e+1 2e+1
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 1e+1 3e+1 1e+1
-      vertex 5e+0 3e+1 1e+1
-      vertex 5e+0 1e+1 1e+1
+      vertex 1e+1 3e+1 2e+1
+      vertex 5e+0 3e+1 2e+1
+      vertex 5e+0 1e+1 2e+1
     endloop
   endfacet
 endsolid
