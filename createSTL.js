@@ -95,9 +95,9 @@ swctx.triangulate();
 var triangles = swctx.getTriangles();
 
 
-
+bottomTriangles = triangles.reverse();
 //Create Bottom Plane
-triangles.forEach(function (tri) {
+bottomTriangles.forEach(function (tri) {
     var verts = [];
     tri.points_.forEach(function (points) {
         verts.push([points.x, points.y, 0]);
