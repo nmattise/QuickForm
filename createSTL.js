@@ -107,6 +107,7 @@ triangles.forEach(function (tri) {
 //Create Top Plane
 triangles.forEach(function (tri) {
     var verts = [];
+    tri.points_.reverse();
     tri.points_.forEach(function (points) {
         verts.push([points.x, points.y, 10]);
     });
