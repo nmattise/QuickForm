@@ -73,19 +73,19 @@ function createPlane(p1, p2, h) {
 
 
 var facets = [];
-for (var i = 1; i < rect.length; i++) {
-    var triangle = createPlane(rect[i - 1], rect[i], 10);
+for (var i = 1; i < lShape.length; i++) {
+    var triangle = createPlane(lShape[i - 1], lShape[i], 10);
     //console.log(triangle);
     facets.push(triangle[0]);
     facets.push(triangle[1]);
 }
-var triangle = createPlane(rect[3], rect[0], 10);
+var triangle = createPlane(lShape[lShape.length - 1], lShape[0], 10);
 facets.push(triangle[0]);
 facets.push(triangle[1]);
 
 
 var contour = [];
-rect.forEach(function (point) {
+lShape.forEach(function (point) {
     contour.push(new poly2tri.Point(point[0], point[1]));
 });
 
@@ -119,4 +119,4 @@ var stlObj = {
     description: 'modelTest',
     facets: facets
 };
-fs.writeFileSync('binary.stl', stl.fromObject(stlObj));
+fs.writeFileSync('lshape.stl', stl.fromObject(stlObj));
