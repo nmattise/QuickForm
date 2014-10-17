@@ -26,28 +26,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
-                <div class="panel panel-default half-height">
+                <div class="panel panel-success half-height">
                     <div class="panel-heading">Building</div>
                     <div class="panel-body">
                         <p>Latitude:{{latitude}}</p>
                         <p>Longitude:{{longitude}}</p>
                         <p>{{map.zoom}}</p>
-                        <p>{{zoomScale}}</p>
-                        <button ng-click="lockPolygon()" class="btn btn-warning">Lock Polygon</button>
-                        <button ng-click="build3D()" class="btn btn-warning">Build 3D</button>
-                        <p>{{points}}</p>
-                        <p>{{polygon}}</p>
-                        <br>
-
-
-
                         <input type="radio" ng-model="buildingShape" value="rectangle">Rectangle
                         <br/>
                         <input type="radio" ng-model="buildingShape" value="lShape">L Shape
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="tShape">T Shape
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="uShape">U Shape
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="hShape">H Shape
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="crossShape">Cross Shape
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="trapezoid">Trapezoid
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="triangle">Triangle
                         <br/>Shape: {{buildingShape}}
-
-
-
+                        <button ng-click="lockPolygon()" class="btn btn-warning">Lock Polygon</button>
+                        <button ng-click="build3D(buildingShape)" class="btn btn-warning">Build 3D</button>
+                        <p>{{points}}</p>
+                        <p>{{polygon}}</p>
+                        <br>
+                        {{coords}}
                     </div>
                 </div>
             </div>
@@ -56,7 +62,7 @@
 
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" events="map.events">
 
-                    <ui-gmap-polygon ng-repeat="polygon in polygons" path='polygon.path' stroke="polygon.stroke" visible="polygon.visible" editable="polygon.editable" static="polygon.static"></ui-gmap-polygon>
+                    <ui-gmap-polygon ng-repeat="polygon in polygons" path='polygon.path' stroke="polygon.stroke" visible="polygon.visible" editable="polygon.editable" draggable="polygon.draggable" static="polygon.static"></ui-gmap-polygon>
                 </ui-gmap-google-map>
             </div>
         </div>
