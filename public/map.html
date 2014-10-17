@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="map">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Angular and Google Maps-->
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/lodash/dist/lodash.min.js"></script>
+    <script src="libs/bluebird/js/browser/bluebird.js"></script>
+    <script src="libs/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="libs/ngAutocomplete/src/ngAutocomplete.js"></script>
+
+    <script src="js/map.js"></script>
+</head>
+
+<body ng-controller="mapController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="panel panel-default half-height">
+                    <div class="panel-heading">Building</div>
+                    <div class="panel-body">
+                        <p>Latitude:{{latitude}}</p>
+                        <p>Longitude:{{longitude}}</p>
+                        <p>{{map.zoom}}</p>
+                        <p>{{zoomScale}}</p>
+                        <button ng-click="lockPolygon()" class="btn btn-warning">Lock Polygon</button>
+                        <button ng-click="build3D()" class="btn btn-warning">Build 3D</button>
+                        <p>{{points}}</p>
+                        <p>{{polygon}}</p>
+                        <br>
+
+
+
+                        <input type="radio" ng-model="buildingShape" value="rectangle">Rectangle
+                        <br/>
+                        <input type="radio" ng-model="buildingShape" value="lShape">L Shape
+                        <br/>Shape: {{buildingShape}}
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+
+
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" events="map.events">
+
+                    <ui-gmap-polygon ng-repeat="polygon in polygons" path='polygon.path' stroke="polygon.stroke" visible="polygon.visible" editable="polygon.editable" static="polygon.static"></ui-gmap-polygon>
+                </ui-gmap-google-map>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        {{polygons}}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
