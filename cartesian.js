@@ -52,11 +52,59 @@ var p1 = new LatLon(38.98741996725684, -76.94109611213207),
 console.log(p1.coordinatesTo(p2));
 console.log(p1.coordinatesTo(p3));
 
-var markers = [{"id":1,"coords":{"latitude":38.987426221772004,"longitude":-76.94108068943024}},{"id":2,"coords":{"latitude":38.98740120370816,"longitude":-76.94060862064362}},{"id":3,"coords":{"latitude":38.9867757492385,"longitude":-76.94050133228302}},{"id":4,"coords":{"latitude":38.98673405207736,"longitude":-76.94108068943024}},{"id":5,"coords":{"latitude":38.986892501159,"longitude":-76.94162786006927}},{"id":6,"coords":{"latitude":38.98682578579945,"longitude":-76.94170296192169}},{"id":7,"coords":{"latitude":38.98682578579945,"longitude":-76.9415956735611}},{"id":8,"coords":{"latitude":38.98682578579945,"longitude":-76.94167077541351}},{"id":9,"coords":{"latitude":38.986892501159,"longitude":-76.94202482700348}},{"id":10,"coords":{"latitude":38.98732614946358,"longitude":-76.94201409816742}},{"id":11,"coords":{"latitude":38.98785986680692,"longitude":-76.94175660610199}}];
 
-var m1 = new LatLon(markers[0].coords.latitude, markers[0].coords.longitude);
+LatLon.prototype.destinationPoint = function (brng, dist) {
+    // see http://williams.best.vwh.net/avform.htm#LL
 
-for (var i = 1; i < markers.length; i++) {
-    var m2 = new LatLon(markers[i].coords.latitude, markers[i].coords.longitude);
-    console.log(m1.coordinatesTo(m2));
+    var θ = Number(brng).toRadians();
+    var δ = Number(dist) / this.radius; // angular distance in radians
+
+    var φ1 = this.latitude.toRadians();
+    var λ1 = this.longitude.toRadians();
+
+    var φ2 = Math.asin(Math.sin(φ1) * Math.cos(δ) +
+        Math.cos(φ1) * Math.sin(δ) * Math.cos(θ));
+    var λ2 = λ1 + Math.atan2(Math.sin(θ) * Math.sin(δ) * Math.cos(φ1),
+        Math.cos(δ) - Math.sin(φ1) * Math.sin(φ2));
+    λ2 = (λ2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
+
+    return new LatLon(φ2.toDegrees(), λ2.toDegrees());
+};
+
+console.log(p1.destinationPoint(51, 1));
+
+var markers = {
+    "id": 1,
+    "path": [{
+        "latitude": 38.98972715833344,
+        "longitude": -76.94273192923936
+    }, {
+        "latitude": 38.98972715833344,
+        "longitude": -76.94253276545135
+    }, {
+        "latitude": 38.98954715815344,
+        "longitude": -76.94253276545135
+    }, {
+        "latitude": 38.98954715815344,
+        "longitude": -76.94273192923936
+    }],
+    "stroke": {
+        "color": "#6060FB",
+        "weight": 3
+    },
+    "editable": true,
+    "draggable": true,
+    "geodesic": false,
+    "visible": true,
+    "fill": {
+        "color": "#ff0000",
+        "opacity": 0.8
+    }
+};
+
+var m1 = new LatLon(markers.path[0].latitude, markers.path[0].longitude);
+
+for (var i = 1; i < markers.path.length; i++) {
+    var m2 = new LatLon(markers.path[i].latitude, markers.path[i].longitude);
+    //console.log(m1.coordinatesTo(m2));
 }
