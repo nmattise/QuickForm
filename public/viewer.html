@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>three.js webgl - STL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            font-family: Monospace;
+            background-color: #000000;
+            margin: 0px;
+            overflow: hidden;
+        }
+        #info {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display: block;
+        }
+        a {
+            color: skyblue
+        }
+        .button {
+            background: #999;
+            color: #eee;
+            padding: 0.2em 0.5em;
+            cursor: pointer
+        }
+        .highlight {
+            background: orange;
+            color: #fff;
+        }
+        span {
+            display: inline-block;
+            width: 60px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="info">
+        <a href="http://threejs.org" target="_blank">three.js</a> - STL loader test by <a href="https://github.com/aleeper">aleeper</a>. PR2 head from <a href="http://www.ros.org/wiki/pr2_description">www.ros.org</a>
+    </div>
+
+    <script src="libs/threejs/build/three.min.js"></script>
+
+    <script src="js/STLLoader.js"></script>
+
+    <script src="js/Detector.js"></script>
+    <script src="js/stats.min.js"></script>
+
+    <script>
+        if (!Detector.webgl) Detector.addGetWebGLMessage();
+
+        var container, stats;
+
+        var camera, scene, renderer, objects, controls;
+        var particleLight, pointLight;
+        var trunk;
+
+        var loader = new THREE.AWDLoader();
+
+        loader.materialFactory = createMaterial;
+        loader.load('./models/awd/simple/simple.awd', function (_trunk) {
+
+            trunk = _trunk;
+
+            init();
+            render();
+
+        });
+        var loader = new THREE.STLLoader();
+        loader.addEventListener('load', function (event) {
+
+            var geometry = event.content;
+            var material = new THREE.MeshPhongMaterial({
+                ambient: 0xff5533,
+                color: 0xff5533,
+                specular: 0x111111,
+                shininess: 200
+            });
+            var mesh = new THREE.Mesh(geometry, material);
+
+            mesh.position.set(0, -0.25, 0.6);
+            mesh.rotation.set(0, -Math.PI / 2, 0);
+            mesh.scale.set(0.5, 0.5, 0.5);
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+
+            scene.add(mesh);
+
+        });
+        loader.load('./models/stl/ascii/slotted_disk.stl');
+
+
+        function createMaterial(name) {
+            // console.log( name );
+            // var mat = new THREE.MeshPhongMaterial({
+            // 	color: 0xaaaaaa,
+            // 	shininess: 20
+
+            // });
+            // return mat;
+            return null;
+        }
+
+
+        function init() {
+
+            container = document.createElement('div');
+            document.body.appendChild(container);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
+            camera.position.set(70, 50, -100);
+
+            controls = new THREE.OrbitControls(camera);
+
+            scene = new THREE.Scene();
+
+
+            // Add the AWD SCENE
+
+            scene.add(trunk);
+
+
+            // Lights
+
+            scene.add(new THREE.AmbientLight(0x606060));
+
+            var directionalLight = new THREE.DirectionalLight( /*Math.random() * 0xffffff*/ 0xeeeeee);
+            directionalLight.position.set(.2, -1, .2);
+            directionalLight.position.normalize();
+            scene.add(directionalLight);
+
+            pointLight = new THREE.PointLight(0xffffff, .6);
+            scene.add(pointLight);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            container.appendChild(renderer.domElement);
+
+            stats = new Stats();
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.top = '0px';
+            container.appendChild(stats.domElement);
+
+            //
+
+            window.addEventListener('resize', onWindowResize, false);
+
+        }
+
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+        }
+
+
+
+        function render() {
+
+            requestAnimationFrame(render);
+
+            var timer = Date.now() * 0.0005;
+
+            pointLight.position.x = Math.sin(timer * 4) * 3000;
+            pointLight.position.y = 600
+            pointLight.position.z = Math.cos(timer * 4) * 3000;
+
+            renderer.render(scene, camera);
+
+            stats.update();
+
+        }
+    </script>
+</body>
+
+</html>
