@@ -58,8 +58,8 @@ latLon.prototype.destinationPoint = function (X, Y) {
 
 var app = angular.module('map', ['google-maps'.ns()]);
 
-app.controller('mapController', ['$scope',
-    function ($scope) {
+app.controller('mapController', ['$scope', '$http',
+    function ($scope, $http) {
         $scope.buildings = [];
         $scope.buildingShape = 'rectangle';
         $scope.polygon = {
@@ -113,6 +113,22 @@ app.controller('mapController', ['$scope',
 
             var rect = [[0, 0], [x, 0], [x, y], [0, y]];
             console.log(rect);
+            $http.post('/createOneSTL', {
+                buildingName: "buildingName",
+                buildingHeight: 15,
+                points: coords
+
+            }).
+            success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log(data);
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(data);
+            });
         };
         $scope.map = {
             center: {
@@ -142,7 +158,7 @@ app.controller('mapController', ['$scope',
                         var points = [pt1, pt2, pt3, pt4];
 
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -167,7 +183,7 @@ app.controller('mapController', ['$scope',
                             pt1 = new latLon(lat - y, lng - x / 2);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -194,7 +210,7 @@ app.controller('mapController', ['$scope',
                             pt1 = new latLon(lat, lng - x);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -221,7 +237,7 @@ app.controller('mapController', ['$scope',
                             pt1 = new latLon(lat - y / 2, lng - x);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -253,7 +269,7 @@ app.controller('mapController', ['$scope',
 
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -285,7 +301,7 @@ app.controller('mapController', ['$scope',
 
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -309,7 +325,7 @@ app.controller('mapController', ['$scope',
 
                         var points = [pt1, pt2, pt3, pt4];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -332,7 +348,7 @@ app.controller('mapController', ['$scope',
 
                         var points = [pt1, pt2, pt3];
                         var polygon = {
-                            id: 1,
+                            id: $scope.polygon.length + 1,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
