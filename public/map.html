@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
-                <div class="panel panel-success half-height">
+                <div class="panel panel-success full-height">
                     <div class="panel-heading">Building</div>
                     <div class="panel-body form-horizontal">
                         <div class="form-group">
@@ -89,46 +89,44 @@
                             </label>
                         </div>
 
-                        <p>Latitude:{{latitude}}</p>
-                        <p>Longitude:{{longitude}}</p>
-                        <p>{{map.zoom}}</p>
-
+                    </div>
+                    <div class="panel-footer">
                         <button ng-click="lockPolygon()" class="btn btn-warning">Lock Polygon</button>
                         <button ng-click="build3D(buildingShape)" class="btn btn-warning">Build 3D</button>
-                        <p>{{points}}</p>
-                        <p>{{polygon}}</p>
-                        <br>
                     </div>
+
                 </div>
             </div>
             <div class="col-md-6 ">
-
-
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" events="map.events">
 
                     <ui-gmap-polygon ng-repeat="polygon in polygons" path='polygon.path' stroke="polygon.stroke" visible="polygon.visible" editable="polygon.editable" draggable="polygon.draggable" static="polygon.static"></ui-gmap-polygon>
                 </ui-gmap-google-map>
-            </div>
-        </div>
-        <div class="row">
-            <div class=" col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Panel heading without title</div>
+                <div class="spacer">&nbsp;</div>
+                <div class="panel panel-default half-height">
+                    <div class="panel-heading">Building List</div>
                     <div class="panel-body">
-                        {{coords}} {{stlFile}}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>id#</td>
+                                    <td>Building Name</td>
+                                    <td>Building Shape</td>
+                                    <td>Building Area</td>
+                                    <td>Building Height</td>
+                                    <td>3D Model</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="building in buildings"></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-
         </div>
+
     </div>
-
-
-
-
-
-
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
