@@ -1,4 +1,18 @@
 solid tShape
+  facet normal 3.7176961514256308e-6 -9.999999999930894e-1 0e+0
+    outer loop
+      vertex 0e+0 0e+0 0e+0
+      vertex 5.85198827912823e+1 2.1755914303653266e-4 0e+0
+      vertex 5.85198827912823e+1 2.1755914303653266e-4 2e+1
+    endloop
+  endfacet
+  facet normal 3.7176961514256308e-6 -9.999999999930894e-1 0e+0
+    outer loop
+      vertex 0e+0 0e+0 0e+0
+      vertex 5.85198827912823e+1 2.1755914303653266e-4 2e+1
+      vertex 0e+0 0e+0 2e+1
+    endloop
+  endfacet
   facet normal -9.999999999723574e-1 -7.435393848749905e-6 0e+0
     outer loop
       vertex 5.85198827912823e+1 2.1755914303653266e-4 0e+0
@@ -83,17 +97,17 @@ solid tShape
       vertex 1.463000568643885e+1 -1.8822414648154894e+1 2e+1
     endloop
   endfacet
-  facet normal 3.0619618133368764e-1 -9.51968433582053e-1 0e+0
+  facet normal 1e+0 1.2246467991473532e-16 0e+0
     outer loop
       vertex 2.305082650337937e-15 -1.88224282457834e+1 0e+0
-      vertex 5.85198827912823e+1 2.1755914303653266e-4 0e+0
-      vertex 5.85198827912823e+1 2.1755914303653266e-4 2e+1
+      vertex 0e+0 0e+0 0e+0
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
-  facet normal 3.0619618133368764e-1 -9.51968433582053e-1 0e+0
+  facet normal 1e+0 1.2246467991473532e-16 0e+0
     outer loop
       vertex 2.305082650337937e-15 -1.88224282457834e+1 0e+0
-      vertex 5.85198827912823e+1 2.1755914303653266e-4 2e+1
+      vertex 0e+0 0e+0 2e+1
       vertex 2.305082650337937e-15 -1.88224282457834e+1 2e+1
     endloop
   endfacet
@@ -101,7 +115,14 @@ solid tShape
     outer loop
       vertex 5.85198827912823e+1 2.1755914303653266e-4 0e+0
       vertex 1.463000568643885e+1 -1.8822414648154894e+1 0e+0
+      vertex 0e+0 0e+0 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 -1e+0
+    outer loop
+      vertex 1.463000568643885e+1 -1.8822414648154894e+1 0e+0
       vertex 2.305082650337937e-15 -1.88224282457834e+1 0e+0
+      vertex 0e+0 0e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
@@ -134,9 +155,16 @@ solid tShape
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 2.305082650337937e-15 -1.88224282457834e+1 2e+1
+      vertex 0e+0 0e+0 2e+1
       vertex 1.463000568643885e+1 -1.8822414648154894e+1 2e+1
       vertex 5.85198827912823e+1 2.1755914303653266e-4 2e+1
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex 0e+0 0e+0 2e+1
+      vertex 2.305082650337937e-15 -1.88224282457834e+1 2e+1
+      vertex 1.463000568643885e+1 -1.8822414648154894e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
