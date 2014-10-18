@@ -91,8 +91,8 @@ function createSTL(points, height, buildingName) {
 
 
 createSTL(rect, 20, "rect");
-//createSTL(lShape, 20, "lShape");
-//createSTL(hShape, 20, "hShape");
-//createSTL(cross, 20, "cross");
-//createSTL(tShape, 20, "tShape");
-//createSTL(uShape, 20, "uShape");
+createSTL(lShape, 20, "lShape");
+createSTL(hShape, 20, "hShape");
+createSTL(cross, 20, "cross");
+createSTL(tShape, 20, "tShape");
+createSTL(uShape, 20, "uShape");
