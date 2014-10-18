@@ -1,4 +1,18 @@
 solid hShape
+  facet normal 4.647195149311425e-7 -9.99999999999892e-1 0e+0
+    outer loop
+      vertex 0e+0 0e+0 0e+0
+      vertex 7.314938702695629e+0 3.3993947656681205e-6 0e+0
+      vertex 7.314938702695629e+0 3.3993947656681205e-6 2e+1
+    endloop
+  endfacet
+  facet normal 4.647195149311425e-7 -9.99999999999892e-1 0e+0
+    outer loop
+      vertex 0e+0 0e+0 0e+0
+      vertex 7.314938702695629e+0 3.3993947656681205e-6 2e+1
+      vertex 0e+0 0e+0 2e+1
+    endloop
+  endfacet
   facet normal -9.999999999995681e-1 -9.294337417127525e-7 0e+0
     outer loop
       vertex 7.314938702695629e+0 3.3993947656681205e-6 0e+0
@@ -139,25 +153,32 @@ solid hShape
       vertex 7.314973691023224e+0 -3.764498392575607e+1 2e+1
     endloop
   endfacet
-  facet normal 9.816394222743818e-1 -1.907460212869924e-1 0e+0
+  facet normal 1e+0 1.2246467991473532e-16 0e+0
     outer loop
       vertex 4.610181323164913e-15 -3.7644987325118564e+1 0e+0
-      vertex 7.314938702695629e+0 3.3993947656681205e-6 0e+0
-      vertex 7.314938702695629e+0 3.3993947656681205e-6 2e+1
+      vertex 0e+0 0e+0 0e+0
+      vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
-  facet normal 9.816394222743818e-1 -1.907460212869924e-1 0e+0
+  facet normal 1e+0 1.2246467991473532e-16 0e+0
     outer loop
       vertex 4.610181323164913e-15 -3.7644987325118564e+1 0e+0
-      vertex 7.314938702695629e+0 3.3993947656681205e-6 2e+1
+      vertex 0e+0 0e+0 2e+1
       vertex 4.610181323164913e-15 -3.7644987325118564e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
     outer loop
       vertex 7.314947449825986e+0 -9.411243432251544e+0 0e+0
-      vertex 4.610181323164913e-15 -3.7644987325118564e+1 0e+0
+      vertex 0e+0 0e+0 0e+0
       vertex 7.314938702695629e+0 3.3993947656681205e-6 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 -1e+0
+    outer loop
+      vertex 7.314947449825986e+0 -9.411243432251544e+0 0e+0
+      vertex 4.610181323164913e-15 -3.7644987325118564e+1 0e+0
+      vertex 0e+0 0e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
@@ -219,6 +240,13 @@ solid hShape
   facet normal 0e+0 0e+0 1e+0
     outer loop
       vertex 7.314938702695629e+0 3.3993947656681205e-6 2e+1
+      vertex 0e+0 0e+0 2e+1
+      vertex 7.314947449825986e+0 -9.411243432251544e+0 2e+1
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex 0e+0 0e+0 2e+1
       vertex 4.610181323164913e-15 -3.7644987325118564e+1 2e+1
       vertex 7.314947449825986e+0 -9.411243432251544e+0 2e+1
     endloop
