@@ -8,12 +8,8 @@ var fs = require('fs'),
 
 //Test array of Points
 //Rectangel
-var rect = [
-    [0, 0],
-    [10, 0],
-    [10, 10],
-    [0, 10]
-];
+var rect = [[0, 0], [10, 0],
+    [10, 10], [0, 10]];
 //L Shape
 var lShape = [[29.260022236090915, 0.000054389608930479266], [29.2601621880931, -37.644932935079744], [43.89024328247792, -37.64486494763048], [43.89045320879839, -75.28985227350465], [9.220362646416448e-15, -75.28997465094444]];
 var hShape = [[7.314938702695629, 0.0000033993947656681205], [7.314947449825986, -9.411243432251544], [21.944842347285306, -9.411216237123552], [21.94481610586253, 0.000030594552890114854], [29.259754808520253, 0.000054389962591562513], [29.259894761833728, -37.644932935316284], [21.944921070928867, -37.644956730807436], [21.944894830046042, -28.233709899638363], [7.3149649441024716, -28.233737094794478], [7.314973691023224, -37.64498392575607], [4.610181323164913e-15, -37.644987325118564]];
@@ -42,6 +38,7 @@ function createPlane(p1, p2, h) {
 
 function createSTL(points, height, buildingName) {
     //Add facets
+
     var facets = [];
 
     //Walls
@@ -51,7 +48,7 @@ function createSTL(points, height, buildingName) {
         facets.push(tri[0]);
         facets.push(tri[1]);
     }
-    var tri = createPlane(lShape[lShape.length - 1], lShape[0], height);
+    var tri = createPlane(points[points.length - 1], points[0], height);
     facets.push(tri[0]);
     facets.push(tri[1]);
 
@@ -82,7 +79,9 @@ function createSTL(points, height, buildingName) {
         });
         facets.push(createFacet(verts));
     });
-
+    facets.forEach(function (facet) {
+        console.log(facet)
+    })
     var stlObj = {
         description: buildingName,
         facets: facets
@@ -92,8 +91,8 @@ function createSTL(points, height, buildingName) {
 
 
 createSTL(rect, 20, "rect");
-createSTL(lShape, 20, "lShape");
-createSTL(hShape, 20, "hShape");
-createSTL(cross, 20, "cross");
-createSTL(tShape, 20, "tShape");
-createSTL(uShape, 20, "uShape");
+//createSTL(lShape, 20, "lShape");
+//createSTL(hShape, 20, "hShape");
+//createSTL(cross, 20, "cross");
+//createSTL(tShape, 20, "tShape");
+//createSTL(uShape, 20, "uShape");
