@@ -28,26 +28,71 @@
             <div class="col-md-6 ">
                 <div class="panel panel-success half-height">
                     <div class="panel-heading">Building</div>
-                    <div class="panel-body">
+                    <div class="panel-body form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Building Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="buildingName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Number of Floors</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="numberFloors">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Floor to Floor Height</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="floorHeight">
+                            </div>
+                        </div>
+                        <h4>Building Footprint Type</h4>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="rectangle">Rectangle
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="lShape">L Shape
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="tShape">T Shape
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="uShape">U Shape
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="hShape">H Shape
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="crossShape">Cross Shape
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="trapezoid">Trapezoid
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="buildingShape" value="triangle">Triangle
+                            </label>
+                        </div>
+
                         <p>Latitude:{{latitude}}</p>
                         <p>Longitude:{{longitude}}</p>
                         <p>{{map.zoom}}</p>
-                        <input type="radio" ng-model="buildingShape" value="rectangle">Rectangle
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="lShape">L Shape
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="tShape">T Shape
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="uShape">U Shape
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="hShape">H Shape
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="crossShape">Cross Shape
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="trapezoid">Trapezoid
-                        <br/>
-                        <input type="radio" ng-model="buildingShape" value="triangle">Triangle
-                        <br/>Shape: {{buildingShape}}
+
                         <button ng-click="lockPolygon()" class="btn btn-warning">Lock Polygon</button>
                         <button ng-click="build3D(buildingShape)" class="btn btn-warning">Build 3D</button>
                         <p>{{points}}</p>
@@ -70,8 +115,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Panel heading without title</div>
                     <div class="panel-body">
-                        {{coords}}
-                        {{stlFile}}
+                        {{coords}} {{stlFile}}
                     </div>
                 </div>
             </div>

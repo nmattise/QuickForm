@@ -9,5 +9,6 @@ body {
 }
 .half-height {
     height: 50vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

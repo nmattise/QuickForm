@@ -114,8 +114,8 @@ app.controller('mapController', ['$scope', '$http',
             var rect = [[0, 0], [x, 0], [x, y], [0, y]];
             console.log(rect);
             $http.post('/createOneSTL', {
-                buildingName: "buildingName",
-                buildingHeight: 15,
+                buildingName: $scope.buildingName,
+                buildingHeight: $scope.numberFloors * $scope.floorHeight,
                 points: coords
 
             }).
