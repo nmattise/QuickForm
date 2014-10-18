@@ -105,7 +105,7 @@ app.controller('mapController', ['$scope',
                 var point = new latLon(polygon[i].latitude, polygon[i].longitude);
                 coords.push(origin.coordinatesTo(point))
             };
-
+            coords.unshift([0, 0]);
             console.log(coords);
             $scope.coords = coords;
             var x = (coords[0][0] + coords[1][0]) / 2;
@@ -140,6 +140,7 @@ app.controller('mapController', ['$scope',
                             pt4 = new latLon(lat - y, lng - x);
 
                         var points = [pt1, pt2, pt3, pt4];
+                        points.reverse();
                         var polygon = {
                             id: 1,
                             path: points,
