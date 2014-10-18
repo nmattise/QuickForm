@@ -8,7 +8,18 @@ body {
     height: inherit;
 }
 .half-height {
-    height: 50vh;
+    height: 43vh;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+.full-height {
+    height: 95vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.spacer {
+    height: 2vh;
+}
+.table thead {
+    font-weight: bold;
 }
