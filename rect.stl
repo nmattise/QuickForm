@@ -2,43 +2,43 @@ solid rect
   facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex 0e+0 0e+0 0e+0
-      vertex 1.17e+2 0e+0 0e+0
-      vertex 1.17e+2 0e+0 2e+1
+      vertex 1e+1 0e+0 0e+0
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex 0e+0 0e+0 0e+0
-      vertex 1.17e+2 0e+0 2e+1
+      vertex 1e+1 0e+0 2e+1
       vertex 0e+0 0e+0 2e+1
     endloop
   endfacet
-  facet normal -1e+0 0e+0 0e+0
+  facet normal 1e+0 0e+0 0e+0
     outer loop
-      vertex 1.17e+2 0e+0 0e+0
-      vertex 1.17e+2 -1.5e+2 0e+0
-      vertex 1.17e+2 -1.5e+2 2e+1
+      vertex 1e+1 0e+0 0e+0
+      vertex 1e+1 1e+1 0e+0
+      vertex 1e+1 1e+1 2e+1
     endloop
   endfacet
-  facet normal -1e+0 0e+0 0e+0
+  facet normal 1e+0 0e+0 0e+0
     outer loop
-      vertex 1.17e+2 0e+0 0e+0
-      vertex 1.17e+2 -1.5e+2 2e+1
-      vertex 1.17e+2 0e+0 2e+1
-    endloop
-  endfacet
-  facet normal 0e+0 1e+0 0e+0
-    outer loop
-      vertex 1.17e+2 -1.5e+2 0e+0
-      vertex 0e+0 -1.5e+2 0e+0
-      vertex 0e+0 -1.5e+2 2e+1
+      vertex 1e+1 0e+0 0e+0
+      vertex 1e+1 1e+1 2e+1
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
-      vertex 1.17e+2 -1.5e+2 0e+0
-      vertex 0e+0 -1.5e+2 2e+1
-      vertex 1.17e+2 -1.5e+2 2e+1
+      vertex 1e+1 1e+1 0e+0
+      vertex 0e+0 1e+1 0e+0
+      vertex 0e+0 1e+1 2e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+1 1e+1 0e+0
+      vertex 0e+0 1e+1 2e+1
+      vertex 1e+1 1e+1 2e+1
     endloop
   endfacet
   facet normal 9.320859182994519e-1 -3.6223727156087593e-1 0e+0
@@ -57,30 +57,30 @@ solid rect
   endfacet
   facet normal 0e+0 0e+0 -1e+0
     outer loop
-      vertex 1.17e+2 0e+0 0e+0
-      vertex 1.17e+2 -1.5e+2 0e+0
-      vertex 0e+0 0e+0 0e+0
+      vertex 1e+1 1e+1 0e+0
+      vertex 1e+1 0e+0 0e+0
+      vertex 0e+0 1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
     outer loop
-      vertex 1.17e+2 -1.5e+2 0e+0
-      vertex 0e+0 -1.5e+2 0e+0
+      vertex 1e+1 0e+0 0e+0
       vertex 0e+0 0e+0 0e+0
+      vertex 0e+0 1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 0e+0 0e+0 2e+1
-      vertex 1.17e+2 -1.5e+2 2e+1
-      vertex 1.17e+2 0e+0 2e+1
+      vertex 0e+0 1e+1 2e+1
+      vertex 1e+1 0e+0 2e+1
+      vertex 1e+1 1e+1 2e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
+      vertex 0e+0 1e+1 2e+1
       vertex 0e+0 0e+0 2e+1
-      vertex 0e+0 -1.5e+2 2e+1
-      vertex 1.17e+2 -1.5e+2 2e+1
+      vertex 1e+1 0e+0 2e+1
     endloop
   endfacet
 endsolid
