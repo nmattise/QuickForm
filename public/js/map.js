@@ -134,13 +134,13 @@ app.controller('mapController', ['$scope',
                     var center = new latLon(lat, lng);
                     switch ($scope.buildingShape) {
                     case "rectangle":
-                        var pt1 = new latLon(lat + y, lng - x),
-                            pt2 = new latLon(lat + y, lng + x),
-                            pt3 = new latLon(lat - y, lng + x),
-                            pt4 = new latLon(lat - y, lng - x);
+                        var pt4 = new latLon(lat + y, lng - x),
+                            pt3 = new latLon(lat + y, lng + x),
+                            pt2 = new latLon(lat - y, lng + x),
+                            pt1 = new latLon(lat - y, lng - x);
 
                         var points = [pt1, pt2, pt3, pt4];
-                        points.reverse();
+
                         var polygon = {
                             id: 1,
                             path: points,
@@ -159,12 +159,12 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "lShape":
-                        var pt1 = new latLon(lat + y, lng - x / 2),
-                            pt2 = new latLon(lat + y, lng + x / 2),
-                            pt3 = new latLon(lat, lng + x / 2),
-                            pt4 = new latLon(lat, lng + x),
-                            pt5 = new latLon(lat - y, lng + x),
-                            pt6 = new latLon(lat - y, lng - x / 2);
+                        var pt6 = new latLon(lat + y, lng - x / 2),
+                            pt5 = new latLon(lat + y, lng + x / 2),
+                            pt4 = new latLon(lat, lng + x / 2),
+                            pt3 = new latLon(lat, lng + x),
+                            pt2 = new latLon(lat - y, lng + x),
+                            pt1 = new latLon(lat - y, lng - x / 2);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6];
                         var polygon = {
                             id: 1,
@@ -184,14 +184,14 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "tShape":
-                        var pt1 = new latLon(lat + y / 2, lng - x),
-                            pt2 = new latLon(lat + y / 2, lng + x),
-                            pt3 = new latLon(lat, lng + x),
-                            pt4 = new latLon(lat, lng + x / 2),
-                            pt5 = new latLon(lat - y, lng + x / 2),
-                            pt6 = new latLon(lat - y, lng - x / 2),
-                            pt7 = new latLon(lat, lng - x / 2),
-                            pt8 = new latLon(lat, lng - x);
+                        var pt8 = new latLon(lat + y / 2, lng - x),
+                            pt7 = new latLon(lat + y / 2, lng + x),
+                            pt6 = new latLon(lat, lng + x),
+                            pt5 = new latLon(lat, lng + x / 2),
+                            pt4 = new latLon(lat - y, lng + x / 2),
+                            pt3 = new latLon(lat - y, lng - x / 2),
+                            pt2 = new latLon(lat, lng - x / 2),
+                            pt1 = new latLon(lat, lng - x);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
                             id: 1,
@@ -211,14 +211,14 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "uShape":
-                        var pt1 = new latLon(lat + y, lng - x),
-                            pt2 = new latLon(lat + y, lng - x / 2),
-                            pt3 = new latLon(lat, lng - x / 2),
-                            pt4 = new latLon(lat, lng + x / 2),
-                            pt5 = new latLon(lat + y, lng + x / 2),
-                            pt6 = new latLon(lat + y, lng + x),
-                            pt7 = new latLon(lat - y / 2, lng + x),
-                            pt8 = new latLon(lat - y / 2, lng - x);
+                        var pt8 = new latLon(lat + y, lng - x),
+                            pt7 = new latLon(lat + y, lng - x / 2),
+                            pt6 = new latLon(lat, lng - x / 2),
+                            pt5 = new latLon(lat, lng + x / 2),
+                            pt4 = new latLon(lat + y, lng + x / 2),
+                            pt3 = new latLon(lat + y, lng + x),
+                            pt2 = new latLon(lat - y / 2, lng + x),
+                            pt1 = new latLon(lat - y / 2, lng - x);
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
                             id: 1,
@@ -238,18 +238,18 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "hShape":
-                        var pt1 = new latLon(lat + y, lng - x),
-                            pt2 = new latLon(lat + y, lng - x / 2),
-                            pt3 = new latLon(lat + y / 2, lng - x / 2),
-                            pt4 = new latLon(lat + y / 2, lng + x / 2),
-                            pt5 = new latLon(lat + y, lng + x / 2),
-                            pt6 = new latLon(lat + y, lng + x),
-                            pt7 = new latLon(lat - y, lng + x),
-                            pt8 = new latLon(lat - y, lng + x / 2),
-                            pt9 = new latLon(lat - y / 2, lng + x / 2),
-                            pt10 = new latLon(lat - y / 2, lng - x / 2),
-                            pt11 = new latLon(lat - y, lng - x / 2),
-                            pt12 = new latLon(lat - y, lng - x);
+                        var pt12 = new latLon(lat + y, lng - x),
+                            pt11 = new latLon(lat + y, lng - x / 2),
+                            pt10 = new latLon(lat + y / 2, lng - x / 2),
+                            pt9 = new latLon(lat + y / 2, lng + x / 2),
+                            pt8 = new latLon(lat + y, lng + x / 2),
+                            pt7 = new latLon(lat + y, lng + x),
+                            pt6 = new latLon(lat - y, lng + x),
+                            pt5 = new latLon(lat - y, lng + x / 2),
+                            pt4 = new latLon(lat - y / 2, lng + x / 2),
+                            pt3 = new latLon(lat - y / 2, lng - x / 2),
+                            pt2 = new latLon(lat - y, lng - x / 2),
+                            pt1 = new latLon(lat - y, lng - x);
 
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
@@ -270,18 +270,18 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "crossShape":
-                        var pt1 = new latLon(lat + y, lng - x / 2),
-                            pt2 = new latLon(lat + y, lng + x / 2),
-                            pt3 = new latLon(lat + y / 2, lng + x / 2),
-                            pt4 = new latLon(lat + y / 2, lng + x),
-                            pt5 = new latLon(lat - y / 2, lng + x),
-                            pt6 = new latLon(lat - y / 2, lng + x / 2),
-                            pt7 = new latLon(lat - y, lng + x / 2),
-                            pt8 = new latLon(lat - y, lng - x / 2),
-                            pt9 = new latLon(lat - y / 2, lng - x / 2),
-                            pt10 = new latLon(lat - y / 2, lng - x),
-                            pt11 = new latLon(lat + y / 2, lng - x),
-                            pt12 = new latLon(lat + y / 2, lng - x / 2);
+                        var pt12 = new latLon(lat + y, lng - x / 2),
+                            pt11 = new latLon(lat + y, lng + x / 2),
+                            pt10 = new latLon(lat + y / 2, lng + x / 2),
+                            pt9 = new latLon(lat + y / 2, lng + x),
+                            pt8 = new latLon(lat - y / 2, lng + x),
+                            pt7 = new latLon(lat - y / 2, lng + x / 2),
+                            pt6 = new latLon(lat - y, lng + x / 2),
+                            pt5 = new latLon(lat - y, lng - x / 2),
+                            pt4 = new latLon(lat - y / 2, lng - x / 2),
+                            pt3 = new latLon(lat - y / 2, lng - x),
+                            pt2 = new latLon(lat + y / 2, lng - x),
+                            pt1 = new latLon(lat + y / 2, lng - x / 2);
 
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
@@ -302,10 +302,10 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "trapezoid":
-                        var pt1 = new latLon(lat + y / 2, lng - x / 2),
-                            pt2 = new latLon(lat + y / 2, lng + x / 2),
-                            pt3 = new latLon(lat - y / 2, lng + x),
-                            pt4 = new latLon(lat - y / 2, lng - x);
+                        var pt4 = new latLon(lat + y / 2, lng - x / 2),
+                            pt3 = new latLon(lat + y / 2, lng + x / 2),
+                            pt2 = new latLon(lat - y / 2, lng + x),
+                            pt1 = new latLon(lat - y / 2, lng - x);
 
                         var points = [pt1, pt2, pt3, pt4];
                         var polygon = {
@@ -326,9 +326,9 @@ app.controller('mapController', ['$scope',
                         };
                         break;
                     case "triangle":
-                        var pt1 = new latLon(lat + y, lng - x),
+                        var pt3 = new latLon(lat + y, lng - x),
                             pt2 = new latLon(lat - y, lng + x),
-                            pt3 = new latLon(lat - y, lng - x);
+                            pt1 = new latLon(lat - y, lng - x);
 
                         var points = [pt1, pt2, pt3];
                         var polygon = {
