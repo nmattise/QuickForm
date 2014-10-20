@@ -202,19 +202,21 @@ console.log(lat / count);
 console.log(lng / count);
 var centerLat = lat / count;
 var centerLng = lng / count;
-var coords = [];
+var buildingCoords = [];
 buildings.forEach(function (building) {
+    var coords = [];
     var origin = new latLon(centerLat, centerLng);
     for (var i = 0; i < building.length; i++) {
         var point = new latLon(building[i].latitude, building[i].longitude);
         coords.push(origin.coordinatesTo(point))
     };
-    console.log(coords);
+    buildingCoords.push(coords);
 });
 
 
 //Create STL format
-var stlBuildings = '';
+
+var buildingsSTL = '';
 
 function createFacet(verts) {
     return {
@@ -235,7 +237,9 @@ function createPlane(p1, p2, h) {
 
 function createSTL(points, height, buildingName) {
     //Add facets
+    console.log(points);
     var facets = [];
+
     //Walls
     for (var i = 1; i < points.length; i++) {
         var tri = createPlane(points[i - 1], points[i], height);
@@ -277,9 +281,14 @@ function createSTL(points, height, buildingName) {
         description: buildingName,
         facets: facets
     };
-    stlBuildings += "\n" + stl.fromObject(stlObj);
+    buildingsSTL += '\n' + stl.fromObject(stlObj);
+    //fs.writeFileSync("stlFiles/" + buildingName + '.stl', stl.fromObject(stlObj));
 }
-//createSTL(rect, 20, "rect");
-createSTL(coords[0], 20, "rect");
 
-//fs.writeFileSync("stlFiles /multiBuildings.stl", stlBuildings);
+//createSTL(rect, 20, "rect");
+createSTL(buildingCoords[0], 20, "coordTest");
+buildingCoords.forEach(function (building) {
+    createSTL(building, 25, "buildingTest");
+});
+
+fs.writeFileSync("stlFiles/multiBuildings.stl", buildingsSTL);
