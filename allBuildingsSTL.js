@@ -202,15 +202,84 @@ console.log(lat / count);
 console.log(lng / count);
 var centerLat = lat / count;
 var centerLng = lng / count;
-
+var coords = [];
 buildings.forEach(function (building) {
-
-    var coords = [];
     var origin = new latLon(centerLat, centerLng);
-    for (var i = 1; i < building.length; i++) {
+    for (var i = 0; i < building.length; i++) {
         var point = new latLon(building[i].latitude, building[i].longitude);
         coords.push(origin.coordinatesTo(point))
     };
-    coords.unshift([0, 0]);
     console.log(coords);
-})
+});
+
+
+//Create STL format
+var stlBuildings = '';
+
+function createFacet(verts) {
+    return {
+        verts: verts
+    }
+}
+
+function createPlane(p1, p2, h) {
+    var tri1 = [[p1[0], p1[1], 0], [p2[0], p2[1], 0], [p2[0], p2[1], h]];
+    var tri2 = [[p1[0], p1[1], 0], [p2[0], p2[1], h], [p1[0], p1[1], h]];
+    var facets = [{
+        verts: tri1
+    }, {
+        verts: tri2
+    }];
+    return facets;
+}
+
+function createSTL(points, height, buildingName) {
+    //Add facets
+    var facets = [];
+    //Walls
+    for (var i = 1; i < points.length; i++) {
+        var tri = createPlane(points[i - 1], points[i], height);
+        facets.push(tri[0]);
+        facets.push(tri[1]);
+    }
+    var tri = createPlane(points[points.length - 1], points[0], height);
+    facets.push(tri[0]);
+    facets.push(tri[1]);
+
+    //Top and Bottom
+    var contour = [];
+    points.forEach(function (point) {
+        contour.push(new poly2tri.Point(point[0], point[1]));
+    });
+    var swctx = new poly2tri.SweepContext(contour);
+    swctx.triangulate();
+    var triangles = swctx.getTriangles();
+    //Create Bottom Plane
+    triangles.forEach(function (tri) {
+        var verts = [];
+        tri.points_.reverse();
+        tri.points_.forEach(function (points) {
+            verts.push([points.x, points.y, 0]);
+        });
+        facets.push(createFacet(verts));
+    });
+
+    //Create Top Plane
+    triangles.forEach(function (tri) {
+        var verts = [];
+        tri.points_.reverse();
+        tri.points_.forEach(function (points) {
+            verts.push([points.x, points.y, height]);
+        });
+        facets.push(createFacet(verts));
+    });
+    var stlObj = {
+        description: buildingName,
+        facets: facets
+    };
+    stlBuildings += "\n" + stl.fromObject(stlObj);
+}
+//createSTL(rect, 20, "rect");
+createSTL(coords[0], 20, "rect");
+
+//fs.writeFileSync("stlFiles /multiBuildings.stl", stlBuildings);
