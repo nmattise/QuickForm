@@ -80,7 +80,7 @@ function createPlane(p1, p2, h) {
     return facets;
 }
 
-function createSTL(points, height, buildingName, buildingsSTL) {
+function createSTL(points, height, buildingName) {
     //Add facets
     console.log(points);
     var facets = [];
@@ -126,7 +126,8 @@ function createSTL(points, height, buildingName, buildingsSTL) {
         description: buildingName,
         facets: facets
     };
-    buildingsSTL += '\n' + stl.fromObject(stlObj);
+    var buildingSTL = stl.fromObject(stlObj);
+    return buildingSTL;
     //fs.writeFileSync("stlFiles/" + buildingName + '.stl', stl.fromObject(stlObj));
 }
 
@@ -159,7 +160,8 @@ function allBuildingsSTL(buildings) {
         building.coords = coords;
     });
     buildings.forEach(function (building) {
-        createSTL(building.coords, building.buildingHeight, building.name, buildingsSTL);
+        var buildingSTL = createSTL(building.coords, building.buildingHeight, building.name, buildingsSTL);
+        buildingsSTL += '\n' + buildingSTL;
     });
     fs.writeFileSync("stlFiles/multiBuildings.stl", buildingsSTL);
 }
