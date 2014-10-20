@@ -55,6 +55,18 @@ latLon.prototype.destinationPoint = function (X, Y) {
     return new latLon(phi2.toDegrees(), lambda2.toDegrees());
 }
 
+//Area Calculation
+function footprintArea(coords) {
+    var numPoints = coords.length,
+        area = 0,
+        j = numPoints - 1;
+
+    for (i = 0; i < numPoints; i++) {
+        area += (coords[j][0] + coords[i][0]) * (coords[j][1] - coords[i][1]);
+        j = i;
+    }
+    return area / 2;
+}
 
 var app = angular.module('map', ['google-maps'.ns()]);
 
