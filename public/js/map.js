@@ -98,16 +98,16 @@ app.controller('mapController', ['$scope', '$http',
         $scope.build3D = function (buildingShape) {
 
             //Create Cartesian Coorinates
-            var polygon = $scope.polygons[$scope.polygons.length - 1].path;
+            var polygon = $scope.polygons[$scope.polygons.length - 1];
             var coords = [];
-            var origin = new latLon(polygon[0].latitude, polygon[0].longitude);
-            for (var i = 1; i < polygon.length; i++) {
-                var point = new latLon(polygon[i].latitude, polygon[i].longitude);
+            var origin = new latLon(polygon.path[0].latitude, polygon.path[0].longitude);
+            for (var i = 1; i < polygon.path.length; i++) {
+                var point = new latLon(polygon.path[i].latitude, polygon.path[i].longitude);
                 coords.push(origin.coordinatesTo(point))
             };
             coords.unshift([0, 0]);
             $http.post('/createOneSTL', {
-                buildingName: polygon.buildingName,
+                buildingName: polygon.name,
                 buildingHeight: polygon.buildingHeight,
                 buildingShape: polygon.buildingShape,
                 points: coords
