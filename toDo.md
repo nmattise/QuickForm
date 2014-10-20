@@ -1,7 +1,7 @@
 ##To Do List for bldr
 --
 - [ ] Get Building Information and Lat/Long/Polygon Data to a Buildings Object and have the gmaps show all polygons in that
--[ ] Add Addbuilding function to support havein multiple building information
+- [ ] Add Addbuilding function to support havein multiple building information
 - [ ] Server Response for STL File Creation
 - [X] Create STL file from mulitple sets of Lat/lng points
 - [ ] Form Validation
