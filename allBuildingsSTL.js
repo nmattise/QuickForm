@@ -2,13 +2,7 @@ var fs = require('fs'),
     stl = require('stl'),
     poly2tri = require('poly2tri');
 
-//module.exports.allBuidlingsSTL = allBuidlingsSTL;
-
-function createFacet(verts) {
-    return {
-        verts: verts
-    }
-}
+module.exports.allBuildingsSTL = allBuildingsSTL;
 
 //Lat/Long and Coordinate Stuff
 Number.prototype.toRadians = function () {
@@ -67,156 +61,7 @@ latLon.prototype.destinationPoint = function (X, Y) {
     return new latLon(phi2.toDegrees(), lambda2.toDegrees());
 }
 
-
-
-//Arrays and function calls to Test
-var buildings = [[{
-    "latitude": 38.989756623985606,
-    "longitude": -76.94395228976502
-    }, {
-    "latitude": 38.989756623985606,
-    "longitude": -76.94361374026046
-    }, {
-    "latitude": 38.99009517349017,
-    "longitude": -76.94361374026046
-    }, {
-    "latitude": 38.99009517349017,
-    "longitude": -76.94395228976502
-    }], [{
-    "latitude": 38.98934134657588,
-    "longitude": -76.94284885633974
-    }, {
-    "latitude": 38.98934134657588,
-    "longitude": -76.94267958158746
-    }, {
-    "latitude": 38.98951062132816,
-    "longitude": -76.94267958158746
-    }, {
-    "latitude": 38.98951062132816,
-    "longitude": -76.9423410320829
-    }, {
-    "latitude": 38.98934134657588,
-    "longitude": -76.9423410320829
-    }, {
-    "latitude": 38.98934134657588,
-    "longitude": -76.94217175733061
-    }, {
-    "latitude": 38.990018445585,
-    "longitude": -76.94217175733061
-    }, {
-    "latitude": 38.990018445585,
-    "longitude": -76.9423410320829
-    }, {
-    "latitude": 38.98984917083272,
-    "longitude": -76.9423410320829
-    }, {
-    "latitude": 38.98984917083272,
-    "longitude": -76.94267958158746
-    }, {
-    "latitude": 38.990018445585,
-    "longitude": -76.94267958158746
-    }, {
-    "latitude": 38.990018445585,
-    "longitude": -76.94284885633974
-    }], [{
-    "latitude": 38.989135971935845,
-    "longitude": -76.94449260708934
-    }, {
-    "latitude": 38.989135971935845,
-    "longitude": -76.94457724446549
-    }, {
-    "latitude": 38.988966697183564,
-    "longitude": -76.94457724446549
-    }, {
-    "latitude": 38.988966697183564,
-    "longitude": -76.94449260708934
-    }, {
-    "latitude": 38.98888205980742,
-    "longitude": -76.94449260708934
-    }, {
-    "latitude": 38.98888205980742,
-    "longitude": -76.94432333233708
-    }, {
-    "latitude": 38.988966697183564,
-    "longitude": -76.94432333233708
-    }, {
-    "latitude": 38.988966697183564,
-    "longitude": -76.94423869496093
-    }, {
-    "latitude": 38.989135971935845,
-    "longitude": -76.94423869496093
-    }, {
-    "latitude": 38.989135971935845,
-    "longitude": -76.94432333233708
-    }, {
-    "latitude": 38.989220609311985,
-    "longitude": -76.94432333233708
-    }, {
-    "latitude": 38.989220609311985,
-    "longitude": -76.94449260708934
-    }], [{
-    "latitude": 38.98833937505069,
-    "longitude": -76.94285422075777
-    }, {
-    "latitude": 38.98833937505069,
-    "longitude": -76.94268494600549
-    }, {
-    "latitude": 38.98800082554613,
-    "longitude": -76.94268494600549
-    }, {
-    "latitude": 38.98800082554613,
-    "longitude": -76.94234639650092
-    }, {
-    "latitude": 38.98833937505069,
-    "longitude": -76.94234639650092
-    }, {
-    "latitude": 38.98833937505069,
-    "longitude": -76.94217712174864
-    }, {
-    "latitude": 38.988508649802974,
-    "longitude": -76.94217712174864
-    }, {
-    "latitude": 38.988508649802974,
-    "longitude": -76.94285422075777
-    }]];
-
-//Average Lat and Long
-
-var lat = 0,
-    lng = 0,
-    count = 0;
-
-buildings.forEach(function (building) {
-
-    building.forEach(function (point) {
-        lat += point.latitude;
-        lng += point.longitude;
-        count++;
-    });
-});
-console.log(lat);
-console.log(lng);
-console.log(count);
-
-console.log(lat / count);
-console.log(lng / count);
-var centerLat = lat / count;
-var centerLng = lng / count;
-var buildingCoords = [];
-buildings.forEach(function (building) {
-    var coords = [];
-    var origin = new latLon(centerLat, centerLng);
-    for (var i = 0; i < building.length; i++) {
-        var point = new latLon(building[i].latitude, building[i].longitude);
-        coords.push(origin.coordinatesTo(point))
-    };
-    buildingCoords.push(coords);
-});
-
-
 //Create STL format
-
-var buildingsSTL = '';
 
 function createFacet(verts) {
     return {
@@ -235,7 +80,7 @@ function createPlane(p1, p2, h) {
     return facets;
 }
 
-function createSTL(points, height, buildingName) {
+function createSTL(points, height, buildingName, buildingsSTL) {
     //Add facets
     console.log(points);
     var facets = [];
@@ -285,10 +130,36 @@ function createSTL(points, height, buildingName) {
     //fs.writeFileSync("stlFiles/" + buildingName + '.stl', stl.fromObject(stlObj));
 }
 
-//createSTL(rect, 20, "rect");
-createSTL(buildingCoords[0], 20, "coordTest");
-buildingCoords.forEach(function (building) {
-    createSTL(building, 25, "buildingTest");
-});
 
-fs.writeFileSync("stlFiles/multiBuildings.stl", buildingsSTL);
+//All Buildings STL function for Export
+function allBuildingsSTL(buildings) {
+    //Average Lat and Long
+    var lat = 0,
+        lng = 0,
+        count = 0;
+
+    buildings.forEach(function (building) {
+        building.path.forEach(function (point) {
+            lat += point.latitude;
+            lng += point.longitude;
+            count++;
+        });
+    });
+    var centerLat = lat / count,
+        centerLng = lng / count,
+        buildingsSTL = '';
+    console.log(centerLng);
+    var origin = new latLon(centerLat, centerLng);
+    buildings.forEach(function (building) {
+        var coords = [];
+        for (var i = 0; i < building.path.length; i++) {
+            var point = new latLon(building.path[i].latitude, building.path[i].longitude);
+            coords.push(origin.coordinatesTo(point))
+        };
+        building.coords = coords;
+    });
+    buildings.forEach(function (building) {
+        createSTL(building.coords, building.buildingHeight, building.name, buildingsSTL);
+    });
+    fs.writeFileSync("stlFiles/multiBuildings.stl", buildingsSTL);
+}
