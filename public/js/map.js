@@ -95,8 +95,8 @@ app.controller('mapController', ['$scope', '$http',
             $scope.polygons[$scope.polygons.length - 1].editable = false;
             $scope.polygons[$scope.polygons.length - 1].static = true;
         };
-        $scope.build3D = function (footprintShape) {
-            console.log(footprintShape);
+        $scope.build3D = function (buildingShape) {
+
             //Create Cartesian Coorinates
             var polygon = $scope.polygons[$scope.polygons.length - 1].path;
             var coords = [];
@@ -106,18 +106,27 @@ app.controller('mapController', ['$scope', '$http',
                 coords.push(origin.coordinatesTo(point))
             };
             coords.unshift([0, 0]);
-            console.log(coords);
-            $scope.coords = coords;
-            var x = (coords[0][0] + coords[1][0]) / 2;
-            var y = (coords[0][1] + coords[1][1]) / 2;
-
-            var rect = [[0, 0], [x, 0], [x, y], [0, y]];
-            console.log(rect);
             $http.post('/createOneSTL', {
-                buildingName: $scope.buildingName,
-                buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                buildingName: polygon.buildingName,
+                buildingHeight: polygon.buildingHeight,
+                buildingShape: polygon.buildingShape,
                 points: coords
 
+            }).
+            success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log(data);
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(data);
+            });
+        };
+        $scope.buildAllBuildings = function () {
+            $http.post('/createAllBuildingsSTL', {
+                buildings: $scope.polygons
             }).
             success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
@@ -158,7 +167,12 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4];
 
                         var polygon = {
-                            id: $scope.polygon.length + 1,
+                            id: $scope.polygons.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -184,6 +198,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -211,6 +230,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -238,6 +262,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -270,6 +299,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -302,6 +336,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -326,6 +365,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
@@ -349,6 +393,11 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3];
                         var polygon = {
                             id: $scope.polygon.length + 1,
+                            name: $scope.buildingName,
+                            numberFloors: $scope.numberFloors,
+                            floorHeight: $scope.floorHeight,
+                            buildingHeight: $scope.numberFloors * $scope.floorHeight,
+                            buildingShape: $scope.buildingShape,
                             path: points,
                             stroke: {
                                 color: '#6060FB',
