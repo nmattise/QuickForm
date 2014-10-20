@@ -119,10 +119,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="building in buildings"></tr>
+                                <tr ng-repeat="building in polygons">
+                                    <td>{{building.id}}</td>
+                                    <td>{{building.name}}</td>
+                                    <td>{{building.buildingShape}}</td>
+                                    <td>{{building.id}} m&sup2;</td>
+                                    <td>{{building.buildingHeight}} m</td>
+                                    <td>{{building.buildingHeight}}</td>
+                                </tr>
                             </tbody>
                         </table>
-                        {{polygons}}
                     </div>
                 </div>
             </div>
