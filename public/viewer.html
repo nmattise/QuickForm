@@ -60,92 +60,91 @@
 
         var container, stats;
 
-        var camera, scene, renderer, objects, controls;
-        var particleLight, pointLight;
-        var trunk;
+        var camera, cameraTarget, scene, renderer;
 
-        var loader = new THREE.AWDLoader();
-
-        loader.materialFactory = createMaterial;
-        loader.load('./models/awd/simple/simple.awd', function (_trunk) {
-
-            trunk = _trunk;
-
-            init();
-            render();
-
-        });
-        var loader = new THREE.STLLoader();
-        loader.addEventListener('load', function (event) {
-
-            var geometry = event.content;
-            var material = new THREE.MeshPhongMaterial({
-                ambient: 0xff5533,
-                color: 0xff5533,
-                specular: 0x111111,
-                shininess: 200
-            });
-            var mesh = new THREE.Mesh(geometry, material);
-
-            mesh.position.set(0, -0.25, 0.6);
-            mesh.rotation.set(0, -Math.PI / 2, 0);
-            mesh.scale.set(0.5, 0.5, 0.5);
-
-            mesh.castShadow = true;
-            mesh.receiveShadow = true;
-
-            scene.add(mesh);
-
-        });
-        loader.load('./models/stl/ascii/slotted_disk.stl');
-
-
-        function createMaterial(name) {
-            // console.log( name );
-            // var mat = new THREE.MeshPhongMaterial({
-            // 	color: 0xaaaaaa,
-            // 	shininess: 20
-
-            // });
-            // return mat;
-            return null;
-        }
-
+        init();
+        animate();
 
         function init() {
 
             container = document.createElement('div');
             document.body.appendChild(container);
 
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-            camera.position.set(70, 50, -100);
+            camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 15);
+            camera.position.set(3, 0.15, 3);
 
-            controls = new THREE.OrbitControls(camera);
+            cameraTarget = new THREE.Vector3(0, -0.25, 0);
 
             scene = new THREE.Scene();
+            scene.fog = new THREE.Fog(0x72645b, 2, 15);
 
 
-            // Add the AWD SCENE
+            // Ground
 
-            scene.add(trunk);
+            var plane = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.MeshPhongMaterial({
+                ambient: 0x999999,
+                color: 0x999999,
+                specular: 0x101010
+            }));
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = -0.5;
+            scene.add(plane);
+
+            plane.receiveShadow = true;
+
+
+            // ASCII file
+
+            var loader = new THREE.STLLoader();
+            loader.addEventListener('load', function (event) {
+
+                var geometry = event.content;
+                var material = new THREE.MeshPhongMaterial({
+                    ambient: 0xff5533,
+                    color: 0xff5533,
+                    specular: 0x111111,
+                    shininess: 200
+                });
+                var mesh = new THREE.Mesh(geometry, material);
+
+                mesh.position.set(0, -0.25, 0.6);
+                mesh.rotation.set(0, -Math.PI / 2, 0);
+                mesh.scale.set(0.5, 0.5, 0.5);
+
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+
+                scene.add(mesh);
+                console.log(mesh);
+            });
+            loader.load('stlFiles/slotted_disk.stl');
 
 
             // Lights
 
-            scene.add(new THREE.AmbientLight(0x606060));
+            scene.add(new THREE.AmbientLight(0x777777));
 
-            var directionalLight = new THREE.DirectionalLight( /*Math.random() * 0xffffff*/ 0xeeeeee);
-            directionalLight.position.set(.2, -1, .2);
-            directionalLight.position.normalize();
-            scene.add(directionalLight);
+            addShadowedLight(1, 1, 1, 0xffffff, 1.35);
+            addShadowedLight(0.5, 1, -1, 0xffaa00, 1);
 
-            pointLight = new THREE.PointLight(0xffffff, .6);
-            scene.add(pointLight);
+            // renderer
 
-            renderer = new THREE.WebGLRenderer();
+            renderer = new THREE.WebGLRenderer({
+                antialias: true
+            });
             renderer.setSize(window.innerWidth, window.innerHeight);
 
+            renderer.setClearColor(scene.fog.color, 1);
+
+            renderer.gammaInput = true;
+            renderer.gammaOutput = true;
+
+            renderer.shadowMapEnabled = true;
+            renderer.shadowMapCullFace = THREE.CullFaceBack;
+
             container.appendChild(renderer.domElement);
+
+            // stats
 
             stats = new Stats();
             stats.domElement.style.position = 'absolute';
@@ -158,6 +157,32 @@
 
         }
 
+        function addShadowedLight(x, y, z, color, intensity) {
+
+            var directionalLight = new THREE.DirectionalLight(color, intensity);
+            directionalLight.position.set(x, y, z)
+            scene.add(directionalLight);
+
+            directionalLight.castShadow = true;
+            // directionalLight.shadowCameraVisible = true;
+
+            var d = 1;
+            directionalLight.shadowCameraLeft = -d;
+            directionalLight.shadowCameraRight = d;
+            directionalLight.shadowCameraTop = d;
+            directionalLight.shadowCameraBottom = -d;
+
+            directionalLight.shadowCameraNear = 1;
+            directionalLight.shadowCameraFar = 4;
+
+            directionalLight.shadowMapWidth = 1024;
+            directionalLight.shadowMapHeight = 1024;
+
+            directionalLight.shadowBias = -0.005;
+            directionalLight.shadowDarkness = 0.15;
+
+        }
+
         function onWindowResize() {
 
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -167,21 +192,25 @@
 
         }
 
+        function animate() {
 
+            requestAnimationFrame(animate);
+
+            render();
+            stats.update();
+
+        }
 
         function render() {
 
-            requestAnimationFrame(render);
-
             var timer = Date.now() * 0.0005;
 
-            pointLight.position.x = Math.sin(timer * 4) * 3000;
-            pointLight.position.y = 600
-            pointLight.position.z = Math.cos(timer * 4) * 3000;
+            camera.position.x = Math.cos(timer) * 3;
+            camera.position.z = Math.sin(timer) * 3;
+
+            camera.lookAt(cameraTarget);
 
             renderer.render(scene, camera);
-
-            stats.update();
 
         }
     </script>
