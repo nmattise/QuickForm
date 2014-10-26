@@ -129,7 +129,6 @@ function createSTL(points, height, buildingName) {
         facets: facets
     };
     var buildingSTL = stl.fromObject(stlObj);
-    return buildingSTL;
     fs.writeFileSync("stlFiles/" + buildingName + '.stl', buildingSTL);
 }
 
