@@ -42,11 +42,11 @@ function polygonArea(coords) {
     return area / 2;
 }
 
-var app = angular.module('bldr', ['google-maps', 'ngAutocomplete']);
+var app = angular.module('bldr', ['uiGmapgoogle-maps']);
 
 
-app.controller('bldrController', ['$scope',
-    function ($scope) {
+app.controller('bldrController', ['$scope', 'uiGmapGoogleMapApi',
+    function ($scope, uiGmapGoogleMapApi) {
 
         $scope.building;
         $scope.clickedMarker = [];
@@ -54,10 +54,10 @@ app.controller('bldrController', ['$scope',
 
         $scope.map = {
             center: {
-                latitude: $scope.building.address.details.geometry.location.k,
-                longitude: $scope.building.address.details.geometry.location.B
+                latitude: 38.989936,
+                longitude: -76.942777
             },
-            zoom: 17,
+            zoom: 15,
             bounds: {},
             clickedMarker: {
                 id: 0,
@@ -148,4 +148,15 @@ app.controller('bldrController', ['$scope',
             $scope.building = {};
             $scope.clickedMarker = [];
         };
+        uiGmapGoogleMapApi.then(function (maps) {
+
+        });
 }]);
+
+app.config(function (uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        //    key: 'your api key',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
+})
