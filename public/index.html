@@ -17,7 +17,6 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     <script src="libs/lodash/dist/lodash.underscore.min.js"></script>
     <script src="libs/angular-google-maps/dist/angular-google-maps.min.js"></script>
-    <script src="libs/ngAutocomplete/src/ngAutocomplete.js"></script>
     <!--Angular App Files-->
     <script src="js/app.js"></script>
 
@@ -102,16 +101,7 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Building Height</label>
-                                    <div class=" col-sm-9">
-                                        <div class="input-group">
-                                            <input type="number" min="0" step="0.1" class="form-control" ng-model="building.height">
-                                            <span class="input-group-addon">m</span>
-                                        </div>
-                                    </div>
 
-                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Number of Floors</label>
                                     <div class=" col-sm-9">
@@ -132,16 +122,7 @@
                                     </div>
 
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Building Orientation</label>
-                                    <div class=" col-sm-9">
-                                        <div class="input-group">
-                                            <input type="range" min="0" max="360" step="1" class="form-control" ng-model="building.orientation">
-                                            <span class="input-group-addon">{{building.orientation}}&deg;</span>
-                                        </div>
-                                    </div>
 
-                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Window To Wall Ratio</label>
                                     <div class=" col-sm-9">
@@ -280,11 +261,12 @@
                         <h3 class="panel-title">Map</h3>
                     </div>
                     <div class="panel-body">
-                        <google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
+                        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+                        <!--<google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
 
-                            <marker ng-repeat="m in clickedMarker track by m.id" coords="m.coords" idKey="m.id"></marker>
-                            <polygon static="true" ng-repeat="b in buildings" path="b.polygon.path" stroke="b.polygon.stroke" visible="b.polygon.visible" geodesic="b.polygon.geodesic" fill="b.polygon.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
-                        </google-map>
+    <marker ng-repeat="m in clickedMarker track by m.id" coords="m.coords" idKey="m.id"></marker>
+    <polygon static="true" ng-repeat="b in buildings" path="b.polygon.path" stroke="b.polygon.stroke" visible="b.polygon.visible" geodesic="b.polygon.geodesic" fill="b.polygon.fill" fit="false" editable="b.polygon.editable" draggable="b.polygon.draggable"></polygon>
+</google-map>-->
                     </div>
                 </div>
             </div>
