@@ -113,9 +113,9 @@
                                     <td>id#</td>
                                     <td>Building Name</td>
                                     <td>Building Shape</td>
-                                    <td>Building Area</td>
+
                                     <td>Building Height</td>
-                                    <td>3D Model</td>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -123,13 +123,15 @@
                                     <td>{{building.id}}</td>
                                     <td>{{building.name}}</td>
                                     <td>{{building.buildingShape}}</td>
-                                    <td>{{building.id}} m&sup2;</td>
+
                                     <td>{{building.buildingHeight}} m</td>
-                                    <td>{{building.buildingHeight}}</td>
+
+                                    <td>
+                                        <button class="btn" ng-click="removeBuilding(building)">Remove</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        {{polygons}}
                     </div>
                 </div>
             </div>

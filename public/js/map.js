@@ -107,6 +107,11 @@ app.controller('mapController', ['$scope', '$http',
             $scope.polygons[$scope.polygons.length - 1].editable = false;
             $scope.polygons[$scope.polygons.length - 1].static = true;
         };
+        $scope.removeBuilding = function (building) {
+            var id = building.id;
+            console.log(id);
+            $scope.polygons[id - 1] = [];
+        };
         $scope.build3D = function (buildingShape) {
 
             //Create Cartesian Coorinates
@@ -179,7 +184,7 @@ app.controller('mapController', ['$scope', '$http',
                         var points = [pt1, pt2, pt3, pt4];
 
                         var polygon = {
-                            id: $scope.polygons.length + 1,
+                            id: $scope.polygons.length + 1 || 0,
                             name: $scope.buildingName,
                             numberFloors: $scope.numberFloors,
                             floorHeight: $scope.floorHeight,
