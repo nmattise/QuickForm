@@ -16,10 +16,9 @@ function createPlane(points) {
     }];
     return facets;
 }
-
 //Prototype to find side length of array of points
 Array.prototype.findLengths = function () {
-    var sideLengths = [];
+    var sideLengths = new Array;
     for (var i = 1; i < this.length; i++) {
         var d = distanceFormula(this[i - 1][0], this[i - 1][1], this[i][0], this[i][1]);
         sideLengths.push(d);
@@ -35,22 +34,51 @@ var rectangle = [[-5, -5], [5, -5], [5, 5], [-5, 5]];
 //Get Longest Building Side
 var lengths = rectangle.findLengths();
 var maxLength = Math.max.apply(null, lengths);
-console.log(maxLength);
+//console.log(maxLength);
 
 //Create Outer Bound Array
-var boundDist = 10 * maxLength;
+var distanceRatio = 10;
+var boundDist = distanceRatio * maxLength;
 var groundBounds = [[-boundDist, -boundDist], [boundDist, -boundDist], [boundDist, boundDist], [-boundDist, boundDist]];
-console.log(groundBounds);
+//console.log(groundBounds);
 
 //Create Grid for Ground STL
+var largerGrid = new Array;
+var yCount = 1;
+var startX = groundBounds[0][0],
+    startY = groundBounds[0][1];
+var xPts = new Array;
+for (var x = 0; x <= 20; x++) {
+    xPts.push(startX + x * distanceRatio)
+}
+//console.log(xPts);
+var yPts = new Array;
+for (var y = 0; y <= 20; y++) {
+    yPts.push(startY + y * distanceRatio)
+}
+//console.log(yPts);
+
+for (var i = 1; i < xPts.length; i++) {
+    var pt1 = [xPts[i - 1], yPts[i - 1]],
+        pt2 = [xPts[i], yPts[i - 1]],
+        pt3 = [xPts[i], yPts[i]],
+        pt4 = [xPts[i - 1], yPts[i]];
+    largerGrid.push([pt1, pt2, pt3, pt4])
+}
+console.log(largerGrid.length);
+
 
 //Create Facets
-var facets = createPlane(groundBounds);
+//var facets = createPlane(groundBounds);
+//console.log(facets);
+var facets = new Array;
+for (var i = 0; i < largerGrid.length; i++) {
+    facets.push(createPlane(largerGrid[i]));
+}
 
-console.log(facets);
 var stlObj = {
     description: "ground",
-    facets: facets
+    facets: facets[0]
 };
 var groundSTL = stl.fromObject(stlObj);
 
