@@ -57,14 +57,16 @@ for (var y = 0; y <= 20; y++) {
     yPts.push(startY + y * distanceRatio)
 }
 //console.log(yPts);
-
-for (var i = 1; i < xPts.length; i++) {
-    var pt1 = [xPts[i - 1], yPts[i - 1]],
-        pt2 = [xPts[i], yPts[i - 1]],
-        pt3 = [xPts[i], yPts[i]],
-        pt4 = [xPts[i - 1], yPts[i]];
-    largerGrid.push([pt1, pt2, pt3, pt4])
+for (var y = 1; y < yPts.length; y++) {
+    for (var i = 1; i < xPts.length; i++) {
+        var pt1 = [xPts[i - 1], yPts[y - 1]],
+            pt2 = [xPts[i], yPts[y - 1]],
+            pt3 = [xPts[i], yPts[y]],
+            pt4 = [xPts[i - 1], yPts[y]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    }
 }
+
 console.log(largerGrid.length);
 
 
