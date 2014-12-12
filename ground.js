@@ -116,4 +116,4 @@ var stlObj = {
     facets: facets
 };
 var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/ground2.stl", groundSTLAll);
+fs.writeFileSync("stlFiles/ground2.stl", buildingSTL);
