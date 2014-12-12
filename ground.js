@@ -113,7 +113,7 @@ rectangle.forEach(function (pt) {
     buildingHole.push(new poly2tri.Point(pt[0], pt[1]));
 });
 
-var triangles = swctx.triangulate().addHole(buildingHole).getTriangles();
+var triangles = swctx.addHole(buildingHole).getTriangles();
 triangles.forEach(function (tri) {
     var verts = [];
     tri.points_.reverse();
