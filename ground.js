@@ -80,7 +80,40 @@ for (var i = 0; i < largerGrid.length; i++) {
     groundSTLAll += groundSTL;
 }
 
-
-
 //Write STL File
 fs.writeFileSync("stlFiles/ground.stl", groundSTLAll);
+
+//Using Poly2Tri
+var rectangle = [[-5, -5], [5, -5], [5, 5], [-5, 5]];
+//Get Longest Building Side
+var lengths = rectangle.findLengths();
+var maxLength = Math.max.apply(null, lengths);
+//console.log(maxLength);
+
+//Create Outer Bound Array
+var distanceRatio = 10;
+var boundDist = distanceRatio * maxLength;
+var groundBounds = [[-boundDist, -boundDist], [boundDist, -boundDist], [boundDist, boundDist], [-boundDist, boundDist]];
+
+var contour = new Array;
+var facets3 = new Array;
+groundBounds.forEach(function (bound) {
+    contour.push(new poly2tri.Point(bound[0], bound[1]));
+})
+
+var swctx = new poly2tri.SweepContext(contour);
+var triangles = swctx.getTriangles();
+triangles.forEach(function (tri) {
+    var verts = [];
+    tri.points_.reverse();
+    tri.points_.forEach(function (points) {
+        verts.push([points.x, points.y, 0]);
+    });
+    facets3.push(createFacet(verts));
+});
+var stlObj = {
+    description: "ground",
+    facets: facets
+};
+var buildingSTL = stl.fromObject(stlObj);
+fs.writeFileSync("stlFiles/ground2.stl", groundSTLAll);
