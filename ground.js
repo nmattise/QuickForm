@@ -71,16 +71,18 @@ console.log(largerGrid.length);
 //Create Facets
 //var facets = createPlane(groundBounds);
 //console.log(facets);
-var facets = new Array;
+var groundSTLAll = '';
 for (var i = 0; i < largerGrid.length; i++) {
-    facets.push(createPlane(largerGrid[i]));
+    var facets = (createPlane(largerGrid[i]));
+    var stlObj = {
+        description: "ground",
+        facets: facets
+    };
+    var groundSTL = stl.fromObject(stlObj);
+    groundSTLAll += groundSTL;
 }
 
-var stlObj = {
-    description: "ground",
-    facets: facets[0]
-};
-var groundSTL = stl.fromObject(stlObj);
+
 
 //Write STL File
-fs.writeFileSync("stlFiles/ground.stl", groundSTL);
+fs.writeFileSync("stlFiles/ground.stl", groundSTLAll);
