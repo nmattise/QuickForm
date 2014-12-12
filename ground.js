@@ -6,9 +6,9 @@ function distanceFormula(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 }
 
-function createPlane(p1, p2) {
-    var tri1 = [[p1[0], p1[1], 0], [p2[0], p2[1], 0], [p2[0], p2[1], 0]];
-    var tri2 = [[p1[0], p1[1], 0], [p2[0], p2[1], 0], [p1[0], p1[1], 0]];
+function createPlane(points) {
+    var tri1 = [[points[0][0], points[0][1], 0], [points[1][0], points[1][1], 0], [points[2][0], points[2][1], 0]];
+    var tri2 = [[points[0][0], points[0][1], 0], [points[2][0], points[2][1], 0], [points[3][0], points[3][1], 0]];
     var facets = [{
         verts: tri1
     }, {
@@ -45,15 +45,9 @@ console.log(groundBounds);
 //Create Grid for Ground STL
 
 //Create Facets
-var facets = [];
-for (var i = 1; i < groundBounds.length; i++) {
-    var tri = createPlane(groundBounds[i - 1], groundBounds[i]);
-    facets.push(tri[0]);
-    facets.push(tri[1]);
-}
-var tri = createPlane(groundBounds[groundBounds.length - 1], groundBounds[0]);
-facets.push(tri[0]);
-facets.push(tri[1]);
+var facets = createPlane(groundBounds);
+
+console.log(facets);
 var stlObj = {
     description: "ground",
     facets: facets
