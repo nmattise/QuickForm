@@ -16,6 +16,12 @@ function createPlane(points) {
     }];
     return facets;
 }
+
+function createFacet(verts) {
+    return {
+        verts: verts
+    }
+}
 //Prototype to find side length of array of points
 Array.prototype.findLengths = function () {
     var sideLengths = new Array;
@@ -102,18 +108,29 @@ groundBounds.forEach(function (bound) {
 })
 
 var swctx = new poly2tri.SweepContext(contour);
-var triangles = swctx.getTriangles();
+var buildingHole = new Array;
+rectangle.forEach(function (pt) {
+    buildingHole.push(new poly2tri.Point(pt[0], pt[1]));
+});
+
+var triangles = swctx.triangulate().addHole(buildingHole).getTriangles();
 triangles.forEach(function (tri) {
     var verts = [];
     tri.points_.reverse();
     tri.points_.forEach(function (points) {
         verts.push([points.x, points.y, 0]);
     });
-    facets3.push(createFacet(verts));
+    facets.push(createFacet(verts));
 });
+var buildingHole = new Array;
+rectangle.forEach(function (pt) {
+    buildingHole.push(new poly2tri.Point(pt[0], pt[1]));
+});
+
 var stlObj = {
     description: "ground",
     facets: facets
 };
+
 var buildingSTL = stl.fromObject(stlObj);
 fs.writeFileSync("stlFiles/ground2.stl", buildingSTL);
