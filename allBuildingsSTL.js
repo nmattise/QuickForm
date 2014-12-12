@@ -149,7 +149,6 @@ function allBuildingsSTL(buildings) {
     var centerLat = lat / count,
         centerLng = lng / count,
         buildingsSTL = '';
-    console.log(centerLng);
     var origin = new latLon(centerLat, centerLng);
     buildings.forEach(function (building) {
         var coords = [];
