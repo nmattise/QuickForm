@@ -8,20 +8,18 @@ function createFacet(verts) {
     }
 }
 var contour = [
+     new poly2tri.Point(-100, -100),
+     new poly2tri.Point(100, -100),
      new poly2tri.Point(100, 100),
-     new poly2tri.Point(100, 300),
-     new poly2tri.Point(300, 300),
-     new poly2tri.Point(300, 100)
+     new poly2tri.Point(-100, 100)
  ];
 var swctx = new poly2tri.SweepContext(contour);
+var pt1 = new poly2tri.Point(-50, -50),
+    pt2 = new poly2tri.Point(50, -50),
+    pt3 = new poly2tri.Point(50, 50),
+    pt4 = new poly2tri.Point(-50, 50);
 
-var holes = [
-     new poly2tri.Point(200, 200),
-     new poly2tri.Point(200, 250),
-     new poly2tri.Point(250, 250)
- ];
-var point = new poly2tri.Point(150, 150);
-swctx.addPoint(point);
+swctx.addPoints([pt1, pt2, pt3, pt4]);
 var triangles = swctx.triangulate().getTriangles();
 var facets = new Array;
 triangles.forEach(function (tri) {
