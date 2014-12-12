@@ -82,7 +82,6 @@ function createPlane(p1, p2, h) {
 
 function createSTL(points, height, buildingName) {
     //Add facets
-    console.log(points);
     var facets = [];
 
     //Walls
@@ -158,9 +157,11 @@ function allBuildingsSTL(buildings) {
         };
         building.coords = coords;
     });
+    var fileName = new String;
     buildings.forEach(function (building) {
         var buildingSTL = createSTL(building.coords, building.buildingHeight, building.name, buildingsSTL);
         buildingsSTL += '\n' + buildingSTL;
+        fileName += building.name + '_'
     });
-    fs.writeFileSync("stlFiles/multiBuildings.stl", buildingsSTL);
+    fs.writeFileSync("stlFiles/" + fileName + ".stl", buildingsSTL);
 }

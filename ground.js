@@ -51,12 +51,10 @@ var xPts = new Array;
 for (var x = 0; x <= 20; x++) {
     xPts.push(startX + x * distanceRatio)
 }
-//console.log(xPts);
 var yPts = new Array;
 for (var y = 0; y <= 20; y++) {
     yPts.push(startY + y * distanceRatio)
 }
-//console.log(yPts);
 for (var y = 1; y < yPts.length; y++) {
     for (var i = 1; i < xPts.length; i++) {
         var pt1 = [xPts[i - 1], yPts[y - 1]],
@@ -66,8 +64,6 @@ for (var y = 1; y < yPts.length; y++) {
         largerGrid.push([pt1, pt2, pt3, pt4])
     }
 }
-
-console.log(largerGrid.length);
 
 
 //Create Facets

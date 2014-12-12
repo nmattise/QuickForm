@@ -16,12 +16,10 @@ app.get('*', function (req, res) {
 });
 
 app.post('/createOneSTL', function (req, res) {
-    console.log(req.body);
     createSTL(req.body.points, req.body.buildingHeight, req.body.buildingName);
     res.send("Stl File Created");
 });
 app.post('/createAllBuildingsSTL', function (req, res) {
-    console.log(req.body.buildings);
     createAllBuildingsSTL(req.body.buildings);
     res.send("Stl File Created");
 });
