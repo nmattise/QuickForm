@@ -22,7 +22,7 @@ var holes = [
  ];
 var point = new poly2tri.Point(150, 150);
 swctx.addPoint(point);
-var triangles = swctx.addHoles(holes).triangulate().getTriangles();
+var triangles = swctx.triangulate().getTriangles();
 var facets = new Array;
 triangles.forEach(function (tri) {
     var verts = [];
