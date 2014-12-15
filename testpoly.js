@@ -9,46 +9,36 @@ function createFacet(verts) {
     }
 }
 
-var contour = [
-     new poly2tri.Point(-100, -100),
-     new poly2tri.Point(-100, 100),
-     new poly2tri.Point(100, 100),
-     new poly2tri.Point(100, -100)
- ];
-var swctx = new poly2tri.SweepContext(contour);
-
-var point = new poly2tri.Point(-10, -10);
-swctx.addPoint(point);
-var point = new poly2tri.Point(-10, 10);
-swctx.addPoint(point);
-var point = new poly2tri.Point(10, 10);
-swctx.addPoint(point);
-var point = new poly2tri.Point(10, -10);
-swctx.addPoint(point);
-
-var point = new poly2tri.Point(-50, -50);
-swctx.addPoint(point);
-var point = new poly2tri.Point(-50, 50);
-swctx.addPoint(point);
-var point = new poly2tri.Point(50, 50);
-swctx.addPoint(point);
-var point = new poly2tri.Point(50, -50);
-swctx.addPoint(point);
-
-
-swctx.triangulate();
-var triangles = swctx.getTriangles();
-var facets = new Array;
-triangles.forEach(function (t) {
-    var verts = [];
-    t.getPoints().forEach(function (p) {
-        verts.push([p.x, p.y, 0]);
+function createGround(bldgFootprint, distanceRatio, callback) {
+    var contour = new Array,
+        facets = new Array,
+        groundShape,
+        triangles,
+        verts = new Array,
+        stlObj = new Object,
+        buildingSTL;
+    for (var i = 0; i < bldgFootprint.length; i++) {
+        contour.push(new poly2tri.Point(bldgFootprint[i][0] * distanceRatio, bldgFootprint[i][1] * distanceRatio));
+    }
+    groundShape = new poly2tri.SweepContext(contour);
+    groundShape.triangulate();
+    triangles = groundShape.getTriangles();
+    triangles.forEach(function (t) {
+        verts = [];
+        t.getPoints().forEach(function (p) {
+            verts.push([p.x, p.y, 0]);
+        });
+        facets.push(createFacet(verts));
     });
-    facets.push(createFacet(verts));
-});
-var stlObj = {
-    description: "ground",
-    facets: facets
-};
-var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/polyGround.stl", buildingSTL);
+    stlObj = {
+        description: "ground",
+        facets: facets
+    };
+    buildingSTL = stl.fromObject(stlObj);
+    callback(buildingSTL);
+}
+
+var rectangle = [[-5, -5], [5, -5], [5, 5], [-5, 5]];
+createGround(rectangle, 15, function (buildingSTL) {
+    fs.writeFileSync("stlFiles/polyGround.stl", buildingSTL);
+})
