@@ -23,7 +23,7 @@ function createGround(bldgFootprint, distanceRatio, callback) {
     }
     groundShape = new poly2tri.SweepContext(contour);
 
-    for (var j = 0; j < distanceRatio; j++) {
+    for (var j = 0; j < 50; j++) {
         for (var i = 0; i < bldgFootprint.length; i++) {
             if (bldgFootprint[i][1] < 0) {
                 point[1] = bldgFootprint[i][1] - j/distanceRatio * distanceRatio;
