@@ -26,6 +26,16 @@ swctx.addPoint(point);
 var point = new poly2tri.Point(10, -10);
 swctx.addPoint(point);
 
+var point = new poly2tri.Point(-50, -50);
+swctx.addPoint(point);
+var point = new poly2tri.Point(-50, 50);
+swctx.addPoint(point);
+var point = new poly2tri.Point(50, 50);
+swctx.addPoint(point);
+var point = new poly2tri.Point(50, -50);
+swctx.addPoint(point);
+
+
 swctx.triangulate();
 var triangles = swctx.getTriangles();
 var facets = new Array;
