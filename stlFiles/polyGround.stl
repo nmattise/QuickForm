@@ -2,7 +2,7 @@ solid ground
   facet normal 0e+0 0e+0 1e+0
     outer loop
       vertex -7.5e+1 7.5e+1 0e+0
-      vertex 7.5e+1 -7.5e+1 0e+0
+      vertex -1e+1 1e+1 0e+0
       vertex 7.5e+1 7.5e+1 0e+0
     endloop
   endfacet
@@ -10,6 +10,62 @@ solid ground
     outer loop
       vertex -7.5e+1 7.5e+1 0e+0
       vertex -7.5e+1 -7.5e+1 0e+0
+      vertex -1e+1 1e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex -7.5e+1 -7.5e+1 0e+0
+      vertex -1e+1 -1e+1 0e+0
+      vertex -1e+1 1e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex -1e+1 -1e+1 0e+0
+      vertex -7.5e+1 -7.5e+1 0e+0
+      vertex 7.5e+1 -7.5e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex 1e+1 -1e+1 0e+0
+      vertex -1e+1 -1e+1 0e+0
+      vertex 7.5e+1 -7.5e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex -1e+1 1e+1 0e+0
+      vertex -1e+1 -1e+1 0e+0
+      vertex 1e+1 -1e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex -1e+1 1e+1 0e+0
+      vertex 1e+1 -1e+1 0e+0
+      vertex 1e+1 1e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex -1e+1 1e+1 0e+0
+      vertex 1e+1 1e+1 0e+0
+      vertex 7.5e+1 7.5e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex 1e+1 1e+1 0e+0
+      vertex 7.5e+1 -7.5e+1 0e+0
+      vertex 7.5e+1 7.5e+1 0e+0
+    endloop
+  endfacet
+  facet normal 0e+0 0e+0 1e+0
+    outer loop
+      vertex 1e+1 1e+1 0e+0
+      vertex 1e+1 -1e+1 0e+0
       vertex 7.5e+1 -7.5e+1 0e+0
     endloop
   endfacet
