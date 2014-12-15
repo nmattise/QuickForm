@@ -1,0 +1,3290 @@
+solid ground1@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -33.2816 0.0
+   	   vertex -52.3979 -33.2816 0.0
+   	   vertex -52.3979 -52.9064 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -33.2816 0.0
+   	   vertex -52.3979 -52.9064 0.0
+   	   vertex -33.2653 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_1
+solid ground1@GN1_2
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -13.6568 0.0
+   	   vertex -52.3979 -13.6568 0.0
+   	   vertex -52.3979 -33.2816 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -13.6568 0.0
+   	   vertex -52.3979 -33.2816 0.0
+   	   vertex -33.2653 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_2
+solid ground1@GN1_3
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 5.968 0.0
+   	   vertex -52.3979 5.968 0.0
+   	   vertex -52.3979 -13.6568 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 5.968 0.0
+   	   vertex -52.3979 -13.6568 0.0
+   	   vertex -33.2653 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_3
+solid ground1@GN1_4
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 15.7804 0.0
+   	   vertex -33.2653 25.5928 0.0
+   	   vertex -52.3979 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_4
+solid ground1@GN1_5
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 5.968 0.0
+   	   vertex -33.2653 5.968 0.0
+   	   vertex -33.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_5
+solid ground1@GN1_6
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 25.5928 0.0
+   	   vertex -52.3979 5.968 0.0
+   	   vertex -33.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_6
+solid ground1@GN1_7
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 45.2176 0.0
+   	   vertex -52.3979 45.2176 0.0
+   	   vertex -52.3979 25.5928 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 45.2176 0.0
+   	   vertex -52.3979 25.5928 0.0
+   	   vertex -33.2653 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_7
+solid ground1@GN1_8
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 64.8424 0.0
+   	   vertex -52.3979 64.8424 0.0
+   	   vertex -52.3979 45.2176 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 64.8424 0.0
+   	   vertex -52.3979 45.2176 0.0
+   	   vertex -33.2653 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_8
+solid ground1@GN1_9
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 84.4672 0.0
+   	   vertex -52.3979 84.4672 0.0
+   	   vertex -52.3979 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 84.4672 0.0
+   	   vertex -52.3979 64.8424 0.0
+   	   vertex -33.2653 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_9
+solid ground1@GN1_10
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 104.092 0.0
+   	   vertex -52.3979 104.092 0.0
+   	   vertex -52.3979 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 104.092 0.0
+   	   vertex -52.3979 84.4672 0.0
+   	   vertex -33.2653 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_10
+solid ground1@GN1_11
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 123.717 0.0
+   	   vertex -52.3979 123.717 0.0
+   	   vertex -52.3979 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 123.717 0.0
+   	   vertex -52.3979 104.092 0.0
+   	   vertex -33.2653 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_11
+solid ground1@GN1_12
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 143.342 0.0
+   	   vertex -52.3979 143.342 0.0
+   	   vertex -52.3979 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 143.342 0.0
+   	   vertex -52.3979 123.717 0.0
+   	   vertex -33.2653 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_12
+solid ground1@GN1_13
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 162.966 0.0
+   	   vertex -52.3979 162.966 0.0
+   	   vertex -52.3979 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 162.966 0.0
+   	   vertex -52.3979 143.342 0.0
+   	   vertex -33.2653 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_13
+solid ground1@GN1_14
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -33.2816 0.0
+   	   vertex -33.2653 -33.2816 0.0
+   	   vertex -33.2653 -52.9064 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -33.2816 0.0
+   	   vertex -33.2653 -52.9064 0.0
+   	   vertex -14.1327 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_14
+solid ground1@GN1_15
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -23.4692 0.0
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -33.2653 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_15
+solid ground1@GN1_16
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -33.2816 0.0
+   	   vertex -14.1327 -33.2816 0.0
+   	   vertex -14.1327 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_16
+solid ground1@GN1_17
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -13.6568 0.0
+   	   vertex -33.2653 -33.2816 0.0
+   	   vertex -14.1327 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_17
+solid ground1@GN1_18
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 25.5928 0.0
+   	   vertex -23.6990 25.5928 0.0
+   	   vertex -23.6990 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 25.5928 0.0
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -14.1327 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_18
+solid ground1@GN1_19
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 25.5928 0.0
+   	   vertex -33.2653 25.5928 0.0
+   	   vertex -33.2653 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 25.5928 0.0
+   	   vertex -33.2653 15.7804 0.0
+   	   vertex -23.6990 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_19
+solid ground1@GN1_20
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -33.2653 15.7804 0.0
+   	   vertex -33.2653 5.968 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -33.2653 5.968 0.0
+   	   vertex -23.6990 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_20
+solid ground1@GN1_21
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 25.5928 0.0
+   	   vertex -14.1327 25.5928 0.0
+   	   vertex -14.1327 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_21
+solid ground1@GN1_22
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 35.4052 0.0
+   	   vertex -14.1327 45.2176 0.0
+   	   vertex -33.2653 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_22
+solid ground1@GN1_23
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 45.2176 0.0
+   	   vertex -33.2653 25.5928 0.0
+   	   vertex -23.6990 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_23
+solid ground1@GN1_24
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -23.6990 25.5928 0.0
+   	   vertex -14.1327 35.4052 0.0
+   	   vertex -33.2653 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_24
+solid ground1@GN1_25
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 64.8424 0.0
+   	   vertex -33.2653 64.8424 0.0
+   	   vertex -33.2653 45.2176 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 64.8424 0.0
+   	   vertex -33.2653 45.2176 0.0
+   	   vertex -14.1327 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_25
+solid ground1@GN1_26
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 84.4672 0.0
+   	   vertex -33.2653 84.4672 0.0
+   	   vertex -33.2653 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 84.4672 0.0
+   	   vertex -33.2653 64.8424 0.0
+   	   vertex -14.1327 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_26
+solid ground1@GN1_27
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 104.092 0.0
+   	   vertex -33.2653 104.092 0.0
+   	   vertex -33.2653 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 104.092 0.0
+   	   vertex -33.2653 84.4672 0.0
+   	   vertex -14.1327 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_27
+solid ground1@GN1_28
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 123.717 0.0
+   	   vertex -33.2653 123.717 0.0
+   	   vertex -33.2653 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 123.717 0.0
+   	   vertex -33.2653 104.092 0.0
+   	   vertex -14.1327 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_28
+solid ground1@GN1_29
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 143.342 0.0
+   	   vertex -33.2653 143.342 0.0
+   	   vertex -33.2653 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 143.342 0.0
+   	   vertex -33.2653 123.717 0.0
+   	   vertex -14.1327 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_29
+solid ground1@GN1_30
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 162.966 0.0
+   	   vertex -33.2653 162.966 0.0
+   	   vertex -33.2653 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 162.966 0.0
+   	   vertex -33.2653 143.342 0.0
+   	   vertex -14.1327 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_30
+solid ground1@GN1_31
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -33.2816 0.0
+   	   vertex -14.1327 -33.2816 0.0
+   	   vertex -14.1327 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_31
+solid ground1@GN1_32
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 -52.9064 0.0
+   	   vertex 5.0 -33.2816 0.0
+   	   vertex -4.56633 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_32
+solid ground1@GN1_33
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -52.9064 0.0
+   	   vertex 5.0 -52.9064 0.0
+   	   vertex -4.56633 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_33
+solid ground1@GN1_34
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -13.6568 0.0
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -14.1327 -23.4692 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -13.6568 0.0
+   	   vertex -14.1327 -23.4692 0.0
+   	   vertex -4.56633 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_34
+solid ground1@GN1_35
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -23.4692 0.0
+   	   vertex -14.1327 -23.4692 0.0
+   	   vertex -14.1327 -33.2816 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -23.4692 0.0
+   	   vertex -14.1327 -33.2816 0.0
+   	   vertex -4.56633 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_35
+solid ground1@GN1_36
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 -23.4692 0.0
+   	   vertex -4.56633 -23.4692 0.0
+   	   vertex -4.56633 -33.2816 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 -23.4692 0.0
+   	   vertex -4.56633 -33.2816 0.0
+   	   vertex 5.0 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_36
+solid ground1@GN1_37
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 -8.7506 0.0
+   	   vertex -4.56633 -3.8444 0.0
+   	   vertex -14.1327 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_37
+solid ground1@GN1_38
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -4.56633 -13.6568 0.0
+   	   vertex -4.56633 -8.7506 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_38
+solid ground1@GN1_39
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -3.8444 0.0
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -4.56633 -8.7506 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_39
+solid ground1@GN1_40
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 0.216837 -3.8444 0.0
+   	   vertex -4.56633 -3.8444 0.0
+   	   vertex -4.56633 -8.7506 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 0.216837 -3.8444 0.0
+   	   vertex -4.56633 -8.7506 0.0
+   	   vertex 0.216837 -8.7506 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_40
+solid ground1@GN1_41
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 25.5928 0.0
+   	   vertex -14.1327 25.5928 0.0
+   	   vertex -14.1327 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 25.5928 0.0
+   	   vertex -14.1327 15.7804 0.0
+   	   vertex -4.56633 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_41
+solid ground1@GN1_42
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 45.2176 0.0
+   	   vertex -4.56633 45.2176 0.0
+   	   vertex -4.56633 35.4052 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 45.2176 0.0
+   	   vertex -4.56633 35.4052 0.0
+   	   vertex 5.0 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_42
+solid ground1@GN1_43
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 45.2176 0.0
+   	   vertex -14.1327 45.2176 0.0
+   	   vertex -14.1327 35.4052 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 45.2176 0.0
+   	   vertex -14.1327 35.4052 0.0
+   	   vertex -4.56633 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_43
+solid ground1@GN1_44
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 35.4052 0.0
+   	   vertex -14.1327 35.4052 0.0
+   	   vertex -14.1327 25.5928 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 35.4052 0.0
+   	   vertex -14.1327 25.5928 0.0
+   	   vertex -4.56633 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_44
+solid ground1@GN1_45
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -4.56633 45.2176 0.0
+   	   vertex 5.0 45.2176 0.0
+   	   vertex 5.0 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_45
+solid ground1@GN1_46
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 64.8424 0.0
+   	   vertex -14.1327 45.2176 0.0
+   	   vertex -4.56633 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_46
+solid ground1@GN1_47
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 64.8424 0.0
+   	   vertex -14.1327 64.8424 0.0
+   	   vertex -4.56633 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_47
+solid ground1@GN1_48
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 84.4672 0.0
+   	   vertex -14.1327 84.4672 0.0
+   	   vertex -14.1327 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 84.4672 0.0
+   	   vertex -14.1327 64.8424 0.0
+   	   vertex 5.0 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_48
+solid ground1@GN1_49
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 104.092 0.0
+   	   vertex -14.1327 104.092 0.0
+   	   vertex -14.1327 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 104.092 0.0
+   	   vertex -14.1327 84.4672 0.0
+   	   vertex 5.0 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_49
+solid ground1@GN1_50
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 123.717 0.0
+   	   vertex -14.1327 123.717 0.0
+   	   vertex -14.1327 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 123.717 0.0
+   	   vertex -14.1327 104.092 0.0
+   	   vertex 5.0 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_50
+solid ground1@GN1_51
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 143.342 0.0
+   	   vertex -14.1327 143.342 0.0
+   	   vertex -14.1327 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 143.342 0.0
+   	   vertex -14.1327 123.717 0.0
+   	   vertex 5.0 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_51
+solid ground1@GN1_52
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 162.966 0.0
+   	   vertex -14.1327 162.966 0.0
+   	   vertex -14.1327 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 162.966 0.0
+   	   vertex -14.1327 143.342 0.0
+   	   vertex 5.0 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_52
+solid ground1@GN1_53
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 14.5663 -33.2816 0.0
+   	   vertex 5.0 -33.2816 0.0
+   	   vertex 5.0 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_53
+solid ground1@GN1_54
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -52.9064 0.0
+   	   vertex 24.1327 -33.2816 0.0
+   	   vertex 14.5663 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_54
+solid ground1@GN1_55
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 5.0 -52.9064 0.0
+   	   vertex 24.1327 -52.9064 0.0
+   	   vertex 14.5663 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_55
+solid ground1@GN1_56
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -13.6568 0.0
+   	   vertex 19.3495 -13.6568 0.0
+   	   vertex 19.3495 -18.563 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -13.6568 0.0
+   	   vertex 19.3495 -18.563 0.0
+   	   vertex 24.1327 -18.563 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_56
+solid ground1@GN1_57
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 14.5663 -23.4692 0.0
+   	   vertex 19.3495 -23.4692 0.0
+   	   vertex 19.3495 -18.563 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_57
+solid ground1@GN1_58
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -18.563 0.0
+   	   vertex 19.3495 -18.563 0.0
+   	   vertex 19.3495 -23.4692 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -18.563 0.0
+   	   vertex 19.3495 -23.4692 0.0
+   	   vertex 24.1327 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_58
+solid ground1@GN1_59
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.78316 -23.4692 0.0
+   	   vertex 5.0 -23.4692 0.0
+   	   vertex 5.0 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_59
+solid ground1@GN1_60
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 14.5663 -33.2816 0.0
+   	   vertex 14.5663 -23.4692 0.0
+   	   vertex 9.78316 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_60
+solid ground1@GN1_61
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 5.0 -33.2816 0.0
+   	   vertex 14.5663 -33.2816 0.0
+   	   vertex 9.78316 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_61
+solid ground1@GN1_62
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 19.3495 -23.4692 0.0
+   	   vertex 14.5663 -23.4692 0.0
+   	   vertex 14.5663 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_62
+solid ground1@GN1_63
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -33.2816 0.0
+   	   vertex 24.1327 -23.4692 0.0
+   	   vertex 19.3495 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_63
+solid ground1@GN1_64
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 14.5663 -33.2816 0.0
+   	   vertex 24.1327 -33.2816 0.0
+   	   vertex 19.3495 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_64
+solid ground1@GN1_65
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 64.8424 0.0
+   	   vertex 5.0 64.8424 0.0
+   	   vertex 5.0 45.2176 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 64.8424 0.0
+   	   vertex 5.0 45.2176 0.0
+   	   vertex 24.1327 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_65
+solid ground1@GN1_66
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 84.4672 0.0
+   	   vertex 5.0 84.4672 0.0
+   	   vertex 5.0 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 84.4672 0.0
+   	   vertex 5.0 64.8424 0.0
+   	   vertex 24.1327 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_66
+solid ground1@GN1_67
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 104.092 0.0
+   	   vertex 5.0 104.092 0.0
+   	   vertex 5.0 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 104.092 0.0
+   	   vertex 5.0 84.4672 0.0
+   	   vertex 24.1327 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_67
+solid ground1@GN1_68
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 123.717 0.0
+   	   vertex 5.0 123.717 0.0
+   	   vertex 5.0 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 123.717 0.0
+   	   vertex 5.0 104.092 0.0
+   	   vertex 24.1327 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_68
+solid ground1@GN1_69
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 143.342 0.0
+   	   vertex 5.0 143.342 0.0
+   	   vertex 5.0 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 143.342 0.0
+   	   vertex 5.0 123.717 0.0
+   	   vertex 24.1327 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_69
+solid ground1@GN1_70
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 162.966 0.0
+   	   vertex 5.0 162.966 0.0
+   	   vertex 5.0 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 162.966 0.0
+   	   vertex 5.0 143.342 0.0
+   	   vertex 24.1327 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_70
+solid ground1@GN1_71
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -33.2816 0.0
+   	   vertex 24.1327 -33.2816 0.0
+   	   vertex 24.1327 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_71
+solid ground1@GN1_72
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -52.9064 0.0
+   	   vertex 43.2653 -33.2816 0.0
+   	   vertex 33.6990 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_72
+solid ground1@GN1_73
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -52.9064 0.0
+   	   vertex 43.2653 -52.9064 0.0
+   	   vertex 33.6990 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_73
+solid ground1@GN1_74
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -13.6568 0.0
+   	   vertex 33.6990 -13.6568 0.0
+   	   vertex 33.6990 -23.4692 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -13.6568 0.0
+   	   vertex 33.6990 -23.4692 0.0
+   	   vertex 43.2653 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_74
+solid ground1@GN1_75
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 -18.563 0.0
+   	   vertex 24.1327 -23.4692 0.0
+   	   vertex 33.6990 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_75
+solid ground1@GN1_76
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -13.6568 0.0
+   	   vertex 24.1327 -13.6568 0.0
+   	   vertex 24.1327 -18.563 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_76
+solid ground1@GN1_77
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -23.4692 0.0
+   	   vertex 33.6990 -13.6568 0.0
+   	   vertex 24.1327 -18.563 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_77
+solid ground1@GN1_78
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -23.4692 0.0
+   	   vertex 24.1327 -23.4692 0.0
+   	   vertex 24.1327 -33.2816 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -23.4692 0.0
+   	   vertex 24.1327 -33.2816 0.0
+   	   vertex 33.6990 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_78
+solid ground1@GN1_79
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -23.4692 0.0
+   	   vertex 33.6990 -23.4692 0.0
+   	   vertex 33.6990 -33.2816 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -23.4692 0.0
+   	   vertex 33.6990 -33.2816 0.0
+   	   vertex 43.2653 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_79
+solid ground1@GN1_80
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -3.8444 0.0
+   	   vertex 24.1327 -3.8444 0.0
+   	   vertex 24.1327 -13.6568 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 -3.8444 0.0
+   	   vertex 24.1327 -13.6568 0.0
+   	   vertex 33.6990 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_80
+solid ground1@GN1_81
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -3.8444 0.0
+   	   vertex 33.6990 -3.8444 0.0
+   	   vertex 33.6990 -13.6568 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -3.8444 0.0
+   	   vertex 33.6990 -13.6568 0.0
+   	   vertex 43.2653 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_81
+solid ground1@GN1_82
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 25.5928 0.0
+   	   vertex 33.6990 25.5928 0.0
+   	   vertex 33.6990 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 25.5928 0.0
+   	   vertex 33.6990 15.7804 0.0
+   	   vertex 43.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_82
+solid ground1@GN1_83
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 25.5928 0.0
+   	   vertex 24.1327 25.5928 0.0
+   	   vertex 24.1327 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 25.5928 0.0
+   	   vertex 24.1327 15.7804 0.0
+   	   vertex 33.6990 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_83
+solid ground1@GN1_84
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 33.6990 25.5928 0.0
+   	   vertex 43.2653 25.5928 0.0
+   	   vertex 43.2653 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_84
+solid ground1@GN1_85
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 45.2176 0.0
+   	   vertex 24.1327 25.5928 0.0
+   	   vertex 33.6990 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_85
+solid ground1@GN1_86
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 45.2176 0.0
+   	   vertex 24.1327 45.2176 0.0
+   	   vertex 33.6990 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_86
+solid ground1@GN1_87
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 64.8424 0.0
+   	   vertex 24.1327 64.8424 0.0
+   	   vertex 24.1327 45.2176 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 64.8424 0.0
+   	   vertex 24.1327 45.2176 0.0
+   	   vertex 43.2653 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_87
+solid ground1@GN1_88
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 84.4672 0.0
+   	   vertex 24.1327 84.4672 0.0
+   	   vertex 24.1327 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 84.4672 0.0
+   	   vertex 24.1327 64.8424 0.0
+   	   vertex 43.2653 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_88
+solid ground1@GN1_89
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 104.092 0.0
+   	   vertex 24.1327 104.092 0.0
+   	   vertex 24.1327 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 104.092 0.0
+   	   vertex 24.1327 84.4672 0.0
+   	   vertex 43.2653 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_89
+solid ground1@GN1_90
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 123.717 0.0
+   	   vertex 24.1327 123.717 0.0
+   	   vertex 24.1327 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 123.717 0.0
+   	   vertex 24.1327 104.092 0.0
+   	   vertex 43.2653 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_90
+solid ground1@GN1_91
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 143.342 0.0
+   	   vertex 24.1327 143.342 0.0
+   	   vertex 24.1327 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 143.342 0.0
+   	   vertex 24.1327 123.717 0.0
+   	   vertex 43.2653 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_91
+solid ground1@GN1_92
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 162.966 0.0
+   	   vertex 24.1327 162.966 0.0
+   	   vertex 24.1327 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 162.966 0.0
+   	   vertex 24.1327 143.342 0.0
+   	   vertex 43.2653 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_92
+solid ground1@GN1_93
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -33.2816 0.0
+   	   vertex 43.2653 -33.2816 0.0
+   	   vertex 43.2653 -52.9064 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -33.2816 0.0
+   	   vertex 43.2653 -52.9064 0.0
+   	   vertex 62.3979 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_93
+solid ground1@GN1_94
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -23.4692 0.0
+   	   vertex 43.2653 -33.2816 0.0
+   	   vertex 62.3979 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_94
+solid ground1@GN1_95
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -13.6568 0.0
+   	   vertex 43.2653 -13.6568 0.0
+   	   vertex 43.2653 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_95
+solid ground1@GN1_96
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -33.2816 0.0
+   	   vertex 62.3979 -13.6568 0.0
+   	   vertex 43.2653 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_96
+solid ground1@GN1_97
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 -3.8444 0.0
+   	   vertex 43.2653 -13.6568 0.0
+   	   vertex 62.3979 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_97
+solid ground1@GN1_98
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 5.968 0.0
+   	   vertex 43.2653 5.968 0.0
+   	   vertex 43.2653 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_98
+solid ground1@GN1_99
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -13.6568 0.0
+   	   vertex 62.3979 5.968 0.0
+   	   vertex 43.2653 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_99
+solid ground1@GN1_100
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 15.7804 0.0
+   	   vertex 43.2653 5.968 0.0
+   	   vertex 62.3979 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_100
+solid ground1@GN1_101
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 25.5928 0.0
+   	   vertex 43.2653 25.5928 0.0
+   	   vertex 43.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_101
+solid ground1@GN1_102
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 5.968 0.0
+   	   vertex 62.3979 25.5928 0.0
+   	   vertex 43.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_102
+solid ground1@GN1_103
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 45.2176 0.0
+   	   vertex 43.2653 45.2176 0.0
+   	   vertex 43.2653 25.5928 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 45.2176 0.0
+   	   vertex 43.2653 25.5928 0.0
+   	   vertex 62.3979 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_103
+solid ground1@GN1_104
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 64.8424 0.0
+   	   vertex 43.2653 64.8424 0.0
+   	   vertex 43.2653 45.2176 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 64.8424 0.0
+   	   vertex 43.2653 45.2176 0.0
+   	   vertex 62.3979 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_104
+solid ground1@GN1_105
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 84.4672 0.0
+   	   vertex 43.2653 84.4672 0.0
+   	   vertex 43.2653 64.8424 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 84.4672 0.0
+   	   vertex 43.2653 64.8424 0.0
+   	   vertex 62.3979 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_105
+solid ground1@GN1_106
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 104.092 0.0
+   	   vertex 43.2653 104.092 0.0
+   	   vertex 43.2653 84.4672 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 104.092 0.0
+   	   vertex 43.2653 84.4672 0.0
+   	   vertex 62.3979 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_106
+solid ground1@GN1_107
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 123.717 0.0
+   	   vertex 43.2653 123.717 0.0
+   	   vertex 43.2653 104.092 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 123.717 0.0
+   	   vertex 43.2653 104.092 0.0
+   	   vertex 62.3979 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_107
+solid ground1@GN1_108
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 143.342 0.0
+   	   vertex 43.2653 143.342 0.0
+   	   vertex 43.2653 123.717 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 143.342 0.0
+   	   vertex 43.2653 123.717 0.0
+   	   vertex 62.3979 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_108
+solid ground1@GN1_109
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 162.966 0.0
+   	   vertex 43.2653 162.966 0.0
+   	   vertex 43.2653 143.342 0.0
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 162.966 0.0
+   	   vertex 43.2653 143.342 0.0
+   	   vertex 62.3979 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_109
+solid ground1@GN1_110
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 -33.2816 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -52.3979 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_110
+solid ground1@GN1_111
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 -52.9064 0.0
+   	   vertex -52.3979 -52.9064 0.0
+   	   vertex -70.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_111
+solid ground1@GN1_112
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 -13.6568 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -52.3979 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_112
+solid ground1@GN1_113
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -14.1327 -52.9064 0.0
+   	   vertex -33.2653 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_113
+solid ground1@GN1_114
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 -52.9064 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex 5.0 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_114
+solid ground1@GN1_115
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 5.968 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -52.3979 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_115
+solid ground1@GN1_116
+  facet normal 0.0 5.9244e-17 1.0
+  	outer loop
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+   	   vertex -33.2653 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_116
+solid ground1@GN1_117
+  facet normal 6.09924e-17 0.0 1.0
+  	outer loop
+   	   vertex -33.2653 5.968 0.0
+   	   vertex -33.2653 -13.6568 0.0
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground1@GN1_117
+solid ground1@GN1_118
+  facet normal -0.0 3.36261e-16 1.0
+  	outer loop
+   	   vertex -10.0 -8.21565e-15 -1.29272e-15
+   	   vertex -14.1327 -3.8444 0.0
+   	   vertex -4.56633 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_118
+solid ground1@GN1_119
+  facet normal 4.83637e-17 2.84271e-16 1.0
+  	outer loop
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+   	   vertex -14.1327 -3.8444 0.0
+   	   vertex -10.0 -8.21565e-15 -1.29272e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_119
+solid ground1@GN1_120
+  facet normal -1.37896e-16 0.0 1.0
+  	outer loop
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+   	   vertex -14.1327 -13.6568 0.0
+   	   vertex -14.1327 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_120
+solid ground1@GN1_121
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 25.5928 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -52.3979 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_121
+solid ground1@GN1_122
+  facet normal 5.05813e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex -4.56633 -13.6568 0.0
+   	   vertex -4.56633 -23.4692 0.0
+   	   vertex -0.00288015 -20.0016 -2.40967e-15
+  	endloop
+  endfacet
+  facet normal 5.05813e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex -4.56633 -13.6568 0.0
+   	   vertex -0.00288015 -20.0016 -2.40967e-15
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_122
+solid ground1@GN1_123
+  facet normal 4.58638e-16 0.0 1.0
+  	outer loop
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+   	   vertex -4.56633 -8.7506 0.0
+   	   vertex -4.56633 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_123
+solid ground1@GN1_124
+  facet normal -0.0 6.94905e-16 1.0
+  	outer loop
+   	   vertex -0.00288015 -20.0016 -2.40967e-15
+   	   vertex -4.56633 -23.4692 0.0
+   	   vertex 5.0 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_124
+solid ground1@GN1_125
+  facet normal 0.0 -1.67307e-15 1.0
+  	outer loop
+   	   vertex 0.216837 -8.7506 0.0
+   	   vertex -4.56633 -8.7506 0.0
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_125
+solid ground1@GN1_126
+  facet normal 1.86183e-16 2.40917e-16 1.0
+  	outer loop
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+   	   vertex -5.19975 2.62898 -1.44162e-15
+   	   vertex -4.56633 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_126
+solid ground1@GN1_127
+  facet normal -8.63223e-17 2.14253e-16 1.0
+  	outer loop
+   	   vertex -4.56633 -3.8444 0.0
+   	   vertex -5.19975 2.62898 -1.44162e-15
+   	   vertex -10.0 -8.21565e-15 -1.29272e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_127
+solid ground1@GN1_128
+  facet normal 0.0 4.62064e-16 1.0
+  	outer loop
+   	   vertex 0.216837 -3.8444 0.0
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+   	   vertex -4.56633 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_128
+solid ground1@GN1_129
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+   	   vertex -5.19975 12.6290 -1.12492e-15
+  	endloop
+  endfacet
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+   	   vertex -5.19975 12.6290 -1.12492e-15
+   	   vertex -5.19975 2.62898 -1.44162e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_129
+solid ground1@GN1_130
+  facet normal 9.93407e-16 0.0 1.0
+  	outer loop
+   	   vertex 0.216837 -3.8444 0.0
+   	   vertex 0.216837 -8.7506 0.0
+   	   vertex 2.39868 -8.68630 -2.16746e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_130
+solid ground1@GN1_131
+  facet normal 1.04814e-15 -1.85716e-15 1.0
+  	outer loop
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+   	   vertex 2.39868 -8.68630 -2.16746e-15
+   	   vertex 0.216837 -8.7506 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_131
+solid ground1@GN1_132
+  facet normal 4.83637e-17 4.64791e-16 1.0
+  	outer loop
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+   	   vertex 0.216837 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_132
+solid ground1@GN1_133
+  facet normal 2.21516e-16 -3.47828e-16 1.0
+  	outer loop
+   	   vertex 2.39868 -8.68630 -2.16746e-15
+   	   vertex 4.80025 -7.37102 -2.24196e-15
+   	   vertex 0.216837 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_133
+solid ground1@GN1_134
+  facet normal 3.18275e-16 -2.22074e-16 1.0
+  	outer loop
+   	   vertex 4.80025 -7.37102 -2.24196e-15
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+   	   vertex 0.216837 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_134
+solid ground1@GN1_135
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 -52.9064 0.0
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex 80.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_135
+solid ground1@GN1_136
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex -70.0300 -70.0300 0.0
+   	   vertex -52.3979 45.2176 0.0
+   	   vertex -70.0300 180.090 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_136
+solid ground1@GN1_137
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 45.2176 0.0
+   	   vertex -52.3979 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_137
+solid ground1@GN1_138
+  facet normal 0.0 -1.3557e-16 1.0
+  	outer loop
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+   	   vertex -23.6990 5.968 0.0
+   	   vertex -33.2653 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_138
+solid ground1@GN1_139
+  facet normal 1.33113e-16 0.0 1.0
+  	outer loop
+   	   vertex -20.0 10.0 -4.92382e-16
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -23.6990 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_139
+solid ground1@GN1_140
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 104.092 0.0
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_140
+solid ground1@GN1_141
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 64.8424 0.0
+   	   vertex -52.3979 84.4672 0.0
+   	   vertex -70.0300 180.090 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_141
+solid ground1@GN1_142
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 123.717 0.0
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_142
+solid ground1@GN1_143
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 123.717 0.0
+   	   vertex -52.3979 143.342 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_143
+solid ground1@GN1_144
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 162.966 0.0
+   	   vertex -33.2653 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_144
+solid ground1@GN1_145
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -52.3979 143.342 0.0
+   	   vertex -52.3979 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_145
+solid ground1@GN1_146
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -14.1327 162.966 0.0
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -33.2653 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_146
+solid ground1@GN1_147
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -52.3979 25.5928 0.0
+   	   vertex -52.3979 45.2176 0.0
+   	   vertex -70.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_147
+solid ground1@GN1_148
+  facet normal 0.0 -2.03489e-16 1.0
+  	outer loop
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -15.1998 12.6290 -6.4128e-16
+   	   vertex -14.1327 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_148
+solid ground1@GN1_149
+  facet normal 2.47178e-17 -2.86892e-16 1.0
+  	outer loop
+   	   vertex -15.1998 12.6290 -6.4128e-16
+   	   vertex -5.19975 12.6290 -1.12492e-15
+   	   vertex -4.56633 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal 2.47178e-17 -2.86892e-16 1.0
+  	outer loop
+   	   vertex -15.1998 12.6290 -6.4128e-16
+   	   vertex -4.56633 15.7804 0.0
+   	   vertex -14.1327 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_149
+solid ground1@GN1_150
+  facet normal -1.0539e-16 -3.35773e-16 1.0
+  	outer loop
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+   	   vertex -4.56633 15.7804 0.0
+   	   vertex -5.19975 12.6290 -1.12492e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_150
+solid ground1@GN1_151
+  facet normal 1.67635e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+   	   vertex -20.0 10.0 -4.92382e-16
+   	   vertex -23.6990 5.968 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_151
+solid ground1@GN1_152
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+   	   vertex 4.80025 12.6290 -1.60855e-15
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_152
+solid ground1@GN1_153
+  facet normal 2.50301e-16 0.0 1.0
+  	outer loop
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+   	   vertex -4.56633 25.5928 0.0
+   	   vertex -4.56633 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_153
+solid ground1@GN1_154
+  facet normal 1.80945e-16 -0.0 1.0
+  	outer loop
+   	   vertex -4.56633 25.5928 0.0
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+   	   vertex -4.56633 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_154
+solid ground1@GN1_155
+  facet normal 0.0 -1.52863e-16 1.0
+  	outer loop
+   	   vertex -4.56633 35.4052 0.0
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+   	   vertex 5.0 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_155
+solid ground1@GN1_156
+  facet normal 2.11512e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+   	   vertex -4.56633 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_156
+solid ground1@GN1_157
+  facet normal 2.79566e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+   	   vertex -4.56633 15.7804 0.0
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_157
+solid ground1@GN1_158
+  facet normal 2.32555e-16 -3.67985e-16 1.0
+  	outer loop
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+   	   vertex 4.80025 32.6290 -9.75152e-16
+   	   vertex 5.0 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_158
+solid ground1@GN1_159
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 10.0 20.0 -1.62659e-15
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+   	   vertex 4.80025 12.6290 -1.60855e-15
+  	endloop
+  endfacet
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 10.0 20.0 -1.62659e-15
+   	   vertex 4.80025 12.6290 -1.60855e-15
+   	   vertex 14.8002 12.6290 -2.09219e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_159
+solid ground1@GN1_160
+  facet normal 5.75138e-17 -4.83773e-17 1.0
+  	outer loop
+   	   vertex -23.6990 15.7804 0.0
+   	   vertex -20.0 10.0 -4.92382e-16
+   	   vertex -15.1998 12.6290 -6.4128e-16
+  	endloop
+  endfacet
+endsolid ground1@GN1_160
+solid ground1@GN1_161
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 5.0 162.966 0.0
+   	   vertex -70.0300 180.090 0.0
+   	   vertex -14.1327 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_161
+solid ground1@GN1_162
+  facet normal -0.0 8.34377e-16 1.0
+  	outer loop
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+   	   vertex 5.0 -23.4692 0.0
+   	   vertex 9.78316 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_162
+solid ground1@GN1_163
+  facet normal 0.0 8.34377e-16 1.0
+  	outer loop
+   	   vertex 14.5663 -23.4692 0.0
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+   	   vertex 9.78316 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_163
+solid ground1@GN1_164
+  facet normal -2.47407e-16 5.08375e-16 1.0
+  	outer loop
+   	   vertex 12.3987 -18.6863 -2.9678e-15
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+   	   vertex 14.5663 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_164
+solid ground1@GN1_165
+  facet normal -2.47406e-16 5.08376e-16 1.0
+  	outer loop
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+   	   vertex 12.3987 -18.6863 -2.9678e-15
+   	   vertex 14.5663 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_165
+solid ground1@GN1_166
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 4.80025 -7.37102 -2.24196e-15
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_166
+solid ground1@GN1_167
+  facet normal -6.42891e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 19.3495 -13.6568 0.0
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_167
+solid ground1@GN1_168
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 2.62898 -2.40889e-15
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_168
+solid ground1@GN1_169
+  facet normal -3.99471e-16 2.84247e-16 1.0
+  	outer loop
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+   	   vertex 24.1327 -3.8444 0.0
+   	   vertex 20.0 -8.88178e-16 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_169
+solid ground1@GN1_170
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 20.0 -8.88178e-16 -2.74363e-15
+   	   vertex 20.0 10.0 -2.42693e-15
+   	   vertex 14.8002 2.62898 -2.40889e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_170
+solid ground1@GN1_171
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 20.0 -8.88178e-16 -2.74363e-15
+   	   vertex 14.8002 2.62898 -2.40889e-15
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_171
+solid ground1@GN1_172
+  facet normal -3.58003e-16 1.74513e-16 1.0
+  	outer loop
+   	   vertex 24.1327 -3.8444 0.0
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+   	   vertex 19.3495 -13.6568 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_172
+solid ground1@GN1_173
+  facet normal -6.68748e-16 0.0 1.0
+  	outer loop
+   	   vertex 19.3495 -18.563 0.0
+   	   vertex 19.3495 -13.6568 0.0
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_173
+solid ground1@GN1_174
+  facet normal -5.32677e-16 5.19318e-16 1.0
+  	outer loop
+   	   vertex 19.3495 -18.563 0.0
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+   	   vertex 14.5663 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_174
+solid ground1@GN1_175
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 62.3979 -52.9064 0.0
+   	   vertex 43.2653 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_175
+solid ground1@GN1_176
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -13.6568 0.0
+   	   vertex 62.3979 -33.2816 0.0
+   	   vertex 80.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_176
+solid ground1@GN1_177
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 62.3979 -52.9064 0.0
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 62.3979 -33.2816 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_177
+solid ground1@GN1_178
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 5.968 0.0
+   	   vertex 62.3979 -13.6568 0.0
+   	   vertex 80.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_178
+solid ground1@GN1_179
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 43.2653 -52.9064 0.0
+   	   vertex 24.1327 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_179
+solid ground1@GN1_180
+  facet normal 2.47178e-17 8.01748e-16 1.0
+  	outer loop
+   	   vertex 24.1327 -3.8444 0.0
+   	   vertex 33.6990 -3.8444 0.0
+   	   vertex 30.0 1.77636e-15 -3.22727e-15
+  	endloop
+  endfacet
+  facet normal 2.47178e-17 8.01748e-16 1.0
+  	outer loop
+   	   vertex 24.1327 -3.8444 0.0
+   	   vertex 30.0 1.77636e-15 -3.22727e-15
+   	   vertex 20.0 -8.88178e-16 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_180
+solid ground1@GN1_181
+  facet normal -2.80781e-16 5.69313e-16 1.0
+  	outer loop
+   	   vertex 34.8002 2.62898 -3.37617e-15
+   	   vertex 30.0 1.77636e-15 -3.22727e-15
+   	   vertex 33.6990 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_181
+solid ground1@GN1_182
+  facet normal -3.98836e-16 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 5.968 0.0
+   	   vertex 34.8002 2.62898 -3.37617e-15
+   	   vertex 43.2653 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_182
+solid ground1@GN1_183
+  facet normal 0.0 5.21546e-16 1.0
+  	outer loop
+   	   vertex 33.6990 -3.8444 0.0
+   	   vertex 43.2653 -3.8444 0.0
+   	   vertex 34.8002 2.62898 -3.37617e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_183
+solid ground1@GN1_184
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 62.3979 5.968 0.0
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 62.3979 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_184
+solid ground1@GN1_185
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 19.3495 -13.6568 0.0
+   	   vertex 24.1327 -13.6568 0.0
+   	   vertex 24.1327 -3.8444 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_185
+solid ground1@GN1_186
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 24.1327 -52.9064 0.0
+   	   vertex 5.0 -52.9064 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_186
+solid ground1@GN1_187
+  facet normal -3.74001e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex 34.8002 12.6290 -3.05946e-15
+   	   vertex 34.8002 2.62898 -3.37617e-15
+   	   vertex 43.2653 5.968 0.0
+  	endloop
+  endfacet
+  facet normal -3.74001e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex 34.8002 12.6290 -3.05946e-15
+   	   vertex 43.2653 5.968 0.0
+   	   vertex 43.2653 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_187
+solid ground1@GN1_188
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 10.0 20.0 -1.62659e-15
+   	   vertex 14.8002 12.6290 -2.09219e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_188
+solid ground1@GN1_189
+  facet normal -2.01981e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 14.8002 12.6290 -2.09219e-15
+   	   vertex 24.1327 15.7804 0.0
+  	endloop
+  endfacet
+  facet normal -2.01981e-16 -1.5985e-17 1.0
+  	outer loop
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 24.1327 15.7804 0.0
+   	   vertex 24.1327 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_189
+solid ground1@GN1_190
+  facet normal 4.28904e-16 -7.26496e-16 1.0
+  	outer loop
+   	   vertex 24.1327 15.7804 0.0
+   	   vertex 20.0 10.0 -2.42693e-15
+   	   vertex 24.8002 12.6290 -2.57583e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_190
+solid ground1@GN1_191
+  facet normal -1.08634e-16 -3.42188e-16 1.0
+  	outer loop
+   	   vertex 14.8002 12.6290 -2.09219e-15
+   	   vertex 20.0 10.0 -2.42693e-15
+   	   vertex 24.1327 15.7804 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_191
+solid ground1@GN1_192
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 20.0 10.0 -2.42693e-15
+   	   vertex 14.8002 12.6290 -2.09219e-15
+   	   vertex 14.8002 2.62898 -2.40889e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_192
+solid ground1@GN1_193
+  facet normal 1.48852e-16 0.0 1.0
+  	outer loop
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 5.0 45.2176 0.0
+   	   vertex 5.0 35.4052 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_193
+solid ground1@GN1_194
+  facet normal -1.56314e-16 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 45.2176 0.0
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 24.1327 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_194
+solid ground1@GN1_195
+  facet normal 4.83637e-17 -3.54732e-16 1.0
+  	outer loop
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 5.0 35.4052 0.0
+   	   vertex 4.80025 32.6290 -9.75152e-16
+  	endloop
+  endfacet
+endsolid ground1@GN1_195
+solid ground1@GN1_196
+  facet normal 0.0 -1.15882e-16 1.0
+  	outer loop
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 24.1327 45.2176 0.0
+   	   vertex 5.0 45.2176 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_196
+solid ground1@GN1_197
+  facet normal -1.80192e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 24.1327 25.5928 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_197
+solid ground1@GN1_198
+  facet normal -0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 5.0 162.966 0.0
+   	   vertex 24.1327 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_198
+solid ground1@GN1_199
+  facet normal 2.47178e-17 -8.87152e-16 1.0
+  	outer loop
+   	   vertex 33.6990 15.7804 0.0
+   	   vertex 24.1327 15.7804 0.0
+   	   vertex 24.8002 12.6290 -2.57583e-15
+  	endloop
+  endfacet
+  facet normal 2.47178e-17 -8.87152e-16 1.0
+  	outer loop
+   	   vertex 33.6990 15.7804 0.0
+   	   vertex 24.8002 12.6290 -2.57583e-15
+   	   vertex 34.8002 12.6290 -3.05946e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_199
+solid ground1@GN1_200
+  facet normal 0.0 -9.70822e-16 1.0
+  	outer loop
+   	   vertex 43.2653 15.7804 0.0
+   	   vertex 33.6990 15.7804 0.0
+   	   vertex 34.8002 12.6290 -3.05946e-15
+  	endloop
+  endfacet
+endsolid ground1@GN1_200
+solid ground1@GN1_201
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 45.2176 0.0
+   	   vertex 62.3979 25.5928 0.0
+   	   vertex 80.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_201
+solid ground1@GN1_202
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 62.3979 64.8424 0.0
+   	   vertex 62.3979 45.2176 0.0
+   	   vertex 80.0300 -70.0300 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_202
+solid ground1@GN1_203
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 104.092 0.0
+   	   vertex 62.3979 84.4672 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_203
+solid ground1@GN1_204
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 143.342 0.0
+   	   vertex 62.3979 123.717 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_204
+solid ground1@GN1_205
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 43.2653 162.966 0.0
+   	   vertex 62.3979 162.966 0.0
+   	   vertex 80.0300 180.090 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_205
+solid ground1@GN1_206
+  facet normal 0.0 -0.0 1.0
+  	outer loop
+   	   vertex 62.3979 143.342 0.0
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 162.966 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_206
+solid ground1@GN1_207
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 123.717 0.0
+   	   vertex 62.3979 104.092 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_207
+solid ground1@GN1_208
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 84.4672 0.0
+   	   vertex 62.3979 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_208
+solid ground1@GN1_209
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 24.1327 162.966 0.0
+   	   vertex 43.2653 162.966 0.0
+   	   vertex 80.0300 180.090 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_209
+solid ground1@GN1_210
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 80.0300 -70.0300 0.0
+   	   vertex 80.0300 180.090 0.0
+   	   vertex 62.3979 64.8424 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_210
+solid ground1@GN1_211
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -70.0300 180.090 0.0
+   	   vertex 5.0 162.966 0.0
+   	   vertex 80.0300 180.090 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_211
+solid ground1@GN1_212
+  facet normal 4.83637e-17 7.64681e-16 1.0
+  	outer loop
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+   	   vertex -0.00288015 -20.0016 -2.40967e-15
+   	   vertex 5.0 -23.4692 0.0
+  	endloop
+  endfacet
+endsolid ground1@GN1_212
+solid ground2@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91617 8.46142 -1.77636e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91617 8.46142 -1.77636e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+   	   vertex 9.91617 4.16756 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_1
+solid ground2@GN1_2
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 2.5 -5.16254e-15 -1.89727e-15
+   	   vertex -1.66533e-16 5.0 -1.61801e-15
+   	   vertex -2.22045e-15 -5.77316e-15 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_2
+solid ground2@GN1_3
+  facet normal 4.83636e-17 -5.66787e-17 1.0
+  	outer loop
+   	   vertex 2.5 -5.16254e-15 -1.89727e-15
+   	   vertex 5.0 -4.55191e-15 -2.01818e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_3
+solid ground2@GN1_4
+  facet normal 2.5036e-17 -4.3334e-17 1.0
+  	outer loop
+   	   vertex 4.88408 4.16756 -1.77636e-15
+   	   vertex -1.66533e-16 5.0 -1.61801e-15
+   	   vertex 2.5 -5.16254e-15 -1.89727e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_4
+solid ground2@GN1_5
+  facet normal 2.70239e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 8.60423e-16 7.5 -1.53883e-15
+   	   vertex -1.66533e-16 5.0 -1.61801e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_5
+solid ground2@GN1_6
+  facet normal 5.24921e-17 -3.92081e-17 1.0
+  	outer loop
+   	   vertex 4.80025 12.6290 -1.60855e-15
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_6
+solid ground2@GN1_7
+  facet normal 5.48668e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 8.60423e-16 7.5 -1.53883e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+   	   vertex 1.88738e-15 10.0 -1.45966e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_7
+solid ground2@GN1_8
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 9.80025 12.6290 -1.85037e-15
+   	   vertex 4.80025 12.6290 -1.60855e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+  	endloop
+  endfacet
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 9.80025 12.6290 -1.85037e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+   	   vertex 9.91617 8.46142 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_8
+solid ground2@GN1_9
+  facet normal 4.86326e-17 -0.0 1.0
+  	outer loop
+   	   vertex 8.60423e-16 7.5 -1.53883e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+   	   vertex 4.88408 8.46142 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_9
+solid ground2@GN1_10
+  facet normal 0.0 -5.80239e-17 1.0
+  	outer loop
+   	   vertex 9.91617 4.16756 -1.77636e-15
+   	   vertex 4.88408 4.16756 -1.77636e-15
+   	   vertex 5.0 -4.55191e-15 -2.01818e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_10
+solid ground2@GN1_11
+  facet normal 9.35448e-17 -1.14166e-16 1.0
+  	outer loop
+   	   vertex 14.8002 2.62898 -2.40889e-15
+   	   vertex 9.91617 4.16756 -1.77636e-15
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_11
+solid ground2@GN1_12
+  facet normal 4.83637e-17 -1.15075e-16 1.0
+  	outer loop
+   	   vertex 5.0 -4.55191e-15 -2.01818e-15
+   	   vertex 10.0 -3.33067e-15 -2.25999e-15
+   	   vertex 9.91617 4.16756 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_12
+solid ground2@GN1_13
+  facet normal 1.19533e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 9.91617 4.16756 -1.77636e-15
+   	   vertex 14.8002 2.62898 -2.40889e-15
+   	   vertex 14.8002 5.12898 -2.32972e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_13
+solid ground2@GN1_14
+  facet normal 1.05347e-16 -1.16539e-17 1.0
+  	outer loop
+   	   vertex 9.91617 8.46142 -1.77636e-15
+   	   vertex 9.91617 4.16756 -1.77636e-15
+   	   vertex 14.8002 5.12898 -2.32972e-15
+  	endloop
+  endfacet
+  facet normal 1.05347e-16 -1.16539e-17 1.0
+  	outer loop
+   	   vertex 9.91617 8.46142 -1.77636e-15
+   	   vertex 14.8002 5.12898 -2.32972e-15
+   	   vertex 14.8002 7.62898 -2.25054e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_14
+solid ground2@GN1_15
+  facet normal 4.83637e-17 1.91051e-17 1.0
+  	outer loop
+   	   vertex 12.3002 12.6290 -1.97128e-15
+   	   vertex 9.80025 12.6290 -1.85037e-15
+   	   vertex 9.91617 8.46142 -1.77636e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_15
+solid ground2@GN1_16
+  facet normal 4.83636e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 12.6290 -2.09219e-15
+   	   vertex 12.3002 12.6290 -1.97128e-15
+   	   vertex 14.8002 7.62898 -2.25054e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_16
+solid ground2@GN1_17
+  facet normal 9.57261e-17 -7.98888e-18 1.0
+  	outer loop
+   	   vertex 9.91617 8.46142 -1.77636e-15
+   	   vertex 14.8002 7.62898 -2.25054e-15
+   	   vertex 12.3002 12.6290 -1.97128e-15
+  	endloop
+  endfacet
+endsolid ground2@GN1_17
+solid ground3@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -10.0838 8.46142 -8.09083e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+   	   vertex -15.1159 4.16756 -8.09083e-16
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex -10.0838 8.46142 -8.09083e-16
+   	   vertex -15.1159 4.16756 -8.09083e-16
+   	   vertex -10.0838 4.16756 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_1
+solid ground3@GN1_2
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -17.5 -1.0103e-14 -9.29992e-16
+   	   vertex -20.0 5.0 -6.50733e-16
+   	   vertex -20.0 -1.06581e-14 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_2
+solid ground3@GN1_3
+  facet normal 4.83637e-17 -5.66787e-17 1.0
+  	outer loop
+   	   vertex -17.5 -1.0103e-14 -9.29992e-16
+   	   vertex -15.0 -9.54792e-15 -1.0509e-15
+   	   vertex -15.1159 4.16756 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_3
+solid ground3@GN1_4
+  facet normal 2.50359e-17 -4.33339e-17 1.0
+  	outer loop
+   	   vertex -15.1159 4.16756 -8.09083e-16
+   	   vertex -20.0 5.0 -6.50733e-16
+   	   vertex -17.5 -1.0103e-14 -9.29992e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_4
+solid ground3@GN1_5
+  facet normal 2.70239e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -20.0 7.5 -5.71557e-16
+   	   vertex -20.0 5.0 -6.50733e-16
+   	   vertex -15.1159 4.16756 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_5
+solid ground3@GN1_6
+  facet normal 5.24921e-17 -3.92081e-17 1.0
+  	outer loop
+   	   vertex -15.1998 12.6290 -6.4128e-16
+   	   vertex -20.0 10.0 -4.92382e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_6
+solid ground3@GN1_7
+  facet normal 5.48668e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -20.0 7.5 -5.71557e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+   	   vertex -20.0 10.0 -4.92382e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_7
+solid ground3@GN1_8
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex -10.1998 12.6290 -8.83098e-16
+   	   vertex -15.1998 12.6290 -6.4128e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+  	endloop
+  endfacet
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex -10.1998 12.6290 -8.83098e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+   	   vertex -10.0838 8.46142 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_8
+solid ground3@GN1_9
+  facet normal 4.86326e-17 -0.0 1.0
+  	outer loop
+   	   vertex -20.0 7.5 -5.71557e-16
+   	   vertex -15.1159 4.16756 -8.09083e-16
+   	   vertex -15.1159 8.46142 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_9
+solid ground3@GN1_10
+  facet normal 0.0 -5.80239e-17 1.0
+  	outer loop
+   	   vertex -10.0838 4.16756 -8.09083e-16
+   	   vertex -15.1159 4.16756 -8.09083e-16
+   	   vertex -15.0 -9.54792e-15 -1.0509e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_10
+solid ground3@GN1_11
+  facet normal 9.35448e-17 -1.14166e-16 1.0
+  	outer loop
+   	   vertex -5.19975 2.62898 -1.44162e-15
+   	   vertex -10.0838 4.16756 -8.09083e-16
+   	   vertex -10.0 -8.21565e-15 -1.29272e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_11
+solid ground3@GN1_12
+  facet normal 4.83637e-17 -1.15075e-16 1.0
+  	outer loop
+   	   vertex -15.0 -9.54792e-15 -1.0509e-15
+   	   vertex -10.0 -8.21565e-15 -1.29272e-15
+   	   vertex -10.0838 4.16756 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_12
+solid ground3@GN1_13
+  facet normal 1.19533e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -10.0838 4.16756 -8.09083e-16
+   	   vertex -5.19975 2.62898 -1.44162e-15
+   	   vertex -5.19975 5.12898 -1.36244e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_13
+solid ground3@GN1_14
+  facet normal 1.05347e-16 -1.16539e-17 1.0
+  	outer loop
+   	   vertex -10.0838 8.46142 -8.09083e-16
+   	   vertex -10.0838 4.16756 -8.09083e-16
+   	   vertex -5.19975 5.12898 -1.36244e-15
+  	endloop
+  endfacet
+  facet normal 1.05347e-16 -1.16539e-17 1.0
+  	outer loop
+   	   vertex -10.0838 8.46142 -8.09083e-16
+   	   vertex -5.19975 5.12898 -1.36244e-15
+   	   vertex -5.19975 7.62898 -1.28327e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_14
+solid ground3@GN1_15
+  facet normal 4.83637e-17 1.91051e-17 1.0
+  	outer loop
+   	   vertex -7.69975 12.6290 -1.00401e-15
+   	   vertex -10.1998 12.6290 -8.83098e-16
+   	   vertex -10.0838 8.46142 -8.09083e-16
+  	endloop
+  endfacet
+endsolid ground3@GN1_15
+solid ground3@GN1_16
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -5.19975 12.6290 -1.12492e-15
+   	   vertex -7.69975 12.6290 -1.00401e-15
+   	   vertex -5.19975 7.62898 -1.28327e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_16
+solid ground3@GN1_17
+  facet normal 9.57261e-17 -7.98888e-18 1.0
+  	outer loop
+   	   vertex -10.0838 8.46142 -8.09083e-16
+   	   vertex -5.19975 7.62898 -1.28327e-15
+   	   vertex -7.69975 12.6290 -1.00401e-15
+  	endloop
+  endfacet
+endsolid ground3@GN1_17
+solid ground4@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_1
+solid ground4@GN1_2
+  facet normal 4.83636e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 2.49712 -20.0016 -2.53058e-15
+   	   vertex -0.00288015 -15.0016 -2.25132e-15
+   	   vertex -0.00288015 -20.0016 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_2
+solid ground4@GN1_3
+  facet normal 4.83637e-17 -5.66827e-17 1.0
+  	outer loop
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+   	   vertex 2.49712 -20.0016 -2.53058e-15
+   	   vertex 4.99712 -20.0016 -2.65149e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_3
+solid ground4@GN1_4
+  facet normal 2.50357e-17 -4.33341e-17 1.0
+  	outer loop
+   	   vertex -0.00288015 -15.0016 -2.25132e-15
+   	   vertex 2.49712 -20.0016 -2.53058e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_4
+solid ground4@GN1_5
+  facet normal 2.70221e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex -0.00288015 -12.5016 -2.17214e-15
+   	   vertex -0.00288015 -15.0016 -2.25132e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_5
+solid ground4@GN1_6
+  facet normal 5.48629e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+   	   vertex -0.00288015 -12.5016 -2.17214e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_6
+solid ground4@GN1_7
+  facet normal 5.2491e-17 -3.92062e-17 1.0
+  	outer loop
+   	   vertex 4.80025 -7.37102 -2.24196e-15
+   	   vertex 2.39868 -8.68630 -2.16746e-15
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_7
+solid ground4@GN1_8
+  facet normal 5.2491e-17 -3.92061e-17 1.0
+  	outer loop
+   	   vertex -0.00288015 -10.0016 -2.09297e-15
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+   	   vertex 2.39868 -8.68630 -2.16746e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_8
+solid ground4@GN1_9
+  facet normal 4.83637e-17 -3.92873e-17 1.0
+  	outer loop
+   	   vertex 9.80025 -7.37102 -2.48377e-15
+   	   vertex 4.80025 -7.37102 -2.24196e-15
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_9
+solid ground4@GN1_10
+  facet normal 4.86231e-17 0.0 1.0
+  	outer loop
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+   	   vertex -0.00288015 -12.5016 -2.17214e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_10
+solid ground4@GN1_11
+  facet normal 0.0 -5.80167e-17 1.0
+  	outer loop
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+   	   vertex 4.88215 -15.8335 -2.40967e-15
+   	   vertex 4.99712 -20.0016 -2.65149e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_11
+solid ground4@GN1_12
+  facet normal 9.35606e-17 -1.14195e-16 1.0
+  	outer loop
+   	   vertex 12.3987 -18.6863 -2.9678e-15
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_12
+solid ground4@GN1_13
+  facet normal 4.83637e-17 -1.15083e-16 1.0
+  	outer loop
+   	   vertex 4.99712 -20.0016 -2.65149e-15
+   	   vertex 9.99712 -20.0016 -2.89331e-15
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_13
+solid ground4@GN1_14
+  facet normal 1.19535e-16 -3.167e-17 1.0
+  	outer loop
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+   	   vertex 14.8002 -14.8710 -2.96312e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_14
+solid ground4@GN1_15
+  facet normal 9.35606e-17 -1.14195e-16 1.0
+  	outer loop
+   	   vertex 12.3987 -18.6863 -2.9678e-15
+   	   vertex 14.8002 -17.3710 -3.04229e-15
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_15
+solid ground4@GN1_16
+  facet normal 1.13295e-16 0.0 1.0
+  	outer loop
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 9.91522 -15.8335 -2.40967e-15
+   	   vertex 14.8002 -14.8710 -2.96312e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_16
+solid ground4@GN1_17
+  facet normal 4.83636e-17 1.91131e-17 1.0
+  	outer loop
+   	   vertex 12.3002 -7.37102 -2.60468e-15
+   	   vertex 9.80025 -7.37102 -2.48377e-15
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_17
+solid ground4@GN1_18
+  facet normal 0.0 1.77791e-17 1.0
+  	outer loop
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 9.80025 -7.37102 -2.48377e-15
+   	   vertex 4.88215 -11.5391 -2.40967e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_18
+solid ground4@GN1_19
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 -7.37102 -2.72559e-15
+   	   vertex 12.3002 -7.37102 -2.60468e-15
+   	   vertex 14.8002 -12.3710 -2.88394e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_19
+solid ground4@GN1_20
+  facet normal 9.57266e-17 -7.98861e-18 1.0
+  	outer loop
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 14.8002 -12.3710 -2.88394e-15
+   	   vertex 12.3002 -7.37102 -2.60468e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_20
+solid ground4@GN1_21
+  facet normal 9.16937e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 -12.3710 -2.88394e-15
+   	   vertex 9.91522 -11.5391 -2.40967e-15
+   	   vertex 14.8002 -14.8710 -2.96312e-15
+  	endloop
+  endfacet
+endsolid ground4@GN1_21
+solid ground5@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91617 28.4614 -1.14296e-15
+   	   vertex 4.88408 28.4614 -1.14296e-15
+   	   vertex 4.88408 24.1676 -1.14296e-15
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 9.91617 28.4614 -1.14296e-15
+   	   vertex 4.88408 24.1676 -1.14296e-15
+   	   vertex 9.91617 24.1676 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_1
+solid ground5@GN1_2
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 2.5 20.0 -1.26386e-15
+   	   vertex 7.54952e-15 25.0 -9.84605e-16
+   	   vertex 5.9952e-15 20.0 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_2
+solid ground5@GN1_3
+  facet normal 4.83637e-17 -5.66787e-17 1.0
+  	outer loop
+   	   vertex 2.5 20.0 -1.26386e-15
+   	   vertex 5.0 20.0 -1.38477e-15
+   	   vertex 4.88408 24.1676 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_3
+solid ground5@GN1_4
+  facet normal 2.5036e-17 -4.33339e-17 1.0
+  	outer loop
+   	   vertex 4.88408 24.1676 -1.14296e-15
+   	   vertex 7.54952e-15 25.0 -9.84605e-16
+   	   vertex 2.5 20.0 -1.26386e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_4
+solid ground5@GN1_5
+  facet normal 2.70239e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 9.10383e-15 27.5 -9.0543e-16
+   	   vertex 7.54952e-15 25.0 -9.84605e-16
+   	   vertex 4.88408 24.1676 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_5
+solid ground5@GN1_6
+  facet normal 5.24921e-17 -3.92081e-17 1.0
+  	outer loop
+   	   vertex 4.80025 32.6290 -9.75152e-16
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+   	   vertex 4.88408 28.4614 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_6
+solid ground5@GN1_7
+  facet normal 5.48667e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 9.10383e-15 27.5 -9.0543e-16
+   	   vertex 4.88408 28.4614 -1.14296e-15
+   	   vertex 1.06581e-14 30.0 -8.26255e-16
+  	endloop
+  endfacet
+endsolid ground5@GN1_7
+solid ground5@GN1_8
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 9.80025 32.6290 -1.21697e-15
+   	   vertex 4.80025 32.6290 -9.75152e-16
+   	   vertex 4.88408 28.4614 -1.14296e-15
+  	endloop
+  endfacet
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 9.80025 32.6290 -1.21697e-15
+   	   vertex 4.88408 28.4614 -1.14296e-15
+   	   vertex 9.91617 28.4614 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_8
+solid ground5@GN1_9
+  facet normal 4.86326e-17 -0.0 1.0
+  	outer loop
+   	   vertex 9.10383e-15 27.5 -9.0543e-16
+   	   vertex 4.88408 24.1676 -1.14296e-15
+   	   vertex 4.88408 28.4614 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_9
+solid ground5@GN1_10
+  facet normal 2.41045e-17 -8.64582e-17 1.0
+  	outer loop
+   	   vertex 9.91617 24.1676 -1.14296e-15
+   	   vertex 4.88408 24.1676 -1.14296e-15
+   	   vertex 5.0 20.0 -1.38477e-15
+  	endloop
+  endfacet
+  facet normal 2.41045e-17 -8.64582e-17 1.0
+  	outer loop
+   	   vertex 9.91617 24.1676 -1.14296e-15
+   	   vertex 5.0 20.0 -1.38477e-15
+   	   vertex 10.0 20.0 -1.62659e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_10
+solid ground5@GN1_11
+  facet normal 9.35448e-17 -1.14166e-16 1.0
+  	outer loop
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 9.91617 24.1676 -1.14296e-15
+   	   vertex 10.0 20.0 -1.62659e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_11
+solid ground5@GN1_12
+  facet normal 1.19533e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 9.91617 24.1676 -1.14296e-15
+   	   vertex 14.8002 22.6290 -1.77549e-15
+   	   vertex 14.8002 25.1290 -1.69631e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_12
+solid ground5@GN1_13
+  facet normal 1.13299e-16 0.0 1.0
+  	outer loop
+   	   vertex 9.91617 28.4614 -1.14296e-15
+   	   vertex 9.91617 24.1676 -1.14296e-15
+   	   vertex 14.8002 25.1290 -1.69631e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_13
+solid ground5@GN1_14
+  facet normal 4.83637e-17 1.91051e-17 1.0
+  	outer loop
+   	   vertex 12.3002 32.6290 -1.33788e-15
+   	   vertex 9.80025 32.6290 -1.21697e-15
+   	   vertex 9.91617 28.4614 -1.14296e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_14
+solid ground5@GN1_15
+  facet normal 4.83637e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 32.6290 -1.45879e-15
+   	   vertex 12.3002 32.6290 -1.33788e-15
+   	   vertex 14.8002 27.6290 -1.61714e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_15
+solid ground5@GN1_16
+  facet normal 9.57261e-17 -7.98889e-18 1.0
+  	outer loop
+   	   vertex 9.91617 28.4614 -1.14296e-15
+   	   vertex 14.8002 27.6290 -1.61714e-15
+   	   vertex 12.3002 32.6290 -1.33788e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_16
+solid ground5@GN1_17
+  facet normal 9.16899e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 14.8002 27.6290 -1.61714e-15
+   	   vertex 9.91617 28.4614 -1.14296e-15
+   	   vertex 14.8002 25.1290 -1.69631e-15
+  	endloop
+  endfacet
+endsolid ground5@GN1_17
+solid ground6@GN1_1
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 29.9162 8.46142 -2.74363e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+  	endloop
+  endfacet
+  facet normal 0.0 0.0 1.0
+  	outer loop
+   	   vertex 29.9162 8.46142 -2.74363e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+   	   vertex 29.9162 4.16756 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_1
+solid ground6@GN1_2
+  facet normal 4.83636e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 22.5 0.0 -2.86454e-15
+   	   vertex 20.0 5.0 -2.58528e-15
+   	   vertex 20.0 -8.88178e-16 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_2
+solid ground6@GN1_3
+  facet normal 4.83637e-17 -5.66787e-17 1.0
+  	outer loop
+   	   vertex 22.5 0.0 -2.86454e-15
+   	   vertex 25.0 8.88178e-16 -2.98545e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_3
+solid ground6@GN1_4
+  facet normal 2.5036e-17 -4.33339e-17 1.0
+  	outer loop
+   	   vertex 24.8841 4.16756 -2.74363e-15
+   	   vertex 20.0 5.0 -2.58528e-15
+   	   vertex 22.5 0.0 -2.86454e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_4
+solid ground6@GN1_5
+  facet normal 2.70239e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 20.0 7.5 -2.50611e-15
+   	   vertex 20.0 5.0 -2.58528e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_5
+solid ground6@GN1_6
+  facet normal 5.24921e-17 -3.92082e-17 1.0
+  	outer loop
+   	   vertex 24.8002 12.6290 -2.57583e-15
+   	   vertex 20.0 10.0 -2.42693e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_6
+solid ground6@GN1_7
+  facet normal 5.48668e-17 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 20.0 7.5 -2.50611e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+   	   vertex 20.0 10.0 -2.42693e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_7
+solid ground6@GN1_8
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 29.8002 12.6290 -2.81765e-15
+   	   vertex 24.8002 12.6290 -2.57583e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+  	endloop
+  endfacet
+  facet normal 2.41045e-17 -1.06744e-17 1.0
+  	outer loop
+   	   vertex 29.8002 12.6290 -2.81765e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+   	   vertex 29.9162 8.46142 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_8
+solid ground6@GN1_9
+  facet normal 4.86326e-17 -0.0 1.0
+  	outer loop
+   	   vertex 20.0 7.5 -2.50611e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+   	   vertex 24.8841 8.46142 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_9
+solid ground6@GN1_10
+  facet normal 0.0 -5.80239e-17 1.0
+  	outer loop
+   	   vertex 29.9162 4.16756 -2.74363e-15
+   	   vertex 24.8841 4.16756 -2.74363e-15
+   	   vertex 25.0 8.88178e-16 -2.98545e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_10
+solid ground6@GN1_11
+  facet normal 9.35449e-17 -1.14166e-16 1.0
+  	outer loop
+   	   vertex 34.8002 2.62898 -3.37617e-15
+   	   vertex 29.9162 4.16756 -2.74363e-15
+   	   vertex 30.0 1.77636e-15 -3.22727e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_11
+solid ground6@GN1_12
+  facet normal 4.83637e-17 -1.15075e-16 1.0
+  	outer loop
+   	   vertex 25.0 8.88178e-16 -2.98545e-15
+   	   vertex 30.0 1.77636e-15 -3.22727e-15
+   	   vertex 29.9162 4.16756 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_12
+solid ground6@GN1_13
+  facet normal 1.19533e-16 -3.16701e-17 1.0
+  	outer loop
+   	   vertex 29.9162 4.16756 -2.74363e-15
+   	   vertex 34.8002 2.62898 -3.37617e-15
+   	   vertex 34.8002 5.12898 -3.29699e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_13
+solid ground6@GN1_14
+  facet normal 1.05347e-16 -1.1654e-17 1.0
+  	outer loop
+   	   vertex 29.9162 8.46142 -2.74363e-15
+   	   vertex 29.9162 4.16756 -2.74363e-15
+   	   vertex 34.8002 5.12898 -3.29699e-15
+  	endloop
+  endfacet
+  facet normal 1.05347e-16 -1.1654e-17 1.0
+  	outer loop
+   	   vertex 29.9162 8.46142 -2.74363e-15
+   	   vertex 34.8002 5.12898 -3.29699e-15
+   	   vertex 34.8002 7.62898 -3.21781e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_14
+solid ground6@GN1_15
+  facet normal 4.83637e-17 1.91051e-17 1.0
+  	outer loop
+   	   vertex 32.3002 12.6290 -2.93856e-15
+   	   vertex 29.8002 12.6290 -2.81765e-15
+   	   vertex 29.9162 8.46142 -2.74363e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_15
+solid ground6@GN1_16
+  facet normal 4.83637e-17 -3.167e-17 1.0
+  	outer loop
+   	   vertex 34.8002 12.6290 -3.05946e-15
+   	   vertex 32.3002 12.6290 -2.93856e-15
+   	   vertex 34.8002 7.62898 -3.21781e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_16
+solid ground6@GN1_17
+  facet normal 9.57261e-17 -7.98888e-18 1.0
+  	outer loop
+   	   vertex 29.9162 8.46142 -2.74363e-15
+   	   vertex 34.8002 7.62898 -3.21781e-15
+   	   vertex 32.3002 12.6290 -2.93856e-15
+  	endloop
+  endfacet
+endsolid ground6@GN1_17
