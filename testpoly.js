@@ -10,14 +10,20 @@ function createFacet(verts) {
 }
 
 var contour = [
+     new poly2tri.Point(-100, -100),
+     new poly2tri.Point(-100, 100),
      new poly2tri.Point(100, 100),
-     new poly2tri.Point(100, 300),
-     new poly2tri.Point(300, 300),
-     new poly2tri.Point(300, 100)
+     new poly2tri.Point(100, -100)
  ];
 var swctx = new poly2tri.SweepContext(contour);
 
-var point = new poly2tri.Point(150, 150);
+var point = new poly2tri.Point(-10, -10);
+swctx.addPoint(point);
+var point = new poly2tri.Point(-10, 10);
+swctx.addPoint(point);
+var point = new poly2tri.Point(10, 10);
+swctx.addPoint(point);
+var point = new poly2tri.Point(10, -10);
 swctx.addPoint(point);
 
 swctx.triangulate();
