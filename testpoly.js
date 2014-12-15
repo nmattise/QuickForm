@@ -26,14 +26,14 @@ function createGround(bldgFootprint, distanceRatio, callback) {
     for (var j = 0; j < distanceRatio; j++) {
         for (var i = 0; i < bldgFootprint.length; i++) {
             if (bldgFootprint[i][1] < 0) {
-                point[1] = bldgFootprint[i][1] - j / distanceRatio;
+                point[1] = bldgFootprint[i][1] * -j / distanceRatio;
             } else {
-                point[1] = bldgFootprint[i][1] + j / distanceRatio;
+                point[1] = bldgFootprint[i][1] * j / distanceRatio;
             }
             if (bldgFootprint[i][0] < 0) {
-                point[0] = bldgFootprint[i][0] - j / distanceRatio;
+                point[0] = bldgFootprint[i][0] * -j / distanceRatio;
             } else {
-                point[0] = bldgFootprint[i][0] + j / distanceRatio;
+                point[0] = bldgFootprint[i][0] * j / distanceRatio;
             }
             groundShape.addPoint(new poly2tri.Point(point[0], point[1]));
         }
