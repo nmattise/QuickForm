@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="drawMap">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/drawstyle.css" rel="stylesheet">
+    <!--Angular and Google Maps-->
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/lodash/dist/lodash.min.js"></script>
+    <script src="libs/bluebird/js/browser/bluebird.js"></script>
+    <script src="libs/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="libs/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="js/draw.js"></script>
+</head>
+
+<body ng-controller="drawCtrl">
+    <div class="row">
+        <div class="col-sm-5 info">
+            <div class="panel panel-default info-panel box-z2">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="buildingName" class="col-sm-5 control-label">Building Name</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="buildingName" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfFloors" class="col-sm-5 control-label">Number of Floors</label>
+                            <div class="col-sm-7">
+                                <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfFloors" class="col-sm-5 control-label">Floor to Floor Height</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1">
+                                    <span class="input-group-addon">ft</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addBuilding" class="col-xs-5 control-label">Add Building</label>
+                            <div class="col-xs-7">
+                                <button class="btn btn-success" id="addBuilding">
+                                    <img src="img/iconmonstr-plus-5-icon-48.png" class="img-responsive" width="24px">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="removeBuilding" class="col-xs-5 control-label">Remove Building Points</label>
+                            <div class="col-xs-7">
+                                <button class="btn btn-danger" id="removeBuilding">
+                                    <img src="img/iconmonstr-x-mark-4-icon-48.png" class="img-responsive" width="24px">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="undoLastPoint" class="col-xs-5 control-label">Remove Building Points</label>
+                            <div class="col-xs-7">
+                                <button class="btn btn-warning">
+                                    <img src="img/iconmonstr-undo-2-icon-48.png" width="24px">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="redoLastPoint" class="col-xs-5 control-label">Remove Building Points</label>
+                            <div class="col-xs-7">
+                                <button class=" btn btn-warning">
+                                    <img src="img/iconmonstr-redo-2-icon-48.png" width="24px">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-7 map">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" bounds="map.bounds" events="map.events">
+                <ui-gmap-polygon static="true" ng-repeat="p in polygons" path="p.path" stroke="p.stroke" visible="p.visible" geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable"></ui-gmap-polygon>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 bldgList">
+            <div class="panel panel-default box-z2">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Footprint Area</th>
+                                    <th>Height</th>
+                                    <th>Total Area</th>
+                                    <th>Color</th>
+                                    <th>Edit</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="b in buildings">
+                                    <th>
+                                        <input type="checkbox" ng-model="b.selected">
+                                    </th>
+                                    <th>{{b.id}}</th>
+                                    <th>{{b.name}}</th>
+                                    <th>{{b.footprintArea | number:0}} ft&sup2;</th>
+                                    <th>{{b.height | number:1}} ft</th>
+                                    <th>{{b.totalArea | number:0}} ft&sup2;</th>
+                                    <th>
+                                        <button class="btn" style="background-color:{{b.style.fill.color}};">
+                                            <input type="color" value="{{b.style.fill.color}}" ng-model="b.style.fill.color">
+                                        </button>
+                                    </th>
+                                    <th>
+                                        <button class="btn btn-warning" ng-click="editBuilding(b.id)">
+                                            <img src="img/iconmonstr-edit-7-icon-48.png" class="img-responsive" width="24px">
+                                        </button>
+                                    </th>
+                                    <th>
+                                        <button class="btn btn-danger" ng-click="removeBuilding(b.id)">
+                                            <img src="img/iconmonstr-x-mark-4-icon-48.png" class="img-responsive" width="24px">
+                                        </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 fileButtons">
+            <button class="btn btn-block btn-primary" ng-click="buildSTL()">Build STL Files</button>
+            <button class="btn btn-block btn-primary" ng-click="buildOSM()">Build OSM Files</button>
+            <hr>
+            <button class="btn btn-block btn-info" ng-class="" ng-disabled="!threeDFile">View 3D</button>
+            <hr>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="unitRadio" ng-model="units" value="ip">IP
+                </label>
+            </div>
+            <div class="radio disabled">
+                <label>
+                    <input type="radio" name="unitRadio" ng-model="units" value="si" disabled>SI
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
         "angular": "latest",
         "ui-router": "https://github.com/angular-ui/ui-router.git",
         "angular-scroll": "latest",
-        "angular-google-maps": "~2.0.1",
+        "angular-google-maps": ">2.0.1",
         "poly2tri": "~1.3.5",
         "threejs": "latest"
     }
