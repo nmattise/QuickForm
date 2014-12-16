@@ -29,7 +29,7 @@
                   var e = originalEventArgs[0];
                   var lat = e.latLng.lat(),
                       lng = e.latLng.lng();
-                  $scope.polygons[$scope.polygons.length - 1].path.push({
+                  $scope.polyline.path.push({
                       latitude: lat,
                       longitude: lng
                   });
@@ -38,167 +38,97 @@
           }
       };
       //Building Array
-      $scope.buildings = [{
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
+      $scope.buildings = [];
+      //Test polylines Array
+      $scope.polyline = {
           path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: true
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }, {
-          id: 1,
-          name: "Venture Tech Building",
-          footprintArea: 5000,
-          height: 21,
-          floorHeight: 3,
-          floors: 7,
-          totalArea: 35000,
-          path: [],
-          style: {
-              stroke: {
-                  color: '#6060FB',
-                  weight: 3
-              },
-              fill: {
-                  color: '#4f75b2',
-                  opacity: 0.8
-              }
-          },
-          selected: false
-      }];
-      //Test Polygon Array
-      $scope.polygons = [{
-          id: 1,
-          path: [
-
-                ],
           stroke: {
               color: '#6060FB',
               weight: 3
           },
-          editable: true,
-          draggable: true,
+          editable: false,
+          draggable: false,
           geodesic: false,
-          visible: true,
-          fill: {
-              color: '#ff0000',
-              opacity: 0.5
-          }
-                }];
+          visible: true
+      };
+      //Undo/Redo Points
+      var sparePoints = new Array;
       //Functions
+      $scope.undoPoint = function () {
+          var pt = $scope.polyline.path.pop();
+          sparePoints.push(pt);
+      };
+      $scope.redoPoint = function () {
+          if (sparePoints[0]) {
+              var pt = sparePoints.pop();
+              $scope.polyline.path.push(pt);
+          }
+
+      };
+      $scope.addBuilding = function () {
+          var polygon = $scope.polyline.path;
+          polygon.pop();
+          if ($scope.buildings.length > 0) {
+              var id = $scope.buildings[$scope.buildings.length - 1].id + 1;
+          } else {
+              var id = 0;
+          }
+
+          var building = {
+              id: id,
+              name: $scope.polyline.buildingName,
+              numFloors: $scope.polyline.numFloors,
+              flrToFlrHeight: $scope.polyline.flrToFlrHeight,
+              footprintArea: 5000,
+              height: $scope.polyline.numFloors * $scope.polyline.flrToFlrHeight,
+              totalArea: 35000,
+              map: {
+                  path: polygon,
+                  stroke: {
+                      color: '#6060FB',
+                      weight: 3
+                  },
+                  editable: false,
+                  draggable: false,
+                  geodesic: false,
+                  visible: true,
+                  fill: {
+                      color: '#ff0000',
+                      opacity: 0.8
+                  }
+              }
+          };
+          $scope.buildings.push(building);
+          //Reset the Variables
+          $scope.polyline = {
+              path: [],
+              stroke: {
+                  color: '#6060FB',
+                  weight: 3
+              },
+              editable: false,
+              draggable: false,
+              geodesic: false,
+              visible: true
+          };
+          //$scope.$apply();
+      }
+      $scope.editBuilding = function (id) {
+          $scope.buildings.forEach(function (building) {
+              if (building.id == id) {
+                  building.map.editable = !building.map.editable;
+              }
+          });
+      }
+      $scope.removeBuilding = function (id) {
+          var place = new Number;
+          for (var i = 0; i < $scope.buildings.length; i++) {
+              if ($scope.buildings[i].id == id) {
+                  place = i;
+              }
+          };
+          $scope.buildings.splice(place, place + 1)
+      }
       $scope.buildSTL = function () {
           var selectedIds = new Array,
               selectedBuildings = new Array;
