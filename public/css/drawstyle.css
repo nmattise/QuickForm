@@ -1,0 +1,34 @@
+body {
+    padding-top: 0px;
+}
+.angular-google-map-container {
+    height: 60vh;
+}
+.info {
+    height: 60vh;
+    padding-left: 40px;
+    padding-top: 15px;
+}
+.info-panel {
+    height: 55vh;
+    width: 100%;
+}
+.bldgList {
+    height: 40vh;
+    padding-left: 40px;
+    padding-top: 15px;
+    /*overflow-y: auto;*/
+}
+.panel {
+    margin-bottom: 0px;
+}
+.btn:focus {
+    outline: none;
+}
+.box-z2 {
+    box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
+}
+.fileButtons{
+    padding-top: 15px;
+    padding-right: 40px;
+}
