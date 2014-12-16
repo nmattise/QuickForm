@@ -29,20 +29,20 @@
                         <div class="form-group">
                             <label for="buildingName" class="col-sm-5 control-label">Building Name</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="buildingName" placeholder="Name">
+                                <input type="text" class="form-control" id="buildingName" placeholder="Name" ng-model="polyline.buildingName">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="numberOfFloors" class="col-sm-5 control-label">Number of Floors</label>
                             <div class="col-sm-7">
-                                <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1">
+                                <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1" ng-model="polyline.numFloors">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="numberOfFloors" class="col-sm-5 control-label">Floor to Floor Height</label>
                             <div class="col-sm-7">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1">
+                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1" ng-model="polyline.flrToFlrHeight">
                                     <span class="input-group-addon">ft</span>
                                 </div>
 
@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="addBuilding" class="col-xs-5 control-label">Add Building</label>
                             <div class="col-xs-7">
-                                <button class="btn btn-success" id="addBuilding">
+                                <button class="btn btn-success" id="addBuilding" ng-click="addBuilding()">
                                     <img src="img/iconmonstr-plus-5-icon-48.png" class="img-responsive" width="24px">
                                 </button>
                             </div>
@@ -59,24 +59,27 @@
                         <div class="form-group">
                             <label for="removeBuilding" class="col-xs-5 control-label">Remove Building Points</label>
                             <div class="col-xs-7">
-                                <button class="btn btn-danger" id="removeBuilding">
+                                <button class="btn btn-danger" id="removeBuilding" ng-click="polyline.path = []">
                                     <img src="img/iconmonstr-x-mark-4-icon-48.png" class="img-responsive" width="24px">
                                 </button>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="undoLastPoint" class="col-xs-5 control-label">Remove Building Points</label>
+                            <label for="undoLastPoint" class="col-xs-5 control-label">Undo/Redo Point</label>
                             <div class="col-xs-7">
-                                <button class="btn btn-warning">
+                                <button class="btn btn-warning" ng-click="undoPoint()">
                                     <img src="img/iconmonstr-undo-2-icon-48.png" width="24px">
+                                </button>
+                                <button class=" btn btn-warning" ng-click="redoPoint()">
+                                    <img src="img/iconmonstr-redo-2-icon-48.png" width="24px">
                                 </button>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="redoLastPoint" class="col-xs-5 control-label">Remove Building Points</label>
+                            <label for="redoLastPoint" class="col-xs-5 control-label">Edit Points</label>
                             <div class="col-xs-7">
-                                <button class=" btn btn-warning">
-                                    <img src="img/iconmonstr-redo-2-icon-48.png" width="24px">
+                                <button class="btn btn-warning" ng-click="polyline.editable = !polyline.editable">
+                                    <img src="img/iconmonstr-edit-7-icon-48.png" class="img-responsive" width="24px">
                                 </button>
                             </div>
                         </div>
@@ -88,7 +91,8 @@
 
         <div class="col-sm-7 map">
             <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" bounds="map.bounds" events="map.events">
-                <ui-gmap-polygon static="true" ng-repeat="p in polygons" path="p.path" stroke="p.stroke" visible="p.visible" geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable"></ui-gmap-polygon>
+                <ui-gmap-polyline path="polyline.path" stroke="polyline.stroke" visible='polyline.visible' geodesic='polyline.geodesic' fit="false" editable="polyline.editable" draggable="polyline.draggable" icons='polyline.icons'></ui-gmap-polyline>
+                <ui-gmap-polygon static="false" ng-repeat="b in buildings" path="b.map.path" stroke="b.map.stroke" visible="b.map.visible" geodesic="b.map.geodesic" fill="b.map.fill" fit="false" editable="b.map.editable" draggable="b.map.draggable"></ui-gmap-polygon>
             </ui-gmap-google-map>
         </div>
     </div>
@@ -123,8 +127,8 @@
                                     <th>{{b.height | number:1}} ft</th>
                                     <th>{{b.totalArea | number:0}} ft&sup2;</th>
                                     <th>
-                                        <button class="btn" style="background-color:{{b.style.fill.color}};">
-                                            <input type="color" value="{{b.style.fill.color}}" ng-model="b.style.fill.color">
+                                        <button class="btn" style="background-color:{{b.map.fill.color}};">
+                                            <input type="color" value="{{b.map.fill.color}}" ng-model="b.map.fill.color">
                                         </button>
                                     </th>
                                     <th>

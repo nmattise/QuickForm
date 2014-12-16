@@ -17,7 +17,7 @@ body {
     height: 40vh;
     padding-left: 40px;
     padding-top: 15px;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
 }
 .panel {
     margin-bottom: 0px;
