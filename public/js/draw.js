@@ -73,15 +73,15 @@
           } else {
               var id = 0;
           }
-
+          var footprintArea = getArea(polygon);
           var building = {
               id: id,
               name: $scope.polyline.buildingName,
               numFloors: $scope.polyline.numFloors,
               flrToFlrHeight: $scope.polyline.flrToFlrHeight,
-              footprintArea: 5000,
+              footprintArea: footprintArea,
               height: $scope.polyline.numFloors * $scope.polyline.flrToFlrHeight,
-              totalArea: 35000,
+              totalArea: footprintArea * $scope.polyline.numFloors,
               map: {
                   path: polygon,
                   stroke: {
