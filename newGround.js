@@ -36,20 +36,24 @@ while (x <= 10) {
 }
 var twelveArray = new Array,
     fifteenArray = new Array,
-    twentyfiveArray = new Array;
+    twentyfiveArray = new Array,
+    seventyFiveArray = new Array;
 for (var i = 0; i < xArr.length; i++) {
     if (xArr[i] < 0) {
         twelveArray.push(xArr[i] - 2);
         fifteenArray.push(xArr[i] - 5);
         twentyfiveArray.push(xArr[i] - 15);
+        seventyFiveArray.push(xArr[i] - 65);
     } else if (xArr == 0) {
         twelveArray.push(0);
         fifteenArray.push(0);
         twentyfiveArray.push(0);
+        seventyFiveArray.push(0);
     } else {
         twelveArray.push(xArr[i] + 2);
         fifteenArray.push(xArr[i] + 5);
         twentyfiveArray.push(xArr[i] + 15);
+        seventyFiveArray.push(xArr[i] + 65);
     }
 
 }
@@ -57,21 +61,33 @@ console.log(twelveArray);
 console.log(twentyfiveArray);
 var radiusArray = new Array;
 
-for (var j = 0; j < twelveArray.length; j++) {
-    for (var i = 0; i < twelveArray.length; i++) {
-        radiusArray.push(new poly2tri.Point(twelveArray[i], twelveArray[j]));
-    }
+for (var i = 0; i < twelveArray.length; i++) {
+    radiusArray.push(new poly2tri.Point(twelveArray[i], -12));
+    radiusArray.push(new poly2tri.Point(twelveArray[i], 12));
+    radiusArray.push(new poly2tri.Point(-12, twelveArray[i]));
+    radiusArray.push(new poly2tri.Point(12, twelveArray[i]));
+
 }
-for (var j = 0; j < fifteenArray.length; j++) {
-    for (var i = 0; i < fifteenArray.length; i++) {
-        radiusArray.push(new poly2tri.Point(fifteenArray[i], fifteenArray[j]));
-    }
+for (var i = 0; i < fifteenArray.length; i++) {
+    radiusArray.push(new poly2tri.Point(fifteenArray[i], -15));
+    radiusArray.push(new poly2tri.Point(fifteenArray[i], 15));
+    radiusArray.push(new poly2tri.Point(-15, fifteenArray[i]));
+    radiusArray.push(new poly2tri.Point(15, fifteenArray[i]));
+
 }
-for (var j = 0; j < twentyfiveArray.length; j++) {
-    for (var i = 0; i < twentyfiveArray.length; i++) {
-        radiusArray.push(new poly2tri.Point(twentyfiveArray[i], twentyfiveArray[j]));
-    }
+for (var i = 0; i < twentyfiveArray.length; i++) {
+    radiusArray.push(new poly2tri.Point(twentyfiveArray[i], -25));
+    radiusArray.push(new poly2tri.Point(twentyfiveArray[i], 25));
+    radiusArray.push(new poly2tri.Point(-25, twentyfiveArray[i]));
+    radiusArray.push(new poly2tri.Point(25, twentyfiveArray[i]));
 }
+for (var i = 0; i < seventyFiveArray.length; i++) {
+    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], -65));
+    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], 65));
+    radiusArray.push(new poly2tri.Point(-65, seventyFiveArray[i]));
+    radiusArray.push(new poly2tri.Point(65, seventyFiveArray[i]));
+}
+
 console.log(radiusArray);
 var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
