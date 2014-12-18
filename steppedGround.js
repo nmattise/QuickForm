@@ -71,6 +71,8 @@ console.log(pts1m);
 console.log(pts5m);
 console.log(pts10m);
 
+
+//Left
 for (var x = -100; x < -50; x += 10) {
     for (var i = 1; i < pts10m.length; i++) {
         var pt1 = [x, pts10m[i - 1]],
@@ -98,6 +100,64 @@ for (var x = -20; x < -10; x += 1) {
         largerGrid.push([pt1, pt2, pt3, pt4])
     };
 };
+//Right
+for (var x = -50; x < -100; x += 10) {
+    for (var i = 1; i < pts10m.length; i++) {
+        var pt1 = [x, pts10m[i - 1]],
+            pt2 = [x + 10, pts10m[i - 1]],
+            pt3 = [x + 10, pts10m[i]],
+            pt4 = [x, pts10m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = 20; x < 50; x += 5) {
+    for (var i = 1; i < pts5m.length; i++) {
+        var pt1 = [x, pts5m[i - 1]],
+            pt2 = [x + 5, pts5m[i - 1]],
+            pt3 = [x + 5, pts5m[i]],
+            pt4 = [x, pts5m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = 10; x < 20; x += 1) {
+    for (var i = 1; i < pts1m.length; i++) {
+        var pt1 = [x, pts1m[i - 1]],
+            pt2 = [x + 1, pts1m[i - 1]],
+            pt3 = [x + 1, pts1m[i]],
+            pt4 = [x, pts1m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+
+//Top
+for (var x = -50; x < 50; x += 10) {
+    for (var y = 50; y < 100; y += 10) {
+        var pt1 = [x, y],
+            pt2 = [x + 10, y],
+            pt3 = [x + 10, y + 10],
+            pt4 = [x, y + 10];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -20; x < 20; x += 5) {
+    for (var y = 20; y < 50; y += 5) {
+        var pt1 = [x, y],
+            pt2 = [x + 5, y],
+            pt3 = [x + 5, y + 5],
+            pt4 = [x, y + 5];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -10; x < 10; x += 1) {
+    for (var y = 10; y < 20; y += 1) {
+        var pt1 = [x, y],
+            pt2 = [x + 1, y],
+            pt3 = [x + 1, y + 1],
+            pt4 = [x, y + 1];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+
 
 /*var x = -100,
     i = 1;
