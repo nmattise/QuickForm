@@ -46,6 +46,36 @@ for (var i = 0; i < xArr.length; i++) {
     innerFullArray.push(new poly2tri.Point(-10, xArr[i]));
     innerFullArray.push(new poly2tri.Point(10, xArr[i]));
 }
+for (var i = 0; i < xArr.length; i++) {
+    innerFullArray.push(new poly2tri.Point(xArr[i], -12));
+    innerFullArray.push(new poly2tri.Point(xArr[i], 12));
+    innerFullArray.push(new poly2tri.Point(-12, xArr[i]));
+    innerFullArray.push(new poly2tri.Point(12, xArr[i]));
+}
+for (var i = 0; i < xArr.length; i++) {
+    innerFullArray.push(new poly2tri.Point(xArr[i], -15));
+    innerFullArray.push(new poly2tri.Point(xArr[i], 15));
+    innerFullArray.push(new poly2tri.Point(-15, xArr[i]));
+    innerFullArray.push(new poly2tri.Point(15, xArr[i]));
+}
+for (var i = 0; i < xArr.length; i++) {
+    innerFullArray.push(new poly2tri.Point(xArr[i], -25));
+    innerFullArray.push(new poly2tri.Point(xArr[i], 25));
+    innerFullArray.push(new poly2tri.Point(-25, xArr[i]));
+    innerFullArray.push(new poly2tri.Point(25, xArr[i]));
+}
+for (var i = 0; i < xArr.length; i++) {
+    for (var i = 0; i < xArr.length; i++) {
+    innerFullArray.push(new poly2tri.Point(xArr[i], -50));
+    innerFullArray.push(new poly2tri.Point(xArr[i], 50));
+    innerFullArray.push(new poly2tri.Point(-50, xArr[i]));
+    innerFullArray.push(new poly2tri.Point(50, xArr[i]));
+}
+    innerFullArray.push(new poly2tri.Point(xArr[i], -75));
+    innerFullArray.push(new poly2tri.Point(xArr[i], 75));
+    innerFullArray.push(new poly2tri.Point(-75, xArr[i]));
+    innerFullArray.push(new poly2tri.Point(75, xArr[i]));
+}
 
 ftprint.addPoints(innerFullArray);
 
