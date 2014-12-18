@@ -9,9 +9,9 @@ function createFacet(verts) {
 }
 var outerBounds = [
     [-100, -100],
-    [-100, 100],
+    [100, -100],
     [100, 100],
-    [100, -100]
+    [-100, 100]
 ];
 var innerBound = [
     [-10, -10],
@@ -78,9 +78,25 @@ for (var i = 0; i < xArr.length; i++) {
     innerFullArray.push(new poly2tri.Point(75, xArr[i]));
 }
 var radArray = [12, 15, 25, 50, 75];
+var negRadArray = [-12, -15, -25, -50, -75];
 for (var i = 0; i < radArray.length; i++) {
     for (var j = 0; j < radArray.length; j++) {
         innerFullArray.push(new poly2tri.Point(radArray[j], radArray[i]));
+    }
+}
+for (var i = 0; i < radArray.length; i++) {
+    for (var j = 0; j < radArray.length; j++) {
+        innerFullArray.push(new poly2tri.Point(negRadArray[j], radArray[i]));
+    }
+}
+for (var i = 0; i < radArray.length; i++) {
+    for (var j = 0; j < radArray.length; j++) {
+        innerFullArray.push(new poly2tri.Point(radArray[j], negRadArray[i]));
+    }
+}
+for (var i = 0; i < radArray.length; i++) {
+    for (var j = 0; j < radArray.length; j++) {
+        innerFullArray.push(new poly2tri.Point(negRadArray[j], negRadArray[i]));
     }
 }
 
