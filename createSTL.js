@@ -76,6 +76,6 @@ function createSTL(points, height, buildingName) {
 }
 
 createSTL([[-10, -10],
-    [-10, 10],
+    [10, -10],
     [10, 10],
-    [10, -10]], 10, "groundRectangle");
+    [-10, 10]], 10, "groundRectangle");

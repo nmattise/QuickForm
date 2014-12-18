@@ -1,16 +1,16 @@
 solid ground
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 9e+1 9e+1 0e+0
-      vertex 1e+2 9e+1 0e+0
-      vertex 1e+2 1e+2 0e+0
+      vertex -1.01e+2 -1.01e+2 0e+0
+      vertex -1e+2 -1.01e+2 0e+0
+      vertex -1e+2 -1e+2 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 1e+0
     outer loop
-      vertex 9e+1 9e+1 0e+0
-      vertex 1e+2 1e+2 0e+0
-      vertex 9e+1 1e+2 0e+0
+      vertex -1.01e+2 -1.01e+2 0e+0
+      vertex -1e+2 -1e+2 0e+0
+      vertex -1.01e+2 -1e+2 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0

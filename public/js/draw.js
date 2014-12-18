@@ -21,8 +21,7 @@
           bounds: {},
           options: {
               scrollwheel: true,
-              draggableCursor: 'url(), crosshair',
-              draggingCursor: 'url(), crosshair'
+              draggableCursor: 'url(), crosshair'
           },
           events: {
               click: function (mapModel, eventName, originalEventArgs) {
