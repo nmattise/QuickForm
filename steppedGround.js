@@ -82,6 +82,28 @@ while (x <= -50) {
     x += 10;
     i++;
 }
+var x = -50,
+    i = 1;
+while (x <= -20) {
+    var pt1 = [x, pts5m[i - 1]],
+        pt2 = [x + 5, pts5m[i - 1]],
+        pt3 = [x + 5, pts5m[i]],
+        pt4 = [x, pts5m[i]];
+    largerGrid.push([pt1, pt2, pt3, pt4])
+    x += 5;
+    i++;
+}
+var x = -20,
+    i = 1;
+while (x <= -10) {
+    var pt1 = [x, pts1m[i - 1]],
+        pt2 = [x + 1, pts1m[i - 1]],
+        pt3 = [x + 1, pts1m[i]],
+        pt4 = [x, pts1m[i]];
+    largerGrid.push([pt1, pt2, pt3, pt4])
+    x += 1;
+    i++;
+}
 var groundSTLAll = '';
 for (var i = 0; i < largerGrid.length; i++) {
     var facets = (createPlane(largerGrid[i]));
