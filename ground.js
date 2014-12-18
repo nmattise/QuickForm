@@ -35,7 +35,7 @@ Array.prototype.findLengths = function () {
 }
 
 //Regular Rectangular Building
-var rectangle = [[-5, -5], [5, -5], [5, 5], [-5, 5]];
+var rectangle = [[-10, -10], [10, -10], [10, 10], [-10, 10]];
 
 //Get Longest Building Side
 var lengths = rectangle.findLengths();
@@ -54,12 +54,12 @@ var yCount = 1;
 var startX = groundBounds[0][0],
     startY = groundBounds[0][1];
 var xPts = new Array;
-for (var x = 0; x <= 20; x++) {
-    xPts.push(startX + x * distanceRatio)
+for (var x = 0; x <= 100; x++) {
+    xPts.push(startX++);
 }
 var yPts = new Array;
-for (var y = 0; y <= 20; y++) {
-    yPts.push(startY + y * distanceRatio)
+for (var y = 0; y <= 100; y++) {
+    yPts.push(startY++);
 }
 for (var y = 1; y < yPts.length; y++) {
     for (var i = 1; i < xPts.length; i++) {
@@ -87,7 +87,7 @@ for (var i = 0; i < largerGrid.length; i++) {
 }
 
 //Write STL File
-fs.writeFileSync("stlFiles/ground.stl", groundSTLAll);
+fs.writeFileSync("stlFiles/ground_1m.stl", groundSTLAll);
 
 //Using Poly2Tri
 var rectangle = [[-5, -5], [5, -5], [5, 5], [-5, 5]];
