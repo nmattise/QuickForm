@@ -73,7 +73,7 @@ for (var j = 0; j < twentyfiveArray.length; j++) {
     }
 }
 console.log(radiusArray);
-/*var radArray = [12, 15, 25, 50, 75];
+var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
 for (var j = 0; j < radArray.length; j++) {
     for (var i = 0; i < xArr.length; i++) {
@@ -126,14 +126,14 @@ var stlObj = {
 };
 
 var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);*/
+fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);
 
 var ftptTwo = new poly2tri.SweepContext(contour);
 
 ftptTwo.addPoints(radiusArray);
 
 ftptTwo.triangulate();
-var trianglesTwo = ftprint.getTriangles();
+var trianglesTwo = ftptTwo.getTriangles();
 var facetsTwo = new Array;
 trianglesTwo.forEach(function (tri) {
     var verts = [];
