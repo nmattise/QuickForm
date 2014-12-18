@@ -71,9 +71,37 @@ console.log(pts1m);
 console.log(pts5m);
 console.log(pts10m);
 
-var x = -100,
+for (var x = -100; x < -50; x += 10) {
+    for (var i = 1; i < pts10m.length; i++) {
+        var pt1 = [x, pts10m[i - 1]],
+            pt2 = [x + 10, pts10m[i - 1]],
+            pt3 = [x + 10, pts10m[i]],
+            pt4 = [x, pts10m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -50; x < -20; x += 5) {
+    for (var i = 1; i < pts5m.length; i++) {
+        var pt1 = [x, pts5m[i - 1]],
+            pt2 = [x + 5, pts5m[i - 1]],
+            pt3 = [x + 5, pts5m[i]],
+            pt4 = [x, pts5m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -20; x < -10; x += 1) {
+    for (var i = 1; i < pts1m.length; i++) {
+        var pt1 = [x, pts1m[i - 1]],
+            pt2 = [x + 1, pts1m[i - 1]],
+            pt3 = [x + 1, pts1m[i]],
+            pt4 = [x, pts1m[i]];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+
+/*var x = -100,
     i = 1;
-while (x <= -50) {
+while (x < -50) {
     var pt1 = [x, pts10m[i - 1]],
         pt2 = [x + 10, pts10m[i - 1]],
         pt3 = [x + 10, pts10m[i]],
@@ -84,7 +112,7 @@ while (x <= -50) {
 }
 var x = -50,
     i = 1;
-while (x <= -20) {
+while (x < -20) {
     var pt1 = [x, pts5m[i - 1]],
         pt2 = [x + 5, pts5m[i - 1]],
         pt3 = [x + 5, pts5m[i]],
@@ -95,7 +123,7 @@ while (x <= -20) {
 }
 var x = -20,
     i = 1;
-while (x <= -10) {
+while (x < -10) {
     var pt1 = [x, pts1m[i - 1]],
         pt2 = [x + 1, pts1m[i - 1]],
         pt3 = [x + 1, pts1m[i]],
@@ -103,7 +131,7 @@ while (x <= -10) {
     largerGrid.push([pt1, pt2, pt3, pt4])
     x += 1;
     i++;
-}
+}*/
 var groundSTLAll = '';
 for (var i = 0; i < largerGrid.length; i++) {
     var facets = (createPlane(largerGrid[i]));
