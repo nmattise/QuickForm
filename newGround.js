@@ -105,8 +105,6 @@ for (var i = 0; i < radArray.length; i++) {
 }
 
 
-var ftptTwo = ftprint;
-
 ftprint.addPoints(innerFullArray);
 
 ftprint.triangulate();
@@ -127,6 +125,8 @@ var stlObj = {
 
 var buildingSTL = stl.fromObject(stlObj);
 fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);
+
+var ftptTwo = new poly2tri.SweepContext(contour);
 
 ftptTwo.addPoints(radiusArray);
 
