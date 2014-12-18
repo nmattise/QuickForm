@@ -38,27 +38,23 @@ var twelveArray = new Array,
     fifteenArray = new Array,
     twentyfiveArray = new Array,
     seventyFiveArray = new Array;
-for (var i = 0; i < xArr.length; i++) {
-    if (xArr[i] < 0) {
-        twelveArray.push(xArr[i] - 2);
-        fifteenArray.push(xArr[i] - 5);
-        twentyfiveArray.push(xArr[i] - 15);
-        seventyFiveArray.push(xArr[i] - 65);
-    } else if (xArr == 0) {
-        twelveArray.push(0);
-        fifteenArray.push(0);
-        twentyfiveArray.push(0);
-        seventyFiveArray.push(0);
-    } else {
-        twelveArray.push(xArr[i] + 2);
-        fifteenArray.push(xArr[i] + 5);
-        twentyfiveArray.push(xArr[i] + 15);
-        seventyFiveArray.push(xArr[i] + 65);
-    }
-
+for (var i = -12; i <= 12; i += 2) {
+    twelveArray.push(i);
 }
+for (var i = -15; i <= 15; i += 5) {
+    fifteenArray.push(i);
+}
+for (var i = -25; i <= 25; i += 5) {
+    twentyfiveArray.push(i);
+}
+for (var i = -75; i <= 75; i += 15) {
+    seventyFiveArray.push(i);
+}
+
 console.log(twelveArray);
+console.log(fifteenArray);
 console.log(twentyfiveArray);
+console.log(seventyFiveArray);
 var radiusArray = new Array;
 
 for (var i = 0; i < twelveArray.length; i++) {
@@ -82,13 +78,13 @@ for (var i = 0; i < twentyfiveArray.length; i++) {
     radiusArray.push(new poly2tri.Point(25, twentyfiveArray[i]));
 }
 for (var i = 0; i < seventyFiveArray.length; i++) {
-    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], -65));
-    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], 65));
-    radiusArray.push(new poly2tri.Point(-65, seventyFiveArray[i]));
-    radiusArray.push(new poly2tri.Point(65, seventyFiveArray[i]));
+    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], -75));
+    radiusArray.push(new poly2tri.Point(seventyFiveArray[i], 75));
+    radiusArray.push(new poly2tri.Point(-75, seventyFiveArray[i]));
+    radiusArray.push(new poly2tri.Point(75, seventyFiveArray[i]));
 }
 
-console.log(radiusArray);
+//console.log(radiusArray);
 var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
 for (var j = 0; j < radArray.length; j++) {
