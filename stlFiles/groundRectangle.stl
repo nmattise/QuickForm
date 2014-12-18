@@ -1,58 +1,58 @@
 solid groundRectangle
-  facet normal 1e+0 0e+0 0e+0
+  facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex -1e+1 -1e+1 0e+0
-      vertex -1e+1 1e+1 0e+0
-      vertex -1e+1 1e+1 1e+1
-    endloop
-  endfacet
-  facet normal 1e+0 0e+0 0e+0
-    outer loop
-      vertex -1e+1 -1e+1 0e+0
-      vertex -1e+1 1e+1 1e+1
-      vertex -1e+1 -1e+1 1e+1
+      vertex 1e+1 -1e+1 0e+0
+      vertex 1e+1 -1e+1 1e+1
     endloop
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
-      vertex -1e+1 1e+1 0e+0
-      vertex 1e+1 1e+1 0e+0
-      vertex 1e+1 1e+1 1e+1
+      vertex -1e+1 -1e+1 0e+0
+      vertex 1e+1 -1e+1 1e+1
+      vertex -1e+1 -1e+1 1e+1
     endloop
   endfacet
-  facet normal 0e+0 -1e+0 0e+0
+  facet normal 1e+0 0e+0 0e+0
     outer loop
-      vertex -1e+1 1e+1 0e+0
-      vertex 1e+1 1e+1 1e+1
-      vertex -1e+1 1e+1 1e+1
-    endloop
-  endfacet
-  facet normal -1e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 1e+1 0e+0
       vertex 1e+1 -1e+1 0e+0
-      vertex 1e+1 -1e+1 1e+1
+      vertex 1e+1 1e+1 0e+0
+      vertex 1e+1 1e+1 1e+1
     endloop
   endfacet
-  facet normal -1e+0 0e+0 0e+0
+  facet normal 1e+0 0e+0 0e+0
     outer loop
-      vertex 1e+1 1e+1 0e+0
-      vertex 1e+1 -1e+1 1e+1
+      vertex 1e+1 -1e+1 0e+0
       vertex 1e+1 1e+1 1e+1
+      vertex 1e+1 -1e+1 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
     outer loop
-      vertex 1e+1 -1e+1 0e+0
+      vertex 1e+1 1e+1 0e+0
+      vertex -1e+1 1e+1 0e+0
+      vertex -1e+1 1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+1 1e+1 0e+0
+      vertex -1e+1 1e+1 1e+1
+      vertex 1e+1 1e+1 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex -1e+1 1e+1 0e+0
       vertex -1e+1 -1e+1 0e+0
       vertex -1e+1 -1e+1 1e+1
     endloop
   endfacet
-  facet normal 0e+0 1e+0 0e+0
+  facet normal -1e+0 0e+0 0e+0
     outer loop
-      vertex 1e+1 -1e+1 0e+0
+      vertex -1e+1 1e+1 0e+0
       vertex -1e+1 -1e+1 1e+1
-      vertex 1e+1 -1e+1 1e+1
+      vertex -1e+1 1e+1 1e+1
     endloop
   endfacet
   facet normal 0e+0 0e+0 -1e+0
