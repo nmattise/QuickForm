@@ -74,3 +74,8 @@ function createSTL(points, height, buildingName) {
     };
     fs.writeFileSync("stlFiles/" + buildingName + '.stl', stl.fromObject(stlObj));
 }
+
+createSTL([[-10, -10],
+    [-10, 10],
+    [10, 10],
+    [10, -10]], 10, "groundRectangle");
