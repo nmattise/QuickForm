@@ -77,12 +77,12 @@ for (var i = 0; i < twentyfiveArray.length; i++) {
     radiusArray.push(new poly2tri.Point(-25, twentyfiveArray[i]));
     radiusArray.push(new poly2tri.Point(25, twentyfiveArray[i]));
 }
-/*for (var i = 0; i < seventyFiveArray.length; i++) {
+for (var i = 0; i < seventyFiveArray.length; i++) {
     radiusArray.push(new poly2tri.Point(seventyFiveArray[i], -75));
     radiusArray.push(new poly2tri.Point(seventyFiveArray[i], 75));
     radiusArray.push(new poly2tri.Point(-75, seventyFiveArray[i]));
     radiusArray.push(new poly2tri.Point(75, seventyFiveArray[i]));
-}*/
+}
 
 console.log(radiusArray);
 var radArray = [12, 15, 25, 50, 75];
