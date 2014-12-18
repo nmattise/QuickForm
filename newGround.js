@@ -53,6 +53,8 @@ for (var i = 0; i < xArr.length; i++) {
     }
 
 }
+console.log(twelveArray);
+console.log(twentyfiveArray);
 var radiusArray = new Array;
 
 for (var j = 0; j < twelveArray.length; j++) {
@@ -70,8 +72,8 @@ for (var j = 0; j < twentyfiveArray.length; j++) {
         radiusArray.push(new poly2tri.Point(twentyfiveArray[i], twentyfiveArray[j]));
     }
 }
-
-var radArray = [12, 15, 25, 50, 75];
+console.log(radiusArray);
+/*var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
 for (var j = 0; j < radArray.length; j++) {
     for (var i = 0; i < xArr.length; i++) {
@@ -124,7 +126,7 @@ var stlObj = {
 };
 
 var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);
+fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);*/
 
 var ftptTwo = new poly2tri.SweepContext(contour);
 
