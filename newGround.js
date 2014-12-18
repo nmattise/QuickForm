@@ -34,51 +34,18 @@ while (x <= 10) {
     xArr.push(x);
     x++;
 }
-var y = -10;
-var yArr = new Array;
-while (y <= 10) {
-    yArr.push(y);
-    y++;
-}
-
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -10));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 10));
-    innerFullArray.push(new poly2tri.Point(-10, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(10, xArr[i]));
-}
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -12));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 12));
-    innerFullArray.push(new poly2tri.Point(-12, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(12, xArr[i]));
-}
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -15));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 15));
-    innerFullArray.push(new poly2tri.Point(-15, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(15, xArr[i]));
-}
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -25));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 25));
-    innerFullArray.push(new poly2tri.Point(-25, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(25, xArr[i]));
-}
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -50));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 50));
-    innerFullArray.push(new poly2tri.Point(-50, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(50, xArr[i]));
-}
-for (var i = 0; i < xArr.length; i++) {
-    innerFullArray.push(new poly2tri.Point(xArr[i], -75));
-    innerFullArray.push(new poly2tri.Point(xArr[i], 75));
-    innerFullArray.push(new poly2tri.Point(-75, xArr[i]));
-    innerFullArray.push(new poly2tri.Point(75, xArr[i]));
-}
 var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
+for (var j = 0; j < radArray.length; j++) {
+    for (var i = 0; i < xArr.length; i++) {
+        innerFullArray.push(new poly2tri.Point(xArr[i], negRadArray[j]));
+        innerFullArray.push(new poly2tri.Point(xArr[i], radArray[j]));
+        innerFullArray.push(new poly2tri.Point(negRadArray[j], xArr[i]));
+        innerFullArray.push(new poly2tri.Point(radArray[j], xArr[i]));
+    }
+}
+
+
 for (var i = 0; i < radArray.length; i++) {
     for (var j = 0; j < radArray.length; j++) {
         innerFullArray.push(new poly2tri.Point(radArray[j], radArray[i]));
@@ -122,4 +89,4 @@ var stlObj = {
 };
 
 var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);
+fs.writeFileSync("stlFiles/ground4.stl", buildingSTL);
