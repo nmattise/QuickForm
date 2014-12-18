@@ -34,6 +34,43 @@ while (x <= 10) {
     xArr.push(x);
     x++;
 }
+var twelveArray = new Array,
+    fifteenArray = new Array,
+    twentyfiveArray = new Array;
+for (var i = 0; i < xArr.length; i++) {
+    if (xArr[i] < 0) {
+        twelveArray.push(xArr[i] - 2);
+        fifteenArray.push(xArr[i] - 5);
+        twentyfiveArray.push(xArr[i] - 15);
+    } else if (xArr == 0) {
+        twelveArray.push(0);
+        fifteenArray.push(0);
+        twentyfiveArray.push(0);
+    } else {
+        twelveArray.push(xArr[i] + 2);
+        fifteenArray.push(xArr[i] + 5);
+        twentyfiveArray.push(xArr[i] + 15);
+    }
+
+}
+var radiusArray = new Array;
+
+for (var j = 0; j < twelveArray.length; j++) {
+    for (var i = 0; i < twelveArray.length; i++) {
+        radiusArray.push(new poly2tri.Point(twelveArray[i], twelveArray[j]));
+    }
+}
+for (var j = 0; j < fifteenArray.length; j++) {
+    for (var i = 0; i < fifteenArray.length; i++) {
+        radiusArray.push(new poly2tri.Point(fifteenArray[i], fifteenArray[j]));
+    }
+}
+for (var j = 0; j < twentyfiveArray.length; j++) {
+    for (var i = 0; i < twentyfiveArray.length; i++) {
+        radiusArray.push(new poly2tri.Point(twentyfiveArray[i], twentyfiveArray[j]));
+    }
+}
+
 var radArray = [12, 15, 25, 50, 75];
 var negRadArray = [-12, -15, -25, -50, -75];
 for (var j = 0; j < radArray.length; j++) {
@@ -68,7 +105,7 @@ for (var i = 0; i < radArray.length; i++) {
 }
 
 
-
+var ftptTwo = ftprint;
 
 ftprint.addPoints(innerFullArray);
 
@@ -89,4 +126,25 @@ var stlObj = {
 };
 
 var buildingSTL = stl.fromObject(stlObj);
-fs.writeFileSync("stlFiles/ground4.stl", buildingSTL);
+fs.writeFileSync("stlFiles/ground3.stl", buildingSTL);
+
+ftptTwo.addPoints(radiusArray);
+
+ftptTwo.triangulate();
+var trianglesTwo = ftprint.getTriangles();
+var facetsTwo = new Array;
+trianglesTwo.forEach(function (tri) {
+    var verts = [];
+    tri.points_.forEach(function (points) {
+        verts.push([points.x, points.y, 0]);
+    });
+    facetsTwo.push(createFacet(verts));
+});
+
+var stlObjTwo = {
+    description: "ground",
+    facets: facetsTwo
+};
+
+var buildingSTTwo = stl.fromObject(stlObjTwo);
+fs.writeFileSync("stlFiles/ground4.stl", buildingSTTwo);
