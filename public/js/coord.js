@@ -21,7 +21,6 @@ Array.prototype.findLengths = function () {
 function distanceFormula(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 }
-
 function polygonArea(X, Y, numPoints) {
     area = 0; // Accumulates area in the loop
     j = numPoints - 1; // The last vertex is the 'previous' one to the first

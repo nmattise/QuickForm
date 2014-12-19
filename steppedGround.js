@@ -101,7 +101,7 @@ for (var x = -20; x < -10; x += 1) {
     };
 };
 //Right
-for (var x = -50; x < -100; x += 10) {
+for (var x = 50; x < 100; x += 10) {
     for (var i = 1; i < pts10m.length; i++) {
         var pt1 = [x, pts10m[i - 1]],
             pt2 = [x + 10, pts10m[i - 1]],
@@ -150,6 +150,34 @@ for (var x = -20; x < 20; x += 5) {
 };
 for (var x = -10; x < 10; x += 1) {
     for (var y = 10; y < 20; y += 1) {
+        var pt1 = [x, y],
+            pt2 = [x + 1, y],
+            pt3 = [x + 1, y + 1],
+            pt4 = [x, y + 1];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+//Bottom
+for (var x = -50; x < 50; x += 10) {
+    for (var y = -100; y < -50; y += 10) {
+        var pt1 = [x, y],
+            pt2 = [x + 10, y],
+            pt3 = [x + 10, y + 10],
+            pt4 = [x, y + 10];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -20; x < 20; x += 5) {
+    for (var y = -50; y < 20; y += 5) {
+        var pt1 = [x, y],
+            pt2 = [x + 5, y],
+            pt3 = [x + 5, y + 5],
+            pt4 = [x, y + 5];
+        largerGrid.push([pt1, pt2, pt3, pt4])
+    };
+};
+for (var x = -10; x < 10; x += 1) {
+    for (var y = -20; y < -10; y += 1) {
         var pt1 = [x, y],
             pt2 = [x + 1, y],
             pt3 = [x + 1, y + 1],

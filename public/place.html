@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="placeMap">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BLDR</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/drawstyle.css" rel="stylesheet">
+    <!--Angular and Google Maps-->
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/lodash/dist/lodash.min.js"></script>
+    <script src="libs/bluebird/js/browser/bluebird.js"></script>
+    <script src="libs/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="libs/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="js/coord.js"></script>
+    <script src="js/place.js"></script>
+</head>
+
+<body ng-controller="placeCtrl">
+    <div class="row">
+        <div class="col-sm-5 info">
+            <div class="panel panel-default info-panel box-z2">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="buildingName" class="col-sm-5 control-label">Building Name</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="buildingName" ng-model="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfFloors" class="col-sm-5 control-label">Number of Floors</label>
+                            <div class="col-sm-7">
+                                <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1" ng-model="numFloors">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfFloors" class="col-sm-5 control-label">Floor to Floor Height</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1" ng-model="flrToFlrHeight">
+                                    <span class="input-group-addon">ft</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="buildingFootprint" class="col-sm-5 control-label">Building Footprint</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="buildingFootprint" ng-model="bldgFootprint">
+                                    <option value="rect">Rectangle</option>
+                                    <option value="l" disabled>L Shape</option>
+                                    <option value="t" disabled>T Shape</option>
+                                    <option value="u" disabled>U Shape</option>
+                                    <option value="h" disabled>H Shape</option>
+                                    <option value="cross" disabled>Cross Shape</option>
+                                    <option value="trap" disabled>Trapezoid</option>
+                                    <option value="triangle" disabled>Triangle</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2 col-xs-offset-1">
+                                <button class="btn btn-warning " ng-click="rotateLeft()" disabled>
+                                    <img src="libs/material-design-icons/image/2x_web/ic_rotate_left_white_24dp.png" width="24px">
+                                </button>
+                            </div>
+                            <div class="col-xs-2">
+                                <button class=" btn btn-warning" ng-click="rotateRight()" disabled>
+                                    <img src="libs/material-design-icons/image/2x_web/ic_rotate_right_white_24dp.png" width="24px">
+                                </button>
+                            </div>
+                            <div class="col-xs-2">
+                                <button class="btn btn-warning" ng-click="editable()" ng-disabled="mapPolygon.path.length <1">
+                                    <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" width="24px">
+                                </button>
+                            </div>
+                            <div class="col-xs-2">
+                                <button class="btn btn-danger" id="removeBuilding" ng-click="mapPolygon.path = []" ng-disabled="mapPolygon.path.length <1">
+                                    <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" width="24px">
+                                </button>
+                            </div>
+                            <div class="col-xs-2">
+                                <button class="btn btn-success" id="saveBuilding" ng-click="saveBuilding()" ng-disabled="mapPolygon.path.length <1">
+                                    <img src="libs/material-design-icons/content/2x_web/ic_save_white_24dp.png" width="24px">
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-7 map">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" bounds="map.bounds" events="map.events">
+                <ui-gmap-polygon static="mapPolygon.static" path="mapPolygon.path" stroke="mapPolygon.stroke" visible="mapPolygon.visible" geodesic="mapPolygon.geodesic" fill="mapPolygon.fill" editable="mapPolygon.editable" draggable="mapPolygon.draggable"></ui-gmap-polygon>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 bldgList">
+            <div class="panel panel-default box-z2">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Footprint Area</th>
+                                    <th>Height</th>
+                                    <th>Total Area</th>
+                                    <th>Color</th>
+                                    <th>Edit</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="b in buildings">
+                                    <th>
+                                        <input type="checkbox" ng-model="b.selected">
+                                    </th>
+                                    <th>{{b.id}}</th>
+                                    <th>{{b.name}}</th>
+                                    <th>{{b.footprintArea | number:0}} ft&sup2;</th>
+                                    <th>{{b.height | number:1}} ft</th>
+                                    <th>{{b.totalArea | number:0}} ft&sup2;</th>
+                                    <th>
+                                        <button class="btn" style="background-color:{{b.polygon.fill.color}};">
+                                            <input type="color" value="{{b.polygon.fill.color}}" ng-model="b.polygon.fill.color">
+                                        </button>
+                                    </th>
+                                    <th>
+                                        <button class="btn btn-warning" ng-click="editBuilding(b.id)">
+                                            <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" class="img-responsive" width="24px">
+                                        </button>
+                                    </th>
+                                    <th>
+                                        <button class="btn btn-danger" ng-click="removeBuilding(b.id)">
+                                            <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" class="img-responsive" width="24px">
+                                        </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 fileButtons">
+            <button class="btn btn-block btn-primary" ng-click="buildSTL()">Build STL Files</button>
+            <button class="btn btn-block btn-primary" ng-click="buildOSM()" disabled>Build OSM Files</button>
+            <hr>
+            <button class="btn btn-block btn-info" ng-class="" ng-disabled="!threeDFile">View 3D</button>
+            <hr>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="unitRadio" ng-model="units" value="ip">IP
+                </label>
+            </div>
+            <div class="radio disabled">
+                <label>
+                    <input type="radio" name="unitRadio" ng-model="units" value="si" disabled>SI
+                </label>
+            </div>
+        </div>
+    </div>
+    {{polyline.path}}
+
+
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
