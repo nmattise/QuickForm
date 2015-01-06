@@ -16,13 +16,24 @@ function createVertPlane(pt1, pt2, z1, z2) {
 
 }
 
-function createHorPlane(pt1, pt2, z) {
+function createHorPlaneUp(pt1, pt2, z) {
     var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt1[1], z], [pt2[0], pt2[1], z]],
         tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt2[1], z]],
         facets = [{
             verts: tri1
     }, {
             verts: tri2
+    }];
+    return facets;
+}
+
+function createHorPlaneDn(pt1, pt2, z) {
+    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt1[1], z], [pt2[0], pt2[1], z]],
+        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt2[1], z]],
+        facets = [{
+            verts: tri1.reverse()
+    }, {
+            verts: tri2.reverse()
     }];
     return facets;
 }
@@ -129,10 +140,12 @@ for (var x = 0; x < xGrid; x++) {
         var y2 = array[0][1] - yIt * (y + 1);
         var pt1 = [x1, y1],
             pt2 = [x2, y2];
-        var tri = createHorPlane(pt1, pt2, 0);
+        //Floor
+        var tri = createHorPlaneDn(pt1, pt2, 0);
         facets.push(tri[0]);
         facets.push(tri[1]);
-        var tri = createHorPlane(pt1, pt2, height);
+        //Roof
+        var tri = createHorPlaneUp(pt1, pt2, height);
         facets.push(tri[0]);
         facets.push(tri[1]);
     }
