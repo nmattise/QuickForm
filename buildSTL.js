@@ -171,6 +171,9 @@ function buildSTL(buildings) {
             for (var k = 1; k < adjustedPoints.length; k++) {
                 for (var z = 0; z < buildings[i].height; z++) {
                     var z1 = z + 1;
+                    var tri = createPlane(adjustedPoints[adjustedPoints.length-1], adjustedPoints[0], z, z1);
+                    facets.push(tri[0]);
+                    facets.push(tri[1]);
                     var tri = createPlane(adjustedPoints[k - 1], adjustedPoints[k], z, z1);
                     facets.push(tri[0]);
                     facets.push(tri[1]);
