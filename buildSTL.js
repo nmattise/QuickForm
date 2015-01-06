@@ -111,7 +111,8 @@ function buildSTL(buildings) {
         pathCount = new Number,
         centerLat = new Number,
         centerLng = new Number,
-        origin;
+        origin,
+        allBldgSTL = new String();
 
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
@@ -139,8 +140,7 @@ function buildSTL(buildings) {
                 averageSideLengths = new Array(),
                 adjustedPoints = new Array(),
                 adjustedLatLng = new Array(),
-                sideLengths = new Array(),
-                allBldgSTL = new String();
+                sideLengths = new Array();
             console.log("___\n" + buildings[i].id);
             //console.log(buildings[i].polygon.path)
             //Get Cartesian Points from LatLng
