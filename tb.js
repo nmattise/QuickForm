@@ -49,7 +49,7 @@ console.log("zGrid: " + zGrid + "  Z iteration: " + zIt);
 //South Side
 for (var x = 0; x < xGrid + 1; x++) {
     var x1 = array[0][0] - xIt * x;
-    var x2 = array[0][0] - xIt * x;
+    var x2 = array[0][0] - xIt * (x + 1);
     //console.log(array[0][0] - xIt * x)
     for (var z = 0; z < zGrid + 1; z++) {
         //console.log(zIt * z);
@@ -66,7 +66,7 @@ for (var x = 0; x < xGrid + 1; x++) {
 //East Side
 for (var y = 0; y < yGrid + 1; y++) {
     var y1 = array[1][1] - yIt * y;
-    var y2 = array[1][1] - yIt * y;
+    var y2 = array[1][1] - yIt * (y + 1);
     //console.log(array[0][0] - xIt * x)
     for (var z = 0; z < zGrid + 1; z++) {
         //console.log(zIt * z);
