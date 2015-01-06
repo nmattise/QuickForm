@@ -4,7 +4,7 @@ var fs = require('fs'),
     stl = require('stl');
 
 function createWall(pt1, pt2, z1, z2) {
-    var tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt2[0], pt2[1], z1]],
+    var tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z1], [pt2[0], pt2[1], z2]],
         tri2 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt1[0], pt1[1], z2]],
         facets = [];
     facets = [{
@@ -47,7 +47,7 @@ zIt = height / zGrid;
 console.log("zGrid: " + zGrid + "  Z iteration: " + zIt);
 
 //South Side
-for (var x = 0; x < xGrid + 1; x++) {
+for (var x = 0; x < xGrid; x++) {
     var x1 = array[0][0] - xIt * x;
     var x2 = array[0][0] - xIt * (x + 1);
     //console.log(array[0][0] - xIt * x)
@@ -64,7 +64,7 @@ for (var x = 0; x < xGrid + 1; x++) {
 }
 
 //East Side
-for (var y = 0; y < yGrid + 1; y++) {
+for (var y = 0; y < yGrid; y++) {
     var y1 = array[1][1] - yIt * y;
     var y2 = array[1][1] - yIt * (y + 1);
     //console.log(array[0][0] - xIt * x)
