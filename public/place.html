@@ -60,6 +60,8 @@
                                     <option value="cross" disabled>Cross Shape</option>
                                     <option value="trap" disabled>Trapezoid</option>
                                     <option value="triangle" disabled>Triangle</option>
+                                    <option value="courtyard" disabled>Courtyard</option>
+                                    <option value="circle" disabled>Circle</option>
                                 </select>
                             </div>
                         </div>
@@ -85,7 +87,7 @@
                                 </button>
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success" id="saveBuilding" ng-click="saveBuilding()" ng-disabled="mapPolygon.path.length <1">
+                                <button class="btn btn-success" id="saveBuilding" ng-click="saveBuilding()" ng-disabled="mapPolygon.path.length <1 || !name || !numFloors ">
                                     <img src="libs/material-design-icons/content/2x_web/ic_save_white_24dp.png" width="24px">
                                 </button>
                             </div>
@@ -98,8 +100,12 @@
         </div>
 
         <div class="col-sm-7 map">
+            <!--Map-->
             <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" bounds="map.bounds" events="map.events">
+                <!--Current Placement Polygon-->
                 <ui-gmap-polygon static="mapPolygon.static" path="mapPolygon.path" stroke="mapPolygon.stroke" visible="mapPolygon.visible" geodesic="mapPolygon.geodesic" fill="mapPolygon.fill" editable="mapPolygon.editable" draggable="mapPolygon.draggable"></ui-gmap-polygon>
+                <!--Saved Polygons-->
+                <ui-gmap-polygon static="true" ng-repeat="p in buildings track by p.id" path="p.polygon.path" stroke="p.polygon.stroke" visible="p.polygon.visible" geodesic="p.polygon.geodesic" fill="p.polygon.fill" fit="false" editable="p.polygon.editable" draggable="p.polygon.draggable"></ui-gmap-polygon>
             </ui-gmap-google-map>
         </div>
     </div>
@@ -140,12 +146,12 @@
                                     </th>
                                     <th>
                                         <button class="btn btn-warning" ng-click="editBuilding(b.id)">
-                                            <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" class="img-responsive" width="24px">
+                                            <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" class="" width="24px">
                                         </button>
                                     </th>
                                     <th>
                                         <button class="btn btn-danger" ng-click="removeBuilding(b.id)">
-                                            <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" class="img-responsive" width="24px">
+                                            <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" class="" width="24px">
                                         </button>
                                     </th>
                                 </tr>
@@ -174,8 +180,7 @@
             </div>
         </div>
     </div>
-    {{polyline.path}}
-
+    {{buildings}}
 
 
     <script src="libs/jquery/dist/jquery.min.js"></script>

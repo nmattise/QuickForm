@@ -13,7 +13,7 @@ app.config(function (uiGmapGoogleMapApiProvider) {
         libraries: 'weather,geometry,visualization,drawing'
     });
 })
-app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
+app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi, $http) {
     //Units
     $scope.units = "ip";
     //Initialize
@@ -87,19 +87,37 @@ app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
 
     //Building Array
     $scope.buildings = new Array;
+    $scope.removedBuildings = new Array;
     //Test polylines Array
 
     $scope.saveBuilding = function () {
-        var footprintArea = getArea($scope.mapPolygon.path);
+        //Use Building Path to Find Footprint Area
+        var path = $scope.mapPolygon.path;
+        var footprintArea = getArea(path);
+        //Initialize new Building Object
         var building = new Object;
+        building.polygon = new Object;
+        building.polygon.path = new Array;
+        building.polygon.fill = new Object;
+        building.polygon.stroke = new Object;
         if ($scope.buildings.length > 0) {
             var id = $scope.buildings.last().id + 1;
+            building.polygon.id = id;
+            building.id = id;
         } else {
             var id = 0;
+            building.polygon.id = id;
+            building.id = id;
         }
-        building.polygon = $scope.mapPolygon;
-        building.id = id;
-        building.polygon.id = id;
+        building.polygon.path = path;
+        building.polygon.stroke = {
+            color: '#777',
+            weight: 1
+        };
+        building.polygon.fill = {
+            color: '#777',
+            opacity: 0.6
+        };
         building.name = $scope.name;
         building.numFloors = $scope.numFloors;
         building.flrToFlrHeight = $scope.flrToFlrHeight;
@@ -107,8 +125,13 @@ app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
         building.footprintArea = footprintArea;
         building.height = $scope.flrToFlrHeight * $scope.numFloors;
         building.totalArea = $scope.numFloors * footprintArea;
+        building.bldgFootprint = $scope.bldgFootprint;
         $scope.buildings.push(building);
         $scope.mapPolygon.path = new Array;
+        $scope.name = new String;
+        $scope.numFloors = new Number;
+        $scope.flrToFlrHeight = new Number;
+        $scope.bldgFootprint = 'rect';
     }
     $scope.editBuilding = function (id) {
         $scope.buildings.forEach(function (b) {
@@ -116,10 +139,15 @@ app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
                 $scope.mapPolygon = b.polygon;
                 $scope.$apply();
             }
-        })
+        });
     }
     $scope.removeBuilding = function (id) {
-
+        for (var i = 0; i < $scope.buildings.length; i++) {
+            if ($scope.buildings[i].id == id) {
+                $scope.removeBuildings.push($scope.buildings[i]);
+                $scope.buildings.splice(i, 1);
+            }
+        }
     }
     $scope.buildSTL = function () {
         var selectedIds = new Array,
@@ -132,6 +160,19 @@ app.controller('placeCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
         });
         if (selectedIds.length > 0) {
             $window.alert(selectedIds);
+            $http.post('/createSTL', {
+                buildings: $scope.buildings
+            }).
+            success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log(data);
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(data);
+            });
         } else {
             $window.alert("Please select at least one building to create an STL file");
         }

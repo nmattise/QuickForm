@@ -2,6 +2,7 @@ var fs = require('fs'),
     express = require('express'),
     createSTL = require('./createSTL.js').createSTL,
     createAllBuildingsSTL = require('./allBuildingsSTL.js').allBuildingsSTL,
+    buildSTL = require('./buildSTL.js').buildSTL,
     bodyParser = require('body-parser');
 
 
@@ -12,7 +13,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/public/map.html');
+    res.sendFile(__dirname + '/public/place.html');
+});
+
+app.post('/createSTL', function (req, res) {
+    console.log(req.body);
 });
 
 app.post('/createOneSTL', function (req, res) {
