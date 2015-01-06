@@ -182,7 +182,17 @@ function buildSTL(buildings) {
                 }
             };
             //Roof & Floor
-            var x = adjustedPoints[0][0],
+            var tri1 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[1][0], adjustedPoints[1][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0]];
+            var tri2 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0], [adjustedPoints[3][0], adjustedPoints[3][1], 0]];
+            var roofFacets = [{
+                verts: tri1
+    }, {
+                verts: tri2
+    }];
+            facets.push(roofFacets[0]);
+            facets.push(roofFacets[1]);
+
+            /*var x = adjustedPoints[0][0],
                 y = adjustedPoints[0][1],
                 xGrid = Math.abs(adjustedPoints[0][0] - adjustedPoints[1][0]),
                 yGrid = Math.abs(adjustedPoints[0][1] - adjustedPoints[2][1]),
@@ -203,7 +213,7 @@ function buildSTL(buildings) {
                     facets.push(tri1[0]);
                     facets.push(tri1[1]);
                 }
-            }
+            }*/
 
 
             var stlObj = {
