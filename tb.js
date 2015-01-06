@@ -4,11 +4,9 @@ var fs = require('fs'),
     stl = require('stl');
 
 function createWall(pt1, pt2, z1, z2) {
-    var tri1 = [],
-        tri2 = [],
+    var tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt2[0], pt2[1], z1]],
+        tri2 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt1[0], pt1[1], z2]],
         facets = [];
-    tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z1], [pt2[0], pt2[1], z2]];
-    tri2 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt1[0], pt1[1], z2]];
     facets = [{
         verts: tri1
     }, {
@@ -36,7 +34,7 @@ array = [[-10.25, -10.5],
     [10, -10.5],
     [10, 10],
     [-10.25, 10]];
-height = 35.5;
+height = 15.5;
 
 xGrid = Math.abs(parseInt(array[0][0] - array[1][0], 10));
 xIt = (array[0][0] - array[1][0]) / xGrid;
