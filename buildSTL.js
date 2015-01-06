@@ -169,6 +169,7 @@ function buildSTL(buildings) {
             console.log("Side Lengths: " + sideLengths);
             console.log("Heights: " + buildings[i].height);
             var facets = new Array();
+            //Walls
             for (var k = 1; k < adjustedPoints.length; k++) {
                 for (var z = 0; z < buildings[i].height; z++) {
                     var z1 = z + 1;
@@ -180,6 +181,31 @@ function buildSTL(buildings) {
                     facets.push(tri[1]);
                 }
             };
+            //Roof & Floor
+            var x = adjustedPoints[0][0],
+                y = adjustedPoints[0][1],
+                xGrid = Math.abs(adjustedPoints[0][0] - adjustedPoints[1][0]),
+                yGrid = Math.abs(adjustedPoints[0][1] - adjustedPoints[2][1]),
+                xIncrement = parseInt(xGrid) / xGrid,
+                yIncrement = parseInt(yGrid) / yGrid;
+            console.log("xGrid: " + xGrid + "  X Inc: " + xIncrement);
+            console.log("yGrid: " + yGrid + "  Y Inc: " + yIncrement);
+            for (var xCount = 0; xCount < xGrid; xCount++) {
+                for (var yCount = 0; yCount < yGrid; yCount++) {
+                    var pt1 = [x - (xIncrement * xCount), y - (yIncrement * yCount)],
+                        pt2 = [x - (xIncrement * (xCount + 1)), y - (xIncrement * (yCount + 1))];
+                    //Roof
+                    var tri = createPlane(pt1, pt2, buildings[i].height, buildings[i].height);
+                    facets.push(tri1[0]);
+                    facets.push(tri1[1]);
+                    //Floor
+                    var tri = createPlane(pt1, pt2, 0, 0);
+                    facets.push(tri1[0]);
+                    facets.push(tri1[1]);
+                }
+            }
+
+
             var stlObj = {
                 description: "testBuilding",
                 facets: facets
