@@ -62,6 +62,22 @@ for (var x = 0; x < xGrid; x++) {
         facets.push(tri[1]);
     }
 }
+//North Side
+for (var x = 0; x < xGrid; x++) {
+    var x1 = array[3][0] - xIt * x;
+    var x2 = array[3][0] - xIt * (x + 1);
+    //console.log(array[0][0] - xIt * x)
+    for (var z = 0; z < zGrid + 1; z++) {
+        //console.log(zIt * z);
+        var z1 = zIt * z;
+        var z2 = zIt * (z + 1);
+        var pt1 = [x1, array[3][1]],
+            pt2 = [x2, array[3][1]];
+        var tri = createWall(pt1, pt2, z1, z2);
+        facets.push(tri[0]);
+        facets.push(tri[1]);
+    }
+}
 
 //East Side
 for (var y = 0; y < yGrid; y++) {
@@ -74,6 +90,22 @@ for (var y = 0; y < yGrid; y++) {
         var z2 = zIt * (z + 1);
         var pt1 = [array[1][0], y1],
             pt2 = [array[1][0], y2];
+        var tri = createWall(pt1, pt2, z1, z2);
+        facets.push(tri[0]);
+        facets.push(tri[1]);
+    }
+}
+//West Side
+for (var y = 0; y < yGrid; y++) {
+    var y1 = array[3][1] - yIt * y;
+    var y2 = array[3][1] - yIt * (y + 1);
+    //console.log(array[0][0] - xIt * x)
+    for (var z = 0; z < zGrid + 1; z++) {
+        //console.log(zIt * z);
+        var z1 = zIt * z;
+        var z2 = zIt * (z + 1);
+        var pt1 = [array[3][0], y1],
+            pt2 = [array[3][0], y2];
         var tri = createWall(pt1, pt2, z1, z2);
         facets.push(tri[0]);
         facets.push(tri[1]);
