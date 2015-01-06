@@ -139,7 +139,8 @@ function buildSTL(buildings) {
                 averageSideLengths = new Array(),
                 adjustedPoints = new Array(),
                 adjustedLatLng = new Array(),
-                sideLengths = new Array();
+                sideLengths = new Array(),
+                allBldgSTL = new String();
             console.log("___\n" + buildings[i].id);
             //console.log(buildings[i].polygon.path)
             //Get Cartesian Points from LatLng
@@ -171,9 +172,9 @@ function buildSTL(buildings) {
             for (var k = 1; k < adjustedPoints.length; k++) {
                 for (var z = 0; z < buildings[i].height; z++) {
                     var z1 = z + 1;
-                    var tri = createPlane(adjustedPoints[adjustedPoints.length-1], adjustedPoints[0], z, z1);
-                    facets.push(tri[0]);
-                    facets.push(tri[1]);
+                    var tri1 = createPlane(adjustedPoints[adjustedPoints.length - 1], adjustedPoints[0], z, z1);
+                    facets.push(tri1[0]);
+                    facets.push(tri1[1]);
                     var tri = createPlane(adjustedPoints[k - 1], adjustedPoints[k], z, z1);
                     facets.push(tri[0]);
                     facets.push(tri[1]);
@@ -183,14 +184,12 @@ function buildSTL(buildings) {
                 description: "testBuilding",
                 facets: facets
             };
-            fs.writeFileSync("stlFiles/testBuildings.stl", stl.fromObject(stlObj));
+            allBldgSTL += stl.fromObject(stlObj) + "\n";
+
             break;
         }
     }
-    /*switch (bldgFootprint) {
-    case 'rect':
-        break
-    }*/
+    fs.writeFileSync("stlFiles/testBuildings.stl", allBldgSTL);
 }
 
 
