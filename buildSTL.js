@@ -181,9 +181,19 @@ function buildSTL(buildings) {
                     facets.push(tri[1]);
                 }
             };
-            //Roof & Floor
-            var tri1 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[1][0], adjustedPoints[1][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0]];
-            var tri2 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0], [adjustedPoints[3][0], adjustedPoints[3][1], 0]];
+            //Roof
+            var tri1 = [[adjustedPoints[0][0], adjustedPoints[0][1], buildings[i].height], [adjustedPoints[1][0], adjustedPoints[1][1], buildings[i].height], [adjustedPoints[2][0], adjustedPoints[2][1], buildings[i].height]];
+            var tri2 = [[adjustedPoints[0][0], adjustedPoints[0][1], buildings[i].height], [adjustedPoints[2][0], adjustedPoints[2][1], buildings[i].height], [adjustedPoints[3][0], adjustedPoints[3][1], buildings[i].height]];
+            var roofFacets = [{
+                verts: tri1
+    }, {
+                verts: tri2
+    }];
+            facets.push(roofFacets[0]);
+            facets.push(roofFacets[1]);
+            //FLoor
+            var tri1 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0], [adjustedPoints[1][0], adjustedPoints[1][1], 0]];
+            var tri2 = [[adjustedPoints[0][0], adjustedPoints[0][1], 0], [adjustedPoints[3][0], adjustedPoints[3][1], 0], [adjustedPoints[2][0], adjustedPoints[2][1], 0]];
             var roofFacets = [{
                 verts: tri1
     }, {
