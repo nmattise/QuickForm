@@ -202,29 +202,6 @@ function buildSTL(buildings) {
             facets.push(roofFacets[0]);
             facets.push(roofFacets[1]);
 
-            /*var x = adjustedPoints[0][0],
-                y = adjustedPoints[0][1],
-                xGrid = Math.abs(adjustedPoints[0][0] - adjustedPoints[1][0]),
-                yGrid = Math.abs(adjustedPoints[0][1] - adjustedPoints[2][1]),
-                xIncrement = parseInt(xGrid) / xGrid,
-                yIncrement = parseInt(yGrid) / yGrid;
-            console.log("xGrid: " + xGrid + "  X Inc: " + xIncrement);
-            console.log("yGrid: " + yGrid + "  Y Inc: " + yIncrement);
-            for (var xCount = 0; xCount < xGrid; xCount++) {
-                for (var yCount = 0; yCount < yGrid; yCount++) {
-                    var pt1 = [x - (xIncrement * xCount), y - (yIncrement * yCount)],
-                        pt2 = [x - (xIncrement * (xCount + 1)), y - (xIncrement * (yCount + 1))];
-                    //Roof
-                    var tri = createPlane(pt1, pt2, buildings[i].height, buildings[i].height);
-                    facets.push(tri1[0]);
-                    facets.push(tri1[1]);
-                    //Floor
-                    var tri = createPlane(pt1, pt2, 0, 0);
-                    facets.push(tri1[0]);
-                    facets.push(tri1[1]);
-                }
-            }*/
-
 
             var stlObj = {
                 description: "testBuilding",
