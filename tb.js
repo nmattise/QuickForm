@@ -71,8 +71,8 @@ for (var x = 0; x < xGrid; x++) {
 }
 //North Side
 for (var x = 0; x < xGrid; x++) {
-    var x1 = array[2][0] - xIt * x;
-    var x2 = array[2][0] - xIt * (x + 1);
+    var x1 = array[2][0] + xIt * x;
+    var x2 = array[2][0] + xIt * (x + 1);
     //console.log(array[0][0] - xIt * x)
     for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
@@ -104,8 +104,8 @@ for (var y = 0; y < yGrid; y++) {
 }
 //West Side
 for (var y = 0; y < yGrid; y++) {
-    var y1 = array[3][1] - yIt * y;
-    var y2 = array[3][1] - yIt * (y + 1);
+    var y1 = array[3][1] + yIt * y;
+    var y2 = array[3][1] + yIt * (y + 1);
     //console.log(array[0][0] - xIt * x)
     for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
@@ -125,8 +125,8 @@ for (var x = 0; x < xGrid; x++) {
     //console.log(array[0][0] - xIt * x)
     for (var y = 0; y < yGrid; y++) {
         //console.log(zIt * z);
-        var y1 = array[1][1] - yIt * y;
-        var y2 = array[1][1] - yIt * (y + 1);
+        var y1 = array[0][1] - yIt * y;
+        var y2 = array[0][1] - yIt * (y + 1);
         var pt1 = [x1, y1],
             pt2 = [x2, y2];
         var tri = createHorPlane(pt1, pt2, 0);
