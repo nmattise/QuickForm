@@ -17,8 +17,8 @@ function createVertPlane(pt1, pt2, z1, z2) {
 }
 
 function createHorPlane(pt1, pt2, z) {
-    var tri1 = [[pt1[0], pt1[1], 1], [pt2[0], pt2[1], z], [pt2[0], pt2[1], z]],
-        tri2 = [[pt1[0], pt1[1], 1], [pt2[0], pt2[1], z], [pt1[0], pt1[1], z]],
+    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt2[0], pt2[1], z]],
+        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt1[1], z]],
         facets = [{
             verts: tri1
     }, {
@@ -58,7 +58,7 @@ for (var x = 0; x < xGrid; x++) {
     var x1 = array[0][0] - xIt * x;
     var x2 = array[0][0] - xIt * (x + 1);
     //console.log(array[0][0] - xIt * x)
-    for (var z = 0; z < zGrid + 1; z++) {
+    for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
         var z1 = zIt * z;
         var z2 = zIt * (z + 1);
@@ -74,7 +74,7 @@ for (var x = 0; x < xGrid; x++) {
     var x1 = array[2][0] - xIt * x;
     var x2 = array[2][0] - xIt * (x + 1);
     //console.log(array[0][0] - xIt * x)
-    for (var z = 0; z < zGrid + 1; z++) {
+    for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
         var z1 = zIt * z;
         var z2 = zIt * (z + 1);
@@ -91,7 +91,7 @@ for (var y = 0; y < yGrid; y++) {
     var y1 = array[1][1] - yIt * y;
     var y2 = array[1][1] - yIt * (y + 1);
     //console.log(array[0][0] - xIt * x)
-    for (var z = 0; z < zGrid + 1; z++) {
+    for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
         var z1 = zIt * z;
         var z2 = zIt * (z + 1);
@@ -104,10 +104,10 @@ for (var y = 0; y < yGrid; y++) {
 }
 //West Side
 for (var y = 0; y < yGrid; y++) {
-    var y1 = array[3][1] + yIt * y;
-    var y2 = array[3][1] + yIt * (y + 1);
+    var y1 = array[3][1] - yIt * y;
+    var y2 = array[3][1] - yIt * (y + 1);
     //console.log(array[0][0] - xIt * x)
-    for (var z = 0; z < zGrid + 1; z++) {
+    for (var z = 0; z < zGrid; z++) {
         //console.log(zIt * z);
         var z1 = zIt * z;
         var z2 = zIt * (z + 1);
