@@ -17,8 +17,8 @@ function createVertPlane(pt1, pt2, z1, z2) {
 }
 
 function createHorPlane(pt1, pt2, z) {
-    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt2[0], pt2[1], z]],
-        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt1[1], z]],
+    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt1[1], z], [pt2[0], pt2[1], z]],
+        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt2[1], z]],
         facets = [{
             verts: tri1
     }, {
