@@ -48,10 +48,10 @@ var array = [],
     zIt,
     facets = [];
 
-array = [[-10.25, -10.5],
-    [10, -10.5],
-    [10, 10],
-    [-10.25, 10]];
+array = [[0, -10],
+    [10, 0],
+    [0, 10],
+    [10, 0]];
 height = 15.5;
 
 xGrid = Math.abs(parseInt(array[0][0] - array[1][0], 10));
