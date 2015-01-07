@@ -54,7 +54,7 @@ array = [[0, -10],
     [10, 0],
     [0, 10],
     [10, 0]];
-height = 15.5;
+height = 10;
 
 xGrid = Math.abs(parseInt(array[0][0] - array[1][0], 10));
 xIt = (array[0][0] - array[1][0]) / xGrid;
@@ -161,7 +161,16 @@ fs.writeFileSync("stlFiles/testBuildings.stl", stl.fromObject(stlObj));
 
 
 //Loop that is a function of x,y,z
-for (var x = 0; x < xGrid; x++) {
+//Walls
+for (var i = 1; i < array.length; i++) {
+    var tri = createVertPlane(array[i - 1], array[i], 0, height);
+    facets.push(tri[0]);
+    facets.push(tri[1]);
+}
+var tri = createVertPlane(array[array.length - 1], array[0], 0, height);
+facets1.push(tri[0]);
+facets1.push(tri[1]);
+/*for (var x = 0; x < xGrid; x++) {
     var x1 = array[0][0] - xIt * x;
     var x2 = array[0][0] - xIt * (x + 1);
 
@@ -179,7 +188,7 @@ for (var x = 0; x < xGrid; x++) {
             facets1.push(tri[1]);
         }
     }
-}
+}*/
 var stlObj1 = {
     description: "testBuilding1",
     facets: facets1
