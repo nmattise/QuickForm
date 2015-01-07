@@ -3,6 +3,10 @@
 var fs = require('fs'),
     stl = require('stl');
 
+function distanceFormula(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+}
+
 function createVertPlane(pt1, pt2, z1, z2) {
     var tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z1], [pt2[0], pt2[1], z2]],
         tri2 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt1[0], pt1[1], z2]],
@@ -50,9 +54,9 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-array = [[0, -10],
+array = [[0, -15],
     [10, 0],
-    [0, 10],
+    [0, 15],
     [10, 0]];
 height = 10;
 
@@ -172,39 +176,35 @@ facets1.push(tri[1]);*/
 
 //Side 1
 //Get grid# and grid iterators in x,y,z
-xGrid = Math.abs(parseInt(array[0][0] - array[1][0], 10));
-xIt = (array[0][0] - array[1][0]) / xGrid;
-console.log("xGrid: " + xGrid + "  X iteration: " + xIt);
-yGrid = Math.abs(parseInt(array[0][1] - array[2][1], 10));
-yIt = (array[0][1] - array[2][1]) / yGrid;
-console.log("yGrid: " + yGrid + "  Y iteration: " + yIt);
-zGrid = Math.abs(parseInt(height));
-zIt = height / zGrid;
-console.log("zGrid: " + zGrid + "  Z iteration: " + zIt);
+var sideLength = distanceFormula(array[0][0], array[0][1], array[1][0], array[1][1]);
+var deltaX = array[1][0] - array[0][0];
+var deltaY = array[1][1] - array[0][1];
 
-for (var x = 0; x < xGrid; x++) {
-    var x1 = array[0][0] - xIt * x;
-    var x2 = array[0][0] - xIt * (x + 1);
-    //console.log(array[0][0] - xIt * x)
-    for (var y = 0; y < yGrid; y++) {
-        //console.log(zIt * z);
-        var y1 = array[0][1] - yIt * y;
-        var y2 = array[0][1] - yIt * (y + 1);
-        for (var z = 0; z < zGrid; z++) {
-            //console.log(zIt * z);
-            var z1 = zIt * z;
-            var z2 = zIt * (z + 1);
-            var pt1 = [x1, y1],
-                pt2 = [x2, y2];
-            var tri = createVertPlane(pt1, pt2, z1, z2);
-            facets1.push(tri[0]);
-            facets1.push(tri[1]);
-        }
-    }
+var gridLength = sideLength / parseInt(sideLength);
+var xIt = deltaX / parseInt(sideLength);
+var yIt = deltaY / parseInt(sideLength);
+var iterator = parseInt(sideLength);
+console.log("sidelength: " + sideLength);
+console.log("deltax: " + deltaX);
+console.log("deltay: " + deltaY);
+console.log("gridLength: " + gridLength);
+console.log("xIterator: " + xIt);
+console.log("yIterator: " + yIt);
+console.log("Iterator: " + iterator);
+
+for (var i = 0; i < sideLength - 1; i++) {
+    var pt1 = [array[0][0] + (xIt * i), array[0][1] + (yIt * i)];
+    var pt2 = [array[0][0] + (xIt * (i + 1)), array[0][1] + (yIt * (i + 1))];
+    console.log("pt1: " + pt1 + "  pt2: " + pt2);
+    var tri = createVertPlane(pt1, pt2, 0, height);
+    facets.push(tri[0]);
+    facets.push(tri[1]);
 }
+
+
 
 var stlObj1 = {
     description: "testBuilding1",
-    facets: facets1
+    facets: facets
 };
 fs.writeFileSync("stlFiles/testBuildings1.stl", stl.fromObject(stlObj1));
