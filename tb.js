@@ -54,9 +54,9 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-array = [[0, -15],
+array = [[0, -10],
     [10, 0],
-    [0, 15],
+    [0, 10],
     [10, 0]];
 height = 10;
 
@@ -176,7 +176,7 @@ facets1.push(tri[1]);*/
 
 //Side 1
 //Get grid# and grid iterators in x,y,z
-var sideLength = distanceFormula(array[0][0], array[0][1], array[1][0], array[1][1]);
+/*var sideLength = distanceFormula(array[0][0], array[0][1], array[1][0], array[1][1]);
 var deltaX = array[1][0] - array[0][0];
 var deltaY = array[1][1] - array[0][1];
 
@@ -199,7 +199,7 @@ for (var i = 0; i < sideLength - 1; i++) {
     var tri = createVertPlane(pt1, pt2, 0, height);
     facets.push(tri[0]);
     facets.push(tri[1]);
-}
+}*/
 //Loop Through Sides
 for (var i = 1; i < array.length; i++) {
     var sideLength = distanceFormula(array[i - 1][0], array[i - 1][1], array[i][0], array[i][1]),
@@ -212,7 +212,7 @@ for (var i = 1; i < array.length; i++) {
     var zGrid = Math.abs(parseInt(height));
     var zIt = height / zGrid;
     console.log("zGrid: " + zGrid + "  Z iteration: " + zIt);
-    for (var j = 0; j < sideLength - 1;j++) {
+    for (var j = 0; j < sideLength - 1; j++) {
         var pt1 = [array[i - 1][0] + (xIt * j), array[i - 1][1] + (yIt * j)];
         var pt2 = [array[i - 1][0] + (xIt * (j + 1)), array[i - 1][1] + (yIt * (j + 1))];
         console.log("pt1: " + pt1 + "  pt2: " + pt2);
