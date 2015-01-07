@@ -201,8 +201,7 @@ for (var i = 0; i < sideLength - 1; i++) {
     facets.push(tri[1]);
 }*/
 //Loop Through Sides
-var zGrid = Math.abs(parseInt(height));
-var zIt = height / zGrid;
+
 for (var i = 1; i <= 2; i++) {
     var sideLength = distanceFormula(array[i - 1][0], array[i - 1][1], array[i][0], array[i][1]),
         deltaX = array[i][0] - array[i - 1][0],
@@ -230,7 +229,6 @@ for (var i = 1; i <= 2; i++) {
             facets.push(tri[0]);
             facets.push(tri[1]);
         }
-
     }
 }
 for (var i = 3; i < array.length; i++) {
@@ -294,8 +292,6 @@ for (var j = 0; j < sideLength - 1; j++) {
     }
 
 }
-
-
 var stlObj1 = {
     description: "testBuilding1",
     facets: facets
