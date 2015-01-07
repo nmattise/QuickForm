@@ -47,6 +47,7 @@ var array = [],
     zGrid,
     zIt,
     facets = [],
+    facets1 = [],
     x1, x2;
 
 array = [[0, -10],
@@ -174,13 +175,13 @@ for (var x = 0; x < xGrid; x++) {
             var pt1 = [x1, y1],
                 pt2 = [x2, y2];
             var tri = createVertPlane(pt1, pt2, z1, z2);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
+            facets1.push(tri[0]);
+            facets1.push(tri[1]);
         }
     }
 }
-var stlObj = {
+var stlObj1 = {
     description: "testBuilding1",
-    facets: facets
+    facets: facets1
 };
-fs.writeFileSync("stlFiles/testBuildings1.stl", stl.fromObject(stlObj));
+fs.writeFileSync("stlFiles/testBuildings1.stl", stl.fromObject(stlObj1));
