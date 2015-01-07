@@ -200,6 +200,32 @@ for (var i = 0; i < sideLength - 1; i++) {
     facets.push(tri[0]);
     facets.push(tri[1]);
 }
+//Loop Through Sides
+for (var i = 1; i < array.length; i++) {
+    var sideLength = distanceFormula(array[i - 1][0], array[i - 1][1], array[i][0], array[i][1]),
+        deltaX = array[i][0] - array[i - 1][0],
+        deltaY = array[i][1] - array[i - 1][1],
+        gridLength = sideLength / parseInt(sideLength),
+        xIt = deltaX / parseInt(sideLength),
+        yIt = deltaY / parseInt(sideLength),
+        iterator = parseInt(sideLength);
+    var zGrid = Math.abs(parseInt(height));
+    var zIt = height / zGrid;
+    console.log("zGrid: " + zGrid + "  Z iteration: " + zIt);
+    for (var j = 0; j < sideLength - 1;j++) {
+        var pt1 = [array[i - 1][0] + (xIt * j), array[i - 1][1] + (yIt * j)];
+        var pt2 = [array[i - 1][0] + (xIt * (j + 1)), array[i - 1][1] + (yIt * (j + 1))];
+        console.log("pt1: " + pt1 + "  pt2: " + pt2);
+        for (var z = 0; z < zGrid; z++) {
+            var z1 = zIt * z;
+            var z2 = zIt * (z + 1);
+            var tri = createVertPlane(pt1, pt2, z1, z2);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+
+    }
+}
 
 
 
