@@ -46,7 +46,8 @@ var array = [],
     yIt,
     zGrid,
     zIt,
-    facets = [];
+    facets = [],
+    x1, x2;
 
 array = [[0, -10],
     [10, 0],
@@ -155,5 +156,31 @@ var stlObj = {
     description: "testBuilding",
     facets: facets
 };
-
 fs.writeFileSync("stlFiles/testBuildings.stl", stl.fromObject(stlObj));
+
+
+//Loop that is a function of x,y,z
+for (var x = 0; x < xGrid; x++) {
+    var x1 = array[0][0] - xIt * x;
+    var x2 = array[0][0] - xIt * (x + 1);
+
+    for (var y = 0; y < yGrid; y++) {
+        var y1 = array[0][1] - yIt * y;
+        var y2 = array[0][1] - yIt * (y + 1);
+
+        for (var z = 0; z < zGrid; z++) {
+            var z1 = zIt * z;
+            var z2 = zIt * (z + 1);
+            var pt1 = [x1, y1],
+                pt2 = [x2, y2];
+            var tri = createVertPlane(pt1, pt2, z1, z2);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+}
+var stlObj = {
+    description: "testBuilding1",
+    facets: facets
+};
+fs.writeFileSync("stlFiles/testBuildings1.stl", stl.fromObject(stlObj));
