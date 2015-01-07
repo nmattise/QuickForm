@@ -201,7 +201,7 @@ for (var i = 0; i < sideLength - 1; i++) {
     facets.push(tri[1]);
 }*/
 //Loop Through Sides
-var zGrid = Math.abs(parseInt(height));
+/*var zGrid = Math.abs(parseInt(height));
 var zIt = height / zGrid;
 for (var i = 1; i <= 2; i++) {
     var sideLength = distanceFormula(array[i - 1][0], array[i - 1][1], array[i][0], array[i][1]),
@@ -265,6 +265,7 @@ for (var i = 3; i < array.length; i++) {
     }
 }
 
+
 var sideLength = distanceFormula(array[3][0], array[3][1], array[0][0], array[0][1]),
     deltaX = array[0][0] - array[3][0],
     deltaY = array[0][1] - array[3][1],
@@ -293,9 +294,52 @@ for (var j = 0; j < sideLength - 1; j++) {
         facets.push(tri[1]);
     }
 
+}*/
+
+
+function createWallGrid(point1, point2, height) {
+    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
+    facets = [];
+    sideLength = distanceFormula(point2[0], point2[1], point1[0], point1[1]);
+    deltaX = point2[0] - point1[0];
+    deltaY = point2[1] - point1[1];
+    gridLength = sideLength / parseInt(sideLength);
+    xIt = deltaX / parseInt(sideLength);
+    yIt = deltaY / parseInt(sideLength);
+    iterator = parseInt(sideLength);
+    zGrid = Math.abs(parseInt(height));
+    zIt = height / zGrid;
+    for (i = 0; i < sideLength; i++) {
+        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
+        pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
+        for (z = 0; z < zGrid; z++) {
+            z1 = zIt * z;
+            z2 = zIt * (z + 1);
+            tri = createVertPlane(pt1, pt2, z1, z2);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    return facets;
 }
 
-
+var wall = createWallGrid(array[0], array[1], height);
+wall.forEach(function (facet) {
+    facets.push(facet);
+});
+var wall = (createWallGrid(array[1], array[2], height));
+wall.forEach(function (facet) {
+    facets.push(facet);
+});
+var wall = (createWallGrid(array[2], array[3], height));
+wall.forEach(function (facet) {
+    facets.push(facet);
+});
+var wall = (createWallGrid(array[3], array[0], height));
+wall.forEach(function (facet) {
+    facets.push(facet);
+});
+console.log(facets);
 var stlObj1 = {
     description: "testBuilding1",
     facets: facets
