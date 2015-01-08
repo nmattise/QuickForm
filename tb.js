@@ -105,7 +105,7 @@ function createWallGrid(point1, point2, height) {
     iterator = parseInt(sideLength);
     zGrid = Math.abs(parseInt(height));
     zIt = height / zGrid;
-    for (i = 0; i < sideLength - 1; i++) {
+    for (i = 0; i < sideLength; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
         for (z = 0; z < zGrid; z++) {
