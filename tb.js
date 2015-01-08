@@ -130,10 +130,10 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-array = [[0, -10],
-    [10, 0],
-    [0, 10],
-    [-10, 0]];
+array = [[-10, -10],
+    [10, -10],
+    [10, 10],
+    [-10, 10]];
 height = 10;
 
 createRectRoofFloor(array[0], array[1], array[3], height).forEach(function (facet) {
