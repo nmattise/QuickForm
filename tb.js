@@ -81,7 +81,7 @@ function createRectRoofFloor(point1, point2, point4, height) {
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
-            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, height);
+            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
         }
