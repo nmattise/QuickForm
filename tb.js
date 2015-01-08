@@ -67,17 +67,17 @@ function createRectRoofFloor(point1, point2, point4, height) {
     console.log(gridLength14);
     console.log(xIt14);
     console.log(yIt14);
-    for (i = 0; i < sideLength12 - 1; i++) {
+    for (i = 0; i <= sideLength12 - 1; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
 
         console.log("pt1: " + pt1 + "  pt2: " + pt2);
-        for (z = 0; z < sideLength14 - 1; z++) {
+        for (z = 0; z <= sideLength14 - 1; z++) {
             var pt1_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * z)];
             var pt2_14 = [pt1[0] - (xIt14 * (z + 1)), pt1[1] - (yIt14 * z)];
             var pt3_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * (z + 1))];
             var pt4_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * (z + 1))];
-            console.log("pt1_14: " + pt1_14 + "  pt3_14: " + pt3_14);
+            console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
@@ -102,7 +102,7 @@ function createWallGrid(point1, point2, height) {
     iterator = parseInt(sideLength);
     zGrid = Math.abs(parseInt(height));
     zIt = height / zGrid;
-    for (i = 0; i < sideLength - 1; i++) {
+    for (i = 0; i <= sideLength - 1; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
         //console.log("pt1: " + pt1 + "  ,  pt2: " + pt2)
@@ -128,10 +128,10 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-array = [[-10, -10],
+array = [[0, -10],
     [10, -10],
-    [10, 10],
-    [-10, 10]];
+    [10, 0],
+    [0, 0]];
 /*array = [[0, -10],
     [10, 0],
     [0, 10],
