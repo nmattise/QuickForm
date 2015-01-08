@@ -79,13 +79,15 @@ function createRectRoofFloor(point1, point2, point4, height) {
             var pt4_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * (z + 1))];
             console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
-            console.log(triRoof[0]);
-            console.log(triRoof[1]);
+            //console.log(triRoof[0]);
+            //console.log(triRoof[1]);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
             triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
+            console.log(triFloor[0]);
+            console.log(triFloor[1]);
         }
     }
 
@@ -130,14 +132,14 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-array = [[0, -10],
+/*array = [[0, -10],
     [10, -10],
     [10, 0],
-    [0, 0]];
-/*array = [[0, -10],
+    [0, 0]];*/
+array = [[0, -10],
     [10, 0],
     [0, 10],
-    [-10, 0]];*/
+    [-10, 0]];
 height = 10;
 
 createRectRoofFloor(array[0], array[1], array[3], height).forEach(function (facet) {
