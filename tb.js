@@ -20,9 +20,9 @@ function createVertPlane(pt1, pt2, z1, z2) {
 
 }
 
-function createHorPlaneUp(pt1, pt2, z) {
-    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt1[1], z], [pt2[0], pt2[1], z]],
-        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt2[1], z]],
+function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
+    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt3[0], pt3[1], z]],
+        tri2 = [[pt1[0], pt1[1], z], [pt3[0], pt3[1], z], [pt4[0], pt4[1], z]],
         facets = [{
             verts: tri1
     }, {
@@ -31,9 +31,9 @@ function createHorPlaneUp(pt1, pt2, z) {
     return facets;
 }
 
-function createHorPlaneDn(pt1, pt2, z) {
-    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt1[1], z], [pt2[0], pt2[1], z]],
-        tri2 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt1[0], pt2[1], z]],
+function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
+    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt3[0], pt3[1], z]],
+        tri2 = [[pt1[0], pt1[1], z], [pt3[0], pt3[1], z], [pt4[0], pt4[1], z]],
         facets = [{
             verts: tri1.reverse()
     }, {
@@ -44,7 +44,7 @@ function createHorPlaneDn(pt1, pt2, z) {
 
 function createRectRoofFloor(point1, point2, point4, height) {
     //point 1 is 0 in rect arry of length 4, others follow path #
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, i, z, tri, facets, gridLength, gridLength14;
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14;
 
     facets = [];
     sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
@@ -66,20 +66,28 @@ function createRectRoofFloor(point1, point2, point4, height) {
     for (i = 0; i < sideLength12 - 1; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
+        pt3 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
+        pt4 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         for (z = 0; z < sideLength14 - 1; z++) {
             var pt1_2 = [],
-                pt2_2 = [];
+                pt2_2 = [],
+                pt3_2 = [],
+                pt4_2 = [];
             pt1_2[0] = pt1[0] - (xIt * z);
             pt1_2[1] = pt1[1] - (yIt14 * z);
-            pt2_2[0] = pt2[0] - (xIt * (z + 1));
-            pt2_2[1] = pt2[1] - (yIt14 * (z + 1));
+            pt2_2[0] = pt2[0] - (xIt * z);
+            pt2_2[1] = pt2[1] - (yIt14 * z);
+            pt3_2[0] = pt2[0] - (xIt * (z + 1));
+            pt3_2[1] = pt2[1] - (yIt14 * (z + 1));
+            pt4_2[0] = pt1[0] - (xIt * (z + 1));
+            pt4_2[1] = pt1[1] - (yIt14 * (z + 1));
             console.log("pt1: " + pt1_2 + "  ,  pt2: " + pt2_2);
-            tri = createHorPlaneDn(pt1_2, pt2_2, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-            tri = createHorPlaneUp(pt1_2, pt2_2, height);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
+            triFloor = createHorPlaneDn(pt1_2, pt2_2, pt3_2, pt4_2, 0);
+            facets.push(triFloor[0]);
+            facets.push(triFloor[1]);
+            triRoof = createHorPlaneUp(pt1_2, pt2_2, pt3_2, pt4_2, 0);
+            facets.push(triRoof[0]);
+            facets.push(triRoof[1]);
         }
     }
     return facets;
