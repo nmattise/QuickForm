@@ -74,10 +74,10 @@ function createRectRoofFloor(point1, point2, point4, height) {
             pt2_2[0] = pt2[0] - (xIt * z + 1);
             pt2_2[1] = pt2[1] - (yIt14 * z + 1);
             console.log("pt1: " + pt1 + "  ,  pt2: " + pt2);
-            tri = createHorPlaneUp(pt1, pt2, 0);
+            tri = createHorPlaneUp(pt1_2, pt2_2, 0);
             facets.push(tri[0]);
             facets.push(tri[1]);
-            tri = createHorPlaneDn(pt1, pt2, height);
+            tri = createHorPlaneDn(pt1_2, pt2_2, height);
             facets.push(tri[0]);
             facets.push(tri[1]);
         }
