@@ -81,9 +81,9 @@ function createRectRoofFloor(point1, point2, point4, height) {
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
-            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
+            /*triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
             facets.push(triFloor[0]);
-            facets.push(triFloor[1]);
+            facets.push(triFloor[1]);*/
         }
     }
 
@@ -106,7 +106,7 @@ function createWallGrid(point1, point2, height) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
         //console.log("pt1: " + pt1 + "  ,  pt2: " + pt2)
-        for (z = 0; z < zGrid - 1; z++) {
+        for (z = 0; z <= zGrid - 1; z++) {
             z1 = zIt * z;
             z2 = zIt * (z + 1);
             tri = createVertPlane(pt1, pt2, z1, z2);
