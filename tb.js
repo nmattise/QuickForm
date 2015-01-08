@@ -42,10 +42,51 @@ function createHorPlaneDn(pt1, pt2, z) {
     return facets;
 }
 
+function createRectRoofFloor(point1, point2, point4, height) {
+    //point 1 is 0 in rect arry of length 4, others follow path #
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, i, z, tri, facets, gridLength, gridLength14;
+
+    facets = [];
+    sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
+    sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
+    deltaX = point2[0] - point1[0];
+    deltaY = point2[1] - point1[1];
+    gridLength = sideLength12 / parseInt(sideLength12);
+    xIt = deltaX / parseInt(sideLength12);
+    yIt = deltaY / parseInt(sideLength12);
+    deltaX14 = point1[0] - point4[0];
+    deltaY14 = point1[1] - point4[1];
+    xIt14 = deltaX14 / parseInt(sideLength14);
+    yIt14 = deltaY14 / parseInt(sideLength14);
+    gridLength14 = sideLength14 / parseInt(sideLength14);
+    console.log(sideLength14);
+    console.log(gridLength14);
+    console.log(xIt14);
+    console.log(yIt14);
+    for (i = 0; i < sideLength12 - 1; i++) {
+        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
+
+        for (z = 1; z < sideLength14; z++) {
+            pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
+            //pt2 = [point1[0] + (xIt14 * z), point1[1] - (yIt14 * z)];
+            pt2[0] -= (xIt * z);
+            pt2[1] -= (yIt14 * z);
+            console.log("pt1: " + pt1 + "  ,  pt2: " + pt2);
+            tri = createHorPlaneDn(pt1, pt2, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+            tri = createHorPlaneUp(pt1, pt2, height);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    return facets;
+}
+
 function createWallGrid(point1, point2, height) {
     var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
     facets = [];
-    sideLength = distanceFormula(point2[0], point2[1], point1[0], point1[1]);
+    sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
     gridLength = sideLength / parseInt(sideLength);
@@ -85,7 +126,9 @@ array = [[0, -10],
     [-10, 0]];
 height = 10;
 
-
+createRectRoofFloor(array[0], array[1], array[3], height).forEach(function (facet) {
+    facets.push(facet);
+});
 
 createWallGrid(array[0], array[1], height).forEach(function (facet) {
     facets.push(facet);
