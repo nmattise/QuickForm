@@ -71,23 +71,20 @@ function createRectRoofFloor(point1, point2, point4, height) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
 
-        console.log("pt1: " + pt1 + "  pt2: " + pt2);
+        //console.log("pt1: " + pt1 + "  pt2: " + pt2);
         for (z = 0; z <= sideLength14 - 1; z++) {
             var pt1_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * z)];
             var pt2_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * z)];
             var pt3_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * (z + 1))];
             var pt4_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * (z + 1))];
-            console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
+            //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
-            //console.log(triRoof[0]);
-            //console.log(triRoof[1]);
+
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
             triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
-            console.log(triFloor[0]);
-            console.log(triFloor[1]);
         }
     }
 
