@@ -15,20 +15,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 1e+0 -9e+0 0e+0
-      vertex 0e+0 -1e+1 0e+0
-      vertex 0e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -9e+0 0e+0
-      vertex 1e+0 -9e+0 0e+0
-      vertex 0e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 0e+0 -9e+0 1e+1
       vertex 0e+0 -9e+0 1e+1
       vertex 1e+0 -8e+0 1e+1
@@ -39,20 +25,6 @@ solid testBuilding1
       vertex 0e+0 -9e+0 1e+1
       vertex 1e+0 -8e+0 1e+1
       vertex 0e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -8e+0 0e+0
-      vertex 0e+0 -9e+0 0e+0
-      vertex 0e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -8e+0 0e+0
-      vertex 1e+0 -8e+0 0e+0
-      vertex 0e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -67,20 +39,6 @@ solid testBuilding1
       vertex 0e+0 -8e+0 1e+1
       vertex 1e+0 -7e+0 1e+1
       vertex 0e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -7e+0 0e+0
-      vertex 0e+0 -8e+0 0e+0
-      vertex 0e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -7e+0 0e+0
-      vertex 1e+0 -7e+0 0e+0
-      vertex 0e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -95,20 +53,6 @@ solid testBuilding1
       vertex 0e+0 -7e+0 1e+1
       vertex 1e+0 -6e+0 1e+1
       vertex 0e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -6e+0 0e+0
-      vertex 0e+0 -7e+0 0e+0
-      vertex 0e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -6e+0 0e+0
-      vertex 1e+0 -6e+0 0e+0
-      vertex 0e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -123,20 +67,6 @@ solid testBuilding1
       vertex 0e+0 -6e+0 1e+1
       vertex 1e+0 -5e+0 1e+1
       vertex 0e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -5e+0 0e+0
-      vertex 0e+0 -6e+0 0e+0
-      vertex 0e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -5e+0 0e+0
-      vertex 1e+0 -5e+0 0e+0
-      vertex 0e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -151,20 +81,6 @@ solid testBuilding1
       vertex 0e+0 -5e+0 1e+1
       vertex 1e+0 -4e+0 1e+1
       vertex 0e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -4e+0 0e+0
-      vertex 0e+0 -5e+0 0e+0
-      vertex 0e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -4e+0 0e+0
-      vertex 1e+0 -4e+0 0e+0
-      vertex 0e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -179,20 +95,6 @@ solid testBuilding1
       vertex 0e+0 -4e+0 1e+1
       vertex 1e+0 -3e+0 1e+1
       vertex 0e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -3e+0 0e+0
-      vertex 0e+0 -4e+0 0e+0
-      vertex 0e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -3e+0 0e+0
-      vertex 1e+0 -3e+0 0e+0
-      vertex 0e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -207,20 +109,6 @@ solid testBuilding1
       vertex 0e+0 -3e+0 1e+1
       vertex 1e+0 -2e+0 1e+1
       vertex 0e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -2e+0 0e+0
-      vertex 0e+0 -3e+0 0e+0
-      vertex 0e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -2e+0 0e+0
-      vertex 1e+0 -2e+0 0e+0
-      vertex 0e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -235,20 +123,6 @@ solid testBuilding1
       vertex 0e+0 -2e+0 1e+1
       vertex 1e+0 -1e+0 1e+1
       vertex 0e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+0 -1e+0 0e+0
-      vertex 0e+0 -2e+0 0e+0
-      vertex 0e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 -1e+0 0e+0
-      vertex 1e+0 -1e+0 0e+0
-      vertex 0e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -267,20 +141,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 1e+0 0e+0 0e+0
-      vertex 0e+0 -1e+0 0e+0
-      vertex 0e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 0e+0 0e+0 0e+0
-      vertex 1e+0 0e+0 0e+0
-      vertex 0e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 1e+0 -1e+1 1e+1
       vertex 1e+0 -1e+1 1e+1
       vertex 2e+0 -9e+0 1e+1
@@ -291,20 +151,6 @@ solid testBuilding1
       vertex 1e+0 -1e+1 1e+1
       vertex 2e+0 -9e+0 1e+1
       vertex 1e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -9e+0 0e+0
-      vertex 1e+0 -1e+1 0e+0
-      vertex 1e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -9e+0 0e+0
-      vertex 2e+0 -9e+0 0e+0
-      vertex 1e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -319,20 +165,6 @@ solid testBuilding1
       vertex 1e+0 -9e+0 1e+1
       vertex 2e+0 -8e+0 1e+1
       vertex 1e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -8e+0 0e+0
-      vertex 1e+0 -9e+0 0e+0
-      vertex 1e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -8e+0 0e+0
-      vertex 2e+0 -8e+0 0e+0
-      vertex 1e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -347,20 +179,6 @@ solid testBuilding1
       vertex 1e+0 -8e+0 1e+1
       vertex 2e+0 -7e+0 1e+1
       vertex 1e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -7e+0 0e+0
-      vertex 1e+0 -8e+0 0e+0
-      vertex 1e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -7e+0 0e+0
-      vertex 2e+0 -7e+0 0e+0
-      vertex 1e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -375,20 +193,6 @@ solid testBuilding1
       vertex 1e+0 -7e+0 1e+1
       vertex 2e+0 -6e+0 1e+1
       vertex 1e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -6e+0 0e+0
-      vertex 1e+0 -7e+0 0e+0
-      vertex 1e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -6e+0 0e+0
-      vertex 2e+0 -6e+0 0e+0
-      vertex 1e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -403,20 +207,6 @@ solid testBuilding1
       vertex 1e+0 -6e+0 1e+1
       vertex 2e+0 -5e+0 1e+1
       vertex 1e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -5e+0 0e+0
-      vertex 1e+0 -6e+0 0e+0
-      vertex 1e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -5e+0 0e+0
-      vertex 2e+0 -5e+0 0e+0
-      vertex 1e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -431,20 +221,6 @@ solid testBuilding1
       vertex 1e+0 -5e+0 1e+1
       vertex 2e+0 -4e+0 1e+1
       vertex 1e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -4e+0 0e+0
-      vertex 1e+0 -5e+0 0e+0
-      vertex 1e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -4e+0 0e+0
-      vertex 2e+0 -4e+0 0e+0
-      vertex 1e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -459,20 +235,6 @@ solid testBuilding1
       vertex 1e+0 -4e+0 1e+1
       vertex 2e+0 -3e+0 1e+1
       vertex 1e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -3e+0 0e+0
-      vertex 1e+0 -4e+0 0e+0
-      vertex 1e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -3e+0 0e+0
-      vertex 2e+0 -3e+0 0e+0
-      vertex 1e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -487,20 +249,6 @@ solid testBuilding1
       vertex 1e+0 -3e+0 1e+1
       vertex 2e+0 -2e+0 1e+1
       vertex 1e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -2e+0 0e+0
-      vertex 1e+0 -3e+0 0e+0
-      vertex 1e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -2e+0 0e+0
-      vertex 2e+0 -2e+0 0e+0
-      vertex 1e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -515,20 +263,6 @@ solid testBuilding1
       vertex 1e+0 -2e+0 1e+1
       vertex 2e+0 -1e+0 1e+1
       vertex 1e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 2e+0 -1e+0 0e+0
-      vertex 1e+0 -2e+0 0e+0
-      vertex 1e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 -1e+0 0e+0
-      vertex 2e+0 -1e+0 0e+0
-      vertex 1e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -547,20 +281,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 2e+0 0e+0 0e+0
-      vertex 1e+0 -1e+0 0e+0
-      vertex 1e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 1e+0 0e+0 0e+0
-      vertex 2e+0 0e+0 0e+0
-      vertex 1e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 2e+0 -1e+1 1e+1
       vertex 2e+0 -1e+1 1e+1
       vertex 3e+0 -9e+0 1e+1
@@ -571,20 +291,6 @@ solid testBuilding1
       vertex 2e+0 -1e+1 1e+1
       vertex 3e+0 -9e+0 1e+1
       vertex 2e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -9e+0 0e+0
-      vertex 2e+0 -1e+1 0e+0
-      vertex 2e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -9e+0 0e+0
-      vertex 3e+0 -9e+0 0e+0
-      vertex 2e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -599,20 +305,6 @@ solid testBuilding1
       vertex 2e+0 -9e+0 1e+1
       vertex 3e+0 -8e+0 1e+1
       vertex 2e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -8e+0 0e+0
-      vertex 2e+0 -9e+0 0e+0
-      vertex 2e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -8e+0 0e+0
-      vertex 3e+0 -8e+0 0e+0
-      vertex 2e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -627,20 +319,6 @@ solid testBuilding1
       vertex 2e+0 -8e+0 1e+1
       vertex 3e+0 -7e+0 1e+1
       vertex 2e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -7e+0 0e+0
-      vertex 2e+0 -8e+0 0e+0
-      vertex 2e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -7e+0 0e+0
-      vertex 3e+0 -7e+0 0e+0
-      vertex 2e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -655,20 +333,6 @@ solid testBuilding1
       vertex 2e+0 -7e+0 1e+1
       vertex 3e+0 -6e+0 1e+1
       vertex 2e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -6e+0 0e+0
-      vertex 2e+0 -7e+0 0e+0
-      vertex 2e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -6e+0 0e+0
-      vertex 3e+0 -6e+0 0e+0
-      vertex 2e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -683,20 +347,6 @@ solid testBuilding1
       vertex 2e+0 -6e+0 1e+1
       vertex 3e+0 -5e+0 1e+1
       vertex 2e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -5e+0 0e+0
-      vertex 2e+0 -6e+0 0e+0
-      vertex 2e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -5e+0 0e+0
-      vertex 3e+0 -5e+0 0e+0
-      vertex 2e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -711,20 +361,6 @@ solid testBuilding1
       vertex 2e+0 -5e+0 1e+1
       vertex 3e+0 -4e+0 1e+1
       vertex 2e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -4e+0 0e+0
-      vertex 2e+0 -5e+0 0e+0
-      vertex 2e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -4e+0 0e+0
-      vertex 3e+0 -4e+0 0e+0
-      vertex 2e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -739,20 +375,6 @@ solid testBuilding1
       vertex 2e+0 -4e+0 1e+1
       vertex 3e+0 -3e+0 1e+1
       vertex 2e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -3e+0 0e+0
-      vertex 2e+0 -4e+0 0e+0
-      vertex 2e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -3e+0 0e+0
-      vertex 3e+0 -3e+0 0e+0
-      vertex 2e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -767,20 +389,6 @@ solid testBuilding1
       vertex 2e+0 -3e+0 1e+1
       vertex 3e+0 -2e+0 1e+1
       vertex 2e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -2e+0 0e+0
-      vertex 2e+0 -3e+0 0e+0
-      vertex 2e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -2e+0 0e+0
-      vertex 3e+0 -2e+0 0e+0
-      vertex 2e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -795,20 +403,6 @@ solid testBuilding1
       vertex 2e+0 -2e+0 1e+1
       vertex 3e+0 -1e+0 1e+1
       vertex 2e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 3e+0 -1e+0 0e+0
-      vertex 2e+0 -2e+0 0e+0
-      vertex 2e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 -1e+0 0e+0
-      vertex 3e+0 -1e+0 0e+0
-      vertex 2e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -827,20 +421,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 3e+0 0e+0 0e+0
-      vertex 2e+0 -1e+0 0e+0
-      vertex 2e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 2e+0 0e+0 0e+0
-      vertex 3e+0 0e+0 0e+0
-      vertex 2e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 3e+0 -1e+1 1e+1
       vertex 3e+0 -1e+1 1e+1
       vertex 4e+0 -9e+0 1e+1
@@ -851,20 +431,6 @@ solid testBuilding1
       vertex 3e+0 -1e+1 1e+1
       vertex 4e+0 -9e+0 1e+1
       vertex 3e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -9e+0 0e+0
-      vertex 3e+0 -1e+1 0e+0
-      vertex 3e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -9e+0 0e+0
-      vertex 4e+0 -9e+0 0e+0
-      vertex 3e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -879,20 +445,6 @@ solid testBuilding1
       vertex 3e+0 -9e+0 1e+1
       vertex 4e+0 -8e+0 1e+1
       vertex 3e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -8e+0 0e+0
-      vertex 3e+0 -9e+0 0e+0
-      vertex 3e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -8e+0 0e+0
-      vertex 4e+0 -8e+0 0e+0
-      vertex 3e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -907,20 +459,6 @@ solid testBuilding1
       vertex 3e+0 -8e+0 1e+1
       vertex 4e+0 -7e+0 1e+1
       vertex 3e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -7e+0 0e+0
-      vertex 3e+0 -8e+0 0e+0
-      vertex 3e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -7e+0 0e+0
-      vertex 4e+0 -7e+0 0e+0
-      vertex 3e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -935,20 +473,6 @@ solid testBuilding1
       vertex 3e+0 -7e+0 1e+1
       vertex 4e+0 -6e+0 1e+1
       vertex 3e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -6e+0 0e+0
-      vertex 3e+0 -7e+0 0e+0
-      vertex 3e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -6e+0 0e+0
-      vertex 4e+0 -6e+0 0e+0
-      vertex 3e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -963,20 +487,6 @@ solid testBuilding1
       vertex 3e+0 -6e+0 1e+1
       vertex 4e+0 -5e+0 1e+1
       vertex 3e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -5e+0 0e+0
-      vertex 3e+0 -6e+0 0e+0
-      vertex 3e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -5e+0 0e+0
-      vertex 4e+0 -5e+0 0e+0
-      vertex 3e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -991,20 +501,6 @@ solid testBuilding1
       vertex 3e+0 -5e+0 1e+1
       vertex 4e+0 -4e+0 1e+1
       vertex 3e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -4e+0 0e+0
-      vertex 3e+0 -5e+0 0e+0
-      vertex 3e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -4e+0 0e+0
-      vertex 4e+0 -4e+0 0e+0
-      vertex 3e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1019,20 +515,6 @@ solid testBuilding1
       vertex 3e+0 -4e+0 1e+1
       vertex 4e+0 -3e+0 1e+1
       vertex 3e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -3e+0 0e+0
-      vertex 3e+0 -4e+0 0e+0
-      vertex 3e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -3e+0 0e+0
-      vertex 4e+0 -3e+0 0e+0
-      vertex 3e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1047,20 +529,6 @@ solid testBuilding1
       vertex 3e+0 -3e+0 1e+1
       vertex 4e+0 -2e+0 1e+1
       vertex 3e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -2e+0 0e+0
-      vertex 3e+0 -3e+0 0e+0
-      vertex 3e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -2e+0 0e+0
-      vertex 4e+0 -2e+0 0e+0
-      vertex 3e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1075,20 +543,6 @@ solid testBuilding1
       vertex 3e+0 -2e+0 1e+1
       vertex 4e+0 -1e+0 1e+1
       vertex 3e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 4e+0 -1e+0 0e+0
-      vertex 3e+0 -2e+0 0e+0
-      vertex 3e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 -1e+0 0e+0
-      vertex 4e+0 -1e+0 0e+0
-      vertex 3e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1107,20 +561,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 4e+0 0e+0 0e+0
-      vertex 3e+0 -1e+0 0e+0
-      vertex 3e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 3e+0 0e+0 0e+0
-      vertex 4e+0 0e+0 0e+0
-      vertex 3e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 4e+0 -1e+1 1e+1
       vertex 4e+0 -1e+1 1e+1
       vertex 5e+0 -9e+0 1e+1
@@ -1131,20 +571,6 @@ solid testBuilding1
       vertex 4e+0 -1e+1 1e+1
       vertex 5e+0 -9e+0 1e+1
       vertex 4e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -9e+0 0e+0
-      vertex 4e+0 -1e+1 0e+0
-      vertex 4e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -9e+0 0e+0
-      vertex 5e+0 -9e+0 0e+0
-      vertex 4e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1159,20 +585,6 @@ solid testBuilding1
       vertex 4e+0 -9e+0 1e+1
       vertex 5e+0 -8e+0 1e+1
       vertex 4e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -8e+0 0e+0
-      vertex 4e+0 -9e+0 0e+0
-      vertex 4e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -8e+0 0e+0
-      vertex 5e+0 -8e+0 0e+0
-      vertex 4e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1187,20 +599,6 @@ solid testBuilding1
       vertex 4e+0 -8e+0 1e+1
       vertex 5e+0 -7e+0 1e+1
       vertex 4e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -7e+0 0e+0
-      vertex 4e+0 -8e+0 0e+0
-      vertex 4e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -7e+0 0e+0
-      vertex 5e+0 -7e+0 0e+0
-      vertex 4e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1215,20 +613,6 @@ solid testBuilding1
       vertex 4e+0 -7e+0 1e+1
       vertex 5e+0 -6e+0 1e+1
       vertex 4e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -6e+0 0e+0
-      vertex 4e+0 -7e+0 0e+0
-      vertex 4e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -6e+0 0e+0
-      vertex 5e+0 -6e+0 0e+0
-      vertex 4e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1243,20 +627,6 @@ solid testBuilding1
       vertex 4e+0 -6e+0 1e+1
       vertex 5e+0 -5e+0 1e+1
       vertex 4e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -5e+0 0e+0
-      vertex 4e+0 -6e+0 0e+0
-      vertex 4e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -5e+0 0e+0
-      vertex 5e+0 -5e+0 0e+0
-      vertex 4e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1271,20 +641,6 @@ solid testBuilding1
       vertex 4e+0 -5e+0 1e+1
       vertex 5e+0 -4e+0 1e+1
       vertex 4e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -4e+0 0e+0
-      vertex 4e+0 -5e+0 0e+0
-      vertex 4e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -4e+0 0e+0
-      vertex 5e+0 -4e+0 0e+0
-      vertex 4e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1299,20 +655,6 @@ solid testBuilding1
       vertex 4e+0 -4e+0 1e+1
       vertex 5e+0 -3e+0 1e+1
       vertex 4e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -3e+0 0e+0
-      vertex 4e+0 -4e+0 0e+0
-      vertex 4e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -3e+0 0e+0
-      vertex 5e+0 -3e+0 0e+0
-      vertex 4e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1327,20 +669,6 @@ solid testBuilding1
       vertex 4e+0 -3e+0 1e+1
       vertex 5e+0 -2e+0 1e+1
       vertex 4e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -2e+0 0e+0
-      vertex 4e+0 -3e+0 0e+0
-      vertex 4e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -2e+0 0e+0
-      vertex 5e+0 -2e+0 0e+0
-      vertex 4e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1355,20 +683,6 @@ solid testBuilding1
       vertex 4e+0 -2e+0 1e+1
       vertex 5e+0 -1e+0 1e+1
       vertex 4e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 5e+0 -1e+0 0e+0
-      vertex 4e+0 -2e+0 0e+0
-      vertex 4e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 -1e+0 0e+0
-      vertex 5e+0 -1e+0 0e+0
-      vertex 4e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1387,20 +701,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 5e+0 0e+0 0e+0
-      vertex 4e+0 -1e+0 0e+0
-      vertex 4e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 4e+0 0e+0 0e+0
-      vertex 5e+0 0e+0 0e+0
-      vertex 4e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 5e+0 -1e+1 1e+1
       vertex 5e+0 -1e+1 1e+1
       vertex 6e+0 -9e+0 1e+1
@@ -1411,20 +711,6 @@ solid testBuilding1
       vertex 5e+0 -1e+1 1e+1
       vertex 6e+0 -9e+0 1e+1
       vertex 5e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -9e+0 0e+0
-      vertex 5e+0 -1e+1 0e+0
-      vertex 5e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -9e+0 0e+0
-      vertex 6e+0 -9e+0 0e+0
-      vertex 5e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1439,20 +725,6 @@ solid testBuilding1
       vertex 5e+0 -9e+0 1e+1
       vertex 6e+0 -8e+0 1e+1
       vertex 5e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -8e+0 0e+0
-      vertex 5e+0 -9e+0 0e+0
-      vertex 5e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -8e+0 0e+0
-      vertex 6e+0 -8e+0 0e+0
-      vertex 5e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1467,20 +739,6 @@ solid testBuilding1
       vertex 5e+0 -8e+0 1e+1
       vertex 6e+0 -7e+0 1e+1
       vertex 5e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -7e+0 0e+0
-      vertex 5e+0 -8e+0 0e+0
-      vertex 5e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -7e+0 0e+0
-      vertex 6e+0 -7e+0 0e+0
-      vertex 5e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1495,20 +753,6 @@ solid testBuilding1
       vertex 5e+0 -7e+0 1e+1
       vertex 6e+0 -6e+0 1e+1
       vertex 5e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -6e+0 0e+0
-      vertex 5e+0 -7e+0 0e+0
-      vertex 5e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -6e+0 0e+0
-      vertex 6e+0 -6e+0 0e+0
-      vertex 5e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1523,20 +767,6 @@ solid testBuilding1
       vertex 5e+0 -6e+0 1e+1
       vertex 6e+0 -5e+0 1e+1
       vertex 5e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -5e+0 0e+0
-      vertex 5e+0 -6e+0 0e+0
-      vertex 5e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -5e+0 0e+0
-      vertex 6e+0 -5e+0 0e+0
-      vertex 5e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1551,20 +781,6 @@ solid testBuilding1
       vertex 5e+0 -5e+0 1e+1
       vertex 6e+0 -4e+0 1e+1
       vertex 5e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -4e+0 0e+0
-      vertex 5e+0 -5e+0 0e+0
-      vertex 5e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -4e+0 0e+0
-      vertex 6e+0 -4e+0 0e+0
-      vertex 5e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1579,20 +795,6 @@ solid testBuilding1
       vertex 5e+0 -4e+0 1e+1
       vertex 6e+0 -3e+0 1e+1
       vertex 5e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -3e+0 0e+0
-      vertex 5e+0 -4e+0 0e+0
-      vertex 5e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -3e+0 0e+0
-      vertex 6e+0 -3e+0 0e+0
-      vertex 5e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1607,20 +809,6 @@ solid testBuilding1
       vertex 5e+0 -3e+0 1e+1
       vertex 6e+0 -2e+0 1e+1
       vertex 5e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -2e+0 0e+0
-      vertex 5e+0 -3e+0 0e+0
-      vertex 5e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -2e+0 0e+0
-      vertex 6e+0 -2e+0 0e+0
-      vertex 5e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1635,20 +823,6 @@ solid testBuilding1
       vertex 5e+0 -2e+0 1e+1
       vertex 6e+0 -1e+0 1e+1
       vertex 5e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 6e+0 -1e+0 0e+0
-      vertex 5e+0 -2e+0 0e+0
-      vertex 5e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 -1e+0 0e+0
-      vertex 6e+0 -1e+0 0e+0
-      vertex 5e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1667,20 +841,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 6e+0 0e+0 0e+0
-      vertex 5e+0 -1e+0 0e+0
-      vertex 5e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 5e+0 0e+0 0e+0
-      vertex 6e+0 0e+0 0e+0
-      vertex 5e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 6e+0 -1e+1 1e+1
       vertex 6e+0 -1e+1 1e+1
       vertex 7e+0 -9e+0 1e+1
@@ -1691,20 +851,6 @@ solid testBuilding1
       vertex 6e+0 -1e+1 1e+1
       vertex 7e+0 -9e+0 1e+1
       vertex 6e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -9e+0 0e+0
-      vertex 6e+0 -1e+1 0e+0
-      vertex 6e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -9e+0 0e+0
-      vertex 7e+0 -9e+0 0e+0
-      vertex 6e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1719,20 +865,6 @@ solid testBuilding1
       vertex 6e+0 -9e+0 1e+1
       vertex 7e+0 -8e+0 1e+1
       vertex 6e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -8e+0 0e+0
-      vertex 6e+0 -9e+0 0e+0
-      vertex 6e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -8e+0 0e+0
-      vertex 7e+0 -8e+0 0e+0
-      vertex 6e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1747,20 +879,6 @@ solid testBuilding1
       vertex 6e+0 -8e+0 1e+1
       vertex 7e+0 -7e+0 1e+1
       vertex 6e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -7e+0 0e+0
-      vertex 6e+0 -8e+0 0e+0
-      vertex 6e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -7e+0 0e+0
-      vertex 7e+0 -7e+0 0e+0
-      vertex 6e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1775,20 +893,6 @@ solid testBuilding1
       vertex 6e+0 -7e+0 1e+1
       vertex 7e+0 -6e+0 1e+1
       vertex 6e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -6e+0 0e+0
-      vertex 6e+0 -7e+0 0e+0
-      vertex 6e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -6e+0 0e+0
-      vertex 7e+0 -6e+0 0e+0
-      vertex 6e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1803,20 +907,6 @@ solid testBuilding1
       vertex 6e+0 -6e+0 1e+1
       vertex 7e+0 -5e+0 1e+1
       vertex 6e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -5e+0 0e+0
-      vertex 6e+0 -6e+0 0e+0
-      vertex 6e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -5e+0 0e+0
-      vertex 7e+0 -5e+0 0e+0
-      vertex 6e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1831,20 +921,6 @@ solid testBuilding1
       vertex 6e+0 -5e+0 1e+1
       vertex 7e+0 -4e+0 1e+1
       vertex 6e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -4e+0 0e+0
-      vertex 6e+0 -5e+0 0e+0
-      vertex 6e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -4e+0 0e+0
-      vertex 7e+0 -4e+0 0e+0
-      vertex 6e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1859,20 +935,6 @@ solid testBuilding1
       vertex 6e+0 -4e+0 1e+1
       vertex 7e+0 -3e+0 1e+1
       vertex 6e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -3e+0 0e+0
-      vertex 6e+0 -4e+0 0e+0
-      vertex 6e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -3e+0 0e+0
-      vertex 7e+0 -3e+0 0e+0
-      vertex 6e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1887,20 +949,6 @@ solid testBuilding1
       vertex 6e+0 -3e+0 1e+1
       vertex 7e+0 -2e+0 1e+1
       vertex 6e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -2e+0 0e+0
-      vertex 6e+0 -3e+0 0e+0
-      vertex 6e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -2e+0 0e+0
-      vertex 7e+0 -2e+0 0e+0
-      vertex 6e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1915,20 +963,6 @@ solid testBuilding1
       vertex 6e+0 -2e+0 1e+1
       vertex 7e+0 -1e+0 1e+1
       vertex 6e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 7e+0 -1e+0 0e+0
-      vertex 6e+0 -2e+0 0e+0
-      vertex 6e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 -1e+0 0e+0
-      vertex 7e+0 -1e+0 0e+0
-      vertex 6e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1947,20 +981,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 7e+0 0e+0 0e+0
-      vertex 6e+0 -1e+0 0e+0
-      vertex 6e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 6e+0 0e+0 0e+0
-      vertex 7e+0 0e+0 0e+0
-      vertex 6e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 7e+0 -1e+1 1e+1
       vertex 7e+0 -1e+1 1e+1
       vertex 8e+0 -9e+0 1e+1
@@ -1971,20 +991,6 @@ solid testBuilding1
       vertex 7e+0 -1e+1 1e+1
       vertex 8e+0 -9e+0 1e+1
       vertex 7e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -9e+0 0e+0
-      vertex 7e+0 -1e+1 0e+0
-      vertex 7e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -9e+0 0e+0
-      vertex 8e+0 -9e+0 0e+0
-      vertex 7e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -1999,20 +1005,6 @@ solid testBuilding1
       vertex 7e+0 -9e+0 1e+1
       vertex 8e+0 -8e+0 1e+1
       vertex 7e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -8e+0 0e+0
-      vertex 7e+0 -9e+0 0e+0
-      vertex 7e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -8e+0 0e+0
-      vertex 8e+0 -8e+0 0e+0
-      vertex 7e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2027,20 +1019,6 @@ solid testBuilding1
       vertex 7e+0 -8e+0 1e+1
       vertex 8e+0 -7e+0 1e+1
       vertex 7e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -7e+0 0e+0
-      vertex 7e+0 -8e+0 0e+0
-      vertex 7e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -7e+0 0e+0
-      vertex 8e+0 -7e+0 0e+0
-      vertex 7e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2055,20 +1033,6 @@ solid testBuilding1
       vertex 7e+0 -7e+0 1e+1
       vertex 8e+0 -6e+0 1e+1
       vertex 7e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -6e+0 0e+0
-      vertex 7e+0 -7e+0 0e+0
-      vertex 7e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -6e+0 0e+0
-      vertex 8e+0 -6e+0 0e+0
-      vertex 7e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2083,20 +1047,6 @@ solid testBuilding1
       vertex 7e+0 -6e+0 1e+1
       vertex 8e+0 -5e+0 1e+1
       vertex 7e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -5e+0 0e+0
-      vertex 7e+0 -6e+0 0e+0
-      vertex 7e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -5e+0 0e+0
-      vertex 8e+0 -5e+0 0e+0
-      vertex 7e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2111,20 +1061,6 @@ solid testBuilding1
       vertex 7e+0 -5e+0 1e+1
       vertex 8e+0 -4e+0 1e+1
       vertex 7e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -4e+0 0e+0
-      vertex 7e+0 -5e+0 0e+0
-      vertex 7e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -4e+0 0e+0
-      vertex 8e+0 -4e+0 0e+0
-      vertex 7e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2139,20 +1075,6 @@ solid testBuilding1
       vertex 7e+0 -4e+0 1e+1
       vertex 8e+0 -3e+0 1e+1
       vertex 7e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -3e+0 0e+0
-      vertex 7e+0 -4e+0 0e+0
-      vertex 7e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -3e+0 0e+0
-      vertex 8e+0 -3e+0 0e+0
-      vertex 7e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2167,20 +1089,6 @@ solid testBuilding1
       vertex 7e+0 -3e+0 1e+1
       vertex 8e+0 -2e+0 1e+1
       vertex 7e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -2e+0 0e+0
-      vertex 7e+0 -3e+0 0e+0
-      vertex 7e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -2e+0 0e+0
-      vertex 8e+0 -2e+0 0e+0
-      vertex 7e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2195,20 +1103,6 @@ solid testBuilding1
       vertex 7e+0 -2e+0 1e+1
       vertex 8e+0 -1e+0 1e+1
       vertex 7e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 8e+0 -1e+0 0e+0
-      vertex 7e+0 -2e+0 0e+0
-      vertex 7e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 -1e+0 0e+0
-      vertex 8e+0 -1e+0 0e+0
-      vertex 7e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2227,20 +1121,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 8e+0 0e+0 0e+0
-      vertex 7e+0 -1e+0 0e+0
-      vertex 7e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 7e+0 0e+0 0e+0
-      vertex 8e+0 0e+0 0e+0
-      vertex 7e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 8e+0 -1e+1 1e+1
       vertex 8e+0 -1e+1 1e+1
       vertex 9e+0 -9e+0 1e+1
@@ -2251,20 +1131,6 @@ solid testBuilding1
       vertex 8e+0 -1e+1 1e+1
       vertex 9e+0 -9e+0 1e+1
       vertex 8e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -9e+0 0e+0
-      vertex 8e+0 -1e+1 0e+0
-      vertex 8e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -9e+0 0e+0
-      vertex 9e+0 -9e+0 0e+0
-      vertex 8e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2279,20 +1145,6 @@ solid testBuilding1
       vertex 8e+0 -9e+0 1e+1
       vertex 9e+0 -8e+0 1e+1
       vertex 8e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -8e+0 0e+0
-      vertex 8e+0 -9e+0 0e+0
-      vertex 8e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -8e+0 0e+0
-      vertex 9e+0 -8e+0 0e+0
-      vertex 8e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2307,20 +1159,6 @@ solid testBuilding1
       vertex 8e+0 -8e+0 1e+1
       vertex 9e+0 -7e+0 1e+1
       vertex 8e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -7e+0 0e+0
-      vertex 8e+0 -8e+0 0e+0
-      vertex 8e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -7e+0 0e+0
-      vertex 9e+0 -7e+0 0e+0
-      vertex 8e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2335,20 +1173,6 @@ solid testBuilding1
       vertex 8e+0 -7e+0 1e+1
       vertex 9e+0 -6e+0 1e+1
       vertex 8e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -6e+0 0e+0
-      vertex 8e+0 -7e+0 0e+0
-      vertex 8e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -6e+0 0e+0
-      vertex 9e+0 -6e+0 0e+0
-      vertex 8e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2363,20 +1187,6 @@ solid testBuilding1
       vertex 8e+0 -6e+0 1e+1
       vertex 9e+0 -5e+0 1e+1
       vertex 8e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -5e+0 0e+0
-      vertex 8e+0 -6e+0 0e+0
-      vertex 8e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -5e+0 0e+0
-      vertex 9e+0 -5e+0 0e+0
-      vertex 8e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2391,20 +1201,6 @@ solid testBuilding1
       vertex 8e+0 -5e+0 1e+1
       vertex 9e+0 -4e+0 1e+1
       vertex 8e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -4e+0 0e+0
-      vertex 8e+0 -5e+0 0e+0
-      vertex 8e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -4e+0 0e+0
-      vertex 9e+0 -4e+0 0e+0
-      vertex 8e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2419,20 +1215,6 @@ solid testBuilding1
       vertex 8e+0 -4e+0 1e+1
       vertex 9e+0 -3e+0 1e+1
       vertex 8e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -3e+0 0e+0
-      vertex 8e+0 -4e+0 0e+0
-      vertex 8e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -3e+0 0e+0
-      vertex 9e+0 -3e+0 0e+0
-      vertex 8e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2447,20 +1229,6 @@ solid testBuilding1
       vertex 8e+0 -3e+0 1e+1
       vertex 9e+0 -2e+0 1e+1
       vertex 8e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -2e+0 0e+0
-      vertex 8e+0 -3e+0 0e+0
-      vertex 8e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -2e+0 0e+0
-      vertex 9e+0 -2e+0 0e+0
-      vertex 8e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2475,20 +1243,6 @@ solid testBuilding1
       vertex 8e+0 -2e+0 1e+1
       vertex 9e+0 -1e+0 1e+1
       vertex 8e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 9e+0 -1e+0 0e+0
-      vertex 8e+0 -2e+0 0e+0
-      vertex 8e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 -1e+0 0e+0
-      vertex 9e+0 -1e+0 0e+0
-      vertex 8e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2507,20 +1261,6 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 0e+0 0e+0
     outer loop
-      vertex 9e+0 0e+0 0e+0
-      vertex 8e+0 -1e+0 0e+0
-      vertex 8e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 8e+0 0e+0 0e+0
-      vertex 9e+0 0e+0 0e+0
-      vertex 8e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
       vertex 9e+0 -1e+1 1e+1
       vertex 9e+0 -1e+1 1e+1
       vertex 1e+1 -9e+0 1e+1
@@ -2531,20 +1271,6 @@ solid testBuilding1
       vertex 9e+0 -1e+1 1e+1
       vertex 1e+1 -9e+0 1e+1
       vertex 9e+0 -9e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -9e+0 0e+0
-      vertex 9e+0 -1e+1 0e+0
-      vertex 9e+0 -1e+1 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -9e+0 0e+0
-      vertex 1e+1 -9e+0 0e+0
-      vertex 9e+0 -1e+1 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2559,20 +1285,6 @@ solid testBuilding1
       vertex 9e+0 -9e+0 1e+1
       vertex 1e+1 -8e+0 1e+1
       vertex 9e+0 -8e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -8e+0 0e+0
-      vertex 9e+0 -9e+0 0e+0
-      vertex 9e+0 -9e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -8e+0 0e+0
-      vertex 1e+1 -8e+0 0e+0
-      vertex 9e+0 -9e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2587,20 +1299,6 @@ solid testBuilding1
       vertex 9e+0 -8e+0 1e+1
       vertex 1e+1 -7e+0 1e+1
       vertex 9e+0 -7e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -7e+0 0e+0
-      vertex 9e+0 -8e+0 0e+0
-      vertex 9e+0 -8e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -7e+0 0e+0
-      vertex 1e+1 -7e+0 0e+0
-      vertex 9e+0 -8e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2615,20 +1313,6 @@ solid testBuilding1
       vertex 9e+0 -7e+0 1e+1
       vertex 1e+1 -6e+0 1e+1
       vertex 9e+0 -6e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -6e+0 0e+0
-      vertex 9e+0 -7e+0 0e+0
-      vertex 9e+0 -7e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -6e+0 0e+0
-      vertex 1e+1 -6e+0 0e+0
-      vertex 9e+0 -7e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2643,20 +1327,6 @@ solid testBuilding1
       vertex 9e+0 -6e+0 1e+1
       vertex 1e+1 -5e+0 1e+1
       vertex 9e+0 -5e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -5e+0 0e+0
-      vertex 9e+0 -6e+0 0e+0
-      vertex 9e+0 -6e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -5e+0 0e+0
-      vertex 1e+1 -5e+0 0e+0
-      vertex 9e+0 -6e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2671,20 +1341,6 @@ solid testBuilding1
       vertex 9e+0 -5e+0 1e+1
       vertex 1e+1 -4e+0 1e+1
       vertex 9e+0 -4e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -4e+0 0e+0
-      vertex 9e+0 -5e+0 0e+0
-      vertex 9e+0 -5e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -4e+0 0e+0
-      vertex 1e+1 -4e+0 0e+0
-      vertex 9e+0 -5e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2699,20 +1355,6 @@ solid testBuilding1
       vertex 9e+0 -4e+0 1e+1
       vertex 1e+1 -3e+0 1e+1
       vertex 9e+0 -3e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -3e+0 0e+0
-      vertex 9e+0 -4e+0 0e+0
-      vertex 9e+0 -4e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -3e+0 0e+0
-      vertex 1e+1 -3e+0 0e+0
-      vertex 9e+0 -4e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2727,20 +1369,6 @@ solid testBuilding1
       vertex 9e+0 -3e+0 1e+1
       vertex 1e+1 -2e+0 1e+1
       vertex 9e+0 -2e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -2e+0 0e+0
-      vertex 9e+0 -3e+0 0e+0
-      vertex 9e+0 -3e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -2e+0 0e+0
-      vertex 1e+1 -2e+0 0e+0
-      vertex 9e+0 -3e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2755,20 +1383,6 @@ solid testBuilding1
       vertex 9e+0 -2e+0 1e+1
       vertex 1e+1 -1e+0 1e+1
       vertex 9e+0 -1e+0 1e+1
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 -1e+0 0e+0
-      vertex 9e+0 -2e+0 0e+0
-      vertex 9e+0 -2e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 -1e+0 0e+0
-      vertex 1e+1 -1e+0 0e+0
-      vertex 9e+0 -2e+0 0e+0
     endloop
   endfacet
   facet normal 0e+0 0e+0 0e+0
@@ -2785,20 +1399,6 @@ solid testBuilding1
       vertex 9e+0 0e+0 1e+1
     endloop
   endfacet
-  facet normal 0e+0 0e+0 0e+0
-    outer loop
-      vertex 1e+1 0e+0 0e+0
-      vertex 9e+0 -1e+0 0e+0
-      vertex 9e+0 -1e+0 0e+0
-    endloop
-  endfacet
-  facet normal 0e+0 0e+0 -1e+0
-    outer loop
-      vertex 9e+0 0e+0 0e+0
-      vertex 1e+1 0e+0 0e+0
-      vertex 9e+0 -1e+0 0e+0
-    endloop
-  endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
       vertex 0e+0 -1e+1 0e+0
@@ -2923,6 +1523,20 @@ solid testBuilding1
       vertex 0e+0 -1e+1 8e+0
       vertex 1e+0 -1e+1 9e+0
       vertex 0e+0 -1e+1 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 0e+0 -1e+1 9e+0
+      vertex 1e+0 -1e+1 9e+0
+      vertex 1e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 0e+0 -1e+1 9e+0
+      vertex 1e+0 -1e+1 1e+1
+      vertex 0e+0 -1e+1 1e+1
     endloop
   endfacet
   facet normal 0e+0 -1e+0 0e+0
@@ -3053,6 +1667,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 1e+0 -1e+1 9e+0
+      vertex 2e+0 -1e+1 9e+0
+      vertex 2e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 1e+0 -1e+1 9e+0
+      vertex 2e+0 -1e+1 1e+1
+      vertex 1e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 2e+0 -1e+1 0e+0
       vertex 3e+0 -1e+1 0e+0
       vertex 3e+0 -1e+1 1e+0
@@ -3179,6 +1807,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 2e+0 -1e+1 9e+0
+      vertex 3e+0 -1e+1 9e+0
+      vertex 3e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 2e+0 -1e+1 9e+0
+      vertex 3e+0 -1e+1 1e+1
+      vertex 2e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 3e+0 -1e+1 0e+0
       vertex 4e+0 -1e+1 0e+0
       vertex 4e+0 -1e+1 1e+0
@@ -3305,6 +1947,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 3e+0 -1e+1 9e+0
+      vertex 4e+0 -1e+1 9e+0
+      vertex 4e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 3e+0 -1e+1 9e+0
+      vertex 4e+0 -1e+1 1e+1
+      vertex 3e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 4e+0 -1e+1 0e+0
       vertex 5e+0 -1e+1 0e+0
       vertex 5e+0 -1e+1 1e+0
@@ -3431,6 +2087,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 4e+0 -1e+1 9e+0
+      vertex 5e+0 -1e+1 9e+0
+      vertex 5e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 4e+0 -1e+1 9e+0
+      vertex 5e+0 -1e+1 1e+1
+      vertex 4e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 5e+0 -1e+1 0e+0
       vertex 6e+0 -1e+1 0e+0
       vertex 6e+0 -1e+1 1e+0
@@ -3557,6 +2227,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 5e+0 -1e+1 9e+0
+      vertex 6e+0 -1e+1 9e+0
+      vertex 6e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 5e+0 -1e+1 9e+0
+      vertex 6e+0 -1e+1 1e+1
+      vertex 5e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 6e+0 -1e+1 0e+0
       vertex 7e+0 -1e+1 0e+0
       vertex 7e+0 -1e+1 1e+0
@@ -3683,6 +2367,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 6e+0 -1e+1 9e+0
+      vertex 7e+0 -1e+1 9e+0
+      vertex 7e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 6e+0 -1e+1 9e+0
+      vertex 7e+0 -1e+1 1e+1
+      vertex 6e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 7e+0 -1e+1 0e+0
       vertex 8e+0 -1e+1 0e+0
       vertex 8e+0 -1e+1 1e+0
@@ -3809,6 +2507,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 7e+0 -1e+1 9e+0
+      vertex 8e+0 -1e+1 9e+0
+      vertex 8e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 7e+0 -1e+1 9e+0
+      vertex 8e+0 -1e+1 1e+1
+      vertex 7e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 8e+0 -1e+1 0e+0
       vertex 9e+0 -1e+1 0e+0
       vertex 9e+0 -1e+1 1e+0
@@ -3935,6 +2647,20 @@ solid testBuilding1
   endfacet
   facet normal 0e+0 -1e+0 0e+0
     outer loop
+      vertex 8e+0 -1e+1 9e+0
+      vertex 9e+0 -1e+1 9e+0
+      vertex 9e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 8e+0 -1e+1 9e+0
+      vertex 9e+0 -1e+1 1e+1
+      vertex 8e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
       vertex 9e+0 -1e+1 0e+0
       vertex 1e+1 -1e+1 0e+0
       vertex 1e+1 -1e+1 1e+0
@@ -4057,6 +2783,20 @@ solid testBuilding1
       vertex 9e+0 -1e+1 8e+0
       vertex 1e+1 -1e+1 9e+0
       vertex 9e+0 -1e+1 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 9e+0 -1e+1 9e+0
+      vertex 1e+1 -1e+1 9e+0
+      vertex 1e+1 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 -1e+0 0e+0
+    outer loop
+      vertex 9e+0 -1e+1 9e+0
+      vertex 1e+1 -1e+1 1e+1
+      vertex 9e+0 -1e+1 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4183,6 +2923,20 @@ solid testBuilding1
       vertex 1e+1 -1e+1 8e+0
       vertex 1e+1 -9e+0 9e+0
       vertex 1e+1 -1e+1 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -1e+1 9e+0
+      vertex 1e+1 -9e+0 9e+0
+      vertex 1e+1 -9e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -1e+1 9e+0
+      vertex 1e+1 -9e+0 1e+1
+      vertex 1e+1 -1e+1 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4309,6 +3063,20 @@ solid testBuilding1
       vertex 1e+1 -9e+0 8e+0
       vertex 1e+1 -8e+0 9e+0
       vertex 1e+1 -9e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -9e+0 9e+0
+      vertex 1e+1 -8e+0 9e+0
+      vertex 1e+1 -8e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -9e+0 9e+0
+      vertex 1e+1 -8e+0 1e+1
+      vertex 1e+1 -9e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4435,6 +3203,20 @@ solid testBuilding1
       vertex 1e+1 -8e+0 8e+0
       vertex 1e+1 -7e+0 9e+0
       vertex 1e+1 -8e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -8e+0 9e+0
+      vertex 1e+1 -7e+0 9e+0
+      vertex 1e+1 -7e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -8e+0 9e+0
+      vertex 1e+1 -7e+0 1e+1
+      vertex 1e+1 -8e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4561,6 +3343,20 @@ solid testBuilding1
       vertex 1e+1 -7e+0 8e+0
       vertex 1e+1 -6e+0 9e+0
       vertex 1e+1 -7e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -7e+0 9e+0
+      vertex 1e+1 -6e+0 9e+0
+      vertex 1e+1 -6e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -7e+0 9e+0
+      vertex 1e+1 -6e+0 1e+1
+      vertex 1e+1 -7e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4687,6 +3483,20 @@ solid testBuilding1
       vertex 1e+1 -6e+0 8e+0
       vertex 1e+1 -5e+0 9e+0
       vertex 1e+1 -6e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -6e+0 9e+0
+      vertex 1e+1 -5e+0 9e+0
+      vertex 1e+1 -5e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -6e+0 9e+0
+      vertex 1e+1 -5e+0 1e+1
+      vertex 1e+1 -6e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4813,6 +3623,20 @@ solid testBuilding1
       vertex 1e+1 -5e+0 8e+0
       vertex 1e+1 -4e+0 9e+0
       vertex 1e+1 -5e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -5e+0 9e+0
+      vertex 1e+1 -4e+0 9e+0
+      vertex 1e+1 -4e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -5e+0 9e+0
+      vertex 1e+1 -4e+0 1e+1
+      vertex 1e+1 -5e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -4939,6 +3763,20 @@ solid testBuilding1
       vertex 1e+1 -4e+0 8e+0
       vertex 1e+1 -3e+0 9e+0
       vertex 1e+1 -4e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -4e+0 9e+0
+      vertex 1e+1 -3e+0 9e+0
+      vertex 1e+1 -3e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -4e+0 9e+0
+      vertex 1e+1 -3e+0 1e+1
+      vertex 1e+1 -4e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -5065,6 +3903,20 @@ solid testBuilding1
       vertex 1e+1 -3e+0 8e+0
       vertex 1e+1 -2e+0 9e+0
       vertex 1e+1 -3e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -3e+0 9e+0
+      vertex 1e+1 -2e+0 9e+0
+      vertex 1e+1 -2e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -3e+0 9e+0
+      vertex 1e+1 -2e+0 1e+1
+      vertex 1e+1 -3e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -5191,6 +4043,20 @@ solid testBuilding1
       vertex 1e+1 -2e+0 8e+0
       vertex 1e+1 -1e+0 9e+0
       vertex 1e+1 -2e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -2e+0 9e+0
+      vertex 1e+1 -1e+0 9e+0
+      vertex 1e+1 -1e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -2e+0 9e+0
+      vertex 1e+1 -1e+0 1e+1
+      vertex 1e+1 -2e+0 1e+1
     endloop
   endfacet
   facet normal 1e+0 0e+0 0e+0
@@ -5317,6 +4183,20 @@ solid testBuilding1
       vertex 1e+1 -1e+0 8e+0
       vertex 1e+1 0e+0 9e+0
       vertex 1e+1 -1e+0 9e+0
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -1e+0 9e+0
+      vertex 1e+1 0e+0 9e+0
+      vertex 1e+1 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 1e+0 0e+0 0e+0
+    outer loop
+      vertex 1e+1 -1e+0 9e+0
+      vertex 1e+1 0e+0 1e+1
+      vertex 1e+1 -1e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -5443,6 +4323,20 @@ solid testBuilding1
       vertex 1e+1 0e+0 8e+0
       vertex 9e+0 0e+0 9e+0
       vertex 1e+1 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+1 0e+0 9e+0
+      vertex 9e+0 0e+0 9e+0
+      vertex 9e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+1 0e+0 9e+0
+      vertex 9e+0 0e+0 1e+1
+      vertex 1e+1 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -5569,6 +4463,20 @@ solid testBuilding1
       vertex 9e+0 0e+0 8e+0
       vertex 8e+0 0e+0 9e+0
       vertex 9e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 9e+0 0e+0 9e+0
+      vertex 8e+0 0e+0 9e+0
+      vertex 8e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 9e+0 0e+0 9e+0
+      vertex 8e+0 0e+0 1e+1
+      vertex 9e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -5695,6 +4603,20 @@ solid testBuilding1
       vertex 8e+0 0e+0 8e+0
       vertex 7e+0 0e+0 9e+0
       vertex 8e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 8e+0 0e+0 9e+0
+      vertex 7e+0 0e+0 9e+0
+      vertex 7e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 8e+0 0e+0 9e+0
+      vertex 7e+0 0e+0 1e+1
+      vertex 8e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -5821,6 +4743,20 @@ solid testBuilding1
       vertex 7e+0 0e+0 8e+0
       vertex 6e+0 0e+0 9e+0
       vertex 7e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 7e+0 0e+0 9e+0
+      vertex 6e+0 0e+0 9e+0
+      vertex 6e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 7e+0 0e+0 9e+0
+      vertex 6e+0 0e+0 1e+1
+      vertex 7e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -5947,6 +4883,20 @@ solid testBuilding1
       vertex 6e+0 0e+0 8e+0
       vertex 5e+0 0e+0 9e+0
       vertex 6e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 6e+0 0e+0 9e+0
+      vertex 5e+0 0e+0 9e+0
+      vertex 5e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 6e+0 0e+0 9e+0
+      vertex 5e+0 0e+0 1e+1
+      vertex 6e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -6073,6 +5023,20 @@ solid testBuilding1
       vertex 5e+0 0e+0 8e+0
       vertex 4e+0 0e+0 9e+0
       vertex 5e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 5e+0 0e+0 9e+0
+      vertex 4e+0 0e+0 9e+0
+      vertex 4e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 5e+0 0e+0 9e+0
+      vertex 4e+0 0e+0 1e+1
+      vertex 5e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -6199,6 +5163,20 @@ solid testBuilding1
       vertex 4e+0 0e+0 8e+0
       vertex 3e+0 0e+0 9e+0
       vertex 4e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 4e+0 0e+0 9e+0
+      vertex 3e+0 0e+0 9e+0
+      vertex 3e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 4e+0 0e+0 9e+0
+      vertex 3e+0 0e+0 1e+1
+      vertex 4e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -6325,6 +5303,20 @@ solid testBuilding1
       vertex 3e+0 0e+0 8e+0
       vertex 2e+0 0e+0 9e+0
       vertex 3e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 3e+0 0e+0 9e+0
+      vertex 2e+0 0e+0 9e+0
+      vertex 2e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 3e+0 0e+0 9e+0
+      vertex 2e+0 0e+0 1e+1
+      vertex 3e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -6451,6 +5443,20 @@ solid testBuilding1
       vertex 2e+0 0e+0 8e+0
       vertex 1e+0 0e+0 9e+0
       vertex 2e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 2e+0 0e+0 9e+0
+      vertex 1e+0 0e+0 9e+0
+      vertex 1e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 2e+0 0e+0 9e+0
+      vertex 1e+0 0e+0 1e+1
+      vertex 2e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal 0e+0 1e+0 0e+0
@@ -6577,6 +5583,20 @@ solid testBuilding1
       vertex 1e+0 0e+0 8e+0
       vertex 0e+0 0e+0 9e+0
       vertex 1e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+0 0e+0 9e+0
+      vertex 0e+0 0e+0 9e+0
+      vertex 0e+0 0e+0 1e+1
+    endloop
+  endfacet
+  facet normal 0e+0 1e+0 0e+0
+    outer loop
+      vertex 1e+0 0e+0 9e+0
+      vertex 0e+0 0e+0 1e+1
+      vertex 1e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -6703,6 +5723,20 @@ solid testBuilding1
       vertex 0e+0 0e+0 8e+0
       vertex 0e+0 -1e+0 9e+0
       vertex 0e+0 0e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 0e+0 9e+0
+      vertex 0e+0 -1e+0 9e+0
+      vertex 0e+0 -1e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 0e+0 9e+0
+      vertex 0e+0 -1e+0 1e+1
+      vertex 0e+0 0e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -6829,6 +5863,20 @@ solid testBuilding1
       vertex 0e+0 -1e+0 8e+0
       vertex 0e+0 -2e+0 9e+0
       vertex 0e+0 -1e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -1e+0 9e+0
+      vertex 0e+0 -2e+0 9e+0
+      vertex 0e+0 -2e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -1e+0 9e+0
+      vertex 0e+0 -2e+0 1e+1
+      vertex 0e+0 -1e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -6955,6 +6003,20 @@ solid testBuilding1
       vertex 0e+0 -2e+0 8e+0
       vertex 0e+0 -3e+0 9e+0
       vertex 0e+0 -2e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -2e+0 9e+0
+      vertex 0e+0 -3e+0 9e+0
+      vertex 0e+0 -3e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -2e+0 9e+0
+      vertex 0e+0 -3e+0 1e+1
+      vertex 0e+0 -2e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7081,6 +6143,20 @@ solid testBuilding1
       vertex 0e+0 -3e+0 8e+0
       vertex 0e+0 -4e+0 9e+0
       vertex 0e+0 -3e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -3e+0 9e+0
+      vertex 0e+0 -4e+0 9e+0
+      vertex 0e+0 -4e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -3e+0 9e+0
+      vertex 0e+0 -4e+0 1e+1
+      vertex 0e+0 -3e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7207,6 +6283,20 @@ solid testBuilding1
       vertex 0e+0 -4e+0 8e+0
       vertex 0e+0 -5e+0 9e+0
       vertex 0e+0 -4e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -4e+0 9e+0
+      vertex 0e+0 -5e+0 9e+0
+      vertex 0e+0 -5e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -4e+0 9e+0
+      vertex 0e+0 -5e+0 1e+1
+      vertex 0e+0 -4e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7333,6 +6423,20 @@ solid testBuilding1
       vertex 0e+0 -5e+0 8e+0
       vertex 0e+0 -6e+0 9e+0
       vertex 0e+0 -5e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -5e+0 9e+0
+      vertex 0e+0 -6e+0 9e+0
+      vertex 0e+0 -6e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -5e+0 9e+0
+      vertex 0e+0 -6e+0 1e+1
+      vertex 0e+0 -5e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7459,6 +6563,20 @@ solid testBuilding1
       vertex 0e+0 -6e+0 8e+0
       vertex 0e+0 -7e+0 9e+0
       vertex 0e+0 -6e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -6e+0 9e+0
+      vertex 0e+0 -7e+0 9e+0
+      vertex 0e+0 -7e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -6e+0 9e+0
+      vertex 0e+0 -7e+0 1e+1
+      vertex 0e+0 -6e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7585,6 +6703,20 @@ solid testBuilding1
       vertex 0e+0 -7e+0 8e+0
       vertex 0e+0 -8e+0 9e+0
       vertex 0e+0 -7e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -7e+0 9e+0
+      vertex 0e+0 -8e+0 9e+0
+      vertex 0e+0 -8e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -7e+0 9e+0
+      vertex 0e+0 -8e+0 1e+1
+      vertex 0e+0 -7e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7711,6 +6843,20 @@ solid testBuilding1
       vertex 0e+0 -8e+0 8e+0
       vertex 0e+0 -9e+0 9e+0
       vertex 0e+0 -8e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -8e+0 9e+0
+      vertex 0e+0 -9e+0 9e+0
+      vertex 0e+0 -9e+0 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -8e+0 9e+0
+      vertex 0e+0 -9e+0 1e+1
+      vertex 0e+0 -8e+0 1e+1
     endloop
   endfacet
   facet normal -1e+0 0e+0 0e+0
@@ -7837,6 +6983,20 @@ solid testBuilding1
       vertex 0e+0 -9e+0 8e+0
       vertex 0e+0 -1e+1 9e+0
       vertex 0e+0 -9e+0 9e+0
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -9e+0 9e+0
+      vertex 0e+0 -1e+1 9e+0
+      vertex 0e+0 -1e+1 1e+1
+    endloop
+  endfacet
+  facet normal -1e+0 0e+0 0e+0
+    outer loop
+      vertex 0e+0 -9e+0 9e+0
+      vertex 0e+0 -1e+1 1e+1
+      vertex 0e+0 -9e+0 1e+1
     endloop
   endfacet
 endsolid
