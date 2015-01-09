@@ -236,6 +236,22 @@ function minMaxPoints(buildingPoints) {
     return [minX, maxX, minY, maxY];
 }
 
+function createGroundGrid(xMin, xMax, yMin, yMax, step) {
+    var xpt, ypt, pt1, pt2, pt3, pt4, tri, facets = [];
+    for (xpt = xMin; xpt < xMax; xpt += step) {
+        for (ypt = yMin; ypt < yMax; ypt += step) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + step, ypt];
+            pt3 = [xpt + step, ypt + step];
+            pt4 = [xpt, ypt + step];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    return facets;
+}
+
 function createGround(innerBounds) {
     var smallGridBound = [],
         mediumGridBound = [],
@@ -334,6 +350,12 @@ function createGround(innerBounds) {
             facets.push(tri[1]);
         }
     }
+    createGroundGrid(mediumGridBound[0][0], smallGridBound[0][0], mediumGridBound[0][1], mediumGridBound[2][1], 5).forEach(function(facet) {
+        facets.push(facet);
+    });
+    createGroundGrid(smallGridBound[1][0], mediumGridBound[1][0], mediumGridBound[0][1], mediumGridBound[2][1], 5).forEach(function(facet) {
+        facets.push(facet);
+    });
     return facets;
 }
 
