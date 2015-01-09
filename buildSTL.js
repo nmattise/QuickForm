@@ -7,19 +7,19 @@ module.exports.buildSTL = buildSTL;
 
 //Average Function
 function average(pt1, pt2) {
-    return (pt1 + pt2) / 2;
-}
-//Latitude and Longitude to Cartesian
-Number.prototype.toRadians = function () {
+        return (pt1 + pt2) / 2;
+    }
+    //Latitude and Longitude to Cartesian
+Number.prototype.toRadians = function() {
     return this * Math.PI / 180;
 };
-Number.prototype.toDegrees = function () {
+Number.prototype.toDegrees = function() {
     return this * 180 / Math.PI;
 };
 
 //Prototype to find side length of array of points
-Array.prototype.findLengths = function () {
-    var sideLengths = new Array();
+Array.prototype.findLengths = function() {
+    var sideLengths = [];
     for (var i = 1; i < this.length; i++) {
         var d = distanceFormula(this[i - 1][0], this[i - 1][1], this[i][0], this[i][1]);
         sideLengths.push(Math.round(d * 100) / 100);
@@ -46,11 +46,11 @@ function polygonArea(X, Y, numPoints) {
 
 //Create Lat/Lng object
 function latLon(lat, lng) {
-    this.latitude = Number(lat);
-    this.longitude = Number(lng);
-}
-//Latitude and Longitude to X,Y Coord
-latLon.prototype.coordinatesTo = function (point) {
+        this.latitude = Number(lat);
+        this.longitude = Number(lng);
+    }
+    //Latitude and Longitude to X,Y Coord
+latLon.prototype.coordinatesTo = function(point) {
     var radius = 6371;
     var phi1 = this.latitude.toRadians(),
         lambda1 = this.longitude.toRadians(),
@@ -73,29 +73,37 @@ latLon.prototype.coordinatesTo = function (point) {
 }
 
 //Coordinates from Basic Lat/lng point to Lat/Lng
-latLon.prototype.destinationPoint = function (X, Y) {
-    var radius = 6371;
-    var brng = Math.atan(X / Y),
-        dist = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2));
-    var theta = Number(brng).toRadians();
-    var delta = Number(dist) / radius; // angular distance in radians
+latLon.prototype.destinationPoint = function(X, Y) {
+        var radius = 6371;
+        var brng = Math.atan(X / Y),
+            dist = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2));
+        var theta = Number(brng).toRadians();
+        var delta = Number(dist) / radius; // angular distance in radians
 
-    var phi1 = this.latitude.toRadians();
-    var lambda1 = this.longitude.toRadians();
+        var phi1 = this.latitude.toRadians();
+        var lambda1 = this.longitude.toRadians();
 
-    var phi2 = Math.asin(Math.sin(phi1) * Math.cos(delta) +
-        Math.cos(phi1) * Math.sin(delta) * Math.cos(theta));
-    var lambda2 = lambda1 + Math.atan2(Math.sin(theta) * Math.sin(delta) * Math.cos(phi1),
-        Math.cos(delta) - Math.sin(phi1) * Math.sin(phi2));
-    lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
+        var phi2 = Math.asin(Math.sin(phi1) * Math.cos(delta) +
+            Math.cos(phi1) * Math.sin(delta) * Math.cos(theta));
+        var lambda2 = lambda1 + Math.atan2(Math.sin(theta) * Math.sin(delta) * Math.cos(phi1),
+            Math.cos(delta) - Math.sin(phi1) * Math.sin(phi2));
+        lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
 
-    return new latLon(phi2.toDegrees(), lambda2.toDegrees());
-}
-//STL Format Creation
+        return new latLon(phi2.toDegrees(), lambda2.toDegrees());
+    }
+    //STL Format Creation
 
 function createVertPlane(pt1, pt2, z1, z2) {
-    var tri1 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z1], [pt2[0], pt2[1], z2]],
-        tri2 = [[pt1[0], pt1[1], z1], [pt2[0], pt2[1], z2], [pt1[0], pt1[1], z2]],
+    var tri1 = [
+            [pt1[0], pt1[1], z1],
+            [pt2[0], pt2[1], z1],
+            [pt2[0], pt2[1], z2]
+        ],
+        tri2 = [
+            [pt1[0], pt1[1], z1],
+            [pt2[0], pt2[1], z2],
+            [pt1[0], pt1[1], z2]
+        ],
         facets = [];
     facets = [{
         verts: tri1
@@ -107,24 +115,40 @@ function createVertPlane(pt1, pt2, z1, z2) {
 }
 
 function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
-    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt3[0], pt3[1], z]],
-        tri2 = [[pt1[0], pt1[1], z], [pt3[0], pt3[1], z], [pt4[0], pt4[1], z]],
+    var tri1 = [
+            [pt1[0], pt1[1], z],
+            [pt2[0], pt2[1], z],
+            [pt3[0], pt3[1], z]
+        ],
+        tri2 = [
+            [pt1[0], pt1[1], z],
+            [pt3[0], pt3[1], z],
+            [pt4[0], pt4[1], z]
+        ],
         facets = [{
             verts: tri1
-    }, {
+        }, {
             verts: tri2
-    }];
+        }];
     return facets;
 }
 
 function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
-    var tri1 = [[pt1[0], pt1[1], z], [pt2[0], pt2[1], z], [pt3[0], pt3[1], z]],
-        tri2 = [[pt1[0], pt1[1], z], [pt3[0], pt3[1], z], [pt4[0], pt4[1], z]],
+    var tri1 = [
+            [pt1[0], pt1[1], z],
+            [pt2[0], pt2[1], z],
+            [pt3[0], pt3[1], z]
+        ],
+        tri2 = [
+            [pt1[0], pt1[1], z],
+            [pt3[0], pt3[1], z],
+            [pt4[0], pt4[1], z]
+        ],
         facets = [{
             verts: tri1.reverse()
-    }, {
+        }, {
             verts: tri2.reverse()
-    }];
+        }];
     return facets;
 }
 
@@ -197,17 +221,120 @@ function createWallGrid(point1, point2, height) {
     return facets;
 }
 
+function minMaxPoints(buildingPoints) {
+    var minX, minY, maxX, maxY,
+        xPts = [],
+        yPts = [];
+    buildingPoints.forEach(function(pt) {
+        xPts.push(pt[0]);
+        yPts.push(pt[1]);
+    });
+    minX = Math.min.apply(null, xPts);
+    maxX = Math.max.apply(null, xPts);
+    minY = Math.min.apply(null, yPts);
+    maxY = Math.max.apply(null, yPts);
+    return [minX, maxX, minY, maxY];
+}
+
+function createGround(innerBounds) {
+    var smallGridBound = [],
+        mediumGridBound = [],
+        largeGridBound = [],
+        groundSTL = '',
+        innerStart,
+        smallStart,
+        mediumStart,
+        largeStart,
+        xpt,
+        ypt,
+        pt1,
+        pt2,
+        pt3,
+        pt4,
+        tri,
+        facets = [];
+    smallGridBound = [
+        [innerBounds[0][0] * 2, innerBounds[0][1] * 2],
+        [innerBounds[1][0] * 2, innerBounds[1][1] * 2],
+        [innerBounds[2][0] * 2, innerBounds[2][1] * 2],
+        [innerBounds[3][0] * 2, innerBounds[3][1] * 2]
+    ];
+    mediumGridBound = [
+        [innerBounds[0][0] * 5, innerBounds[0][1] * 5],
+        [innerBounds[1][0] * 5, innerBounds[1][1] * 5],
+        [innerBounds[2][0] * 5, innerBounds[2][1] * 5],
+        [innerBounds[3][0] * 5, innerBounds[3][1] * 5]
+    ];
+    largeGridBound = [
+        [innerBounds[0][0] * 10, innerBounds[0][1] * 10],
+        [innerBounds[1][0] * 10, innerBounds[1][1] * 10],
+        [innerBounds[2][0] * 10, innerBounds[2][1] * 10],
+        [innerBounds[3][0] * 10, innerBounds[3][1] * 10]
+    ];
+    //Build Building Area STL
+    innerStart = innerBounds[0];
+    for (xpt = innerStart[0]; xpt < innerBounds[1][0]; xpt++) {
+        for (ypt = innerStart[1]; ypt < innerBounds[2][1]; ypt++) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + 1, ypt];
+            pt3 = [xpt + 1, ypt + 1];
+            pt4 = [xpt, ypt + 1];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    console.log(innerBounds);
+    //Build Small Grid Area
+    smallStart = smallGridBound[0][0];
+    //EastSide
+    for (xpt = smallStart[0]; xpt < innerBounds[0][0]; xpt++) {
+        for (ypt = smallStart[1]; ypt < smallGridBound[2][1]; ypt++) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + 1, ypt];
+            pt3 = [xpt + 1, ypt + 1];
+            pt4 = [xpt, ypt + 1];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    //WestSide
+    for (xpt = innerBounds[1][0]; xpt < smallGridBound[1][0]; xpt++) {
+        for (ypt = smallGridBound[1][1]; ypt < smallGridBound[2][1]; ypt++) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + 1, ypt];
+            pt3 = [xpt + 1, ypt + 1];
+            pt4 = [xpt, ypt + 1];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    return facets;
+}
 
 //Final Function
 function buildSTL(buildings) {
     //Initialize Variables
-    var lat = new Number,
-        lng = new Number,
-        pathCount = new Number,
-        centerLat = new Number,
-        centerLng = new Number,
-        origin,
-        allBldgSTL = new String();
+    var lat = 0,
+        lng = 0,
+        pathCount = 0,
+        centerLat = 0,
+        centerLng = 0,
+        origin = 0,
+        allBldgSTL = '',
+        minXPts = [],
+        maxXPts = [],
+        minYPts = [],
+        maxYPts = [],
+        minX,
+        maxX,
+        minY,
+        maxY,
+        innerBounds = [],
+        groundFacets = [],
+        groundSTL;
 
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
@@ -228,63 +355,102 @@ function buildSTL(buildings) {
 
     for (var i = 0; i < buildings.length; i++) {
         switch (buildings[i].bldgFootprint) {
-        case 'rect':
-            //Initialize Variables
-            var points = new Array(),
-                sideLengths,
-                averageSideLengths = new Array(),
-                adjustedPoints = new Array(),
-                adjustedLatLng = new Array(),
-                sideLengths = new Array(),
-                facets = new Array();
-            console.log("___\n" + buildings[i].id);
-            //console.log(buildings[i].polygon.path)
-            //Get Cartesian Points from LatLng
-            for (var j = 0; j < buildings[i].polygon.path.length; j++) {
-                points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
-            }
-            //console.log(points);
-            //Average Cartesian Points
-            adjustedPoints[0] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-            adjustedPoints[1] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-            adjustedPoints[2] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
-            adjustedPoints[3] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
-            console.log(adjustedPoints);
-            //console.log(adjustedPoints.findLengths());
-            //Convert Adjusted Points Back to a Lat Lng Format for Future Display
-            for (var j = 0; j < adjustedPoints.length; j++) {
-                adjustedLatLng.push(origin.destinationPoint(adjustedPoints[j][0], adjustedPoints[j][1]));
-            }
-            //console.log(adjustedLatLng);
-            //Save Adjusted Cartesian Points and LatLng to Building Object
-            buildings[i].polygon.adjustedPath = adjustedLatLng;
-            buildings[i].adjustedPoints = adjustedPoints;
+            case 'rect':
+                //Initialize Variables
+                var points = [],
+                    sideLengths,
+                    averageSideLengths = [],
+                    adjustedPoints = [],
+                    adjustedLatLng = [],
+                    sideLengths = [],
+                    facets = [],
+                    minMaxPts = [];
+                console.log("___\n" + buildings[i].id);
+                //console.log(buildings[i].polygon.path)
+                //Get Cartesian Points from LatLng
+                for (var j = 0; j < buildings[i].polygon.path.length; j++) {
+                    points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
+                }
+                //console.log(points);
+                //Average Cartesian Points
+                adjustedPoints[0] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
+                adjustedPoints[1] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
+                adjustedPoints[2] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
+                adjustedPoints[3] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
+                console.log(adjustedPoints);
+                //console.log(adjustedPoints.findLengths());
+                //Convert Adjusted Points Back to a Lat Lng Format for Future Display
+                for (var j = 0; j < adjustedPoints.length; j++) {
+                    adjustedLatLng.push(origin.destinationPoint(adjustedPoints[j][0], adjustedPoints[j][1]));
+                }
+                //console.log(adjustedLatLng);
+                //Save Adjusted Cartesian Points and LatLng to Building Object
+                buildings[i].polygon.adjustedPath = adjustedLatLng;
+                buildings[i].adjustedPoints = adjustedPoints;
 
-            //Create Grids for STL Creation
-            //Walls
-            createWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].height).forEach(function (facet) {
-                facets.push(facet);
-            });
-            createWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], buildings[i].height).forEach(function (facet) {
-                facets.push(facet);
-            });
-            createWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function (facet) {
-                facets.push(facet);
-            });
-            createWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], buildings[i].height).forEach(function (facet) {
-                facets.push(facet);
-            });
-            createRectRoofFloor(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function (facet) {
-                facets.push(facet);
-            });
-            var stlObj = {
-                description: buildings[i].name,
-                facets: facets
-            };
-            allBldgSTL += stl.fromObject(stlObj) + "/n";
-            break;
+                //Create Grids for STL Creation
+                //Walls
+                createWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], buildings[i].height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], buildings[i].height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRectRoofFloor(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                var stlObj = {
+                    description: buildings[i].name,
+                    facets: facets
+                };
+                allBldgSTL += stl.fromObject(stlObj) + "/n";
+
+                //Ground Stats for This Building
+                minMaxPts = minMaxPoints(buildings[i].adjustedPoints);
+                minXPts.push(minMaxPts[0]);
+                maxXPts.push(minMaxPts[1]);
+                minYPts.push(minMaxPts[2]);
+                maxYPts.push(minMaxPts[3]);
+                break;
         }
     }
+    //Create Gound STL
+    //Find Min and Max X&Y of building location points
+    minX = Math.min.apply(null, minXPts);
+    maxX = Math.max.apply(null, maxXPts);
+    minY = Math.min.apply(null, minYPts);
+    maxY = Math.max.apply(null, maxYPts);
+    //Round these min and max points to next integer
+    minX = parseInt(minX - 1);
+    maxX = parseInt(maxX + 1);
+    minY = parseInt(minY - 1);
+    maxY = parseInt(maxY + 1);
+    //Create innerBounds of the Ground STL
+    innerBounds = [
+        [minX, minY],
+        [maxX, minY],
+        [maxX, maxY],
+        [minX, maxY]
+    ];
+    console.log(innerBounds);
+    //Call CreateGound
+    groundFacets = createGround(innerBounds);
+
+    groundSTL = {
+        description: "groundSTL",
+        facets: groundFacets
+    };
+
+    //Write Files
+    //Write Ground STL File for All Buildings
+    fs.writeFileSync("stlFiles/testBuildingsGround.stl", stl.fromObject(groundSTL));
+    //Write All Buildings in One STL File
     fs.writeFileSync("stlFiles/testBuildings.stl", allBldgSTL);
 }
 
