@@ -286,10 +286,9 @@ function createGround(innerBounds) {
     }
     console.log(innerBounds);
     //Build Small Grid Area
-    smallStart = smallGridBound[0][0];
     //EastSide
-    for (xpt = smallStart[0]; xpt < innerBounds[0][0]; xpt++) {
-        for (ypt = smallStart[1]; ypt < smallGridBound[2][1]; ypt++) {
+    for (xpt = smallGridBound[0][0]; xpt < innerBounds[0][0]; xpt++) {
+        for (ypt = smallGridBound[0][1]; ypt < smallGridBound[2][1]; ypt++) {
             pt1 = [xpt, ypt];
             pt2 = [xpt + 1, ypt];
             pt3 = [xpt + 1, ypt + 1];
@@ -302,6 +301,30 @@ function createGround(innerBounds) {
     //WestSide
     for (xpt = innerBounds[1][0]; xpt < smallGridBound[1][0]; xpt++) {
         for (ypt = smallGridBound[1][1]; ypt < smallGridBound[2][1]; ypt++) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + 1, ypt];
+            pt3 = [xpt + 1, ypt + 1];
+            pt4 = [xpt, ypt + 1];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    //SouthSide
+    for (xpt = innerBounds[0][0]; xpt < innerBounds[1][0]; xpt++) {
+        for (ypt = smallGridBound[0][1]; ypt < innerBounds[0][1]; ypt++) {
+            pt1 = [xpt, ypt];
+            pt2 = [xpt + 1, ypt];
+            pt3 = [xpt + 1, ypt + 1];
+            pt4 = [xpt, ypt + 1];
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+        }
+    }
+    //NorthSide
+    for (xpt = innerBounds[3][0]; xpt < innerBounds[2][0]; xpt++) {
+        for (ypt = innerBounds[3][1]; ypt < smallGridBound[2][1]; ypt++) {
             pt1 = [xpt, ypt];
             pt2 = [xpt + 1, ypt];
             pt3 = [xpt + 1, ypt + 1];
