@@ -287,69 +287,6 @@ function createGround(innerBounds) {
         [innerBounds[2][0] * 10, innerBounds[2][1] * 10],
         [innerBounds[3][0] * 10, innerBounds[3][1] * 10]
     ];
-    //Build Building Area STL
-    /*innerStart = innerBounds[0];
-    for (xpt = innerStart[0]; xpt < innerBounds[1][0]; xpt++) {
-        for (ypt = innerStart[1]; ypt < innerBounds[2][1]; ypt++) {
-            pt1 = [xpt, ypt];
-            pt2 = [xpt + 1, ypt];
-            pt3 = [xpt + 1, ypt + 1];
-            pt4 = [xpt, ypt + 1];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }
-    console.log(innerBounds);
-    //Build Small Grid Area
-    //EastSide
-    for (xpt = smallGridBound[0][0]; xpt < innerBounds[0][0]; xpt++) {
-        for (ypt = smallGridBound[0][1]; ypt < smallGridBound[2][1]; ypt++) {
-            pt1 = [xpt, ypt];
-            pt2 = [xpt + 1, ypt];
-            pt3 = [xpt + 1, ypt + 1];
-            pt4 = [xpt, ypt + 1];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }
-    //WestSide
-    for (xpt = innerBounds[1][0]; xpt < smallGridBound[1][0]; xpt++) {
-        for (ypt = smallGridBound[1][1]; ypt < smallGridBound[2][1]; ypt++) {
-            pt1 = [xpt, ypt];
-            pt2 = [xpt + 1, ypt];
-            pt3 = [xpt + 1, ypt + 1];
-            pt4 = [xpt, ypt + 1];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }
-    //SouthSide
-    for (xpt = innerBounds[0][0]; xpt < innerBounds[1][0]; xpt++) {
-        for (ypt = smallGridBound[0][1]; ypt < innerBounds[0][1]; ypt++) {
-            pt1 = [xpt, ypt];
-            pt2 = [xpt + 1, ypt];
-            pt3 = [xpt + 1, ypt + 1];
-            pt4 = [xpt, ypt + 1];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }
-    //NorthSide
-    for (xpt = innerBounds[3][0]; xpt < innerBounds[2][0]; xpt++) {
-        for (ypt = innerBounds[3][1]; ypt < smallGridBound[2][1]; ypt++) {
-            pt1 = [xpt, ypt];
-            pt2 = [xpt + 1, ypt];
-            pt3 = [xpt + 1, ypt + 1];
-            pt4 = [xpt, ypt + 1];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }*/
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
@@ -533,14 +470,14 @@ function buildSTL(buildings) {
 
     //Write Files
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/testBuildingsGround.stl", stl.fromObject(groundSTL));
+    fs.writeFileSync("stlFiles/BuildingsGround.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/testBuildings.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/Buildings.stl", allBldgSTL);
 }
 
 
 //Test Function
-var buildings = [{
+/*var buildings = [{
     "polygon": {
         "path": [{
             "latitude": 38.987935558628486,
@@ -678,4 +615,4 @@ var buildings = [{
     "bldgFootprint": "rect"
 }];
 
-buildSTL(buildings);
+buildSTL(buildings);*/

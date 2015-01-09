@@ -18,6 +18,7 @@ app.get('*', function (req, res) {
 
 app.post('/createSTL', function (req, res) {
     console.log(req.body);
+    buildSTL(req.body.buildings);
 });
 
 app.post('/createOneSTL', function (req, res) {
