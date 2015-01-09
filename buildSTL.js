@@ -392,12 +392,15 @@ function buildSTL(buildings) {
                 for (var j = 0; j < buildings[i].polygon.path.length; j++) {
                     points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
                 }
-                //console.log(points);
+                console.log(points);
                 //Average Cartesian Points
-                adjustedPoints[0] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-                adjustedPoints[1] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-                adjustedPoints[2] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
-                adjustedPoints[3] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
+                sideLengths = points.findLengths()
+                console.log(sideLengths);
+                //adjustedPoints[0] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
+                //adjustedPoints[1] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
+                //adjustedPoints[2] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
+                //adjustedPoints[3] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
+                adjustedPoints = points;
                 console.log(adjustedPoints);
                 //console.log(adjustedPoints.findLengths());
                 //Convert Adjusted Points Back to a Lat Lng Format for Future Display
@@ -477,142 +480,6 @@ function buildSTL(buildings) {
 
 
 //Test Function
-/*var buildings = [{
-    "polygon": {
-        "path": [{
-            "latitude": 38.987935558628486,
-            "longitude": -76.9436526576814
-        }, {
-            "latitude": 38.987935558628486,
-            "longitude": -76.94331410817684
-        }, {
-            "latitude": 38.98827410813305,
-            "longitude": -76.94331410817684
-        }, {
-            "latitude": 38.98827410813305,
-            "longitude": -76.9436526576814
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 0
-    },
-    "id": 0,
-    "name": "Building 1",
-    "numFloors": 12,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 11856.594762716291,
-    "height": 144,
-    "totalArea": 142279.1371525955,
-    "bldgFootprint": "rect"
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.98855040367168,
-            "longitude": -76.94325219795581
-        }, {
-            "latitude": 38.98855874289189,
-            "longitude": -76.94229496687177
-        }, {
-            "latitude": 38.98936672310219,
-            "longitude": -76.94233251779798
-        }, {
-            "latitude": 38.989329197031886,
-            "longitude": -76.9432682912099
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 1
-    },
-    "id": 1,
-    "name": "Building 2",
-    "numFloors": 2,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 77745.02804467834,
-    "height": 24,
-    "totalArea": 155490.0560893567,
-    "bldgFootprint": "rect"
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.987823616356174,
-            "longitude": -76.94191699825464
-        }, {
-            "latitude": 38.987823616356174,
-            "longitude": -76.94123989924552
-        }, {
-            "latitude": 38.9885007153653,
-            "longitude": -76.94123989924552
-        }, {
-            "latitude": 38.9885007153653,
-            "longitude": -76.94191699825464
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 2
-    },
-    "id": 2,
-    "name": "Building 3",
-    "numFloors": 5,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 47426.34063397059,
-    "height": 60,
-    "totalArea": 237131.70316985296,
-    "bldgFootprint": "rect"
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.98672490947635,
-            "longitude": -76.94228446088968
-        }, {
-            "latitude": 38.98672490947635,
-            "longitude": -76.94160736188056
-        }, {
-            "latitude": 38.987402008485475,
-            "longitude": -76.94160736188056
-        }, {
-            "latitude": 38.987402008485475,
-            "longitude": -76.94228446088968
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 3
-    },
-    "id": 3,
-    "name": "Building 4",
-    "numFloors": 15,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 47427.076771830434,
-    "height": 180,
-    "totalArea": 711406.1515774565,
-    "bldgFootprint": "rect"
-}];
+var buildings = [{"polygon":{"path":[{"latitude":38.9866387897692,"longitude":-76.94477113884061},{"latitude":38.9866387897692,"longitude":-76.94443258933605},{"latitude":38.986977339273764,"longitude":-76.94443258933605},{"latitude":38.986977339273764,"longitude":-76.94477113884061}],"fill":{"color":"#777","opacity":0.6},"stroke":{"color":"#777","weight":1},"id":0},"id":0,"name":"Test Building 1","numFloors":4,"flrToFlrHeight":12,"shape":"rect","footprintArea":11856.811971680438,"height":48,"totalArea":47427.24788672175,"bldgFootprint":"rect","selected":true},{"polygon":{"path":[{"latitude":38.986570630484536,"longitude":-76.94418882929025},{"latitude":38.986570630484536,"longitude":-76.94351173028113},{"latitude":38.98724772949366,"longitude":-76.94351173028113},{"latitude":38.98724772949366,"longitude":-76.94418882929025}],"fill":{"color":"#777","opacity":0.6},"stroke":{"color":"#777","weight":1},"id":1},"id":1,"name":"Test Building 2","numFloors":8,"flrToFlrHeight":12,"shape":"rect","footprintArea":47427.180138518495,"height":96,"totalArea":379417.44110814796,"bldgFootprint":"rect","selected":true},{"polygon":{"path":[{"latitude":38.98722110277909,"longitude":-76.94504445396598},{"latitude":38.987233611843905,"longitude":-76.94437003716581},{"latitude":38.98737490695935,"longitude":-76.94438344821089},{"latitude":38.98737699179913,"longitude":-76.94503908954795}],"fill":{"color":"#777","opacity":0.6},"stroke":{"color":"#777","weight":1},"id":2},"id":2,"name":"Test Building 3","numFloors":3,"flrToFlrHeight":12,"shape":"rect","footprintArea":10224.659943385841,"height":36,"totalArea":30673.97983015752,"bldgFootprint":"rect","selected":true},{"polygon":{"path":[{"latitude":38.9876818486848,"longitude":-76.94384282432733},{"latitude":38.9876818486848,"longitude":-76.94316572531821},{"latitude":38.988358947693925,"longitude":-76.94316572531821},{"latitude":38.988358947693925,"longitude":-76.94384282432733}],"fill":{"color":"#777","opacity":0.6},"stroke":{"color":"#777","weight":1},"id":3},"id":3,"name":"Test Building 4","numFloors":2,"flrToFlrHeight":12,"shape":"rect","footprintArea":47426.43562028688,"height":24,"totalArea":94852.87124057376,"bldgFootprint":"rect","selected":true},{"polygon":{"path":[{"latitude":38.98758386275805,"longitude":-76.94521879755195},{"latitude":38.9876672560546,"longitude":-76.94480723723524},{"latitude":38.98785859014375,"longitude":-76.94486892804258},{"latitude":38.987758518446604,"longitude":-76.9453019460314}],"fill":{"color":"#777","opacity":0.6},"stroke":{"color":"#777","weight":1},"id":4},"id":4,"name":"Test Building 5","numFloors":6,"flrToFlrHeight":12,"shape":"rect","footprintArea":8681.274081783167,"height":72,"totalArea":52087.64449069901,"bldgFootprint":"rect","selected":true}];
 
-buildSTL(buildings);*/
+buildSTL(buildings);
