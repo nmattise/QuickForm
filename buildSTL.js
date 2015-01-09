@@ -350,17 +350,22 @@ function createGround(innerBounds) {
             facets.push(tri[1]);
         }
     }*/
+    //Inner Grid
+    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
+        facets.push(facet);
+    });
+
     //Small Grid
-    createGroundGrid(smallGridBound[0][0], innerBounds[0][0], smallGridBound[0][1], smallGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(smallGridBound[0][0], innerBounds[0][0], smallGridBound[0][1], smallGridBound[2][1], 2).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[1][0], smallGridBound[1][0], smallGridBound[0][1], smallGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(innerBounds[1][0], smallGridBound[1][0], smallGridBound[0][1], smallGridBound[2][1], 2).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], smallGridBound[0][1], innerBounds[1][1], 5).forEach(function(facet) {
+    createGroundGrid(innerBounds[0][0], innerBounds[1][0], smallGridBound[0][1], innerBounds[1][1], 2).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[3][0], innerBounds[2][0], innerBounds[3][1], smallGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(innerBounds[3][0], innerBounds[2][0], innerBounds[3][1], smallGridBound[2][1], 2).forEach(function(facet) {
         facets.push(facet);
     });
 
@@ -378,16 +383,16 @@ function createGround(innerBounds) {
         facets.push(facet);
     });
     //Medium Grid
-    createGroundGrid(largeGridBound[0][0], mediumGridBound[0][0], largeGridBound[0][1], largeGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(largeGridBound[0][0], mediumGridBound[0][0], largeGridBound[0][1], largeGridBound[2][1], 10).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[1][0], largeGridBound[1][0], largeGridBound[0][1], largeGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[1][0], largeGridBound[1][0], largeGridBound[0][1], largeGridBound[2][1], 10).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[0][0], mediumGridBound[1][0], largeGridBound[0][1], mediumGridBound[1][1], 5).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[0][0], mediumGridBound[1][0], largeGridBound[0][1], mediumGridBound[1][1], 10).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[3][0], mediumGridBound[2][0], mediumGridBound[3][1], largeGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[3][0], mediumGridBound[2][0], mediumGridBound[3][1], largeGridBound[2][1], 10).forEach(function(facet) {
         facets.push(facet);
     });
     return facets;
