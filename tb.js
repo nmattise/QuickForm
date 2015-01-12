@@ -88,7 +88,7 @@ function findRotation(pt1, pt2) {
 }
 
 function createRotateRoof(point1, point2, point4, height) {
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14;
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
     console.log("\n")
     facets = [];
     sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
@@ -114,18 +114,21 @@ function createRotateRoof(point1, point2, point4, height) {
     //Rotation
     var theta = findRotation(point1, point2) - Math.PI / 2;
     console.log("theta: " + theta);
-    for (var j = 0; j <= sideLength14; j++) {
+    for (var j = 0; j <= sideLength14 - 1; j++) {
         pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
         console.log(pt1);
         for (i = 0; i <= sideLength12; i++) {
-            pt1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
-            pt2 = [pt1[0] + gridLength, pt1[1]];
+
+            pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
+            pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
-            pt4 = [pt1[0], pt1[1] + gridLength14];
-            var pt1_14 = rotatePoint(pt1, pt1, theta);
-            var pt2_14 = rotatePoint(pt1, pt2, theta);
-            var pt3_14 = rotatePoint(pt1, pt3, theta);
-            var pt4_14 = rotatePoint(pt1, pt4, theta);
+            pt4 = [pt1_1[0], pt1_1[1] + gridLength14];
+            console.log(pt1_1);
+            //console.log("pt1_14: " + pt1 + "  pt2_14: " + pt2 + "  pt3_14: " + pt3 + "  pt4_14: " + pt4);
+            var pt1_14 = rotatePoint(pt1_1, pt1_1, theta);
+            var pt2_14 = rotatePoint(pt1_1, pt2, theta);
+            var pt3_14 = rotatePoint(pt1_1, pt3, theta);
+            var pt4_14 = rotatePoint(pt1_1, pt4, theta);
             //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
             facets.push(triRoof[0]);
@@ -260,6 +263,3 @@ var stlObj1 = {
     facets: facets
 };
 fs.writeFileSync("stlFiles/testBuildings1.stl", stl.fromObject(stlObj1));
-
-
-createRotateRoof(array[0], array[1], array[3], 10)
