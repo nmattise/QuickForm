@@ -117,13 +117,13 @@ function createRotateRoof(point1, point2, point4, height) {
     for (var j = 0; j <= sideLength14 - 1; j++) {
         pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
         console.log(pt1);
-        for (i = 0; i <= sideLength12; i++) {
+        for (i = 0; i <= sideLength12 - 1; i++) {
 
             pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
             pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
             pt4 = [pt1_1[0], pt1_1[1] + gridLength14];
-            console.log(pt1_1);
+            //console.log(pt1_1);
             //console.log("pt1_14: " + pt1 + "  pt2_14: " + pt2 + "  pt3_14: " + pt3 + "  pt4_14: " + pt4);
             var pt1_14 = rotatePoint(pt1_1, pt1_1, theta);
             var pt2_14 = rotatePoint(pt1_1, pt2, theta);
@@ -230,16 +230,17 @@ var array = [],
     facets1 = [],
     x1, x2;
 
-/*array = [[0, -10],
+array = [[0, -10],
     [10, -10],
     [10, 0],
-    [0, 0]];*/
-array = [
+    [0, 0]];
+/*array = [
     [0, -10],
+    [10, 0],
     [10, 0],
     [0, 10],
     [-10, 0]
-];
+];*/
 height = 10;
 
 createRotateRoof(array[0], array[1], array[3], height).forEach(function(facet) {
