@@ -196,13 +196,13 @@ function createRectRoofFloor(point1, point2, point4, height) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
 
-        //console.log("pt1: " + pt1 + "  pt2: " + pt2);
+        
         for (z = 0; z <= sideLength14 - 1; z++) {
             var pt1_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * z)];
             var pt2_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * z)];
             var pt3_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * (z + 1))];
             var pt4_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * (z + 1))];
-            //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
+        
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
 
             facets.push(triRoof[0]);
@@ -213,6 +213,45 @@ function createRectRoofFloor(point1, point2, point4, height) {
         }
     }
 
+    return facets;
+}
+
+function createRotateRoof(point1, point2, point4, height) {
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
+    facets = [];
+    sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
+    sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
+    deltaX = point2[0] - point1[0];
+    deltaY = point2[1] - point1[1];
+    gridLength = sideLength12 / parseInt(sideLength12);
+    xIt = deltaX / parseInt(sideLength12);
+    yIt = deltaY / parseInt(sideLength12);
+    deltaX14 = point1[0] - point4[0];
+    deltaY14 = point1[1] - point4[1];
+    xIt14 = deltaX14 / parseInt(sideLength14);
+    yIt14 = deltaY14 / parseInt(sideLength14);
+    gridLength14 = sideLength14 / parseInt(sideLength14);
+    //Rotation
+    var theta = findRotation(point1, point2) - Math.PI / 2;
+    for (var j = 0; j <= sideLength14 - 1; j++) {
+        pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
+        for (i = 0; i <= sideLength12 - 1; i++) {
+            pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
+            pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
+            pt3 = [pt2[0], pt2[1] + gridLength14];
+            pt4 = [pt1_1[0], pt1_1[1] + gridLength14];
+            var pt1_14 = rotatePoint(pt1_1, pt1_1, theta);
+            var pt2_14 = rotatePoint(pt1_1, pt2, theta);
+            var pt3_14 = rotatePoint(pt1_1, pt3, theta);
+            var pt4_14 = rotatePoint(pt1_1, pt4, theta);
+            triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
+            facets.push(triRoof[0]);
+            facets.push(triRoof[1]);
+            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
+            facets.push(triFloor[0]);
+            facets.push(triFloor[1]);
+        }
+    }
     return facets;
 }
 
@@ -416,8 +455,6 @@ function buildSTL(buildings) {
                 for (var j = 0; j < buildings[i].polygon.path.length; j++) {
                     points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
                 }
-                console.log(points);
-
                 //Average and Adjust the Rectangle
                 var lengths = points.findLengths();
                 var avergeLengths = [(lengths[0] + lengths[2]) / 2, (lengths[1] + lengths[3]) / 2];
@@ -434,7 +471,6 @@ function buildSTL(buildings) {
                     rotatedRect.push(rotatedPoint);
                 });
                 adjustedPoints = rotatedRect;
-                console.log(adjustedPoints);
                 //console.log(adjustedPoints.findLengths());
                 //Convert Adjusted Points Back to a Lat Lng Format for Future Display
                 for (var j = 0; j < adjustedPoints.length; j++) {
@@ -459,7 +495,7 @@ function buildSTL(buildings) {
                 createWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRectRoofFloor(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 var stlObj = {
