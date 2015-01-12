@@ -188,7 +188,7 @@ function buildOSM(buildings) {
 
                 length = distanceFormula(adjustedPoints[0][0], adjustedPoints[0][1], adjustedPoints[1][0], adjustedPoints[1][1]);
                 width = distanceFormula(adjustedPoints[0][0], adjustedPoints[0][1], adjustedPoints[3][0], adjustedPoints[3][1]);
-                degToNorth = findRotation(adjustedPoints[0], adjustedPoints[3]);
+                degToNorth = findRotation(adjustedPoints[0], adjustedPoints[3]).toDegrees();
                 console.log("length: " + length);
                 console.log("width: " + width);
                 console.log("Deg To North: " + degToNorth);
