@@ -3,6 +3,7 @@ var fs = require('fs'),
     createSTL = require('./createSTL.js').createSTL,
     createAllBuildingsSTL = require('./allBuildingsSTL.js').allBuildingsSTL,
     buildSTL = require('./buildSTL.js').buildSTL,
+    buildOSM = require('./buildOSM.js').buildOSM,
     bodyParser = require('body-parser');
 
 
@@ -12,20 +13,24 @@ app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.get('*', function (req, res) {
+app.get('*', function(req, res) {
     res.sendFile(__dirname + '/public/place.html');
 });
 
-app.post('/createSTL', function (req, res) {
+app.post('/createSTL', function(req, res) {
     console.log(req.body);
     buildSTL(req.body.buildings);
 });
+app.post('/createOSM', function(req, res) {
+    console.log(req.body);
+    buildOSM(req.body.buildings);
+});
 
-app.post('/createOneSTL', function (req, res) {
+app.post('/createOneSTL', function(req, res) {
     createSTL(req.body.points, req.body.buildingHeight, req.body.buildingName);
     res.send("Stl File Created");
 });
-app.post('/createAllBuildingsSTL', function (req, res) {
+app.post('/createAllBuildingsSTL', function(req, res) {
     createAllBuildingsSTL(req.body.buildings);
     res.send("Stl File Created");
 });
