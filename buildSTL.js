@@ -74,24 +74,46 @@ latLon.prototype.coordinatesTo = function(point) {
 
 //Coordinates from Basic Lat/lng point to Lat/Lng
 latLon.prototype.destinationPoint = function(X, Y) {
-        var radius = 6371;
-        var brng = Math.atan(X / Y),
-            dist = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2));
-        var theta = Number(brng).toRadians();
-        var delta = Number(dist) / radius; // angular distance in radians
+    var radius = 6371;
+    var brng = Math.atan(X / Y),
+        dist = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2));
+    var theta = Number(brng).toRadians();
+    var delta = Number(dist) / radius; // angular distance in radians
 
-        var phi1 = this.latitude.toRadians();
-        var lambda1 = this.longitude.toRadians();
+    var phi1 = this.latitude.toRadians();
+    var lambda1 = this.longitude.toRadians();
 
-        var phi2 = Math.asin(Math.sin(phi1) * Math.cos(delta) +
-            Math.cos(phi1) * Math.sin(delta) * Math.cos(theta));
-        var lambda2 = lambda1 + Math.atan2(Math.sin(theta) * Math.sin(delta) * Math.cos(phi1),
-            Math.cos(delta) - Math.sin(phi1) * Math.sin(phi2));
-        lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
+    var phi2 = Math.asin(Math.sin(phi1) * Math.cos(delta) +
+        Math.cos(phi1) * Math.sin(delta) * Math.cos(theta));
+    var lambda2 = lambda1 + Math.atan2(Math.sin(theta) * Math.sin(delta) * Math.cos(phi1),
+        Math.cos(delta) - Math.sin(phi1) * Math.sin(phi2));
+    lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
 
-        return new latLon(phi2.toDegrees(), lambda2.toDegrees());
-    }
-    //STL Format Creation
+    return new latLon(phi2.toDegrees(), lambda2.toDegrees());
+}
+
+//Adjust Rectangle
+function rotatePoint(startPoint, point, theta) {
+    var rotatedPoint, x1, y1;
+    var x0 = startPoint[0],
+        y0 = startPoint[1],
+        x = point[0],
+        y = point[1];
+    x1 = x0 + (x - x0) * Math.cos(theta) + (y - y0) * Math.sin(theta);
+    y1 = y0 - (x - x0) * Math.sin(theta) + (y - y0) * Math.cos(theta);
+    rotatedPoint = [x1, y1];
+    return rotatedPoint;
+}
+
+function findRotation(pt1, pt2) {
+    var deltaX, deltaY, theta;
+    deltaX = pt2[0] - pt1[0];
+    deltaY = pt2[1] - pt1[1];
+    theta = Math.atan(deltaX / deltaY);
+    return theta
+}
+
+//STL Format Creation
 
 function createVertPlane(pt1, pt2, z1, z2) {
     var tri1 = [
@@ -395,16 +417,23 @@ function buildSTL(buildings) {
                     points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
                 }
                 console.log(points);
-                //Average Cartesian Points
-                sideLengths = points.findLengths()
-                length = (sideLengths[0] + sideLengths[2]) / 2;
-                width = (sideLengths[1] + sideLengths[3]) / 2;
-                console.log("length: " + length + "  width: " + width);
-                //adjustedPoints[0] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-                //adjustedPoints[1] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[0][1], points[1][1]) * 100) / 100];
-                //adjustedPoints[2] = [Math.round(average(points[1][0], points[2][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
-                //adjustedPoints[3] = [Math.round(average(points[0][0], points[3][0]) * 100) / 100, Math.round(average(points[2][1], points[3][1]) * 100) / 100];
-                adjustedPoints = points;
+
+                //Average and Adjust the Rectangle
+                var lengths = points.findLengths();
+                var avergeLengths = [(lengths[0] + lengths[2]) / 2, (lengths[1] + lengths[3]) / 2];
+                var theta = findRotation(points[0], points[1]);
+                var orthRect = [
+                    [points[0][0], points[0][1]],
+                    [points[0][0] + avergeLengths[0], points[0][1]],
+                    [points[0][0] + avergeLengths[0], points[0][1] + avergeLengths[1]],
+                    [points[0][0], points[0][1] + avergeLengths[1]]
+                ];
+                var rotatedRect = [];
+                orthRect.forEach(function(point) {
+                    var rotatedPoint = rotatePoint(orthRect[0], point, theta - (Math.PI / 2));
+                    rotatedRect.push(rotatedPoint);
+                });
+                adjustedPoints = rotatedRect;
                 console.log(adjustedPoints);
                 //console.log(adjustedPoints.findLengths());
                 //Convert Adjusted Points Back to a Lat Lng Format for Future Display
