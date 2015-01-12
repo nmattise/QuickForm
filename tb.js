@@ -116,12 +116,13 @@ function createRotateRoof(point1, point2, point4, height) {
     console.log("theta: " + theta);
     for (i = 0; i <= sideLength12 - 1; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
-        pt2 = [pt1[0] + gridLength, pt1[1]];
-
         //console.log("pt1: " + pt1 + "  pt2: " + pt2);
         for (z = 0; z <= sideLength14 - 1; z++) {
-            pt3 = [pt2[0], pt2[1] + gridLength14 * z];
-            pt4 = [pt1[0], pt1[1] + gridLength14 * z];
+            pt1[0] += (z * xIt14);
+            pt1[1] += (z * yIt14);
+            pt2 = [pt1[0] + gridLength, pt1[1]];
+            pt3 = [pt2[0], pt2[1] + gridLength14];
+            pt4 = [pt1[0], pt1[1] + gridLength14];
             var pt1_14 = rotatePoint(pt1, pt1, theta);
             var pt2_14 = rotatePoint(pt1, pt2, theta);
             var pt3_14 = rotatePoint(pt1, pt3, theta);
