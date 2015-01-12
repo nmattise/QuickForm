@@ -114,26 +114,28 @@ function createRotateRoof(point1, point2, point4, height) {
     //Rotation
     var theta = findRotation(point1, point2) - Math.PI / 2;
     console.log("theta: " + theta);
-    for (i = 0; i <= sideLength12 - 1; i++) {
-        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
-        pt2 = [pt1[0] + gridLength, pt1[1]];
-        pt3 = [pt2[0], pt2[1] + gridLength14];
-        pt4 = [pt1[0], pt1[1] + gridLength14];
-
-
-        var pt1_14 = rotatePoint(pt1, pt1, theta);
-        var pt2_14 = rotatePoint(pt1, pt2, theta);
-        var pt3_14 = rotatePoint(pt1, pt3, theta);
-        var pt4_14 = rotatePoint(pt1, pt4, theta);
-        //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
-        triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
-
-        facets.push(triRoof[0]);
-        facets.push(triRoof[1]);
-        triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
-        facets.push(triFloor[0]);
-        facets.push(triFloor[1]);
+    for (var j = 0; j <= sideLength14; j++) {
+        pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
+        console.log(pt1);
+        for (i = 0; i <= sideLength12; i++) {
+            pt1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
+            pt2 = [pt1[0] + gridLength, pt1[1]];
+            pt3 = [pt2[0], pt2[1] + gridLength14];
+            pt4 = [pt1[0], pt1[1] + gridLength14];
+            var pt1_14 = rotatePoint(pt1, pt1, theta);
+            var pt2_14 = rotatePoint(pt1, pt2, theta);
+            var pt3_14 = rotatePoint(pt1, pt3, theta);
+            var pt4_14 = rotatePoint(pt1, pt4, theta);
+            //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
+            triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
+            facets.push(triRoof[0]);
+            facets.push(triRoof[1]);
+            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
+            facets.push(triFloor[0]);
+            facets.push(triFloor[1]);
+        }
     }
+
 
     return facets;
 }
