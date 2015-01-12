@@ -118,8 +118,8 @@ function createRotateRoof(point1, point2, point4, height) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         //console.log("pt1: " + pt1 + "  pt2: " + pt2);
         for (z = 0; z <= sideLength14 - 1; z++) {
-            pt1[0] += (z * xIt14);
-            pt1[1] += (z * yIt14);
+            pt1[0] -= (z * xIt14);
+            pt1[1] -= (z * yIt14);
             pt2 = [pt1[0] + gridLength, pt1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
             pt4 = [pt1[0], pt1[1] + gridLength14];
@@ -127,7 +127,7 @@ function createRotateRoof(point1, point2, point4, height) {
             var pt2_14 = rotatePoint(pt1, pt2, theta);
             var pt3_14 = rotatePoint(pt1, pt3, theta);
             var pt4_14 = rotatePoint(pt1, pt4, theta);
-            console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
+            //console.log("pt1_14: " + pt1_14 + "  pt2_14: " + pt2_14 + "  pt3_14: " + pt3_14 + "  pt4_14: " + pt4_14);
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
 
             facets.push(triRoof[0]);
