@@ -267,6 +267,11 @@ function createWallGrid(point1, point2, height) {
     iterator = parseInt(sideLength);
     zGrid = Math.abs(parseInt(height));
     zIt = height / zGrid;
+    console.log("xIt: " + xIt);
+    console.log("yIt: " + yIt);
+    console.log("zIt: " + zIt);
+    console.log("deltaX: " + deltaX);
+    console.log("deltaY " +deltaY);
     for (i = 0; i <= sideLength - 1; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
