@@ -294,16 +294,19 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     deltaY = point2[1] - point1[1];
     xIt = gridSize + ((deltaX % gridSize) / parseInt(deltaX));
     yIt = gridSize + ((deltaY % gridSize) / parseInt(deltaY));
-    if(!isFinite(xIt)) xIt = 0;
-    if(!isFinite(yIt)) yIt = 0;
+    if (!isFinite(xIt)) xIt = 0;
+    if (!isFinite(yIt)) yIt = 0;
     console.log("xIT: " + xIt);
     console.log("yIT: " + yIt);
+    iterator = sideLength / gridLength;
     console.log("gridLength: " + gridLength);
+    console.log("sideLength: " + sideLength);
+    console.log("iterator: " + iterator);
     zGrid = gridSize + ((height % gridSize) / parseInt(height));
     zIt = height / zGrid;
     console.log("zGrid: " + zGrid);
     console.log("zIt: " + zIt);
-    for (i = 0; i <= sideLength - gridSize; i++) {
+    for (i = 0; i <= iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
         for (z = 0; z <= zIt; z++) {
