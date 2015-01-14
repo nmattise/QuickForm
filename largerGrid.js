@@ -275,19 +275,10 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     //Infinity Check
     if (!isFinite(xIt)) xIt = 0;
     if (!isFinite(yIt)) yIt = 0;
-    console.log("deltaX: " + deltaX);
-    console.log("deltaY: " + deltaY);
-    console.log("xIT: " + xIt);
-    console.log("yIT: " + yIt);
     iterator = parseInt(sideLength / gridSize);
-    console.log("gridLength: " + gridLength);
-    console.log("sideLength: " + sideLength);
-    console.log("iterator: " + iterator);
     zGrid = gridLength = ((height % gridSize) / (parseInt(height / gridSize))) + gridSize;
     zIt = height / parseInt(height / gridSize);
     zIterator = parseInt(height / gridSize);
-    console.log("zGrid: " + zGrid);
-    console.log("zIt: " + zIt + "\n--");
     for (i = 0; i < iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
@@ -357,12 +348,16 @@ function createGround(innerBounds) {
     var i = 0;
     innerBounds.forEach(function(point) {
         point[0] = 10 * Math.round(point[0] / 10);
-        point[1] = 10 * Math.round(point[0] / 10);
+        point[1] = 10 * Math.round(point[1] / 10);
         smallGridBound.push([point[0] * boundDistances[0], point[1] * boundDistances[0]]);
         mediumGridBound.push([point[0] * boundDistances[1], point[1] * boundDistances[1]]);
         largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
         i++;
     });
+    console.log(innerBounds);
+    console.log(smallGridBound);
+    console.log(mediumGridBound);
+    console.log(largeGridBound);
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
