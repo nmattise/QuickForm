@@ -26,77 +26,77 @@
         <div class="col-sm-5 info">
             <div class="panel panel-default info-panel box-z2">
                 <div class="panel-body">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="buildingName" class="col-sm-5 control-label">Building Name</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="buildingName" ng-model="name">
+                    <form name="buildingForm" ng-submit="saveBuilding()">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="buildingName" class="col-sm-5 control-label">Building Name</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="buildingName" ng-model="buildingInfo.name" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="numberOfFloors" class="col-sm-5 control-label">Number of Floors</label>
-                            <div class="col-sm-7">
-                                <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1" ng-model="numFloors">
+                            <div class="form-group">
+                                <label for="numberOfFloors" class="col-sm-5 control-label">Number of Floors</label>
+                                <div class="col-sm-7">
+                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="1" ng-model="buildingInfo.numFloors" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="numberOfFloors" class="col-sm-5 control-label">Floor to Floor Height</label>
-                            <div class="col-sm-7">
-                                <div class="input-group">
-                                    <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1" ng-model="flrToFlrHeight">
-                                    <span class="input-group-addon">ft</span>
+                            <div class="form-group">
+                                <label for="numberOfFloors" class="col-sm-5 control-label">Floor to Floor Height</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="numberOfFloors" placeholder="" min="0" step="0.1" ng-model="buildingInfo.flrToFlrHeight" required>
+                                        <span class="input-group-addon">ft</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="buildingFootprint" class="col-sm-5 control-label">Building Footprint</label>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="buildingFootprint" ng-model="buildingInfo.bldgFootprint">
+                                        <option value="rect">Rectangle</option>
+                                        <option value="l" disabled>L Shape</option>
+                                        <option value="t" disabled>T Shape</option>
+                                        <option value="u" disabled>U Shape</option>
+                                        <option value="h" disabled>H Shape</option>
+                                        <option value="cross" disabled>Cross Shape</option>
+                                        <option value="trap" disabled>Trapezoid</option>
+                                        <option value="triangle" disabled>Triangle</option>
+                                        <option value="courtyard" disabled>Courtyard</option>
+                                        <option value="circle" disabled>Circle</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="buildingFootprint" class="col-sm-5 control-label">Building Footprint</label>
-                            <div class="col-sm-7">
-                                <select class="form-control" id="buildingFootprint" ng-model="bldgFootprint">
-                                    <option value="rect">Rectangle</option>
-                                    <option value="l" disabled>L Shape</option>
-                                    <option value="t" disabled>T Shape</option>
-                                    <option value="u" disabled>U Shape</option>
-                                    <option value="h" disabled>H Shape</option>
-                                    <option value="cross" disabled>Cross Shape</option>
-                                    <option value="trap" disabled>Trapezoid</option>
-                                    <option value="triangle" disabled>Triangle</option>
-                                    <option value="courtyard" disabled>Courtyard</option>
-                                    <option value="circle" disabled>Circle</option>
-                                </select>
-                            </div>
+                    </form novalidate>
+                    <div class="row">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <button class="btn btn-warning " ng-click="rotateLeft()" disabled>
+                                <img src="libs/material-design-icons/image/2x_web/ic_rotate_left_white_24dp.png" width="24px">
+                            </button>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-2 col-xs-offset-1">
-                                <button class="btn btn-warning " ng-click="rotateLeft()" disabled>
-                                    <img src="libs/material-design-icons/image/2x_web/ic_rotate_left_white_24dp.png" width="24px">
-                                </button>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class=" btn btn-warning" ng-click="rotateRight()" disabled>
-                                    <img src="libs/material-design-icons/image/2x_web/ic_rotate_right_white_24dp.png" width="24px">
-                                </button>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="btn btn-warning" ng-click="editable()" ng-disabled="mapPolygon.path.length <1">
-                                    <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" width="24px">
-                                </button>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="btn btn-danger" id="removeBuilding" ng-click="mapPolygon.path = []" ng-disabled="mapPolygon.path.length <1">
-                                    <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" width="24px">
-                                </button>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="btn btn-success" id="saveBuilding" ng-click="saveBuilding()" ng-disabled="mapPolygon.path.length <1 || !name || !numFloors ">
-                                    <img src="libs/material-design-icons/content/2x_web/ic_save_white_24dp.png" width="24px">
-                                </button>
-                            </div>
-
+                        <div class="col-xs-2">
+                            <button class=" btn btn-warning" ng-click="rotateRight()" disabled>
+                                <img src="libs/material-design-icons/image/2x_web/ic_rotate_right_white_24dp.png" width="24px">
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-warning" ng-click="editable()" ng-disabled="mapPolygon.path.length <1">
+                                <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" width="24px">
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-danger" id="removeBuildingPath" ng-click="mapPolygon.path = []" ng-disabled="mapPolygon.path.length <1">
+                                <img src="libs/material-design-icons/action/2x_web/ic_delete_white_24dp.png" width="24px">
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-success" id="saveBuilding" ng-click="saveBuilding()" ng-disabled="!buildingForm.$valid || mapPolygon.path.length <1">
+                                <img src="libs/material-design-icons/content/2x_web/ic_save_white_24dp.png" width="24px">
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="col-sm-7 map">
@@ -145,7 +145,7 @@
                                         </button>
                                     </th>
                                     <th>
-                                        <button class="btn btn-warning" ng-click="editBuilding(b.id)">
+                                        <button class="btn btn-warning" ng-click="editBuilding(b.id)" disabled>
                                             <img src="libs/material-design-icons/image/2x_web/ic_edit_white_24dp.png" class="" width="24px">
                                         </button>
                                     </th>

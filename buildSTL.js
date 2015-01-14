@@ -174,68 +174,34 @@ function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
     return facets;
 }
 
-
-function createRectRoofFloor(point1, point2, point4, height) {
-    //point 1 is 0 in rect arry of length 4, others follow path #
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14;
-
+function createRotateRoof(point1, point2, point4, gridSize, height) {
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator12, iterator14, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
     facets = [];
     sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
-    gridLength = sideLength12 / parseInt(sideLength12);
-    xIt = deltaX / parseInt(sideLength12);
-    yIt = deltaY / parseInt(sideLength12);
+    gridLength = ((sideLength12 % gridSize) / (parseInt(sideLength12 / gridSize))) + gridSize;
+    xIt = deltaX / parseInt(sideLength12 / gridSize);
+    yIt = deltaY / parseInt(sideLength12 / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt)) xIt = 0;
+    if (!isFinite(yIt)) yIt = 0;
+    iterator12 = parseInt(sideLength12 / gridSize);
     deltaX14 = point1[0] - point4[0];
     deltaY14 = point1[1] - point4[1];
-    xIt14 = deltaX14 / parseInt(sideLength14);
-    yIt14 = deltaY14 / parseInt(sideLength14);
-    gridLength14 = sideLength14 / parseInt(sideLength14);
-    for (i = 0; i <= sideLength12 - 1; i++) {
-        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
-        pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-
-
-        for (z = 0; z <= sideLength14 - 1; z++) {
-            var pt1_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * z)];
-            var pt2_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * z)];
-            var pt3_14 = [pt2[0] - (xIt14 * (z + 1)), pt2[1] - (yIt14 * (z + 1))];
-            var pt4_14 = [pt1[0] - (xIt14 * z), pt1[1] - (yIt14 * (z + 1))];
-
-            triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
-
-            facets.push(triRoof[0]);
-            facets.push(triRoof[1]);
-            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
-            facets.push(triFloor[0]);
-            facets.push(triFloor[1]);
-        }
-    }
-
-    return facets;
-}
-
-function createRotateRoof(point1, point2, point4, height) {
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
-    facets = [];
-    sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
-    sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
-    deltaX = point2[0] - point1[0];
-    deltaY = point2[1] - point1[1];
-    gridLength = sideLength12 / parseInt(sideLength12);
-    xIt = deltaX / parseInt(sideLength12);
-    yIt = deltaY / parseInt(sideLength12);
-    deltaX14 = point1[0] - point4[0];
-    deltaY14 = point1[1] - point4[1];
-    xIt14 = deltaX14 / parseInt(sideLength14);
-    yIt14 = deltaY14 / parseInt(sideLength14);
-    gridLength14 = sideLength14 / parseInt(sideLength14);
+    xIt14 = deltaX14 / parseInt(sideLength14 / gridSize);
+    yIt14 = deltaY14 / parseInt(sideLength14 / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt14)) xIt14 = 0;
+    if (!isFinite(yIt14)) yIt14 = 0;
+    iterator14 = parseInt(sideLength14 / gridSize);
+    gridLength14 = ((sideLength14 % gridSize) / (parseInt(sideLength14 / gridSize))) + gridSize;
     //Rotation
     var theta = findRotation(point1, point2) - Math.PI / 2;
-    for (var j = 0; j <= sideLength14 - 1; j++) {
+    for (var j = 0; j < iterator14; j++) {
         pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
-        for (i = 0; i <= sideLength12 - 1; i++) {
+        for (i = 0; i < iterator12; i++) {
             pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
             pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
@@ -255,28 +221,26 @@ function createRotateRoof(point1, point2, point4, height) {
     return facets;
 }
 
-function createWallGrid(point1, point2, height) {
-    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
+function createCustomWallGrid(point1, point2, gridSize, height) {
+    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
     facets = [];
     sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
+    gridLength = ((sideLength % gridSize) / (parseInt(sideLength / gridSize))) + gridSize;
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
-    gridLength = sideLength / parseInt(sideLength);
-    xIt = deltaX / parseInt(sideLength);
-    yIt = deltaY / parseInt(sideLength);
-    iterator = parseInt(sideLength);
-    zGrid = Math.abs(parseInt(height));
-    zIt = height / zGrid;
-    console.log("xIt: " + xIt);
-    console.log("yIt: " + yIt);
-    console.log("zIt: " + zIt);
-    console.log("deltaX: " + deltaX);
-    console.log("deltaY " +deltaY);
-    for (i = 0; i <= sideLength - 1; i++) {
+    xIt = deltaX / parseInt(sideLength / gridSize);
+    yIt = deltaY / parseInt(sideLength / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt)) xIt = 0;
+    if (!isFinite(yIt)) yIt = 0;
+    iterator = parseInt(sideLength / gridSize);
+    zGrid = gridLength = ((height % gridSize) / (parseInt(height / gridSize))) + gridSize;
+    zIt = height / parseInt(height / gridSize);
+    zIterator = parseInt(height / gridSize);
+    for (i = 0; i < iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        //console.log("pt1: " + pt1 + "  ,  pt2: " + pt2)
-        for (z = 0; z <= zGrid - 1; z++) {
+        for (z = 0; z < zIterator; z++) {
             z1 = zIt * z;
             z2 = zIt * (z + 1);
             tri = createVertPlane(pt1, pt2, z1, z2);
@@ -318,8 +282,11 @@ function createGroundGrid(xMin, xMax, yMin, yMax, step) {
     return facets;
 }
 
+
 function createGround(innerBounds) {
-    var smallGridBound = [],
+    var boundDistances = [],
+        gridSizes = [],
+        smallGridBound = [],
         mediumGridBound = [],
         largeGridBound = [],
         groundSTL = '',
@@ -335,67 +302,60 @@ function createGround(innerBounds) {
         pt4,
         tri,
         facets = [];
-    smallGridBound = [
-        [innerBounds[0][0] * 2, innerBounds[0][1] * 2],
-        [innerBounds[1][0] * 2, innerBounds[1][1] * 2],
-        [innerBounds[2][0] * 2, innerBounds[2][1] * 2],
-        [innerBounds[3][0] * 2, innerBounds[3][1] * 2]
-    ];
-    mediumGridBound = [
-        [innerBounds[0][0] * 5, innerBounds[0][1] * 5],
-        [innerBounds[1][0] * 5, innerBounds[1][1] * 5],
-        [innerBounds[2][0] * 5, innerBounds[2][1] * 5],
-        [innerBounds[3][0] * 5, innerBounds[3][1] * 5]
-    ];
-    largeGridBound = [
-        [innerBounds[0][0] * 10, innerBounds[0][1] * 10],
-        [innerBounds[1][0] * 10, innerBounds[1][1] * 10],
-        [innerBounds[2][0] * 10, innerBounds[2][1] * 10],
-        [innerBounds[3][0] * 10, innerBounds[3][1] * 10]
-    ];
+    boundDistances = [2, 5, 10];
+    gridSizes = [5, 10, 20];
+    var i = 0;
+    innerBounds.forEach(function(point) {
+        point[0] = 10 * Math.round(point[0] / 10);
+        point[1] = 10 * Math.round(point[1] / 10);
+        smallGridBound.push([point[0] * boundDistances[0], point[1] * boundDistances[0]]);
+        mediumGridBound.push([point[0] * boundDistances[1], point[1] * boundDistances[1]]);
+        largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
+        i++;
+    });
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
     });
 
     //Small Grid
-    createGroundGrid(smallGridBound[0][0], innerBounds[0][0], smallGridBound[0][1], smallGridBound[2][1], 2).forEach(function(facet) {
+    createGroundGrid(smallGridBound[0][0], innerBounds[0][0], smallGridBound[0][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[1][0], smallGridBound[1][0], smallGridBound[0][1], smallGridBound[2][1], 2).forEach(function(facet) {
+    createGroundGrid(innerBounds[1][0], smallGridBound[1][0], smallGridBound[0][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], smallGridBound[0][1], innerBounds[1][1], 2).forEach(function(facet) {
+    createGroundGrid(innerBounds[0][0], innerBounds[1][0], smallGridBound[0][1], innerBounds[1][1], gridSizes[0]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(innerBounds[3][0], innerBounds[2][0], innerBounds[3][1], smallGridBound[2][1], 2).forEach(function(facet) {
+    createGroundGrid(innerBounds[3][0], innerBounds[2][0], innerBounds[3][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
         facets.push(facet);
     });
 
     //Medium Grid
-    createGroundGrid(mediumGridBound[0][0], smallGridBound[0][0], mediumGridBound[0][1], mediumGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[0][0], smallGridBound[0][0], mediumGridBound[0][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(smallGridBound[1][0], mediumGridBound[1][0], mediumGridBound[0][1], mediumGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(smallGridBound[1][0], mediumGridBound[1][0], mediumGridBound[0][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(smallGridBound[0][0], smallGridBound[1][0], mediumGridBound[0][1], smallGridBound[1][1], 5).forEach(function(facet) {
+    createGroundGrid(smallGridBound[0][0], smallGridBound[1][0], mediumGridBound[0][1], smallGridBound[1][1], gridSizes[1]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(smallGridBound[3][0], smallGridBound[2][0], smallGridBound[3][1], mediumGridBound[2][1], 5).forEach(function(facet) {
+    createGroundGrid(smallGridBound[3][0], smallGridBound[2][0], smallGridBound[3][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
         facets.push(facet);
     });
     //Medium Grid
-    createGroundGrid(largeGridBound[0][0], mediumGridBound[0][0], largeGridBound[0][1], largeGridBound[2][1], 10).forEach(function(facet) {
+    createGroundGrid(largeGridBound[0][0], mediumGridBound[0][0], largeGridBound[0][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[1][0], largeGridBound[1][0], largeGridBound[0][1], largeGridBound[2][1], 10).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[1][0], largeGridBound[1][0], largeGridBound[0][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[0][0], mediumGridBound[1][0], largeGridBound[0][1], mediumGridBound[1][1], 10).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[0][0], mediumGridBound[1][0], largeGridBound[0][1], mediumGridBound[1][1], gridSizes[2]).forEach(function(facet) {
         facets.push(facet);
     });
-    createGroundGrid(mediumGridBound[3][0], mediumGridBound[2][0], mediumGridBound[3][1], largeGridBound[2][1], 10).forEach(function(facet) {
+    createGroundGrid(mediumGridBound[3][0], mediumGridBound[2][0], mediumGridBound[3][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
         facets.push(facet);
     });
     return facets;
@@ -421,7 +381,8 @@ function buildSTL(buildings) {
         maxY,
         innerBounds = [],
         groundFacets = [],
-        groundSTL;
+        groundSTL,
+        fileName = '';
 
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
@@ -433,9 +394,6 @@ function buildSTL(buildings) {
     }
     centerLat = lat / pathCount;
     centerLng = lng / pathCount;
-    //console.log("Center Lat " + centerLat);
-    //console.log("Center Lng " + centerLng);
-
     //Make Center Latitude and Longitude the Origin Point for LatLng
     origin = new latLon(centerLat, centerLng);
     //Go through Each Building
@@ -445,6 +403,7 @@ function buildSTL(buildings) {
             case 'rect':
                 //Initialize Variables
                 var points = [],
+                    gridSize,
                     sideLengths,
                     averageSideLengths = [],
                     adjustedPoints = [],
@@ -454,8 +413,10 @@ function buildSTL(buildings) {
                     width,
                     facets = [],
                     minMaxPts = [];
-                console.log("___\n" + buildings[i].id);
-                //console.log(buildings[i].polygon.path)
+                //Add Building Name to File Name
+                fileName += buildings[i].name + "_";
+                //Set Grid Size
+                gridSize = 1;
                 //Get Cartesian Points from LatLng
                 for (var j = 0; j < buildings[i].polygon.path.length; j++) {
                     points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
@@ -476,31 +437,31 @@ function buildSTL(buildings) {
                     rotatedRect.push(rotatedPoint);
                 });
                 adjustedPoints = rotatedRect;
-                //console.log(adjustedPoints.findLengths());
                 //Convert Adjusted Points Back to a Lat Lng Format for Future Display
                 for (var j = 0; j < adjustedPoints.length; j++) {
                     adjustedLatLng.push(origin.destinationPoint(adjustedPoints[j][0], adjustedPoints[j][1]));
                 }
-                //console.log(adjustedLatLng);
+
                 //Save Adjusted Cartesian Points and LatLng to Building Object
                 buildings[i].polygon.adjustedPath = adjustedLatLng;
                 buildings[i].adjustedPoints = adjustedPoints;
 
                 //Create Grids for STL Creation
                 //Walls
-                createWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                //Roof and Floor
+                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 var stlObj = {
@@ -536,10 +497,9 @@ function buildSTL(buildings) {
         [maxX, maxY],
         [minX, maxY]
     ];
-    console.log(innerBounds);
     //Call CreateGound
     groundFacets = createGround(innerBounds);
-
+    //Create GroundSTL
     groundSTL = {
         description: "groundSTL",
         facets: groundFacets
@@ -547,188 +507,8 @@ function buildSTL(buildings) {
 
     //Write Files
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/BuildingsGround.stl", stl.fromObject(groundSTL));
+
+    fs.writeFileSync("stlFiles/" + fileName + "Ground.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/Buildings.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
 }
-
-
-//Test Function
-var buildings = [{
-    "polygon": {
-        "path": [{
-            "latitude": 38.9866387897692,
-            "longitude": -76.94477113884061
-        }, {
-            "latitude": 38.9866387897692,
-            "longitude": -76.94443258933605
-        }, {
-            "latitude": 38.986977339273764,
-            "longitude": -76.94443258933605
-        }, {
-            "latitude": 38.986977339273764,
-            "longitude": -76.94477113884061
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 0
-    },
-    "id": 0,
-    "name": "Test Building 1",
-    "numFloors": 4,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 11856.811971680438,
-    "height": 48,
-    "totalArea": 47427.24788672175,
-    "bldgFootprint": "rect",
-    "selected": true
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.986570630484536,
-            "longitude": -76.94418882929025
-        }, {
-            "latitude": 38.986570630484536,
-            "longitude": -76.94351173028113
-        }, {
-            "latitude": 38.98724772949366,
-            "longitude": -76.94351173028113
-        }, {
-            "latitude": 38.98724772949366,
-            "longitude": -76.94418882929025
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 1
-    },
-    "id": 1,
-    "name": "Test Building 2",
-    "numFloors": 8,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 47427.180138518495,
-    "height": 96,
-    "totalArea": 379417.44110814796,
-    "bldgFootprint": "rect",
-    "selected": true
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.98722110277909,
-            "longitude": -76.94504445396598
-        }, {
-            "latitude": 38.987233611843905,
-            "longitude": -76.94437003716581
-        }, {
-            "latitude": 38.98737490695935,
-            "longitude": -76.94438344821089
-        }, {
-            "latitude": 38.98737699179913,
-            "longitude": -76.94503908954795
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 2
-    },
-    "id": 2,
-    "name": "Test Building 3",
-    "numFloors": 3,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 10224.659943385841,
-    "height": 36,
-    "totalArea": 30673.97983015752,
-    "bldgFootprint": "rect",
-    "selected": true
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.9876818486848,
-            "longitude": -76.94384282432733
-        }, {
-            "latitude": 38.9876818486848,
-            "longitude": -76.94316572531821
-        }, {
-            "latitude": 38.988358947693925,
-            "longitude": -76.94316572531821
-        }, {
-            "latitude": 38.988358947693925,
-            "longitude": -76.94384282432733
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 3
-    },
-    "id": 3,
-    "name": "Test Building 4",
-    "numFloors": 2,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 47426.43562028688,
-    "height": 24,
-    "totalArea": 94852.87124057376,
-    "bldgFootprint": "rect",
-    "selected": true
-}, {
-    "polygon": {
-        "path": [{
-            "latitude": 38.98758386275805,
-            "longitude": -76.94521879755195
-        }, {
-            "latitude": 38.9876672560546,
-            "longitude": -76.94480723723524
-        }, {
-            "latitude": 38.98785859014375,
-            "longitude": -76.94486892804258
-        }, {
-            "latitude": 38.987758518446604,
-            "longitude": -76.9453019460314
-        }],
-        "fill": {
-            "color": "#777",
-            "opacity": 0.6
-        },
-        "stroke": {
-            "color": "#777",
-            "weight": 1
-        },
-        "id": 4
-    },
-    "id": 4,
-    "name": "Test Building 5",
-    "numFloors": 6,
-    "flrToFlrHeight": 12,
-    "shape": "rect",
-    "footprintArea": 8681.274081783167,
-    "height": 72,
-    "totalArea": 52087.64449069901,
-    "bldgFootprint": "rect",
-    "selected": true
-}];
-
-buildSTL(buildings);
