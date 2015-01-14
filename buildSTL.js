@@ -726,4 +726,4 @@ var buildings = [{
     "selected": true
 }];
 
-//buildSTL(buildings);
+buildSTL(buildings);
