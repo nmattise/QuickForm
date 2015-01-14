@@ -294,6 +294,8 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     deltaY = point2[1] - point1[1];
     xIt = gridSize + ((deltaX % gridSize) / parseInt(deltaX));
     yIt = gridSize + ((deltaY % gridSize) / parseInt(deltaY));
+    if(!isFinite(xIt)) xIt = 0;
+    if(!isFinite(yIt)) yIt = 0;
     console.log("xIT: " + xIt);
     console.log("yIT: " + yIt);
     console.log("gridLength: " + gridLength);
