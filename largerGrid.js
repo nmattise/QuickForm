@@ -334,7 +334,9 @@ function createGroundGrid(xMin, xMax, yMin, yMax, step) {
 }
 
 function createGround(innerBounds) {
-    var smallGridBound = [],
+    var boundDistances = [],
+        gridSizes = [],
+        smallGridBound = [],
         mediumGridBound = [],
         largeGridBound = [],
         groundSTL = '',
@@ -350,24 +352,17 @@ function createGround(innerBounds) {
         pt4,
         tri,
         facets = [];
-    smallGridBound = [
-        [innerBounds[0][0] * 2, innerBounds[0][1] * 2],
-        [innerBounds[1][0] * 2, innerBounds[1][1] * 2],
-        [innerBounds[2][0] * 2, innerBounds[2][1] * 2],
-        [innerBounds[3][0] * 2, innerBounds[3][1] * 2]
-    ];
-    mediumGridBound = [
-        [innerBounds[0][0] * 5, innerBounds[0][1] * 5],
-        [innerBounds[1][0] * 5, innerBounds[1][1] * 5],
-        [innerBounds[2][0] * 5, innerBounds[2][1] * 5],
-        [innerBounds[3][0] * 5, innerBounds[3][1] * 5]
-    ];
-    largeGridBound = [
-        [innerBounds[0][0] * 10, innerBounds[0][1] * 10],
-        [innerBounds[1][0] * 10, innerBounds[1][1] * 10],
-        [innerBounds[2][0] * 10, innerBounds[2][1] * 10],
-        [innerBounds[3][0] * 10, innerBounds[3][1] * 10]
-    ];
+    boundDistances = [2, 5, 10];
+    gridSizes = [5, 10, 20];
+    var i = 0;
+    innerBounds.forEach(function(point) {
+        point[0] = 5 * Math.round(point[0] / 5);
+        point[1] = 5 * Math.round(point[0] / 5);
+        smallGridBound.push([point[0] * boundDistances[0], point[1] * boundDistances[0]]);
+        mediumGridBound.push([point[0] * boundDistances[1], point[1] * boundDistances[1]]);
+        largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
+        i++;
+    });
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
