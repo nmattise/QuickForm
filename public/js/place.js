@@ -69,6 +69,33 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
                             $scope.mapPolygon = polygon;
                             $scope.$apply();
                             break;
+                        case "l":
+                            var pt6 = new latLon(lat + y, lng - x / 2),
+                                pt5 = new latLon(lat + y, lng + x / 2),
+                                pt4 = new latLon(lat, lng + x / 2),
+                                pt3 = new latLon(lat, lng + x),
+                                pt2 = new latLon(lat - y, lng + x),
+                                pt1 = new latLon(lat - y, lng - x / 2);
+                            var points = [pt1, pt2, pt3, pt4, pt5, pt6];
+                            var polygon = {
+                                path: points,
+                                stroke: {
+                                    color: '#6060FB',
+                                    weight: 3
+                                },
+                                static: false,
+                                editable: true,
+                                draggable: false,
+                                geodesic: false,
+                                visible: true,
+                                fill: {
+                                    color: '#ff0000',
+                                    opacity: 0.6
+                                }
+                            };
+                            $scope.mapPolygon = polygon;
+                            $scope.$apply();
+                            break;
                     }
                 } else {
                     $window.alert("Please Select a Building Footprint");
@@ -161,7 +188,7 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
         if (selectedIds.length > 0) {
             $window.alert(selectedIds);
             $http.post('/createSTL', {
-                buildings: $scope.buildings
+                buildings: selectedBuildings
             }).
             success(function(data, status, headers, config) {
                 // this callback will be called asynchronously
