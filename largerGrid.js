@@ -344,7 +344,7 @@ function createGround(innerBounds) {
         tri,
         facets = [];
     boundDistances = [2, 5, 10];
-    gridSizes = [2, 5, 10];
+    gridSizes = [5, 10, 20];
     var i = 0;
     innerBounds.forEach(function(point) {
         point[0] = 10 * Math.round(point[0] / 10);
@@ -552,7 +552,7 @@ function buildSTL(buildings) {
 
     //Write Files
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/BuildingsGround2m.stl", stl.fromObject(groundSTL));
+    fs.writeFileSync("stlFiles/BuildingsGround5m.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
     fs.writeFileSync("stlFiles/Buildings10m.stl", allBldgSTL);
 }
