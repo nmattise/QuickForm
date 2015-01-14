@@ -294,8 +294,12 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     deltaY = point2[1] - point1[1];
     xIt = gridSize + ((deltaX % gridSize) / parseInt(deltaX));
     yIt = gridSize + ((deltaY % gridSize) / parseInt(deltaY));
+    //Infinity Check
     if (!isFinite(xIt)) xIt = 0;
     if (!isFinite(yIt)) yIt = 0;
+    //Negative Check
+    if (deltaX < 0) xIt = -xIt;
+    if (deltaY < 0) xIt = -yIt;
     console.log("xIT: " + xIt);
     console.log("yIT: " + yIt);
     iterator = sideLength / gridLength;
@@ -306,10 +310,10 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     zIt = height / zGrid;
     console.log("zGrid: " + zGrid);
     console.log("zIt: " + zIt);
-    for (i = 0; i <= iterator; i++) {
+    for (i = 0; i < iterator - gridSize; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        for (z = 0; z <= zIt; z++) {
+        for (z = 0; z < zIt - zGrid; z++) {
             z1 = zGrid * z;
             z2 = zGrid * (z + 1);
             tri = createVertPlane(pt1, pt2, z1, z2);
