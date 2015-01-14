@@ -216,26 +216,34 @@ function createRectRoofFloor(point1, point2, point4, height) {
     return facets;
 }
 
-function createRotateRoof(point1, point2, point4, height) {
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
+function createRotateRoof(point1, point2, point4, gridSize, height) {
+    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator12, iterator14, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
     facets = [];
     sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
-    gridLength = sideLength12 / parseInt(sideLength12);
-    xIt = deltaX / parseInt(sideLength12);
-    yIt = deltaY / parseInt(sideLength12);
+    gridLength = ((sideLength12 % gridSize) / (parseInt(sideLength12 / gridSize))) + gridSize;
+    xIt = deltaX / parseInt(sideLength12 / gridSize);
+    yIt = deltaY / parseInt(sideLength12 / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt)) xIt = 0;
+    if (!isFinite(yIt)) yIt = 0;
+    iterator12 = parseInt(sideLength12 / gridSize);
     deltaX14 = point1[0] - point4[0];
     deltaY14 = point1[1] - point4[1];
-    xIt14 = deltaX14 / parseInt(sideLength14);
-    yIt14 = deltaY14 / parseInt(sideLength14);
-    gridLength14 = sideLength14 / parseInt(sideLength14);
+    xIt14 = deltaX14 / parseInt(sideLength14 / gridSize);
+    yIt14 = deltaY14 / parseInt(sideLength14 / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt14)) xIt14 = 0;
+    if (!isFinite(yIt14)) yIt14 = 0;
+    iterator14 = parseInt(sideLength14 / gridSize);
+    gridLength14 = ((sideLength14 % gridSize) / (parseInt(sideLength14 / gridSize))) + gridSize;
     //Rotation
     var theta = findRotation(point1, point2) - Math.PI / 2;
-    for (var j = 0; j <= sideLength14 - 1; j++) {
+    for (var j = 0; j < iterator14; j++) {
         pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
-        for (i = 0; i <= sideLength12 - 1; i++) {
+        for (i = 0; i < iterator12; i++) {
             pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
             pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
@@ -255,36 +263,6 @@ function createRotateRoof(point1, point2, point4, height) {
     return facets;
 }
 
-function createWallGrid(point1, point2, height) {
-    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
-    facets = [];
-    sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
-    deltaX = point2[0] - point1[0];
-    deltaY = point2[1] - point1[1];
-    gridLength = sideLength / parseInt(sideLength);
-    xIt = deltaX / parseInt(sideLength);
-    yIt = deltaY / parseInt(sideLength);
-    iterator = parseInt(sideLength);
-    zGrid = Math.abs(parseInt(height));
-    zIt = height / zGrid;
-    console.log("xIt: " + xIt);
-    console.log("yIt: " + yIt);
-    console.log("gridLength: " + gridLength);
-    for (i = 0; i <= sideLength - 1; i++) {
-        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
-        pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        //console.log("pt1: " + pt1 + "  ,  pt2: " + pt2)
-        for (z = 0; z <= zGrid - 1; z++) {
-            z1 = zIt * z;
-            z2 = zIt * (z + 1);
-            tri = createVertPlane(pt1, pt2, z1, z2);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-        }
-    }
-    return facets;
-}
-
 function createCustomWallGrid(point1, point2, gridSize, height) {
     var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
     facets = [];
@@ -297,9 +275,6 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     //Infinity Check
     if (!isFinite(xIt)) xIt = 0;
     if (!isFinite(yIt)) yIt = 0;
-    //Negative Check
-    /*if (deltaX < 0) xIt = -xIt;
-    if (deltaY < 0) yIt = -yIt;*/
     console.log("deltaX: " + deltaX);
     console.log("deltaY: " + deltaY);
     console.log("xIT: " + xIt);
@@ -313,23 +288,6 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     zIterator = parseInt(height / gridSize);
     console.log("zGrid: " + zGrid);
     console.log("zIt: " + zIt + "\n--");
-    /*i = 0;
-    do {
-        pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
-        pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        z = 0;
-        i++;
-        do {
-            z1 = zIt * z;
-            z2 = zIt * (z + 1);
-            tri = createVertPlane(pt1, pt2, z1, z2);
-            facets.push(tri[0]);
-            facets.push(tri[1]);
-            z++;
-        } while (z2 != height)
-    }
-    while (pt2[0] != point2[0] || pt2[1] != point2[1])
-*/
     for (i = 0; i < iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
@@ -557,7 +515,7 @@ function buildSTL(buildings) {
                 createCustomWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], 5, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
+                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], 5, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 var stlObj = {
