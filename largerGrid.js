@@ -299,10 +299,12 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     if (!isFinite(yIt)) yIt = 0;
     //Negative Check
     if (deltaX < 0) xIt = -xIt;
-    if (deltaY < 0) xIt = -yIt;
+    if (deltaY < 0) yIt = -yIt;
+    console.log("deltaX: " + deltaX);
+    console.log("deltaY: " + deltaY);
     console.log("xIT: " + xIt);
     console.log("yIT: " + yIt);
-    iterator = sideLength / gridLength;
+    iterator = parseInt(sideLength / gridLength);
     console.log("gridLength: " + gridLength);
     console.log("sideLength: " + sideLength);
     console.log("iterator: " + iterator);
