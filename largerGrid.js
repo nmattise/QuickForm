@@ -326,9 +326,9 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
             facets.push(tri[0]);
             facets.push(tri[1]);
             z++;
-        } while (z2 < height)
+        } while (z2 != height)
     }
-    while (pt2[0] < point2[0] && pt2[1] < point2[1])
+    while (pt2[0] != point2[0] && pt2[1] != point2[1])
     /*for (i = 0; pt2[0] < point2[0] && pt2[1] < point2[1]; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
