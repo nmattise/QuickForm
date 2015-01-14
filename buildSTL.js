@@ -477,6 +477,85 @@ function buildSTL(buildings) {
                 minYPts.push(minMaxPts[2]);
                 maxYPts.push(minMaxPts[3]);
                 break;
+            case 'l':
+                var points = [],
+                    gridSize,
+                    sideLengths,
+                    averageSideLengths = [],
+                    adjustedPoints = [],
+                    adjustedLatLng = [],
+                    sideLengths = [],
+                    length,
+                    width,
+                    facets = [],
+                    minMaxPts = [];
+                //Add Building Name to File Name
+                fileName += buildings[i].name + "_";
+                //Set Grid Size
+                gridSize = 1;
+                //Get Cartesian Points from LatLng
+                for (var j = 0; j < buildings[i].polygon.path.length; j++) {
+                    points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
+                }
+                //Average and Adjust the Rectangle
+                var lengths = points.findLengths();
+                console.log(lengths);
+                //Average 1 & 3+5
+                var l1 = (lengths[0] + (lengths[2] + lengths[4])) / 2;
+                var l3 = l1 * (lengths[2] / (lengths[2] + lengths[4])),
+                    l5 = l1 * (lengths[4] / (lengths[2] + lengths[4]));
+                console.log("l1: " + l1);
+                console.log("l3: " + l3);
+                console.log("l5: " + l5);
+                //Average 6 & 2+4
+                var l6 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
+                var l2 = l6 * (lengths[1] / (lengths[1] + lengths[3])),
+                    l4 = l6 * (lengths[3] / (lengths[1] + lengths[3]));
+                console.log("l2: " + l2);
+                console.log("l4: " + l4);
+                console.log("l6: " + l6);
+                var theta = findRotation(points[0], points[1]);
+                console.log(theta);
+                var orthL = [
+                    [points[0][0], points[0][1]],
+                    [points[0][0] + l1, points[0][1]],
+                    [points[0][0] + l1, points[0][1] + l2],
+                    [points[0][0] + l5, points[0][1] + l2],
+                    [points[0][0] + l5, points[0][1] + l6],
+                    [points[0][0], points[0][1] + l6]
+                ];
+                var rotatedL = [];
+                orthL.forEach(function(point) {
+                    var rotatedPoint = rotatePoint(orthL[0], point, theta - (Math.PI / 2));
+                    rotatedL.push(rotatedPoint);
+                });
+                buildings[i].adjustedPoints = rotatedL;
+
+                //Add Walls
+                for (var j = 1; j < rotatedL.length; j++) {
+                    createCustomWallGrid(rotatedL[j - 1], rotatedL[j], gridSize, buildings[i].height).forEach(function(facet) {
+                        facets.push(facet)
+                    })
+                };
+                createCustomWallGrid(rotatedL[5], rotatedL[0], gridSize, buildings[i].height).forEach(function(facet) {
+                    facets.push(facet)
+                });
+                //Roof and Floor
+                
+
+                var stlObj = {
+                    description: buildings[i].name,
+                    facets: facets
+                };
+                allBldgSTL += stl.fromObject(stlObj) + "/n";
+
+                //Ground Stats for This Building
+                minMaxPts = minMaxPoints(buildings[i].adjustedPoints);
+                minXPts.push(minMaxPts[0]);
+                maxXPts.push(minMaxPts[1]);
+                minYPts.push(minMaxPts[2]);
+                maxYPts.push(minMaxPts[3]);
+                break;
         }
     }
     //Create Gound STL
