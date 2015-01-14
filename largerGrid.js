@@ -286,7 +286,7 @@ function createWallGrid(point1, point2, height) {
 }
 
 function createCustomWallGrid(point1, point2, gridSize, height) {
-    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
+    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, facets, z1, z2;
     facets = [];
     sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     gridLength = ((sideLength % gridSize) / (parseInt(sideLength / gridSize))) + gridSize;
@@ -308,16 +308,17 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     console.log("gridLength: " + gridLength);
     console.log("sideLength: " + sideLength);
     console.log("iterator: " + iterator);
-    zGrid = gridSize + ((height % gridSize) / parseInt(height));
-    zIt = height / zGrid;
+    zGrid = gridLength = ((height % gridSize) / (parseInt(height / gridSize))) + gridSize;
+    zIt = height / parseInt(height / gridSize);
+    zIterator = parseInt(height / zGrid);
     console.log("zGrid: " + zGrid);
     console.log("zIt: " + zIt + "\n--");
     for (i = 0; i < iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        for (z = 0; z < zIt; z++) {
-            z1 = zGrid * z;
-            z2 = zGrid * (z + 1);
+        for (z = 0; z < zIterator; z++) {
+            z1 = zIt * z;
+            z2 = zIt * (z + 1);
             tri = createVertPlane(pt1, pt2, z1, z2);
             facets.push(tri[0]);
             facets.push(tri[1]);
