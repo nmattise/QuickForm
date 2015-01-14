@@ -313,7 +313,7 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     zIterator = parseInt(height / zGrid);
     console.log("zGrid: " + zGrid);
     console.log("zIt: " + zIt + "\n--");
-    i = 0;
+    /*i = 0;
     do {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
@@ -328,18 +328,19 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
             z++;
         } while (z2 != height)
     }
-    while (pt2[0] != point2[0] && pt2[1] != point2[1])
-    /*for (i = 0; pt2[0] < point2[0] && pt2[1] < point2[1]; i++) {
+    while (pt2[0] != point2[0] || pt2[1] != point2[1])
+*/
+    for (i = 0; i < iterator; i++) {
         pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
         pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
-        for (z = 0; z2 < height; z++) {
+        for (z = 0; z < zIterator; z++) {
             z1 = zIt * z;
             z2 = zIt * (z + 1);
             tri = createVertPlane(pt1, pt2, z1, z2);
             facets.push(tri[0]);
             facets.push(tri[1]);
         }
-    }*/
+    }
     return facets;
 }
 
@@ -544,16 +545,16 @@ function buildSTL(buildings) {
 
                 //Create Grids for STL Creation
                 //Walls
-                createCustomWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], 5, buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], 1, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], 5, buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], 1, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], 5, buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], 1, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], 5, buildings[i].height).forEach(function(facet) {
+                createCustomWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], 1, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], buildings[i].height).forEach(function(facet) {
@@ -603,9 +604,9 @@ function buildSTL(buildings) {
 
     //Write Files
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/BuildingsGround5m.stl", stl.fromObject(groundSTL));
+    fs.writeFileSync("stlFiles/BuildingsGround1m.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/Buildings5m.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/Buildings1m.stl", allBldgSTL);
 }
 
 
