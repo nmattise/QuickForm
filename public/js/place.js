@@ -17,7 +17,9 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
     //Units
     $scope.units = "ip";
     //Initialize
-    $scope.bldgFootprint = 'rect';
+    $scope.buildingInfo = {};
+    $scope.removedBuildings = [];
+    $scope.buildingInfo.bldgFootprint = 'rect';
     //Initial Map Settings
     $scope.map = {
         center: {
@@ -35,12 +37,12 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
                 var e = originalEventArgs[0];
                 var lat = e.latLng.lat(),
                     lng = e.latLng.lng();
-                if ($scope.bldgFootprint) {
+                if ($scope.buildingInfo.bldgFootprint) {
                     var zoomScale = 591657550.500000 / Math.pow(2, $scope.map.zoom - 1);
                     var y = (zoomScale / 60) / 111111;
                     var x = (zoomScale / 60 * Math.cos(lat)) / (111111 * Math.cos(lat));
                     var center = new latLon(lat, lng);
-                    switch ($scope.bldgFootprint) {
+                    switch ($scope.buildingInfo.bldgFootprint) {
                         case "rect":
                             var pt4 = new latLon(lat + y, lng - x),
                                 pt3 = new latLon(lat + y, lng + x),
@@ -118,20 +120,18 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
             color: '#777',
             opacity: 0.6
         };
-        building.name = $scope.name;
-        building.numFloors = $scope.numFloors;
-        building.flrToFlrHeight = $scope.flrToFlrHeight;
-        building.shape = $scope.bldgFootprint;
+        building.name = $scope.buildingInfo.name;
+        building.numFloors = $scope.buildingInfo.numFloors;
+        building.flrToFlrHeight = $scope.buildingInfo.flrToFlrHeight;
+        building.shape = $scope.buildingInfo.bldgFootprint;
         building.footprintArea = footprintArea;
-        building.height = $scope.flrToFlrHeight * $scope.numFloors;
-        building.totalArea = $scope.numFloors * footprintArea;
-        building.bldgFootprint = $scope.bldgFootprint;
+        building.height = $scope.buildingInfo.flrToFlrHeight * $scope.buildingInfo.numFloors;
+        building.totalArea = $scope.buildingInfo.numFloors * footprintArea;
+        building.bldgFootprint = $scope.buildingInfo.bldgFootprint;
         $scope.buildings.push(building);
         $scope.mapPolygon.path = new Array;
-        $scope.name = new String;
-        $scope.numFloors = new Number;
-        $scope.flrToFlrHeight = new Number;
-        $scope.bldgFootprint = 'rect';
+        $scope.buildingInfo = {};
+        $scope.buildingInfo.bldgFootprint = 'rect';
     }
     $scope.editBuilding = function(id) {
         $scope.buildings.forEach(function(b) {
@@ -144,7 +144,7 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
     $scope.removeBuilding = function(id) {
         for (var i = 0; i < $scope.buildings.length; i++) {
             if ($scope.buildings[i].id == id) {
-                $scope.removeBuildings.push($scope.buildings[i]);
+                $scope.removedBuildings.push($scope.buildings[i]);
                 $scope.buildings.splice(i, 1);
             }
         }
