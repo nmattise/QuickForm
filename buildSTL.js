@@ -313,6 +313,7 @@ function createGround(innerBounds) {
         largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
         i++;
     });
+    console.log(largeGridBound);
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
@@ -399,6 +400,7 @@ function buildSTL(buildings) {
     //Go through Each Building
 
     for (var i = 0; i < buildings.length; i++) {
+        console.log(buildings[i].height);
         switch (buildings[i].bldgFootprint) {
             case 'rect':
                 //Initialize Variables
