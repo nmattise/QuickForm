@@ -1,86 +1,86 @@
 solid groundRectangle
-  facet normal 0e+0 -1e+0 0e+0
+  facet normal 0 -1 0
     outer loop
-      vertex -1e+1 -1e+1 0e+0
-      vertex 1e+1 -1e+1 0e+0
-      vertex 1e+1 -1e+1 1e+1
+      vertex -10 -10 0
+      vertex 10 -10 0
+      vertex 10 -10 10
     endloop
   endfacet
-  facet normal 0e+0 -1e+0 0e+0
+  facet normal 0 -1 0
     outer loop
-      vertex -1e+1 -1e+1 0e+0
-      vertex 1e+1 -1e+1 1e+1
-      vertex -1e+1 -1e+1 1e+1
+      vertex -10 -10 0
+      vertex 10 -10 10
+      vertex -10 -10 10
     endloop
   endfacet
-  facet normal 1e+0 0e+0 0e+0
+  facet normal 1 0 0
     outer loop
-      vertex 1e+1 -1e+1 0e+0
-      vertex 1e+1 1e+1 0e+0
-      vertex 1e+1 1e+1 1e+1
+      vertex 10 -10 0
+      vertex 10 10 0
+      vertex 10 10 10
     endloop
   endfacet
-  facet normal 1e+0 0e+0 0e+0
+  facet normal 1 0 0
     outer loop
-      vertex 1e+1 -1e+1 0e+0
-      vertex 1e+1 1e+1 1e+1
-      vertex 1e+1 -1e+1 1e+1
+      vertex 10 -10 0
+      vertex 10 10 10
+      vertex 10 -10 10
     endloop
   endfacet
-  facet normal 0e+0 1e+0 0e+0
+  facet normal 0 1 0
     outer loop
-      vertex 1e+1 1e+1 0e+0
-      vertex -1e+1 1e+1 0e+0
-      vertex -1e+1 1e+1 1e+1
+      vertex 10 10 0
+      vertex -10 10 0
+      vertex -10 10 10
     endloop
   endfacet
-  facet normal 0e+0 1e+0 0e+0
+  facet normal 0 1 0
     outer loop
-      vertex 1e+1 1e+1 0e+0
-      vertex -1e+1 1e+1 1e+1
-      vertex 1e+1 1e+1 1e+1
+      vertex 10 10 0
+      vertex -10 10 10
+      vertex 10 10 10
     endloop
   endfacet
-  facet normal -1e+0 0e+0 0e+0
+  facet normal -1 0 0
     outer loop
-      vertex -1e+1 1e+1 0e+0
-      vertex -1e+1 -1e+1 0e+0
-      vertex -1e+1 -1e+1 1e+1
+      vertex -10 10 0
+      vertex -10 -10 0
+      vertex -10 -10 10
     endloop
   endfacet
-  facet normal -1e+0 0e+0 0e+0
+  facet normal -1 0 0
     outer loop
-      vertex -1e+1 1e+1 0e+0
-      vertex -1e+1 -1e+1 1e+1
-      vertex -1e+1 1e+1 1e+1
+      vertex -10 10 0
+      vertex -10 -10 10
+      vertex -10 10 10
     endloop
   endfacet
-  facet normal 0e+0 0e+0 -1e+0
+  facet normal 0 0 -1
     outer loop
-      vertex 1e+1 1e+1 0e+0
-      vertex 1e+1 -1e+1 0e+0
-      vertex -1e+1 1e+1 0e+0
+      vertex 10 10 0
+      vertex 10 -10 0
+      vertex -10 10 0
     endloop
   endfacet
-  facet normal 0e+0 0e+0 -1e+0
+  facet normal 0 0 -1
     outer loop
-      vertex 1e+1 -1e+1 0e+0
-      vertex -1e+1 -1e+1 0e+0
-      vertex -1e+1 1e+1 0e+0
+      vertex 10 -10 0
+      vertex -10 -10 0
+      vertex -10 10 0
     endloop
   endfacet
-  facet normal 0e+0 0e+0 1e+0
+  facet normal 0 0 1
     outer loop
-      vertex -1e+1 1e+1 1e+1
-      vertex 1e+1 -1e+1 1e+1
-      vertex 1e+1 1e+1 1e+1
+      vertex -10 10 10
+      vertex 10 -10 10
+      vertex 10 10 10
     endloop
   endfacet
-  facet normal 0e+0 0e+0 1e+0
+  facet normal 0 0 1
     outer loop
-      vertex -1e+1 1e+1 1e+1
-      vertex -1e+1 -1e+1 1e+1
-      vertex 1e+1 -1e+1 1e+1
+      vertex -10 10 10
+      vertex -10 -10 10
+      vertex 10 -10 10
     endloop
   endfacet
 endsolid

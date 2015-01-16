@@ -1,7 +1,7 @@
 'use strict';
 //Dependencies
 var fs = require('fs'),
-    stl = require('stl');
+    stl = require('../stl/stl.js');
 //Export Function
 module.exports.buildSTL = buildSTL;
 
@@ -87,7 +87,7 @@ latLon.prototype.destinationPoint = function(X, Y) {
         Math.cos(phi1) * Math.sin(delta) * Math.cos(theta));
     var lambda2 = lambda1 + Math.atan2(Math.sin(theta) * Math.sin(delta) * Math.cos(phi1),
         Math.cos(delta) - Math.sin(phi1) * Math.sin(phi2));
-    lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalise to -180..+180º
+    lambda2 = (lambda2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI; // normalize to -180..+180º
 
     return new latLon(phi2.toDegrees(), lambda2.toDegrees());
 }
@@ -509,11 +509,12 @@ function buildSTL(buildings) {
                     facets.push(facet);
                 });
                 var stlObj = {
-                    description: buildings[i].name,
+                    description: "building" + buildings[i].id,
                     facets: facets
                 };
+                console.log(stlObj.facets[0]);
                 allBldgSTL += stl.fromObject(stlObj) + "/n";
-
+                console.log(allBldgSTL.toString());
                 //Ground Stats for This Building
                 minMaxPts = minMaxPoints(buildings[i].adjustedPoints);
                 minXPts.push(minMaxPts[0]);
@@ -554,7 +555,7 @@ function buildSTL(buildings) {
     //Write Ground STL File for All Buildings
     fs.writeFileSync("stlFiles/BuildingsGround5m.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/Buildings10m.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/Buildings10mBinary.stl", allBldgSTL);
 }
 
 
