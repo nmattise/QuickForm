@@ -1,4 +1,4 @@
-solid Test Building 1
+solid Building0
   facet normal 2.842713600506412e-6 9.999999999959595e-1 0e+0
     outer loop
       vertex -3.7006144415473244e+1 -7.922416441347318e+1 0e+0
@@ -727,7 +727,7 @@ solid Test Building 1
       vertex -5.1636215753299936e+1 -1.043191185999826e+2 0e+0
     endloop
   endfacet
-endsolid/nsolid Test Building 2
+endsolid/nsolid Building1
   facet normal 5.4101732720899514e-6 -9.999999999853649e-1 0e+0
     outer loop
       vertex 1.3323467673708214e+1 -8.680320678666565e+1 0e+0
@@ -4732,7 +4732,7 @@ endsolid/nsolid Test Building 2
       vertex 6.013911853141415e+1 -2.2268678654973936e+1 0e+0
     endloop
   endfacet
-endsolid/nsolid Test Building 3
+endsolid/nsolid Building2
   facet normal 2.3851685332911023e-2 -9.997155080855652e-1 0e+0
     outer loop
       vertex -6.062854644905702e+1 -1.4473765486096674e+1 0e+0
@@ -5377,7 +5377,7 @@ endsolid/nsolid Test Building 3
       vertex -1.4649630801185765e+1 -1.3376778774265432e+1 0e+0
     endloop
   endfacet
-endsolid/nsolid Test Building 4
+endsolid/nsolid Building3
   facet normal 9.209611430273083e-6 -9.999999999575915e-1 0e+0
     outer loop
       vertex 4.322837430420233e+1 3.675872690819246e+1 0e+0
@@ -7030,7 +7030,7 @@ endsolid/nsolid Test Building 4
       vertex 9.004377996662163e+1 1.0129343291337263e+2 0e+0
     endloop
   endfacet
-endsolid/nsolid Test Building 5
+endsolid/nsolid Building4
   facet normal 2.522492288526984e-1 -9.67662299845984e-1 0e+0
     outer loop
       vertex -7.569672579617637e+1 2.586343425578892e+1 0e+0
