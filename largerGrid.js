@@ -1,7 +1,7 @@
 'use strict';
 //Dependencies
 var fs = require('fs'),
-    stl = require('../stl/stl.js');
+    stl = require('stl');
 //Export Function
 module.exports.buildSTL = buildSTL;
 
