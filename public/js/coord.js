@@ -119,25 +119,10 @@ function getArea(latLngPath) {
     });
     area = polygonArea(x, y, sides);
     //Convert Area to Ft2
-    area = area * 10.7639104;
+    //area = area * 10.7639104;
     if (area < 0) {
         return -area;
     } else {
         return area;
     }
 }
-/*var coords = [{
-    "latitude": 38.99037412172071,
-    "longitude": -76.94790746667422
-}, {
-    "latitude": 38.990325651232695,
-    "longitude": -76.94782498874702
-}, {
-    "latitude": 38.99068005833606,
-    "longitude": -76.94749239482917
-}, {
-    "latitude": 38.99072800739611,
-    "longitude": -76.94757755496539
-}];
-
-console.log(getArea(coords));*/
