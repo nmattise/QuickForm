@@ -1,5 +1,6 @@
 solid materialRectangle
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 0
       vertex -6.666666666666666 -10 0
@@ -7,6 +8,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 0
       vertex -6.666666666666666 -10 1.875
@@ -14,6 +16,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 1.875
       vertex -6.666666666666666 -10 1.875
@@ -21,6 +24,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 1.875
       vertex -6.666666666666666 -10 3.125
@@ -28,6 +32,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 3.125
       vertex -6.666666666666666 -10 3.125
@@ -35,6 +40,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 3.125
       vertex -6.666666666666666 -10 5
@@ -42,6 +48,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 0
       vertex -3.333333333333333 -10 0
@@ -49,6 +56,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 0
       vertex -3.333333333333333 -10 1.875
@@ -56,6 +64,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 1.875
       vertex -3.333333333333333 -10 1.875
@@ -63,6 +72,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 1.875
       vertex -3.333333333333333 -10 3.125
@@ -70,6 +80,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 3.125
       vertex -3.333333333333333 -10 3.125
@@ -77,6 +88,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 3.125
       vertex -3.333333333333333 -10 5
@@ -84,6 +96,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 0
       vertex 0 -10 0
@@ -91,6 +104,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 0
       vertex 0 -10 1.875
@@ -98,6 +112,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 1.875
       vertex 0 -10 1.875
@@ -105,6 +120,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 1.875
       vertex 0 -10 3.125
@@ -112,6 +128,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 3.125
       vertex 0 -10 3.125
@@ -119,6 +136,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 3.125
       vertex 0 -10 5
@@ -126,6 +144,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 0
       vertex 3.333333333333334 -10 0
@@ -133,6 +152,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 0
       vertex 3.333333333333334 -10 1.875
@@ -140,6 +160,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 1.875
       vertex 3.333333333333334 -10 1.875
@@ -147,6 +168,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 1.875
       vertex 3.333333333333334 -10 3.125
@@ -154,6 +176,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 3.125
       vertex 3.333333333333334 -10 3.125
@@ -161,6 +184,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 3.125
       vertex 3.333333333333334 -10 5
@@ -168,6 +192,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 0
       vertex 6.666666666666668 -10 0
@@ -175,6 +200,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 0
       vertex 6.666666666666668 -10 1.875
@@ -182,6 +208,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 1.875
       vertex 6.666666666666668 -10 1.875
@@ -189,6 +216,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 1.875
       vertex 6.666666666666668 -10 3.125
@@ -196,6 +224,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 3.125
       vertex 6.666666666666668 -10 3.125
@@ -203,6 +232,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 3.125
       vertex 6.666666666666668 -10 5
@@ -210,6 +240,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 0
       vertex 10 -10 0
@@ -217,6 +248,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 0
       vertex 10 -10 1.875
@@ -224,6 +256,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 1.875
       vertex 10 -10 1.875
@@ -231,6 +264,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 1.875
       vertex 10 -10 3.125
@@ -238,6 +272,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 3.125
       vertex 10 -10 3.125
@@ -245,6 +280,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 3.125
       vertex 10 -10 5
@@ -252,6 +288,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 5
       vertex -6.666666666666666 -10 5
@@ -259,6 +296,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 5
       vertex -6.666666666666666 -10 6.875
@@ -266,6 +304,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 6.875
       vertex -6.666666666666666 -10 6.875
@@ -273,6 +312,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 6.875
       vertex -6.666666666666666 -10 8.125
@@ -280,6 +320,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 8.125
       vertex -6.666666666666666 -10 8.125
@@ -287,6 +328,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 8.125
       vertex -6.666666666666666 -10 10
@@ -294,6 +336,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 5
       vertex -3.333333333333333 -10 5
@@ -301,6 +344,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 5
       vertex -3.333333333333333 -10 6.875
@@ -308,6 +352,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 6.875
       vertex -3.333333333333333 -10 6.875
@@ -315,6 +360,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 6.875
       vertex -3.333333333333333 -10 8.125
@@ -322,6 +368,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 8.125
       vertex -3.333333333333333 -10 8.125
@@ -329,6 +376,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 8.125
       vertex -3.333333333333333 -10 10
@@ -336,6 +384,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 5
       vertex 0 -10 5
@@ -343,6 +392,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 5
       vertex 0 -10 6.875
@@ -350,6 +400,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 6.875
       vertex 0 -10 6.875
@@ -357,6 +408,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 6.875
       vertex 0 -10 8.125
@@ -364,6 +416,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 8.125
       vertex 0 -10 8.125
@@ -371,6 +424,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 8.125
       vertex 0 -10 10
@@ -378,6 +432,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 5
       vertex 3.333333333333334 -10 5
@@ -385,6 +440,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 5
       vertex 3.333333333333334 -10 6.875
@@ -392,6 +448,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 6.875
       vertex 3.333333333333334 -10 6.875
@@ -399,6 +456,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 6.875
       vertex 3.333333333333334 -10 8.125
@@ -406,6 +464,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 8.125
       vertex 3.333333333333334 -10 8.125
@@ -413,6 +472,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 8.125
       vertex 3.333333333333334 -10 10
@@ -420,6 +480,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 5
       vertex 6.666666666666668 -10 5
@@ -427,6 +488,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 5
       vertex 6.666666666666668 -10 6.875
@@ -434,6 +496,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 6.875
       vertex 6.666666666666668 -10 6.875
@@ -441,6 +504,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 6.875
       vertex 6.666666666666668 -10 8.125
@@ -448,6 +512,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 8.125
       vertex 6.666666666666668 -10 8.125
@@ -455,6 +520,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 8.125
       vertex 6.666666666666668 -10 10
@@ -462,6 +528,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 5
       vertex 10 -10 5
@@ -469,6 +536,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 5
       vertex 10 -10 6.875
@@ -476,6 +544,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 6.875
       vertex 10 -10 6.875
@@ -483,6 +552,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 6.875
       vertex 10 -10 8.125
@@ -490,6 +560,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 8.125
       vertex 10 -10 8.125
@@ -497,6 +568,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 8.125
       vertex 10 -10 10
@@ -504,6 +576,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 10
       vertex -6.666666666666666 -10 10
@@ -511,6 +584,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 10
       vertex -6.666666666666666 -10 11.875
@@ -518,6 +592,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 11.875
       vertex -6.666666666666666 -10 11.875
@@ -525,6 +600,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 11.875
       vertex -6.666666666666666 -10 13.125
@@ -532,6 +608,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 13.125
       vertex -6.666666666666666 -10 13.125
@@ -539,6 +616,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 13.125
       vertex -6.666666666666666 -10 15
@@ -546,6 +624,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 10
       vertex -3.333333333333333 -10 10
@@ -553,6 +632,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 10
       vertex -3.333333333333333 -10 11.875
@@ -560,6 +640,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 11.875
       vertex -3.333333333333333 -10 11.875
@@ -567,6 +648,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 11.875
       vertex -3.333333333333333 -10 13.125
@@ -574,6 +656,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 13.125
       vertex -3.333333333333333 -10 13.125
@@ -581,6 +664,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 13.125
       vertex -3.333333333333333 -10 15
@@ -588,6 +672,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 10
       vertex 0 -10 10
@@ -595,6 +680,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 10
       vertex 0 -10 11.875
@@ -602,6 +688,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 11.875
       vertex 0 -10 11.875
@@ -609,6 +696,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 11.875
       vertex 0 -10 13.125
@@ -616,6 +704,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 13.125
       vertex 0 -10 13.125
@@ -623,6 +712,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 13.125
       vertex 0 -10 15
@@ -630,6 +720,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 10
       vertex 3.333333333333334 -10 10
@@ -637,6 +728,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 10
       vertex 3.333333333333334 -10 11.875
@@ -644,6 +736,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 11.875
       vertex 3.333333333333334 -10 11.875
@@ -651,6 +744,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 11.875
       vertex 3.333333333333334 -10 13.125
@@ -658,6 +752,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 13.125
       vertex 3.333333333333334 -10 13.125
@@ -665,6 +760,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 13.125
       vertex 3.333333333333334 -10 15
@@ -672,6 +768,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 10
       vertex 6.666666666666668 -10 10
@@ -679,6 +776,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 10
       vertex 6.666666666666668 -10 11.875
@@ -686,6 +784,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 11.875
       vertex 6.666666666666668 -10 11.875
@@ -693,6 +792,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 11.875
       vertex 6.666666666666668 -10 13.125
@@ -700,6 +800,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 13.125
       vertex 6.666666666666668 -10 13.125
@@ -707,6 +808,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 13.125
       vertex 6.666666666666668 -10 15
@@ -714,6 +816,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 10
       vertex 10 -10 10
@@ -721,6 +824,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 10
       vertex 10 -10 11.875
@@ -728,6 +832,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 11.875
       vertex 10 -10 11.875
@@ -735,6 +840,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 11.875
       vertex 10 -10 13.125
@@ -742,6 +848,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 13.125
       vertex 10 -10 13.125
@@ -749,6 +856,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 13.125
       vertex 10 -10 15
@@ -756,6 +864,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 15
       vertex -6.666666666666666 -10 15
@@ -763,6 +872,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 15
       vertex -6.666666666666666 -10 16.875
@@ -770,6 +880,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 16.875
       vertex -6.666666666666666 -10 16.875
@@ -777,6 +888,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -10 -10 16.875
       vertex -6.666666666666666 -10 18.125
@@ -784,6 +896,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 18.125
       vertex -6.666666666666666 -10 18.125
@@ -791,6 +904,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -10 -10 18.125
       vertex -6.666666666666666 -10 20
@@ -798,6 +912,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 15
       vertex -3.333333333333333 -10 15
@@ -805,6 +920,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 15
       vertex -3.333333333333333 -10 16.875
@@ -812,6 +928,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 16.875
       vertex -3.333333333333333 -10 16.875
@@ -819,6 +936,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -6.666666666666666 -10 16.875
       vertex -3.333333333333333 -10 18.125
@@ -826,6 +944,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 18.125
       vertex -3.333333333333333 -10 18.125
@@ -833,6 +952,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -6.666666666666666 -10 18.125
       vertex -3.333333333333333 -10 20
@@ -840,6 +960,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 15
       vertex 0 -10 15
@@ -847,6 +968,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 15
       vertex 0 -10 16.875
@@ -854,6 +976,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 16.875
       vertex 0 -10 16.875
@@ -861,6 +984,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex -3.333333333333333 -10 16.875
       vertex 0 -10 18.125
@@ -868,6 +992,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 18.125
       vertex 0 -10 18.125
@@ -875,6 +1000,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex -3.333333333333333 -10 18.125
       vertex 0 -10 20
@@ -882,6 +1008,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 15
       vertex 3.333333333333334 -10 15
@@ -889,6 +1016,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 15
       vertex 3.333333333333334 -10 16.875
@@ -896,6 +1024,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 16.875
       vertex 3.333333333333334 -10 16.875
@@ -903,6 +1032,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 0 -10 16.875
       vertex 3.333333333333334 -10 18.125
@@ -910,6 +1040,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 18.125
       vertex 3.333333333333334 -10 18.125
@@ -917,6 +1048,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 0 -10 18.125
       vertex 3.333333333333334 -10 20
@@ -924,6 +1056,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 15
       vertex 6.666666666666668 -10 15
@@ -931,6 +1064,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 15
       vertex 6.666666666666668 -10 16.875
@@ -938,6 +1072,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 16.875
       vertex 6.666666666666668 -10 16.875
@@ -945,6 +1080,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 3.333333333333334 -10 16.875
       vertex 6.666666666666668 -10 18.125
@@ -952,6 +1088,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 18.125
       vertex 6.666666666666668 -10 18.125
@@ -959,6 +1096,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 3.333333333333334 -10 18.125
       vertex 6.666666666666668 -10 20
@@ -966,6 +1104,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 15
       vertex 10 -10 15
@@ -973,6 +1112,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 15
       vertex 10 -10 16.875
@@ -980,6 +1120,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 16.875
       vertex 10 -10 16.875
@@ -987,6 +1128,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material window
     outer loop
       vertex 6.666666666666668 -10 16.875
       vertex 10 -10 18.125
@@ -994,6 +1136,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 18.125
       vertex 10 -10 18.125
@@ -1001,6 +1144,7 @@ solid materialRectangle
     endloop
   endfacet
   facet normal 0 -1 0
+    facent material wall
     outer loop
       vertex 6.666666666666668 -10 18.125
       vertex 10 -10 20
