@@ -60,7 +60,7 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
             w0 = sillBottom + (t * floorHeight),
             w1 = sillTop + (t * floorHeight);
 
-        if (gridSize > 1.5 * (w1 - w0)) {
+        if (gridSize < 1.5 * (w1 - w0)) {
             var wHeight = w1 - w0;
             var wGrid = ((wHeight % gridSize) / (parseInt(wHeight / gridSize))) + gridSize;
             var wIt = wHeight / parseInt(wHeight / gridSize);
@@ -86,7 +86,7 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
                 facets.push(tri1[1]);
             }
         }
-        if (gridSize > 1.5 * (z1 - z0)) {
+        if (gridSize < 1.5 * (z1 - z0)) {
             var zHeight = w1 - w0;
             var zGrid = ((zHeight % gridSize) / (parseInt(zHeight / gridSize))) + gridSize;
             var zIt = zHeight / parseInt(zHeight / gridSize);
