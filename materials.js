@@ -75,11 +75,12 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
         }
 
     };
-    var stlObj = {
+    return facets;
+    /*var stlObj = {
         description: buildingName,
         facets: facets
     };
-    fs.writeFileSync("stlFiles/materialRectangle.stl", stl.fromObject(stlObj));
+    fs.writeFileSync("stlFiles/materialRectangle.stl", stl.fromObject(stlObj));*/
 
 }
 
@@ -112,4 +113,22 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     }
     return facets;
 }
-material([-10, -10], [10, -10], 20, 5, 4, .25, 3, "materialRectangle");
+var facets = [];
+material([-10, -10], [10, -10], 20, 5, 4, .25, 3, "materialRectangle").forEach(function(facet) {
+    facets.push(facet)
+});
+material([10, -10], [10, 10], 20, 5, 4, .25, 3, "materialRectangle").forEach(function(facet) {
+    facets.push(facet)
+});
+material([10, 10], [-10, 10], 20, 5, 4, .25, 3, "materialRectangle").forEach(function(facet) {
+    facets.push(facet)
+});
+material([-10, 10], [-10, -10], 20, 5, 4, .25, 3, "materialRectangle").forEach(function(facet) {
+    facets.push(facet)
+});
+
+var stlObj = {
+    description: 'materialRectangle',
+    facets: facets
+};
+fs.writeFileSync("stlFiles/materialRectangle.stl", stl.fromObject(stlObj));
