@@ -36,9 +36,9 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
     var windowH = windowWallRatio * floorHeight;
     var sillBottom = (floorHeight - windowH) / 2;
     var sillTop = sillBottom + windowH;
-    console.log(windowH);
-    console.log(sillBottom);
-    console.log(sillTop);
+    //console.log(windowH);
+    //console.log(sillBottom);
+    //console.log(sillTop);
     var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, tri1, tri2, facets, z1, z2;
     facets = [];
     sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
@@ -54,15 +54,20 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
 
     for (var t = 0; t < floors; t++) {
         var floor = t * floorHeight;
+        var floorTop = floor + floorHeight;
         var sillBottom1 = sillBottom + (t * floorHeight);
-        var sillTop1 = sillTop1 + (t * floorHeight);
+        var sillTop1 = sillTop + (t * floorHeight);
+        console.log(floor);
+        console.log(floorTop);
+    	console.log(sillBottom1);
+    	console.log(sillTop1);
         for (i = 0; i < iterator; i++) {
             pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
             pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
 
             tri = createVertPlane(pt1, pt2, floor, sillBottom1);
             tri1 = createVertPlane(pt1, pt2, sillBottom1, sillTop1);
-            tri2 = createVertPlane(pt1, pt2, sillTop1, floor + floorHeight);
+            tri2 = createVertPlane(pt1, pt2, sillTop1, floorTop);
             facets.push(tri[0]);
             facets.push(tri[1]);
             facets.push(tri1[0]);
@@ -72,7 +77,7 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
         }
 
     };
-    console.log(facets);
+  
     var stlObj = {
         description: buildingName,
         facets: facets
