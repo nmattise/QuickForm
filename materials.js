@@ -3,7 +3,7 @@
 //https://github.com/r3mi/poly2tri.js
 
 var fs = require('fs'),
-    stl = require('../stl/stl.js'),
+    stl = require('stl'),
     poly2tri = require('poly2tri');
 
 
