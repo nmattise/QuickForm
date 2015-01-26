@@ -36,7 +36,7 @@ function material(point1, point2, height, floorHeight, floors, windowWallRatio, 
     var windowH = windowWallRatio * floorHeight;
     var sillBottom = (floorHeight - windowH) / 2;
     var sillTop = sillBottom + windowH;
-    //console.log(windowH);
+    console.log(windowH);
     //console.log(sillBottom);
     //console.log(sillTop);
     var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, tri1, tri2, facets, z1, z2;
@@ -115,4 +115,4 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     }
     return facets;
 }
-material([-10, -10], [10, -10], 20, 5, 4, .25, 1, "materialRectangle");
+material([-10, -10], [10, -10], 20, 5, 4, .25, 3, "materialRectangle");
