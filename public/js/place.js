@@ -15,7 +15,7 @@ app.config(function(uiGmapGoogleMapApiProvider) {
 })
 app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http) {
     //Units
-    $scope.units = "ip";
+    $scope.units = "si";
     //Initialize
     $scope.buildingInfo = {};
     $scope.removedBuildings = [];

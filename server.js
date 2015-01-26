@@ -35,4 +35,4 @@ app.post('/createAllBuildingsSTL', function(req, res) {
     res.send("Stl File Created");
 });
 
-app.listen(3000);
+app.listen(8000);
