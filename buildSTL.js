@@ -251,6 +251,55 @@ function createCustomWallGrid(point1, point2, gridSize, height) {
     return facets;
 }
 
+function createWallMaterial(point1, point2, gridSize, height, floorHeight, floors, windowWallRatio, wallMaterial, windowMaterial) {
+    var sideLength, deltaX, deltaY, gridLength, xIt, yIt, iterator, zIterator, pt1, pt2, i, z, zGrid, zIt, tri, tri1, tri2, facets, z0, z1, wH, w0, w1, w0Floor, w1Floor;
+    //Window Dimensions
+    wH = windowWallRatio * floorHeight;
+    w0 = (floorHeight - wH) / 2;
+    w1 = w0 + wH;
+    //Create Facets
+    facets = [];
+    //Find the Length of the side, and the x and y iterations to creat the grid
+    sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
+    gridLength = ((sideLength % gridSize) / (parseInt(sideLength / gridSize))) + gridSize;
+    deltaX = point2[0] - point1[0];
+    deltaY = point2[1] - point1[1];
+    xIt = deltaX / parseInt(sideLength / gridSize);
+    yIt = deltaY / parseInt(sideLength / gridSize);
+    iterator = parseInt(sideLength / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt)) xIt = 0;
+    if (!isFinite(yIt)) yIt = 0;
+
+    //Iterate Through Floors
+    for (var t = 0; t < floors; t++) {
+        //Floor Height
+        z0 = t * floorHeight;
+        z1 = z0 + floorHeight;
+        //Window Height
+        w0Floor = w0 + (t * floorHeight);
+        w1Floor = w1 + (t * floorHeight);
+        //Iterate Along wall
+        for (i = 0; i < iterator; i++) {
+            //Ground Points
+            pt1 = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
+            pt2 = [point1[0] + (xIt * (i + 1)), point1[1] + (yIt * (i + 1))];
+            //Create Plans for bottom wall, window, and top wall
+            tri = createVertPlane(pt1, pt2, z0, w0Floor, wallMaterial);
+            tri2 = createVertPlane(pt1, pt2, w0Floor, w1Floor, windowMaterial);
+            tri1 = createVertPlane(pt1, pt2, w1Floor, z1, wallMaterial);
+            //Push planes to facets
+            facets.push(tri[0]);
+            facets.push(tri[1]);
+            facets.push(tri2[0]);
+            facets.push(tri2[1]);
+            facets.push(tri1[0]);
+            facets.push(tri1[1]);
+        };
+    };
+    return facets;
+}
+
 function minMaxPoints(buildingPoints) {
     var minX, minY, maxX, maxY,
         xPts = [],
@@ -450,18 +499,19 @@ function buildSTL(buildings) {
 
                 //Create Grids for STL Creation
                 //Walls
-                createCustomWallGrid(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], gridSize, buildings[i].height).forEach(function(facet) {
+                createWallMaterial(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], gridSize, buildings[i].height).forEach(function(facet) {
+                createWallMaterial(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], gridSize, buildings[i].height).forEach(function(facet) {
+                createWallMaterial(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createCustomWallGrid(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], gridSize, buildings[i].height).forEach(function(facet) {
+                createWallMaterial(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
                     facets.push(facet);
                 });
+
                 //Roof and Floor
                 createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], gridSize, buildings[i].height).forEach(function(facet) {
                     facets.push(facet);
@@ -543,7 +593,7 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof and Floor
-                
+
 
                 var stlObj = {
                     description: buildings[i].name,
