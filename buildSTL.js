@@ -449,8 +449,8 @@ function buildSTL(buildings) {
     //Go through Each Building
 
     for (var i = 0; i < buildings.length; i++) {
-        console.log(buildings[i].height);
-        switch (buildings[i].bldgFootprint) {
+        var bldg = buildings[i];
+        switch (bldg.bldgFootprint) {
             case 'rect':
                 //Initialize Variables
                 var points = [],
@@ -465,12 +465,12 @@ function buildSTL(buildings) {
                     facets = [],
                     minMaxPts = [];
                 //Add Building Name to File Name
-                fileName += buildings[i].name + "_";
+                fileName += bldg.name + "_";
                 //Set Grid Size
-                gridSize = 1;
+                gridSize = 10;
                 //Get Cartesian Points from LatLng
-                for (var j = 0; j < buildings[i].polygon.path.length; j++) {
-                    points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
+                for (var j = 0; j < bldg.polygon.path.length; j++) {
+                    points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
                 }
                 //Average and Adjust the Rectangle
                 var lengths = points.findLengths();
@@ -494,36 +494,32 @@ function buildSTL(buildings) {
                 }
 
                 //Save Adjusted Cartesian Points and LatLng to Building Object
-                buildings[i].polygon.adjustedPath = adjustedLatLng;
-                buildings[i].adjustedPoints = adjustedPoints;
+                bldg.polygon.adjustedPath = adjustedLatLng;
+                bldg.adjustedPoints = adjustedPoints;
 
                 //Create Grids for STL Creation
                 //Walls
-                createWallMaterial(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
-                    facets.push(facet);
-                });
-                createWallMaterial(buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[2], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
-                    facets.push(facet);
-                });
-                createWallMaterial(buildings[i].adjustedPoints[2], buildings[i].adjustedPoints[3], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
-                    facets.push(facet);
-                });
-                createWallMaterial(buildings[i].adjustedPoints[3], buildings[i].adjustedPoints[0], gridSize, buildings[i].height, buildings[i].flrToFlrHeight, buildings[i].numFloors, ".33", "brick", "window").forEach(function(facet) {
+                for (var j = 1; j < adjustedPoints.length; j++) {
+                    createWallMaterial(bldg.adjustedPoints[j - 1], bldg.adjustedPoints[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                        facets.push(facet);
+                    });
+                }
+                createWallMaterial(bldg.adjustedPoints[3], bldg.adjustedPoints[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet);
                 });
 
                 //Roof and Floor
-                createRotateRoof(buildings[i].adjustedPoints[0], buildings[i].adjustedPoints[1], buildings[i].adjustedPoints[3], gridSize, buildings[i].height).forEach(function(facet) {
+                createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[3], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 var stlObj = {
-                    description: buildings[i].name,
+                    description: bldg.name,
                     facets: facets
                 };
                 allBldgSTL += stl.fromObject(stlObj) + "/n";
 
                 //Ground Stats for This Building
-                minMaxPts = minMaxPoints(buildings[i].adjustedPoints);
+                minMaxPts = minMaxPoints(bldg.adjustedPoints);
                 minXPts.push(minMaxPts[0]);
                 maxXPts.push(minMaxPts[1]);
                 minYPts.push(minMaxPts[2]);
@@ -542,12 +538,12 @@ function buildSTL(buildings) {
                     facets = [],
                     minMaxPts = [];
                 //Add Building Name to File Name
-                fileName += buildings[i].name + "_";
+                fileName += bldg.name + "_";
                 //Set Grid Size
                 gridSize = 1;
                 //Get Cartesian Points from LatLng
-                for (var j = 0; j < buildings[i].polygon.path.length; j++) {
-                    points.push(origin.coordinatesTo(new latLon(buildings[i].polygon.path[j].latitude, buildings[i].polygon.path[j].longitude)));
+                for (var j = 0; j < bldg.polygon.path.length; j++) {
+                    points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
                 }
                 //Average and Adjust the Rectangle
                 var lengths = points.findLengths();
@@ -581,28 +577,28 @@ function buildSTL(buildings) {
                     var rotatedPoint = rotatePoint(orthL[0], point, theta - (Math.PI / 2));
                     rotatedL.push(rotatedPoint);
                 });
-                buildings[i].adjustedPoints = rotatedL;
+                bldg.adjustedPoints = rotatedL;
 
                 //Add Walls
                 for (var j = 1; j < rotatedL.length; j++) {
-                    createCustomWallGrid(rotatedL[j - 1], rotatedL[j], gridSize, buildings[i].height).forEach(function(facet) {
+                    createWallMaterial(rotatedL[j - 1], rotatedL[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
                         facets.push(facet)
                     })
                 };
-                createCustomWallGrid(rotatedL[5], rotatedL[0], gridSize, buildings[i].height).forEach(function(facet) {
+                createWallMaterial(rotatedL[5], rotatedL[0],  gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
                 //Roof and Floor
 
 
                 var stlObj = {
-                    description: buildings[i].name,
+                    description: bldg.name,
                     facets: facets
                 };
                 allBldgSTL += stl.fromObject(stlObj) + "/n";
 
                 //Ground Stats for This Building
-                minMaxPts = minMaxPoints(buildings[i].adjustedPoints);
+                minMaxPts = minMaxPoints(bldg.adjustedPoints);
                 minXPts.push(minMaxPts[0]);
                 maxXPts.push(minMaxPts[1]);
                 minYPts.push(minMaxPts[2]);
