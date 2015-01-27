@@ -467,7 +467,7 @@ function buildSTL(buildings) {
                 //Add Building Name to File Name
                 fileName += bldg.name + "_";
                 //Set Grid Size
-                gridSize = 10;
+                gridSize = 5;
                 //Get Cartesian Points from LatLng
                 for (var j = 0; j < bldg.polygon.path.length; j++) {
                     points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
@@ -540,7 +540,7 @@ function buildSTL(buildings) {
                 //Add Building Name to File Name
                 fileName += bldg.name + "_";
                 //Set Grid Size
-                gridSize = 1;
+                gridSize = 5;
                 //Get Cartesian Points from LatLng
                 for (var j = 0; j < bldg.polygon.path.length; j++) {
                     points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
@@ -585,11 +585,22 @@ function buildSTL(buildings) {
                         facets.push(facet)
                     })
                 };
-                createWallMaterial(rotatedL[5], rotatedL[0],  gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedL[5], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                //Roof and Floor
 
+                //Roof and Floor
+                var length2_3 = distanceFormula(bldg.adjustedPoints[1][0], bldg.adjustedPoints[1][1], bldg.adjustedPoints[2][0], bldg.adjustedPoints[2][1]),
+                    length1_6 = distanceFormula(bldg.adjustedPoints[0][0], bldg.adjustedPoints[0][1], bldg.adjustedPoints[5][0], bldg.adjustedPoints[5][1]),
+                    dx = (bldg.adjustedPoints[5][0] - bldg.adjustedPoints[0][0]) / length1_6,
+                    dy = (bldg.adjustedPoints[5][1] - bldg.adjustedPoints[0][1]) / length1_6,
+                    pt7 = [dx * length2_3, dy * length2_3];
+                createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], pt7, gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRotateRoof(pt7, bldg.adjustedPoints[3], bldg.adjustedPoints[5], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
 
                 var stlObj = {
                     description: bldg.name,
