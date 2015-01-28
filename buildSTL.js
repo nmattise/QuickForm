@@ -363,7 +363,6 @@ function createGround(innerBounds) {
         largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
         i++;
     });
-    console.log(largeGridBound);
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
@@ -549,9 +548,6 @@ function buildSTL(buildings) {
                     dx = (bldg.adjustedPoints[5][0] - bldg.adjustedPoints[0][0]) / length1_6,
                     dy = (bldg.adjustedPoints[5][1] - bldg.adjustedPoints[0][1]) / length1_6,
                     pt7 = [(dx * length2_3) + bldg.adjustedPoints[0][0], (dy * length2_3) + bldg.adjustedPoints[0][1]];
-                console.log(pt7);
-                console.log(dx + "  " + dy);
-                console.log(bldg.adjustedPoints);
                 createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], pt7, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
@@ -567,9 +563,18 @@ function buildSTL(buildings) {
                     l2 = l4 * (lengths[2] / (lengths[0] + lengths[2] + lengths[6])),
                     l6 = l4 * (lengths[6] / (lengths[0] + lengths[2] + lengths[6]));
                 var l1 = (lengths[1] + lengths[7]) / 2,
-                    l7 = l3,
+                    l7 = l1,
                     l3 = (lengths[3] + lengths[5]) / 2,
                     l5 = l3;
+                    console.log(l4);
+                    console.log(l0);
+                    console.log(l2);
+                    console.log(l6);
+                    console.log(l1);
+                    console.log(l7);
+                    console.log(l3);
+                    console.log(l5);
+
                 var orthT = [
                     [points[0][0], points[0][1]],
                     [points[0][0] + l0, points[0][1]],
@@ -580,6 +585,7 @@ function buildSTL(buildings) {
                     [points[0][0] - l6, points[0][1] + l7],
                     [points[0][0], points[0][1] + l7]
                 ];
+                console.log(orthT);
                 var rotatedT = [];
                 orthT.forEach(function(point) {
                     var rotatedPoint = rotatePoint(orthT[0], point, theta - (Math.PI / 2));
@@ -605,7 +611,7 @@ function buildSTL(buildings) {
                 });
 
                 break;
-            case "u":
+            /*case "u":
 
                 break;
             case "h":
@@ -616,7 +622,7 @@ function buildSTL(buildings) {
             case "trap":
                 break;
             case "triangle":
-                break;
+                break;*/
         }
         var stlObj = {
             description: bldg.name,
