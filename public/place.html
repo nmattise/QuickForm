@@ -55,12 +55,12 @@
                                     <select class="form-control" id="buildingFootprint" ng-model="buildingInfo.bldgFootprint">
                                         <option value="rect">Rectangle</option>
                                         <option value="l">L Shape</option>
-                                        <option value="t" disabled>T Shape</option>
-                                        <option value="u" disabled>U Shape</option>
-                                        <option value="h" disabled>H Shape</option>
-                                        <option value="cross" disabled>Cross Shape</option>
-                                        <option value="trap" disabled>Trapezoid</option>
-                                        <option value="triangle" disabled>Triangle</option>
+                                        <option value="t">T Shape</option>
+                                        <option value="u">U Shape</option>
+                                        <option value="h">H Shape</option>
+                                        <option value="cross">Cross Shape</option>
+                                        <option value="trap">Trapezoid</option>
+                                        <option value="triangle">Triangle</option>
                                         <option value="courtyard" disabled>Courtyard</option>
                                         <option value="circle" disabled>Circle</option>
                                     </select>
@@ -70,12 +70,12 @@
                     </form novalidate>
                     <div class="row">
                         <div class="col-xs-2 col-xs-offset-1">
-                            <button class="btn btn-warning " ng-click="rotateLeft()" disabled>
+                            <button class="btn btn-warning " ng-click="rotateLeft()" ng-disabled="mapPolygon.path.length <1">
                                 <img src="libs/material-design-icons/image/2x_web/ic_rotate_left_white_24dp.png" width="24px">
                             </button>
                         </div>
                         <div class="col-xs-2">
-                            <button class=" btn btn-warning" ng-click="rotateRight()" disabled>
+                            <button class=" btn btn-warning" ng-click="rotateRight()" ng-disabled="mapPolygon.path.length <1">
                                 <img src="libs/material-design-icons/image/2x_web/ic_rotate_right_white_24dp.png" width="24px">
                             </button>
                         </div>
@@ -175,7 +175,7 @@
             </div>
             <div class="radio ">
                 <label>
-                    <input type="radio" name="unitRadio" ng-model="units" value="si" >SI
+                    <input type="radio" name="unitRadio" ng-model="units" value="si">SI
                 </label>
             </div>
         </div>
