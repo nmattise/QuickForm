@@ -115,7 +115,7 @@ function findRotation(pt1, pt2) {
 
 //STL Format Creation
 
-function createVertPlane(pt1, pt2, z1, z2) {
+function createVertPlane(pt1, pt2, z1, z2, material) {
     var tri1 = [
             [pt1[0], pt1[1], z1],
             [pt2[0], pt2[1], z1],
@@ -128,12 +128,13 @@ function createVertPlane(pt1, pt2, z1, z2) {
         ],
         facets = [];
     facets = [{
-        verts: tri1
+        verts: tri1,
+        material: material
     }, {
-        verts: tri2
+        verts: tri2,
+        material: material
     }];
     return facets;
-
 }
 
 function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
