@@ -594,7 +594,10 @@ function buildSTL(buildings) {
                     length1_6 = distanceFormula(bldg.adjustedPoints[0][0], bldg.adjustedPoints[0][1], bldg.adjustedPoints[5][0], bldg.adjustedPoints[5][1]),
                     dx = (bldg.adjustedPoints[5][0] - bldg.adjustedPoints[0][0]) / length1_6,
                     dy = (bldg.adjustedPoints[5][1] - bldg.adjustedPoints[0][1]) / length1_6,
-                    pt7 = [dx * length2_3, dy * length2_3];
+                    pt7 = [(dx * length2_3) + bldg.adjustedPoints[0][0], (dy * length2_3) + bldg.adjustedPoints[0][1]];
+                console.log(pt7);
+                console.log(dx + "  " + dy);
+                console.log(bldg.adjustedPoints);
                 createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], pt7, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
