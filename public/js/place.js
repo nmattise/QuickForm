@@ -20,6 +20,9 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
     $scope.buildingInfo = {};
     $scope.removedBuildings = [];
     $scope.buildingInfo.bldgFootprint = 'rect';
+    $scope.mapPolygon = {
+        path: []
+    };
     //Initial Map Settings
     $scope.map = {
         center: {
@@ -47,27 +50,8 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
                             var pt4 = new latLon(lat + y, lng - x),
                                 pt3 = new latLon(lat + y, lng + x),
                                 pt2 = new latLon(lat - y, lng + x),
-                                pt1 = new latLon(lat - y, lng - x);
-
-                            var points = [pt1, pt2, pt3, pt4];
-                            var polygon = {
-                                path: points,
-                                stroke: {
-                                    color: '#6060FB',
-                                    weight: 3
-                                },
-                                static: false,
-                                editable: true,
-                                draggable: false,
-                                geodesic: false,
-                                visible: true,
-                                fill: {
-                                    color: '#ff0000',
-                                    opacity: 0.6
-                                }
-                            };
-                            $scope.mapPolygon = polygon;
-                            $scope.$apply();
+                                pt1 = new latLon(lat - y, lng - x),
+                                points = [pt1, pt2, pt3, pt4];
                             break;
                         case "l":
                             var pt6 = new latLon(lat + y, lng - x / 2),
@@ -75,28 +59,109 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
                                 pt4 = new latLon(lat, lng + x / 2),
                                 pt3 = new latLon(lat, lng + x),
                                 pt2 = new latLon(lat - y, lng + x),
-                                pt1 = new latLon(lat - y, lng - x / 2);
-                            var points = [pt1, pt2, pt3, pt4, pt5, pt6];
-                            var polygon = {
-                                path: points,
-                                stroke: {
-                                    color: '#6060FB',
-                                    weight: 3
-                                },
-                                static: false,
-                                editable: true,
-                                draggable: false,
-                                geodesic: false,
-                                visible: true,
-                                fill: {
-                                    color: '#ff0000',
-                                    opacity: 0.6
-                                }
-                            };
-                            $scope.mapPolygon = polygon;
-                            $scope.$apply();
+                                pt1 = new latLon(lat - y, lng - x / 2),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6];
+                            break;
+                        case "t":
+                            var pt8 = new latLon(lat + y / 2, lng - x),
+                                pt7 = new latLon(lat + y / 2, lng + x),
+                                pt6 = new latLon(lat, lng + x),
+                                pt5 = new latLon(lat, lng + x / 2),
+                                pt4 = new latLon(lat - y, lng + x / 2),
+                                pt3 = new latLon(lat - y, lng - x / 2),
+                                pt2 = new latLon(lat, lng - x / 2),
+                                pt1 = new latLon(lat, lng - x),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
+                            break;
+                        case "u":
+                            var pt8 = new latLon(lat + y, lng - x),
+                                pt7 = new latLon(lat + y, lng - x / 2),
+                                pt6 = new latLon(lat, lng - x / 2),
+                                pt5 = new latLon(lat, lng + x / 2),
+                                pt4 = new latLon(lat + y, lng + x / 2),
+                                pt3 = new latLon(lat + y, lng + x),
+                                pt2 = new latLon(lat - y / 2, lng + x),
+                                pt1 = new latLon(lat - y / 2, lng - x),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
+                            break;
+                        case "u":
+                            var pt12 = new latLon(lat + y, lng - x),
+                                pt11 = new latLon(lat + y, lng - x / 2),
+                                pt10 = new latLon(lat + y / 2, lng - x / 2),
+                                pt9 = new latLon(lat + y / 2, lng + x / 2),
+                                pt8 = new latLon(lat + y, lng + x / 2),
+                                pt7 = new latLon(lat + y, lng + x),
+                                pt6 = new latLon(lat - y, lng + x),
+                                pt5 = new latLon(lat - y, lng + x / 2),
+                                pt4 = new latLon(lat - y / 2, lng + x / 2),
+                                pt3 = new latLon(lat - y / 2, lng - x / 2),
+                                pt2 = new latLon(lat - y, lng - x / 2),
+                                pt1 = new latLon(lat - y, lng - x),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                            break;
+                        case "h":
+                            var pt12 = new latLon(lat + y, lng - x),
+                                pt11 = new latLon(lat + y, lng - x / 2),
+                                pt10 = new latLon(lat + y / 2, lng - x / 2),
+                                pt9 = new latLon(lat + y / 2, lng + x / 2),
+                                pt8 = new latLon(lat + y, lng + x / 2),
+                                pt7 = new latLon(lat + y, lng + x),
+                                pt6 = new latLon(lat - y, lng + x),
+                                pt5 = new latLon(lat - y, lng + x / 2),
+                                pt4 = new latLon(lat - y / 2, lng + x / 2),
+                                pt3 = new latLon(lat - y / 2, lng - x / 2),
+                                pt2 = new latLon(lat - y, lng - x / 2),
+                                pt1 = new latLon(lat - y, lng - x),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                            break;
+                        case "cross":
+                            var pt12 = new latLon(lat + y, lng - x / 2),
+                                pt11 = new latLon(lat + y, lng + x / 2),
+                                pt10 = new latLon(lat + y / 2, lng + x / 2),
+                                pt9 = new latLon(lat + y / 2, lng + x),
+                                pt8 = new latLon(lat - y / 2, lng + x),
+                                pt7 = new latLon(lat - y / 2, lng + x / 2),
+                                pt6 = new latLon(lat - y, lng + x / 2),
+                                pt5 = new latLon(lat - y, lng - x / 2),
+                                pt4 = new latLon(lat - y / 2, lng - x / 2),
+                                pt3 = new latLon(lat - y / 2, lng - x),
+                                pt2 = new latLon(lat + y / 2, lng - x),
+                                pt1 = new latLon(lat + y / 2, lng - x / 2),
+                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                            break;
+                        case "trap":
+                            var pt4 = new latLon(lat + y / 2, lng - x / 2),
+                                pt3 = new latLon(lat + y / 2, lng + x / 2),
+                                pt2 = new latLon(lat - y / 2, lng + x),
+                                pt1 = new latLon(lat - y / 2, lng - x),
+                                points = [pt1, pt2, pt3, pt4];
+                            break;
+                        case "triangle":
+                            var pt3 = new latLon(lat + y, lng - x),
+                                pt2 = new latLon(lat - y, lng + x),
+                                pt1 = new latLon(lat - y, lng - x),
+                                points = [pt1, pt2, pt3];
                             break;
                     }
+                    var polygon = {
+                        path: points,
+                        center: center,
+                        stroke: {
+                            color: '#6060FB',
+                            weight: 3
+                        },
+                        static: false,
+                        editable: true,
+                        draggable: false,
+                        geodesic: false,
+                        visible: true,
+                        fill: {
+                            color: '#ff0000',
+                            opacity: 0.6
+                        }
+                    };
+                    $scope.mapPolygon = polygon;
+                    $scope.$apply();
                 } else {
                     $window.alert("Please Select a Building Footprint");
                 }
@@ -104,17 +169,37 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
         }
     };
 
-    //Functions
+    //Map Polygon Functions
     $scope.editable = function() {
-            $scope.mapPolygon.editable = !$scope.mapPolygon.editable;
-            $scope.mapPolygon.path.last().latitude -= 0.00000000000001;
-        }
-        //Polygon Array for what is editable on the Map
-    $scope.mapPolygon = {
-        path: []
-    };
+        $scope.mapPolygon.editable = !$scope.mapPolygon.editable;
+        $scope.mapPolygon.path.last().latitude -= 0.00000000000001;
+    }
 
-    //Building Array
+    $scope.rotateLeft = function() {
+        var pts = $scope.mapPolygon.path,
+            center = $scope.mapPolygon.center,
+            rotatedLatLng = [];
+        pts.forEach(function(pt) {
+            var point = new latLon(pt.latitude, pt.longitude),
+                d = center.distanceTo(point),
+                b = center.bearingTo(point);
+            rotatedLatLng.push(center.destinationPoint(b - 90, d / 1000));
+        });
+        $scope.mapPolygon.path = rotatedLatLng;
+    };
+    $scope.rotateRight = function() {
+        var pts = $scope.mapPolygon.path,
+            center = $scope.mapPolygon.center,
+            rotatedLatLng = [];
+        pts.forEach(function(pt) {
+            var point = new latLon(pt.latitude, pt.longitude),
+                d = center.distanceTo(point),
+                b = center.bearingTo(point);
+            rotatedLatLng.push(center.destinationPoint(b + 90, d / 1000));
+        });
+        $scope.mapPolygon.path = rotatedLatLng;
+    };
+    //Building Array Functions
     $scope.buildings = new Array;
     $scope.removedBuildings = new Array;
     //Test polylines Array
@@ -160,6 +245,8 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
         $scope.buildingInfo = {};
         $scope.buildingInfo.bldgFootprint = 'rect';
     }
+
+    //Building List Functions
     $scope.editBuilding = function(id) {
         $scope.buildings.forEach(function(b) {
             if (b.id == id) {

@@ -435,6 +435,8 @@ function buildSTL(buildings) {
         groundSTL,
         fileName = '';
 
+    //Set Grid Size
+    var gridSize = 5;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
         for (var j = 0; j < buildings[i].polygon.path.length; j++) {
@@ -451,32 +453,30 @@ function buildSTL(buildings) {
 
     for (var i = 0; i < buildings.length; i++) {
         var bldg = buildings[i];
+        //Initialize Variables
+        var points = [],
+            averageSideLengths = [],
+            adjustedPoints = [],
+            adjustedLatLng = [],
+            lengths = [],
+            length,
+            width,
+            theta,
+            facets = [],
+            minMaxPts = [];
+        //Add Building Name to File Name
+        fileName += bldg.name + "_";
+        //Set Grid Size
+        //Get Cartesian Points from LatLng
+        for (var j = 0; j < bldg.polygon.path.length; j++) {
+            points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
+        }
+        //Average and Adjust the Rectangle
+        lengths = points.findLengths();
+        theta = findRotation(points[0], points[1]);
         switch (bldg.bldgFootprint) {
             case 'rect':
-                //Initialize Variables
-                var points = [],
-                    gridSize,
-                    sideLengths,
-                    averageSideLengths = [],
-                    adjustedPoints = [],
-                    adjustedLatLng = [],
-                    sideLengths = [],
-                    length,
-                    width,
-                    facets = [],
-                    minMaxPts = [];
-                //Add Building Name to File Name
-                fileName += bldg.name + "_";
-                //Set Grid Size
-                gridSize = 5;
-                //Get Cartesian Points from LatLng
-                for (var j = 0; j < bldg.polygon.path.length; j++) {
-                    points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
-                }
-                //Average and Adjust the Rectangle
-                var lengths = points.findLengths();
                 var avergeLengths = [(lengths[0] + lengths[2]) / 2, (lengths[1] + lengths[3]) / 2];
-                var theta = findRotation(points[0], points[1]);
                 var orthRect = [
                     [points[0][0], points[0][1]],
                     [points[0][0] + avergeLengths[0], points[0][1]],
@@ -489,13 +489,6 @@ function buildSTL(buildings) {
                     rotatedRect.push(rotatedPoint);
                 });
                 adjustedPoints = rotatedRect;
-                //Convert Adjusted Points Back to a Lat Lng Format for Future Display
-                for (var j = 0; j < adjustedPoints.length; j++) {
-                    adjustedLatLng.push(origin.destinationPoint(adjustedPoints[j][0], adjustedPoints[j][1]));
-                }
-
-                //Save Adjusted Cartesian Points and LatLng to Building Object
-                bldg.polygon.adjustedPath = adjustedLatLng;
                 bldg.adjustedPoints = adjustedPoints;
 
                 //Create Grids for STL Creation
@@ -513,58 +506,17 @@ function buildSTL(buildings) {
                 createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[3], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                var stlObj = {
-                    description: bldg.name,
-                    facets: facets
-                };
-                allBldgSTL += stl.fromObject(stlObj) + "/n";
-
-                //Ground Stats for This Building
-                minMaxPts = minMaxPoints(bldg.adjustedPoints);
-                minXPts.push(minMaxPts[0]);
-                maxXPts.push(minMaxPts[1]);
-                minYPts.push(minMaxPts[2]);
-                maxYPts.push(minMaxPts[3]);
                 break;
             case 'l':
-                var points = [],
-                    gridSize,
-                    sideLengths,
-                    averageSideLengths = [],
-                    adjustedPoints = [],
-                    adjustedLatLng = [],
-                    sideLengths = [],
-                    length,
-                    width,
-                    facets = [],
-                    minMaxPts = [];
-                //Add Building Name to File Name
-                fileName += bldg.name + "_";
-                //Set Grid Size
-                gridSize = 5;
-                //Get Cartesian Points from LatLng
-                for (var j = 0; j < bldg.polygon.path.length; j++) {
-                    points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
-                }
-                //Average and Adjust the Rectangle
-                var lengths = points.findLengths();
-                console.log(lengths);
+
                 //Average 1 & 3+5
                 var l1 = (lengths[0] + (lengths[2] + lengths[4])) / 2;
                 var l3 = l1 * (lengths[2] / (lengths[2] + lengths[4])),
                     l5 = l1 * (lengths[4] / (lengths[2] + lengths[4]));
-                console.log("l1: " + l1);
-                console.log("l3: " + l3);
-                console.log("l5: " + l5);
                 //Average 6 & 2+4
                 var l6 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
                 var l2 = l6 * (lengths[1] / (lengths[1] + lengths[3])),
                     l4 = l6 * (lengths[3] / (lengths[1] + lengths[3]));
-                console.log("l2: " + l2);
-                console.log("l4: " + l4);
-                console.log("l6: " + l6);
-                var theta = findRotation(points[0], points[1]);
-                console.log(theta);
                 var orthL = [
                     [points[0][0], points[0][1]],
                     [points[0][0] + l1, points[0][1]],
@@ -586,7 +538,8 @@ function buildSTL(buildings) {
                         facets.push(facet)
                     })
                 };
-                createWallMaterial(rotatedL[5], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedL[5], rotatedL
+[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -606,20 +559,77 @@ function buildSTL(buildings) {
                     facets.push(facet);
                 });
 
-                var stlObj = {
-                    description: bldg.name,
-                    facets: facets
-                };
-                allBldgSTL += stl.fromObject(stlObj) + "/n";
 
-                //Ground Stats for This Building
-                minMaxPts = minMaxPoints(bldg.adjustedPoints);
-                minXPts.push(minMaxPts[0]);
-                maxXPts.push(minMaxPts[1]);
-                minYPts.push(minMaxPts[2]);
-                maxYPts.push(minMaxPts[3]);
+                break;
+            case "t":
+                var l4 = ((lengths[0] + lengths[2] + lengths[6]) + lengths[4]) / 2,
+                    l0 = l4 * (lengths[0] / (lengths[0] + lengths[2] + lengths[6])),
+                    l2 = l4 * (lengths[2] / (lengths[0] + lengths[2] + lengths[6])),
+                    l6 = l4 * (lengths[6] / (lengths[0] + lengths[2] + lengths[6]));
+                var l1 = (lengths[1] + lengths[7]) / 2,
+                    l7 = l3,
+                    l3 = (lengths[3] + lengths[5]) / 2,
+                    l5 = l3;
+                var orthT = [
+                    [points[0][0], points[0][1]],
+                    [points[0][0] + l0, points[0][1]],
+                    [points[0][0] + l0, points[0][1] + l1],
+                    [points[0][0] + l0 + l2, points[0][1] + l1],
+                    [points[0][0] + l0 + l2, points[0][1] + l1 + l3],
+                    [points[0][0] - l4, points[0][1] + l7 + l5],
+                    [points[0][0] - l6, points[0][1] + l7],
+                    [points[0][0], points[0][1] + l7]
+                ];
+                var rotatedT = [];
+                orthT.forEach(function(point) {
+                    var rotatedPoint = rotatePoint(orthT[0], point, theta - (Math.PI / 2));
+                    rotatedT.push(rotatedPoint);
+                });
+                bldg.adjustedPoints = rotatedT;
+
+                //Add Walls
+                for (var j = 1; j < rotatedT.length; j++) {
+                    createWallMaterial(rotatedT[j - 1], rotatedT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
+                        facets.push(facet)
+                    })
+                };
+                createWallMaterial(rotatedT[5], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                //Roof
+                createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[7], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRotateRoof(bldg.adjustedPoints[6], bldg.adjustedPoints[3], bldg.adjustedPoints[5], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+
+                break;
+            case "u":
+
+                break;
+            case "h":
+
+                break;
+            case "cross":
+                break;
+            case "trap":
+                break;
+            case "triangle":
                 break;
         }
+        var stlObj = {
+            description: bldg.name,
+            facets: facets
+        };
+        allBldgSTL += stl.fromObject(stlObj) + "/n";
+
+        //Ground Stats for This Building
+        minMaxPts = minMaxPoints(bldg.adjustedPoints);
+        minXPts.push(minMaxPts[0]);
+        maxXPts.push(minMaxPts[1]);
+        minYPts.push(minMaxPts[2]);
+        maxYPts.push(minMaxPts[3]);
     }
     //Create Gound STL
     //Find Min and Max X&Y of building location points
