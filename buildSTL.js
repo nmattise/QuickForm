@@ -411,6 +411,15 @@ function createGround(innerBounds) {
     return facets;
 }
 
+function orthPoints(pt1, pt2, l) {
+    var dx, dy, dist, point;
+    dist = distanceFormula(pt1[0], pt1[1], pt2[0], pt2[1]);
+    dx = (pt2[0] - pt1[0]) / 2;
+    dx = (pt2[1] - pt1[1]) / 2;
+    point = [l * dx, l * dy];
+    return point;
+}
+
 //Final Function
 function buildSTL(buildings) {
     //Initialize Variables
@@ -537,8 +546,7 @@ function buildSTL(buildings) {
                         facets.push(facet)
                     })
                 };
-                createWallMaterial(rotatedL[5], rotatedL
-[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedL[5], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -566,14 +574,16 @@ function buildSTL(buildings) {
                     l7 = l1,
                     l3 = (lengths[3] + lengths[5]) / 2,
                     l5 = l3;
-                    console.log(l4);
-                    console.log(l0);
-                    console.log(l2);
-                    console.log(l6);
-                    console.log(l1);
-                    console.log(l7);
-                    console.log(l3);
-                    console.log(l5);
+                console.log(l4);
+                console.log(l0);
+                console.log(l2);
+                console.log(l6);
+                console.log(l1);
+                console.log(l7);
+                console.log(l3);
+                console.log(l5);
+                var orthT = [];
+                orthT.push(orthPoints(points[0],points[1], l0));
 
                 var orthT = [
                     [points[0][0], points[0][1]],
@@ -611,18 +621,18 @@ function buildSTL(buildings) {
                 });
 
                 break;
-            /*case "u":
+                /*case "u":
 
-                break;
-            case "h":
+                    break;
+                case "h":
 
-                break;
-            case "cross":
-                break;
-            case "trap":
-                break;
-            case "triangle":
-                break;*/
+                    break;
+                case "cross":
+                    break;
+                case "trap":
+                    break;
+                case "triangle":
+                    break;*/
         }
         var stlObj = {
             description: bldg.name,
