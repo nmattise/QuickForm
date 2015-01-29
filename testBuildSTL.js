@@ -357,4 +357,4 @@ var rect = {
     };
 
 
-buildSTL([rect, l])
+buildSTL([rect, l, t]);

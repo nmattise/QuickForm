@@ -498,7 +498,7 @@ function buildSTL(buildings) {
                     rotatedRect.push(rotatedPoint);
                 });
                 adjustedPoints = rotatedRect;
-                bldg.adjustedPoints = adjustedPoints;
+                bldg.adjustedPoints = rotatedRect;
 
                 //Create Grids for STL Creation
                 //Walls
@@ -599,7 +599,7 @@ function buildSTL(buildings) {
                 console.log(orthT);
                 var rotatedT = [];
                 orthT.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthT[0], point, theta - (Math.PI / 2));
+                    var rotatedPoint = rotatePoint(orthT[0], point, theta + (Math.PI / 2));
                     rotatedT.push(rotatedPoint);
                 });
                 bldg.adjustedPoints = rotatedT;
