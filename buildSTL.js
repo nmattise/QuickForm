@@ -482,6 +482,7 @@ function buildSTL(buildings) {
         //Average and Adjust the Rectangle
         lengths = points.findLengths();
         theta = findRotation(points[0], points[1]);
+        console.log(theta);
         switch (bldg.bldgFootprint) {
             case 'rect':
                 var avergeLengths = [(lengths[0] + lengths[2]) / 2, (lengths[1] + lengths[3]) / 2];
@@ -493,7 +494,7 @@ function buildSTL(buildings) {
                 ];
                 var rotatedRect = [];
                 orthRect.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthRect[0], point, theta);
+                    var rotatedPoint = rotatePoint(orthRect[0], point, theta + (Math.PI / 2));
                     rotatedRect.push(rotatedPoint);
                 });
                 adjustedPoints = rotatedRect;
@@ -535,7 +536,7 @@ function buildSTL(buildings) {
                 ];
                 var rotatedL = [];
                 orthL.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthL[0], point, theta);
+                    var rotatedPoint = rotatePoint(orthL[0], point, theta + (Math.PI / 2));
                     rotatedL.push(rotatedPoint);
                 });
                 bldg.adjustedPoints = rotatedL;
