@@ -47,100 +47,85 @@ app.controller('placeCtrl', function($scope, $window, uiGmapGoogleMapApi, $http)
                     var center = new latLon(lat, lng);
                     switch ($scope.buildingInfo.bldgFootprint) {
                         case "rect":
-                            var pt4 = new latLon(lat + y, lng - x),
-                                pt3 = new latLon(lat + y, lng + x),
+                            var pt0 = new latLon(lat + y, lng - x),
+                                pt1 = new latLon(lat + y, lng + x),
                                 pt2 = new latLon(lat - y, lng + x),
-                                pt1 = new latLon(lat - y, lng - x),
-                                points = [pt1, pt2, pt3, pt4];
+                                pt3 = new latLon(lat - y, lng - x),
+                                points = [pt0, pt1, pt2, pt3];
                             break;
                         case "l":
-                            var pt6 = new latLon(lat + y, lng - x / 2),
-                                pt5 = new latLon(lat + y, lng + x / 2),
-                                pt4 = new latLon(lat, lng + x / 2),
+                            var pt0 = new latLon(lat + y, lng - x / 2),
+                                pt1 = new latLon(lat + y, lng + x / 2),
+                                pt2 = new latLon(lat, lng + x / 2),
                                 pt3 = new latLon(lat, lng + x),
-                                pt2 = new latLon(lat - y, lng + x),
-                                pt1 = new latLon(lat - y, lng - x / 2),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6];
+                                pt4 = new latLon(lat - y, lng + x),
+                                pt5 = new latLon(lat - y, lng - x / 2),
+                                points = [pt0, pt1, pt2, pt3, pt4, pt5];
                             break;
                         case "t":
-                            var pt8 = new latLon(lat + y / 2, lng - x),
-                                pt7 = new latLon(lat + y / 2, lng + x),
-                                pt6 = new latLon(lat, lng + x),
-                                pt5 = new latLon(lat, lng + x / 2),
+                            var pt0 = new latLon(lat + y / 2, lng - x),
+                                pt1 = new latLon(lat + y / 2, lng + x),
+                                pt2 = new latLon(lat, lng + x),
+                                pt3 = new latLon(lat, lng + x / 2),
                                 pt4 = new latLon(lat - y, lng + x / 2),
-                                pt3 = new latLon(lat - y, lng - x / 2),
-                                pt2 = new latLon(lat, lng - x / 2),
-                                pt1 = new latLon(lat, lng - x),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
-                            break;
-                        case "u":
-                            var pt8 = new latLon(lat + y, lng - x),
-                                pt7 = new latLon(lat + y, lng - x / 2),
+                                pt5 = new latLon(lat - y, lng - x / 2),
                                 pt6 = new latLon(lat, lng - x / 2),
-                                pt5 = new latLon(lat, lng + x / 2),
-                                pt4 = new latLon(lat + y, lng + x / 2),
-                                pt3 = new latLon(lat + y, lng + x),
-                                pt2 = new latLon(lat - y / 2, lng + x),
-                                pt1 = new latLon(lat - y / 2, lng - x),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8];
+                                pt7 = new latLon(lat, lng - x),
+                                points = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
                             break;
                         case "u":
-                            var pt12 = new latLon(lat + y, lng - x),
-                                pt11 = new latLon(lat + y, lng - x / 2),
-                                pt10 = new latLon(lat + y / 2, lng - x / 2),
-                                pt9 = new latLon(lat + y / 2, lng + x / 2),
-                                pt8 = new latLon(lat + y, lng + x / 2),
-                                pt7 = new latLon(lat + y, lng + x),
-                                pt6 = new latLon(lat - y, lng + x),
-                                pt5 = new latLon(lat - y, lng + x / 2),
-                                pt4 = new latLon(lat - y / 2, lng + x / 2),
-                                pt3 = new latLon(lat - y / 2, lng - x / 2),
-                                pt2 = new latLon(lat - y, lng - x / 2),
-                                pt1 = new latLon(lat - y, lng - x),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                            var pt0 = new latLon(lat + y / 2, lng - x),
+                                pt1 = new latLon(lat + y / 2, lng - x / 2),
+                                pt2 = new latLon(lat, lng - x / 2),
+                                pt3 = new latLon(lat, lng + x / 2),
+                                pt4 = new latLon(lat + y / 2, lng + x / 2),
+                                pt5 = new latLon(lat + y / 2, lng + x),
+                                pt6 = new latLon(lat - y / 2, lng + x),
+                                pt7 = new latLon(lat - y / 2, lng - x),
+                                points = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
                             break;
                         case "h":
-                            var pt12 = new latLon(lat + y, lng - x),
-                                pt11 = new latLon(lat + y, lng - x / 2),
-                                pt10 = new latLon(lat + y / 2, lng - x / 2),
-                                pt9 = new latLon(lat + y / 2, lng + x / 2),
-                                pt8 = new latLon(lat + y, lng + x / 2),
-                                pt7 = new latLon(lat + y, lng + x),
+                            var pt0 = new latLon(lat + y, lng - x),
+                                pt1 = new latLon(lat + y, lng - x / 2),
+                                pt2 = new latLon(lat + y / 2, lng - x / 2),
+                                pt3 = new latLon(lat + y / 2, lng + x / 2),
+                                pt4 = new latLon(lat + y, lng + x / 2),
+                                pt5 = new latLon(lat + y, lng + x),
                                 pt6 = new latLon(lat - y, lng + x),
-                                pt5 = new latLon(lat - y, lng + x / 2),
-                                pt4 = new latLon(lat - y / 2, lng + x / 2),
-                                pt3 = new latLon(lat - y / 2, lng - x / 2),
-                                pt2 = new latLon(lat - y, lng - x / 2),
-                                pt1 = new latLon(lat - y, lng - x),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                                pt7 = new latLon(lat - y, lng + x / 2),
+                                pt8 = new latLon(lat - y / 2, lng + x / 2),
+                                pt9 = new latLon(lat - y / 2, lng - x / 2),
+                                pt10 = new latLon(lat - y, lng - x / 2),
+                                pt11 = new latLon(lat - y, lng - x),
+                                points = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11];
                             break;
                         case "cross":
-                            var pt12 = new latLon(lat + y, lng - x / 2),
-                                pt11 = new latLon(lat + y, lng + x / 2),
-                                pt10 = new latLon(lat + y / 2, lng + x / 2),
-                                pt9 = new latLon(lat + y / 2, lng + x),
-                                pt8 = new latLon(lat - y / 2, lng + x),
-                                pt7 = new latLon(lat - y / 2, lng + x / 2),
+                            var pt0 = new latLon(lat + y, lng - x / 2),
+                                pt1 = new latLon(lat + y, lng + x / 2),
+                                pt2 = new latLon(lat + y / 2, lng + x / 2),
+                                pt3 = new latLon(lat + y / 2, lng + x),
+                                pt4 = new latLon(lat - y / 2, lng + x),
+                                pt5 = new latLon(lat - y / 2, lng + x / 2),
                                 pt6 = new latLon(lat - y, lng + x / 2),
-                                pt5 = new latLon(lat - y, lng - x / 2),
-                                pt4 = new latLon(lat - y / 2, lng - x / 2),
-                                pt3 = new latLon(lat - y / 2, lng - x),
-                                pt2 = new latLon(lat + y / 2, lng - x),
-                                pt1 = new latLon(lat + y / 2, lng - x / 2),
-                                points = [pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11, pt12];
+                                pt7 = new latLon(lat - y, lng - x / 2),
+                                pt8 = new latLon(lat - y / 2, lng - x / 2),
+                                pt9 = new latLon(lat - y / 2, lng - x),
+                                pt10 = new latLon(lat + y / 2, lng - x),
+                                pt11 = new latLon(lat + y / 2, lng - x / 2),
+                                points = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11];
                             break;
                         case "trap":
-                            var pt4 = new latLon(lat + y / 2, lng - x / 2),
-                                pt3 = new latLon(lat + y / 2, lng + x / 2),
+                            var pt0 = new latLon(lat + y / 2, lng - x / 2),
+                                pt1 = new latLon(lat + y / 2, lng + x / 2),
                                 pt2 = new latLon(lat - y / 2, lng + x),
-                                pt1 = new latLon(lat - y / 2, lng - x),
-                                points = [pt1, pt2, pt3, pt4];
+                                pt3 = new latLon(lat - y / 2, lng - x),
+                                points = [pt0, pt1, pt2, pt3];
                             break;
                         case "triangle":
-                            var pt3 = new latLon(lat + y, lng - x),
-                                pt2 = new latLon(lat - y, lng + x),
-                                pt1 = new latLon(lat - y, lng - x),
-                                points = [pt1, pt2, pt3];
+                            var pt0 = new latLon(lat + y, lng - x),
+                                pt1 = new latLon(lat - y, lng + x),
+                                pt2 = new latLon(lat - y, lng - x),
+                                points = [pt0, pt1, pt2];
                             break;
                     }
                     var polygon = {

@@ -483,7 +483,7 @@ function buildSTL(buildings) {
         lengths = points.findLengths();
 
         theta = findRotation(points[0], points[1]);
-        console.log("theat: " + theta);
+        console.log("theta: " + theta);
         console.log("Points");
         console.log(points);
         switch (bldg.bldgFootprint) {
@@ -492,8 +492,8 @@ function buildSTL(buildings) {
                 var orthRect = [
                     [points[0][0], points[0][1]],
                     [points[0][0] + avergeLengths[0], points[0][1]],
-                    [points[0][0] + avergeLengths[0], points[0][1] + avergeLengths[1]],
-                    [points[0][0], points[0][1] + avergeLengths[1]]
+                    [points[0][0] + avergeLengths[0], points[0][1] - avergeLengths[1]],
+                    [points[0][0], points[0][1] - avergeLengths[1]]
                 ];
                 console.log("Orth Rect");
                 console.log(orthRect);
@@ -526,20 +526,20 @@ function buildSTL(buildings) {
             case 'l':
 
                 //Average 1 & 3+5
-                var l1 = (lengths[0] + (lengths[2] + lengths[4])) / 2;
-                var l3 = l1 * (lengths[2] / (lengths[2] + lengths[4])),
-                    l5 = l1 * (lengths[4] / (lengths[2] + lengths[4]));
+                var l4 = (lengths[4] + (lengths[0] + lengths[2])) / 2,
+                    l0 = l4 * (lengths[0] / (lengths[0] + lengths[2])),
+                    l2 = l4 * (lengths[2] / (lengths[0] + lengths[2]));
                 //Average 6 & 2+4
-                var l6 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
-                var l2 = l6 * (lengths[1] / (lengths[1] + lengths[3])),
-                    l4 = l6 * (lengths[3] / (lengths[1] + lengths[3]));
+                var l5 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
+                var l3 = l5 * (lengths[1] / (lengths[1] + lengths[3])),
+                    l1 = l5 * (lengths[3] / (lengths[1] + lengths[3]));
                 var orthL = [
                     [points[0][0], points[0][1]],
-                    [points[0][0] + l1, points[0][1]],
-                    [points[0][0] + l1, points[0][1] + l2],
-                    [points[0][0] + l5, points[0][1] + l2],
-                    [points[0][0] + l5, points[0][1] + l6],
-                    [points[0][0], points[0][1] + l6]
+                    [points[0][0] + l0, points[0][1]],
+                    [points[0][0] + l0, points[0][1] - l1],
+                    [points[0][0] + l4, points[0][1] - l1],
+                    [points[0][0] + l4, points[0][1] - l5],
+                    [points[0][0], points[0][1] + l5]
                 ];
                 console.log("Orth L");
                 console.log(orthL);
@@ -579,14 +579,14 @@ function buildSTL(buildings) {
 
                 break;
             case "t":
-                var l4 = ((lengths[0] + lengths[2] + lengths[6]) + lengths[4]) / 2,
-                    l0 = l4 * (lengths[0] / (lengths[0] + lengths[2] + lengths[6])),
-                    l2 = l4 * (lengths[2] / (lengths[0] + lengths[2] + lengths[6])),
-                    l6 = l4 * (lengths[6] / (lengths[0] + lengths[2] + lengths[6]));
-                var l1 = (lengths[1] + lengths[7]) / 2,
-                    l7 = l1,
+                var l0 = (lengths[0] + (lengths[2] + lengths[4] + lengths[6])) / 2,
+                    l1 = (lengths[1] + lengths[1]) / 2,
+                    l2 = l0 * (lengths[2] / (lengths[2] + lengths[4] + lengths[6])),
                     l3 = (lengths[3] + lengths[5]) / 2,
-                    l5 = l3;
+                    l4 = l0 * (lengths[4] / (lengths[2] + lengths[4] + lengths[6])),
+                    l5 = l3,
+                    l6 = l0 * (lengths[6] / (lengths[2] + lengths[4] + lengths[6])),
+                    l7 = l1;
                 console.log(lengths);
                 console.log(l0);
                 console.log(l1);
@@ -598,16 +598,15 @@ function buildSTL(buildings) {
                 console.log(l7);
                 var orthT = [];
                 orthT.push(orthPoints(points[0], points[1], l0));
-
                 var orthT = [
                     [points[0][0], points[0][1]],
                     [points[0][0] + l0, points[0][1]],
-                    [points[0][0] + l0, points[0][1] + l1],
-                    [points[0][0] + l0 + l2, points[0][1] + l1],
-                    [points[0][0] + l0 + l2, points[0][1] + l1 + l3],
-                    [points[0][0] - l4, points[0][1] + l7 + l5],
-                    [points[0][0] - l6, points[0][1] + l7],
-                    [points[0][0], points[0][1] + l7]
+                    [points[0][0] + l0, points[0][1] - l1],
+                    [points[0][0] + l6 + l4, points[0][1] - l1],
+                    [points[0][0] + l6 + l4, points[0][1] - l1 - l3],
+                    [points[0][0] + l6, points[0][1] - l7 - l5],
+                    [points[0][0] + l6, points[0][1] - l7],
+                    [points[0][0], points[0][1] - l7]
                 ];
                 console.log("Orth T");
                 console.log(orthT);

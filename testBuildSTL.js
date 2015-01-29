@@ -1,359 +1,309 @@
 var buildSTL = require('./buildSTL.js').buildSTL;
 
-var rect = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.98762347367878,
-                "longitude": -76.94352699421583
-            }, {
-                "latitude": 38.98762347367878,
-                "longitude": -76.9428498952067
-            }, {
-                "latitude": 38.988300572687905,
-                "longitude": -76.9428498952067
-            }, {
-                "latitude": 38.988300572687905,
-                "longitude": -76.94352699421583
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 0
-        },
-        "id": 0,
-        "name": "Rect",
-        "numFloors": 4,
-        "flrToFlrHeight": 4,
-        "shape": "rect",
-        "footprintArea": 4406.063685894671,
-        "height": 16,
-        "totalArea": 17624.254743578684,
-        "bldgFootprint": "rect"
-    },
-    l = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.987745431004775,
-                "longitude": -76.94249210873537
-            }, {
-                "latitude": 38.98735070646844,
-                "longitude": -76.94249210583459
-            }, {
-                "latitude": 38.9873507085366,
-                "longitude": -76.94205655187773
-            }, {
-                "latitude": 38.98748228275276,
-                "longitude": -76.94205655234967
-            }, {
-                "latitude": 38.98748228257245,
-                "longitude": -76.94162099758316
-            }, {
-                "latitude": 38.987745429746205,
-                "longitude": -76.94162099596397
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 1
-        },
-        "id": 1,
-        "name": "L",
-        "numFloors": 4,
-        "flrToFlrHeight": 4,
-        "shape": "l",
-        "footprintArea": 2753.804068991814,
-        "height": 16,
-        "totalArea": 11015.216275967256,
-        "bldgFootprint": "l"
-    },
-    t = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.9875242081253,
-                "longitude": -76.94402202054626
-            }, {
-                "latitude": 38.987524208858986,
-                "longitude": -76.94419129529848
-            }, {
-                "latitude": 38.987862758363526,
-                "longitude": -76.9441912936793
-            }, {
-                "latitude": 38.98786275836354,
-                "longitude": -76.94452984642231
-            }, {
-                "latitude": 38.987524208858986,
-                "longitude": -76.94452984480313
-            }, {
-                "latitude": 38.9875242081253,
-                "longitude": -76.94469911955535
-            }, {
-                "latitude": 38.98735493337302,
-                "longitude": -76.94469911793617
-            }, {
-                "latitude": 38.98735493337302,
-                "longitude": -76.94402202216544
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 2
-        },
-        "id": 2,
-        "name": "T",
-        "numFloors": 2,
-        "flrToFlrHeight": 4,
-        "shape": "t",
-        "footprintArea": 2203.048576627731,
-        "height": 8,
-        "totalArea": 4406.097153255462,
-        "bldgFootprint": "t"
-    },
-    u = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.98844946447333,
-                "longitude": -76.94248629711805
-            }, {
-                "latitude": 38.98844946447333,
-                "longitude": -76.94180919810893
-            }, {
-                "latitude": 38.98895728873017,
-                "longitude": -76.94180919810893
-            }, {
-                "latitude": 38.98895728873017,
-                "longitude": -76.94197847286121
-            }, {
-                "latitude": 38.98861873922561,
-                "longitude": -76.94197847286121
-            }, {
-                "latitude": 38.98861873922561,
-                "longitude": -76.94231702236577
-            }, {
-                "latitude": 38.98895728873017,
-                "longitude": -76.94231702236577
-            }, {
-                "latitude": 38.98895728873017,
-                "longitude": -76.94248629711805
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 3
-        },
-        "id": 3,
-        "name": "U",
-        "numFloors": 8,
-        "flrToFlrHeight": 4,
-        "shape": "u",
-        "footprintArea": 2203.0082964787157,
-        "height": 32,
-        "totalArea": 17624.066371829726,
-        "bldgFootprint": "u"
-    },
-    h = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.98647264230159,
-                "longitude": -76.9435404052609
-            }, {
-                "latitude": 38.98647264230159,
-                "longitude": -76.94337113050862
-            }, {
-                "latitude": 38.98664191705387,
-                "longitude": -76.94337113050862
-            }, {
-                "latitude": 38.98664191705387,
-                "longitude": -76.94303258100406
-            }, {
-                "latitude": 38.98647264230159,
-                "longitude": -76.94303258100406
-            }, {
-                "latitude": 38.98647264230159,
-                "longitude": -76.94286330625178
-            }, {
-                "latitude": 38.987149741310716,
-                "longitude": -76.94286330625178
-            }, {
-                "latitude": 38.987149741310716,
-                "longitude": -76.94303258100406
-            }, {
-                "latitude": 38.986980466558435,
-                "longitude": -76.94303258100406
-            }, {
-                "latitude": 38.986980466558435,
-                "longitude": -76.94337113050862
-            }, {
-                "latitude": 38.987149741310716,
-                "longitude": -76.94337113050862
-            }, {
-                "latitude": 38.987149741310716,
-                "longitude": -76.9435404052609
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 4
-        },
-        "id": 4,
-        "name": "H",
-        "numFloors": 2,
-        "flrToFlrHeight": 4,
-        "shape": "h",
-        "footprintArea": 3304.601489787419,
-        "height": 8,
-        "totalArea": 6609.202979574838,
-        "bldgFootprint": "h"
-    },
-    cross = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.988850558045115,
-                "longitude": -76.94477929024144
-            }, {
-                "latitude": 38.988850558045115,
-                "longitude": -76.94494856499372
-            }, {
-                "latitude": 38.98851200854055,
-                "longitude": -76.94494856499372
-            }, {
-                "latitude": 38.98851200854055,
-                "longitude": -76.94477929024144
-            }, {
-                "latitude": 38.98834273378827,
-                "longitude": -76.94477929024144
-            }, {
-                "latitude": 38.98834273378827,
-                "longitude": -76.94444074073688
-            }, {
-                "latitude": 38.98851200854055,
-                "longitude": -76.94444074073688
-            }, {
-                "latitude": 38.98851200854055,
-                "longitude": -76.9442714659846
-            }, {
-                "latitude": 38.988850558045115,
-                "longitude": -76.9442714659846
-            }, {
-                "latitude": 38.988850558045115,
-                "longitude": -76.94444074073688
-            }, {
-                "latitude": 38.989019832797396,
-                "longitude": -76.94444074073688
-            }, {
-                "latitude": 38.989019832797396,
-                "longitude": -76.94477929024144
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 5
-        },
-        "id": 5,
-        "name": "Cross",
-        "numFloors": 5,
-        "flrToFlrHeight": 4,
-        "shape": "cross",
-        "footprintArea": 3304.514185915169,
-        "height": 20,
-        "totalArea": 16522.570929575846,
-        "bldgFootprint": "cross"
-    },
-    trap = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.98798246702466,
-                "longitude": -76.94132758282362
-            }, {
-                "latitude": 38.98798246702466,
-                "longitude": -76.9406504838145
-            }, {
-                "latitude": 38.98832101652922,
-                "longitude": -76.94081975856678
-            }, {
-                "latitude": 38.98832101652922,
-                "longitude": -76.94115830807134
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 6
-        },
-        "id": 6,
-        "name": "Trap",
-        "numFloors": 8,
-        "flrToFlrHeight": 3,
-        "shape": "trap",
-        "footprintArea": 1652.2689805168263,
-        "height": 24,
-        "totalArea": 13218.15184413461,
-        "bldgFootprint": "trap"
-    },
-    triangle = {
-        "polygon": {
-            "path": [{
-                "latitude": 38.98867004683864,
-                "longitude": -76.94398028753935
-            }, {
-                "latitude": 38.98867004683864,
-                "longitude": -76.94330318853022
-            }, {
-                "latitude": 38.989347145847766,
-                "longitude": -76.94398028753935
-            }],
-            "fill": {
-                "color": "#777",
-                "opacity": 0.6
-            },
-            "stroke": {
-                "color": "#777",
-                "weight": 1
-            },
-            "id": 7
-        },
-        "id": 7,
-        "name": "Triangle",
-        "numFloors": 3,
-        "flrToFlrHeight": 3,
-        "shape": "triangle",
-        "footprintArea": 2203.009807047633,
-        "height": 9,
-        "totalArea": 6609.029421142899,
-        "bldgFootprint": "triangle"
-    };
 
-buildSTL([rect]);
+
+
+var buildings = [{
+    "polygon": {
+        "path": [{
+            "latitude": 38.98844442529447,
+            "longitude": -76.9439722409123
+        }, {
+            "latitude": 38.98844442529447,
+            "longitude": -76.94329514190318
+        }, {
+            "latitude": 38.98776732628534,
+            "longitude": -76.94329514190318
+        }, {
+            "latitude": 38.98776732628534,
+            "longitude": -76.9439722409123
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 0
+    },
+    "id": 0,
+    "name": "Rectangle",
+    "numFloors": 10,
+    "flrToFlrHeight": 12,
+    "shape": "rect",
+    "footprintArea": 4406.05473168683,
+    "height": 120,
+    "totalArea": 44060.547316868295,
+    "bldgFootprint": "rect"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98677551942541,
+            "longitude": -76.94407192480764
+        }, {
+            "latitude": 38.98697612370795,
+            "longitude": -76.94407192642666
+        }, {
+            "latitude": 38.98698029484979,
+            "longitude": -76.94336815287261
+        }, {
+            "latitude": 38.987393324346925,
+            "longitude": -76.94336278892655
+        }, {
+            "latitude": 38.98739332479589,
+            "longitude": -76.94315522323046
+        }, {
+            "latitude": 38.9867901121675,
+            "longitude": -76.94312572088813
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 1
+    },
+    "id": 1,
+    "name": "LShape",
+    "numFloors": 5,
+    "flrToFlrHeight": 10,
+    "shape": "l",
+    "footprintArea": 2647.8601668192987,
+    "height": 50,
+    "totalArea": 13239.300834096493,
+    "bldgFootprint": "l"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98729944886876,
+            "longitude": -76.94234950445829
+        }, {
+            "latitude": 38.98729944886876,
+            "longitude": -76.94167240544917
+        }, {
+            "latitude": 38.98713017411648,
+            "longitude": -76.94167240544917
+        }, {
+            "latitude": 38.98713017411648,
+            "longitude": -76.94184168020145
+        }, {
+            "latitude": 38.98679162461192,
+            "longitude": -76.94184168020145
+        }, {
+            "latitude": 38.98679162461192,
+            "longitude": -76.94218022970601
+        }, {
+            "latitude": 38.98713017411648,
+            "longitude": -76.94218022970601
+        }, {
+            "latitude": 38.98713017411648,
+            "longitude": -76.94234950445829
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 2
+    },
+    "id": 2,
+    "name": "TSHape",
+    "numFloors": 3,
+    "flrToFlrHeight": 12,
+    "shape": "t",
+    "footprintArea": 2203.060839783086,
+    "height": 36,
+    "totalArea": 6609.182519349259,
+    "bldgFootprint": "t"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98694485184972,
+            "longitude": -76.94438978789528
+        }, {
+            "latitude": 38.98687906415492,
+            "longitude": -76.94438978821567
+        }, {
+            "latitude": 38.98687906438538,
+            "longitude": -76.94449867597945
+        }, {
+            "latitude": 38.98674748883845,
+            "longitude": -76.94449867618188
+        }, {
+            "latitude": 38.986747488765324,
+            "longitude": -76.94438978862054
+        }, {
+            "latitude": 38.98668170107051,
+            "longitude": -76.94438978870492
+        }, {
+            "latitude": 38.98668170044124,
+            "longitude": -76.94482533854539
+        }, {
+            "latitude": 38.98674748845068,
+            "longitude": -76.94482533886578
+        }, {
+            "latitude": 38.98674748868115,
+            "longitude": -76.94471645130444
+        }, {
+            "latitude": 38.9868790645427,
+            "longitude": -76.94471645150688
+        }, {
+            "latitude": 38.98687906446955,
+            "longitude": -76.94482533927055
+        }, {
+            "latitude": 38.98694485247899,
+            "longitude": -76.94482533935502
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 3
+    },
+    "id": 3,
+    "name": "HShape",
+    "numFloors": 6,
+    "flrToFlrHeight": 12,
+    "shape": "h",
+    "footprintArea": 826.1503480473832,
+    "height": 72,
+    "totalArea": 4956.9020882843,
+    "bldgFootprint": "h"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.988688809716685,
+            "longitude": -76.94262488685303
+        }, {
+            "latitude": 38.9886888097167,
+            "longitude": -76.94296343311912
+        }, {
+            "latitude": 38.988858084468966,
+            "longitude": -76.94296343392865
+        }, {
+            "latitude": 38.98885808373525,
+            "longitude": -76.94313270787134
+        }, {
+            "latitude": 38.98919663323984,
+            "longitude": -76.94313271110991
+        }, {
+            "latitude": 38.9891966339735,
+            "longitude": -76.94296343554794
+        }, {
+            "latitude": 38.98962233849727,
+            "longitude": -76.94296075255883
+        }, {
+            "latitude": 38.98961608319589,
+            "longitude": -76.94262488090789
+        }, {
+            "latitude": 38.9891966339735,
+            "longitude": -76.9426248844241
+        }, {
+            "latitude": 38.98919663323978,
+            "longitude": -76.94245560886225
+        }, {
+            "latitude": 38.98885808373523,
+            "longitude": -76.94245561210082
+        }, {
+            "latitude": 38.98885808446896,
+            "longitude": -76.94262488604339
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 4
+    },
+    "id": 4,
+    "name": "Cross",
+    "numFloors": 4,
+    "flrToFlrHeight": 12,
+    "shape": "cross",
+    "footprintArea": 4123.234620408998,
+    "height": 48,
+    "totalArea": 16492.938481635993,
+    "bldgFootprint": "cross"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.988318756289054,
+            "longitude": -76.94154104719227
+        }, {
+            "latitude": 38.9880556106174,
+            "longitude": -76.94154104800191
+        }, {
+            "latitude": 38.98792403652299,
+            "longitude": -76.94197660541943
+        }, {
+            "latitude": 38.98845033038346,
+            "longitude": -76.94197660703861
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 5
+    },
+    "id": 5,
+    "name": "Trap",
+    "numFloors": 3,
+    "flrToFlrHeight": 10,
+    "shape": "trap",
+    "footprintArea": 1652.2681530978637,
+    "height": 30,
+    "totalArea": 4956.804459293591,
+    "bldgFootprint": "trap"
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98663734478725,
+            "longitude": -76.94064512263473
+        }, {
+            "latitude": 38.98731444379635,
+            "longitude": -76.94132222164393
+        }, {
+            "latitude": 38.98731444379632,
+            "longitude": -76.94064511615811
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 6
+    },
+    "id": 6,
+    "name": "Triangle",
+    "numFloors": 8,
+    "flrToFlrHeight": 10,
+    "shape": "triangle",
+    "footprintArea": 2203.073070324189,
+    "height": 80,
+    "totalArea": 17624.58456259351,
+    "bldgFootprint": "triangle"
+}];
+
+buildSTL([buildings[0], buildings[1], buildings[2]]);
