@@ -519,28 +519,35 @@ function buildSTL(buildings) {
                 });
 
                 //Roof and Floor
-                createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[3], gridSize, bldg.height).forEach(function(facet) {
+                /*createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[3], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
-                });
+                });*/
                 break;
             case 'l':
-
+                console.log(lengths);
                 //Average 1 & 3+5
                 var l4 = (lengths[4] + (lengths[0] + lengths[2])) / 2,
                     l0 = l4 * (lengths[0] / (lengths[0] + lengths[2])),
                     l2 = l4 * (lengths[2] / (lengths[0] + lengths[2]));
                 //Average 6 & 2+4
                 var l5 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
-                var l3 = l5 * (lengths[1] / (lengths[1] + lengths[3])),
-                    l1 = l5 * (lengths[3] / (lengths[1] + lengths[3]));
-                var orthL = [
-                    [points[0][0], points[0][1]],
-                    [points[0][0] + l0, points[0][1]],
-                    [points[0][0] + l0, points[0][1] - l1],
-                    [points[0][0] + l4, points[0][1] - l1],
-                    [points[0][0] + l4, points[0][1] - l5],
-                    [points[0][0], points[0][1] + l5]
-                ];
+                var l3 = l5 * (lengths[3] / (lengths[1] + lengths[3])),
+                    l1 = l5 * (lengths[1] / (lengths[1] + lengths[3]));
+                console.log(l0);
+                console.log(l1);
+                console.log(l2);
+                console.log(l3);
+                console.log(l4);
+                console.log(l5);
+
+                var pt0 = [points[0][0], points[0][1]],
+                    pt1 = [pt0[0] + l0, pt0[1]],
+                    pt2 = [pt1[0], pt1[1] - l1],
+                    pt3 = [pt2[0] - l2, pt2[1]],
+                    pt4 = [pt3[0], pt3[1] - l3],
+                    pt5 = [pt4[0] - l4, pt4[1]];
+
+                var orthL = [pt0, pt1, pt2, pt3, pt4, pt5];
                 console.log("Orth L");
                 console.log(orthL);
 
@@ -564,7 +571,7 @@ function buildSTL(buildings) {
                 });
 
                 //Roof and Floor
-                var length2_3 = distanceFormula(bldg.adjustedPoints[1][0], bldg.adjustedPoints[1][1], bldg.adjustedPoints[2][0], bldg.adjustedPoints[2][1]),
+                /*var length2_3 = distanceFormula(bldg.adjustedPoints[1][0], bldg.adjustedPoints[1][1], bldg.adjustedPoints[2][0], bldg.adjustedPoints[2][1]),
                     length1_6 = distanceFormula(bldg.adjustedPoints[0][0], bldg.adjustedPoints[0][1], bldg.adjustedPoints[5][0], bldg.adjustedPoints[5][1]),
                     dx = (bldg.adjustedPoints[5][0] - bldg.adjustedPoints[0][0]) / length1_6,
                     dy = (bldg.adjustedPoints[5][1] - bldg.adjustedPoints[0][1]) / length1_6,
@@ -574,7 +581,7 @@ function buildSTL(buildings) {
                 });
                 createRotateRoof(pt7, bldg.adjustedPoints[3], bldg.adjustedPoints[5], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
-                });
+                });*/
 
 
                 break;
@@ -596,18 +603,17 @@ function buildSTL(buildings) {
                 console.log(l5);
                 console.log(l6);
                 console.log(l7);
-                var orthT = [];
-                orthT.push(orthPoints(points[0], points[1], l0));
-                var orthT = [
-                    [points[0][0], points[0][1]],
-                    [points[0][0] + l0, points[0][1]],
-                    [points[0][0] + l0, points[0][1] - l1],
-                    [points[0][0] + l6 + l4, points[0][1] - l1],
-                    [points[0][0] + l6 + l4, points[0][1] - l1 - l3],
-                    [points[0][0] + l6, points[0][1] - l7 - l5],
-                    [points[0][0] + l6, points[0][1] - l7],
-                    [points[0][0], points[0][1] - l7]
-                ];
+
+                var pt0 = [points[0][0], points[0][1]],
+                    pt1 = [pt0[0] + l0, pt0[1]],
+                    pt2 = [pt1[0], pt1[1] - l1],
+                    pt3 = [pt2[0] - l2, pt2[1]],
+                    pt4 = [pt3[0], pt3[1] - l3],
+                    pt5 = [pt4[0] - l4, pt4[1]],
+                    pt6 = [pt5[0], pt5[1] + l5],
+                    pt7 = [pt6[0] - l6, pt6[1]];
+
+                var orthT = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
                 console.log("Orth T");
                 console.log(orthT);
                 var rotatedT = [];
@@ -629,12 +635,12 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof
-                createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[7], gridSize, bldg.height).forEach(function(facet) {
+                /*createRotateRoof(bldg.adjustedPoints[0], bldg.adjustedPoints[1], bldg.adjustedPoints[7], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 createRotateRoof(bldg.adjustedPoints[6], bldg.adjustedPoints[3], bldg.adjustedPoints[5], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
-                });
+                });*/
 
                 break;
                 /*case "u":
