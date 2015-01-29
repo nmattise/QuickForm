@@ -356,5 +356,4 @@ var rect = {
         "bldgFootprint": "triangle"
     };
 
-
-buildSTL([rect, l, t]);
+buildSTL([rect]);
