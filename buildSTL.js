@@ -655,7 +655,7 @@ function buildSTL(buildings) {
             description: bldg.name,
             facets: facets
         };
-        allBldgSTL += stl.fromObject(stlObj) + "/n";
+        allBldgSTL += stl.fromObject(stlObj) + "\n";
 
         //Ground Stats for This Building
         minMaxPts = minMaxPoints(bldg.adjustedPoints);
