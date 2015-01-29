@@ -1,14 +1,14 @@
   var app = angular.module('drawMap', ['uiGmapgoogle-maps']);
 
 
-  app.config(function (uiGmapGoogleMapApiProvider) {
+  app.config(function(uiGmapGoogleMapApiProvider) {
       uiGmapGoogleMapApiProvider.configure({
           //    key: 'your api key',
           v: '3.17',
           libraries: 'weather,geometry,visualization,drawing'
       });
   })
-   app.controller('drawCtrl', function ($scope, $window, uiGmapGoogleMapApi) {
+  app.controller('drawCtrl', function($scope, $window, uiGmapGoogleMapApi) {
       //Units
       $scope.units = "ip";
       //Initial Map Settings
@@ -24,7 +24,7 @@
               draggableCursor: 'url(), crosshair'
           },
           events: {
-              click: function (mapModel, eventName, originalEventArgs) {
+              click: function(mapModel, eventName, originalEventArgs) {
                   var e = originalEventArgs[0];
                   var lat = e.latLng.lat(),
                       lng = e.latLng.lng();
@@ -53,18 +53,18 @@
       //Undo/Redo Points
       var sparePoints = new Array;
       //Functions
-      $scope.undoPoint = function () {
+      $scope.undoPoint = function() {
           var pt = $scope.polyline.path.pop();
           sparePoints.push(pt);
       };
-      $scope.redoPoint = function () {
+      $scope.redoPoint = function() {
           if (sparePoints[0]) {
               var pt = sparePoints.pop();
               $scope.polyline.path.push(pt);
           }
 
       };
-      $scope.addBuilding = function () {
+      $scope.addBuilding = function() {
           var polygon = $scope.polyline.path;
           polygon.pop();
           if ($scope.buildings.length > 0) {
@@ -97,6 +97,25 @@
                   }
               }
           };
+          //find average of points
+          var lat = 0,
+              lng = 0,
+              avgLat, avgLng;
+          polygon.forEach(function(pt) {
+              lat += pt.latitude;
+              lng += pt.longitude;
+          });
+          avgLat = lat / polygon.length;
+          avgLng = lng / polygon.length;
+          var coords = [];
+          var origin = new latLon(avgLat, avgLng);
+          console.log(origin);
+          polygon.forEach(function(pt) {
+              var point = new latLon(pt.latitude, pt.longitude);
+              coords.push(origin.coordinatesTo(point));
+              console.log(coords);
+          });
+          building.coords = coords;
           $scope.buildings.push(building);
           //Reset the Variables
           $scope.polyline = {
@@ -112,14 +131,14 @@
           };
           //$scope.$apply();
       }
-      $scope.editBuilding = function (id) {
-          $scope.buildings.forEach(function (building) {
+      $scope.editBuilding = function(id) {
+          $scope.buildings.forEach(function(building) {
               if (building.id == id) {
                   building.map.editable = !building.map.editable;
               }
           });
       }
-      $scope.removeBuilding = function (id) {
+      $scope.removeBuilding = function(id) {
           var place = new Number;
           for (var i = 0; i < $scope.buildings.length; i++) {
               if ($scope.buildings[i].id == id) {
@@ -128,10 +147,10 @@
           };
           $scope.buildings.splice(place, place + 1)
       }
-      $scope.buildSTL = function () {
+      $scope.buildSTL = function() {
           var selectedIds = new Array,
               selectedBuildings = new Array;
-          $scope.buildings.forEach(function (b) {
+          $scope.buildings.forEach(function(b) {
               if (b.selected) {
                   selectedIds.push(b.id);
                   selectedBuildings.push(b);
@@ -143,10 +162,10 @@
               $window.alert("Please select at least one building to create an STL file");
           }
       };
-      $scope.buildOSM = function () {
+      $scope.buildOSM = function() {
           var selectedIds = new Array,
               selectedBuildings = new Array;
-          $scope.buildings.forEach(function (b) {
+          $scope.buildings.forEach(function(b) {
               if (b.selected) {
                   selectedIds.push(b.id);
                   selectedBuildings.push(b);
@@ -159,7 +178,7 @@
           }
       };
 
-      uiGmapGoogleMapApi.then(function (maps) {
+      uiGmapGoogleMapApi.then(function(maps) {
 
       });
   });
