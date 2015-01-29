@@ -199,7 +199,7 @@ function createRotateRoof(point1, point2, point4, gridSize, height) {
     iterator14 = parseInt(sideLength14 / gridSize);
     gridLength14 = ((sideLength14 % gridSize) / (parseInt(sideLength14 / gridSize))) + gridSize;
     //Rotation
-    var theta = findRotation(point1, point2) - Math.PI / 2;
+    var theta = findRotation(point1, point2) + Math.PI / 2;
     for (var j = 0; j < iterator14; j++) {
         pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
         for (i = 0; i < iterator12; i++) {
