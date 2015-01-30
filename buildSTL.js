@@ -208,14 +208,67 @@ function createRotateRoof(point1, point2, point4, gridSize, height) {
             pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
             pt3 = [pt2[0], pt2[1] + gridLength14];
             pt4 = [pt1_1[0], pt1_1[1] + gridLength14];
+            //Points
             var pt1_14 = rotatePoint(pt1_1, pt1_1, theta);
             var pt2_14 = rotatePoint(pt1_1, pt2, theta);
             var pt3_14 = rotatePoint(pt1_1, pt3, theta);
             var pt4_14 = rotatePoint(pt1_1, pt4, theta);
+            //Roof
             triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
+            //Floor
             triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
+            facets.push(triFloor[0]);
+            facets.push(triFloor[1]);
+        }
+    }
+    return facets;
+}
+
+function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
+    var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta, triFloor, triRoof, facets = [];
+    //Lengths of Square
+    l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
+    l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1]);
+    //GridLength & Iterators for Side 0
+    gridLength0 = ((l0 % gridSize) / (parseInt(l0 / gridSize))) + gridSize;
+    deltaX0 = pt1[0] - pt0[0];
+    deltaY0 = pt1[1] - pt0[1];
+    xIt0 = deltaX0 / parseInt(l0 / gridSize);
+    yIt0 = deltaY0 / parseInt(l0 / gridSize);
+    iterator0 = parseInt(l0 / gridSize);
+    //Infinity Check
+    if (!isFinite(xIt0)) xIt0 = 0;
+    if (!isFinite(yIt0)) yIt0 = 0;
+    //GridLength & Iterators for Side 3
+    deltaX3 = pt0[0] - pt3[0];
+    deltaY3 = pt0[1] - pt3[1];
+    xIt3 = deltaX3 / parseInt(l3 / gridSize);
+    yIt3 = deltaY3 / parseInt(l3 / gridSize);
+    iterator3 = parseInt(l3 / gridSize);
+    gridLength3 = ((l3 % gridSize) / (parseInt(l3 / gridSize))) + gridSize;
+    //Infinity Check
+    if (!isFinite(xIt3)) xIt3 = 0;
+    if (!isFinite(yIt3)) yIt3 = 0;
+    //Rotation
+    theta = findRotation(pt0, pt1);
+    //Loop Along side 3
+    for (var j = 0; j < iterator3; j++) {
+        var point0, point3;
+        point0 = [pt0[0] - (xIt0 * j), pt0[1] - (yIt0 * j)];
+        point3 = [pt0[0] - (xIt0 * (j + 1)), pt0[1] - (yIt0 * (j + 1))];
+        //Loop Along side 0
+        for (var i = 0; i < iterator0; i++) {
+            var point1, point2;
+            point1 = [point0[0] + gridLength0 * Math.sin(theta), point0[1] + gridLength0 * Math.cos(theta)];
+            point2 = [point3[0] + gridLength0 * Math.sin(theta), point3[1] + gridLength0 * Math.cos(theta)];
+            //Roof
+            triRoof = createHorPlaneUp(point0, point1, point2, point3, height);
+            facets.push(triRoof[0]);
+            facets.push(triRoof[1]);
+            //Floor
+            triFloor = createHorPlaneDn(point0, point1, point2, point3, 0);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
         }
@@ -514,7 +567,7 @@ function buildSTL(buildings) {
                 });
 
                 //Roof and Floor
-                createRotateRoof(orthRect[0], orthRect[1], orthRect[3], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthRect[0], orthRect[1], orthRect[3], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
                 break;
@@ -561,10 +614,10 @@ function buildSTL(buildings) {
                 var dx = (orthL[5][0] - orthL[0][0]) / l5,
                     dy = (orthL[5][1] - orthL[0][1]) / l5,
                     pt7 = [(dx * l1) + orthL[0][0], (dy * l1) + orthL[0][1]];
-                createRotateRoof(orthL[0], orthL[1], pt7, gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthL[0], orthL[1], pt7, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRotateRoof(pt7, orthL[3], orthL[5], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(pt7, orthL[3], orthL[5], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -613,10 +666,10 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof
-                createRotateRoof(orthT[0], orthT[1], orthT[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRotateRoof(orthT[6], orthT[3], orthT[5], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthT[6], orthT[3], orthT[5], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
 
