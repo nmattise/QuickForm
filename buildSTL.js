@@ -691,13 +691,13 @@ function buildSTL(buildings) {
                 });
 
                 //Roof
-                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[0], orthU[1], orthU[7], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthT[2], orthT[3], pt6_2, gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[2], orthU[3], pt6_2, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthT[4], orthT[5], pt6_3, gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[4], orthU[5], pt6_3, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
 
