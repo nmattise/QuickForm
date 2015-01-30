@@ -664,8 +664,6 @@ function buildSTL(buildings) {
                 l3 = lengths[3];
                 l5 = l3 + lu;
                 l7 = l1 + lu;
-                console.log(lu);
-                console.log(points);
 
                 pt0 = [points[0][0], points[0][1]];
                 pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)];
@@ -807,7 +805,7 @@ function buildSTL(buildings) {
                 createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthCross[2], orthCross[3], orthCross[4], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthCross[2], orthCross[3], orthCross[5], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
 
