@@ -253,16 +253,18 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
     if (!isFinite(yIt3)) yIt3 = 0;
     //Rotation
     theta = findRotation(pt0, pt1);
+    console.log("theta: " + theta);
     //Loop Along side 3
     for (var j = 0; j < iterator3; j++) {
         var point0, point3;
-        point0 = [pt0[0] - (xIt0 * j), pt0[1] - (yIt0 * j)];
-        point3 = [pt0[0] - (xIt0 * (j + 1)), pt0[1] - (yIt0 * (j + 1))];
+        point0 = [pt0[0] - (xIt3 * j), pt0[1] - (yIt3 * j)];
+        point3 = [pt0[0] - (xIt3 * (j + 1)), pt0[1] - (yIt3 * (j + 1))];
         //Loop Along side 0
         for (var i = 0; i < iterator0; i++) {
             var point1, point2;
-            point1 = [point0[0] + gridLength0 * Math.sin(theta), point0[1] + gridLength0 * Math.cos(theta)];
-            point2 = [point3[0] + gridLength0 * Math.sin(theta), point3[1] + gridLength0 * Math.cos(theta)];
+            point1 = [point0[0] + gridLength0 * Math.cos(theta), point0[1] + gridLength0 * Math.sin(theta)];
+            point2 = [point3[0] + gridLength0 * Math.cos(theta), point3[1] + gridLength0 * Math.sin(theta)];
+            console.log([point0, point1, point2, point3]);
             //Roof
             triRoof = createHorPlaneUp(point0, point1, point2, point3, height);
             facets.push(triRoof[0]);
