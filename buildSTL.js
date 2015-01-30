@@ -758,24 +758,23 @@ function buildSTL(buildings) {
                 break;
             case "cross":
                 var l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, orthCross, pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11;
-
                 var topLength = lengths[10] + lengths[0] + lengths[2],
                     rightLength = lengths[1] + lengths[3] + lengths[5],
                     bottomLength = lengths[4] + lengths[6] + lengths[8],
                     leftLength = lengths[7] + lengths[9] + lengths[11];
 
                 l0 = topLength * (lengths[0] / topLength);
-                l1 = rightLength * (lengths[1] / topLength);
+                l1 = rightLength * (lengths[1] / rightLength);
                 l2 = topLength * (lengths[2] / topLength);
-                l3 = rightLength * (lengths[3] / topLength);
-                l4 = bottomLength * (lengths[4] / topLength);
-                l5 = rightLength * (lengths[5] / topLength);
-                l6 = bottomLength * (lengths[6] / topLength);
-                l7 = leftLength * (lengths[7] / topLength);
-                l8 = bottomLength * (lengths[8] / topLength);
-                l9 = leftLength * (lengths[9] / topLength);
+                l3 = rightLength * (lengths[3] / rightLength);
+                l4 = bottomLength * (lengths[4] / bottomLength);
+                l5 = rightLength * (lengths[5] / rightLength);
+                l6 = bottomLength * (lengths[6] / bottomLength);
+                l7 = leftLength * (lengths[7] / leftLength);
+                l8 = bottomLength * (lengths[8] / bottomLength);
+                l9 = leftLength * (lengths[9] / leftLength);
                 l10 = topLength * (lengths[10] / topLength);
-                l11 = leftLength * (lengths[11] / topLength);
+                l11 = leftLength * (lengths[11] / leftLength);
 
                 pt0 = [points[0][0], points[0][1]];
                 pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)];
@@ -801,7 +800,6 @@ function buildSTL(buildings) {
                 createWallMaterial(orthCross[11], orthCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-
                 //Roof & Walls
                 createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
@@ -815,10 +813,36 @@ function buildSTL(buildings) {
 
                 break;
 
-                /*case "trap":
-                    break;
-                case "triangle":
-                    break;*/
+            case "trap":
+                bldg.adjustedPoints = points;
+                createWallMaterial(points[0], points[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                createWallMaterial(points[1], points[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                createWallMaterial(points[2], points[3], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                createWallMaterial(points[3], points[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+
+                break;
+
+            case "triangle":
+                var l0, l1, l2, pt0, pt1, pt2, pt3, tri;
+                bldg.adjustedPoints = points;
+                createWallMaterial(points[0], points[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                createWallMaterial(points[1], points[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                createWallMaterial(points[2], points[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+                break;
         }
         var stlObj = {
             description: bldg.name,
