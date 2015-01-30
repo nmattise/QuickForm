@@ -499,7 +499,7 @@ function buildSTL(buildings) {
                 console.log(orthRect);
                 var rotatedRect = [];
                 orthRect.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthRect[0], point, theta + (Math.PI / 2));
+                    var rotatedPoint = rotatePoint(orthRect[0], point, theta - (Math.PI / 2));
                     rotatedRect.push(rotatedPoint);
                 });
                 console.log("Rotated Rect");
@@ -553,7 +553,7 @@ function buildSTL(buildings) {
 
                 var rotatedL = [];
                 orthL.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthL[0], point, theta);
+                    var rotatedPoint = rotatePoint(orthL[0], point, theta - (Math.PI / 2));
                     rotatedL.push(rotatedPoint);
                 });
                 console.log("Rotated L");
@@ -618,7 +618,7 @@ function buildSTL(buildings) {
                 console.log(orthT);
                 var rotatedT = [];
                 orthT.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthT[0], point, theta);
+                    var rotatedPoint = rotatePoint(orthT[0], point, theta + (Math.PI / 2));
                     rotatedT.push(rotatedPoint);
                 });
                 console.log("Rotated T");
