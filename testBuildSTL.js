@@ -126,6 +126,52 @@ var buildings = [{
 }, {
     "polygon": {
         "path": [{
+            "latitude": 38.98541315700741,
+            "longitude": -76.94221599735104
+        }, {
+            "latitude": 38.98514999969611,
+            "longitude": -76.94221600085788
+        }, {
+            "latitude": 38.98515000176413,
+            "longitude": -76.94265154127434
+        }, {
+            "latitude": 38.98462368462453,
+            "longitude": -76.94265154127434
+        }, {
+            "latitude": 38.9846236850735,
+            "longitude": -76.94221600409595
+        }, {
+            "latitude": 38.984360527762206,
+            "longitude": -76.94221600382716
+        }, {
+            "latitude": 38.98436052272823,
+            "longitude": -76.94308707494609
+        }, {
+            "latitude": 38.98541316204141,
+            "longitude": -76.9430870814222
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 0
+    },
+    "id": 7,
+    "name": "UShape",
+    "numFloors": 3,
+    "flrToFlrHeight": 4,
+    "shape": "u",
+    "footprintArea": 6609.373590190762,
+    "height": 12,
+    "totalArea": 19828.120770572285,
+    "bldgFootprint": "u"
+}, {
+    "polygon": {
+        "path": [{
             "latitude": 38.98694485184972,
             "longitude": -76.94438978789528
         }, {
@@ -306,4 +352,4 @@ var buildings = [{
     "bldgFootprint": "triangle"
 }];
 
-buildSTL([buildings[0]]);
+buildSTL([buildings[0], buildings[1], buildings[2], buildings[3]]);

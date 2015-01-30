@@ -141,13 +141,13 @@ function createVertPlane(pt1, pt2, z1, z2, material) {
 function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
     var tri1 = [
             [pt1[0], pt1[1], z],
-            [pt2[0], pt2[1], z],
-            [pt3[0], pt3[1], z]
+            [pt3[0], pt3[1], z],
+            [pt2[0], pt2[1], z]
         ],
         tri2 = [
             [pt1[0], pt1[1], z],
-            [pt3[0], pt3[1], z],
-            [pt4[0], pt4[1], z]
+            [pt4[0], pt4[1], z],
+            [pt3[0], pt3[1], z]
         ],
         facets = [{
             verts: tri1
@@ -159,19 +159,19 @@ function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
 
 function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
     var tri1 = [
-            [pt1[0], pt1[1], z],
             [pt2[0], pt2[1], z],
-            [pt3[0], pt3[1], z]
+            [pt3[0], pt3[1], z],
+            [pt1[0], pt1[1], z]
         ],
         tri2 = [
-            [pt1[0], pt1[1], z],
             [pt3[0], pt3[1], z],
-            [pt4[0], pt4[1], z]
+            [pt4[0], pt4[1], z],
+            [pt1[0], pt1[1], z]
         ],
         facets = [{
-            verts: tri1.reverse()
+            verts: tri1
         }, {
-            verts: tri2.reverse()
+            verts: tri2
         }];
     return facets;
 }
@@ -248,16 +248,12 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
     yIt3 = deltaY3 / parseInt(l3 / gridSize);
     iterator3 = parseInt(l3 / gridSize);
     gridLength3 = ((l3 % gridSize) / (parseInt(l3 / gridSize))) + gridSize;
-    console.log(gridLength0);
-    console.log(gridLength3);
     //Infinity Check
     if (!isFinite(xIt3)) xIt3 = 0;
     if (!isFinite(yIt3)) yIt3 = 0;
     //Rotation
     theta0 = findRotation(pt0, pt1);
     theta3 = findRotation(pt0, pt3);
-    console.log("theta0: " + theta0);
-    console.log("theta3: " + theta3);
     //Loop Along side 3
     for (var j = 0; j < iterator3; j++) {
         var point0, point3;
@@ -270,8 +266,6 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
             point1 = [point0[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point0[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
             point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
             point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
-
-            console.log([point0_1, point1, point2, point3_1]);
             //Roof
             triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height);
             facets.push(triRoof[0]);
@@ -547,8 +541,7 @@ function buildSTL(buildings) {
         //Find Rotation of the BUilding Shape
         theta = findRotation(points[0], points[1]);
         console.log("theta: " + theta);
-        console.log("Points");
-        console.log(points);
+        console.log(bldg.id);
         switch (bldg.bldgFootprint) {
             case 'rect':
                 var l0 = (lengths[0] + lengths[2]) / 2,
@@ -557,11 +550,8 @@ function buildSTL(buildings) {
                     pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
                     pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)],
                     pt3 = [pt2[0] + l0 * -Math.cos(theta), pt2[1] + l0 * -Math.sin(theta)];
-                console.log(l0);
-                console.log(l1);
+
                 var orthRect = [pt0, pt1, pt2, pt3];
-                console.log("Orth Rect");
-                console.log(orthRect);
                 bldg.adjustedPoints = orthRect;
 
                 //Create Grids for STL Creation
@@ -590,12 +580,6 @@ function buildSTL(buildings) {
                 var l5 = (lengths[5] + (lengths[1] + lengths[3])) / 2;
                 var l3 = l5 * (lengths[3] / (lengths[1] + lengths[3])),
                     l1 = l5 * (lengths[1] / (lengths[1] + lengths[3]));
-                console.log(l0);
-                console.log(l1);
-                console.log(l2);
-                console.log(l3);
-                console.log(l4);
-                console.log(l5);
 
                 var pt0 = [points[0][0], points[0][1]],
                     pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
@@ -605,8 +589,6 @@ function buildSTL(buildings) {
                     pt5 = [pt4[0] + l4 * -Math.cos(theta), pt4[1] + l4 * -Math.sin(theta)];
 
                 var orthL = [pt0, pt1, pt2, pt3, pt4, pt5];
-                console.log("Orth L");
-                console.log(orthL);
                 bldg.adjustedPoints = orthL;
 
                 //Add Walls
@@ -641,15 +623,6 @@ function buildSTL(buildings) {
                     l5 = l3,
                     l6 = l0 * (lengths[6] / (lengths[2] + lengths[4] + lengths[6])),
                     l7 = l1;
-                console.log(lengths);
-                console.log(l0);
-                console.log(l1);
-                console.log(l2);
-                console.log(l3);
-                console.log(l4);
-                console.log(l5);
-                console.log(l6);
-                console.log(l7);
 
                 var pt0 = [points[0][0], points[0][1]],
                     pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
@@ -661,10 +634,7 @@ function buildSTL(buildings) {
                     pt7 = [pt6[0] + l6 * -Math.cos(theta), pt6[1] + l6 * -Math.sin(theta)];
 
                 var orthT = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
-                console.log("Orth T");
-                console.log(orthT);
                 bldg.adjustedPoints = orthT;
-
                 //Add Walls
                 for (var j = 1; j < orthT.length; j++) {
                     createWallMaterial(orthT[j - 1], orthT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
@@ -683,15 +653,61 @@ function buildSTL(buildings) {
                 });
 
                 break;
-                /*case "u":
+            case "u":
+                var l0, l1, l2, l3, l4, l5, l6, l7, lu, orthU, pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt6_3, pt6_2;
+                l6 = ((lengths[0] + lengths[2] + lengths[4]) + lengths[6]) / 2;
+                l0 = l6 * (lengths[0] / (lengths[0] + lengths[2] + lengths[4]));
+                l2 = l6 * (lengths[2] / (lengths[0] + lengths[2] + lengths[4]));
+                l4 = l6 * (lengths[4] / (lengths[0] + lengths[2] + lengths[4]));
+                lu = ((lengths[7] - lengths[1]) + (lengths[5] - lengths[3])) / 2;
+                l1 = lengths[1];
+                l3 = lengths[3];
+                l5 = l3 + lu;
+                l7 = l1 + lu;
+                console.log(lu);
+                console.log(points);
 
-                    break;
-                case "h":
+                pt0 = [points[0][0], points[0][1]];
+                pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)];
+                pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)];
+                pt3 = [pt2[0] + (l2 * Math.cos(theta)), pt2[1] + l2 * Math.sin(theta)];
+                pt4 = [pt3[0] + l3 * -Math.cos(theta - Math.PI / 2), pt3[1] + l3 * -Math.sin(theta - Math.PI / 2)];
+                pt5 = [pt4[0] + (l4 * Math.cos(theta)), pt4[1] + l4 * Math.sin(theta)];
+                pt6 = [pt5[0] + l5 * Math.cos(theta - Math.PI / 2), pt5[1] + l5 * Math.sin(theta - Math.PI / 2)];
+                pt6_3 = [pt6[0] + (l4) * -Math.cos(theta), pt6[1] + (l4) * -Math.sin(theta)];
+                pt6_2 = [pt6[0] + (l4 + l2) * -Math.cos(theta), pt6[1] + (l4 + l2) * -Math.sin(theta)];
+                pt7 = [pt6[0] + l6 * -Math.cos(theta), pt6[1] + l6 * -Math.sin(theta)];
 
-                    break;
-                case "cross":
-                    break;
-                case "trap":
+                orthU = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
+                bldg.adjustedPoints = orthU;
+                //Add Walls
+                for (var j = 1; j < orthU.length; j++) {
+                    createWallMaterial(orthU[j - 1], orthU[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
+                        facets.push(facet)
+                    });
+                };
+                createWallMaterial(orthU[7], orthU[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+
+                //Roof
+                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthT[2], orthT[3], pt6_2, gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthT[4], orthT[5], pt6_3, gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+
+                break;
+                /*  case "h":
+
+                      break;
+                  case "cross":
+                      break;*/
+                /*case "trap":
                     break;
                 case "triangle":
                     break;*/
