@@ -740,7 +740,7 @@ function buildSTL(buildings) {
                         facets.push(facet)
                     });
                 };
-                createWallMaterial(orthH[7], orthH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(orthH[11], orthH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -756,9 +756,65 @@ function buildSTL(buildings) {
                 });
 
                 break;
-                /*case "cross":
-                    break;
-                */
+            case "cross":
+                var l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, orthCross, pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11;
+
+                var topLength = lengths[10] + lengths[0] + lengths[2],
+                    rightLength = lengths[1] + lengths[3] + lengths[5],
+                    bottomLength = lengths[4] + lengths[6] + lengths[8],
+                    leftLength = lengths[7] + lengths[9] + lengths[11];
+
+                l0 = topLength * (lengths[0] / topLength);
+                l1 = rightLength * (lengths[1] / topLength);
+                l2 = topLength * (lengths[2] / topLength);
+                l3 = rightLength * (lengths[3] / topLength);
+                l4 = bottomLength * (lengths[4] / topLength);
+                l5 = rightLength * (lengths[5] / topLength);
+                l6 = bottomLength * (lengths[6] / topLength);
+                l7 = leftLength * (lengths[7] / topLength);
+                l8 = bottomLength * (lengths[8] / topLength);
+                l9 = leftLength * (lengths[9] / topLength);
+                l10 = topLength * (lengths[10] / topLength);
+                l11 = leftLength * (lengths[11] / topLength);
+
+                pt0 = [points[0][0], points[0][1]];
+                pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)];
+                pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)];
+                pt3 = [pt2[0] + (l2 * Math.cos(theta)), pt2[1] + l2 * Math.sin(theta)];
+                pt4 = [pt3[0] + l3 * Math.cos(theta - Math.PI / 2), pt3[1] + l3 * Math.sin(theta - Math.PI / 2)];
+                pt5 = [pt4[0] + l4 * -Math.cos(theta), pt4[1] + l4 * -Math.sin(theta)];
+                pt6 = [pt5[0] + l5 * Math.cos(theta - Math.PI / 2), pt5[1] + l5 * Math.sin(theta - Math.PI / 2)];
+                pt7 = [pt6[0] + l6 * -Math.cos(theta), pt6[1] + l6 * -Math.sin(theta)];
+                pt8 = [pt7[0] + l7 * -Math.cos(theta - Math.PI / 2), pt7[1] + l7 * -Math.sin(theta - Math.PI / 2)];
+                pt9 = [pt8[0] + l8 * -Math.cos(theta), pt8[1] + l8 * -Math.sin(theta)];
+                pt10 = [pt9[0] + l9 * -Math.cos(theta - Math.PI / 2), pt9[1] + l9 * -Math.sin(theta - Math.PI / 2)];
+                pt11 = [pt10[0] + (l10 * Math.cos(theta)), pt10[1] + l10 * Math.sin(theta)];
+
+                orthCross = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11];
+                bldg.adjustedPoints = orthCross;
+                //Add Walls
+                for (var j = 1; j < orthCross.length; j++) {
+                    createWallMaterial(orthCross[j - 1], orthCross[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
+                        facets.push(facet)
+                    });
+                };
+                createWallMaterial(orthCross[11], orthCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+
+                //Roof & Walls
+                createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthCross[2], orthCross[3], orthCross[4], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+
+                break;
+
                 /*case "trap":
                     break;
                 case "triangle":
