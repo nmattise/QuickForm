@@ -109,7 +109,7 @@ function findRotation(pt1, pt2) {
     var deltaX, deltaY, theta;
     deltaX = pt2[0] - pt1[0];
     deltaY = pt2[1] - pt1[1];
-    theta = Math.atan(deltaX / deltaY);
+    theta = Math.atan2(deltaY, deltaX);
     return theta
 }
 
@@ -488,24 +488,20 @@ function buildSTL(buildings) {
         console.log(points);
         switch (bldg.bldgFootprint) {
             case 'rect':
-                var avergeLengths = [(lengths[0] + lengths[2]) / 2, (lengths[1] + lengths[3]) / 2];
-                var orthRect = [
-                    [points[0][0], points[0][1]],
-                    [points[0][0] + avergeLengths[0], points[0][1]],
-                    [points[0][0] + avergeLengths[0], points[0][1] - avergeLengths[1]],
-                    [points[0][0], points[0][1] - avergeLengths[1]]
-                ];
+                var l0 = (lengths[0] + lengths[2]) / 2,
+                    l1 = (lengths[1] + lengths[3]) / 2,
+                    pt0 = [points[0][0], points[0][1]],
+                    pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
+                    pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)],
+                    pt3 = [pt2[0] + l0 * -Math.cos(theta), pt2[1] + l0 * -Math.sin(theta)];
+                console.log(l0);
+                console.log(l1);
+                var orthRect = [pt0, pt1, pt2, pt3];
                 console.log("Orth Rect");
                 console.log(orthRect);
-                var rotatedRect = [];
-                orthRect.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthRect[0], point, theta - (Math.PI / 2));
-                    rotatedRect.push(rotatedPoint);
-                });
-                console.log("Rotated Rect");
-                console.log(rotatedRect);
-                adjustedPoints = rotatedRect;
-                bldg.adjustedPoints = rotatedRect;
+
+                adjustedPoints = orthRect;
+                bldg.adjustedPoints = orthRect;
 
                 //Create Grids for STL Creation
                 //Walls
@@ -541,23 +537,17 @@ function buildSTL(buildings) {
                 console.log(l5);
 
                 var pt0 = [points[0][0], points[0][1]],
-                    pt1 = [pt0[0] + l0, pt0[1]],
-                    pt2 = [pt1[0], pt1[1] - l1],
-                    pt3 = [pt2[0] + l2, pt2[1]],
-                    pt4 = [pt3[0], pt3[1] - l3],
-                    pt5 = [pt4[0] - l4, pt4[1]];
+                    pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
+                    pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)],
+                    pt3 = [pt2[0] + (l2 * Math.cos(theta)), pt2[1] + l2 * Math.sin(theta)],
+                    pt4 = [pt3[0] + l3 * Math.cos(theta - Math.PI / 2), pt3[1] + l3 * Math.sin(theta - Math.PI / 2)],
+                    pt5 = [pt4[0] + l4 * -Math.cos(theta), pt4[1] + l4 * -Math.sin(theta)];
 
                 var orthL = [pt0, pt1, pt2, pt3, pt4, pt5];
                 console.log("Orth L");
                 console.log(orthL);
 
-                var rotatedL = [];
-                orthL.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthL[0], point, theta - (Math.PI / 2));
-                    rotatedL.push(rotatedPoint);
-                });
-                console.log("Rotated L");
-                console.log(rotatedL);
+                var rotatedL = orthL;
                 bldg.adjustedPoints = rotatedL;
 
                 //Add Walls
@@ -605,24 +595,18 @@ function buildSTL(buildings) {
                 console.log(l7);
 
                 var pt0 = [points[0][0], points[0][1]],
-                    pt1 = [pt0[0] + l0, pt0[1]],
-                    pt2 = [pt1[0], pt1[1] - l1],
-                    pt3 = [pt2[0] - l2, pt2[1]],
-                    pt4 = [pt3[0], pt3[1] - l3],
-                    pt5 = [pt4[0] - l4, pt4[1]],
-                    pt6 = [pt5[0], pt5[1] + l5],
-                    pt7 = [pt6[0] - l6, pt6[1]];
+                    pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)],
+                    pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)],
+                    pt3 = [pt2[0] + l2 * -Math.cos(theta), pt2[1] + l2 * -Math.sin(theta)],
+                    pt4 = [pt3[0] + l3 * Math.cos(theta - Math.PI / 2), pt3[1] + l3 * Math.sin(theta - Math.PI / 2)],
+                    pt5 = [pt4[0] + l4 * -Math.cos(theta), pt4[1] + l4 * -Math.sin(theta)],
+                    pt6 = [pt5[0] + l5 * -Math.cos(theta - Math.PI / 2), pt5[1] + l5 * -Math.sin(theta - Math.PI / 2)],
+                    pt7 = [pt6[0] + l4 * -Math.cos(theta), pt6[1] + l4 * -Math.sin(theta)];
 
                 var orthT = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7];
                 console.log("Orth T");
                 console.log(orthT);
-                var rotatedT = [];
-                orthT.forEach(function(point) {
-                    var rotatedPoint = rotatePoint(orthT[0], point, theta + (Math.PI / 2));
-                    rotatedT.push(rotatedPoint);
-                });
-                console.log("Rotated T");
-                console.log(rotatedT);
+                var rotatedT = orthT;
                 bldg.adjustedPoints = rotatedT;
 
                 //Add Walls
