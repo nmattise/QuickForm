@@ -227,7 +227,7 @@ function createRotateRoof(point1, point2, point4, gridSize, height) {
 }
 
 function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
-    var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta, triFloor, triRoof, facets = [];
+    var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta0, theta3, triFloor, triRoof, facets = [];
     //Lengths of Square
     l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
     l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1]);
@@ -248,29 +248,36 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
     yIt3 = deltaY3 / parseInt(l3 / gridSize);
     iterator3 = parseInt(l3 / gridSize);
     gridLength3 = ((l3 % gridSize) / (parseInt(l3 / gridSize))) + gridSize;
+    console.log(gridLength0);
+    console.log(gridLength3);
     //Infinity Check
     if (!isFinite(xIt3)) xIt3 = 0;
     if (!isFinite(yIt3)) yIt3 = 0;
     //Rotation
-    theta = findRotation(pt0, pt1);
-    console.log("theta: " + theta);
+    theta0 = findRotation(pt0, pt1);
+    theta3 = findRotation(pt0, pt3);
+    console.log("theta0: " + theta0);
+    console.log("theta3: " + theta3);
     //Loop Along side 3
     for (var j = 0; j < iterator3; j++) {
         var point0, point3;
-        point0 = [pt0[0] - (xIt3 * j), pt0[1] - (yIt3 * j)];
-        point3 = [pt0[0] - (xIt3 * (j + 1)), pt0[1] - (yIt3 * (j + 1))];
+        point0 = [pt0[0] + (gridLength3 * j * Math.cos(theta3)), pt0[1] + (gridLength3 * j * Math.sin(theta3))];
+        point3 = [pt0[0] + (gridLength3 * (j + 1) * Math.cos(theta3)), pt0[1] + (gridLength3 * (j + 1) * Math.sin(theta3))];
         //Loop Along side 0
         for (var i = 0; i < iterator0; i++) {
-            var point1, point2;
-            point1 = [point0[0] + gridLength0 * Math.cos(theta), point0[1] + gridLength0 * Math.sin(theta)];
-            point2 = [point3[0] + gridLength0 * Math.cos(theta), point3[1] + gridLength0 * Math.sin(theta)];
-            console.log([point0, point1, point2, point3]);
+            var point0_1, point3_1, point1, point2;
+            point0_1 = [point0[0] + (gridLength0 * i * Math.cos(theta0)), point0[1] + (gridLength0 * i * Math.sin(theta0))];
+            point1 = [point0[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point0[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
+
+            console.log([point0_1, point1, point2, point3_1]);
             //Roof
-            triRoof = createHorPlaneUp(point0, point1, point2, point3, height);
+            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
             //Floor
-            triFloor = createHorPlaneDn(point0, point1, point2, point3, 0);
+            triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
         }
