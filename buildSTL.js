@@ -702,11 +702,63 @@ function buildSTL(buildings) {
                 });
 
                 break;
-                /*  case "h":
+            case "h":
+                var l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, lH, orthH, pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11;
 
-                      break;
-                  case "cross":
-                      break;*/
+                l0 = (lengths[0] + lengths[10]) / 2;
+                l10 = l0;
+                l4 = (lengths[4] + lengths[6]) / 2;
+                l6 = l4;
+                l2 = (lengths[2] + lengths[8]) / 2;
+                l8 = l2;
+                lH = ((lengths[11] - lengths[1] - lengths[9]) + (lengths[5] - lengths[3] - lengths[7])) / 2;
+                l1 = lengths[1];
+                l3 = lengths[3];
+                l7 = lengths[7];
+                l9 = lengths[9];
+                l5 = lH + l3 + l7;
+                l11 = l1 + lH + l9;
+
+                pt0 = [points[0][0], points[0][1]];
+                pt1 = [pt0[0] + (l0 * Math.cos(theta)), pt0[1] + l0 * Math.sin(theta)];
+                pt2 = [pt1[0] + l1 * Math.cos(theta - Math.PI / 2), pt1[1] + l1 * Math.sin(theta - Math.PI / 2)];
+                pt3 = [pt2[0] + (l2 * Math.cos(theta)), pt2[1] + l2 * Math.sin(theta)];
+                pt4 = [pt3[0] + l3 * -Math.cos(theta - Math.PI / 2), pt3[1] + l3 * -Math.sin(theta - Math.PI / 2)];
+                pt5 = [pt4[0] + (l4 * Math.cos(theta)), pt4[1] + l4 * Math.sin(theta)];
+                pt6 = [pt5[0] + l5 * Math.cos(theta - Math.PI / 2), pt5[1] + l5 * Math.sin(theta - Math.PI / 2)];
+                pt7 = [pt6[0] + l6 * -Math.cos(theta), pt6[1] + l6 * -Math.sin(theta)];
+                pt8 = [pt7[0] + l7 * -Math.cos(theta - Math.PI / 2), pt7[1] + l7 * -Math.sin(theta - Math.PI / 2)];
+                pt9 = [pt8[0] + l8 * -Math.cos(theta), pt8[1] + l8 * -Math.sin(theta)];
+                pt10 = [pt9[0] + l9 * Math.cos(theta - Math.PI / 2), pt9[1] + l9 * Math.sin(theta - Math.PI / 2)];
+                pt11 = [pt10[0] + l10 * -Math.cos(theta), pt10[1] + l10 * -Math.sin(theta)];
+
+                orthH = [pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11];
+                bldg.adjustedPoints = orthH;
+                //Add Walls
+                for (var j = 1; j < orthH.length; j++) {
+                    createWallMaterial(orthH[j - 1], orthH[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "galss").forEach(function(facet) {
+                        facets.push(facet)
+                    });
+                };
+                createWallMaterial(orthH[7], orthH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet)
+                });
+
+                //Roof & Floor
+                createRoofFloor(orthH[0], orthH[1], orthH[11], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthH[2], orthH[3], orthH[9], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+                createRoofFloor(orthH[4], orthH[5], orthH[7], gridSize, bldg.height).forEach(function(facet) {
+                    facets.push(facet);
+                });
+
+                break;
+                /*case "cross":
+                    break;
+                */
                 /*case "trap":
                     break;
                 case "triangle":
