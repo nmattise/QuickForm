@@ -543,7 +543,7 @@ function buildSTL(buildings) {
                 var pt0 = [points[0][0], points[0][1]],
                     pt1 = [pt0[0] + l0, pt0[1]],
                     pt2 = [pt1[0], pt1[1] - l1],
-                    pt3 = [pt2[0] - l2, pt2[1]],
+                    pt3 = [pt2[0] + l2, pt2[1]],
                     pt4 = [pt3[0], pt3[1] - l3],
                     pt5 = [pt4[0] - l4, pt4[1]];
 
@@ -631,7 +631,7 @@ function buildSTL(buildings) {
                         facets.push(facet)
                     })
                 };
-                createWallMaterial(rotatedT[5], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedT[7], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
                 //Roof
