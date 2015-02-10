@@ -138,7 +138,7 @@ function createVertPlane(pt1, pt2, z1, z2, material) {
     return facets;
 }
 
-function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
+function createHorPlaneUp(pt1, pt2, pt3, pt4, z, material) {
     var tri1 = [
             [pt1[0], pt1[1], z],
             [pt3[0], pt3[1], z],
@@ -150,14 +150,16 @@ function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
             [pt3[0], pt3[1], z]
         ],
         facets = [{
-            verts: tri1
+            verts: tri1,
+            material: material
         }, {
-            verts: tri2
+            verts: tri2,
+            material: material
         }];
     return facets;
 }
 
-function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
+function createHorPlaneDn(pt1, pt2, pt3, pt4, z, material) {
     var tri1 = [
             [pt2[0], pt2[1], z],
             [pt3[0], pt3[1], z],
@@ -169,9 +171,11 @@ function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
             [pt1[0], pt1[1], z]
         ],
         facets = [{
-            verts: tri1
+            verts: tri1,
+            material: material
         }, {
-            verts: tri2
+            verts: tri2,
+            material: material
         }];
     return facets;
 }
@@ -226,7 +230,7 @@ function createRotateRoof(point1, point2, point4, gridSize, height) {
     return facets;
 }
 
-function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
+function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMaterial) {
     var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta0, theta3, triFloor, triRoof, facets = [];
     //Lengths of Square
     l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
@@ -267,11 +271,11 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial) {
             point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
             point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
             //Roof
-            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height);
+            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height, roofMaterial);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
             //Floor
-            triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0);
+            triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0, floorMaterial);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);
         }
@@ -381,7 +385,7 @@ function createGroundGrid(xMin, xMax, yMin, yMax, step) {
             pt2 = [xpt + step, ypt];
             pt3 = [xpt + step, ypt + step];
             pt4 = [xpt, ypt + step];
-            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0);
+            tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0, "grass");
             facets.push(tri[0]);
             facets.push(tri[1]);
         }
@@ -566,7 +570,7 @@ function buildSTL(buildings) {
                 });
 
                 //Roof and Floor
-                createRoofFloor(orthRect[0], orthRect[1], orthRect[3], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthRect[0], orthRect[1], orthRect[3], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
                 break;
@@ -608,7 +612,7 @@ function buildSTL(buildings) {
                 createRoofFloor(orthL[0], orthL[1], pt7, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(pt7, orthL[3], orthL[5], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(pt7, orthL[3], orthL[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -645,10 +649,10 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof
-                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthT[6], orthT[3], orthT[5], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthT[6], orthT[3], orthT[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -689,13 +693,13 @@ function buildSTL(buildings) {
                 });
 
                 //Roof
-                createRoofFloor(orthU[0], orthU[1], orthU[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[0], orthU[1], orthU[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthU[2], orthU[3], pt6_2, gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[2], orthU[3], pt6_2, gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthU[4], orthU[5], pt6_3, gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthU[4], orthU[5], pt6_3, gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -743,13 +747,13 @@ function buildSTL(buildings) {
                 });
 
                 //Roof & Floor
-                createRoofFloor(orthH[0], orthH[1], orthH[11], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthH[0], orthH[1], orthH[11], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthH[2], orthH[3], orthH[9], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthH[2], orthH[3], orthH[9], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthH[4], orthH[5], orthH[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthH[4], orthH[5], orthH[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -799,13 +803,13 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof & Walls
-                createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthCross[2], orthCross[3], orthCross[5], gridSize, bldg.height).forEach(function(facet) {
+                createRoofFloor(orthCross[2], orthCross[3], orthCross[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
