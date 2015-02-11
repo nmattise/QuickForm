@@ -373,38 +373,22 @@ function createGround(innerBounds, maxHeight, gridSize) {
         facets.push(facet);
     });
     //Left
-    pt1 = [innerBounds[0][0] - (5 * maxHeight), innerBounds[0][1] + (5 * maxHeight)];
-    pt2 = [innerBounds[1][0], innerBounds[1][1] + (5 * maxHeight)];
-    pt3 = [innerBounds[1][0], innerBounds[1][1]];
-    pt4 = [innerBounds[0][0] - (5 * maxHeight), innerBounds[0][1]];
-    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
+    createGroundGrid(innerBounds[0][0] - (5 * maxHeight), innerBounds[0][0], innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
         facets.push(facet)
     });
     //Windward Top
-    pt1 = [innerBounds[0][0], innerBounds[0][1] + (5 * maxHeight)];
-    pt2 = [innerBounds[1][0], innerBounds[1][1] + (5 * maxHeight)];
-    pt3 = [innerBounds[1][0], innerBounds[1][1]];
-    pt4 = [innerBounds[0][0], innerBounds[0][1]];
-    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
-    //Right
-    pt1 = [innerBounds[1][0] + (5 * maxHeight), innerBounds[1][1] + (5 * maxHeight)];
-    pt2 = [innerBounds[2][0], innerBounds[2][1] + (5 * maxHeight)];
-    pt3 = [innerBounds[2][0], innerBounds[2][1]];
-    pt4 = [innerBounds[1][0] + (5 * maxHeight), innerBounds[1][1]];
-    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
-    //LeeWardBottom
-    pt1 = [innerBounds[3][0] - (5 * maxHeight), innerBounds[3][1]];
-    pt2 = [innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1]];
-    pt3 = [innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1] - (15 * maxHeight)];
-    pt4 = [innerBounds[3][0] - (5 * maxHeight), innerBounds[3][1] - (15 * maxHeight)];
-    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
-    return facets;
+    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
+    facets.push(facet)
+});
+//Right
+createGroundGrid(innerBounds[1][0], innerBounds[1][0] + (5 * maxHeight), innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
+    facets.push(facet)
+});
+//LeeWardBottom
+createGroundGrid(innerBounds[3][0] - (5 * maxHeight), innerBounds[2][0] + (5 * maxHeight), innerBounds[3][1] - (15 * maxHeight), innerBounds[3][1], gridSize).forEach(function(facet) {
+    facets.push(facet)
+});
+return facets;
 }
 
 //Final Function
