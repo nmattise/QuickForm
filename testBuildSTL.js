@@ -349,4 +349,4 @@ var buildings = [{
     "bldgFootprint": "triangle"
 }];
 
-buildSTL([buildings[0]], Math.PI/4);
+buildSTL([buildings[0],buildings[1],buildings[3],buildings[4],buildings[5]], Math.PI/4);
