@@ -822,7 +822,7 @@ function buildSTL(buildings, windwardDirection) {
 
     //Find Max Building Height as Characteristic Length for Ground Dimensions
     maxHeight = Math.max.apply(null, bldgHeights);
-    maxHeight = 5 * Math.round(maxHeight / 5);
+    maxHeight = 5 * Math.ceil(maxHeight / 5);
     console.log(maxHeight);
     //Find Min and Max X&Y of building location points to be the inner bounds of the ground file
     minX = Math.min.apply(null, minXPts);
