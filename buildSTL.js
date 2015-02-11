@@ -670,9 +670,10 @@ function buildSTL(buildings, windwardDirection) {
                 });
 
                 //Roof & Floor
-                pt6_3 = [rotatedU[5][0] + (l4) * -Math.cos(theta), rotatedU[5][1] + (l4) * -Math.sin(theta)];
-                pt6_2 = [rotatedU[5][0] + (l4 + l2) * -Math.cos(theta), rotatedU[5][1] + (l4 + l2) * -Math.sin(theta)];
-
+                pt6_3 = [pt6[0] + (l4) * -Math.cos(theta), pt6[1] + (l4) * -Math.sin(theta)];
+                pt6_2 = [pt6[0] + (l4 + l2) * -Math.cos(theta), pt6[1] + (l4 + l2) * -Math.sin(theta)];
+                pt6_2 = rotatePoint([0, 0], pt6_2, windwardDirection);
+                pt6_3 = rotatePoint([0, 0], pt6_3, windwardDirection);
                 createRoofFloor(rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
