@@ -369,26 +369,26 @@ function createGround(innerBounds, maxHeight, gridSize) {
     var innerBoundsLengths = innerBounds.findLengths();
     console.log(innerBoundsLengths);
     //Inner Grid
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
+    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], gridSize).forEach(function(facet) {
         facets.push(facet);
     });
     //Left
-    createGroundGrid(innerBounds[0][0] - (5 * maxHeight), innerBounds[0][0], innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
+    createGroundGrid(innerBounds[0][0] - (5 * maxHeight), innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
         facets.push(facet)
     });
     //Windward Top
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
-    facets.push(facet)
-});
-//Right
-createGroundGrid(innerBounds[1][0], innerBounds[1][0] + (5 * maxHeight), innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
-    facets.push(facet)
-});
-//LeeWardBottom
-createGroundGrid(innerBounds[3][0] - (5 * maxHeight), innerBounds[2][0] + (5 * maxHeight), innerBounds[3][1] - (15 * maxHeight), innerBounds[3][1], gridSize).forEach(function(facet) {
-    facets.push(facet)
-});
-return facets;
+        facets.push(facet)
+    });
+    //Right
+    createGroundGrid(innerBounds[2][0], innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1], innerBounds[1][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
+        facets.push(facet)
+    });
+    //LeeWardBottom
+    createGroundGrid(innerBounds[3][0] - (5 * maxHeight), innerBounds[2][0] + (5 * maxHeight), innerBounds[3][1] - (15 * maxHeight), innerBounds[3][1], gridSize).forEach(function(facet) {
+        facets.push(facet)
+    });
+    return facets;
 }
 
 //Final Function
