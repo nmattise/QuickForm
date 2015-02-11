@@ -832,9 +832,9 @@ function buildSTL(buildings, windwardDirection) {
 
     //Round these min and max points to next 5 
     minX = 5 * Math.floor(minX / 5);
-    maxX = 5 * Math.round(maxX / 5);
+    maxX = 5 * Math.ceil(maxX / 5);
     minY = 5 * Math.floor(minY / 5);
-    maxY = 5 * Math.round(maxY / 5);
+    maxY = 5 * Math.ceil(maxY / 5);
     //Create innerBounds of the Ground STL
     innerBounds = [
         [minX, maxY],
