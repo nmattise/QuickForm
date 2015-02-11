@@ -350,17 +350,12 @@ function createGroundGrid(xMin, xMax, yMin, yMax, step) {
 }
 
 
-function createGround(innerBounds) {
+function createGround(innerBounds, maxHeight, gridSize) {
     var boundDistances = [],
         gridSizes = [],
         smallGridBound = [],
         mediumGridBound = [],
         largeGridBound = [],
-        groundSTL = '',
-        innerStart,
-        smallStart,
-        mediumStart,
-        largeStart,
         xpt,
         ypt,
         pt1,
@@ -369,72 +364,47 @@ function createGround(innerBounds) {
         pt4,
         tri,
         facets = [];
-    boundDistances = [2, 5, 10];
-    gridSizes = [5, 10, 20];
-    var i = 0;
-    innerBounds.forEach(function(point) {
-        point[0] = 10 * Math.round(point[0] / 10);
-        point[1] = 10 * Math.round(point[1] / 10);
-        smallGridBound.push([point[0] * boundDistances[0], point[1] * boundDistances[0]]);
-        mediumGridBound.push([point[0] * boundDistances[1], point[1] * boundDistances[1]]);
-        largeGridBound.push([point[0] * boundDistances[2], point[1] * boundDistances[2]]);
-        i++;
-    });
+    console.log(innerBounds);
+    //Inner Grid Dimensions
+    var innerBoundsLengths = innerBounds.findLengths();
+    console.log(innerBoundsLengths);
     //Inner Grid
     createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[2][1], 1).forEach(function(facet) {
         facets.push(facet);
     });
-
-    //Small Grid
-    createGroundGrid(smallGridBound[0][0], innerBounds[0][0], smallGridBound[0][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
-        facets.push(facet);
+    //Left
+    pt1 = [innerBounds[0][0] - (5 * maxHeight), innerBounds[0][1] + (5 * maxHeight)];
+    pt2 = [innerBounds[1][0], innerBounds[1][1] + (5 * maxHeight)];
+    pt3 = [innerBounds[1][0], innerBounds[1][1]];
+    pt4 = [innerBounds[0][0] - (5 * maxHeight), innerBounds[0][1]];
+    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
+        facets.push(facet)
     });
-    createGroundGrid(innerBounds[1][0], smallGridBound[1][0], smallGridBound[0][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
-        facets.push(facet);
+    //Windward Top
+    pt1 = [innerBounds[0][0], innerBounds[0][1] + (5 * maxHeight)];
+    pt2 = [innerBounds[1][0], innerBounds[1][1] + (5 * maxHeight)];
+    pt3 = [innerBounds[1][0], innerBounds[1][1]];
+    pt4 = [innerBounds[0][0], innerBounds[0][1]];
+    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
+        facets.push(facet)
     });
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], smallGridBound[0][1], innerBounds[1][1], gridSizes[0]).forEach(function(facet) {
-        facets.push(facet);
+    //Right
+    pt1 = [innerBounds[1][0] + (5 * maxHeight), innerBounds[1][1] + (5 * maxHeight)];
+    pt2 = [innerBounds[2][0], innerBounds[2][1] + (5 * maxHeight)];
+    pt3 = [innerBounds[2][0], innerBounds[2][1]];
+    pt4 = [innerBounds[1][0] + (5 * maxHeight), innerBounds[1][1]];
+    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
+        facets.push(facet)
     });
-    createGroundGrid(innerBounds[3][0], innerBounds[2][0], innerBounds[3][1], smallGridBound[2][1], gridSizes[0]).forEach(function(facet) {
-        facets.push(facet);
-    });
-
-    //Medium Grid
-    createGroundGrid(mediumGridBound[0][0], smallGridBound[0][0], mediumGridBound[0][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(smallGridBound[1][0], mediumGridBound[1][0], mediumGridBound[0][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(smallGridBound[0][0], smallGridBound[1][0], mediumGridBound[0][1], smallGridBound[1][1], gridSizes[1]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(smallGridBound[3][0], smallGridBound[2][0], smallGridBound[3][1], mediumGridBound[2][1], gridSizes[1]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    //Medium Grid
-    createGroundGrid(largeGridBound[0][0], mediumGridBound[0][0], largeGridBound[0][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(mediumGridBound[1][0], largeGridBound[1][0], largeGridBound[0][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(mediumGridBound[0][0], mediumGridBound[1][0], largeGridBound[0][1], mediumGridBound[1][1], gridSizes[2]).forEach(function(facet) {
-        facets.push(facet);
-    });
-    createGroundGrid(mediumGridBound[3][0], mediumGridBound[2][0], mediumGridBound[3][1], largeGridBound[2][1], gridSizes[2]).forEach(function(facet) {
-        facets.push(facet);
+    //LeeWardBottom
+    pt1 = [innerBounds[3][0] - (5 * maxHeight), innerBounds[3][1]];
+    pt2 = [innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1]];
+    pt3 = [innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1] - (15 * maxHeight)];
+    pt4 = [innerBounds[3][0] - (5 * maxHeight), innerBounds[3][1] - (15 * maxHeight)];
+    createGroundGrid(pt4[0], pt3[0], pt4[1], pt1[1], gridSize).forEach(function(facet) {
+        facets.push(facet)
     });
     return facets;
-}
-
-function orthPoints(pt1, pt2, l) {
-    var dx, dy, dist, point;
-    dist = distanceFormula(pt1[0], pt1[1], pt2[0], pt2[1]);
-    dx = (pt2[0] - pt1[0]) / 2;
-    dx = (pt2[1] - pt1[1]) / 2;
-    point = [l * dx, l * dy];
-    return point;
 }
 
 //Final Function
@@ -455,6 +425,7 @@ function buildSTL(buildings, windwardDirection) {
         maxX,
         minY,
         maxY,
+        maxHeight,
         innerBounds = [],
         groundFacets = [],
         groundSTL,
@@ -488,7 +459,8 @@ function buildSTL(buildings, windwardDirection) {
             width,
             theta,
             facets = [],
-            minMaxPts = [];
+            minMaxPts = [],
+            bldgHeights = [];
         var CFDFacets = [];
         //Add Building Name to File Name
         fileName += bldg.name + "_";
@@ -853,32 +825,41 @@ function buildSTL(buildings, windwardDirection) {
         allBldgSTL += stl.fromObject(stlObj) + "\n";
 
         //Ground Stats for This Building
-        minMaxPts = minMaxPoints(bldg.cardinalCoords);
+        minMaxPts = minMaxPoints(bldg.windwardCoords);
         minXPts.push(minMaxPts[0]);
         maxXPts.push(minMaxPts[1]);
         minYPts.push(minMaxPts[2]);
         maxYPts.push(minMaxPts[3]);
+
+        //Building Heights
+        bldgHeights.push(bldg.height);
     }
     //Create Gound STL
-    //Find Min and Max X&Y of building location points
+
+    //Find Max Building Height as Characteristic Length for Ground Dimensions
+    maxHeight = Math.max.apply(null, bldgHeights);
+    console.log(maxHeight);
+    //Find Min and Max X&Y of building location points to be the inner bounds of the ground file
     minX = Math.min.apply(null, minXPts);
     maxX = Math.max.apply(null, maxXPts);
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
-    //Round these min and max points to next integer
-    minX = parseInt(minX - 1);
-    maxX = parseInt(maxX + 1);
-    minY = parseInt(minY - 1);
-    maxY = parseInt(maxY + 1);
+
+    //Round these min and max points to next 5 
+    minX = 5 * Math.floor(minX / 5);
+    maxX = 5 * Math.round(maxX / 5);
+    minY = 5 * Math.floor(minY / 5);
+    maxY = 5 * Math.round(maxY / 5);
     //Create innerBounds of the Ground STL
     innerBounds = [
-        [minX, minY],
-        [maxX, minY],
+        [minX, maxY],
         [maxX, maxY],
-        [minX, maxY]
+        [maxX, minY],
+        [minX, minY]
     ];
+
     //Call CreateGound
-    groundFacets = createGround(innerBounds);
+    groundFacets = createGround(innerBounds, maxHeight, gridSize);
     //Create GroundSTL
     groundSTL = {
         description: "groundSTL",
@@ -886,9 +867,9 @@ function buildSTL(buildings, windwardDirection) {
     };
 
     //Write Files
-    //Write Ground STL File for All Buildings
-
-    fs.writeFileSync("stlFiles/" + fileName + "Ground.stl", stl.fromObject(groundSTL));
     //Write All Buildings in One STL File
     fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
+    //Write Ground STL File for All Buildings
+    fs.writeFileSync("stlFiles/" + fileName + "Ground.stl", stl.fromObject(groundSTL));
+
 }
