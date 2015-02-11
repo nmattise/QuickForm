@@ -1,8 +1,5 @@
 var buildSTL = require('./buildSTL.js').buildSTL;
 
-
-
-
 var buildings = [{
     "polygon": {
         "path": [{
@@ -352,4 +349,4 @@ var buildings = [{
     "bldgFootprint": "triangle"
 }];
 
-buildSTL([buildings[0], buildings[1], buildings[2], buildings[3], buildings[4],buildings[5],buildings[6],buildings[7]]);
+buildSTL([buildings[0]], Math.PI/4);

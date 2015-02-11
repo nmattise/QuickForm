@@ -17,6 +17,12 @@ Number.prototype.toDegrees = function() {
     return this * 180 / Math.PI;
 };
 
+//Round to two decimal places
+Number.prototype.round2 = function() {
+    var up = this * 100 | 0;
+    return up / 100;
+}
+
 //Prototype to find side length of array of points
 Array.prototype.findLengths = function() {
     var sideLengths = [];
@@ -177,56 +183,6 @@ function createHorPlaneDn(pt1, pt2, pt3, pt4, z, material) {
             verts: tri2,
             material: material
         }];
-    return facets;
-}
-
-function createRotateRoof(point1, point2, point4, gridSize, height) {
-    var sideLength12, sideLength14, deltaX, deltaY, deltaX14, deltaY14, xIt14, yIt14, xIt, yIt, iterator12, iterator14, pt1, pt2, pt3, pt4, i, z, triRoof, triFloor, facets, gridLength, gridLength14, pt1_1;
-    facets = [];
-    sideLength12 = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
-    sideLength14 = distanceFormula(point1[0], point1[1], point4[0], point4[1]);
-    deltaX = point2[0] - point1[0];
-    deltaY = point2[1] - point1[1];
-    gridLength = ((sideLength12 % gridSize) / (parseInt(sideLength12 / gridSize))) + gridSize;
-    xIt = deltaX / parseInt(sideLength12 / gridSize);
-    yIt = deltaY / parseInt(sideLength12 / gridSize);
-    //Infinity Check
-    if (!isFinite(xIt)) xIt = 0;
-    if (!isFinite(yIt)) yIt = 0;
-    iterator12 = parseInt(sideLength12 / gridSize);
-    deltaX14 = point1[0] - point4[0];
-    deltaY14 = point1[1] - point4[1];
-    xIt14 = deltaX14 / parseInt(sideLength14 / gridSize);
-    yIt14 = deltaY14 / parseInt(sideLength14 / gridSize);
-    //Infinity Check
-    if (!isFinite(xIt14)) xIt14 = 0;
-    if (!isFinite(yIt14)) yIt14 = 0;
-    iterator14 = parseInt(sideLength14 / gridSize);
-    gridLength14 = ((sideLength14 % gridSize) / (parseInt(sideLength14 / gridSize))) + gridSize;
-    //Rotation
-    var theta = findRotation(point1, point2);
-    for (var j = 0; j < iterator14; j++) {
-        pt1 = [point1[0] - (xIt14 * j), point1[1] - (yIt14 * j)];
-        for (i = 0; i < iterator12; i++) {
-            pt1_1 = [pt1[0] + (xIt * i), pt1[1] + (yIt * i)];
-            pt2 = [pt1_1[0] + gridLength, pt1_1[1]];
-            pt3 = [pt2[0], pt2[1] + gridLength14];
-            pt4 = [pt1_1[0], pt1_1[1] + gridLength14];
-            //Points
-            var pt1_14 = rotatePoint(pt1_1, pt1_1, theta);
-            var pt2_14 = rotatePoint(pt1_1, pt2, theta);
-            var pt3_14 = rotatePoint(pt1_1, pt3, theta);
-            var pt4_14 = rotatePoint(pt1_1, pt4, theta);
-            //Roof
-            triRoof = createHorPlaneUp(pt1_14, pt2_14, pt3_14, pt4_14, height);
-            facets.push(triRoof[0]);
-            facets.push(triRoof[1]);
-            //Floor
-            triFloor = createHorPlaneDn(pt1_14, pt2_14, pt3_14, pt4_14, 0);
-            facets.push(triFloor[0]);
-            facets.push(triFloor[1]);
-        }
-    }
     return facets;
 }
 
@@ -482,7 +438,7 @@ function orthPoints(pt1, pt2, l) {
 }
 
 //Final Function
-function buildSTL(buildings) {
+function buildSTL(buildings, windwardDirection) {
     //Initialize Variables
     var lat = 0,
         lng = 0,
@@ -533,19 +489,21 @@ function buildSTL(buildings) {
             theta,
             facets = [],
             minMaxPts = [];
+        var CFDFacets = [];
         //Add Building Name to File Name
         fileName += bldg.name + "_";
         //Set Grid Size
         //Get Cartesian Points from LatLng
         for (var j = 0; j < bldg.polygon.path.length; j++) {
-            points.push(origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude)));
+            var point = origin.coordinatesTo(new latLon(bldg.polygon.path[j].latitude, bldg.polygon.path[j].longitude));
+            points.push([point[0].round2(), point[1].round2()]);
         }
         //Average and Adjust the Rectangle
         lengths = points.findLengths();
         //Find Rotation of the BUilding Shape
         theta = findRotation(points[0], points[1]);
+        console.log("ID:  " + bldg.id);
         console.log("theta: " + theta);
-        console.log(bldg.id);
         switch (bldg.bldgFootprint) {
             case 'rect':
                 var l0 = (lengths[0] + lengths[2]) / 2,
@@ -558,7 +516,7 @@ function buildSTL(buildings) {
                 var orthRect = [pt0, pt1, pt2, pt3];
                 bldg.adjustedPoints = orthRect;
 
-                //Create Grids for STL Creation
+                //Create Grids for Radiance STL Creation
                 //Walls
                 for (var j = 1; j < orthRect.length; j++) {
                     createWallMaterial(orthRect[j - 1], orthRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
@@ -573,6 +531,30 @@ function buildSTL(buildings) {
                 createRoofFloor(orthRect[0], orthRect[1], orthRect[3], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
+
+                //Create Grids for CFD STL Creation
+                //Rotate Points to windward, then repeat the steps above
+                var rotatedRect = [];
+                for (var j = 0; j < orthRect.length; j++) {
+                    rotatedRect.push(rotatePoint([0, 0], orthRect[j], windwardDirection));
+                };
+                console.log(orthRect);
+                console.log(rotatedRect);
+                //Walls
+                for (var j = 1; j < rotatedRect.length; j++) {
+                    createWallMaterial(rotatedRect[j - 1], rotatedRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                        facets.push(facet);
+                    });
+                }
+                createWallMaterial(rotatedRect[3], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    facets.push(facet);
+                });
+
+                //Roof and Floor
+                createRoofFloor(rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
+                    facets.push(facet);
+                });
+
                 break;
             case 'l':
                 console.log(lengths);
@@ -612,7 +594,7 @@ function buildSTL(buildings) {
                 createRoofFloor(orthL[0], orthL[1], pt7, gridSize, bldg.height).forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(pt7, orthL[3], orthL[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(pt7, orthL[3], orthL[5], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -649,10 +631,10 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof
-                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthT[0], orthT[1], orthT[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthT[6], orthT[3], orthT[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthT[6], orthT[3], orthT[5], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -693,13 +675,13 @@ function buildSTL(buildings) {
                 });
 
                 //Roof
-                createRoofFloor(orthU[0], orthU[1], orthU[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthU[0], orthU[1], orthU[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthU[2], orthU[3], pt6_2, gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthU[2], orthU[3], pt6_2, gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthU[4], orthU[5], pt6_3, gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthU[4], orthU[5], pt6_3, gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -747,13 +729,13 @@ function buildSTL(buildings) {
                 });
 
                 //Roof & Floor
-                createRoofFloor(orthH[0], orthH[1], orthH[11], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthH[0], orthH[1], orthH[11], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthH[2], orthH[3], orthH[9], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthH[2], orthH[3], orthH[9], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthH[4], orthH[5], orthH[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthH[4], orthH[5], orthH[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
@@ -803,13 +785,13 @@ function buildSTL(buildings) {
                     facets.push(facet)
                 });
                 //Roof & Walls
-                createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthCross[10], orthCross[11], orthCross[9], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthCross[0], orthCross[1], orthCross[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
-                createRoofFloor(orthCross[2], orthCross[3], orthCross[5], gridSize, bldg.height,"asphalt", "concrete").forEach(function(facet) {
+                createRoofFloor(orthCross[2], orthCross[3], orthCross[5], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
                     facets.push(facet);
                 });
 
