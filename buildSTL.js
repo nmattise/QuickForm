@@ -201,6 +201,13 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMat
     //Infinity Check
     if (!isFinite(xIt0)) xIt0 = 0;
     if (!isFinite(yIt0)) yIt0 = 0;
+    if (!isFinite(gridLength0)) gridLength0 = l0;
+    //0 Check
+    if (xIt0 == 0 && yIt0 == 0) {
+        xIt0 = deltaX0;
+        yIt0 = deltaY0;
+        iterator0 = 1;
+    };
     //GridLength & Iterators for Side 3
     deltaX3 = pt0[0] - pt3[0];
     deltaY3 = pt0[1] - pt3[1];
@@ -211,6 +218,13 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMat
     //Infinity Check
     if (!isFinite(xIt3)) xIt3 = 0;
     if (!isFinite(yIt3)) yIt3 = 0;
+    if (!isFinite(gridLength3)) gridLength3 = l3;
+    //0 Check
+    if (xIt3 == 0 && yIt3 == 0) {
+        xIt3 = deltaX3;
+        yIt3 = deltaY3;
+        iterator3 = 1;
+    };
     //Rotation
     theta0 = findRotation(pt0, pt1);
     theta3 = findRotation(pt0, pt3);
@@ -230,10 +244,10 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMat
             triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height, roofMaterial);
             facets.push(triRoof[0]);
             facets.push(triRoof[1]);
-            //Floor
-            triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0, floorMaterial);
+            //Floor -- Disabled for the time
+            /*triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0, floorMaterial);
             facets.push(triFloor[0]);
-            facets.push(triFloor[1]);
+            facets.push(triFloor[1]);*/
         }
     }
     return facets;
@@ -280,6 +294,7 @@ function createWallMaterial(point1, point2, gridSize, height, floorHeight, floor
     //Find the Length of the side, and the x and y iterations to creat the grid
     sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     gridLength = ((sideLength % gridSize) / (parseInt(sideLength / gridSize))) + gridSize;
+
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
     xIt = deltaX / parseInt(sideLength / gridSize);
@@ -288,7 +303,15 @@ function createWallMaterial(point1, point2, gridSize, height, floorHeight, floor
     //Infinity Check
     if (!isFinite(xIt)) xIt = 0;
     if (!isFinite(yIt)) yIt = 0;
-
+    if (!isFinite(gridLength)) gridLength = sideLength;
+    //0 Check
+    if (xIt == 0 && yIt == 0) {
+        xIt = deltaX;
+        yIt = deltaY;
+        iterator = 1;
+    };
+    console.log("SideLength : " + sideLength + "  GridLength: " + gridLength + "  iterator: " + iterator);
+    console.log("xIt: " + xIt + "  yIT: " + yIt);
     //Iterate Through Floors
     for (var t = 0; t < floors; t++) {
         //Floor Height
@@ -416,7 +439,7 @@ function buildSTL(buildings, windwardDirection) {
         fileName = '';
 
     //Set Grid Size
-    var gridSize = 5;
+    var gridSize = 20;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
         for (var j = 0; j < buildings[i].polygon.path.length; j++) {
@@ -494,7 +517,6 @@ function buildSTL(buildings, windwardDirection) {
                 });
                 break;
             case 'l':
-                console.log(lengths);
                 //Average 1 & 3+5
                 var l4 = (lengths[4] + (lengths[0] + lengths[2])) / 2,
                     l0 = l4 * (lengths[0] / (lengths[0] + lengths[2])),
@@ -642,6 +664,7 @@ function buildSTL(buildings, windwardDirection) {
 
                 break;
             case "h":
+                console.log(lengths)
                 var l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, lH, orthH, pt0, pt1, pt2, pt3, pt4, pt5, pt6, pt7, pt8, pt9, pt10, pt11;
 
                 l0 = (lengths[0] + lengths[10]) / 2;
@@ -853,8 +876,8 @@ function buildSTL(buildings, windwardDirection) {
 
     //Write Files
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/" + fileName + "20m.stl", allBldgSTL);
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/" + fileName + "Ground.stl", stl.fromObject(groundSTL));
+    fs.writeFileSync("stlFiles/" + fileName + "Ground_20m_10Hsquare.stl", stl.fromObject(groundSTL));
 
 }
