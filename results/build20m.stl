@@ -1,0 +1,4896 @@
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 4.020000 
+	 vertex 26.615500 26.615500 0.000000 
+	 vertex 5.925600 47.305400 0.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 4.020000 
+	 vertex 5.925600 47.305400 0.000000 
+	 vertex 5.925600 47.305400 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 7.980000 
+	 vertex 26.615500 26.615500 4.020000 
+	 vertex 5.925600 47.305400 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 7.980000 
+	 vertex 5.925600 47.305400 4.020000 
+	 vertex 5.925600 47.305400 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 12.000000 
+	 vertex 26.615500 26.615500 7.980000 
+	 vertex 5.925600 47.305400 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 12.000000 
+	 vertex 5.925600 47.305400 7.980000 
+	 vertex 5.925600 47.305400 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 4.020000 
+	 vertex 47.305400 5.925600 0.000000 
+	 vertex 26.615500 26.615500 0.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 4.020000 
+	 vertex 26.615500 26.615500 0.000000 
+	 vertex 26.615500 26.615500 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 7.980000 
+	 vertex 47.305400 5.925600 4.020000 
+	 vertex 26.615500 26.615500 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 7.980000 
+	 vertex 26.615500 26.615500 4.020000 
+	 vertex 26.615500 26.615500 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 12.000000 
+	 vertex 47.305400 5.925600 7.980000 
+	 vertex 26.615500 26.615500 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 12.000000 
+	 vertex 26.615500 26.615500 7.980000 
+	 vertex 26.615500 26.615500 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 16.020000 
+	 vertex 26.615500 26.615500 12.000000 
+	 vertex 5.925600 47.305400 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 16.020000 
+	 vertex 5.925600 47.305400 12.000000 
+	 vertex 5.925600 47.305400 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 19.980000 
+	 vertex 26.615500 26.615500 16.020000 
+	 vertex 5.925600 47.305400 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 19.980000 
+	 vertex 5.925600 47.305400 16.020000 
+	 vertex 5.925600 47.305400 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 24.000000 
+	 vertex 26.615500 26.615500 19.980000 
+	 vertex 5.925600 47.305400 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 24.000000 
+	 vertex 5.925600 47.305400 19.980000 
+	 vertex 5.925600 47.305400 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 16.020000 
+	 vertex 47.305400 5.925600 12.000000 
+	 vertex 26.615500 26.615500 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 16.020000 
+	 vertex 26.615500 26.615500 12.000000 
+	 vertex 26.615500 26.615500 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 19.980000 
+	 vertex 47.305400 5.925600 16.020000 
+	 vertex 26.615500 26.615500 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 19.980000 
+	 vertex 26.615500 26.615500 16.020000 
+	 vertex 26.615500 26.615500 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 24.000000 
+	 vertex 47.305400 5.925600 19.980000 
+	 vertex 26.615500 26.615500 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 24.000000 
+	 vertex 26.615500 26.615500 19.980000 
+	 vertex 26.615500 26.615500 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 28.020000 
+	 vertex 26.615500 26.615500 24.000000 
+	 vertex 5.925600 47.305400 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 28.020000 
+	 vertex 5.925600 47.305400 24.000000 
+	 vertex 5.925600 47.305400 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 31.980000 
+	 vertex 26.615500 26.615500 28.020000 
+	 vertex 5.925600 47.305400 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 31.980000 
+	 vertex 5.925600 47.305400 28.020000 
+	 vertex 5.925600 47.305400 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 36.000000 
+	 vertex 26.615500 26.615500 31.980000 
+	 vertex 5.925600 47.305400 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 36.000000 
+	 vertex 5.925600 47.305400 31.980000 
+	 vertex 5.925600 47.305400 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 28.020000 
+	 vertex 47.305400 5.925600 24.000000 
+	 vertex 26.615500 26.615500 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 28.020000 
+	 vertex 26.615500 26.615500 24.000000 
+	 vertex 26.615500 26.615500 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 31.980000 
+	 vertex 47.305400 5.925600 28.020000 
+	 vertex 26.615500 26.615500 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 31.980000 
+	 vertex 26.615500 26.615500 28.020000 
+	 vertex 26.615500 26.615500 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 36.000000 
+	 vertex 47.305400 5.925600 31.980000 
+	 vertex 26.615500 26.615500 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 36.000000 
+	 vertex 26.615500 26.615500 31.980000 
+	 vertex 26.615500 26.615500 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 40.020000 
+	 vertex 26.615500 26.615500 36.000000 
+	 vertex 5.925600 47.305400 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 40.020000 
+	 vertex 5.925600 47.305400 36.000000 
+	 vertex 5.925600 47.305400 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 43.980000 
+	 vertex 26.615500 26.615500 40.020000 
+	 vertex 5.925600 47.305400 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 43.980000 
+	 vertex 5.925600 47.305400 40.020000 
+	 vertex 5.925600 47.305400 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 48.000000 
+	 vertex 26.615500 26.615500 43.980000 
+	 vertex 5.925600 47.305400 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 48.000000 
+	 vertex 5.925600 47.305400 43.980000 
+	 vertex 5.925600 47.305400 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 40.020000 
+	 vertex 47.305400 5.925600 36.000000 
+	 vertex 26.615500 26.615500 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 40.020000 
+	 vertex 26.615500 26.615500 36.000000 
+	 vertex 26.615500 26.615500 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 43.980000 
+	 vertex 47.305400 5.925600 40.020000 
+	 vertex 26.615500 26.615500 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 43.980000 
+	 vertex 26.615500 26.615500 40.020000 
+	 vertex 26.615500 26.615500 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 48.000000 
+	 vertex 47.305400 5.925600 43.980000 
+	 vertex 26.615500 26.615500 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 48.000000 
+	 vertex 26.615500 26.615500 43.980000 
+	 vertex 26.615500 26.615500 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 52.020000 
+	 vertex 26.615500 26.615500 48.000000 
+	 vertex 5.925600 47.305400 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 52.020000 
+	 vertex 5.925600 47.305400 48.000000 
+	 vertex 5.925600 47.305400 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 55.980000 
+	 vertex 26.615500 26.615500 52.020000 
+	 vertex 5.925600 47.305400 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 55.980000 
+	 vertex 5.925600 47.305400 52.020000 
+	 vertex 5.925600 47.305400 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 60.000000 
+	 vertex 26.615500 26.615500 55.980000 
+	 vertex 5.925600 47.305400 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 60.000000 
+	 vertex 5.925600 47.305400 55.980000 
+	 vertex 5.925600 47.305400 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 52.020000 
+	 vertex 47.305400 5.925600 48.000000 
+	 vertex 26.615500 26.615500 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 52.020000 
+	 vertex 26.615500 26.615500 48.000000 
+	 vertex 26.615500 26.615500 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 55.980000 
+	 vertex 47.305400 5.925600 52.020000 
+	 vertex 26.615500 26.615500 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 55.980000 
+	 vertex 26.615500 26.615500 52.020000 
+	 vertex 26.615500 26.615500 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 60.000000 
+	 vertex 47.305400 5.925600 55.980000 
+	 vertex 26.615500 26.615500 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 60.000000 
+	 vertex 26.615500 26.615500 55.980000 
+	 vertex 26.615500 26.615500 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 64.020000 
+	 vertex 26.615500 26.615500 60.000000 
+	 vertex 5.925600 47.305400 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 64.020000 
+	 vertex 5.925600 47.305400 60.000000 
+	 vertex 5.925600 47.305400 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 67.980000 
+	 vertex 26.615500 26.615500 64.020000 
+	 vertex 5.925600 47.305400 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 67.980000 
+	 vertex 5.925600 47.305400 64.020000 
+	 vertex 5.925600 47.305400 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 72.000000 
+	 vertex 26.615500 26.615500 67.980000 
+	 vertex 5.925600 47.305400 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 72.000000 
+	 vertex 5.925600 47.305400 67.980000 
+	 vertex 5.925600 47.305400 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 64.020000 
+	 vertex 47.305400 5.925600 60.000000 
+	 vertex 26.615500 26.615500 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 64.020000 
+	 vertex 26.615500 26.615500 60.000000 
+	 vertex 26.615500 26.615500 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 67.980000 
+	 vertex 47.305400 5.925600 64.020000 
+	 vertex 26.615500 26.615500 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 67.980000 
+	 vertex 26.615500 26.615500 64.020000 
+	 vertex 26.615500 26.615500 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 72.000000 
+	 vertex 47.305400 5.925600 67.980000 
+	 vertex 26.615500 26.615500 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 72.000000 
+	 vertex 26.615500 26.615500 67.980000 
+	 vertex 26.615500 26.615500 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 76.020000 
+	 vertex 26.615500 26.615500 72.000000 
+	 vertex 5.925600 47.305400 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 76.020000 
+	 vertex 5.925600 47.305400 72.000000 
+	 vertex 5.925600 47.305400 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 79.980000 
+	 vertex 26.615500 26.615500 76.020000 
+	 vertex 5.925600 47.305400 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 79.980000 
+	 vertex 5.925600 47.305400 76.020000 
+	 vertex 5.925600 47.305400 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 84.000000 
+	 vertex 26.615500 26.615500 79.980000 
+	 vertex 5.925600 47.305400 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 84.000000 
+	 vertex 5.925600 47.305400 79.980000 
+	 vertex 5.925600 47.305400 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 76.020000 
+	 vertex 47.305400 5.925600 72.000000 
+	 vertex 26.615500 26.615500 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 76.020000 
+	 vertex 26.615500 26.615500 72.000000 
+	 vertex 26.615500 26.615500 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 79.980000 
+	 vertex 47.305400 5.925600 76.020000 
+	 vertex 26.615500 26.615500 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 79.980000 
+	 vertex 26.615500 26.615500 76.020000 
+	 vertex 26.615500 26.615500 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 84.000000 
+	 vertex 47.305400 5.925600 79.980000 
+	 vertex 26.615500 26.615500 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 84.000000 
+	 vertex 26.615500 26.615500 79.980000 
+	 vertex 26.615500 26.615500 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 88.020000 
+	 vertex 26.615500 26.615500 84.000000 
+	 vertex 5.925600 47.305400 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 88.020000 
+	 vertex 5.925600 47.305400 84.000000 
+	 vertex 5.925600 47.305400 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 91.980000 
+	 vertex 26.615500 26.615500 88.020000 
+	 vertex 5.925600 47.305400 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 91.980000 
+	 vertex 5.925600 47.305400 88.020000 
+	 vertex 5.925600 47.305400 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 96.000000 
+	 vertex 26.615500 26.615500 91.980000 
+	 vertex 5.925600 47.305400 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 96.000000 
+	 vertex 5.925600 47.305400 91.980000 
+	 vertex 5.925600 47.305400 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 88.020000 
+	 vertex 47.305400 5.925600 84.000000 
+	 vertex 26.615500 26.615500 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 88.020000 
+	 vertex 26.615500 26.615500 84.000000 
+	 vertex 26.615500 26.615500 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 91.980000 
+	 vertex 47.305400 5.925600 88.020000 
+	 vertex 26.615500 26.615500 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 91.980000 
+	 vertex 26.615500 26.615500 88.020000 
+	 vertex 26.615500 26.615500 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 96.000000 
+	 vertex 47.305400 5.925600 91.980000 
+	 vertex 26.615500 26.615500 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 96.000000 
+	 vertex 26.615500 26.615500 91.980000 
+	 vertex 26.615500 26.615500 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 100.020000 
+	 vertex 26.615500 26.615500 96.000000 
+	 vertex 5.925600 47.305400 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 100.020000 
+	 vertex 5.925600 47.305400 96.000000 
+	 vertex 5.925600 47.305400 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 103.980000 
+	 vertex 26.615500 26.615500 100.020000 
+	 vertex 5.925600 47.305400 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 103.980000 
+	 vertex 5.925600 47.305400 100.020000 
+	 vertex 5.925600 47.305400 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 108.000000 
+	 vertex 26.615500 26.615500 103.980000 
+	 vertex 5.925600 47.305400 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 108.000000 
+	 vertex 5.925600 47.305400 103.980000 
+	 vertex 5.925600 47.305400 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 100.020000 
+	 vertex 47.305400 5.925600 96.000000 
+	 vertex 26.615500 26.615500 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 100.020000 
+	 vertex 26.615500 26.615500 96.000000 
+	 vertex 26.615500 26.615500 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 103.980000 
+	 vertex 47.305400 5.925600 100.020000 
+	 vertex 26.615500 26.615500 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 103.980000 
+	 vertex 26.615500 26.615500 100.020000 
+	 vertex 26.615500 26.615500 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 108.000000 
+	 vertex 47.305400 5.925600 103.980000 
+	 vertex 26.615500 26.615500 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 108.000000 
+	 vertex 26.615500 26.615500 103.980000 
+	 vertex 26.615500 26.615500 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 112.020000 
+	 vertex 26.615500 26.615500 108.000000 
+	 vertex 5.925600 47.305400 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 112.020000 
+	 vertex 5.925600 47.305400 108.000000 
+	 vertex 5.925600 47.305400 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 115.980000 
+	 vertex 26.615500 26.615500 112.020000 
+	 vertex 5.925600 47.305400 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 26.615500 26.615500 115.980000 
+	 vertex 5.925600 47.305400 112.020000 
+	 vertex 5.925600 47.305400 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 120.000000 
+	 vertex 26.615500 26.615500 115.980000 
+	 vertex 5.925600 47.305400 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 26.615500 26.615500 120.000000 
+	 vertex 5.925600 47.305400 115.980000 
+	 vertex 5.925600 47.305400 120.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 112.020000 
+	 vertex 47.305400 5.925600 108.000000 
+	 vertex 26.615500 26.615500 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 112.020000 
+	 vertex 26.615500 26.615500 108.000000 
+	 vertex 26.615500 26.615500 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 115.980000 
+	 vertex 47.305400 5.925600 112.020000 
+	 vertex 26.615500 26.615500 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 47.305400 5.925600 115.980000 
+	 vertex 26.615500 26.615500 112.020000 
+	 vertex 26.615500 26.615500 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 120.000000 
+	 vertex 47.305400 5.925600 115.980000 
+	 vertex 26.615500 26.615500 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 47.305400 5.925600 120.000000 
+	 vertex 26.615500 26.615500 115.980000 
+	 vertex 26.615500 26.615500 120.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 4.020000 
+	 vertex 29.561800 -11.818100 0.000000 
+	 vertex 47.305400 5.925600 0.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 4.020000 
+	 vertex 47.305400 5.925600 0.000000 
+	 vertex 47.305400 5.925600 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 7.980000 
+	 vertex 29.561800 -11.818100 4.020000 
+	 vertex 47.305400 5.925600 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 7.980000 
+	 vertex 47.305400 5.925600 4.020000 
+	 vertex 47.305400 5.925600 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 12.000000 
+	 vertex 29.561800 -11.818100 7.980000 
+	 vertex 47.305400 5.925600 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 12.000000 
+	 vertex 47.305400 5.925600 7.980000 
+	 vertex 47.305400 5.925600 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 4.020000 
+	 vertex 11.818100 -29.561800 0.000000 
+	 vertex 29.561800 -11.818100 0.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 4.020000 
+	 vertex 29.561800 -11.818100 0.000000 
+	 vertex 29.561800 -11.818100 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 7.980000 
+	 vertex 11.818100 -29.561800 4.020000 
+	 vertex 29.561800 -11.818100 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 7.980000 
+	 vertex 29.561800 -11.818100 4.020000 
+	 vertex 29.561800 -11.818100 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 12.000000 
+	 vertex 11.818100 -29.561800 7.980000 
+	 vertex 29.561800 -11.818100 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 12.000000 
+	 vertex 29.561800 -11.818100 7.980000 
+	 vertex 29.561800 -11.818100 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 4.020000 
+	 vertex -5.925600 -47.305400 0.000000 
+	 vertex 11.818100 -29.561800 0.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 4.020000 
+	 vertex 11.818100 -29.561800 0.000000 
+	 vertex 11.818100 -29.561800 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 7.980000 
+	 vertex -5.925600 -47.305400 4.020000 
+	 vertex 11.818100 -29.561800 4.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 7.980000 
+	 vertex 11.818100 -29.561800 4.020000 
+	 vertex 11.818100 -29.561800 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 12.000000 
+	 vertex -5.925600 -47.305400 7.980000 
+	 vertex 11.818100 -29.561800 7.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 12.000000 
+	 vertex 11.818100 -29.561800 7.980000 
+	 vertex 11.818100 -29.561800 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 16.020000 
+	 vertex 29.561800 -11.818100 12.000000 
+	 vertex 47.305400 5.925600 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 16.020000 
+	 vertex 47.305400 5.925600 12.000000 
+	 vertex 47.305400 5.925600 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 19.980000 
+	 vertex 29.561800 -11.818100 16.020000 
+	 vertex 47.305400 5.925600 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 19.980000 
+	 vertex 47.305400 5.925600 16.020000 
+	 vertex 47.305400 5.925600 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 24.000000 
+	 vertex 29.561800 -11.818100 19.980000 
+	 vertex 47.305400 5.925600 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 24.000000 
+	 vertex 47.305400 5.925600 19.980000 
+	 vertex 47.305400 5.925600 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 16.020000 
+	 vertex 11.818100 -29.561800 12.000000 
+	 vertex 29.561800 -11.818100 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 16.020000 
+	 vertex 29.561800 -11.818100 12.000000 
+	 vertex 29.561800 -11.818100 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 19.980000 
+	 vertex 11.818100 -29.561800 16.020000 
+	 vertex 29.561800 -11.818100 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 19.980000 
+	 vertex 29.561800 -11.818100 16.020000 
+	 vertex 29.561800 -11.818100 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 24.000000 
+	 vertex 11.818100 -29.561800 19.980000 
+	 vertex 29.561800 -11.818100 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 24.000000 
+	 vertex 29.561800 -11.818100 19.980000 
+	 vertex 29.561800 -11.818100 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 16.020000 
+	 vertex -5.925600 -47.305400 12.000000 
+	 vertex 11.818100 -29.561800 12.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 16.020000 
+	 vertex 11.818100 -29.561800 12.000000 
+	 vertex 11.818100 -29.561800 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 19.980000 
+	 vertex -5.925600 -47.305400 16.020000 
+	 vertex 11.818100 -29.561800 16.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 19.980000 
+	 vertex 11.818100 -29.561800 16.020000 
+	 vertex 11.818100 -29.561800 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 24.000000 
+	 vertex -5.925600 -47.305400 19.980000 
+	 vertex 11.818100 -29.561800 19.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 24.000000 
+	 vertex 11.818100 -29.561800 19.980000 
+	 vertex 11.818100 -29.561800 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 28.020000 
+	 vertex 29.561800 -11.818100 24.000000 
+	 vertex 47.305400 5.925600 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 28.020000 
+	 vertex 47.305400 5.925600 24.000000 
+	 vertex 47.305400 5.925600 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 31.980000 
+	 vertex 29.561800 -11.818100 28.020000 
+	 vertex 47.305400 5.925600 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 31.980000 
+	 vertex 47.305400 5.925600 28.020000 
+	 vertex 47.305400 5.925600 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 36.000000 
+	 vertex 29.561800 -11.818100 31.980000 
+	 vertex 47.305400 5.925600 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 36.000000 
+	 vertex 47.305400 5.925600 31.980000 
+	 vertex 47.305400 5.925600 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 28.020000 
+	 vertex 11.818100 -29.561800 24.000000 
+	 vertex 29.561800 -11.818100 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 28.020000 
+	 vertex 29.561800 -11.818100 24.000000 
+	 vertex 29.561800 -11.818100 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 31.980000 
+	 vertex 11.818100 -29.561800 28.020000 
+	 vertex 29.561800 -11.818100 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 31.980000 
+	 vertex 29.561800 -11.818100 28.020000 
+	 vertex 29.561800 -11.818100 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 36.000000 
+	 vertex 11.818100 -29.561800 31.980000 
+	 vertex 29.561800 -11.818100 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 36.000000 
+	 vertex 29.561800 -11.818100 31.980000 
+	 vertex 29.561800 -11.818100 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 28.020000 
+	 vertex -5.925600 -47.305400 24.000000 
+	 vertex 11.818100 -29.561800 24.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 28.020000 
+	 vertex 11.818100 -29.561800 24.000000 
+	 vertex 11.818100 -29.561800 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 31.980000 
+	 vertex -5.925600 -47.305400 28.020000 
+	 vertex 11.818100 -29.561800 28.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 31.980000 
+	 vertex 11.818100 -29.561800 28.020000 
+	 vertex 11.818100 -29.561800 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 36.000000 
+	 vertex -5.925600 -47.305400 31.980000 
+	 vertex 11.818100 -29.561800 31.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 36.000000 
+	 vertex 11.818100 -29.561800 31.980000 
+	 vertex 11.818100 -29.561800 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 40.020000 
+	 vertex 29.561800 -11.818100 36.000000 
+	 vertex 47.305400 5.925600 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 40.020000 
+	 vertex 47.305400 5.925600 36.000000 
+	 vertex 47.305400 5.925600 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 43.980000 
+	 vertex 29.561800 -11.818100 40.020000 
+	 vertex 47.305400 5.925600 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 43.980000 
+	 vertex 47.305400 5.925600 40.020000 
+	 vertex 47.305400 5.925600 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 48.000000 
+	 vertex 29.561800 -11.818100 43.980000 
+	 vertex 47.305400 5.925600 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 48.000000 
+	 vertex 47.305400 5.925600 43.980000 
+	 vertex 47.305400 5.925600 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 40.020000 
+	 vertex 11.818100 -29.561800 36.000000 
+	 vertex 29.561800 -11.818100 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 40.020000 
+	 vertex 29.561800 -11.818100 36.000000 
+	 vertex 29.561800 -11.818100 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 43.980000 
+	 vertex 11.818100 -29.561800 40.020000 
+	 vertex 29.561800 -11.818100 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 43.980000 
+	 vertex 29.561800 -11.818100 40.020000 
+	 vertex 29.561800 -11.818100 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 48.000000 
+	 vertex 11.818100 -29.561800 43.980000 
+	 vertex 29.561800 -11.818100 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 48.000000 
+	 vertex 29.561800 -11.818100 43.980000 
+	 vertex 29.561800 -11.818100 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 40.020000 
+	 vertex -5.925600 -47.305400 36.000000 
+	 vertex 11.818100 -29.561800 36.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 40.020000 
+	 vertex 11.818100 -29.561800 36.000000 
+	 vertex 11.818100 -29.561800 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 43.980000 
+	 vertex -5.925600 -47.305400 40.020000 
+	 vertex 11.818100 -29.561800 40.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 43.980000 
+	 vertex 11.818100 -29.561800 40.020000 
+	 vertex 11.818100 -29.561800 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 48.000000 
+	 vertex -5.925600 -47.305400 43.980000 
+	 vertex 11.818100 -29.561800 43.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 48.000000 
+	 vertex 11.818100 -29.561800 43.980000 
+	 vertex 11.818100 -29.561800 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 52.020000 
+	 vertex 29.561800 -11.818100 48.000000 
+	 vertex 47.305400 5.925600 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 52.020000 
+	 vertex 47.305400 5.925600 48.000000 
+	 vertex 47.305400 5.925600 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 55.980000 
+	 vertex 29.561800 -11.818100 52.020000 
+	 vertex 47.305400 5.925600 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 55.980000 
+	 vertex 47.305400 5.925600 52.020000 
+	 vertex 47.305400 5.925600 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 60.000000 
+	 vertex 29.561800 -11.818100 55.980000 
+	 vertex 47.305400 5.925600 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 60.000000 
+	 vertex 47.305400 5.925600 55.980000 
+	 vertex 47.305400 5.925600 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 52.020000 
+	 vertex 11.818100 -29.561800 48.000000 
+	 vertex 29.561800 -11.818100 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 52.020000 
+	 vertex 29.561800 -11.818100 48.000000 
+	 vertex 29.561800 -11.818100 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 55.980000 
+	 vertex 11.818100 -29.561800 52.020000 
+	 vertex 29.561800 -11.818100 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 55.980000 
+	 vertex 29.561800 -11.818100 52.020000 
+	 vertex 29.561800 -11.818100 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 60.000000 
+	 vertex 11.818100 -29.561800 55.980000 
+	 vertex 29.561800 -11.818100 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 60.000000 
+	 vertex 29.561800 -11.818100 55.980000 
+	 vertex 29.561800 -11.818100 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 52.020000 
+	 vertex -5.925600 -47.305400 48.000000 
+	 vertex 11.818100 -29.561800 48.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 52.020000 
+	 vertex 11.818100 -29.561800 48.000000 
+	 vertex 11.818100 -29.561800 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 55.980000 
+	 vertex -5.925600 -47.305400 52.020000 
+	 vertex 11.818100 -29.561800 52.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 55.980000 
+	 vertex 11.818100 -29.561800 52.020000 
+	 vertex 11.818100 -29.561800 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 60.000000 
+	 vertex -5.925600 -47.305400 55.980000 
+	 vertex 11.818100 -29.561800 55.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 60.000000 
+	 vertex 11.818100 -29.561800 55.980000 
+	 vertex 11.818100 -29.561800 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 64.020000 
+	 vertex 29.561800 -11.818100 60.000000 
+	 vertex 47.305400 5.925600 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 64.020000 
+	 vertex 47.305400 5.925600 60.000000 
+	 vertex 47.305400 5.925600 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 67.980000 
+	 vertex 29.561800 -11.818100 64.020000 
+	 vertex 47.305400 5.925600 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 67.980000 
+	 vertex 47.305400 5.925600 64.020000 
+	 vertex 47.305400 5.925600 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 72.000000 
+	 vertex 29.561800 -11.818100 67.980000 
+	 vertex 47.305400 5.925600 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 72.000000 
+	 vertex 47.305400 5.925600 67.980000 
+	 vertex 47.305400 5.925600 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 64.020000 
+	 vertex 11.818100 -29.561800 60.000000 
+	 vertex 29.561800 -11.818100 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 64.020000 
+	 vertex 29.561800 -11.818100 60.000000 
+	 vertex 29.561800 -11.818100 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 67.980000 
+	 vertex 11.818100 -29.561800 64.020000 
+	 vertex 29.561800 -11.818100 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 67.980000 
+	 vertex 29.561800 -11.818100 64.020000 
+	 vertex 29.561800 -11.818100 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 72.000000 
+	 vertex 11.818100 -29.561800 67.980000 
+	 vertex 29.561800 -11.818100 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 72.000000 
+	 vertex 29.561800 -11.818100 67.980000 
+	 vertex 29.561800 -11.818100 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 64.020000 
+	 vertex -5.925600 -47.305400 60.000000 
+	 vertex 11.818100 -29.561800 60.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 64.020000 
+	 vertex 11.818100 -29.561800 60.000000 
+	 vertex 11.818100 -29.561800 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 67.980000 
+	 vertex -5.925600 -47.305400 64.020000 
+	 vertex 11.818100 -29.561800 64.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 67.980000 
+	 vertex 11.818100 -29.561800 64.020000 
+	 vertex 11.818100 -29.561800 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 72.000000 
+	 vertex -5.925600 -47.305400 67.980000 
+	 vertex 11.818100 -29.561800 67.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 72.000000 
+	 vertex 11.818100 -29.561800 67.980000 
+	 vertex 11.818100 -29.561800 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 76.020000 
+	 vertex 29.561800 -11.818100 72.000000 
+	 vertex 47.305400 5.925600 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 76.020000 
+	 vertex 47.305400 5.925600 72.000000 
+	 vertex 47.305400 5.925600 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 79.980000 
+	 vertex 29.561800 -11.818100 76.020000 
+	 vertex 47.305400 5.925600 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 79.980000 
+	 vertex 47.305400 5.925600 76.020000 
+	 vertex 47.305400 5.925600 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 84.000000 
+	 vertex 29.561800 -11.818100 79.980000 
+	 vertex 47.305400 5.925600 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 84.000000 
+	 vertex 47.305400 5.925600 79.980000 
+	 vertex 47.305400 5.925600 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 76.020000 
+	 vertex 11.818100 -29.561800 72.000000 
+	 vertex 29.561800 -11.818100 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 76.020000 
+	 vertex 29.561800 -11.818100 72.000000 
+	 vertex 29.561800 -11.818100 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 79.980000 
+	 vertex 11.818100 -29.561800 76.020000 
+	 vertex 29.561800 -11.818100 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 79.980000 
+	 vertex 29.561800 -11.818100 76.020000 
+	 vertex 29.561800 -11.818100 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 84.000000 
+	 vertex 11.818100 -29.561800 79.980000 
+	 vertex 29.561800 -11.818100 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 84.000000 
+	 vertex 29.561800 -11.818100 79.980000 
+	 vertex 29.561800 -11.818100 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 76.020000 
+	 vertex -5.925600 -47.305400 72.000000 
+	 vertex 11.818100 -29.561800 72.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 76.020000 
+	 vertex 11.818100 -29.561800 72.000000 
+	 vertex 11.818100 -29.561800 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 79.980000 
+	 vertex -5.925600 -47.305400 76.020000 
+	 vertex 11.818100 -29.561800 76.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 79.980000 
+	 vertex 11.818100 -29.561800 76.020000 
+	 vertex 11.818100 -29.561800 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 84.000000 
+	 vertex -5.925600 -47.305400 79.980000 
+	 vertex 11.818100 -29.561800 79.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 84.000000 
+	 vertex 11.818100 -29.561800 79.980000 
+	 vertex 11.818100 -29.561800 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 88.020000 
+	 vertex 29.561800 -11.818100 84.000000 
+	 vertex 47.305400 5.925600 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 88.020000 
+	 vertex 47.305400 5.925600 84.000000 
+	 vertex 47.305400 5.925600 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 91.980000 
+	 vertex 29.561800 -11.818100 88.020000 
+	 vertex 47.305400 5.925600 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 91.980000 
+	 vertex 47.305400 5.925600 88.020000 
+	 vertex 47.305400 5.925600 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 96.000000 
+	 vertex 29.561800 -11.818100 91.980000 
+	 vertex 47.305400 5.925600 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 96.000000 
+	 vertex 47.305400 5.925600 91.980000 
+	 vertex 47.305400 5.925600 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 88.020000 
+	 vertex 11.818100 -29.561800 84.000000 
+	 vertex 29.561800 -11.818100 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 88.020000 
+	 vertex 29.561800 -11.818100 84.000000 
+	 vertex 29.561800 -11.818100 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 91.980000 
+	 vertex 11.818100 -29.561800 88.020000 
+	 vertex 29.561800 -11.818100 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 91.980000 
+	 vertex 29.561800 -11.818100 88.020000 
+	 vertex 29.561800 -11.818100 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 96.000000 
+	 vertex 11.818100 -29.561800 91.980000 
+	 vertex 29.561800 -11.818100 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 96.000000 
+	 vertex 29.561800 -11.818100 91.980000 
+	 vertex 29.561800 -11.818100 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 88.020000 
+	 vertex -5.925600 -47.305400 84.000000 
+	 vertex 11.818100 -29.561800 84.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 88.020000 
+	 vertex 11.818100 -29.561800 84.000000 
+	 vertex 11.818100 -29.561800 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 91.980000 
+	 vertex -5.925600 -47.305400 88.020000 
+	 vertex 11.818100 -29.561800 88.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 91.980000 
+	 vertex 11.818100 -29.561800 88.020000 
+	 vertex 11.818100 -29.561800 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 96.000000 
+	 vertex -5.925600 -47.305400 91.980000 
+	 vertex 11.818100 -29.561800 91.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 96.000000 
+	 vertex 11.818100 -29.561800 91.980000 
+	 vertex 11.818100 -29.561800 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 100.020000 
+	 vertex 29.561800 -11.818100 96.000000 
+	 vertex 47.305400 5.925600 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 100.020000 
+	 vertex 47.305400 5.925600 96.000000 
+	 vertex 47.305400 5.925600 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 103.980000 
+	 vertex 29.561800 -11.818100 100.020000 
+	 vertex 47.305400 5.925600 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 103.980000 
+	 vertex 47.305400 5.925600 100.020000 
+	 vertex 47.305400 5.925600 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 108.000000 
+	 vertex 29.561800 -11.818100 103.980000 
+	 vertex 47.305400 5.925600 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 108.000000 
+	 vertex 47.305400 5.925600 103.980000 
+	 vertex 47.305400 5.925600 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 100.020000 
+	 vertex 11.818100 -29.561800 96.000000 
+	 vertex 29.561800 -11.818100 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 100.020000 
+	 vertex 29.561800 -11.818100 96.000000 
+	 vertex 29.561800 -11.818100 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 103.980000 
+	 vertex 11.818100 -29.561800 100.020000 
+	 vertex 29.561800 -11.818100 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 103.980000 
+	 vertex 29.561800 -11.818100 100.020000 
+	 vertex 29.561800 -11.818100 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 108.000000 
+	 vertex 11.818100 -29.561800 103.980000 
+	 vertex 29.561800 -11.818100 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 108.000000 
+	 vertex 29.561800 -11.818100 103.980000 
+	 vertex 29.561800 -11.818100 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 100.020000 
+	 vertex -5.925600 -47.305400 96.000000 
+	 vertex 11.818100 -29.561800 96.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 100.020000 
+	 vertex 11.818100 -29.561800 96.000000 
+	 vertex 11.818100 -29.561800 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 103.980000 
+	 vertex -5.925600 -47.305400 100.020000 
+	 vertex 11.818100 -29.561800 100.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 103.980000 
+	 vertex 11.818100 -29.561800 100.020000 
+	 vertex 11.818100 -29.561800 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 108.000000 
+	 vertex -5.925600 -47.305400 103.980000 
+	 vertex 11.818100 -29.561800 103.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 108.000000 
+	 vertex 11.818100 -29.561800 103.980000 
+	 vertex 11.818100 -29.561800 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 112.020000 
+	 vertex 29.561800 -11.818100 108.000000 
+	 vertex 47.305400 5.925600 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 112.020000 
+	 vertex 47.305400 5.925600 108.000000 
+	 vertex 47.305400 5.925600 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 115.980000 
+	 vertex 29.561800 -11.818100 112.020000 
+	 vertex 47.305400 5.925600 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 29.561800 -11.818100 115.980000 
+	 vertex 47.305400 5.925600 112.020000 
+	 vertex 47.305400 5.925600 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 120.000000 
+	 vertex 29.561800 -11.818100 115.980000 
+	 vertex 47.305400 5.925600 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 29.561800 -11.818100 120.000000 
+	 vertex 47.305400 5.925600 115.980000 
+	 vertex 47.305400 5.925600 120.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 112.020000 
+	 vertex 11.818100 -29.561800 108.000000 
+	 vertex 29.561800 -11.818100 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 112.020000 
+	 vertex 29.561800 -11.818100 108.000000 
+	 vertex 29.561800 -11.818100 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 115.980000 
+	 vertex 11.818100 -29.561800 112.020000 
+	 vertex 29.561800 -11.818100 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 11.818100 -29.561800 115.980000 
+	 vertex 29.561800 -11.818100 112.020000 
+	 vertex 29.561800 -11.818100 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 120.000000 
+	 vertex 11.818100 -29.561800 115.980000 
+	 vertex 29.561800 -11.818100 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 11.818100 -29.561800 120.000000 
+	 vertex 29.561800 -11.818100 115.980000 
+	 vertex 29.561800 -11.818100 120.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 112.020000 
+	 vertex -5.925600 -47.305400 108.000000 
+	 vertex 11.818100 -29.561800 108.000000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 112.020000 
+	 vertex 11.818100 -29.561800 108.000000 
+	 vertex 11.818100 -29.561800 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 115.980000 
+	 vertex -5.925600 -47.305400 112.020000 
+	 vertex 11.818100 -29.561800 112.020000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -5.925600 -47.305400 115.980000 
+	 vertex 11.818100 -29.561800 112.020000 
+	 vertex 11.818100 -29.561800 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 120.000000 
+	 vertex -5.925600 -47.305400 115.980000 
+	 vertex 11.818100 -29.561800 115.980000 
+	 endloop
+end facet
+facet normal 0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -5.925600 -47.305400 120.000000 
+	 vertex 11.818100 -29.561800 115.980000 
+	 vertex 11.818100 -29.561800 120.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 4.020000 
+	 vertex -26.615500 -26.615500 0.000000 
+	 vertex -5.925600 -47.305400 0.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 4.020000 
+	 vertex -5.925600 -47.305400 0.000000 
+	 vertex -5.925600 -47.305400 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 7.980000 
+	 vertex -26.615500 -26.615500 4.020000 
+	 vertex -5.925600 -47.305400 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 7.980000 
+	 vertex -5.925600 -47.305400 4.020000 
+	 vertex -5.925600 -47.305400 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 12.000000 
+	 vertex -26.615500 -26.615500 7.980000 
+	 vertex -5.925600 -47.305400 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 12.000000 
+	 vertex -5.925600 -47.305400 7.980000 
+	 vertex -5.925600 -47.305400 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 4.020000 
+	 vertex -47.305400 -5.925600 0.000000 
+	 vertex -26.615500 -26.615500 0.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 4.020000 
+	 vertex -26.615500 -26.615500 0.000000 
+	 vertex -26.615500 -26.615500 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 7.980000 
+	 vertex -47.305400 -5.925600 4.020000 
+	 vertex -26.615500 -26.615500 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 7.980000 
+	 vertex -26.615500 -26.615500 4.020000 
+	 vertex -26.615500 -26.615500 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 12.000000 
+	 vertex -47.305400 -5.925600 7.980000 
+	 vertex -26.615500 -26.615500 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 12.000000 
+	 vertex -26.615500 -26.615500 7.980000 
+	 vertex -26.615500 -26.615500 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 16.020000 
+	 vertex -26.615500 -26.615500 12.000000 
+	 vertex -5.925600 -47.305400 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 16.020000 
+	 vertex -5.925600 -47.305400 12.000000 
+	 vertex -5.925600 -47.305400 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 19.980000 
+	 vertex -26.615500 -26.615500 16.020000 
+	 vertex -5.925600 -47.305400 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 19.980000 
+	 vertex -5.925600 -47.305400 16.020000 
+	 vertex -5.925600 -47.305400 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 24.000000 
+	 vertex -26.615500 -26.615500 19.980000 
+	 vertex -5.925600 -47.305400 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 24.000000 
+	 vertex -5.925600 -47.305400 19.980000 
+	 vertex -5.925600 -47.305400 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 16.020000 
+	 vertex -47.305400 -5.925600 12.000000 
+	 vertex -26.615500 -26.615500 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 16.020000 
+	 vertex -26.615500 -26.615500 12.000000 
+	 vertex -26.615500 -26.615500 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 19.980000 
+	 vertex -47.305400 -5.925600 16.020000 
+	 vertex -26.615500 -26.615500 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 19.980000 
+	 vertex -26.615500 -26.615500 16.020000 
+	 vertex -26.615500 -26.615500 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 24.000000 
+	 vertex -47.305400 -5.925600 19.980000 
+	 vertex -26.615500 -26.615500 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 24.000000 
+	 vertex -26.615500 -26.615500 19.980000 
+	 vertex -26.615500 -26.615500 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 28.020000 
+	 vertex -26.615500 -26.615500 24.000000 
+	 vertex -5.925600 -47.305400 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 28.020000 
+	 vertex -5.925600 -47.305400 24.000000 
+	 vertex -5.925600 -47.305400 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 31.980000 
+	 vertex -26.615500 -26.615500 28.020000 
+	 vertex -5.925600 -47.305400 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 31.980000 
+	 vertex -5.925600 -47.305400 28.020000 
+	 vertex -5.925600 -47.305400 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 36.000000 
+	 vertex -26.615500 -26.615500 31.980000 
+	 vertex -5.925600 -47.305400 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 36.000000 
+	 vertex -5.925600 -47.305400 31.980000 
+	 vertex -5.925600 -47.305400 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 28.020000 
+	 vertex -47.305400 -5.925600 24.000000 
+	 vertex -26.615500 -26.615500 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 28.020000 
+	 vertex -26.615500 -26.615500 24.000000 
+	 vertex -26.615500 -26.615500 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 31.980000 
+	 vertex -47.305400 -5.925600 28.020000 
+	 vertex -26.615500 -26.615500 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 31.980000 
+	 vertex -26.615500 -26.615500 28.020000 
+	 vertex -26.615500 -26.615500 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 36.000000 
+	 vertex -47.305400 -5.925600 31.980000 
+	 vertex -26.615500 -26.615500 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 36.000000 
+	 vertex -26.615500 -26.615500 31.980000 
+	 vertex -26.615500 -26.615500 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 40.020000 
+	 vertex -26.615500 -26.615500 36.000000 
+	 vertex -5.925600 -47.305400 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 40.020000 
+	 vertex -5.925600 -47.305400 36.000000 
+	 vertex -5.925600 -47.305400 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 43.980000 
+	 vertex -26.615500 -26.615500 40.020000 
+	 vertex -5.925600 -47.305400 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 43.980000 
+	 vertex -5.925600 -47.305400 40.020000 
+	 vertex -5.925600 -47.305400 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 48.000000 
+	 vertex -26.615500 -26.615500 43.980000 
+	 vertex -5.925600 -47.305400 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 48.000000 
+	 vertex -5.925600 -47.305400 43.980000 
+	 vertex -5.925600 -47.305400 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 40.020000 
+	 vertex -47.305400 -5.925600 36.000000 
+	 vertex -26.615500 -26.615500 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 40.020000 
+	 vertex -26.615500 -26.615500 36.000000 
+	 vertex -26.615500 -26.615500 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 43.980000 
+	 vertex -47.305400 -5.925600 40.020000 
+	 vertex -26.615500 -26.615500 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 43.980000 
+	 vertex -26.615500 -26.615500 40.020000 
+	 vertex -26.615500 -26.615500 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 48.000000 
+	 vertex -47.305400 -5.925600 43.980000 
+	 vertex -26.615500 -26.615500 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 48.000000 
+	 vertex -26.615500 -26.615500 43.980000 
+	 vertex -26.615500 -26.615500 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 52.020000 
+	 vertex -26.615500 -26.615500 48.000000 
+	 vertex -5.925600 -47.305400 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 52.020000 
+	 vertex -5.925600 -47.305400 48.000000 
+	 vertex -5.925600 -47.305400 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 55.980000 
+	 vertex -26.615500 -26.615500 52.020000 
+	 vertex -5.925600 -47.305400 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 55.980000 
+	 vertex -5.925600 -47.305400 52.020000 
+	 vertex -5.925600 -47.305400 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 60.000000 
+	 vertex -26.615500 -26.615500 55.980000 
+	 vertex -5.925600 -47.305400 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 60.000000 
+	 vertex -5.925600 -47.305400 55.980000 
+	 vertex -5.925600 -47.305400 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 52.020000 
+	 vertex -47.305400 -5.925600 48.000000 
+	 vertex -26.615500 -26.615500 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 52.020000 
+	 vertex -26.615500 -26.615500 48.000000 
+	 vertex -26.615500 -26.615500 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 55.980000 
+	 vertex -47.305400 -5.925600 52.020000 
+	 vertex -26.615500 -26.615500 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 55.980000 
+	 vertex -26.615500 -26.615500 52.020000 
+	 vertex -26.615500 -26.615500 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 60.000000 
+	 vertex -47.305400 -5.925600 55.980000 
+	 vertex -26.615500 -26.615500 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 60.000000 
+	 vertex -26.615500 -26.615500 55.980000 
+	 vertex -26.615500 -26.615500 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 64.020000 
+	 vertex -26.615500 -26.615500 60.000000 
+	 vertex -5.925600 -47.305400 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 64.020000 
+	 vertex -5.925600 -47.305400 60.000000 
+	 vertex -5.925600 -47.305400 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 67.980000 
+	 vertex -26.615500 -26.615500 64.020000 
+	 vertex -5.925600 -47.305400 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 67.980000 
+	 vertex -5.925600 -47.305400 64.020000 
+	 vertex -5.925600 -47.305400 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 72.000000 
+	 vertex -26.615500 -26.615500 67.980000 
+	 vertex -5.925600 -47.305400 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 72.000000 
+	 vertex -5.925600 -47.305400 67.980000 
+	 vertex -5.925600 -47.305400 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 64.020000 
+	 vertex -47.305400 -5.925600 60.000000 
+	 vertex -26.615500 -26.615500 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 64.020000 
+	 vertex -26.615500 -26.615500 60.000000 
+	 vertex -26.615500 -26.615500 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 67.980000 
+	 vertex -47.305400 -5.925600 64.020000 
+	 vertex -26.615500 -26.615500 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 67.980000 
+	 vertex -26.615500 -26.615500 64.020000 
+	 vertex -26.615500 -26.615500 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 72.000000 
+	 vertex -47.305400 -5.925600 67.980000 
+	 vertex -26.615500 -26.615500 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 72.000000 
+	 vertex -26.615500 -26.615500 67.980000 
+	 vertex -26.615500 -26.615500 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 76.020000 
+	 vertex -26.615500 -26.615500 72.000000 
+	 vertex -5.925600 -47.305400 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 76.020000 
+	 vertex -5.925600 -47.305400 72.000000 
+	 vertex -5.925600 -47.305400 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 79.980000 
+	 vertex -26.615500 -26.615500 76.020000 
+	 vertex -5.925600 -47.305400 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 79.980000 
+	 vertex -5.925600 -47.305400 76.020000 
+	 vertex -5.925600 -47.305400 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 84.000000 
+	 vertex -26.615500 -26.615500 79.980000 
+	 vertex -5.925600 -47.305400 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 84.000000 
+	 vertex -5.925600 -47.305400 79.980000 
+	 vertex -5.925600 -47.305400 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 76.020000 
+	 vertex -47.305400 -5.925600 72.000000 
+	 vertex -26.615500 -26.615500 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 76.020000 
+	 vertex -26.615500 -26.615500 72.000000 
+	 vertex -26.615500 -26.615500 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 79.980000 
+	 vertex -47.305400 -5.925600 76.020000 
+	 vertex -26.615500 -26.615500 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 79.980000 
+	 vertex -26.615500 -26.615500 76.020000 
+	 vertex -26.615500 -26.615500 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 84.000000 
+	 vertex -47.305400 -5.925600 79.980000 
+	 vertex -26.615500 -26.615500 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 84.000000 
+	 vertex -26.615500 -26.615500 79.980000 
+	 vertex -26.615500 -26.615500 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 88.020000 
+	 vertex -26.615500 -26.615500 84.000000 
+	 vertex -5.925600 -47.305400 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 88.020000 
+	 vertex -5.925600 -47.305400 84.000000 
+	 vertex -5.925600 -47.305400 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 91.980000 
+	 vertex -26.615500 -26.615500 88.020000 
+	 vertex -5.925600 -47.305400 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 91.980000 
+	 vertex -5.925600 -47.305400 88.020000 
+	 vertex -5.925600 -47.305400 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 96.000000 
+	 vertex -26.615500 -26.615500 91.980000 
+	 vertex -5.925600 -47.305400 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 96.000000 
+	 vertex -5.925600 -47.305400 91.980000 
+	 vertex -5.925600 -47.305400 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 88.020000 
+	 vertex -47.305400 -5.925600 84.000000 
+	 vertex -26.615500 -26.615500 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 88.020000 
+	 vertex -26.615500 -26.615500 84.000000 
+	 vertex -26.615500 -26.615500 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 91.980000 
+	 vertex -47.305400 -5.925600 88.020000 
+	 vertex -26.615500 -26.615500 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 91.980000 
+	 vertex -26.615500 -26.615500 88.020000 
+	 vertex -26.615500 -26.615500 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 96.000000 
+	 vertex -47.305400 -5.925600 91.980000 
+	 vertex -26.615500 -26.615500 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 96.000000 
+	 vertex -26.615500 -26.615500 91.980000 
+	 vertex -26.615500 -26.615500 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 100.020000 
+	 vertex -26.615500 -26.615500 96.000000 
+	 vertex -5.925600 -47.305400 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 100.020000 
+	 vertex -5.925600 -47.305400 96.000000 
+	 vertex -5.925600 -47.305400 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 103.980000 
+	 vertex -26.615500 -26.615500 100.020000 
+	 vertex -5.925600 -47.305400 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 103.980000 
+	 vertex -5.925600 -47.305400 100.020000 
+	 vertex -5.925600 -47.305400 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 108.000000 
+	 vertex -26.615500 -26.615500 103.980000 
+	 vertex -5.925600 -47.305400 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 108.000000 
+	 vertex -5.925600 -47.305400 103.980000 
+	 vertex -5.925600 -47.305400 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 100.020000 
+	 vertex -47.305400 -5.925600 96.000000 
+	 vertex -26.615500 -26.615500 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 100.020000 
+	 vertex -26.615500 -26.615500 96.000000 
+	 vertex -26.615500 -26.615500 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 103.980000 
+	 vertex -47.305400 -5.925600 100.020000 
+	 vertex -26.615500 -26.615500 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 103.980000 
+	 vertex -26.615500 -26.615500 100.020000 
+	 vertex -26.615500 -26.615500 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 108.000000 
+	 vertex -47.305400 -5.925600 103.980000 
+	 vertex -26.615500 -26.615500 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 108.000000 
+	 vertex -26.615500 -26.615500 103.980000 
+	 vertex -26.615500 -26.615500 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 112.020000 
+	 vertex -26.615500 -26.615500 108.000000 
+	 vertex -5.925600 -47.305400 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 112.020000 
+	 vertex -5.925600 -47.305400 108.000000 
+	 vertex -5.925600 -47.305400 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 115.980000 
+	 vertex -26.615500 -26.615500 112.020000 
+	 vertex -5.925600 -47.305400 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -26.615500 -26.615500 115.980000 
+	 vertex -5.925600 -47.305400 112.020000 
+	 vertex -5.925600 -47.305400 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 120.000000 
+	 vertex -26.615500 -26.615500 115.980000 
+	 vertex -5.925600 -47.305400 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -26.615500 -26.615500 120.000000 
+	 vertex -5.925600 -47.305400 115.980000 
+	 vertex -5.925600 -47.305400 120.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 112.020000 
+	 vertex -47.305400 -5.925600 108.000000 
+	 vertex -26.615500 -26.615500 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 112.020000 
+	 vertex -26.615500 -26.615500 108.000000 
+	 vertex -26.615500 -26.615500 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 115.980000 
+	 vertex -47.305400 -5.925600 112.020000 
+	 vertex -26.615500 -26.615500 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -47.305400 -5.925600 115.980000 
+	 vertex -26.615500 -26.615500 112.020000 
+	 vertex -26.615500 -26.615500 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 120.000000 
+	 vertex -47.305400 -5.925600 115.980000 
+	 vertex -26.615500 -26.615500 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 -0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -47.305400 -5.925600 120.000000 
+	 vertex -26.615500 -26.615500 115.980000 
+	 vertex -26.615500 -26.615500 120.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 4.020000 
+	 vertex -29.561800 11.818100 0.000000 
+	 vertex -47.305400 -5.925600 0.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 4.020000 
+	 vertex -47.305400 -5.925600 0.000000 
+	 vertex -47.305400 -5.925600 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 7.980000 
+	 vertex -29.561800 11.818100 4.020000 
+	 vertex -47.305400 -5.925600 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 7.980000 
+	 vertex -47.305400 -5.925600 4.020000 
+	 vertex -47.305400 -5.925600 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 12.000000 
+	 vertex -29.561800 11.818100 7.980000 
+	 vertex -47.305400 -5.925600 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 12.000000 
+	 vertex -47.305400 -5.925600 7.980000 
+	 vertex -47.305400 -5.925600 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 4.020000 
+	 vertex -11.818100 29.561800 0.000000 
+	 vertex -29.561800 11.818100 0.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 4.020000 
+	 vertex -29.561800 11.818100 0.000000 
+	 vertex -29.561800 11.818100 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 7.980000 
+	 vertex -11.818100 29.561800 4.020000 
+	 vertex -29.561800 11.818100 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 7.980000 
+	 vertex -29.561800 11.818100 4.020000 
+	 vertex -29.561800 11.818100 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 12.000000 
+	 vertex -11.818100 29.561800 7.980000 
+	 vertex -29.561800 11.818100 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 12.000000 
+	 vertex -29.561800 11.818100 7.980000 
+	 vertex -29.561800 11.818100 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 4.020000 
+	 vertex 5.925600 47.305400 0.000000 
+	 vertex -11.818100 29.561800 0.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 4.020000 
+	 vertex -11.818100 29.561800 0.000000 
+	 vertex -11.818100 29.561800 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 7.980000 
+	 vertex 5.925600 47.305400 4.020000 
+	 vertex -11.818100 29.561800 4.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 7.980000 
+	 vertex -11.818100 29.561800 4.020000 
+	 vertex -11.818100 29.561800 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 12.000000 
+	 vertex 5.925600 47.305400 7.980000 
+	 vertex -11.818100 29.561800 7.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 12.000000 
+	 vertex -11.818100 29.561800 7.980000 
+	 vertex -11.818100 29.561800 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 16.020000 
+	 vertex -29.561800 11.818100 12.000000 
+	 vertex -47.305400 -5.925600 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 16.020000 
+	 vertex -47.305400 -5.925600 12.000000 
+	 vertex -47.305400 -5.925600 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 19.980000 
+	 vertex -29.561800 11.818100 16.020000 
+	 vertex -47.305400 -5.925600 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 19.980000 
+	 vertex -47.305400 -5.925600 16.020000 
+	 vertex -47.305400 -5.925600 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 24.000000 
+	 vertex -29.561800 11.818100 19.980000 
+	 vertex -47.305400 -5.925600 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 24.000000 
+	 vertex -47.305400 -5.925600 19.980000 
+	 vertex -47.305400 -5.925600 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 16.020000 
+	 vertex -11.818100 29.561800 12.000000 
+	 vertex -29.561800 11.818100 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 16.020000 
+	 vertex -29.561800 11.818100 12.000000 
+	 vertex -29.561800 11.818100 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 19.980000 
+	 vertex -11.818100 29.561800 16.020000 
+	 vertex -29.561800 11.818100 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 19.980000 
+	 vertex -29.561800 11.818100 16.020000 
+	 vertex -29.561800 11.818100 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 24.000000 
+	 vertex -11.818100 29.561800 19.980000 
+	 vertex -29.561800 11.818100 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 24.000000 
+	 vertex -29.561800 11.818100 19.980000 
+	 vertex -29.561800 11.818100 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 16.020000 
+	 vertex 5.925600 47.305400 12.000000 
+	 vertex -11.818100 29.561800 12.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 16.020000 
+	 vertex -11.818100 29.561800 12.000000 
+	 vertex -11.818100 29.561800 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 19.980000 
+	 vertex 5.925600 47.305400 16.020000 
+	 vertex -11.818100 29.561800 16.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 19.980000 
+	 vertex -11.818100 29.561800 16.020000 
+	 vertex -11.818100 29.561800 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 24.000000 
+	 vertex 5.925600 47.305400 19.980000 
+	 vertex -11.818100 29.561800 19.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 24.000000 
+	 vertex -11.818100 29.561800 19.980000 
+	 vertex -11.818100 29.561800 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 28.020000 
+	 vertex -29.561800 11.818100 24.000000 
+	 vertex -47.305400 -5.925600 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 28.020000 
+	 vertex -47.305400 -5.925600 24.000000 
+	 vertex -47.305400 -5.925600 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 31.980000 
+	 vertex -29.561800 11.818100 28.020000 
+	 vertex -47.305400 -5.925600 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 31.980000 
+	 vertex -47.305400 -5.925600 28.020000 
+	 vertex -47.305400 -5.925600 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 36.000000 
+	 vertex -29.561800 11.818100 31.980000 
+	 vertex -47.305400 -5.925600 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 36.000000 
+	 vertex -47.305400 -5.925600 31.980000 
+	 vertex -47.305400 -5.925600 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 28.020000 
+	 vertex -11.818100 29.561800 24.000000 
+	 vertex -29.561800 11.818100 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 28.020000 
+	 vertex -29.561800 11.818100 24.000000 
+	 vertex -29.561800 11.818100 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 31.980000 
+	 vertex -11.818100 29.561800 28.020000 
+	 vertex -29.561800 11.818100 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 31.980000 
+	 vertex -29.561800 11.818100 28.020000 
+	 vertex -29.561800 11.818100 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 36.000000 
+	 vertex -11.818100 29.561800 31.980000 
+	 vertex -29.561800 11.818100 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 36.000000 
+	 vertex -29.561800 11.818100 31.980000 
+	 vertex -29.561800 11.818100 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 28.020000 
+	 vertex 5.925600 47.305400 24.000000 
+	 vertex -11.818100 29.561800 24.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 28.020000 
+	 vertex -11.818100 29.561800 24.000000 
+	 vertex -11.818100 29.561800 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 31.980000 
+	 vertex 5.925600 47.305400 28.020000 
+	 vertex -11.818100 29.561800 28.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 31.980000 
+	 vertex -11.818100 29.561800 28.020000 
+	 vertex -11.818100 29.561800 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 36.000000 
+	 vertex 5.925600 47.305400 31.980000 
+	 vertex -11.818100 29.561800 31.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 36.000000 
+	 vertex -11.818100 29.561800 31.980000 
+	 vertex -11.818100 29.561800 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 40.020000 
+	 vertex -29.561800 11.818100 36.000000 
+	 vertex -47.305400 -5.925600 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 40.020000 
+	 vertex -47.305400 -5.925600 36.000000 
+	 vertex -47.305400 -5.925600 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 43.980000 
+	 vertex -29.561800 11.818100 40.020000 
+	 vertex -47.305400 -5.925600 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 43.980000 
+	 vertex -47.305400 -5.925600 40.020000 
+	 vertex -47.305400 -5.925600 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 48.000000 
+	 vertex -29.561800 11.818100 43.980000 
+	 vertex -47.305400 -5.925600 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 48.000000 
+	 vertex -47.305400 -5.925600 43.980000 
+	 vertex -47.305400 -5.925600 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 40.020000 
+	 vertex -11.818100 29.561800 36.000000 
+	 vertex -29.561800 11.818100 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 40.020000 
+	 vertex -29.561800 11.818100 36.000000 
+	 vertex -29.561800 11.818100 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 43.980000 
+	 vertex -11.818100 29.561800 40.020000 
+	 vertex -29.561800 11.818100 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 43.980000 
+	 vertex -29.561800 11.818100 40.020000 
+	 vertex -29.561800 11.818100 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 48.000000 
+	 vertex -11.818100 29.561800 43.980000 
+	 vertex -29.561800 11.818100 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 48.000000 
+	 vertex -29.561800 11.818100 43.980000 
+	 vertex -29.561800 11.818100 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 40.020000 
+	 vertex 5.925600 47.305400 36.000000 
+	 vertex -11.818100 29.561800 36.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 40.020000 
+	 vertex -11.818100 29.561800 36.000000 
+	 vertex -11.818100 29.561800 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 43.980000 
+	 vertex 5.925600 47.305400 40.020000 
+	 vertex -11.818100 29.561800 40.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 43.980000 
+	 vertex -11.818100 29.561800 40.020000 
+	 vertex -11.818100 29.561800 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 48.000000 
+	 vertex 5.925600 47.305400 43.980000 
+	 vertex -11.818100 29.561800 43.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 48.000000 
+	 vertex -11.818100 29.561800 43.980000 
+	 vertex -11.818100 29.561800 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 52.020000 
+	 vertex -29.561800 11.818100 48.000000 
+	 vertex -47.305400 -5.925600 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 52.020000 
+	 vertex -47.305400 -5.925600 48.000000 
+	 vertex -47.305400 -5.925600 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 55.980000 
+	 vertex -29.561800 11.818100 52.020000 
+	 vertex -47.305400 -5.925600 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 55.980000 
+	 vertex -47.305400 -5.925600 52.020000 
+	 vertex -47.305400 -5.925600 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 60.000000 
+	 vertex -29.561800 11.818100 55.980000 
+	 vertex -47.305400 -5.925600 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 60.000000 
+	 vertex -47.305400 -5.925600 55.980000 
+	 vertex -47.305400 -5.925600 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 52.020000 
+	 vertex -11.818100 29.561800 48.000000 
+	 vertex -29.561800 11.818100 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 52.020000 
+	 vertex -29.561800 11.818100 48.000000 
+	 vertex -29.561800 11.818100 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 55.980000 
+	 vertex -11.818100 29.561800 52.020000 
+	 vertex -29.561800 11.818100 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 55.980000 
+	 vertex -29.561800 11.818100 52.020000 
+	 vertex -29.561800 11.818100 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 60.000000 
+	 vertex -11.818100 29.561800 55.980000 
+	 vertex -29.561800 11.818100 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 60.000000 
+	 vertex -29.561800 11.818100 55.980000 
+	 vertex -29.561800 11.818100 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 52.020000 
+	 vertex 5.925600 47.305400 48.000000 
+	 vertex -11.818100 29.561800 48.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 52.020000 
+	 vertex -11.818100 29.561800 48.000000 
+	 vertex -11.818100 29.561800 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 55.980000 
+	 vertex 5.925600 47.305400 52.020000 
+	 vertex -11.818100 29.561800 52.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 55.980000 
+	 vertex -11.818100 29.561800 52.020000 
+	 vertex -11.818100 29.561800 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 60.000000 
+	 vertex 5.925600 47.305400 55.980000 
+	 vertex -11.818100 29.561800 55.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 60.000000 
+	 vertex -11.818100 29.561800 55.980000 
+	 vertex -11.818100 29.561800 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 64.020000 
+	 vertex -29.561800 11.818100 60.000000 
+	 vertex -47.305400 -5.925600 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 64.020000 
+	 vertex -47.305400 -5.925600 60.000000 
+	 vertex -47.305400 -5.925600 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 67.980000 
+	 vertex -29.561800 11.818100 64.020000 
+	 vertex -47.305400 -5.925600 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 67.980000 
+	 vertex -47.305400 -5.925600 64.020000 
+	 vertex -47.305400 -5.925600 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 72.000000 
+	 vertex -29.561800 11.818100 67.980000 
+	 vertex -47.305400 -5.925600 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 72.000000 
+	 vertex -47.305400 -5.925600 67.980000 
+	 vertex -47.305400 -5.925600 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 64.020000 
+	 vertex -11.818100 29.561800 60.000000 
+	 vertex -29.561800 11.818100 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 64.020000 
+	 vertex -29.561800 11.818100 60.000000 
+	 vertex -29.561800 11.818100 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 67.980000 
+	 vertex -11.818100 29.561800 64.020000 
+	 vertex -29.561800 11.818100 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 67.980000 
+	 vertex -29.561800 11.818100 64.020000 
+	 vertex -29.561800 11.818100 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 72.000000 
+	 vertex -11.818100 29.561800 67.980000 
+	 vertex -29.561800 11.818100 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 72.000000 
+	 vertex -29.561800 11.818100 67.980000 
+	 vertex -29.561800 11.818100 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 64.020000 
+	 vertex 5.925600 47.305400 60.000000 
+	 vertex -11.818100 29.561800 60.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 64.020000 
+	 vertex -11.818100 29.561800 60.000000 
+	 vertex -11.818100 29.561800 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 67.980000 
+	 vertex 5.925600 47.305400 64.020000 
+	 vertex -11.818100 29.561800 64.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 67.980000 
+	 vertex -11.818100 29.561800 64.020000 
+	 vertex -11.818100 29.561800 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 72.000000 
+	 vertex 5.925600 47.305400 67.980000 
+	 vertex -11.818100 29.561800 67.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 72.000000 
+	 vertex -11.818100 29.561800 67.980000 
+	 vertex -11.818100 29.561800 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 76.020000 
+	 vertex -29.561800 11.818100 72.000000 
+	 vertex -47.305400 -5.925600 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 76.020000 
+	 vertex -47.305400 -5.925600 72.000000 
+	 vertex -47.305400 -5.925600 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 79.980000 
+	 vertex -29.561800 11.818100 76.020000 
+	 vertex -47.305400 -5.925600 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 79.980000 
+	 vertex -47.305400 -5.925600 76.020000 
+	 vertex -47.305400 -5.925600 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 84.000000 
+	 vertex -29.561800 11.818100 79.980000 
+	 vertex -47.305400 -5.925600 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 84.000000 
+	 vertex -47.305400 -5.925600 79.980000 
+	 vertex -47.305400 -5.925600 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 76.020000 
+	 vertex -11.818100 29.561800 72.000000 
+	 vertex -29.561800 11.818100 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 76.020000 
+	 vertex -29.561800 11.818100 72.000000 
+	 vertex -29.561800 11.818100 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 79.980000 
+	 vertex -11.818100 29.561800 76.020000 
+	 vertex -29.561800 11.818100 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 79.980000 
+	 vertex -29.561800 11.818100 76.020000 
+	 vertex -29.561800 11.818100 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 84.000000 
+	 vertex -11.818100 29.561800 79.980000 
+	 vertex -29.561800 11.818100 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 84.000000 
+	 vertex -29.561800 11.818100 79.980000 
+	 vertex -29.561800 11.818100 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 76.020000 
+	 vertex 5.925600 47.305400 72.000000 
+	 vertex -11.818100 29.561800 72.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 76.020000 
+	 vertex -11.818100 29.561800 72.000000 
+	 vertex -11.818100 29.561800 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 79.980000 
+	 vertex 5.925600 47.305400 76.020000 
+	 vertex -11.818100 29.561800 76.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 79.980000 
+	 vertex -11.818100 29.561800 76.020000 
+	 vertex -11.818100 29.561800 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 84.000000 
+	 vertex 5.925600 47.305400 79.980000 
+	 vertex -11.818100 29.561800 79.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 84.000000 
+	 vertex -11.818100 29.561800 79.980000 
+	 vertex -11.818100 29.561800 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 88.020000 
+	 vertex -29.561800 11.818100 84.000000 
+	 vertex -47.305400 -5.925600 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 88.020000 
+	 vertex -47.305400 -5.925600 84.000000 
+	 vertex -47.305400 -5.925600 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 91.980000 
+	 vertex -29.561800 11.818100 88.020000 
+	 vertex -47.305400 -5.925600 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 91.980000 
+	 vertex -47.305400 -5.925600 88.020000 
+	 vertex -47.305400 -5.925600 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 96.000000 
+	 vertex -29.561800 11.818100 91.980000 
+	 vertex -47.305400 -5.925600 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 96.000000 
+	 vertex -47.305400 -5.925600 91.980000 
+	 vertex -47.305400 -5.925600 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 88.020000 
+	 vertex -11.818100 29.561800 84.000000 
+	 vertex -29.561800 11.818100 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 88.020000 
+	 vertex -29.561800 11.818100 84.000000 
+	 vertex -29.561800 11.818100 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 91.980000 
+	 vertex -11.818100 29.561800 88.020000 
+	 vertex -29.561800 11.818100 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 91.980000 
+	 vertex -29.561800 11.818100 88.020000 
+	 vertex -29.561800 11.818100 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 96.000000 
+	 vertex -11.818100 29.561800 91.980000 
+	 vertex -29.561800 11.818100 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 96.000000 
+	 vertex -29.561800 11.818100 91.980000 
+	 vertex -29.561800 11.818100 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 88.020000 
+	 vertex 5.925600 47.305400 84.000000 
+	 vertex -11.818100 29.561800 84.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 88.020000 
+	 vertex -11.818100 29.561800 84.000000 
+	 vertex -11.818100 29.561800 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 91.980000 
+	 vertex 5.925600 47.305400 88.020000 
+	 vertex -11.818100 29.561800 88.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 91.980000 
+	 vertex -11.818100 29.561800 88.020000 
+	 vertex -11.818100 29.561800 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 96.000000 
+	 vertex 5.925600 47.305400 91.980000 
+	 vertex -11.818100 29.561800 91.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 96.000000 
+	 vertex -11.818100 29.561800 91.980000 
+	 vertex -11.818100 29.561800 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 100.020000 
+	 vertex -29.561800 11.818100 96.000000 
+	 vertex -47.305400 -5.925600 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 100.020000 
+	 vertex -47.305400 -5.925600 96.000000 
+	 vertex -47.305400 -5.925600 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 103.980000 
+	 vertex -29.561800 11.818100 100.020000 
+	 vertex -47.305400 -5.925600 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 103.980000 
+	 vertex -47.305400 -5.925600 100.020000 
+	 vertex -47.305400 -5.925600 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 108.000000 
+	 vertex -29.561800 11.818100 103.980000 
+	 vertex -47.305400 -5.925600 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 108.000000 
+	 vertex -47.305400 -5.925600 103.980000 
+	 vertex -47.305400 -5.925600 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 100.020000 
+	 vertex -11.818100 29.561800 96.000000 
+	 vertex -29.561800 11.818100 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 100.020000 
+	 vertex -29.561800 11.818100 96.000000 
+	 vertex -29.561800 11.818100 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 103.980000 
+	 vertex -11.818100 29.561800 100.020000 
+	 vertex -29.561800 11.818100 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 103.980000 
+	 vertex -29.561800 11.818100 100.020000 
+	 vertex -29.561800 11.818100 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 108.000000 
+	 vertex -11.818100 29.561800 103.980000 
+	 vertex -29.561800 11.818100 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 108.000000 
+	 vertex -29.561800 11.818100 103.980000 
+	 vertex -29.561800 11.818100 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 100.020000 
+	 vertex 5.925600 47.305400 96.000000 
+	 vertex -11.818100 29.561800 96.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 100.020000 
+	 vertex -11.818100 29.561800 96.000000 
+	 vertex -11.818100 29.561800 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 103.980000 
+	 vertex 5.925600 47.305400 100.020000 
+	 vertex -11.818100 29.561800 100.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 103.980000 
+	 vertex -11.818100 29.561800 100.020000 
+	 vertex -11.818100 29.561800 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 108.000000 
+	 vertex 5.925600 47.305400 103.980000 
+	 vertex -11.818100 29.561800 103.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 108.000000 
+	 vertex -11.818100 29.561800 103.980000 
+	 vertex -11.818100 29.561800 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 112.020000 
+	 vertex -29.561800 11.818100 108.000000 
+	 vertex -47.305400 -5.925600 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 112.020000 
+	 vertex -47.305400 -5.925600 108.000000 
+	 vertex -47.305400 -5.925600 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 115.980000 
+	 vertex -29.561800 11.818100 112.020000 
+	 vertex -47.305400 -5.925600 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -29.561800 11.818100 115.980000 
+	 vertex -47.305400 -5.925600 112.020000 
+	 vertex -47.305400 -5.925600 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 120.000000 
+	 vertex -29.561800 11.818100 115.980000 
+	 vertex -47.305400 -5.925600 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -29.561800 11.818100 120.000000 
+	 vertex -47.305400 -5.925600 115.980000 
+	 vertex -47.305400 -5.925600 120.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 112.020000 
+	 vertex -11.818100 29.561800 108.000000 
+	 vertex -29.561800 11.818100 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 112.020000 
+	 vertex -29.561800 11.818100 108.000000 
+	 vertex -29.561800 11.818100 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 115.980000 
+	 vertex -11.818100 29.561800 112.020000 
+	 vertex -29.561800 11.818100 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex -11.818100 29.561800 115.980000 
+	 vertex -29.561800 11.818100 112.020000 
+	 vertex -29.561800 11.818100 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 120.000000 
+	 vertex -11.818100 29.561800 115.980000 
+	 vertex -29.561800 11.818100 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex -11.818100 29.561800 120.000000 
+	 vertex -29.561800 11.818100 115.980000 
+	 vertex -29.561800 11.818100 120.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 112.020000 
+	 vertex 5.925600 47.305400 108.000000 
+	 vertex -11.818100 29.561800 108.000000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 112.020000 
+	 vertex -11.818100 29.561800 108.000000 
+	 vertex -11.818100 29.561800 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 115.980000 
+	 vertex 5.925600 47.305400 112.020000 
+	 vertex -11.818100 29.561800 112.020000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material glass
+	 outer loop
+	 vertex 5.925600 47.305400 115.980000 
+	 vertex -11.818100 29.561800 112.020000 
+	 vertex -11.818100 29.561800 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 120.000000 
+	 vertex 5.925600 47.305400 115.980000 
+	 vertex -11.818100 29.561800 115.980000 
+	 endloop
+end facet
+facet normal -0.707100 0.707100 0.000000 
+facet material brick
+	 outer loop
+	 vertex 5.925600 47.305400 120.000000 
+	 vertex -11.818100 29.561800 115.980000 
+	 vertex -11.818100 29.561800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 8.871800 8.871800 120.000000 
+	 vertex 26.615500 26.615500 120.000000 
+	 vertex 5.925600 47.305400 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 8.871800 8.871800 120.000000 
+	 vertex 5.925600 47.305400 120.000000 
+	 vertex -11.818100 29.561800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 29.561800 -11.818100 120.000000 
+	 vertex 47.305400 5.925600 120.000000 
+	 vertex 26.615500 26.615500 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 29.561800 -11.818100 120.000000 
+	 vertex 26.615500 26.615500 120.000000 
+	 vertex 8.871800 8.871800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -8.871800 -8.871800 120.000000 
+	 vertex 8.871800 8.871800 120.000000 
+	 vertex -11.818100 29.561800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -8.871800 -8.871800 120.000000 
+	 vertex -11.818100 29.561800 120.000000 
+	 vertex -29.561800 11.818100 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 11.818100 -29.561800 120.000000 
+	 vertex 29.561800 -11.818100 120.000000 
+	 vertex 8.871800 8.871800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex 11.818100 -29.561800 120.000000 
+	 vertex 8.871800 8.871800 120.000000 
+	 vertex -8.871800 -8.871800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -26.615500 -26.615500 120.000000 
+	 vertex -8.871800 -8.871800 120.000000 
+	 vertex -29.561800 11.818100 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -26.615500 -26.615500 120.000000 
+	 vertex -29.561800 11.818100 120.000000 
+	 vertex -47.305400 -5.925600 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -5.925600 -47.305400 120.000000 
+	 vertex 11.818100 -29.561800 120.000000 
+	 vertex -8.871800 -8.871800 120.000000 
+	 endloop
+end facet
+facet normal 0.000000 0.000000 1.000000 
+facet material asphalt
+	 outer loop
+	 vertex -5.925600 -47.305400 120.000000 
+	 vertex -8.871800 -8.871800 120.000000 
+	 vertex -26.615500 -26.615500 120.000000 
+	 endloop
+end facet
