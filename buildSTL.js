@@ -169,11 +169,9 @@ function createHorPlaneUp(pt1, pt2, pt3, pt4, z, material) {
             [pt3[0], pt3[1], z]
         ],
         facets = [{
-            verts: tri1,
-            material: material
+            verts: tri1
         }, {
-            verts: tri2,
-            material: material
+            verts: tri2
         }];
     return facets;
 }
@@ -199,8 +197,9 @@ function createHorPlaneDn(pt1, pt2, pt3, pt4, z, material) {
     return facets;
 }
 
-function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMaterial) {
+function createRoofFloor(buildingName, faceNum,pt0, pt1, pt3, gridSize, height, roofMaterial, floorMaterial) {
     var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta0, theta3, triFloor, triRoof, facets = [];
+    var stlString = '';
     //Lengths of Square
     l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
     l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1]);
@@ -255,15 +254,25 @@ function createRoofFloor(pt0, pt1, pt3, gridSize, height, roofMaterial, floorMat
             point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
             //Roof
             triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height, roofMaterial);
-            facets.push(triRoof[0]);
-            facets.push(triRoof[1]);
+            /*facets.push(triRoof[0]);
+            facets.push(triRoof[1]);*/
             //Floor -- Disabled for the time
             /*triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0, floorMaterial);
             facets.push(triFloor[0]);
             facets.push(triFloor[1]);*/
+            var stlObj = {
+                description: buildingName + ':' + faceNum + ':' + roofMaterial + ':' + i + ':' + j + ':0',
+                facets: triRoof[0]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
+            var stlObj = {
+                description: buildingName + ':' + faceNum + ':' + roofMaterial + ':' + i + ':' + j + ':1',
+                facets: triRoof[1]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
         }
     }
-    return facets;
+    return stlString;
 }
 
 function createWallMaterial(buildingName, faceNum, point1, point2, gridSize, height, floorHeight, floors, windowWallRatio, wallMaterial, windowMaterial) {
@@ -505,7 +514,7 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallMaterial(bldg.name, rotatedRect.length - 1, rotatedRect[3], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass")
 
                 //Roof and Floor
-                createRoofFloor(rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name,'roof',rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
                 break;
             case 'l':
                 //Average 1 & 3+5

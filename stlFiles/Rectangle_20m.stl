@@ -5398,3 +5398,111 @@ solid Rectangle:3:brick:2:29:1
     endloop
   endfacet
 endsolid
+solid Rectangle:roof:asphalt:0:0:0
+  facet normal 0 0 1
+    outer loop
+      vertex 5.925554826343262 47.30544366138003 120
+      vertex 8.871833081287214 8.871833081287217 120
+      vertex 26.615499243861645 26.615499243861652 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:0:0:1
+  facet normal 0 0 1
+    outer loop
+      vertex 5.925554826343262 47.30544366138003 120
+      vertex -11.81811133623117 29.561777498805597 120
+      vertex 8.871833081287214 8.871833081287217 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:0:0
+  facet normal 0 0 1
+    outer loop
+      vertex 26.615499243861645 26.615499243861652 120
+      vertex 29.561777498805597 -11.818111336231162 120
+      vertex 47.305443661380025 5.925554826343273 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:0:1
+  facet normal 0 0 1
+    outer loop
+      vertex 26.615499243861645 26.615499243861652 120
+      vertex 8.871833081287214 8.871833081287217 120
+      vertex 29.561777498805597 -11.818111336231162 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:0:1:0
+  facet normal 0 0 1
+    outer loop
+      vertex -11.81811133623117 29.561777498805597 120
+      vertex -8.871833081287217 -8.871833081287217 120
+      vertex 8.871833081287214 8.871833081287217 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:0:1:1
+  facet normal 0 0 1
+    outer loop
+      vertex -11.81811133623117 29.561777498805597 120
+      vertex -29.5617774988056 11.818111336231162 120
+      vertex -8.871833081287217 -8.871833081287217 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:1:0
+  facet normal 0 0 1
+    outer loop
+      vertex 8.871833081287214 8.871833081287217 120
+      vertex 11.818111336231166 -29.561777498805597 120
+      vertex 29.561777498805597 -11.818111336231162 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:1:1
+  facet normal 0 0 1
+    outer loop
+      vertex 8.871833081287214 8.871833081287217 120
+      vertex -8.871833081287217 -8.871833081287217 120
+      vertex 11.818111336231166 -29.561777498805597 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:0:2:0
+  facet normal 0 0 1
+    outer loop
+      vertex -29.5617774988056 11.818111336231162 120
+      vertex -26.615499243861642 -26.615499243861652 120
+      vertex -8.871833081287217 -8.871833081287217 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:0:2:1
+  facet normal 0 0 1
+    outer loop
+      vertex -29.5617774988056 11.818111336231162 120
+      vertex -47.305443661380025 -5.925554826343273 120
+      vertex -26.615499243861642 -26.615499243861652 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:2:0
+  facet normal 0 0 1
+    outer loop
+      vertex -8.871833081287217 -8.871833081287217 120
+      vertex -5.925554826343259 -47.30544366138003 120
+      vertex 11.818111336231166 -29.561777498805597 120
+    endloop
+  endfacet
+endsolid
+solid Rectangle:roof:asphalt:1:2:1
+  facet normal 0 0 1
+    outer loop
+      vertex -8.871833081287217 -8.871833081287217 120
+      vertex -26.615499243861642 -26.615499243861652 120
+      vertex -5.925554826343259 -47.30544366138003 120
+    endloop
+  endfacet
+endsolid
