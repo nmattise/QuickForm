@@ -1,0 +1,181 @@
+[{
+    "polygon": {
+        "path": [{
+            "latitude": 38.98586003232622,
+            "longitude": -76.93943974357478
+        }, {
+            "latitude": 38.98620599636633,
+            "longitude": -76.93944779344008
+        }, {
+            "latitude": 38.986218508127656,
+            "longitude": -76.93846404558997
+        }, {
+            "latitude": 38.985874623998555,
+            "longitude": -76.93845466109656
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 1
+    },
+    "id": 1,
+    "name": "Armory",
+    "numFloors": 3,
+    "flrToFlrHeight": 5.333,
+    "shape": "rect",
+    "footprintArea": 3264.4580283148357,
+    "height": 15.999,
+    "totalArea": 9793.374084944508,
+    "bldgFootprint": "rect",
+    "selected": true,
+    "windowWallRatio": 0.35
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98543120241311,
+            "longitude": -76.93988046597804
+        }, {
+            "latitude": 38.98543745710396,
+            "longitude": -76.93909666977697
+        }, {
+            "latitude": 38.98530069722985,
+            "longitude": -76.93909398756796
+        }, {
+            "latitude": 38.98530382458114,
+            "longitude": -76.9394146593375
+        }, {
+            "latitude": 38.985259643957875,
+            "longitude": -76.93941197712849
+        }, {
+            "latitude": 38.985259643957875,
+            "longitude": -76.93956247641762
+        }, {
+            "latitude": 38.98529444252694,
+            "longitude": -76.93956113531311
+        }, {
+            "latitude": 38.98529131517526,
+            "longitude": -76.93987644266451
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 2
+    },
+    "id": 2,
+    "name": "Lee",
+    "numFloors": 3,
+    "flrToFlrHeight": 4.667,
+    "shape": "t",
+    "footprintArea": 1083.5323250483107,
+    "height": 14.001,
+    "totalArea": 3250.596975144932,
+    "bldgFootprint": "t",
+    "selected": true,
+    "windowWallRatio": 0.22
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98571096291166,
+            "longitude": -76.93988246531899
+        }, {
+            "latitude": 38.98633213238089,
+            "longitude": -76.93989856019226
+        }, {
+            "latitude": 38.98633526051822,
+            "longitude": -76.93972839571126
+        }, {
+            "latitude": 38.98611194890812,
+            "longitude": -76.9397216897168
+        }, {
+            "latitude": 38.98611403360474,
+            "longitude": -76.93961136098761
+        }, {
+            "latitude": 38.98593531562855,
+            "longitude": -76.93960800984541
+        }, {
+            "latitude": 38.98593375340566,
+            "longitude": -76.93971833695554
+        }, {
+            "latitude": 38.98571096248485,
+            "longitude": -76.93971230245717
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 3
+    },
+    "id": 3,
+    "name": "Administration",
+    "numFloors": 3,
+    "flrToFlrHeight": 5,
+    "shape": "t",
+    "footprintArea": 1209.2166408593514,
+    "height": 15,
+    "totalArea": 3627.6499225780544,
+    "bldgFootprint": "t",
+    "selected": true,
+    "windowWallRatio": 0.25
+}, {
+    "polygon": {
+        "path": [{
+            "latitude": 38.98662126886655,
+            "longitude": -76.93913824442154
+        }, {
+            "latitude": 38.98660875969349,
+            "longitude": -76.93990594655895
+        }, {
+            "latitude": 38.98677262170771,
+            "longitude": -76.9399099702772
+        }, {
+            "latitude": 38.98677731282045,
+            "longitude": -76.93959734513481
+        }, {
+            "latitude": 38.98682097491783,
+            "longitude": -76.93959868664422
+        }, {
+            "latitude": 38.98682305977389,
+            "longitude": -76.9394555626202
+        }, {
+            "latitude": 38.986781482535115,
+            "longitude": -76.93945355136822
+        }, {
+            "latitude": 38.986787215708944,
+            "longitude": -76.93913958512121
+        }],
+        "fill": {
+            "color": "#777",
+            "opacity": 0.6
+        },
+        "stroke": {
+            "color": "#777",
+            "weight": 1
+        },
+        "id": 4
+    },
+    "id": 4,
+    "name": "Mitchell",
+    "numFloors": 3,
+    "flrToFlrHeight": 4.667,
+    "shape": "t",
+    "footprintArea": 1275.7440486626397,
+    "height": 14.001,
+    "totalArea": 3827.232145987919,
+    "bldgFootprint": "t",
+    "selected": true,
+    "windowWallRatio": 0.22
+}]

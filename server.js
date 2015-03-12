@@ -18,6 +18,7 @@ app.get('*', function(req, res) {
 
 app.post('/createSTL', function(req, res) {
     console.log(req.body);
+    fs.writeFileSync('buildingsM.json', JSON.stringify(req.body));
     buildSTL(req.body.buildings);
 });
 app.post('/createOSM', function(req, res) {

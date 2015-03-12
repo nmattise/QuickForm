@@ -1,5 +1,6 @@
 var buildSTL = require('./buildSTL.js').buildSTL;
-
+var fs = require('fs');
+var buildingsM = JSON.parse(fs.readFileSync('buidlingCaseStudy.json'));
 var buildings = [{
     "polygon": {
         "path": [{
@@ -349,5 +350,7 @@ var buildings = [{
     "bldgFootprint": "triangle"
 }];
 
-buildSTL([buildings[0]], Math.PI/4);
+buildSTL(buildingsM, Math.PI / 4)
+
+//buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

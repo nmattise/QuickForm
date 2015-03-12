@@ -157,7 +157,7 @@ function createVertPlane(pt1, pt2, z1, z2, material) {
     return facets;
 }
 
-function createHorPlaneUp(pt1, pt2, pt3, pt4, z, material) {
+function createHorPlaneUp(pt1, pt2, pt3, pt4, z) {
     var tri1 = [
             [pt1[0], pt1[1], z],
             [pt3[0], pt3[1], z],
@@ -176,7 +176,7 @@ function createHorPlaneUp(pt1, pt2, pt3, pt4, z, material) {
     return facets;
 }
 
-function createHorPlaneDn(pt1, pt2, pt3, pt4, z, material) {
+function createHorPlaneDn(pt1, pt2, pt3, pt4, z) {
     var tri1 = [
             [pt2[0], pt2[1], z],
             [pt3[0], pt3[1], z],
@@ -188,16 +188,14 @@ function createHorPlaneDn(pt1, pt2, pt3, pt4, z, material) {
             [pt1[0], pt1[1], z]
         ],
         facets = [{
-            verts: tri1,
-            material: material
+            verts: tri1
         }, {
-            verts: tri2,
-            material: material
+            verts: tri2
         }];
     return facets;
 }
 
-function createRoofFloor(buildingName, faceNum,pt0, pt1, pt3, gridSize, height, roofMaterial, floorMaterial) {
+function createRoofFloor(buildingName, pt0, pt1, pt3, gridSize, height, roofMaterial, floorMaterial) {
     var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta0, theta3, triFloor, triRoof, facets = [];
     var stlString = '';
     //Lengths of Square
@@ -253,23 +251,34 @@ function createRoofFloor(buildingName, faceNum,pt0, pt1, pt3, gridSize, height, 
             point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
             point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
             //Roof
-            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height, roofMaterial);
+            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height);
             /*facets.push(triRoof[0]);
             facets.push(triRoof[1]);*/
             //Floor -- Disabled for the time
-            /*triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0, floorMaterial);
-            facets.push(triFloor[0]);
-            facets.push(triFloor[1]);*/
+            triFloor = createHorPlaneDn(point0_1, point1, point2, point3_1, 0);
+            //facets.push(triFloor[0]);
+            //facets.push(triFloor[1]);
             var stlObj = {
-                description: buildingName + ':' + faceNum + ':' + roofMaterial + ':' + i + ':' + j + ':0',
+                description: buildingName + ':' + 'roof' + ':' + roofMaterial + ':' + i + ':' + j + ':0',
                 facets: triRoof[0]
             };
             stlString += stl.fromObject(stlObj) + "\n";
             var stlObj = {
-                description: buildingName + ':' + faceNum + ':' + roofMaterial + ':' + i + ':' + j + ':1',
+                description: buildingName + ':' + 'roof' + ':' + roofMaterial + ':' + i + ':' + j + ':1',
                 facets: triRoof[1]
             };
             stlString += stl.fromObject(stlObj) + "\n";
+            /*var stlObj = {
+                description: buildingName + ':' + 'floor' + ':' + floorMaterial + ':' + i + ':' + j + ':0',
+                facets: triFloor[0]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
+            var stlObj = {
+                description: buildingName + ':' + 'floor' + ':' + floorMaterial + ':' + i + ':' + j + ':1',
+                facets: triFloor[1]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";*/
+
         }
     }
     return stlString;
@@ -361,8 +370,9 @@ function createWallMaterial(buildingName, faceNum, point1, point2, gridSize, hei
 
 
 
-function createGroundGrid(xMin, xMax, yMin, yMax, step) {
+function createGroundGrid(face, groundMaterial, xMin, xMax, yMin, yMax, step) {
     var xpt, ypt, pt1, pt2, pt3, pt4, tri, facets = [];
+    var stlString = '';
     for (xpt = xMin; xpt < xMax; xpt += step) {
         for (ypt = yMax; ypt > yMin; ypt -= step) {
             pt1 = [xpt, ypt];
@@ -372,10 +382,19 @@ function createGroundGrid(xMin, xMax, yMin, yMax, step) {
             tri = createHorPlaneUp(pt1, pt2, pt3, pt4, 0, "grass");
             facets.push(tri[0]);
             facets.push(tri[1]);
-
+            var stlObj = {
+                description: 'Ground' + ':' + face + ':' + groundMaterial + ':' + xpt + ':' + ypt + ':0',
+                facets: tri[0]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
+            var stlObj = {
+                description: 'Ground' + ':' + face + ':' + groundMaterial + ':' + xpt + ':' + ypt + ':1',
+                facets: tri[1]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
         }
     }
-    return facets;
+    return stlString;
 }
 
 
@@ -393,31 +412,28 @@ function createGround(innerBounds, maxHeight, gridSize) {
         pt4,
         tri,
         facets = [];
+    var innerGridSize = 5;
     console.log(innerBounds);
+    var stlString = '';
     //Inner Grid Dimensions
     var innerBoundsLengths = innerBounds.findLengths();
-    console.log(innerBoundsLengths);
-    //Inner Grid
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], 1).forEach(function(facet) {
-        facets.push(facet);
-    });
+    //console.log(innerBoundsLengths);
+    var xPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    console.log(xPrime);
+    var yPrime1 = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    var yPrime2 = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    console.log(yPrime2);
     //Left
-    createGroundGrid(innerBounds[0][0] - (5 * maxHeight), innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
+    stlString += createGroundGrid('left', 'grass', innerBounds[0][0] - xPrime, innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + yPrime1, gridSize);
+    //Inner Grid
+    stlString += createGroundGrid('innerGrid', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], innerGridSize);
     //Windward Top
-    createGroundGrid(innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
+    stlString += createGroundGrid('top', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + xPrime, gridSize);
     //Right
-    createGroundGrid(innerBounds[2][0], innerBounds[2][0] + (5 * maxHeight), innerBounds[2][1], innerBounds[1][1] + (5 * maxHeight), gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
+    stlString += createGroundGrid('right', 'grass', innerBounds[2][0], innerBounds[2][0] + xPrime, innerBounds[2][1], innerBounds[1][1] + xPrime, gridSize);
     //LeeWardBottom
-    createGroundGrid(innerBounds[3][0] - (5 * maxHeight), innerBounds[2][0] + (5 * maxHeight), innerBounds[3][1] - (10 * maxHeight), innerBounds[3][1], gridSize).forEach(function(facet) {
-        facets.push(facet)
-    });
-    return facets;
+    stlString += createGroundGrid('bottom', 'grass', innerBounds[3][0] - xPrime, innerBounds[2][0] + xPrime, innerBounds[3][1] - yPrime2, innerBounds[3][1], gridSize);
+    return stlString;
 }
 
 //Final Function
@@ -442,10 +458,11 @@ function buildSTL(buildings, windwardDirection) {
         innerBounds = [],
         groundFacets = [],
         groundSTL,
-        fileName = '';
+        fileName = '',
+        bldgHeights = [];
 
     //Set Grid Size
-    var gridSize = 20;
+    var gridSize = 10;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
         for (var j = 0; j < buildings[i].polygon.path.length; j++) {
@@ -472,8 +489,7 @@ function buildSTL(buildings, windwardDirection) {
             width,
             theta,
             facets = [],
-            minMaxPts = [],
-            bldgHeights = [];
+            minMaxPts = [];
         var CFDFacets = [];
         //Add Building Name to File Name
         fileName += bldg.name + "_";
@@ -489,6 +505,8 @@ function buildSTL(buildings, windwardDirection) {
         theta = findRotation(points[0], points[1]);
         console.log("ID:  " + bldg.id);
         console.log("theta: " + theta);
+        console.log(bldg.windowWallRatio);
+
         switch (bldg.bldgFootprint) {
             case 'rect':
                 var l0 = (lengths[0] + lengths[2]) / 2,
@@ -509,12 +527,12 @@ function buildSTL(buildings, windwardDirection) {
                 //Create Grids for Radiance STL Creation
                 //Walls
                 for (var j = 1; j < rotatedRect.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedRect[j - 1], rotatedRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass")
+                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedRect[j - 1], rotatedRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
                 }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedRect.length - 1, rotatedRect[3], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass")
+                allBldgSTL += createWallMaterial(bldg.name, rotatedRect.length - 1, rotatedRect[3], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof and Floor
-                allBldgSTL += createRoofFloor(bldg.name,'roof',rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
                 break;
             case 'l':
                 //Average 1 & 3+5
@@ -543,11 +561,11 @@ function buildSTL(buildings, windwardDirection) {
 
                 //Add Walls
                 for (var j = 1; j < rotatedL.length; j++) {
-                    createWallMaterial(rotatedL[j - 1], rotatedL[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    createWallMaterial(rotatedL[j - 1], rotatedL[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                         facets.push(facet)
                     })
                 };
-                createWallMaterial(rotatedL[5], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedL[5], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -592,20 +610,12 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedT;
                 //Add Walls
                 for (var j = 1; j < rotatedT.length; j++) {
-                    createWallMaterial(rotatedT[j - 1], rotatedT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
-                        facets.push(facet)
-                    })
+                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedT[j - 1], rotatedT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
                 };
-                createWallMaterial(rotatedT[7], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
-                    facets.push(facet)
-                });
-                //Roof
-                createRoofFloor(rotatedT[0], rotatedT[1], rotatedT[7], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
-                    facets.push(facet);
-                });
-                createRoofFloor(rotatedT[6], rotatedT[3], rotatedT[5], gridSize, bldg.height, "asphalt", "concrete").forEach(function(facet) {
-                    facets.push(facet);
-                });
+                allBldgSTL += createWallMaterial(bldg.name, 7, rotatedT[7], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
+                    //Roof
+                allBldgSTL += createRoofFloor(bldg.name, rotatedT[0], rotatedT[1], rotatedT[7], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedT[6], rotatedT[3], rotatedT[5], gridSize, bldg.height, "asphalt", "concrete")
 
                 break;
             case "u":
@@ -639,11 +649,11 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedU;
                 //Add Walls
                 for (var j = 1; j < rotatedU.length; j++) {
-                    createWallMaterial(rotatedU[j - 1], rotatedU[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    createWallMaterial(rotatedU[j - 1], rotatedU[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                         facets.push(facet)
                     });
                 };
-                createWallMaterial(rotatedU[7], rotatedU[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedU[7], rotatedU[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -703,11 +713,11 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedH;
                 //Add Walls
                 for (var j = 1; j < rotatedH.length; j++) {
-                    createWallMaterial(rotatedH[j - 1], rotatedH[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    createWallMaterial(rotatedH[j - 1], rotatedH[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                         facets.push(facet)
                     });
                 };
-                createWallMaterial(rotatedH[11], rotatedH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedH[11], rotatedH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -765,11 +775,11 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedCross;
                 //Add Walls
                 for (var j = 1; j < rotatedCross.length; j++) {
-                    createWallMaterial(rotatedCross[j - 1], rotatedCross[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                    createWallMaterial(rotatedCross[j - 1], rotatedCross[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                         facets.push(facet)
                     });
                 };
-                createWallMaterial(rotatedCross[11], rotatedCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedCross[11], rotatedCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
                 //Roof & Walls
@@ -802,16 +812,16 @@ function buildSTL(buildings, windwardDirection) {
                 };
                 bldg.cardinalCoords = points;
                 bldg.windwardCoords = rotatedTrap;
-                createWallMaterial(rotatedTrap[0], rotatedTrap[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTrap[0], rotatedTrap[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                createWallMaterial(rotatedTrap[1], rotatedTrap[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTrap[1], rotatedTrap[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                createWallMaterial(rotatedTrap[2], rotatedTrap[3], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTrap[2], rotatedTrap[3], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                createWallMaterial(rotatedTrap[3], rotatedTrap[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTrap[3], rotatedTrap[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
 
@@ -824,13 +834,13 @@ function buildSTL(buildings, windwardDirection) {
                 };
                 bldg.cardinalCoords = points;
                 bldg.windwardCoords = rotatedTri;
-                createWallMaterial(rotatedTri[0], rotatedTri[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTri[0], rotatedTri[1], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                createWallMaterial(rotatedTri[1], rotatedTri[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTri[1], rotatedTri[2], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
-                createWallMaterial(rotatedTri[2], rotatedTri[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, ".33", "brick", "glass").forEach(function(facet) {
+                createWallMaterial(rotatedTri[2], rotatedTri[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass").forEach(function(facet) {
                     facets.push(facet)
                 });
                 break;
@@ -848,22 +858,21 @@ function buildSTL(buildings, windwardDirection) {
         bldgHeights.push(bldg.height);
     }
     //Create Gound STL
-
     //Find Max Building Height as Characteristic Length for Ground Dimensions
     maxHeight = Math.max.apply(null, bldgHeights);
-    maxHeight = 5 * Math.ceil(maxHeight / 5);
+    maxHeight = Math.ceil(maxHeight);
     console.log(maxHeight);
     //Find Min and Max X&Y of building location points to be the inner bounds of the ground file
     minX = Math.min.apply(null, minXPts);
     maxX = Math.max.apply(null, maxXPts);
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
-
+    var groundGridSize = 100;
     //Round these min and max points to next 5 
-    minX = 5 * Math.floor(minX / 5);
-    maxX = 5 * Math.ceil(maxX / 5);
-    minY = 5 * Math.floor(minY / 5);
-    maxY = 5 * Math.ceil(maxY / 5);
+    minX = groundGridSize * Math.floor(minX / groundGridSize);
+    maxX = groundGridSize * Math.ceil(maxX / groundGridSize);
+    minY = groundGridSize * Math.floor(minY / groundGridSize);
+    maxY = groundGridSize * Math.ceil(maxY / groundGridSize);
     //Create innerBounds of the Ground STL
     innerBounds = [
         [minX, maxY],
@@ -871,19 +880,14 @@ function buildSTL(buildings, windwardDirection) {
         [maxX, minY],
         [minX, minY]
     ];
-    console.log(maxHeight)
-        //Call CreateGound
-    groundFacets = createGround(innerBounds, maxHeight, gridSize);
-    //Create GroundSTL
-    groundSTL = {
-        description: "groundSTL",
-        facets: groundFacets
-    };
+    //Call CreateGound
+    var groundSTL = createGround(innerBounds, maxHeight, groundGridSize);
+
 
     //Write Files
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/" + fileName + "20m.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/" + fileName + "10m_noFloor.stl", allBldgSTL);
     //Write Ground STL File for All Buildings
-    //fs.writeFileSync("stlFiles/" + fileName + "Ground_20m.stl", stl.fromObject(groundSTL));
+    fs.writeFileSync("stlFiles/" + fileName + "Ground_100mOuter_5mInner.stl", groundSTL);
 
 }
