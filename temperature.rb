@@ -3,49 +3,66 @@ require 'openstudio'
 
 class OSModel < OpenStudio::Model::Model
 
-  def add_geometry(coords, gridSize, floors, floorHeight)
-  	#Create a new story within the building
-    story = OpenStudio::Model::BuildingStory.new(self)
-    story.setNominalFloortoFloorHeight(floorHeight)
-    story.setName("1st Floor")
-    osPoints = Array.new
-    #Loop Trough Sides
-    for i in (1..coords.length-1)
-    	 points = createWallGrid(coords[i -1], coords[i], gridSize)
-    	 points.pop
-    	 points.each do |point|
-    	 	osPoints.push(OpenStudio::Point3d.new(point[0], point[1], 0))
-    	 end
-    end
-    points = createWallGrid(coords[coords.length-1], coords[0], gridSize)
-    points.pop
-    points.each do |point|
-    	osPoints.push(OpenStudio::Point3d.new(point[0], point[1], 0))
-    end
-    puts '---'
-    puts osPoints
-    # Identity matrix for setting space origins
-    m = OpenStudio::Matrix.new(4,4,0)
-    m[0,0] = 1
-    m[1,1] = 1
-    m[2,2] = 1
-    m[3,3] = 1
-    # Minimal zones
-    core_polygon = OpenStudio::Point3dVector.new
-    osPoints.each do |point|
-    	core_polygon << point
-    end
-	core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, floorHeight, self)
-	core_space = core_space.get
-    m[0,3] = osPoints[0].x
-    m[1,3] = osPoints[0].y
-    m[2,3] = osPoints[0].z
-    core_space.changeTransformation(OpenStudio::Transformation.new(m))
-    core_space.setBuildingStory(story)
-    core_space.setName("Story 1 Core Space")
+	def add_ground(coords, gridSize)
+	end
 
-    #Set vertical story position
-    story.setNominalZCoordinate(floorHeight)
+  def add_geometry(coords, gridSize, floors, floorHeight)
+  	
+    
+  	floor = 0
+    #Loop through Floors
+    for floor in (0..floors-1)
+    	z = floor *  floorHeight
+    	osPoints = Array.new
+    	#Create a new story within the building
+    	story = OpenStudio::Model::BuildingStory.new(self)
+    	story.setNominalFloortoFloorHeight(floorHeight)
+    	story.setName("Story #{floor+1}")
+    	#Loop Trough Sides
+    	#loop through 3 iterations of sides
+
+    		for i in (1..coords.length-1)
+    		 points = createWallGrid(coords[i -1], coords[i], gridSize)
+    		 points.pop
+    		 points.each do |point|
+    		 	osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
+    		 end
+    		end
+    		points = createWallGrid(coords[coords.length-1], coords[0], gridSize)
+    		points.pop
+    		points.each do |point|
+	    		osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
+    		end
+    	
+    	
+    	# Identity matrix for setting space origins
+    	m = OpenStudio::Matrix.new(4,4,0)
+    	m[0,0] = 1
+    	m[1,1] = 1
+	    m[2,2] = 1
+    	m[3,3] = 1
+    	# Minimal zones
+    	core_polygon = OpenStudio::Point3dVector.new
+    	osPoints.each do |point|
+	    	core_polygon << point
+	    end
+		core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, floorHeight, self)
+		core_space = core_space.get
+    	m[0,3] = osPoints[0].x
+    	m[1,3] = osPoints[0].y
+    	m[2,3] = osPoints[0].z
+    	core_space.changeTransformation(OpenStudio::Transformation.new(m))
+	    core_space.setBuildingStory(story)
+    	core_space.setName("Story 1 Core Space")
+
+    	#Set vertical story position
+    	story.setNominalZCoordinate(z)
+    	
+
+    	
+    end
+
+
 
     #Put all of the spaces in the model into a vector
     spaces = OpenStudio::Model::SpaceVector.new
@@ -61,7 +78,6 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-
   end # end add_geometry method  
 
   def add_windows(wwr, offset, application_type)
@@ -84,11 +100,22 @@ class OSModel < OpenStudio::Model::Model
     else
       heightOffsetFromFloor = false
     end
-    
     self.getSurfaces.each do |s|
-      next if not s.outsideBoundaryCondition == "Outdoors"
-      new_window = s.setWindowToWallRatio(wwr, offset, heightOffsetFromFloor)
+    	next if not s.outsideBoundaryCondition == "Outdoors"
+    	next if not s.name.to_s.split(' ')[1].to_i.between?(63,123) || s.name.to_s.split(' ')[1].to_i.between?(188,247)
+    	 new_window = s.setWindowToWallRatio(wwr, offset, heightOffsetFromFloor)
     end
+    #Delete Interior Roof Floor
+    self.getSurfaces.delete_if do |s|
+    	if s.surfaceType == "RoofCeiling" && s.outsideBoundaryCondition != "Outdoors"
+    		puts s.name
+    		true
+    	else
+    		false
+    	end
+
+    end
+    
   end # end add_windows method 
 
   def add_constructions(construction_library_path, degree_to_north)
@@ -145,7 +172,7 @@ def distanceFormula(x1,y1,x2,y2)
 end
 
 #Coords to test buildings (Rectangle)
-coords = [[0,0],[0,50],[50,50],[50,0]]
+coords = [[0,0],[0,50],[100,50],[100,0]]
 
 #Do Grid for One Length
 
@@ -174,6 +201,47 @@ def createWallGrid(point1, point2, gridSize)
     return points
 end
 
+def createFullGrid(point1, point2, point3, point4, gridSize)
+	gridSize1 = gridSize
+	gridSize2 = gridSize
+	#Side 1
+	sideLength1 = distanceFormula(point1[0],point1[1],point2[0],point2[1])
+	gridLength1 = ((sideLength1 % gridSize) / ((sideLength1 / gridSize).to_i)) + gridSize
+	#Number of Grid Checks
+    if (gridSize * 2) > sideLength1
+    	gridLength1 = sideLength1 / 2
+    	gridSize1 = gridLength1
+    end
+    deltaX1 = point2[0] - point1[0]
+    deltaY1 = point2[1] - point1[1]
+    xIt1 = deltaX1 / (sideLength1 / gridSize1).to_i
+    yIt1 = deltaY1 / (sideLength1 / gridSize1).to_i
+    iterator1 = (sideLength1 / gridSize1).to_i
+    puts sideLength1
+    puts gridSize1
+    puts gridSize1
+    #Side 2
+	sideLength2 = distanceFormula(point1[0],point1[1],point4[0],point4[1])
+	gridLength2 = ((sideLength2 % gridSize) / ((sideLength2 / gridSize).to_i)) + gridSize
+	#Number of Grid Checks
+    if (gridSize * 2) > sideLength2
+    	gridLength2 = sideLength2 / 2
+    	gridSize2 = gridLength2
+    end
+    deltaX2 = point4[0] - point1[0]
+    deltaY2 = point4[1] - point1[1]
+    xIt2 = deltaX2 / (sideLength2 / gridSize2).to_i
+    yIt2 = deltaY2 / (sideLength2 / gridSize2).to_i
+    iterator2 = (sideLength2 / gridSize2).to_i
+    puts sideLength2
+    puts gridSize2
+    puts gridSize2
+end
+
+#createFullGrid(coords[0],coords[1],coords[2],coords[3],40)
+
+
+
 #createWallGrid(coords[0], coords[1], 10, 3, 3)
 
 
@@ -181,11 +249,13 @@ end
 
 
 #initialize and make OSModel
+
 model = OSModel.new
 
-model.add_geometry(coords, 5,1, 3)
-model.add_windows(0.33,1,"Above Floor")
+model.add_geometry(coords, 5,9, 1)
+model.add_windows(0.93,0.025 ,"Above Floor")
 model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
 model.save_openstudio_osm('./', 'gridWalls')
 model.translate_to_energyplus_and_save_idf('./', 'gridWalls')
 model.add_temperature_variable('./', 'gridWalls')
+
