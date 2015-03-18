@@ -1,0 +1,2870 @@
+
+OS:Version,
+  {c5b11551-1703-4b92-9a0a-a85b7b400da3}, !- Handle
+  1.6.0;                                  !- Version Identifier
+
+OS:BuildingStory,
+  {63ef25c2-2f98-418a-8774-0bc509b3ae42}, !- Handle
+  1st Floor,                              !- Name
+  3,                                      !- Nominal Z Coordinate {m}
+  3,                                      !- Nominal Floor to Floor Height {m}
+  ,                                       !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  ;                                       !- Group Rendering Name
+
+OS:Space,
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Handle
+  Story 1 Core Space,                     !- Name
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  -0,                                     !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  {63ef25c2-2f98-418a-8774-0bc509b3ae42}, !- Building Story Name
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}; !- Thermal Zone Name
+
+OS:Surface,
+  {0f2f5ce9-26e1-406b-8f98-ca1a55ac5e0f}, !- Handle
+  Surface 1,                              !- Name
+  Floor,                                  !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Ground,                                 !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 0, 0,                                !- X,Y,Z Vertex 1 {m}
+  0, 5, 0,                                !- X,Y,Z Vertex 2 {m}
+  0, 10, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 15, 0,                               !- X,Y,Z Vertex 4 {m}
+  0, 20, 0,                               !- X,Y,Z Vertex 5 {m}
+  0, 25, 0,                               !- X,Y,Z Vertex 6 {m}
+  0, 30, 0,                               !- X,Y,Z Vertex 7 {m}
+  0, 35, 0,                               !- X,Y,Z Vertex 8 {m}
+  0, 40, 0,                               !- X,Y,Z Vertex 9 {m}
+  0, 45, 0,                               !- X,Y,Z Vertex 10 {m}
+  0, 50, 0,                               !- X,Y,Z Vertex 11 {m}
+  5, 50, 0,                               !- X,Y,Z Vertex 12 {m}
+  10, 50, 0,                              !- X,Y,Z Vertex 13 {m}
+  15, 50, 0,                              !- X,Y,Z Vertex 14 {m}
+  20, 50, 0,                              !- X,Y,Z Vertex 15 {m}
+  25, 50, 0,                              !- X,Y,Z Vertex 16 {m}
+  30, 50, 0,                              !- X,Y,Z Vertex 17 {m}
+  35, 50, 0,                              !- X,Y,Z Vertex 18 {m}
+  40, 50, 0,                              !- X,Y,Z Vertex 19 {m}
+  45, 50, 0,                              !- X,Y,Z Vertex 20 {m}
+  50, 50, 0,                              !- X,Y,Z Vertex 21 {m}
+  50, 45, 0,                              !- X,Y,Z Vertex 22 {m}
+  50, 40, 0,                              !- X,Y,Z Vertex 23 {m}
+  50, 35, 0,                              !- X,Y,Z Vertex 24 {m}
+  50, 30, 0,                              !- X,Y,Z Vertex 25 {m}
+  50, 25, 0,                              !- X,Y,Z Vertex 26 {m}
+  50, 20, 0,                              !- X,Y,Z Vertex 27 {m}
+  50, 15, 0,                              !- X,Y,Z Vertex 28 {m}
+  50, 10, 0,                              !- X,Y,Z Vertex 29 {m}
+  50, 5, 0,                               !- X,Y,Z Vertex 30 {m}
+  50, 0, 0,                               !- X,Y,Z Vertex 31 {m}
+  45, 0, 0,                               !- X,Y,Z Vertex 32 {m}
+  40, 0, 0,                               !- X,Y,Z Vertex 33 {m}
+  35, 0, 0,                               !- X,Y,Z Vertex 34 {m}
+  30, 0, 0,                               !- X,Y,Z Vertex 35 {m}
+  25, 0, 0,                               !- X,Y,Z Vertex 36 {m}
+  20, 0, 0,                               !- X,Y,Z Vertex 37 {m}
+  15, 0, 0,                               !- X,Y,Z Vertex 38 {m}
+  10, 0, 0,                               !- X,Y,Z Vertex 39 {m}
+  5, 0, 0;                                !- X,Y,Z Vertex 40 {m}
+
+OS:Surface,
+  {ded86ec9-3682-4b80-803f-c2ccf1a5be15}, !- Handle
+  Surface 2,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 5, 3,                                !- X,Y,Z Vertex 1 {m}
+  0, 5, 0,                                !- X,Y,Z Vertex 2 {m}
+  0, 0, 0,                                !- X,Y,Z Vertex 3 {m}
+  0, 0, 3;                                !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {e6012398-6750-4878-a401-8132cf2c7889}, !- Handle
+  Surface 3,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 10, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 10, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 5, 0,                                !- X,Y,Z Vertex 3 {m}
+  0, 5, 3;                                !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {1f19eb1c-476b-4f38-b5ee-ee829c9ac958}, !- Handle
+  Surface 4,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 15, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 15, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 10, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 10, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {9a7a699d-7d64-4485-89b2-8ad1060a2362}, !- Handle
+  Surface 5,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 20, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 20, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 15, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 15, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {256e0b93-03b9-481c-a78e-fd95ff7fd8c4}, !- Handle
+  Surface 6,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 25, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 25, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 20, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 20, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {ecf72d18-a5ad-4099-bb9c-81fa170812f5}, !- Handle
+  Surface 7,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 30, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 30, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 25, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 25, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {6593e1e9-21b7-4a11-9696-50e971f750dd}, !- Handle
+  Surface 8,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 35, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 35, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 30, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 30, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {9768d9ae-4bb8-4061-a9ae-8240a6eab658}, !- Handle
+  Surface 9,                              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 40, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 40, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 35, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 35, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {b46eaeb8-a09e-4a60-8fb2-57742fb89177}, !- Handle
+  Surface 10,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 45, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 45, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 40, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 40, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {5e126979-e23c-4de6-8b2b-dcb6bfa8150e}, !- Handle
+  Surface 11,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 50, 3,                               !- X,Y,Z Vertex 1 {m}
+  0, 50, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 45, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 45, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {33088dd6-3130-4670-85ab-adaa7d2ec2aa}, !- Handle
+  Surface 12,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  5, 50, 3,                               !- X,Y,Z Vertex 1 {m}
+  5, 50, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, 50, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 50, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {19613fd3-7c28-49f4-a79a-d4f030071578}, !- Handle
+  Surface 13,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  10, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  10, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  5, 50, 0,                               !- X,Y,Z Vertex 3 {m}
+  5, 50, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {15a4a9b9-a35e-4554-bf8d-662a849acdca}, !- Handle
+  Surface 14,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  15, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  15, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  10, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  10, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {86c904c6-ca9e-4cd1-b83f-f7b6f227cc65}, !- Handle
+  Surface 15,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  20, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  20, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  15, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  15, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {11083420-f9ca-4922-a9ba-fc3ff4a2ed51}, !- Handle
+  Surface 16,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  25, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  25, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  20, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  20, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {85d4b2a6-4310-43bd-b752-685e07eafd51}, !- Handle
+  Surface 17,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  30, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  30, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  25, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  25, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {17ae6d85-3a4e-44b0-84c0-f2e19c3db8ae}, !- Handle
+  Surface 18,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  35, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  35, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  30, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  30, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {8361fc78-a570-4d3a-9e23-547387ab322c}, !- Handle
+  Surface 19,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  40, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  40, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  35, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  35, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {aca17827-f19a-4957-b06a-0c9816a03669}, !- Handle
+  Surface 20,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  45, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  45, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  40, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  40, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {765c4f41-5970-4f9b-a5c1-fe1e6e28ad18}, !- Handle
+  Surface 21,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 50, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 50, 0,                              !- X,Y,Z Vertex 2 {m}
+  45, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  45, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {43db1ed4-e5d4-4a72-8cd3-4322c41d45b8}, !- Handle
+  Surface 22,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 45, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 45, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 50, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 50, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {87488063-fadf-47a0-82ba-255bb8fd9fd8}, !- Handle
+  Surface 23,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 40, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 40, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 45, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 45, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {a54eb361-6b00-4d82-9037-c6129779b639}, !- Handle
+  Surface 24,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 35, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 35, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 40, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 40, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {7d078e33-3082-4a50-a0dc-ee77c704b8dd}, !- Handle
+  Surface 25,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 30, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 30, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 35, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 35, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {d3aaa347-acd8-493f-82a3-7f2d187805c7}, !- Handle
+  Surface 26,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 25, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 25, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 30, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 30, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {a3103944-d9a4-470a-ad94-56b7cf202339}, !- Handle
+  Surface 27,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 20, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 20, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 25, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 25, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {d81d2279-5e21-43dc-994b-3340496b883a}, !- Handle
+  Surface 28,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 15, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 15, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 20, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 20, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {59a1c71d-03ee-45d2-9df4-ece731ce4712}, !- Handle
+  Surface 29,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 10, 3,                              !- X,Y,Z Vertex 1 {m}
+  50, 10, 0,                              !- X,Y,Z Vertex 2 {m}
+  50, 15, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 15, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {aa2d024f-7b67-4081-b106-79852c8d0228}, !- Handle
+  Surface 30,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 5, 3,                               !- X,Y,Z Vertex 1 {m}
+  50, 5, 0,                               !- X,Y,Z Vertex 2 {m}
+  50, 10, 0,                              !- X,Y,Z Vertex 3 {m}
+  50, 10, 3;                              !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {bc1bdf16-9ac5-4544-bede-73bff48a18fa}, !- Handle
+  Surface 31,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  50, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  50, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  50, 5, 0,                               !- X,Y,Z Vertex 3 {m}
+  50, 5, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {dce227f2-ee92-4560-8ee1-04c965672be0}, !- Handle
+  Surface 32,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  45, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  45, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  50, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  50, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {7ad2d07a-1b9f-42a2-b919-207e90d3fbfd}, !- Handle
+  Surface 33,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  40, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  40, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  45, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  45, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {ba66a544-95d3-49b8-afcf-d332f888f9a4}, !- Handle
+  Surface 34,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  35, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  35, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  40, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  40, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {45c20469-5931-4f71-9d0d-1ff1c4c14e46}, !- Handle
+  Surface 35,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  30, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  30, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  35, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  35, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {7a949313-f7b1-49ab-b53e-bf7553385043}, !- Handle
+  Surface 36,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  25, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  25, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  30, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  30, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {9f0356b1-d88d-47f8-95b1-78b975cd94bc}, !- Handle
+  Surface 37,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  20, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  20, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  25, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  25, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {a2a65c39-ad80-49f0-ac11-daaaf678232a}, !- Handle
+  Surface 38,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  15, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  15, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  20, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  20, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {cfe6377a-8e00-40d1-b3c3-ef0212484470}, !- Handle
+  Surface 39,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  10, 0, 3,                               !- X,Y,Z Vertex 1 {m}
+  10, 0, 0,                               !- X,Y,Z Vertex 2 {m}
+  15, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  15, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {6585516f-2351-4b3d-a0c1-043f4e58e624}, !- Handle
+  Surface 40,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  5, 0, 3,                                !- X,Y,Z Vertex 1 {m}
+  5, 0, 0,                                !- X,Y,Z Vertex 2 {m}
+  10, 0, 0,                               !- X,Y,Z Vertex 3 {m}
+  10, 0, 3;                               !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {b0b0a75c-42ad-47ea-b25a-dd9bcc200be2}, !- Handle
+  Surface 41,                             !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 0, 3,                                !- X,Y,Z Vertex 1 {m}
+  0, 0, 0,                                !- X,Y,Z Vertex 2 {m}
+  5, 0, 0,                                !- X,Y,Z Vertex 3 {m}
+  5, 0, 3;                                !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {37f744c6-21b7-48ad-9219-54b0d4d401cc}, !- Handle
+  Surface 42,                             !- Name
+  RoofCeiling,                            !- Surface Type
+  ,                                       !- Construction Name
+  {1611b715-f42e-4209-9d60-b38e43c22943}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  5, 0, 3,                                !- X,Y,Z Vertex 1 {m}
+  10, 0, 3,                               !- X,Y,Z Vertex 2 {m}
+  15, 0, 3,                               !- X,Y,Z Vertex 3 {m}
+  20, 0, 3,                               !- X,Y,Z Vertex 4 {m}
+  25, 0, 3,                               !- X,Y,Z Vertex 5 {m}
+  30, 0, 3,                               !- X,Y,Z Vertex 6 {m}
+  35, 0, 3,                               !- X,Y,Z Vertex 7 {m}
+  40, 0, 3,                               !- X,Y,Z Vertex 8 {m}
+  45, 0, 3,                               !- X,Y,Z Vertex 9 {m}
+  50, 0, 3,                               !- X,Y,Z Vertex 10 {m}
+  50, 5, 3,                               !- X,Y,Z Vertex 11 {m}
+  50, 10, 3,                              !- X,Y,Z Vertex 12 {m}
+  50, 15, 3,                              !- X,Y,Z Vertex 13 {m}
+  50, 20, 3,                              !- X,Y,Z Vertex 14 {m}
+  50, 25, 3,                              !- X,Y,Z Vertex 15 {m}
+  50, 30, 3,                              !- X,Y,Z Vertex 16 {m}
+  50, 35, 3,                              !- X,Y,Z Vertex 17 {m}
+  50, 40, 3,                              !- X,Y,Z Vertex 18 {m}
+  50, 45, 3,                              !- X,Y,Z Vertex 19 {m}
+  50, 50, 3,                              !- X,Y,Z Vertex 20 {m}
+  45, 50, 3,                              !- X,Y,Z Vertex 21 {m}
+  40, 50, 3,                              !- X,Y,Z Vertex 22 {m}
+  35, 50, 3,                              !- X,Y,Z Vertex 23 {m}
+  30, 50, 3,                              !- X,Y,Z Vertex 24 {m}
+  25, 50, 3,                              !- X,Y,Z Vertex 25 {m}
+  20, 50, 3,                              !- X,Y,Z Vertex 26 {m}
+  15, 50, 3,                              !- X,Y,Z Vertex 27 {m}
+  10, 50, 3,                              !- X,Y,Z Vertex 28 {m}
+  5, 50, 3,                               !- X,Y,Z Vertex 29 {m}
+  0, 50, 3,                               !- X,Y,Z Vertex 30 {m}
+  0, 45, 3,                               !- X,Y,Z Vertex 31 {m}
+  0, 40, 3,                               !- X,Y,Z Vertex 32 {m}
+  0, 35, 3,                               !- X,Y,Z Vertex 33 {m}
+  0, 30, 3,                               !- X,Y,Z Vertex 34 {m}
+  0, 25, 3,                               !- X,Y,Z Vertex 35 {m}
+  0, 20, 3,                               !- X,Y,Z Vertex 36 {m}
+  0, 15, 3,                               !- X,Y,Z Vertex 37 {m}
+  0, 10, 3,                               !- X,Y,Z Vertex 38 {m}
+  0, 5, 3,                                !- X,Y,Z Vertex 39 {m}
+  0, 0, 3;                                !- X,Y,Z Vertex 40 {m}
+
+OS:ThermalZone,
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}, !- Handle
+  Thermal Zone 1,                         !- Name
+  ,                                       !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  ,                                       !- Zone Conditioning Equipment List Name
+  {593e210b-fbee-40f9-95e7-bf453e2377ef}, !- Zone Air Inlet Port List
+  {520967f8-68b5-4bf0-828e-4eacc2791bf4}, !- Zone Air Exhaust Port List
+  {f55025a3-09c4-4912-9611-bc24c5f0bb7e}, !- Zone Air Node Name
+  ,                                       !- Zone Return Air Node Name
+  ,                                       !- Primary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Primary Daylighting Control
+  ,                                       !- Secondary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
+  ,                                       !- Illuminance Map Name
+  ,                                       !- Group Rendering Name
+  ,                                       !- Thermostat Name
+  No;                                     !- Use Ideal Air Loads
+
+OS:Node,
+  {b2284a15-8154-4ad5-a2ef-a696e9a52b7b}, !- Handle
+  Node 1,                                 !- Name
+  {f55025a3-09c4-4912-9611-bc24c5f0bb7e}, !- Inlet Port
+  ;                                       !- Outlet Port
+
+OS:Connection,
+  {f55025a3-09c4-4912-9611-bc24c5f0bb7e}, !- Handle
+  {f034ae6b-cc36-4164-8248-c956b67fbc7c}, !- Name
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}, !- Source Object
+  11,                                     !- Outlet Port
+  {b2284a15-8154-4ad5-a2ef-a696e9a52b7b}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:PortList,
+  {593e210b-fbee-40f9-95e7-bf453e2377ef}, !- Handle
+  Port List 1,                            !- Name
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}; !- HVAC Component
+
+OS:PortList,
+  {520967f8-68b5-4bf0-828e-4eacc2791bf4}, !- Handle
+  Port List 2,                            !- Name
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}; !- HVAC Component
+
+OS:Sizing:Zone,
+  {95ca7adf-d0d4-48de-a261-f1242f3d8108}, !- Handle
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}, !- Zone or ZoneList Name
+  14,                                     !- Zone Cooling Design Supply Air Temperature {C}
+  40,                                     !- Zone Heating Design Supply Air Temperature {C}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  ,                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                       !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Cooling Minimum Air Flow {m3/s}
+  ,                                       !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  ,                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                       !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Heating Maximum Air Flow {m3/s}
+  ,                                       !- Heating Maximum Air Flow Fraction
+  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
+  ;                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
+
+OS:ZoneHVAC:EquipmentList,
+  {1c8a3fec-38a0-481a-8dd6-e78444702d76}, !- Handle
+  Zone HVAC Equipment List 1,             !- Name
+  {147f0bf3-5d44-44b6-a975-d66a5c59b0c4}; !- Thermal Zone
+
+OS:SubSurface,
+  {dcedd623-7e35-4a39-bb30-aabe569777af}, !- Handle
+  Sub Surface 1,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {11083420-f9ca-4922-a9ba-fc3ff4a2ed51}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  24.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  24.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  20.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  20.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {528f9b5e-7a79-49b3-84aa-6a87f155d69b}, !- Handle
+  Sub Surface 2,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {15a4a9b9-a35e-4554-bf8d-662a849acdca}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  14.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  14.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  10.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  10.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {a1adc6f3-2715-4ac4-afad-6700df537601}, !- Handle
+  Sub Surface 3,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {17ae6d85-3a4e-44b0-84c0-f2e19c3db8ae}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  34.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  34.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  30.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  30.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {32553ec4-c68a-435c-848c-4332cf168c1c}, !- Handle
+  Sub Surface 4,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {19613fd3-7c28-49f4-a79a-d4f030071578}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  9.9746, 50, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  9.9746, 50, 1,                          !- X,Y,Z Vertex 2 {m}
+  5.0254, 50, 1,                          !- X,Y,Z Vertex 3 {m}
+  5.0254, 50, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {c8bf6d8d-cd8e-4b30-94d6-4487c3051f7e}, !- Handle
+  Sub Surface 5,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {1f19eb1c-476b-4f38-b5ee-ee829c9ac958}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 14.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 14.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 10.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 10.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {29b02fea-cad7-45d4-9bc3-8a6a2dedd695}, !- Handle
+  Sub Surface 6,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {256e0b93-03b9-481c-a78e-fd95ff7fd8c4}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 24.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 24.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 20.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 20.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {432302a2-e0a0-4caf-936e-30873bb86335}, !- Handle
+  Sub Surface 7,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {33088dd6-3130-4670-85ab-adaa7d2ec2aa}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  4.9746, 50, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  4.9746, 50, 1,                          !- X,Y,Z Vertex 2 {m}
+  0.0253999999999994, 50, 1,              !- X,Y,Z Vertex 3 {m}
+  0.0253999999999994, 50, 2.00016164228562; !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {b5e9cb3d-b784-4fed-a397-d2c1926da569}, !- Handle
+  Sub Surface 8,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {43db1ed4-e5d4-4a72-8cd3-4322c41d45b8}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 45.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 45.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 49.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 49.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {70fd7c2c-3671-44ef-893d-6072b9544b22}, !- Handle
+  Sub Surface 9,                          !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {45c20469-5931-4f71-9d0d-1ff1c4c14e46}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  30.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  30.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  34.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  34.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {81d8bd9c-c64d-418d-b7a7-3e51c01b482e}, !- Handle
+  Sub Surface 10,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {59a1c71d-03ee-45d2-9df4-ece731ce4712}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 10.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 10.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 14.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 14.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {23d4063a-6b29-4d91-a97b-bd05e7f4a18b}, !- Handle
+  Sub Surface 11,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {5e126979-e23c-4de6-8b2b-dcb6bfa8150e}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 49.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 49.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 45.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 45.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {de5c198e-3ad3-42c2-9ea6-de6fdc14e032}, !- Handle
+  Sub Surface 12,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {6585516f-2351-4b3d-a0c1-043f4e58e624}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  5.0254, 0, 2.00016164228562,            !- X,Y,Z Vertex 1 {m}
+  5.0254, 0, 1,                           !- X,Y,Z Vertex 2 {m}
+  9.9746, 0, 1,                           !- X,Y,Z Vertex 3 {m}
+  9.9746, 0, 2.00016164228562;            !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {d2faf0fc-2375-4a98-b3a4-31ef072d5935}, !- Handle
+  Sub Surface 13,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {6593e1e9-21b7-4a11-9696-50e971f750dd}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 34.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 34.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 30.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 30.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {e8eb4e22-a82d-48c3-947f-6cd4729939e3}, !- Handle
+  Sub Surface 14,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {765c4f41-5970-4f9b-a5c1-fe1e6e28ad18}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  49.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  49.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  45.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  45.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {c84c94c2-628c-484e-957c-57abd0f5f192}, !- Handle
+  Sub Surface 15,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {7a949313-f7b1-49ab-b53e-bf7553385043}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  25.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  25.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  29.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  29.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {d3422f2a-8661-4abc-8a7a-134be8d3fea9}, !- Handle
+  Sub Surface 16,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {7ad2d07a-1b9f-42a2-b919-207e90d3fbfd}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  40.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  40.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  44.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  44.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {9069ca89-a2d9-4dd5-a2b9-9848f42977f0}, !- Handle
+  Sub Surface 17,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {7d078e33-3082-4a50-a0dc-ee77c704b8dd}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 30.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 30.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 34.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 34.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {d022e7ae-016e-4005-b525-555b2ab6406d}, !- Handle
+  Sub Surface 18,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {8361fc78-a570-4d3a-9e23-547387ab322c}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  39.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  39.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  35.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  35.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {fb634209-50cd-417d-8e57-26d4cf7dc0fc}, !- Handle
+  Sub Surface 19,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {85d4b2a6-4310-43bd-b752-685e07eafd51}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  29.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  29.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  25.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  25.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {fd9d5656-c968-40a8-9c39-ee43f78b8404}, !- Handle
+  Sub Surface 20,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {86c904c6-ca9e-4cd1-b83f-f7b6f227cc65}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  19.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  19.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  15.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  15.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {46026fc3-0334-4511-a429-1e1d755aa00a}, !- Handle
+  Sub Surface 21,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {87488063-fadf-47a0-82ba-255bb8fd9fd8}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 40.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 40.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 44.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 44.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {cc13ae33-2425-4221-a296-85e98c13d0f0}, !- Handle
+  Sub Surface 22,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {9768d9ae-4bb8-4061-a9ae-8240a6eab658}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 39.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 39.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 35.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 35.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {42886c99-3c0b-4fd1-b52d-3303a3438164}, !- Handle
+  Sub Surface 23,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {9a7a699d-7d64-4485-89b2-8ad1060a2362}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 19.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 19.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 15.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 15.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {e1da02ed-4739-40a7-b609-41a1cf35a397}, !- Handle
+  Sub Surface 24,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {9f0356b1-d88d-47f8-95b1-78b975cd94bc}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  20.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  20.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  24.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  24.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {34ca3a85-4fa5-4391-9e50-986ec3b4b376}, !- Handle
+  Sub Surface 25,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {a2a65c39-ad80-49f0-ac11-daaaf678232a}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  15.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  15.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  19.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  19.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {bcb27665-e660-4b0d-90b9-9eceadc1783d}, !- Handle
+  Sub Surface 26,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {a3103944-d9a4-470a-ad94-56b7cf202339}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 20.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 20.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 24.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 24.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {c3939a99-022a-4bcc-8262-114cd29d1e9a}, !- Handle
+  Sub Surface 27,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {a54eb361-6b00-4d82-9037-c6129779b639}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 35.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 35.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 39.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 39.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {a3422f0e-dd87-41cc-95a2-d1cf2b8271ab}, !- Handle
+  Sub Surface 28,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {aa2d024f-7b67-4081-b106-79852c8d0228}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 5.0254, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  50, 5.0254, 1,                          !- X,Y,Z Vertex 2 {m}
+  50, 9.9746, 1,                          !- X,Y,Z Vertex 3 {m}
+  50, 9.9746, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {c360a22b-037d-4026-85eb-53229fd1c190}, !- Handle
+  Sub Surface 29,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {aca17827-f19a-4957-b06a-0c9816a03669}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  44.9746, 50, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  44.9746, 50, 1,                         !- X,Y,Z Vertex 2 {m}
+  40.0254, 50, 1,                         !- X,Y,Z Vertex 3 {m}
+  40.0254, 50, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {ed1411d5-cb09-4331-8a45-52e4adfd9c57}, !- Handle
+  Sub Surface 30,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {b0b0a75c-42ad-47ea-b25a-dd9bcc200be2}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0.0254, 0, 2.00016164228562,            !- X,Y,Z Vertex 1 {m}
+  0.0254, 0, 1,                           !- X,Y,Z Vertex 2 {m}
+  4.9746, 0, 1,                           !- X,Y,Z Vertex 3 {m}
+  4.9746, 0, 2.00016164228562;            !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {be26201d-9db1-4567-bb43-e7fcfe4b7c36}, !- Handle
+  Sub Surface 31,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {b46eaeb8-a09e-4a60-8fb2-57742fb89177}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 44.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 44.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 40.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 40.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {4dadf2c2-6704-4da1-9881-345f32328980}, !- Handle
+  Sub Surface 32,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ba66a544-95d3-49b8-afcf-d332f888f9a4}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  35.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  35.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  39.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  39.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {306f5686-dfab-46b5-bbdb-280b802aced4}, !- Handle
+  Sub Surface 33,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {bc1bdf16-9ac5-4544-bede-73bff48a18fa}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 0.0254, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  50, 0.0254, 1,                          !- X,Y,Z Vertex 2 {m}
+  50, 4.9746, 1,                          !- X,Y,Z Vertex 3 {m}
+  50, 4.9746, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {bbdfc91d-aae2-4399-a189-9b30e8ad910d}, !- Handle
+  Sub Surface 34,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {cfe6377a-8e00-40d1-b3c3-ef0212484470}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  10.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  10.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  14.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  14.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {11e6044c-f0fd-46dc-be57-36994ff9695e}, !- Handle
+  Sub Surface 35,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {d3aaa347-acd8-493f-82a3-7f2d187805c7}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 25.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 25.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 29.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 29.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {f5f29894-9583-43af-acd6-e693ff304725}, !- Handle
+  Sub Surface 36,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {d81d2279-5e21-43dc-994b-3340496b883a}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  50, 15.0254, 2.00016164228562,          !- X,Y,Z Vertex 1 {m}
+  50, 15.0254, 1,                         !- X,Y,Z Vertex 2 {m}
+  50, 19.9746, 1,                         !- X,Y,Z Vertex 3 {m}
+  50, 19.9746, 2.00016164228562;          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {94288096-425f-47b7-9a91-54a1dd485f1a}, !- Handle
+  Sub Surface 37,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {dce227f2-ee92-4560-8ee1-04c965672be0}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  45.0254, 0, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  45.0254, 0, 1,                          !- X,Y,Z Vertex 2 {m}
+  49.9746, 0, 1,                          !- X,Y,Z Vertex 3 {m}
+  49.9746, 0, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {ca8f289f-120d-4aeb-8139-9f9562a1d121}, !- Handle
+  Sub Surface 38,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ded86ec9-3682-4b80-803f-c2ccf1a5be15}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 4.9746, 2.00016164228562,            !- X,Y,Z Vertex 1 {m}
+  0, 4.9746, 1,                           !- X,Y,Z Vertex 2 {m}
+  0, 0.0253999999999994, 1,               !- X,Y,Z Vertex 3 {m}
+  0, 0.0253999999999994, 2.00016164228562; !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {2ae7e61f-50e7-474e-ba9b-8c63173de122}, !- Handle
+  Sub Surface 39,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {e6012398-6750-4878-a401-8132cf2c7889}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 9.9746, 2.00016164228562,            !- X,Y,Z Vertex 1 {m}
+  0, 9.9746, 1,                           !- X,Y,Z Vertex 2 {m}
+  0, 5.0254, 1,                           !- X,Y,Z Vertex 3 {m}
+  0, 5.0254, 2.00016164228562;            !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {27fed725-70b7-4b9d-b29b-b909c0b96366}, !- Handle
+  Sub Surface 40,                         !- Name
+  FixedWindow,                            !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ecf72d18-a5ad-4099-bb9c-81fa170812f5}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Shading Control Name
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  0, 29.9746, 2.00016164228562,           !- X,Y,Z Vertex 1 {m}
+  0, 29.9746, 1,                          !- X,Y,Z Vertex 2 {m}
+  0, 25.0254, 1,                          !- X,Y,Z Vertex 3 {m}
+  0, 25.0254, 2.00016164228562;           !- X,Y,Z Vertex 4 {m}
+
+OS:Construction,
+  {67a9d98c-d980-431b-8428-a5b5823ce43b}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 6, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {4703cfbf-0912-4b09-af04-54d19432ec52}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Handle
+  1IN Stucco,                             !- Name
+  Smooth,                                 !- Roughness
+  0.0253,                                 !- Thickness {m}
+  0.691799999999999,                      !- Conductivity {W/m-K}
+  1858,                                   !- Density {kg/m3}
+  836.999999999999,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.92,                                   !- Solar Absorptance
+  0.92;                                   !- Visible Absorptance
+
+OS:Material,
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Handle
+  8IN CONCRETE HW RefBldg,                !- Name
+  Rough,                                  !- Roughness
+  0.2032,                                 !- Thickness {m}
+  1.311,                                  !- Conductivity {W/m-K}
+  2240,                                   !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {4703cfbf-0912-4b09-af04-54d19432ec52}, !- Handle
+  Mass NonRes Wall Insulation-1.69,       !- Name
+  MediumRough,                            !- Roughness
+  0.0623673293364368,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}, !- Handle
+  1/2IN Gypsum,                           !- Name
+  Smooth,                                 !- Roughness
+  0.0127,                                 !- Thickness {m}
+  0.16,                                   !- Conductivity {W/m-K}
+  784.9,                                  !- Density {kg/m3}
+  830.000000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.4,                                    !- Solar Absorptance
+  0.4;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {cab64d36-f2ab-43de-8b2e-beaef923018b}, !- Handle
+  {67a9d98c-d980-431b-8428-a5b5823ce43b}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {56c2c3b4-70f0-4f24-9c54-a3a4f139468a}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
+  {178a578b-e7fe-4694-9fb7-1b4a3f9ffaee}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Handle
+  Roof Membrane,                          !- Name
+  VeryRough,                              !- Roughness
+  0.0095,                                 !- Thickness {m}
+  0.16,                                   !- Conductivity {W/m-K}
+  1121.29,                                !- Density {kg/m3}
+  1460,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {178a578b-e7fe-4694-9fb7-1b4a3f9ffaee}, !- Handle
+  IEAD NonRes Roof Insulation-2.79,       !- Name
+  MediumRough,                            !- Roughness
+  0.124663450809702,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {3ac19517-f998-49cf-a48b-4491fb351960}, !- Handle
+  Metal Decking,                          !- Name
+  MediumSmooth,                           !- Roughness
+  0.0015,                                 !- Thickness {m}
+  45.006,                                 !- Conductivity {W/m-K}
+  7680,                                   !- Density {kg/m3}
+  418.4,                                  !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.6,                                    !- Solar Absorptance
+  0.6;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {f14c5490-fd61-4e43-b6c3-8331302b8839}, !- Handle
+  {56c2c3b4-70f0-4f24-9c54-a3a4f139468a}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  IEAD;                                   !- Standards Construction Type
+
+OS:Construction,
+  {d4a28686-bd99-4ab5-b126-807409b36fc2}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 2, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
+  {02fb1824-e4bd-4d31-9547-f73bd1123685}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Handle
+  Metal Roofing,                          !- Name
+  MediumSmooth,                           !- Roughness
+  0.0015,                                 !- Thickness {m}
+  45.006,                                 !- Conductivity {W/m-K}
+  7680,                                   !- Density {kg/m3}
+  418.4,                                  !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.6,                                    !- Solar Absorptance
+  0.6;                                    !- Visible Absorptance
+
+OS:Material,
+  {02fb1824-e4bd-4d31-9547-f73bd1123685}, !- Handle
+  Metal Semi-Cond Roof Insulation-1.05,   !- Name
+  MediumRough,                            !- Roughness
+  0.0422673301906313,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {3bbc8b7e-4c1e-4620-803a-3f56c0844031}, !- Handle
+  {d4a28686-bd99-4ab5-b126-807409b36fc2}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {b9aa1649-b7a7-4bc6-a738-be853916be01}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 3a-3b, !- Name
+  ,                                       !- Surface Rendering Name
+  {01528e8f-c3f9-4775-831e-4d610e716f90}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {01528e8f-c3f9-4775-831e-4d610e716f90}, !- Handle
+  Fixed Window 3.24/0.25/0.16,            !- Name
+  3.23646,                                !- U-Factor {W/m2-K}
+  0.25,                                   !- Solar Heat Gain Coefficient
+  0.16;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {89b015d8-9371-4648-9c39-cb9a723fb952}, !- Handle
+  {b9aa1649-b7a7-4bc6-a738-be853916be01}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {04fc2062-3d33-4ccf-8c9d-d21319331503}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
+  {b161d40f-06d1-49ba-872d-596fefef487e}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {b161d40f-06d1-49ba-872d-596fefef487e}, !- Handle
+  IEAD NonRes Roof Insulation-3.72,       !- Name
+  MediumRough,                            !- Roughness
+  0.170145232344671,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {634d10a9-77f3-4ee9-98e0-849ecdcce36e}, !- Handle
+  {04fc2062-3d33-4ccf-8c9d-d21319331503}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  IEAD;                                   !- Standards Construction Type
+
+OS:Construction,
+  {f5c196f2-7342-4756-bdd2-806b9b572390}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {1d3fcefb-3dd0-4cde-956b-e9e873adf10f}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {1d3fcefb-3dd0-4cde-956b-e9e873adf10f}, !- Handle
+  Mass NonRes Wall Insulation-2.20,       !- Name
+  MediumRough,                            !- Roughness
+  0.0872609809472425,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {22b97445-1e45-4d07-9c30-4c2ddd08e992}, !- Handle
+  {f5c196f2-7342-4756-bdd2-806b9b572390}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {a1d3606d-6ca0-470c-b1d9-b5c68f075d68}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 4-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {8fe353e9-7b74-4c31-8d4f-c01d49cf2fe7}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Handle
+  Wood Siding,                            !- Name
+  MediumSmooth,                           !- Roughness
+  0.01,                                   !- Thickness {m}
+  0.11,                                   !- Conductivity {W/m-K}
+  544.62,                                 !- Density {kg/m3}
+  1210,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.78,                                   !- Solar Absorptance
+  0.78;                                   !- Visible Absorptance
+
+OS:Material,
+  {8fe353e9-7b74-4c31-8d4f-c01d49cf2fe7}, !- Handle
+  Steel Frame NonRes Wall Insulation-2.75, !- Name
+  MediumRough,                            !- Roughness
+  0.119161363096001,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {1bb3d728-6579-4158-a2fa-46731619b9b7}, !- Handle
+  {a1d3606d-6ca0-470c-b1d9-b5c68f075d68}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {ca639a59-2999-4cc4-bb1f-43de8d3d052e}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 7-8, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {8fe353e9-7b74-4c31-8d4f-c01d49cf2fe7}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {17c3b9c5-a5c4-48fc-8f02-cc96582f2155}, !- Handle
+  {ca639a59-2999-4cc4-bb1f-43de8d3d052e}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {0fea1630-46f6-47b4-89de-8ce0a12b7297}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 3c, !- Name
+  ,                                       !- Surface Rendering Name
+  {54ddc5e9-a037-485f-9c9b-9c69b8e75008}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {54ddc5e9-a037-485f-9c9b-9c69b8e75008}, !- Handle
+  Fixed Window 5.84/0.39/0.22,            !- Name
+  5.84000000000002,                       !- U-Factor {W/m2-K}
+  0.39,                                   !- Solar Heat Gain Coefficient
+  0.22;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {db6d930b-cf90-4f4e-8dfb-fd137dd01d7b}, !- Handle
+  {0fea1630-46f6-47b4-89de-8ce0a12b7297}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {aecf28b2-528a-4031-8248-bf88d71f1148}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 1-2, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {296e054a-6c06-48db-9733-6d2210d5db95}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {296e054a-6c06-48db-9733-6d2210d5db95}, !- Handle
+  Mass NonRes Wall Insulation-1.17,       !- Name
+  MediumRough,                            !- Roughness
+  0.0365394788793099,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {26cec31c-b9ce-4ec2-95f4-2cf72f70aa9e}, !- Handle
+  {aecf28b2-528a-4031-8248-bf88d71f1148}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {df807951-c23d-4cbc-8322-693b4dab577c}, !- Handle
+  Interior Window,                        !- Name
+  ,                                       !- Surface Rendering Name
+  {ff06cdb6-5beb-4113-b75b-a6b75a303ec2}; !- Layer 1
+
+OS:WindowMaterial:Glazing,
+  {ff06cdb6-5beb-4113-b75b-a6b75a303ec2}, !- Handle
+  Clear 3mm,                              !- Name
+  SpectralAverage,                        !- Optical Data Type
+  ,                                       !- Window Glass Spectral Data Set Name
+  0.00299999999999999,                    !- Thickness {m}
+  0.837,                                  !- Solar Transmittance at Normal Incidence
+  0.075,                                  !- Front Side Solar Reflectance at Normal Incidence
+  0,                                      !- Back Side Solar Reflectance at Normal Incidence
+  0.898,                                  !- Visible Transmittance at Normal Incidence
+  0.081,                                  !- Front Side Visible Reflectance at Normal Incidence
+  0,                                      !- Back Side Visible Reflectance at Normal Incidence
+  0,                                      !- Infrared Transmittance at Normal Incidence
+  0.84,                                   !- Front Side Infrared Hemispherical Emissivity
+  0.84,                                   !- Back Side Infrared Hemispherical Emissivity
+  0.9,                                    !- Conductivity {W/m-K}
+  1,                                      !- Dirt Correction Factor for Solar and Visible Transmittance
+  No;                                     !- Solar Diffusing
+
+OS:StandardsInformation:Construction,
+  {c65977dd-8aad-4bdf-94a5-3d678f375a3f}, !- Handle
+  {df807951-c23d-4cbc-8322-693b4dab577c}, !- Construction Name
+  InteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {3cc638ff-44a6-407d-b001-8cb5b5e084b3}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 5-6 1, !- Name
+  ,                                       !- Surface Rendering Name
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
+  {f07c4553-a301-4af3-acea-1d13647ab6bd}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {f07c4553-a301-4af3-acea-1d13647ab6bd}, !- Handle
+  IEAD NonRes Roof Insulation-2.85,       !- Name
+  MediumRough,                            !- Roughness
+  0.127338688569477,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {a6e39dcc-13e5-401e-b411-0f84346301a1}, !- Handle
+  {3cc638ff-44a6-407d-b001-8cb5b5e084b3}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  IEAD;                                   !- Standards Construction Type
+
+OS:Construction,
+  {2168d0cb-ae7a-44f3-87bc-09666c6920bc}, !- Handle
+  ASHRAE 90.1-2004 ExtWall WoodFrame ClimateZone 1-7, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {9b8ba5bc-f91e-45bf-a8f1-e11a9b4cf4bb}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {9b8ba5bc-f91e-45bf-a8f1-e11a9b4cf4bb}, !- Handle
+  Wood Frame NonRes Wall Insulation-1.98, !- Name
+  MediumRough,                            !- Roughness
+  0.0812847864409826,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {90cf5a60-7472-49ab-bb9f-a7946d132760}, !- Handle
+  {2168d0cb-ae7a-44f3-87bc-09666c6920bc}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  WoodFramed;                             !- Standards Construction Type
+
+OS:Construction,
+  {e18eb7ec-8f63-4496-8a1b-0f2145dd28f1}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 4, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {4703cfbf-0912-4b09-af04-54d19432ec52}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:StandardsInformation:Construction,
+  {efb05866-f5ff-4257-867b-1a8540f71fd8}, !- Handle
+  {e18eb7ec-8f63-4496-8a1b-0f2145dd28f1}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {2d2f2ed1-2124-4200-8100-eb56f88c34fd}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 3-4, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {296e054a-6c06-48db-9733-6d2210d5db95}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:StandardsInformation:Construction,
+  {cf746e78-8ca1-4f62-ba33-0e7388a203c2}, !- Handle
+  {2d2f2ed1-2124-4200-8100-eb56f88c34fd}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {b0d93ef6-7226-43de-a9ce-3936a0cb68b5}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 1-4, !- Name
+  ,                                       !- Surface Rendering Name
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
+  {178a578b-e7fe-4694-9fb7-1b4a3f9ffaee}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {f61a2b55-9b48-4a77-9fa5-8240ad622765}, !- Handle
+  {b0d93ef6-7226-43de-a9ce-3936a0cb68b5}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  IEAD;                                   !- Standards Construction Type
+
+OS:Construction,
+  {c9136c6c-97bc-40ab-be39-86d8ddf13584}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-ware 1-8, !- Name
+  ,                                       !- Surface Rendering Name
+  {d57dc8f4-c370-4edc-abb8-d440f70d77a7}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {d57dc8f4-c370-4edc-abb8-d440f70d77a7}, !- Handle
+  Fixed Window 5.84/0.70/0.60,            !- Name
+  5.84000000000002,                       !- U-Factor {W/m2-K}
+  0.7,                                    !- Solar Heat Gain Coefficient
+  0.6;                                    !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {76b60829-32a3-458b-b50e-9bb10dbb284e}, !- Handle
+  {c9136c6c-97bc-40ab-be39-86d8ddf13584}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {c2667050-0b9d-42d5-af8b-2bd870d9a02d}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {1d3fcefb-3dd0-4cde-956b-e9e873adf10f}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:StandardsInformation:Construction,
+  {c04711d3-e1ac-41ea-9d82-cfb0636d65c7}, !- Handle
+  {c2667050-0b9d-42d5-af8b-2bd870d9a02d}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {522a90a6-b899-4bbe-8504-b99fc8036e06}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {294dfb44-15ad-4495-8f7c-a4a5662e2b57}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {294dfb44-15ad-4495-8f7c-a4a5662e2b57}, !- Handle
+  Fixed Window 2.67/0.30/0.21,            !- Name
+  2.66866,                                !- U-Factor {W/m2-K}
+  0.49,                                   !- Solar Heat Gain Coefficient
+  0.38;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {3bfe8e64-102b-4713-8849-a36097108513}, !- Handle
+  {522a90a6-b899-4bbe-8504-b99fc8036e06}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {0fa4fd77-d5bf-4d64-a4d6-046efe1c4b86}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 3c, !- Name
+  ,                                       !- Surface Rendering Name
+  {61f8ae1a-ee13-4ab0-8ca4-46133bb4fdd4}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {61f8ae1a-ee13-4ab0-8ca4-46133bb4fdd4}, !- Handle
+  Fixed Window 5.84/0.61/0.47,            !- Name
+  5.84000000000002,                       !- U-Factor {W/m2-K}
+  0.61,                                   !- Solar Heat Gain Coefficient
+  0.47;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {862fb988-2720-4cda-be13-04e458cf17eb}, !- Handle
+  {0fa4fd77-d5bf-4d64-a4d6-046efe1c4b86}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {21761d39-072c-4e7c-9af8-40fa3fa0e171}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
+  {be973f10-c1ae-4e3e-b57d-eebd822048a4}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {be973f10-c1ae-4e3e-b57d-eebd822048a4}, !- Handle
+  Metal Semi-Cond Roof Insulation-1.81,   !- Name
+  MediumRough,                            !- Roughness
+  0.0795588880494838,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {282e1081-243b-4aba-9fd9-52a41a68f422}, !- Handle
+  {21761d39-072c-4e7c-9af8-40fa3fa0e171}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {58ad2640-4603-4f0a-97e2-643e6b685882}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-resH 3a-3b, !- Name
+  ,                                       !- Surface Rendering Name
+  {6a37c667-2394-4b0e-8be9-5c013a8b9ed4}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {6a37c667-2394-4b0e-8be9-5c013a8b9ed4}, !- Handle
+  Fixed Window 3.24/0.39/0.31,            !- Name
+  3.23646,                                !- U-Factor {W/m2-K}
+  0.39,                                   !- Solar Heat Gain Coefficient
+  0.31;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {64ce7de4-1625-4baf-886e-106818f62680}, !- Handle
+  {58ad2640-4603-4f0a-97e2-643e6b685882}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {aafb0365-14b4-4937-aa33-961c7abee217}, !- Handle
+  ASHRAE 90.1-2004 AtticFloor ClimateZone 1-5, !- Name
+  ,                                       !- Surface Rendering Name
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}, !- Layer 1
+  {59c87b55-e1cd-496a-9aef-17a749c7a115}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {59c87b55-e1cd-496a-9aef-17a749c7a115}, !- Handle
+  AtticFloor NonRes Insulation-5.18,      !- Name
+  MediumRough,                            !- Roughness
+  0.302609558350618,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {26f3b3ab-1f7c-47aa-b2e2-09209494ed45}, !- Handle
+  {aafb0365-14b4-4937-aa33-961c7abee217}, !- Construction Name
+  AtticFloor,                             !- Intended Surface Type
+  WoodFramed;                             !- Standards Construction Type
+
+OS:Construction,
+  {43248f3b-e46e-4199-84d2-836d28d5f658}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 1-2, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {92096a90-dc90-42bb-beab-1849843aa081}, !- Handle
+  {43248f3b-e46e-4199-84d2-836d28d5f658}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {34f16ee3-c69d-40a9-a645-e7d11ea7c6af}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 5-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
+  {f07c4553-a301-4af3-acea-1d13647ab6bd}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {ed26b360-fc83-42ae-b77f-0c62d6767117}, !- Handle
+  {34f16ee3-c69d-40a9-a645-e7d11ea7c6af}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  IEAD;                                   !- Standards Construction Type
+
+OS:Construction,
+  {4739908e-4a01-4ec9-84cb-9b77df1fc041}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 1-2, !- Name
+  ,                                       !- Surface Rendering Name
+  {ccc2c584-a592-41db-be50-0874fc649b1d}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {ccc2c584-a592-41db-be50-0874fc649b1d}, !- Handle
+  Fixed Window 5.84/0.25/0.11,            !- Name
+  5.84000000000002,                       !- U-Factor {W/m2-K}
+  0.25,                                   !- Solar Heat Gain Coefficient
+  0.11;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {e34c4f2b-4648-4162-b4b2-0903e93867ad}, !- Handle
+  {4739908e-4a01-4ec9-84cb-9b77df1fc041}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {1b892e4e-8bab-4ce5-941b-375793fba140}, !- Handle
+  Interior Partition,                     !- Name
+  ,                                       !- Surface Rendering Name
+  {113a0723-3646-475d-9962-a33d2d9be9a0}; !- Layer 1
+
+OS:Material,
+  {113a0723-3646-475d-9962-a33d2d9be9a0}, !- Handle
+  G05 25mm wood,                          !- Name
+  MediumSmooth,                           !- Roughness
+  0.0254,                                 !- Thickness {m}
+  0.15,                                   !- Conductivity {W/m-K}
+  608,                                    !- Density {kg/m3}
+  1630,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.5,                                    !- Solar Absorptance
+  0.5;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {e3e5e130-e5a1-4ac8-b6fd-7c9c1f59bc9d}, !- Handle
+  {1b892e4e-8bab-4ce5-941b-375793fba140}, !- Construction Name
+  InteriorPartition,                      !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {81159b02-4eaf-48e8-8083-dc2abeacb5a8}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 4-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {73a581ba-90ef-4677-8410-cfc2ea1b95e2}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {73a581ba-90ef-4677-8410-cfc2ea1b95e2}, !- Handle
+  Fixed Window 3.81/0.39/0.27,            !- Name
+  2.95256,                                !- U-Factor {W/m2-K}
+  0.39,                                   !- Solar Heat Gain Coefficient
+  0.27;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {09eea50f-4f03-4a16-98b8-c0d6508b7d47}, !- Handle
+  {81159b02-4eaf-48e8-8083-dc2abeacb5a8}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {7f6bca69-0b0c-463f-9ba0-1310017f734d}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Metal ClimateZone 4, !- Name
+  ,                                       !- Surface Rendering Name
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
+  {e5dc6abe-14d9-48ea-bbb5-cbb836b2656e}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Handle
+  Metal Siding,                           !- Name
+  Smooth,                                 !- Roughness
+  0.0015,                                 !- Thickness {m}
+  44.9599999999999,                       !- Conductivity {W/m-K}
+  7688.86,                                !- Density {kg/m3}
+  410,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.6,                                    !- Solar Absorptance
+  0.6;                                    !- Visible Absorptance
+
+OS:Material,
+  {e5dc6abe-14d9-48ea-bbb5-cbb836b2656e}, !- Handle
+  Metal Building Semi-Cond Wall Insulation-1.12, !- Name
+  MediumRough,                            !- Roughness
+  0.0437899773880745,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {a0ee5ebc-b8ec-4f88-8cf1-cf807df730ff}, !- Handle
+  {7f6bca69-0b0c-463f-9ba0-1310017f734d}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {8bb3b7e1-ff76-462d-bd29-69ba7caf3e7c}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 1-4, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {519a1edb-d73f-4a01-82e4-41cca4771508}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {519a1edb-d73f-4a01-82e4-41cca4771508}, !- Handle
+  Steel Frame NonRes Wall Insulation-1.42, !- Name
+  MediumRough,                            !- Roughness
+  0.0539159052000001,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {4dacda00-ccab-4e2f-9211-323996a75008}, !- Handle
+  {8bb3b7e1-ff76-462d-bd29-69ba7caf3e7c}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {1d775235-9a6a-4874-84b3-30c7150b3036}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {5d530508-7168-4408-b57a-867540e32451}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {5d530508-7168-4408-b57a-867540e32451}, !- Handle
+  Fixed Window 2.62/0.30/0.21,            !- Name
+  2.61188,                                !- U-Factor {W/m2-K}
+  0.3,                                    !- Solar Heat Gain Coefficient
+  0.21;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {6f856886-8248-46ec-adf2-b90c12044615}, !- Handle
+  {1d775235-9a6a-4874-84b3-30c7150b3036}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {1741fe01-cfb1-4d2d-a1de-92816bb502f7}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {a167997a-00ba-4a37-8f61-ce40f5e580dc}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {a167997a-00ba-4a37-8f61-ce40f5e580dc}, !- Handle
+  Fixed Window 3.81/0.49/0.38,            !- Name
+  2.95256,                                !- U-Factor {W/m2-K}
+  0.49,                                   !- Solar Heat Gain Coefficient
+  0.38;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {e0aee1d8-3875-491a-8dd6-5a57bfa71ae5}, !- Handle
+  {1741fe01-cfb1-4d2d-a1de-92816bb502f7}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {c6b6e13b-45a5-4bb2-b20f-a4517a52fe0c}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Metal ClimateZone 6-8, !- Name
+  ,                                       !- Surface Rendering Name
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
+  {cf6c96d6-09f2-42b3-8263-656d77e234c6}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {cf6c96d6-09f2-42b3-8263-656d77e234c6}, !- Handle
+  Metal Building Semi-Cond Wall Insulation-1.37, !- Name
+  MediumRough,                            !- Roughness
+  0.0557583952804708,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {ceba110a-a783-41ff-a2fd-1f4df41c650a}, !- Handle
+  {c6b6e13b-45a5-4bb2-b20f-a4517a52fe0c}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {8d781132-d93a-4eee-99ed-eb803e99a290}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {9dd4d7cb-8ccb-40a5-9496-5ee2351d2796}; !- Layer 1
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {9dd4d7cb-8ccb-40a5-9496-5ee2351d2796}, !- Handle
+  Fixed Window 3.24/0.49/0.41,            !- Name
+  3.23646,                                !- U-Factor {W/m2-K}
+  0.49,                                   !- Solar Heat Gain Coefficient
+  0.41;                                   !- Visible Transmittance
+
+OS:StandardsInformation:Construction,
+  {375078a9-5551-4e12-9dc6-c3602622b464}, !- Handle
+  {8d781132-d93a-4eee-99ed-eb803e99a290}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {608467f9-1ddd-4520-9f4f-e7be647a81bf}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 5-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {39b65864-7835-4c8e-b595-744bc3f3bf27}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {39b65864-7835-4c8e-b595-744bc3f3bf27}, !- Handle
+  Steel Frame NonRes Wall Insulation-2.10, !- Name
+  MediumRough,                            !- Roughness
+  0.0870564552646046,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {9452172c-4872-4604-ad0c-bbbd2a734991}, !- Handle
+  {608467f9-1ddd-4520-9f4f-e7be647a81bf}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {05eda8c6-26bf-45f4-a177-c853ccb2c51d}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone alt-resA 3a-3b, !- Name
+  ,                                       !- Surface Rendering Name
+  {73a581ba-90ef-4677-8410-cfc2ea1b95e2}; !- Layer 1
+
+OS:StandardsInformation:Construction,
+  {7363c8c8-deb3-4f0e-a9a2-e0347923913c}, !- Handle
+  {05eda8c6-26bf-45f4-a177-c853ccb2c51d}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {b4c32d79-f021-4e53-a658-fb52590b3264}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 5-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
+  {a38c0c45-fb32-42dc-9607-79e8b3221547}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {a38c0c45-fb32-42dc-9607-79e8b3221547}, !- Handle
+  Metal Semi-Cond Roof Insulation-1.87,   !- Name
+  MediumRough,                            !- Roughness
+  0.0822341258092582,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {ca7e2c3e-2d35-4375-ac7c-f1af46777652}, !- Handle
+  {b4c32d79-f021-4e53-a658-fb52590b3264}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {b231fecf-1c9c-4916-811d-ed144a236b1d}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 3, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {39b65864-7835-4c8e-b595-744bc3f3bf27}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {f58444dd-15e3-41ac-9836-abe00e58b0ce}, !- Handle
+  {b231fecf-1c9c-4916-811d-ed144a236b1d}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {73fe8c40-5d7b-45bb-bc38-7a99c49e57a9}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 5-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {89f414af-9231-4912-a076-102d05c66aee}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {89f414af-9231-4912-a076-102d05c66aee}, !- Handle
+  Mass NonRes Wall Insulation-1.96,       !- Name
+  MediumRough,                            !- Roughness
+  0.0752751486901879,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {580c257e-cfc7-42d5-bc15-3e06514fba58}, !- Handle
+  {73fe8c40-5d7b-45bb-bc38-7a99c49e57a9}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {ddf69928-b958-4a3a-8310-279c0f9d6ac5}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 7, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {89f414af-9231-4912-a076-102d05c66aee}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:StandardsInformation:Construction,
+  {34137e0c-408d-4506-ab36-95a4ad133784}, !- Handle
+  {ddf69928-b958-4a3a-8310-279c0f9d6ac5}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {30010092-070b-49e1-a3f0-aeca04004d52}, !- Handle
+  Exterior Door,                          !- Name
+  ,                                       !- Surface Rendering Name
+  {d09b0fbd-16a6-474d-ac08-483f38f3341a}, !- Layer 1
+  {798074e2-9644-4cf4-9a75-81e69579bf8e}; !- Layer 2
+
+OS:Material,
+  {d09b0fbd-16a6-474d-ac08-483f38f3341a}, !- Handle
+  F08 Metal surface,                      !- Name
+  Smooth,                                 !- Roughness
+  0.0008,                                 !- Thickness {m}
+  45.2800000000001,                       !- Conductivity {W/m-K}
+  7823.99999999999,                       !- Density {kg/m3}
+  500,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {798074e2-9644-4cf4-9a75-81e69579bf8e}, !- Handle
+  I01 25mm insulation board,              !- Name
+  MediumRough,                            !- Roughness
+  0.0254,                                 !- Thickness {m}
+  0.03,                                   !- Conductivity {W/m-K}
+  43,                                     !- Density {kg/m3}
+  1210,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.6,                                    !- Solar Absorptance
+  0.6;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {af2e3f4b-0d29-4de1-9894-bda9666e2fa9}, !- Handle
+  {30010092-070b-49e1-a3f0-aeca04004d52}, !- Construction Name
+  ExteriorDoor,                           !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {fec7e9cd-07ce-400c-a3ee-d3e02eab6414}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Metal ClimateZone 2-3, !- Name
+  ,                                       !- Surface Rendering Name
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
+  {1d4fb379-6747-4a3e-86b7-95c6499bd83c}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {1d4fb379-6747-4a3e-86b7-95c6499bd83c}, !- Handle
+  Metal Building Semi-Cond Wall Insulation-0.77, !- Name
+  MediumRough,                            !- Roughness
+  0.0262895733787478,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {7b74f468-35e8-4a33-a867-74e4cd0ad00b}, !- Handle
+  {fec7e9cd-07ce-400c-a3ee-d3e02eab6414}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {6a340a90-5151-4f93-ae9f-6eaa8ff9389b}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Metal ClimateZone 5, !- Name
+  ,                                       !- Surface Rendering Name
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
+  {3faca884-ac38-4471-bd0e-12cdf4055f27}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {3faca884-ac38-4471-bd0e-12cdf4055f27}, !- Handle
+  Metal Building Semi-Cond Wall Insulation-1.24, !- Name
+  MediumRough,                            !- Roughness
+  0.0495494599433394,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {efca3bb9-c31b-49bc-bd47-65db00e947f3}, !- Handle
+  {6a340a90-5151-4f93-ae9f-6eaa8ff9389b}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {99d4de5f-21c6-4ed2-8be8-54e9cac45ab7}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 3, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {77e1e725-840d-4482-be09-53324dd6cc98}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {77e1e725-840d-4482-be09-53324dd6cc98}, !- Handle
+  Mass NonRes Wall Insulation-1.43,       !- Name
+  MediumRough,                            !- Roughness
+  0.0495494599433394,                     !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {dc253899-98b7-48f7-9f51-9371fdf11540}, !- Handle
+  {99d4de5f-21c6-4ed2-8be8-54e9cac45ab7}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Handle
+  ASHRAE 90.1-2004 ExtWindow ClimateZone 4-6, !- Name
+  ,                                       !- Surface Rendering Name
+  {6a37c667-2394-4b0e-8be9-5c013a8b9ed4}; !- Layer 1
+
+OS:StandardsInformation:Construction,
+  {395caade-18dd-4b0c-a085-b04e8cade387}, !- Handle
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Construction Name
+  ExteriorWindow,                         !- Intended Surface Type
+  ;                                       !- Standards Construction Type
+
+OS:Construction,
+  {b3e5ded0-d8e6-4522-aa39-2a3f1d2482ff}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
+  {40559ee1-ba04-43dc-ac5a-68283ee47ffe}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:Material,
+  {40559ee1-ba04-43dc-ac5a-68283ee47ffe}, !- Handle
+  Metal Semi-Cond Roof Insulation-2.50,   !- Name
+  MediumRough,                            !- Roughness
+  0.113125446059399,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {cfb44aae-84e7-47cc-8aba-2f9681a00355}, !- Handle
+  {b3e5ded0-d8e6-4522-aa39-2a3f1d2482ff}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {ae7711ad-317a-4936-86ff-92a41c721210}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {ad6ba045-be52-4c39-9de0-425ef9d9cb8d}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:Material,
+  {ad6ba045-be52-4c39-9de0-425ef9d9cb8d}, !- Handle
+  Mass NonRes Wall Insulation-2.48,       !- Name
+  MediumRough,                            !- Roughness
+  0.100934958592615,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {b99d6831-1a14-486e-8e98-903ca848bd27}, !- Handle
+  {ae7711ad-317a-4936-86ff-92a41c721210}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Construction,
+  {8a98a028-a269-481a-adef-473598bb70b7}, !- Handle
+  ASHRAE 90.1-2004 AtticFloor ClimateZone 6-8, !- Name
+  ,                                       !- Surface Rendering Name
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}, !- Layer 1
+  {d94a32f8-857a-4e47-95fd-1001d2c3f69b}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {d94a32f8-857a-4e47-95fd-1001d2c3f69b}, !- Handle
+  AtticFloor NonRes Insulation-6.52,      !- Name
+  MediumRough,                            !- Roughness
+  0.30260955835062,                       !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {33caca0a-ebfb-4dd3-a9a8-5c5c6c7f24d1}, !- Handle
+  {8a98a028-a269-481a-adef-473598bb70b7}, !- Construction Name
+  AtticFloor,                             !- Intended Surface Type
+  WoodFramed;                             !- Standards Construction Type
+
+OS:Construction,
+  {9df86269-1494-4fcf-ba71-c169cb9492fb}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 1, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}; !- Layer 1
+
+OS:StandardsInformation:Construction,
+  {10a80ac2-6bb8-4e95-82fc-f0811aa26c8a}, !- Handle
+  {9df86269-1494-4fcf-ba71-c169cb9492fb}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {e5ff11ac-8553-4fba-adc5-4c3e4aef59b0}, !- Handle
+  ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 3-4, !- Name
+  ,                                       !- Surface Rendering Name
+  {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
+  {be973f10-c1ae-4e3e-b57d-eebd822048a4}, !- Layer 2
+  {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
+
+OS:StandardsInformation:Construction,
+  {98729292-a619-444c-b79f-2c227ed031c7}, !- Handle
+  {e5ff11ac-8553-4fba-adc5-4c3e4aef59b0}, !- Construction Name
+  ExteriorRoof,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {9b1e8eb6-d46a-43ed-b0d2-837b664409e9}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Metal ClimateZone 1, !- Name
+  ,                                       !- Surface Rendering Name
+  {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 2
+
+OS:StandardsInformation:Construction,
+  {7182bbe8-daa3-46a9-9534-f11f664090d8}, !- Handle
+  {9b1e8eb6-d46a-43ed-b0d2-837b664409e9}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Metal;                                  !- Standards Construction Type
+
+OS:Construction,
+  {2327672f-3ada-4ba2-a7a0-5eadddc07e9d}, !- Handle
+  ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {6a48b56d-1a94-4100-a088-5ddef8d041c4}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {6a48b56d-1a94-4100-a088-5ddef8d041c4}, !- Handle
+  Steel Frame NonRes Wall Insulation-3.21, !- Name
+  MediumRough,                            !- Roughness
+  0.14122619066012,                       !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {c5abd5ed-6c32-45f6-af64-fca70c6f6a79}, !- Handle
+  {2327672f-3ada-4ba2-a7a0-5eadddc07e9d}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  SteelFramed;                            !- Standards Construction Type
+
+OS:Construction,
+  {498cfd8f-fcb6-4f36-9a70-bc585546c8f5}, !- Handle
+  ASHRAE 90.1-2004 ExtWall WoodFrame ClimateZone 8, !- Name
+  ,                                       !- Surface Rendering Name
+  {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
+  {0633f335-22f1-44f7-9273-62aafe32c7fd}, !- Layer 2
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
+
+OS:Material,
+  {0633f335-22f1-44f7-9273-62aafe32c7fd}, !- Handle
+  Wood Frame NonRes Wall Insulation-3.45, !- Name
+  MediumRough,                            !- Roughness
+  0.153532499715495,                      !- Thickness {m}
+  0.049,                                  !- Conductivity {W/m-K}
+  265,                                    !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:StandardsInformation:Construction,
+  {0e78498c-645a-4e0c-9287-86365c8c4d23}, !- Handle
+  {498cfd8f-fcb6-4f36-9a70-bc585546c8f5}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  WoodFramed;                             !- Standards Construction Type
+
+OS:Construction,
+  {186bafd3-6103-4a18-b252-8536f8bf4086}, !- Handle
+  ASHRAE 90.1-2004 ExtWall Mass ClimateZone 5, !- Name
+  ,                                       !- Surface Rendering Name
+  {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
+  {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
+  {77e1e725-840d-4482-be09-53324dd6cc98}, !- Layer 3
+  {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 4
+
+OS:StandardsInformation:Construction,
+  {5f49cf25-f20c-4d9c-9e21-d017d29e32ab}, !- Handle
+  {186bafd3-6103-4a18-b252-8536f8bf4086}, !- Construction Name
+  ExteriorWall,                           !- Intended Surface Type
+  Mass;                                   !- Standards Construction Type
+
+OS:Building,
+  {ec23a70e-1468-4d3d-a971-c3cb0b2edcd9}, !- Handle
+  Building 1,                             !- Name
+  ,                                       !- Building Sector Type
+  0,                                      !- North Axis {deg}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Space Type Name
+  {1bf4a8eb-bab2-4478-b469-a5198b6cb342}, !- Default Construction Set Name
+  ;                                       !- Default Schedule Set Name
+
+OS:DefaultConstructionSet,
+  {1bf4a8eb-bab2-4478-b469-a5198b6cb342}, !- Handle
+  MyConsturction,                         !- Name
+  {59224cb9-57c4-47c9-8d8e-c79aee037d6e}, !- Default Exterior Surface Constructions Name
+  {59224cb9-57c4-47c9-8d8e-c79aee037d6e}, !- Default Interior Surface Constructions Name
+  {59224cb9-57c4-47c9-8d8e-c79aee037d6e}, !- Default Ground Contact Surface Constructions Name
+  {beff099d-0fe9-4a05-acbe-dbd27ba96dcd}, !- Default Exterior SubSurface Constructions Name
+  {beff099d-0fe9-4a05-acbe-dbd27ba96dcd}, !- Default Interior SubSurface Constructions Name
+  {1b892e4e-8bab-4ce5-941b-375793fba140}, !- Interior Partition Construction Name
+  ,                                       !- Space Shading Construction Name
+  ,                                       !- Building Shading Construction Name
+  ;                                       !- Site Shading Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {59224cb9-57c4-47c9-8d8e-c79aee037d6e}, !- Handle
+  Default Surface Constructions 1,        !- Name
+  {67a9d98c-d980-431b-8428-a5b5823ce43b}, !- Floor Construction Name
+  {67a9d98c-d980-431b-8428-a5b5823ce43b}, !- Wall Construction Name
+  {67a9d98c-d980-431b-8428-a5b5823ce43b}; !- Roof Ceiling Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {beff099d-0fe9-4a05-acbe-dbd27ba96dcd}, !- Handle
+  Default Sub Surface Constructions 1,    !- Name
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Fixed Window Construction Name
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Operable Window Construction Name
+  {30010092-070b-49e1-a3f0-aeca04004d52}, !- Door Construction Name
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Glass Door Construction Name
+  ,                                       !- Overhead Door Construction Name
+  {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Skylight Construction Name
+  {df807951-c23d-4cbc-8322-693b4dab577c}, !- Tubular Daylight Dome Construction Name
+  {df807951-c23d-4cbc-8322-693b4dab577c}; !- Tubular Daylight Diffuser Construction Name
+
