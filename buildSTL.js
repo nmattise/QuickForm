@@ -296,7 +296,10 @@ function createWallMaterial(buildingName, faceNum, point1, point2, gridSize, hei
     //Find the Length of the side, and the x and y iterations to creat the grid
     sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
     gridLength = ((sideLength % gridSize) / (parseInt(sideLength / gridSize))) + gridSize;
-
+    if ((gridSize * 2) > sideLength) {
+        gridLength = sideLength / 2;
+        gridSize = gridLength;
+    }
     deltaX = point2[0] - point1[0];
     deltaY = point2[1] - point1[1];
     xIt = deltaX / parseInt(sideLength / gridSize);
@@ -462,7 +465,7 @@ function buildSTL(buildings, windwardDirection) {
         bldgHeights = [];
 
     //Set Grid Size
-    var gridSize = 10;
+    var gridSize = 50;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
         for (var j = 0; j < buildings[i].polygon.path.length; j++) {
@@ -867,7 +870,7 @@ function buildSTL(buildings, windwardDirection) {
     maxX = Math.max.apply(null, maxXPts);
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
-    var groundGridSize = 100;
+    var groundGridSize = 20;
     //Round these min and max points to next 5 
     minX = groundGridSize * Math.floor(minX / groundGridSize);
     maxX = groundGridSize * Math.ceil(maxX / groundGridSize);
@@ -886,8 +889,8 @@ function buildSTL(buildings, windwardDirection) {
 
     //Write Files
     //Write All Buildings in One STL File
-    fs.writeFileSync("stlFiles/" + fileName + "10m_noFloor.stl", allBldgSTL);
+    fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
     //Write Ground STL File for All Buildings
-    fs.writeFileSync("stlFiles/" + fileName + "Ground_100mOuter_5mInner.stl", groundSTL);
+    fs.writeFileSync("stlFiles/" + fileName + "Ground.stl", groundSTL);
 
 }
