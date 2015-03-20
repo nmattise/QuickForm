@@ -14,6 +14,7 @@ class OSModel < OpenStudio::Model::Model
   	puts gridSize
   	puts wwrSub
   	num_surfaces = 0
+    previous_num_surfaces = 0
     #Loop through Floors
     for floor in (0..floors -1)
     	z0 = floor *  floorHeight
@@ -71,14 +72,42 @@ class OSModel < OpenStudio::Model::Model
     		#Set vertical story position
     		story.setNominalZCoordinate(z)
 
-    		#Do Windows
-    		if z == z1
-    			puts num_surfaces
-    			self.getSurfaces.each do |s|
-    				next if not s.name.to_s.split(" ")[1].to_i >= num_surfaces + 2
-    				new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
-    			end
-    		end
+            #Remove Extra Roof and Floors, add windows on Z1
+            case z
+
+
+            when z1
+                puts 'z1'
+                puts num_surfaces
+                #remove roof/ceiling
+                self.getSurfaces.each do |s|
+                    next if not s.name.to_s.split(" ")[1].to_i == num_surfaces || s.name.to_s.split(" ")[1].to_i == (num_surfaces + 1)
+                    puts s.name
+                    puts s.surfaceType
+                    s.remove
+                end
+                #add windows
+                self.getSurfaces.each do |s|
+                    next if not s.name.to_s.split(" ")[1].to_i >= num_surfaces + 2
+                    new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
+                end
+
+            when z2
+                puts 'z2'
+                puts num_surfaces
+                #remove roof/ceiling
+                self.getSurfaces.each do |s|
+                    next if not s.name.to_s.split(" ")[1].to_i == previous_num_surfaces || s.name.to_s.split(" ")[1].to_i == num_surfaces + 2
+                    puts s.name
+                    puts s.surfaceType
+                    s.remove
+                end
+
+
+            
+
+            end
+    		previous_num_surfaces = num_surfaces
     		num_surfaces = self.getSurfaces.length
     	end
     	
