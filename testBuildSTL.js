@@ -34,7 +34,8 @@ var buildings = [{
     "footprintArea": 4406.05473168683,
     "height": 120,
     "totalArea": 44060.547316868295,
-    "bldgFootprint": "rect"
+    "bldgFootprint": "rect",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -74,7 +75,8 @@ var buildings = [{
     "footprintArea": 2647.8601668192987,
     "height": 50,
     "totalArea": 13239.300834096493,
-    "bldgFootprint": "l"
+    "bldgFootprint": "l",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -350,7 +352,7 @@ var buildings = [{
     "bldgFootprint": "triangle"
 }];
 
-buildSTL(buildingsM, Math.PI / 4)
+buildSTL([buildings[1]], Math.PI / 4)
 
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);
