@@ -10,7 +10,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {75cc090d-edcb-448b-bcc3-3bf0c1e7b1b3}; !- Group Rendering Name
 
 OS:Space,
   {7b1fe081-5a3c-4576-819f-02ee952f0244}, !- Handle
@@ -37,66 +37,10 @@ OS:Surface,
   NoWind,                                 !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  0, 0, 0,                                !- X,Y,Z Vertex 1 {m}
-  0, 5, 0,                                !- X,Y,Z Vertex 2 {m}
-  0, 10, 0,                               !- X,Y,Z Vertex 3 {m}
-  0, 15, 0,                               !- X,Y,Z Vertex 4 {m}
-  0, 20, 0,                               !- X,Y,Z Vertex 5 {m}
-  0, 25, 0,                               !- X,Y,Z Vertex 6 {m}
-  0, 30, 0,                               !- X,Y,Z Vertex 7 {m}
-  0, 35, 0,                               !- X,Y,Z Vertex 8 {m}
-  0, 40, 0,                               !- X,Y,Z Vertex 9 {m}
-  0, 45, 0,                               !- X,Y,Z Vertex 10 {m}
-  0, 50, 0,                               !- X,Y,Z Vertex 11 {m}
-  5, 50, 0,                               !- X,Y,Z Vertex 12 {m}
-  10, 50, 0,                              !- X,Y,Z Vertex 13 {m}
-  15, 50, 0,                              !- X,Y,Z Vertex 14 {m}
-  20, 50, 0,                              !- X,Y,Z Vertex 15 {m}
-  25, 50, 0,                              !- X,Y,Z Vertex 16 {m}
-  30, 50, 0,                              !- X,Y,Z Vertex 17 {m}
-  35, 50, 0,                              !- X,Y,Z Vertex 18 {m}
-  40, 50, 0,                              !- X,Y,Z Vertex 19 {m}
-  45, 50, 0,                              !- X,Y,Z Vertex 20 {m}
-  50, 50, 0,                              !- X,Y,Z Vertex 21 {m}
-  55, 50, 0,                              !- X,Y,Z Vertex 22 {m}
-  60, 50, 0,                              !- X,Y,Z Vertex 23 {m}
-  65, 50, 0,                              !- X,Y,Z Vertex 24 {m}
-  70, 50, 0,                              !- X,Y,Z Vertex 25 {m}
-  75, 50, 0,                              !- X,Y,Z Vertex 26 {m}
-  80, 50, 0,                              !- X,Y,Z Vertex 27 {m}
-  85, 50, 0,                              !- X,Y,Z Vertex 28 {m}
-  90, 50, 0,                              !- X,Y,Z Vertex 29 {m}
-  95, 50, 0,                              !- X,Y,Z Vertex 30 {m}
-  100, 50, 0,                             !- X,Y,Z Vertex 31 {m}
-  100, 45, 0,                             !- X,Y,Z Vertex 32 {m}
-  100, 40, 0,                             !- X,Y,Z Vertex 33 {m}
-  100, 35, 0,                             !- X,Y,Z Vertex 34 {m}
-  100, 30, 0,                             !- X,Y,Z Vertex 35 {m}
-  100, 25, 0,                             !- X,Y,Z Vertex 36 {m}
-  100, 20, 0,                             !- X,Y,Z Vertex 37 {m}
-  100, 15, 0,                             !- X,Y,Z Vertex 38 {m}
-  100, 10, 0,                             !- X,Y,Z Vertex 39 {m}
-  100, 5, 0,                              !- X,Y,Z Vertex 40 {m}
-  100, 0, 0,                              !- X,Y,Z Vertex 41 {m}
-  95, 0, 0,                               !- X,Y,Z Vertex 42 {m}
-  90, 0, 0,                               !- X,Y,Z Vertex 43 {m}
-  85, 0, 0,                               !- X,Y,Z Vertex 44 {m}
-  80, 0, 0,                               !- X,Y,Z Vertex 45 {m}
-  75, 0, 0,                               !- X,Y,Z Vertex 46 {m}
-  70, 0, 0,                               !- X,Y,Z Vertex 47 {m}
-  65, 0, 0,                               !- X,Y,Z Vertex 48 {m}
-  60, 0, 0,                               !- X,Y,Z Vertex 49 {m}
-  55, 0, 0,                               !- X,Y,Z Vertex 50 {m}
-  50, 0, 0,                               !- X,Y,Z Vertex 51 {m}
-  45, 0, 0,                               !- X,Y,Z Vertex 52 {m}
-  40, 0, 0,                               !- X,Y,Z Vertex 53 {m}
-  35, 0, 0,                               !- X,Y,Z Vertex 54 {m}
-  30, 0, 0,                               !- X,Y,Z Vertex 55 {m}
-  25, 0, 0,                               !- X,Y,Z Vertex 56 {m}
-  20, 0, 0,                               !- X,Y,Z Vertex 57 {m}
-  15, 0, 0,                               !- X,Y,Z Vertex 58 {m}
-  10, 0, 0,                               !- X,Y,Z Vertex 59 {m}
-  5, 0, 0;                                !- X,Y,Z Vertex 60 {m}
+  100, 50, 0,                             !- X,Y,Z Vertex 1 {m}
+  100, 0, 0,                              !- X,Y,Z Vertex 2 {m}
+  0, 0, 0,                                !- X,Y,Z Vertex 3 {m}
+  0, 50, 0;                               !- X,Y,Z Vertex 4 {m}
 
 OS:Surface,
   {c99ea887-4df5-4f83-85eb-7360b131cbda}, !- Handle
@@ -1125,7 +1069,7 @@ OS:BuildingStory,
   1.6,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {4722b8af-af52-42fe-ac44-056643096506}; !- Group Rendering Name
 
 OS:Space,
   {60ae1f8f-1d4d-4a82-aa3b-2d21d1d7d6b7}, !- Handle
@@ -3187,7 +3131,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {f392354d-f7f6-4e1c-ba5f-6688d5cef87c}; !- Group Rendering Name
 
 OS:Space,
   {854a58c8-daff-4b1f-804c-1f078b311958}, !- Handle
@@ -4234,66 +4178,10 @@ OS:Surface,
   NoWind,                                 !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  5, 0, 1.2,                              !- X,Y,Z Vertex 1 {m}
-  10, 0, 1.2,                             !- X,Y,Z Vertex 2 {m}
-  15, 0, 1.2,                             !- X,Y,Z Vertex 3 {m}
-  20, 0, 1.2,                             !- X,Y,Z Vertex 4 {m}
-  25, 0, 1.2,                             !- X,Y,Z Vertex 5 {m}
-  30, 0, 1.2,                             !- X,Y,Z Vertex 6 {m}
-  35, 0, 1.2,                             !- X,Y,Z Vertex 7 {m}
-  40, 0, 1.2,                             !- X,Y,Z Vertex 8 {m}
-  45, 0, 1.2,                             !- X,Y,Z Vertex 9 {m}
-  50, 0, 1.2,                             !- X,Y,Z Vertex 10 {m}
-  55, 0, 1.2,                             !- X,Y,Z Vertex 11 {m}
-  60, 0, 1.2,                             !- X,Y,Z Vertex 12 {m}
-  65, 0, 1.2,                             !- X,Y,Z Vertex 13 {m}
-  70, 0, 1.2,                             !- X,Y,Z Vertex 14 {m}
-  75, 0, 1.2,                             !- X,Y,Z Vertex 15 {m}
-  80, 0, 1.2,                             !- X,Y,Z Vertex 16 {m}
-  85, 0, 1.2,                             !- X,Y,Z Vertex 17 {m}
-  90, 0, 1.2,                             !- X,Y,Z Vertex 18 {m}
-  95, 0, 1.2,                             !- X,Y,Z Vertex 19 {m}
-  100, 0, 1.2,                            !- X,Y,Z Vertex 20 {m}
-  100, 5, 1.2,                            !- X,Y,Z Vertex 21 {m}
-  100, 10, 1.2,                           !- X,Y,Z Vertex 22 {m}
-  100, 15, 1.2,                           !- X,Y,Z Vertex 23 {m}
-  100, 20, 1.2,                           !- X,Y,Z Vertex 24 {m}
-  100, 25, 1.2,                           !- X,Y,Z Vertex 25 {m}
-  100, 30, 1.2,                           !- X,Y,Z Vertex 26 {m}
-  100, 35, 1.2,                           !- X,Y,Z Vertex 27 {m}
-  100, 40, 1.2,                           !- X,Y,Z Vertex 28 {m}
-  100, 45, 1.2,                           !- X,Y,Z Vertex 29 {m}
-  100, 50, 1.2,                           !- X,Y,Z Vertex 30 {m}
-  95, 50, 1.2,                            !- X,Y,Z Vertex 31 {m}
-  90, 50, 1.2,                            !- X,Y,Z Vertex 32 {m}
-  85, 50, 1.2,                            !- X,Y,Z Vertex 33 {m}
-  80, 50, 1.2,                            !- X,Y,Z Vertex 34 {m}
-  75, 50, 1.2,                            !- X,Y,Z Vertex 35 {m}
-  70, 50, 1.2,                            !- X,Y,Z Vertex 36 {m}
-  65, 50, 1.2,                            !- X,Y,Z Vertex 37 {m}
-  60, 50, 1.2,                            !- X,Y,Z Vertex 38 {m}
-  55, 50, 1.2,                            !- X,Y,Z Vertex 39 {m}
-  50, 50, 1.2,                            !- X,Y,Z Vertex 40 {m}
-  45, 50, 1.2,                            !- X,Y,Z Vertex 41 {m}
-  40, 50, 1.2,                            !- X,Y,Z Vertex 42 {m}
-  35, 50, 1.2,                            !- X,Y,Z Vertex 43 {m}
-  30, 50, 1.2,                            !- X,Y,Z Vertex 44 {m}
-  25, 50, 1.2,                            !- X,Y,Z Vertex 45 {m}
-  20, 50, 1.2,                            !- X,Y,Z Vertex 46 {m}
-  15, 50, 1.2,                            !- X,Y,Z Vertex 47 {m}
-  10, 50, 1.2,                            !- X,Y,Z Vertex 48 {m}
-  5, 50, 1.2,                             !- X,Y,Z Vertex 49 {m}
-  0, 50, 1.2,                             !- X,Y,Z Vertex 50 {m}
-  0, 45, 1.2,                             !- X,Y,Z Vertex 51 {m}
-  0, 40, 1.2,                             !- X,Y,Z Vertex 52 {m}
-  0, 35, 1.2,                             !- X,Y,Z Vertex 53 {m}
-  0, 30, 1.2,                             !- X,Y,Z Vertex 54 {m}
-  0, 25, 1.2,                             !- X,Y,Z Vertex 55 {m}
-  0, 20, 1.2,                             !- X,Y,Z Vertex 56 {m}
-  0, 15, 1.2,                             !- X,Y,Z Vertex 57 {m}
-  0, 10, 1.2,                             !- X,Y,Z Vertex 58 {m}
-  0, 5, 1.2,                              !- X,Y,Z Vertex 59 {m}
-  0, 0, 1.2;                              !- X,Y,Z Vertex 60 {m}
+  100, 0, 1.2,                            !- X,Y,Z Vertex 1 {m}
+  100, 50, 1.2,                           !- X,Y,Z Vertex 2 {m}
+  0, 50, 1.2,                             !- X,Y,Z Vertex 3 {m}
+  0, 0, 1.2;                              !- X,Y,Z Vertex 4 {m}
 
 OS:BuildingStory,
   {08dbc563-034d-4c21-8b39-d34d363788e7}, !- Handle
@@ -4302,7 +4190,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {a8ec108c-3de1-4646-8be7-9ca4ba50e853}; !- Group Rendering Name
 
 OS:Space,
   {cb8c3427-f591-42b2-817b-28748f9709c0}, !- Handle
@@ -4329,66 +4217,10 @@ OS:Surface,
   NoWind,                                 !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  0, 0, 0,                                !- X,Y,Z Vertex 1 {m}
-  0, 5, 0,                                !- X,Y,Z Vertex 2 {m}
-  0, 10, 0,                               !- X,Y,Z Vertex 3 {m}
-  0, 15, 0,                               !- X,Y,Z Vertex 4 {m}
-  0, 20, 0,                               !- X,Y,Z Vertex 5 {m}
-  0, 25, 0,                               !- X,Y,Z Vertex 6 {m}
-  0, 30, 0,                               !- X,Y,Z Vertex 7 {m}
-  0, 35, 0,                               !- X,Y,Z Vertex 8 {m}
-  0, 40, 0,                               !- X,Y,Z Vertex 9 {m}
-  0, 45, 0,                               !- X,Y,Z Vertex 10 {m}
-  0, 50, 0,                               !- X,Y,Z Vertex 11 {m}
-  5, 50, 0,                               !- X,Y,Z Vertex 12 {m}
-  10, 50, 0,                              !- X,Y,Z Vertex 13 {m}
-  15, 50, 0,                              !- X,Y,Z Vertex 14 {m}
-  20, 50, 0,                              !- X,Y,Z Vertex 15 {m}
-  25, 50, 0,                              !- X,Y,Z Vertex 16 {m}
-  30, 50, 0,                              !- X,Y,Z Vertex 17 {m}
-  35, 50, 0,                              !- X,Y,Z Vertex 18 {m}
-  40, 50, 0,                              !- X,Y,Z Vertex 19 {m}
-  45, 50, 0,                              !- X,Y,Z Vertex 20 {m}
-  50, 50, 0,                              !- X,Y,Z Vertex 21 {m}
-  55, 50, 0,                              !- X,Y,Z Vertex 22 {m}
-  60, 50, 0,                              !- X,Y,Z Vertex 23 {m}
-  65, 50, 0,                              !- X,Y,Z Vertex 24 {m}
-  70, 50, 0,                              !- X,Y,Z Vertex 25 {m}
-  75, 50, 0,                              !- X,Y,Z Vertex 26 {m}
-  80, 50, 0,                              !- X,Y,Z Vertex 27 {m}
-  85, 50, 0,                              !- X,Y,Z Vertex 28 {m}
-  90, 50, 0,                              !- X,Y,Z Vertex 29 {m}
-  95, 50, 0,                              !- X,Y,Z Vertex 30 {m}
-  100, 50, 0,                             !- X,Y,Z Vertex 31 {m}
-  100, 45, 0,                             !- X,Y,Z Vertex 32 {m}
-  100, 40, 0,                             !- X,Y,Z Vertex 33 {m}
-  100, 35, 0,                             !- X,Y,Z Vertex 34 {m}
-  100, 30, 0,                             !- X,Y,Z Vertex 35 {m}
-  100, 25, 0,                             !- X,Y,Z Vertex 36 {m}
-  100, 20, 0,                             !- X,Y,Z Vertex 37 {m}
-  100, 15, 0,                             !- X,Y,Z Vertex 38 {m}
-  100, 10, 0,                             !- X,Y,Z Vertex 39 {m}
-  100, 5, 0,                              !- X,Y,Z Vertex 40 {m}
-  100, 0, 0,                              !- X,Y,Z Vertex 41 {m}
-  95, 0, 0,                               !- X,Y,Z Vertex 42 {m}
-  90, 0, 0,                               !- X,Y,Z Vertex 43 {m}
-  85, 0, 0,                               !- X,Y,Z Vertex 44 {m}
-  80, 0, 0,                               !- X,Y,Z Vertex 45 {m}
-  75, 0, 0,                               !- X,Y,Z Vertex 46 {m}
-  70, 0, 0,                               !- X,Y,Z Vertex 47 {m}
-  65, 0, 0,                               !- X,Y,Z Vertex 48 {m}
-  60, 0, 0,                               !- X,Y,Z Vertex 49 {m}
-  55, 0, 0,                               !- X,Y,Z Vertex 50 {m}
-  50, 0, 0,                               !- X,Y,Z Vertex 51 {m}
-  45, 0, 0,                               !- X,Y,Z Vertex 52 {m}
-  40, 0, 0,                               !- X,Y,Z Vertex 53 {m}
-  35, 0, 0,                               !- X,Y,Z Vertex 54 {m}
-  30, 0, 0,                               !- X,Y,Z Vertex 55 {m}
-  25, 0, 0,                               !- X,Y,Z Vertex 56 {m}
-  20, 0, 0,                               !- X,Y,Z Vertex 57 {m}
-  15, 0, 0,                               !- X,Y,Z Vertex 58 {m}
-  10, 0, 0,                               !- X,Y,Z Vertex 59 {m}
-  5, 0, 0;                                !- X,Y,Z Vertex 60 {m}
+  100, 50, 0,                             !- X,Y,Z Vertex 1 {m}
+  100, 0, 0,                              !- X,Y,Z Vertex 2 {m}
+  0, 0, 0,                                !- X,Y,Z Vertex 3 {m}
+  0, 50, 0;                               !- X,Y,Z Vertex 4 {m}
 
 OS:Surface,
   {c73d5636-446a-4bff-ae27-029c8f6357d1}, !- Handle
@@ -5417,7 +5249,7 @@ OS:BuildingStory,
   1.6,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {96e6774e-8cdd-4177-95a9-722761dd75a5}; !- Group Rendering Name
 
 OS:Space,
   {b5ec078e-b9e3-4440-b5e7-726823a31c56}, !- Handle
@@ -7479,7 +7311,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {c20fc3cf-67bb-4ad4-81b7-b2295baf48cf}; !- Group Rendering Name
 
 OS:Space,
   {a9a0f7ca-d670-425d-8ba0-0e8f9192fdf5}, !- Handle
@@ -8526,66 +8358,10 @@ OS:Surface,
   NoWind,                                 !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  5, 0, 1.2,                              !- X,Y,Z Vertex 1 {m}
-  10, 0, 1.2,                             !- X,Y,Z Vertex 2 {m}
-  15, 0, 1.2,                             !- X,Y,Z Vertex 3 {m}
-  20, 0, 1.2,                             !- X,Y,Z Vertex 4 {m}
-  25, 0, 1.2,                             !- X,Y,Z Vertex 5 {m}
-  30, 0, 1.2,                             !- X,Y,Z Vertex 6 {m}
-  35, 0, 1.2,                             !- X,Y,Z Vertex 7 {m}
-  40, 0, 1.2,                             !- X,Y,Z Vertex 8 {m}
-  45, 0, 1.2,                             !- X,Y,Z Vertex 9 {m}
-  50, 0, 1.2,                             !- X,Y,Z Vertex 10 {m}
-  55, 0, 1.2,                             !- X,Y,Z Vertex 11 {m}
-  60, 0, 1.2,                             !- X,Y,Z Vertex 12 {m}
-  65, 0, 1.2,                             !- X,Y,Z Vertex 13 {m}
-  70, 0, 1.2,                             !- X,Y,Z Vertex 14 {m}
-  75, 0, 1.2,                             !- X,Y,Z Vertex 15 {m}
-  80, 0, 1.2,                             !- X,Y,Z Vertex 16 {m}
-  85, 0, 1.2,                             !- X,Y,Z Vertex 17 {m}
-  90, 0, 1.2,                             !- X,Y,Z Vertex 18 {m}
-  95, 0, 1.2,                             !- X,Y,Z Vertex 19 {m}
-  100, 0, 1.2,                            !- X,Y,Z Vertex 20 {m}
-  100, 5, 1.2,                            !- X,Y,Z Vertex 21 {m}
-  100, 10, 1.2,                           !- X,Y,Z Vertex 22 {m}
-  100, 15, 1.2,                           !- X,Y,Z Vertex 23 {m}
-  100, 20, 1.2,                           !- X,Y,Z Vertex 24 {m}
-  100, 25, 1.2,                           !- X,Y,Z Vertex 25 {m}
-  100, 30, 1.2,                           !- X,Y,Z Vertex 26 {m}
-  100, 35, 1.2,                           !- X,Y,Z Vertex 27 {m}
-  100, 40, 1.2,                           !- X,Y,Z Vertex 28 {m}
-  100, 45, 1.2,                           !- X,Y,Z Vertex 29 {m}
-  100, 50, 1.2,                           !- X,Y,Z Vertex 30 {m}
-  95, 50, 1.2,                            !- X,Y,Z Vertex 31 {m}
-  90, 50, 1.2,                            !- X,Y,Z Vertex 32 {m}
-  85, 50, 1.2,                            !- X,Y,Z Vertex 33 {m}
-  80, 50, 1.2,                            !- X,Y,Z Vertex 34 {m}
-  75, 50, 1.2,                            !- X,Y,Z Vertex 35 {m}
-  70, 50, 1.2,                            !- X,Y,Z Vertex 36 {m}
-  65, 50, 1.2,                            !- X,Y,Z Vertex 37 {m}
-  60, 50, 1.2,                            !- X,Y,Z Vertex 38 {m}
-  55, 50, 1.2,                            !- X,Y,Z Vertex 39 {m}
-  50, 50, 1.2,                            !- X,Y,Z Vertex 40 {m}
-  45, 50, 1.2,                            !- X,Y,Z Vertex 41 {m}
-  40, 50, 1.2,                            !- X,Y,Z Vertex 42 {m}
-  35, 50, 1.2,                            !- X,Y,Z Vertex 43 {m}
-  30, 50, 1.2,                            !- X,Y,Z Vertex 44 {m}
-  25, 50, 1.2,                            !- X,Y,Z Vertex 45 {m}
-  20, 50, 1.2,                            !- X,Y,Z Vertex 46 {m}
-  15, 50, 1.2,                            !- X,Y,Z Vertex 47 {m}
-  10, 50, 1.2,                            !- X,Y,Z Vertex 48 {m}
-  5, 50, 1.2,                             !- X,Y,Z Vertex 49 {m}
-  0, 50, 1.2,                             !- X,Y,Z Vertex 50 {m}
-  0, 45, 1.2,                             !- X,Y,Z Vertex 51 {m}
-  0, 40, 1.2,                             !- X,Y,Z Vertex 52 {m}
-  0, 35, 1.2,                             !- X,Y,Z Vertex 53 {m}
-  0, 30, 1.2,                             !- X,Y,Z Vertex 54 {m}
-  0, 25, 1.2,                             !- X,Y,Z Vertex 55 {m}
-  0, 20, 1.2,                             !- X,Y,Z Vertex 56 {m}
-  0, 15, 1.2,                             !- X,Y,Z Vertex 57 {m}
-  0, 10, 1.2,                             !- X,Y,Z Vertex 58 {m}
-  0, 5, 1.2,                              !- X,Y,Z Vertex 59 {m}
-  0, 0, 1.2;                              !- X,Y,Z Vertex 60 {m}
+  100, 0, 1.2,                            !- X,Y,Z Vertex 1 {m}
+  100, 50, 1.2,                           !- X,Y,Z Vertex 2 {m}
+  0, 50, 1.2,                             !- X,Y,Z Vertex 3 {m}
+  0, 0, 1.2;                              !- X,Y,Z Vertex 4 {m}
 
 OS:BuildingStory,
   {a67601c7-3a31-4d8b-a600-1d58fdf36a55}, !- Handle
@@ -8594,7 +8370,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {0d0aa8cf-ee48-4a58-a9b1-db44b60b7a1d}; !- Group Rendering Name
 
 OS:Space,
   {c0c35215-599d-4eb7-ae8a-f76d9fe47782}, !- Handle
@@ -8621,66 +8397,10 @@ OS:Surface,
   NoWind,                                 !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  0, 0, 0,                                !- X,Y,Z Vertex 1 {m}
-  0, 5, 0,                                !- X,Y,Z Vertex 2 {m}
-  0, 10, 0,                               !- X,Y,Z Vertex 3 {m}
-  0, 15, 0,                               !- X,Y,Z Vertex 4 {m}
-  0, 20, 0,                               !- X,Y,Z Vertex 5 {m}
-  0, 25, 0,                               !- X,Y,Z Vertex 6 {m}
-  0, 30, 0,                               !- X,Y,Z Vertex 7 {m}
-  0, 35, 0,                               !- X,Y,Z Vertex 8 {m}
-  0, 40, 0,                               !- X,Y,Z Vertex 9 {m}
-  0, 45, 0,                               !- X,Y,Z Vertex 10 {m}
-  0, 50, 0,                               !- X,Y,Z Vertex 11 {m}
-  5, 50, 0,                               !- X,Y,Z Vertex 12 {m}
-  10, 50, 0,                              !- X,Y,Z Vertex 13 {m}
-  15, 50, 0,                              !- X,Y,Z Vertex 14 {m}
-  20, 50, 0,                              !- X,Y,Z Vertex 15 {m}
-  25, 50, 0,                              !- X,Y,Z Vertex 16 {m}
-  30, 50, 0,                              !- X,Y,Z Vertex 17 {m}
-  35, 50, 0,                              !- X,Y,Z Vertex 18 {m}
-  40, 50, 0,                              !- X,Y,Z Vertex 19 {m}
-  45, 50, 0,                              !- X,Y,Z Vertex 20 {m}
-  50, 50, 0,                              !- X,Y,Z Vertex 21 {m}
-  55, 50, 0,                              !- X,Y,Z Vertex 22 {m}
-  60, 50, 0,                              !- X,Y,Z Vertex 23 {m}
-  65, 50, 0,                              !- X,Y,Z Vertex 24 {m}
-  70, 50, 0,                              !- X,Y,Z Vertex 25 {m}
-  75, 50, 0,                              !- X,Y,Z Vertex 26 {m}
-  80, 50, 0,                              !- X,Y,Z Vertex 27 {m}
-  85, 50, 0,                              !- X,Y,Z Vertex 28 {m}
-  90, 50, 0,                              !- X,Y,Z Vertex 29 {m}
-  95, 50, 0,                              !- X,Y,Z Vertex 30 {m}
-  100, 50, 0,                             !- X,Y,Z Vertex 31 {m}
-  100, 45, 0,                             !- X,Y,Z Vertex 32 {m}
-  100, 40, 0,                             !- X,Y,Z Vertex 33 {m}
-  100, 35, 0,                             !- X,Y,Z Vertex 34 {m}
-  100, 30, 0,                             !- X,Y,Z Vertex 35 {m}
-  100, 25, 0,                             !- X,Y,Z Vertex 36 {m}
-  100, 20, 0,                             !- X,Y,Z Vertex 37 {m}
-  100, 15, 0,                             !- X,Y,Z Vertex 38 {m}
-  100, 10, 0,                             !- X,Y,Z Vertex 39 {m}
-  100, 5, 0,                              !- X,Y,Z Vertex 40 {m}
-  100, 0, 0,                              !- X,Y,Z Vertex 41 {m}
-  95, 0, 0,                               !- X,Y,Z Vertex 42 {m}
-  90, 0, 0,                               !- X,Y,Z Vertex 43 {m}
-  85, 0, 0,                               !- X,Y,Z Vertex 44 {m}
-  80, 0, 0,                               !- X,Y,Z Vertex 45 {m}
-  75, 0, 0,                               !- X,Y,Z Vertex 46 {m}
-  70, 0, 0,                               !- X,Y,Z Vertex 47 {m}
-  65, 0, 0,                               !- X,Y,Z Vertex 48 {m}
-  60, 0, 0,                               !- X,Y,Z Vertex 49 {m}
-  55, 0, 0,                               !- X,Y,Z Vertex 50 {m}
-  50, 0, 0,                               !- X,Y,Z Vertex 51 {m}
-  45, 0, 0,                               !- X,Y,Z Vertex 52 {m}
-  40, 0, 0,                               !- X,Y,Z Vertex 53 {m}
-  35, 0, 0,                               !- X,Y,Z Vertex 54 {m}
-  30, 0, 0,                               !- X,Y,Z Vertex 55 {m}
-  25, 0, 0,                               !- X,Y,Z Vertex 56 {m}
-  20, 0, 0,                               !- X,Y,Z Vertex 57 {m}
-  15, 0, 0,                               !- X,Y,Z Vertex 58 {m}
-  10, 0, 0,                               !- X,Y,Z Vertex 59 {m}
-  5, 0, 0;                                !- X,Y,Z Vertex 60 {m}
+  100, 50, 0,                             !- X,Y,Z Vertex 1 {m}
+  100, 0, 0,                              !- X,Y,Z Vertex 2 {m}
+  0, 0, 0,                                !- X,Y,Z Vertex 3 {m}
+  0, 50, 0;                               !- X,Y,Z Vertex 4 {m}
 
 OS:Surface,
   {a6b29106-24f9-463f-8fe2-07643d4f3ef4}, !- Handle
@@ -9709,7 +9429,7 @@ OS:BuildingStory,
   1.6,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {94526191-3f9a-48f3-abd5-e6919a3c2a73}; !- Group Rendering Name
 
 OS:Space,
   {e2fa77e0-5f06-49a4-9c47-f37eeefc4c76}, !- Handle
@@ -11771,7 +11491,7 @@ OS:BuildingStory,
   1.2,                                    !- Nominal Floor to Floor Height {m}
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ;                                       !- Group Rendering Name
+  {9de6eea3-7763-4eb6-a66a-1a2fb87a8e87}; !- Group Rendering Name
 
 OS:Space,
   {a109161a-ee3d-492a-ab23-ec277423b2ed}, !- Handle
@@ -12818,66 +12538,10 @@ OS:Surface,
   WindExposed,                            !- Wind Exposure
   ,                                       !- View Factor to Ground
   ,                                       !- Number of Vertices
-  5, 0, 1.2,                              !- X,Y,Z Vertex 1 {m}
-  10, 0, 1.2,                             !- X,Y,Z Vertex 2 {m}
-  15, 0, 1.2,                             !- X,Y,Z Vertex 3 {m}
-  20, 0, 1.2,                             !- X,Y,Z Vertex 4 {m}
-  25, 0, 1.2,                             !- X,Y,Z Vertex 5 {m}
-  30, 0, 1.2,                             !- X,Y,Z Vertex 6 {m}
-  35, 0, 1.2,                             !- X,Y,Z Vertex 7 {m}
-  40, 0, 1.2,                             !- X,Y,Z Vertex 8 {m}
-  45, 0, 1.2,                             !- X,Y,Z Vertex 9 {m}
-  50, 0, 1.2,                             !- X,Y,Z Vertex 10 {m}
-  55, 0, 1.2,                             !- X,Y,Z Vertex 11 {m}
-  60, 0, 1.2,                             !- X,Y,Z Vertex 12 {m}
-  65, 0, 1.2,                             !- X,Y,Z Vertex 13 {m}
-  70, 0, 1.2,                             !- X,Y,Z Vertex 14 {m}
-  75, 0, 1.2,                             !- X,Y,Z Vertex 15 {m}
-  80, 0, 1.2,                             !- X,Y,Z Vertex 16 {m}
-  85, 0, 1.2,                             !- X,Y,Z Vertex 17 {m}
-  90, 0, 1.2,                             !- X,Y,Z Vertex 18 {m}
-  95, 0, 1.2,                             !- X,Y,Z Vertex 19 {m}
-  100, 0, 1.2,                            !- X,Y,Z Vertex 20 {m}
-  100, 5, 1.2,                            !- X,Y,Z Vertex 21 {m}
-  100, 10, 1.2,                           !- X,Y,Z Vertex 22 {m}
-  100, 15, 1.2,                           !- X,Y,Z Vertex 23 {m}
-  100, 20, 1.2,                           !- X,Y,Z Vertex 24 {m}
-  100, 25, 1.2,                           !- X,Y,Z Vertex 25 {m}
-  100, 30, 1.2,                           !- X,Y,Z Vertex 26 {m}
-  100, 35, 1.2,                           !- X,Y,Z Vertex 27 {m}
-  100, 40, 1.2,                           !- X,Y,Z Vertex 28 {m}
-  100, 45, 1.2,                           !- X,Y,Z Vertex 29 {m}
-  100, 50, 1.2,                           !- X,Y,Z Vertex 30 {m}
-  95, 50, 1.2,                            !- X,Y,Z Vertex 31 {m}
-  90, 50, 1.2,                            !- X,Y,Z Vertex 32 {m}
-  85, 50, 1.2,                            !- X,Y,Z Vertex 33 {m}
-  80, 50, 1.2,                            !- X,Y,Z Vertex 34 {m}
-  75, 50, 1.2,                            !- X,Y,Z Vertex 35 {m}
-  70, 50, 1.2,                            !- X,Y,Z Vertex 36 {m}
-  65, 50, 1.2,                            !- X,Y,Z Vertex 37 {m}
-  60, 50, 1.2,                            !- X,Y,Z Vertex 38 {m}
-  55, 50, 1.2,                            !- X,Y,Z Vertex 39 {m}
-  50, 50, 1.2,                            !- X,Y,Z Vertex 40 {m}
-  45, 50, 1.2,                            !- X,Y,Z Vertex 41 {m}
-  40, 50, 1.2,                            !- X,Y,Z Vertex 42 {m}
-  35, 50, 1.2,                            !- X,Y,Z Vertex 43 {m}
-  30, 50, 1.2,                            !- X,Y,Z Vertex 44 {m}
-  25, 50, 1.2,                            !- X,Y,Z Vertex 45 {m}
-  20, 50, 1.2,                            !- X,Y,Z Vertex 46 {m}
-  15, 50, 1.2,                            !- X,Y,Z Vertex 47 {m}
-  10, 50, 1.2,                            !- X,Y,Z Vertex 48 {m}
-  5, 50, 1.2,                             !- X,Y,Z Vertex 49 {m}
-  0, 50, 1.2,                             !- X,Y,Z Vertex 50 {m}
-  0, 45, 1.2,                             !- X,Y,Z Vertex 51 {m}
-  0, 40, 1.2,                             !- X,Y,Z Vertex 52 {m}
-  0, 35, 1.2,                             !- X,Y,Z Vertex 53 {m}
-  0, 30, 1.2,                             !- X,Y,Z Vertex 54 {m}
-  0, 25, 1.2,                             !- X,Y,Z Vertex 55 {m}
-  0, 20, 1.2,                             !- X,Y,Z Vertex 56 {m}
-  0, 15, 1.2,                             !- X,Y,Z Vertex 57 {m}
-  0, 10, 1.2,                             !- X,Y,Z Vertex 58 {m}
-  0, 5, 1.2,                              !- X,Y,Z Vertex 59 {m}
-  0, 0, 1.2;                              !- X,Y,Z Vertex 60 {m}
+  100, 0, 1.2,                            !- X,Y,Z Vertex 1 {m}
+  100, 50, 1.2,                           !- X,Y,Z Vertex 2 {m}
+  0, 50, 1.2,                             !- X,Y,Z Vertex 3 {m}
+  0, 0, 1.2;                              !- X,Y,Z Vertex 4 {m}
 
 OS:ThermalZone,
   {126240db-cf5a-4d30-b1cc-09bb5e5f2d81}, !- Handle
@@ -12898,7 +12562,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {585da10b-5869-4943-9290-480e0b02b2ae}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -12972,7 +12636,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {6b11b202-819a-4fc6-b515-440101e34c84}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13046,7 +12710,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {5a5b7f3b-45c4-4627-afad-1ddd3ae33427}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13120,7 +12784,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {13cfb55f-06a1-4859-922d-52ae0b173a7f}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13194,7 +12858,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {d1df8529-57f6-45be-b1c2-607562a25865}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13268,7 +12932,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {bd7cdc40-06b7-4d89-929d-3bd0713bd32f}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13342,7 +13006,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {f6d902c3-aae8-450f-be17-3b2215bb3709}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13416,7 +13080,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {f75f514d-df7e-42dd-af5a-f9748937faf3}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13490,7 +13154,7 @@ OS:ThermalZone,
   ,                                       !- Secondary Daylighting Control Name
   ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
   ,                                       !- Illuminance Map Name
-  ,                                       !- Group Rendering Name
+  {71079965-3082-4e9b-9c83-ebf57577de5a}, !- Group Rendering Name
   ,                                       !- Thermostat Name
   No;                                     !- Use Ideal Air Loads
 
@@ -13548,7 +13212,7 @@ OS:ZoneHVAC:EquipmentList,
 OS:Construction,
   {67a9d98c-d980-431b-8428-a5b5823ce43b}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 6, !- Name
-  ,                                       !- Surface Rendering Name
+  {b6e30e08-468a-4f20-87ff-32700f7862c2}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {4703cfbf-0912-4b09-af04-54d19432ec52}, !- Layer 3
@@ -13611,7 +13275,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {56c2c3b4-70f0-4f24-9c54-a3a4f139468a}, !- Handle
   ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {450d6f93-4b06-4ad9-bc3b-d6db31ba27a8}, !- Surface Rendering Name
   {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
   {178a578b-e7fe-4694-9fb7-1b4a3f9ffaee}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -13661,7 +13325,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {d4a28686-bd99-4ab5-b126-807409b36fc2}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 2, !- Name
-  ,                                       !- Surface Rendering Name
+  {8b269c6f-76f1-4232-89bc-da0a5695c8f0}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
   {02fb1824-e4bd-4d31-9547-f73bd1123685}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -13699,7 +13363,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {b9aa1649-b7a7-4bc6-a738-be853916be01}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 3a-3b, !- Name
-  ,                                       !- Surface Rendering Name
+  {21a2a67f-ee12-40d3-acb7-43a30104e643}, !- Surface Rendering Name
   {01528e8f-c3f9-4775-831e-4d610e716f90}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -13718,7 +13382,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {04fc2062-3d33-4ccf-8c9d-d21319331503}, !- Handle
   ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {b500f01d-4158-4766-b718-8d90f58bdcbd}, !- Surface Rendering Name
   {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
   {b161d40f-06d1-49ba-872d-596fefef487e}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -13744,7 +13408,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {f5c196f2-7342-4756-bdd2-806b9b572390}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {1797d8eb-b69b-4f3f-a6ff-32d255a2875a}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {1d3fcefb-3dd0-4cde-956b-e9e873adf10f}, !- Layer 3
@@ -13771,7 +13435,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {a1d3606d-6ca0-470c-b1d9-b5c68f075d68}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 4-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {db2224ff-42a8-41a5-9661-3c39edcf266e}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {8fe353e9-7b74-4c31-8d4f-c01d49cf2fe7}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -13809,7 +13473,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {ca639a59-2999-4cc4-bb1f-43de8d3d052e}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 7-8, !- Name
-  ,                                       !- Surface Rendering Name
+  {cfadbd93-6c46-4757-8176-a4ddb4267b8f}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {8fe353e9-7b74-4c31-8d4f-c01d49cf2fe7}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -13823,7 +13487,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {0fea1630-46f6-47b4-89de-8ce0a12b7297}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 3c, !- Name
-  ,                                       !- Surface Rendering Name
+  {3f9e9cf1-ba0c-472d-9ef5-7bb9a23832dc}, !- Surface Rendering Name
   {54ddc5e9-a037-485f-9c9b-9c69b8e75008}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -13842,7 +13506,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {aecf28b2-528a-4031-8248-bf88d71f1148}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 1-2, !- Name
-  ,                                       !- Surface Rendering Name
+  {0de09e60-c649-40c3-8053-cedb623acc0b}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {296e054a-6c06-48db-9733-6d2210d5db95}, !- Layer 3
@@ -13869,7 +13533,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {df807951-c23d-4cbc-8322-693b4dab577c}, !- Handle
   Interior Window,                        !- Name
-  ,                                       !- Surface Rendering Name
+  {e4bd9a05-5244-4dcc-925e-f771932ca3a8}, !- Surface Rendering Name
   {ff06cdb6-5beb-4113-b75b-a6b75a303ec2}; !- Layer 1
 
 OS:WindowMaterial:Glazing,
@@ -13900,7 +13564,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {3cc638ff-44a6-407d-b001-8cb5b5e084b3}, !- Handle
   ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 5-6 1, !- Name
-  ,                                       !- Surface Rendering Name
+  {60f57fd1-9cc3-4cef-88d2-f9a5e1f690c3}, !- Surface Rendering Name
   {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
   {f07c4553-a301-4af3-acea-1d13647ab6bd}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -13926,7 +13590,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {2168d0cb-ae7a-44f3-87bc-09666c6920bc}, !- Handle
   ASHRAE 90.1-2004 ExtWall WoodFrame ClimateZone 1-7, !- Name
-  ,                                       !- Surface Rendering Name
+  {e7129f26-3a44-462c-b0ad-c765a82cec5f}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {9b8ba5bc-f91e-45bf-a8f1-e11a9b4cf4bb}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -13952,7 +13616,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {e18eb7ec-8f63-4496-8a1b-0f2145dd28f1}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 4, !- Name
-  ,                                       !- Surface Rendering Name
+  {a94a1baa-a854-468a-b0cd-8352d255c41a}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {4703cfbf-0912-4b09-af04-54d19432ec52}, !- Layer 3
@@ -13967,7 +13631,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {2d2f2ed1-2124-4200-8100-eb56f88c34fd}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 3-4, !- Name
-  ,                                       !- Surface Rendering Name
+  {ef3fa27b-9f30-472f-8583-76dcc20ce3f6}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {296e054a-6c06-48db-9733-6d2210d5db95}, !- Layer 3
@@ -13982,7 +13646,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {b0d93ef6-7226-43de-a9ce-3936a0cb68b5}, !- Handle
   ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 1-4, !- Name
-  ,                                       !- Surface Rendering Name
+  {3110809a-82eb-4744-b6ac-3b54394db5fa}, !- Surface Rendering Name
   {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
   {178a578b-e7fe-4694-9fb7-1b4a3f9ffaee}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -13996,7 +13660,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {c9136c6c-97bc-40ab-be39-86d8ddf13584}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-ware 1-8, !- Name
-  ,                                       !- Surface Rendering Name
+  {0f601df9-5cf9-4c81-b24b-74b7b26503c2}, !- Surface Rendering Name
   {d57dc8f4-c370-4edc-abb8-d440f70d77a7}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14015,7 +13679,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {c2667050-0b9d-42d5-af8b-2bd870d9a02d}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {35008ad2-3d7c-43b3-9c00-957c2f3cc5dc}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {1d3fcefb-3dd0-4cde-956b-e9e873adf10f}, !- Layer 3
@@ -14030,7 +13694,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {522a90a6-b899-4bbe-8504-b99fc8036e06}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {f4916ad5-4554-4282-86e1-1c7a4b569c84}, !- Surface Rendering Name
   {294dfb44-15ad-4495-8f7c-a4a5662e2b57}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14049,7 +13713,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {0fa4fd77-d5bf-4d64-a4d6-046efe1c4b86}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 3c, !- Name
-  ,                                       !- Surface Rendering Name
+  {e5f7b1a1-6651-4526-9e8a-98ddfc74adeb}, !- Surface Rendering Name
   {61f8ae1a-ee13-4ab0-8ca4-46133bb4fdd4}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14068,7 +13732,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {21761d39-072c-4e7c-9af8-40fa3fa0e171}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {a8afb7ce-3fe7-4137-a039-1ac2dcad67af}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
   {be973f10-c1ae-4e3e-b57d-eebd822048a4}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -14094,7 +13758,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {58ad2640-4603-4f0a-97e2-643e6b685882}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-resH 3a-3b, !- Name
-  ,                                       !- Surface Rendering Name
+  {ac3f8dd9-8f07-4981-8413-ff7741364e7d}, !- Surface Rendering Name
   {6a37c667-2394-4b0e-8be9-5c013a8b9ed4}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14113,7 +13777,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {aafb0365-14b4-4937-aa33-961c7abee217}, !- Handle
   ASHRAE 90.1-2004 AtticFloor ClimateZone 1-5, !- Name
-  ,                                       !- Surface Rendering Name
+  {d2e107a5-ef14-49af-b513-11d2ac75aab3}, !- Surface Rendering Name
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}, !- Layer 1
   {59c87b55-e1cd-496a-9aef-17a749c7a115}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14139,7 +13803,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {43248f3b-e46e-4199-84d2-836d28d5f658}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 1-2, !- Name
-  ,                                       !- Surface Rendering Name
+  {18568c1d-a791-4e39-af0c-1d5d2f7fd239}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14153,7 +13817,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {34f16ee3-c69d-40a9-a645-e7d11ea7c6af}, !- Handle
   ASHRAE 90.1-2004 ExtRoof IEAD ClimateZone 5-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {d8349d02-027b-4ad5-97e9-1d1b16996ecb}, !- Surface Rendering Name
   {30028f24-6411-4e4b-8838-199e50b88dd5}, !- Layer 1
   {f07c4553-a301-4af3-acea-1d13647ab6bd}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -14167,7 +13831,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {4739908e-4a01-4ec9-84cb-9b77df1fc041}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 1-2, !- Name
-  ,                                       !- Surface Rendering Name
+  {8d4a1599-c243-4745-ae55-6774deb0fefc}, !- Surface Rendering Name
   {ccc2c584-a592-41db-be50-0874fc649b1d}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14186,7 +13850,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {1b892e4e-8bab-4ce5-941b-375793fba140}, !- Handle
   Interior Partition,                     !- Name
-  ,                                       !- Surface Rendering Name
+  {0318ee3d-47f0-4b8c-b35a-150768a5d8cb}, !- Surface Rendering Name
   {113a0723-3646-475d-9962-a33d2d9be9a0}; !- Layer 1
 
 OS:Material,
@@ -14210,7 +13874,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {81159b02-4eaf-48e8-8083-dc2abeacb5a8}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 4-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {2973612a-48ee-4a65-b18d-336bec1740f3}, !- Surface Rendering Name
   {73a581ba-90ef-4677-8410-cfc2ea1b95e2}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14229,7 +13893,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {7f6bca69-0b0c-463f-9ba0-1310017f734d}, !- Handle
   ASHRAE 90.1-2004 ExtWall Metal ClimateZone 4, !- Name
-  ,                                       !- Surface Rendering Name
+  {acce5bed-64de-44d0-85a8-988b3dece7f5}, !- Surface Rendering Name
   {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
   {e5dc6abe-14d9-48ea-bbb5-cbb836b2656e}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14267,7 +13931,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {8bb3b7e1-ff76-462d-bd29-69ba7caf3e7c}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 1-4, !- Name
-  ,                                       !- Surface Rendering Name
+  {e6f71b3a-aad3-4d23-b234-7e09b09fdd70}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {519a1edb-d73f-4a01-82e4-41cca4771508}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14293,7 +13957,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {1d775235-9a6a-4874-84b3-30c7150b3036}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {ddb268f2-462e-4eb4-b0a0-88f86c68571e}, !- Surface Rendering Name
   {5d530508-7168-4408-b57a-867540e32451}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14312,7 +13976,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {1741fe01-cfb1-4d2d-a1de-92816bb502f7}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-res 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {86c7e826-7118-481c-820a-5a8b9d57fb22}, !- Surface Rendering Name
   {a167997a-00ba-4a37-8f61-ce40f5e580dc}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14331,7 +13995,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {c6b6e13b-45a5-4bb2-b20f-a4517a52fe0c}, !- Handle
   ASHRAE 90.1-2004 ExtWall Metal ClimateZone 6-8, !- Name
-  ,                                       !- Surface Rendering Name
+  {dc6f9ddd-873a-4549-8b8b-56214bb31365}, !- Surface Rendering Name
   {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
   {cf6c96d6-09f2-42b3-8263-656d77e234c6}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14357,7 +14021,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {8d781132-d93a-4eee-99ed-eb803e99a290}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {7f2dc385-7250-4216-9780-887e51f461a5}, !- Surface Rendering Name
   {9dd4d7cb-8ccb-40a5-9496-5ee2351d2796}; !- Layer 1
 
 OS:WindowMaterial:SimpleGlazingSystem,
@@ -14376,7 +14040,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {608467f9-1ddd-4520-9f4f-e7be647a81bf}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone 5-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {fb5de634-03f5-4236-be90-9062c7a8b26b}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {39b65864-7835-4c8e-b595-744bc3f3bf27}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14402,7 +14066,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {05eda8c6-26bf-45f4-a177-c853ccb2c51d}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone alt-resA 3a-3b, !- Name
-  ,                                       !- Surface Rendering Name
+  {c7e8d1b7-1816-432d-aa6e-32de6757d542}, !- Surface Rendering Name
   {73a581ba-90ef-4677-8410-cfc2ea1b95e2}; !- Layer 1
 
 OS:StandardsInformation:Construction,
@@ -14414,7 +14078,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {b4c32d79-f021-4e53-a658-fb52590b3264}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 5-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {a9118bc1-4344-4b9b-8bdb-b3ba6ed5a72d}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
   {a38c0c45-fb32-42dc-9607-79e8b3221547}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -14440,7 +14104,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {b231fecf-1c9c-4916-811d-ed144a236b1d}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 3, !- Name
-  ,                                       !- Surface Rendering Name
+  {8599b40d-9fbb-4383-a946-cd945b5b7717}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {39b65864-7835-4c8e-b595-744bc3f3bf27}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14454,7 +14118,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {73fe8c40-5d7b-45bb-bc38-7a99c49e57a9}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 5-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {09c92b09-e2bb-49a5-b2d1-4e0e45ecabe8}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {89f414af-9231-4912-a076-102d05c66aee}, !- Layer 3
@@ -14481,7 +14145,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {ddf69928-b958-4a3a-8310-279c0f9d6ac5}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 7, !- Name
-  ,                                       !- Surface Rendering Name
+  {c444b661-4820-4773-b48a-7b4ea2d1b6eb}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {89f414af-9231-4912-a076-102d05c66aee}, !- Layer 3
@@ -14496,7 +14160,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {30010092-070b-49e1-a3f0-aeca04004d52}, !- Handle
   Exterior Door,                          !- Name
-  ,                                       !- Surface Rendering Name
+  {224791ee-73a1-4295-a581-39fc8b73fca8}, !- Surface Rendering Name
   {d09b0fbd-16a6-474d-ac08-483f38f3341a}, !- Layer 1
   {798074e2-9644-4cf4-9a75-81e69579bf8e}; !- Layer 2
 
@@ -14533,7 +14197,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {fec7e9cd-07ce-400c-a3ee-d3e02eab6414}, !- Handle
   ASHRAE 90.1-2004 ExtWall Metal ClimateZone 2-3, !- Name
-  ,                                       !- Surface Rendering Name
+  {623cd41d-bc6c-444d-a7c7-81ec7b2ff1f2}, !- Surface Rendering Name
   {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
   {1d4fb379-6747-4a3e-86b7-95c6499bd83c}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14559,7 +14223,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {6a340a90-5151-4f93-ae9f-6eaa8ff9389b}, !- Handle
   ASHRAE 90.1-2004 ExtWall Metal ClimateZone 5, !- Name
-  ,                                       !- Surface Rendering Name
+  {5a046dc5-81c4-44af-94f6-9b45b733d615}, !- Surface Rendering Name
   {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
   {3faca884-ac38-4471-bd0e-12cdf4055f27}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14585,7 +14249,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {99d4de5f-21c6-4ed2-8be8-54e9cac45ab7}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 3, !- Name
-  ,                                       !- Surface Rendering Name
+  {09d3ace0-e732-40e4-a9e1-a6c2c7eb0534}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {77e1e725-840d-4482-be09-53324dd6cc98}, !- Layer 3
@@ -14612,7 +14276,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Handle
   ASHRAE 90.1-2004 ExtWindow ClimateZone 4-6, !- Name
-  ,                                       !- Surface Rendering Name
+  {55fd2701-3dd9-405b-86ab-8f8bbeed4385}, !- Surface Rendering Name
   {6a37c667-2394-4b0e-8be9-5c013a8b9ed4}; !- Layer 1
 
 OS:StandardsInformation:Construction,
@@ -14624,7 +14288,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {b3e5ded0-d8e6-4522-aa39-2a3f1d2482ff}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {c25df29a-f720-42ed-a7cf-808dd84d1665}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
   {40559ee1-ba04-43dc-ac5a-68283ee47ffe}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -14650,7 +14314,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {ae7711ad-317a-4936-86ff-92a41c721210}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone alt-res 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {39c896a7-5441-4531-8bbe-f330be18c227}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {ad6ba045-be52-4c39-9de0-425ef9d9cb8d}, !- Layer 3
@@ -14677,7 +14341,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {8a98a028-a269-481a-adef-473598bb70b7}, !- Handle
   ASHRAE 90.1-2004 AtticFloor ClimateZone 6-8, !- Name
-  ,                                       !- Surface Rendering Name
+  {1ebbee7f-caaa-4ed5-a9b4-57991a6d7f56}, !- Surface Rendering Name
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}, !- Layer 1
   {d94a32f8-857a-4e47-95fd-1001d2c3f69b}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14703,7 +14367,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {9df86269-1494-4fcf-ba71-c169cb9492fb}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 1, !- Name
-  ,                                       !- Surface Rendering Name
+  {df006562-1df5-4e03-a207-fc059ca32533}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}; !- Layer 1
 
 OS:StandardsInformation:Construction,
@@ -14715,7 +14379,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {e5ff11ac-8553-4fba-adc5-4c3e4aef59b0}, !- Handle
   ASHRAE 90.1-2004 ExtRoof Metal ClimateZone 3-4, !- Name
-  ,                                       !- Surface Rendering Name
+  {8ebd9f0d-749d-4155-9a6f-1b22398537f5}, !- Surface Rendering Name
   {380ac33b-a953-4530-8e51-f0bcdc8e2fd5}, !- Layer 1
   {be973f10-c1ae-4e3e-b57d-eebd822048a4}, !- Layer 2
   {3ac19517-f998-49cf-a48b-4491fb351960}; !- Layer 3
@@ -14729,7 +14393,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {9b1e8eb6-d46a-43ed-b0d2-837b664409e9}, !- Handle
   ASHRAE 90.1-2004 ExtWall Metal ClimateZone 1, !- Name
-  ,                                       !- Surface Rendering Name
+  {19cf1ed5-7190-40e4-a4e2-e9255ed30207}, !- Surface Rendering Name
   {4188840d-5044-4c07-948a-8716095439d8}, !- Layer 1
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 2
 
@@ -14742,7 +14406,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {2327672f-3ada-4ba2-a7a0-5eadddc07e9d}, !- Handle
   ASHRAE 90.1-2004 ExtWall SteelFrame ClimateZone alt-res 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {cdb7d650-f8b9-4b37-84a5-ada112f746b5}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {6a48b56d-1a94-4100-a088-5ddef8d041c4}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14768,7 +14432,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {498cfd8f-fcb6-4f36-9a70-bc585546c8f5}, !- Handle
   ASHRAE 90.1-2004 ExtWall WoodFrame ClimateZone 8, !- Name
-  ,                                       !- Surface Rendering Name
+  {fe878fe1-419a-442f-9c59-b010ce2ad61a}, !- Surface Rendering Name
   {68acfcdd-bcd7-4767-ab86-047636621495}, !- Layer 1
   {0633f335-22f1-44f7-9273-62aafe32c7fd}, !- Layer 2
   {0263a8f1-21ae-4625-8c0f-f4421a33ceac}; !- Layer 3
@@ -14794,7 +14458,7 @@ OS:StandardsInformation:Construction,
 OS:Construction,
   {186bafd3-6103-4a18-b252-8536f8bf4086}, !- Handle
   ASHRAE 90.1-2004 ExtWall Mass ClimateZone 5, !- Name
-  ,                                       !- Surface Rendering Name
+  {6f0786f9-638f-4726-bba9-39cca14c89c8}, !- Surface Rendering Name
   {6119e650-b1e5-47fc-a8c1-de694d2074fb}, !- Layer 1
   {55379cf3-0588-4b86-bf74-423688fff06a}, !- Layer 2
   {77e1e725-840d-4482-be09-53324dd6cc98}, !- Layer 3
@@ -14814,7 +14478,13 @@ OS:Building,
   ,                                       !- Nominal Floor to Floor Height {m}
   ,                                       !- Space Type Name
   {1bf4a8eb-bab2-4478-b469-a5198b6cb342}, !- Default Construction Set Name
-  ;                                       !- Default Schedule Set Name
+  ,                                       !- Default Schedule Set Name
+  ,                                       !- Standards Number of Stories
+  ,                                       !- Standards Number of Above Ground Stories
+  ,                                       !- Standards Building Type
+  ,                                       !- Standards Number of Living Units
+  ,                                       !- Relocatable
+  ;                                       !- Nominal Floor to Ceiling Height {m}
 
 OS:DefaultConstructionSet,
   {1bf4a8eb-bab2-4478-b469-a5198b6cb342}, !- Handle
@@ -14847,4 +14517,511 @@ OS:DefaultSubSurfaceConstructions,
   {5902524b-decb-440c-88b4-ae88ced5a05c}, !- Skylight Construction Name
   {df807951-c23d-4cbc-8322-693b4dab577c}, !- Tubular Daylight Dome Construction Name
   {df807951-c23d-4cbc-8322-693b4dab577c}; !- Tubular Daylight Diffuser Construction Name
+
+OS:Facility,
+  {175b617e-7a40-4b72-9365-c489c0c886a4}; !- Handle
+
+OS:Rendering:Color,
+  {d2e107a5-ef14-49af-b513-11d2ac75aab3}, !- Handle
+  Rendering Color 1,                      !- Name
+  255,                                    !- Rendering Red Value
+  215,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {df006562-1df5-4e03-a207-fc059ca32533}, !- Handle
+  Rendering Color 2,                      !- Name
+  0,                                      !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  127;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {8ebd9f0d-749d-4155-9a6f-1b22398537f5}, !- Handle
+  Rendering Color 3,                      !- Name
+  188,                                    !- Rendering Red Value
+  143,                                    !- Rendering Green Value
+  143;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {19cf1ed5-7190-40e4-a4e2-e9255ed30207}, !- Handle
+  Rendering Color 4,                      !- Name
+  255,                                    !- Rendering Red Value
+  215,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {cdb7d650-f8b9-4b37-84a5-ada112f746b5}, !- Handle
+  Rendering Color 5,                      !- Name
+  216,                                    !- Rendering Red Value
+  191,                                    !- Rendering Green Value
+  216;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {fe878fe1-419a-442f-9c59-b010ce2ad61a}, !- Handle
+  Rendering Color 6,                      !- Name
+  255,                                    !- Rendering Red Value
+  228,                                    !- Rendering Green Value
+  196;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {6f0786f9-638f-4726-bba9-39cca14c89c8}, !- Handle
+  Rendering Color 7,                      !- Name
+  255,                                    !- Rendering Red Value
+  215,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {1ebbee7f-caaa-4ed5-a9b4-57991a6d7f56}, !- Handle
+  Rendering Color 8,                      !- Name
+  238,                                    !- Rendering Red Value
+  130,                                    !- Rendering Green Value
+  238;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {c25df29a-f720-42ed-a7cf-808dd84d1665}, !- Handle
+  Rendering Color 9,                      !- Name
+  0,                                      !- Rendering Red Value
+  139,                                    !- Rendering Green Value
+  139;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {55fd2701-3dd9-405b-86ab-8f8bbeed4385}, !- Handle
+  Rendering Color 10,                     !- Name
+  255,                                    !- Rendering Red Value
+  248,                                    !- Rendering Green Value
+  220;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {09d3ace0-e732-40e4-a9e1-a6c2c7eb0534}, !- Handle
+  Rendering Color 11,                     !- Name
+  189,                                    !- Rendering Red Value
+  183,                                    !- Rendering Green Value
+  107;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {5a046dc5-81c4-44af-94f6-9b45b733d615}, !- Handle
+  Rendering Color 12,                     !- Name
+  139,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {623cd41d-bc6c-444d-a7c7-81ec7b2ff1f2}, !- Handle
+  Rendering Color 13,                     !- Name
+  119,                                    !- Rendering Red Value
+  136,                                    !- Rendering Green Value
+  153;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {224791ee-73a1-4295-a581-39fc8b73fca8}, !- Handle
+  Rendering Color 14,                     !- Name
+  199,                                    !- Rendering Red Value
+  21,                                     !- Rendering Green Value
+  133;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {c444b661-4820-4773-b48a-7b4ea2d1b6eb}, !- Handle
+  Rendering Color 15,                     !- Name
+  240,                                    !- Rendering Red Value
+  230,                                    !- Rendering Green Value
+  140;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {09c92b09-e2bb-49a5-b2d1-4e0e45ecabe8}, !- Handle
+  Rendering Color 16,                     !- Name
+  255,                                    !- Rendering Red Value
+  235,                                    !- Rendering Green Value
+  205;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {8599b40d-9fbb-4383-a946-cd945b5b7717}, !- Handle
+  Rendering Color 17,                     !- Name
+  106,                                    !- Rendering Red Value
+  90,                                     !- Rendering Green Value
+  205;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {b6e30e08-468a-4f20-87ff-32700f7862c2}, !- Handle
+  Rendering Color 18,                     !- Name
+  210,                                    !- Rendering Red Value
+  180,                                    !- Rendering Green Value
+  140;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {450d6f93-4b06-4ad9-bc3b-d6db31ba27a8}, !- Handle
+  Rendering Color 19,                     !- Name
+  32,                                     !- Rendering Red Value
+  178,                                    !- Rendering Green Value
+  170;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {8b269c6f-76f1-4232-89bc-da0a5695c8f0}, !- Handle
+  Rendering Color 20,                     !- Name
+  32,                                     !- Rendering Red Value
+  178,                                    !- Rendering Green Value
+  170;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {21a2a67f-ee12-40d3-acb7-43a30104e643}, !- Handle
+  Rendering Color 21,                     !- Name
+  128,                                    !- Rendering Red Value
+  128,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {b500f01d-4158-4766-b718-8d90f58bdcbd}, !- Handle
+  Rendering Color 22,                     !- Name
+  224,                                    !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {1797d8eb-b69b-4f3f-a6ff-32d255a2875a}, !- Handle
+  Rendering Color 23,                     !- Name
+  128,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  128;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {db2224ff-42a8-41a5-9661-3c39edcf266e}, !- Handle
+  Rendering Color 24,                     !- Name
+  139,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  139;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {cfadbd93-6c46-4757-8176-a4ddb4267b8f}, !- Handle
+  Rendering Color 25,                     !- Name
+  175,                                    !- Rendering Red Value
+  238,                                    !- Rendering Green Value
+  238;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {3f9e9cf1-ba0c-472d-9ef5-7bb9a23832dc}, !- Handle
+  Rendering Color 26,                     !- Name
+  255,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {0de09e60-c649-40c3-8053-cedb623acc0b}, !- Handle
+  Rendering Color 27,                     !- Name
+  0,                                      !- Rendering Red Value
+  100,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {e4bd9a05-5244-4dcc-925e-f771932ca3a8}, !- Handle
+  Rendering Color 28,                     !- Name
+  240,                                    !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {60f57fd1-9cc3-4cef-88d2-f9a5e1f690c3}, !- Handle
+  Rendering Color 29,                     !- Name
+  70,                                     !- Rendering Red Value
+  130,                                    !- Rendering Green Value
+  180;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {e7129f26-3a44-462c-b0ad-c765a82cec5f}, !- Handle
+  Rendering Color 30,                     !- Name
+  75,                                     !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  130;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {a94a1baa-a854-468a-b0cd-8352d255c41a}, !- Handle
+  Rendering Color 31,                     !- Name
+  255,                                    !- Rendering Red Value
+  165,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {ef3fa27b-9f30-472f-8583-76dcc20ce3f6}, !- Handle
+  Rendering Color 32,                     !- Name
+  255,                                    !- Rendering Red Value
+  239,                                    !- Rendering Green Value
+  213;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {3110809a-82eb-4744-b6ac-3b54394db5fa}, !- Handle
+  Rendering Color 33,                     !- Name
+  153,                                    !- Rendering Red Value
+  50,                                     !- Rendering Green Value
+  204;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {0f601df9-5cf9-4c81-b24b-74b7b26503c2}, !- Handle
+  Rendering Color 34,                     !- Name
+  240,                                    !- Rendering Red Value
+  248,                                    !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {35008ad2-3d7c-43b3-9c00-957c2f3cc5dc}, !- Handle
+  Rendering Color 35,                     !- Name
+  0,                                      !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f4916ad5-4554-4282-86e1-1c7a4b569c84}, !- Handle
+  Rendering Color 36,                     !- Name
+  128,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {e5f7b1a1-6651-4526-9e8a-98ddfc74adeb}, !- Handle
+  Rendering Color 37,                     !- Name
+  47,                                     !- Rendering Red Value
+  79,                                     !- Rendering Green Value
+  79;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {a8afb7ce-3fe7-4137-a039-1ac2dcad67af}, !- Handle
+  Rendering Color 38,                     !- Name
+  139,                                    !- Rendering Red Value
+  69,                                     !- Rendering Green Value
+  19;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {ac3f8dd9-8f07-4981-8413-ff7741364e7d}, !- Handle
+  Rendering Color 39,                     !- Name
+  255,                                    !- Rendering Red Value
+  228,                                    !- Rendering Green Value
+  181;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {39c896a7-5441-4531-8bbe-f330be18c227}, !- Handle
+  Rendering Color 40,                     !- Name
+  255,                                    !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  224;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {18568c1d-a791-4e39-af0c-1d5d2f7fd239}, !- Handle
+  Rendering Color 41,                     !- Name
+  175,                                    !- Rendering Red Value
+  238,                                    !- Rendering Green Value
+  238;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {d8349d02-027b-4ad5-97e9-1d1b16996ecb}, !- Handle
+  Rendering Color 42,                     !- Name
+  220,                                    !- Rendering Red Value
+  20,                                     !- Rendering Green Value
+  60;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {8d4a1599-c243-4745-ae55-6774deb0fefc}, !- Handle
+  Rendering Color 43,                     !- Name
+  238,                                    !- Rendering Red Value
+  232,                                    !- Rendering Green Value
+  170;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {0318ee3d-47f0-4b8c-b35a-150768a5d8cb}, !- Handle
+  Rendering Color 44,                     !- Name
+  32,                                     !- Rendering Red Value
+  178,                                    !- Rendering Green Value
+  170;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {2973612a-48ee-4a65-b18d-336bec1740f3}, !- Handle
+  Rendering Color 45,                     !- Name
+  85,                                     !- Rendering Red Value
+  107,                                    !- Rendering Green Value
+  47;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {acce5bed-64de-44d0-85a8-988b3dece7f5}, !- Handle
+  Rendering Color 46,                     !- Name
+  178,                                    !- Rendering Red Value
+  34,                                     !- Rendering Green Value
+  34;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {e6f71b3a-aad3-4d23-b234-7e09b09fdd70}, !- Handle
+  Rendering Color 47,                     !- Name
+  255,                                    !- Rendering Red Value
+  20,                                     !- Rendering Green Value
+  147;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {a9118bc1-4344-4b9b-8bdb-b3ba6ed5a72d}, !- Handle
+  Rendering Color 48,                     !- Name
+  105,                                    !- Rendering Red Value
+  105,                                    !- Rendering Green Value
+  105;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {86c7e826-7118-481c-820a-5a8b9d57fb22}, !- Handle
+  Rendering Color 49,                     !- Name
+  244,                                    !- Rendering Red Value
+  164,                                    !- Rendering Green Value
+  96;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {dc6f9ddd-873a-4549-8b8b-56214bb31365}, !- Handle
+  Rendering Color 50,                     !- Name
+  255,                                    !- Rendering Red Value
+  69,                                     !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {7f2dc385-7250-4216-9780-887e51f461a5}, !- Handle
+  Rendering Color 51,                     !- Name
+  186,                                    !- Rendering Red Value
+  85,                                     !- Rendering Green Value
+  211;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {fb5de634-03f5-4236-be90-9062c7a8b26b}, !- Handle
+  Rendering Color 52,                     !- Name
+  255,                                    !- Rendering Red Value
+  248,                                    !- Rendering Green Value
+  220;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {c7e8d1b7-1816-432d-aa6e-32de6757d542}, !- Handle
+  Rendering Color 53,                     !- Name
+  25,                                     !- Rendering Red Value
+  25,                                     !- Rendering Green Value
+  112;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {ddb268f2-462e-4eb4-b0a0-88f86c68571e}, !- Handle
+  Rendering Color 54,                     !- Name
+  128,                                    !- Rendering Red Value
+  0,                                      !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {71079965-3082-4e9b-9c83-ebf57577de5a}, !- Handle
+  Rendering Color 55,                     !- Name
+  255,                                    !- Rendering Red Value
+  250,                                    !- Rendering Green Value
+  205;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f75f514d-df7e-42dd-af5a-f9748937faf3}, !- Handle
+  Rendering Color 56,                     !- Name
+  255,                                    !- Rendering Red Value
+  20,                                     !- Rendering Green Value
+  147;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f6d902c3-aae8-450f-be17-3b2215bb3709}, !- Handle
+  Rendering Color 57,                     !- Name
+  192,                                    !- Rendering Red Value
+  192,                                    !- Rendering Green Value
+  192;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {bd7cdc40-06b7-4d89-929d-3bd0713bd32f}, !- Handle
+  Rendering Color 58,                     !- Name
+  211,                                    !- Rendering Red Value
+  211,                                    !- Rendering Green Value
+  211;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {d1df8529-57f6-45be-b1c2-607562a25865}, !- Handle
+  Rendering Color 59,                     !- Name
+  64,                                     !- Rendering Red Value
+  224,                                    !- Rendering Green Value
+  208;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {13cfb55f-06a1-4859-922d-52ae0b173a7f}, !- Handle
+  Rendering Color 60,                     !- Name
+  255,                                    !- Rendering Red Value
+  182,                                    !- Rendering Green Value
+  193;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {5a5b7f3b-45c4-4627-afad-1ddd3ae33427}, !- Handle
+  Rendering Color 61,                     !- Name
+  184,                                    !- Rendering Red Value
+  134,                                    !- Rendering Green Value
+  11;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {6b11b202-819a-4fc6-b515-440101e34c84}, !- Handle
+  Rendering Color 62,                     !- Name
+  216,                                    !- Rendering Red Value
+  191,                                    !- Rendering Green Value
+  216;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {585da10b-5869-4943-9290-480e0b02b2ae}, !- Handle
+  Rendering Color 63,                     !- Name
+  240,                                    !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {0d0aa8cf-ee48-4a58-a9b1-db44b60b7a1d}, !- Handle
+  Rendering Color 64,                     !- Name
+  138,                                    !- Rendering Red Value
+  43,                                     !- Rendering Green Value
+  226;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {4722b8af-af52-42fe-ac44-056643096506}, !- Handle
+  Rendering Color 65,                     !- Name
+  169,                                    !- Rendering Red Value
+  169,                                    !- Rendering Green Value
+  169;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f392354d-f7f6-4e1c-ba5f-6688d5cef87c}, !- Handle
+  Rendering Color 66,                     !- Name
+  255,                                    !- Rendering Red Value
+  99,                                     !- Rendering Green Value
+  71;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {9de6eea3-7763-4eb6-a66a-1a2fb87a8e87}, !- Handle
+  Rendering Color 67,                     !- Name
+  169,                                    !- Rendering Red Value
+  169,                                    !- Rendering Green Value
+  169;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {a8ec108c-3de1-4646-8be7-9ca4ba50e853}, !- Handle
+  Rendering Color 68,                     !- Name
+  219,                                    !- Rendering Red Value
+  112,                                    !- Rendering Green Value
+  147;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {96e6774e-8cdd-4177-95a9-722761dd75a5}, !- Handle
+  Rendering Color 69,                     !- Name
+  184,                                    !- Rendering Red Value
+  134,                                    !- Rendering Green Value
+  11;                                     !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {94526191-3f9a-48f3-abd5-e6919a3c2a73}, !- Handle
+  Rendering Color 70,                     !- Name
+  127,                                    !- Rendering Red Value
+  255,                                    !- Rendering Green Value
+  212;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {c20fc3cf-67bb-4ad4-81b7-b2295baf48cf}, !- Handle
+  Rendering Color 71,                     !- Name
+  255,                                    !- Rendering Red Value
+  250,                                    !- Rendering Green Value
+  250;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {75cc090d-edcb-448b-bcc3-3bf0c1e7b1b3}, !- Handle
+  Rendering Color 72,                     !- Name
+  244,                                    !- Rendering Red Value
+  164,                                    !- Rendering Green Value
+  96;                                     !- Rendering Blue Value
 

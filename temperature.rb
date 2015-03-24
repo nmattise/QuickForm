@@ -1,5 +1,5 @@
 require 'openstudio'
-
+require 'json'
 
 class OSModel < OpenStudio::Model::Model
 
@@ -74,8 +74,15 @@ class OSModel < OpenStudio::Model::Model
 
             #Remove Extra Roof and Floors, add windows on Z1
             case z
-
-
+            when z0
+                puts 'z0'
+                puts num_surfaces
+                self.getSurfaces.each do |s|
+                    next if not s.name.to_s.split(" ")[1].to_i >= num_surfaces + 1
+                    id = s.name.to_s.split(" ")[1].to_i
+                    s.setName("#{floor}:#{id}:0")
+                    puts s.name
+                end
             when z1
                 puts 'z1'
                 puts num_surfaces
@@ -102,10 +109,6 @@ class OSModel < OpenStudio::Model::Model
                     puts s.surfaceType
                     s.remove
                 end
-
-
-            
-
             end
     		previous_num_surfaces = num_surfaces
     		num_surfaces = self.getSurfaces.length
@@ -281,17 +284,17 @@ end
 
 
 
-
+building = JSON.parse(ARGV[0])
 
 
 #initialize and make OSModel
 
 model = OSModel.new
 
-model.add_geometry(coords, 5,3, 4, 0.4)
+model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'])
 #model.add_windows(0.33,1 ,"Above Floor")
 model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
-model.save_openstudio_osm('./', 'gridWalls')
-model.translate_to_energyplus_and_save_idf('./', 'gridWalls')
-model.add_temperature_variable('./', 'gridWalls')
+model.save_openstudio_osm('./', building['fileName'])
+model.translate_to_energyplus_and_save_idf('./', building['fileName'])
+model.add_temperature_variable('./', building['fileName'])
 
