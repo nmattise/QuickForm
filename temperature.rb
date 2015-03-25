@@ -72,50 +72,10 @@ class OSModel < OpenStudio::Model::Model
     		#Set vertical story position
     		story.setNominalZCoordinate(z)
 
-            #Remove Extra Roof and Floors, add windows on Z1
-            case z
-            when z0
-                puts 'z0'
-                puts num_surfaces
-                self.getSurfaces.each do |s|
-                    next if not s.name.to_s.split(" ")[1].to_i >= num_surfaces + 1
-                    id = s.name.to_s.split(" ")[1].to_i
-                    s.setName("#{floor}:#{id}:0")
-                    puts s.name
-                end
-            when z1
-                puts 'z1'
-                puts num_surfaces
-                #remove roof/ceiling
-                self.getSurfaces.each do |s|
-                    next if not s.name.to_s.split(" ")[1].to_i == num_surfaces || s.name.to_s.split(" ")[1].to_i == (num_surfaces + 1)
-                    puts s.name
-                    puts s.surfaceType
-                    s.remove
-                end
-                #add windows
-                self.getSurfaces.each do |s|
-                    next if not s.name.to_s.split(" ")[1].to_i >= num_surfaces + 2
-                    new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
-                end
-
-            when z2
-                puts 'z2'
-                puts num_surfaces
-                #remove roof/ceiling
-                self.getSurfaces.each do |s|
-                    next if not s.name.to_s.split(" ")[1].to_i == previous_num_surfaces || s.name.to_s.split(" ")[1].to_i == num_surfaces + 2
-                    puts s.name
-                    puts s.surfaceType
-                    s.remove
-                end
-            end
-    		previous_num_surfaces = num_surfaces
-    		num_surfaces = self.getSurfaces.length
-    	end
+    	end # End of grid Loop
     	
 
-    end
+    end #End of Floors Loop
 
     #Put all of the spaces in the model into a vector
     spaces = OpenStudio::Model::SpaceVector.new
@@ -131,6 +91,7 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
+    
   end # end add_geometry method  
 
 
@@ -157,10 +118,20 @@ class OSModel < OpenStudio::Model::Model
 
     self.getSurfaces.each do |s|
     	next if not s.outsideBoundaryCondition == "Outdoors"
+        next if not  s.name.to_s.split(" ")[1].to_i.between?(32,59) ||s.name.to_s.split(" ")[1].to_i.between?(122,149) || s.name.to_s.split(" ")[1].to_i.between?(212,239)|| s.name.to_s.split(" ")[1].to_i.between?(302,329)|| s.name.to_s.split(" ")[1].to_i.between?(392,419)
     	new_window = s.setWindowToWallRatio(wwr, offset, heightOffsetFromFloor)
     end
 
   end # end add_windows method 
+  def remove_extra_floors_ceilings()
+    counter = 30
+    self.getSurfaces.each do |s|
+        next if not  s.surfaceType == 'Floor' || s.surfaceType == 'RoofCeiling' 
+        puts s.name
+        s.remove
+        
+    end
+  end
 
   def add_constructions(construction_library_path, degree_to_north)
 	  
@@ -261,9 +232,7 @@ def createFullGrid(point1, point2, point3, point4, gridSize)
     xIt1 = deltaX1 / (sideLength1 / gridSize1).to_i
     yIt1 = deltaY1 / (sideLength1 / gridSize1).to_i
     iterator1 = (sideLength1 / gridSize1).to_i
-    puts sideLength1
-    puts gridSize1
-    puts gridSize1
+    
     #Side 2
 	sideLength2 = distanceFormula(point1[0],point1[1],point4[0],point4[1])
 	gridLength2 = ((sideLength2 % gridSize) / ((sideLength2 / gridSize).to_i)) + gridSize
@@ -277,9 +246,7 @@ def createFullGrid(point1, point2, point3, point4, gridSize)
     xIt2 = deltaX2 / (sideLength2 / gridSize2).to_i
     yIt2 = deltaY2 / (sideLength2 / gridSize2).to_i
     iterator2 = (sideLength2 / gridSize2).to_i
-    puts sideLength2
-    puts gridSize2
-    puts gridSize2
+
 end
 
 
@@ -292,8 +259,9 @@ building = JSON.parse(ARGV[0])
 model = OSModel.new
 
 model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'])
-#model.add_windows(0.33,1 ,"Above Floor")
+model.add_windows(0.95,0.025 ,"Above Floor")
 model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
+model.remove_extra_floors_ceilings()
 model.save_openstudio_osm('./', building['fileName'])
 model.translate_to_energyplus_and_save_idf('./', building['fileName'])
 model.add_temperature_variable('./', building['fileName'])
