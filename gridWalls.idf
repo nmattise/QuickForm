@@ -203,7 +203,7 @@ Building,
   ,                                       !- Terrain
   ,                                       !- Loads Convergence Tolerance Value
   ,                                       !- Temperature Convergence Tolerance Value {deltaC}
-  ,                                       !- Solar Distribution
+  FullExteriorWithReflections,            !- Solar Distribution
   ,                                       !- Maximum Number of Warmup Days
   ;                                       !- Minimum Number of Warmup Days
 
@@ -13128,3 +13128,4 @@ LifeCycleCost:NonrecurringCost,
   ServicePeriod;                          !- Start of Costs
 
 Output:Variable,*,Surface Outside Face Temperature,hourly; !- Zone Average [C]
+Output:Variable,*,Surface Outside Face Conduction Heat Transfer Rate per Area,hourly; !- Zone Average [W/m2]

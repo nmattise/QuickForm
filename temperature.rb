@@ -95,17 +95,10 @@ class OSModel < OpenStudio::Model::Model
   end # end add_geometry method  
 
 
-  def add_windows(wwr, offset, application_type)
+  def add_windows(coords, gridSize, floors, floorHeight, wwr, application_type)
   	#input checking
-    if not wwr or not offset or not application_type
-      return false
-    end
 
     if wwr <= 0 or wwr >= 1
-      return false
-    end
-
-    if offset <= 0
       return false
     end
 
@@ -115,21 +108,52 @@ class OSModel < OpenStudio::Model::Model
     else
       heightOffsetFromFloor = false
     end
+    winH = floorHeight * wwr
+    wallH = (floorHeight - winH) / 2
+    bldgH = floors * floorHeight
+    wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
 
-    self.getSurfaces.each do |s|
-    	next if not s.outsideBoundaryCondition == "Outdoors"
-        next if not  s.name.to_s.split(" ")[1].to_i.between?(32,59) ||s.name.to_s.split(" ")[1].to_i.between?(122,149) || s.name.to_s.split(" ")[1].to_i.between?(212,239)|| s.name.to_s.split(" ")[1].to_i.between?(302,329)|| s.name.to_s.split(" ")[1].to_i.between?(392,419)
-    	new_window = s.setWindowToWallRatio(wwr, offset, heightOffsetFromFloor)
+    numb_patches = get_num_patches(coords, gridSize)
+    puts "Number Patches #{numb_patches}"
+    for floor in (0..floors -1)
+        self.getSurfaces.each do |s|
+            next if not s.outsideBoundaryCondition == "Outdoors"
+            startNumb = numb_patches + 3 + (floor * ((numb_patches * 3) + 6))
+            endNum = startNumb + numb_patches
+            next if not s.name.to_s.split(" ")[1].to_i.between?(startNumb,endNum)
+            #puts "start Numbers: #{startNumb}"
+            #puts "End Numbers: #{endNum}"
+            new_window = s.setWindowToWallRatio(wwrSub, 0.025, heightOffsetFromFloor)
+        end
     end
 
   end # end add_windows method 
   def remove_extra_floors_ceilings()
-    counter = 30
+    patches = self.getSurfaces.length
+    numb_roofCelFloor = 0
+    puts "Patches: #{patches}"
     self.getSurfaces.each do |s|
-        next if not  s.surfaceType == 'Floor' || s.surfaceType == 'RoofCeiling' 
-        puts s.name
+        next if s.name.to_s.split(" ")[1].to_i == 1 ||s.name.to_s.split(" ")[1].to_i == patches
+        next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
         s.remove
-        
+    end
+    puts OpenStudio::Model::Surface::validSurfaceTypeValues()
+  end
+
+  def create_roof_subsurfaces(floors, floorHeight)
+    surfacePoints = OpenStudio::Point3dVector.new
+    surfacePoints << OpenStudio::Point3d.new(0, -5, 1.005)
+    surfacePoints << OpenStudio::Point3d.new(5, -5, 1.005)
+    surfacePoints << OpenStudio::Point3d.new(5, 0, 1.005)
+    surfacePoints << OpenStudio::Point3d.new(0, 0, 1.005)
+    sub_surface = OpenStudio::Model::SubSurface.new(surfacePoints, self)
+    patches = self.getSurfaces.length
+    self.getSurfaces.each do |s|
+        next if not s.name.to_s.split(" ")[1].to_i == 216
+        puts "Roof Surface #{s.name}"
+        sub_surface.setSurface(s)
+        sub_surface.setSubSurfaceType("Door")
+        puts OpenStudio::Model::SubSurface::validSubSurfaceTypeValues()
     end
   end
 
@@ -159,8 +183,21 @@ class OSModel < OpenStudio::Model::Model
   
   end #end Constructions
 
-  def save_openstudio_osm(dir, name)
+  def add_roof()
+
+  end
+
+
+  def set_runperiod(day, month)
+    #From https://github.com/buildsci/openstudio_scripts/blob/master/newMethods/newMethods.rb
+    runPeriod = self.getRunPeriod
+    runPeriod.setEndDayOfMonth(day)
+    runPeriod.setEndMonth(month)
+  end
+
   
+
+  def save_openstudio_osm(dir, name)
     save_path = OpenStudio::Path.new("#{dir}/#{name}")
     self.save(save_path,true)
     
@@ -178,18 +215,49 @@ class OSModel < OpenStudio::Model::Model
 
   def add_temperature_variable(dir, name)
   	# Open a file and read from it
-	File.open("#{dir}#{name}.idf", 'a') {|f| f.write("Output:Variable,*,Surface Outside Face Temperature,hourly; !- Zone Average [C]") }
+	File.open("#{dir}#{name}.idf", 'a') {|f| f.write("Output:Variable,*,Surface Outside Face Temperature,hourly; !- Zone Average [C]\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Conduction Heat Loss Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Conduction Heat Transfer Rate per Area,hourly; !- Zone Average [W/m2]") }
   end
+
+  def set_solarDist()
+    simControl = self.getSimulationControl
+    simControl.setSolarDistribution("FullExteriorWithReflections")
+  end
+
 end
 
 def distanceFormula(x1,y1,x2,y2)
 	return Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)))
 end
 
-#Coords to test buildings (Rectangle)
-coords = [[0,0],[0,50],[100,50],[100,0]]
-
 #Do Grid for One Length
+
+def get_num_patches(coords, gridSize)
+    numb_patches = 0 
+    orgGridSize = gridSize
+    puts "iterators"
+    for pt in (1..coords.length-1)
+        gridSize = orgGridSize
+        sideLength = distanceFormula(coords[pt-1][0],coords[pt-1][1],coords[pt][0],coords[pt][1])
+        gridLength = ((sideLength % gridSize) / ((sideLength / gridSize).to_i)) + gridSize
+        #Number of Grid Checks
+        if (gridSize * 2) > sideLength
+            gridLength = sideLength / 2
+            gridSize = gridLength
+        end
+        iterator = (sideLength / gridSize).to_i
+        numb_patches += iterator
+    end
+    gridSize = orgGridSize
+    sideLength = distanceFormula(coords[coords.length-1][0],coords[coords.length-1][1],coords[0][0],coords[0][1])
+    #Number of Grid Checks
+    if (gridSize * 2) > sideLength
+        gridLength = sideLength / 2
+        gridSize = gridLength
+    end
+    iterator = (sideLength / gridSize).to_i
+    numb_patches +=iterator  
+    return numb_patches
+end
 
 def createWallGrid(point1, point2, gridSize)
 	sideLength = distanceFormula(point1[0],point1[1],point2[0],point2[1])
@@ -216,53 +284,30 @@ def createWallGrid(point1, point2, gridSize)
     return points
 end
 
-def createFullGrid(point1, point2, point3, point4, gridSize)
-	gridSize1 = gridSize
-	gridSize2 = gridSize
-	#Side 1
-	sideLength1 = distanceFormula(point1[0],point1[1],point2[0],point2[1])
-	gridLength1 = ((sideLength1 % gridSize) / ((sideLength1 / gridSize).to_i)) + gridSize
-	#Number of Grid Checks
-    if (gridSize * 2) > sideLength1
-    	gridLength1 = sideLength1 / 2
-    	gridSize1 = gridLength1
-    end
-    deltaX1 = point2[0] - point1[0]
-    deltaY1 = point2[1] - point1[1]
-    xIt1 = deltaX1 / (sideLength1 / gridSize1).to_i
-    yIt1 = deltaY1 / (sideLength1 / gridSize1).to_i
-    iterator1 = (sideLength1 / gridSize1).to_i
-    
-    #Side 2
-	sideLength2 = distanceFormula(point1[0],point1[1],point4[0],point4[1])
-	gridLength2 = ((sideLength2 % gridSize) / ((sideLength2 / gridSize).to_i)) + gridSize
-	#Number of Grid Checks
-    if (gridSize * 2) > sideLength2
-    	gridLength2 = sideLength2 / 2
-    	gridSize2 = gridLength2
-    end
-    deltaX2 = point4[0] - point1[0]
-    deltaY2 = point4[1] - point1[1]
-    xIt2 = deltaX2 / (sideLength2 / gridSize2).to_i
-    yIt2 = deltaY2 / (sideLength2 / gridSize2).to_i
-    iterator2 = (sideLength2 / gridSize2).to_i
-
-end
 
 
-
-building = JSON.parse(ARGV[0])
+=begin
+coords = [[-10,10],[10,10], [10,-10], [-10,-10]]
+gridSize = 5
+floors = 4
+floorHeight =3
+wwr = 0.33
+fileName = 'test'
 
 
 #initialize and make OSModel
 
 model = OSModel.new
 
-model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'])
-model.add_windows(0.95,0.025 ,"Above Floor")
+model.add_geometry(coords, gridSize, floors, floorHeight, wwr)
+model.add_windows(coords, gridSize, floors, floorHeight, wwr,"Above Floor")
 model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
 model.remove_extra_floors_ceilings()
-model.save_openstudio_osm('./', building['fileName'])
-model.translate_to_energyplus_and_save_idf('./', building['fileName'])
-model.add_temperature_variable('./', building['fileName'])
+#model.create_roof_subsurfaces(floors, floorHeight)
+model.save_openstudio_osm('./', fileName)
+model.translate_to_energyplus_and_save_idf('./', fileName)
+model.add_temperature_variable('./', fileName)
+=end
+
+
 
