@@ -28,12 +28,12 @@ var buildings = [{
     },
     "id": 0,
     "name": "Rectangle",
-    "numFloors": 10,
-    "flrToFlrHeight": 12,
+    "numFloors": 3,
+    "flrToFlrHeight": 3.33,
     "shape": "rect",
     "footprintArea": 4406.05473168683,
-    "height": 120,
-    "totalArea": 44060.547316868295,
+    "height": 9.99,
+    "totalArea": 13218.16,
     "bldgFootprint": "rect",
     "windowWallRatio": 0.25
 }, {
@@ -122,7 +122,8 @@ var buildings = [{
     "footprintArea": 2203.060839783086,
     "height": 36,
     "totalArea": 6609.182519349259,
-    "bldgFootprint": "t"
+    "bldgFootprint": "t",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -168,7 +169,8 @@ var buildings = [{
     "footprintArea": 6609.373590190762,
     "height": 12,
     "totalArea": 19828.120770572285,
-    "bldgFootprint": "u"
+    "bldgFootprint": "u",
+    "windowWallRatio": 0.33
 }, {
     "polygon": {
         "path": [{
@@ -226,7 +228,8 @@ var buildings = [{
     "footprintArea": 826.1503480473832,
     "height": 72,
     "totalArea": 4956.9020882843,
-    "bldgFootprint": "h"
+    "bldgFootprint": "h",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -284,7 +287,8 @@ var buildings = [{
     "footprintArea": 4123.234620408998,
     "height": 48,
     "totalArea": 16492.938481635993,
-    "bldgFootprint": "cross"
+    "bldgFootprint": "cross",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -318,7 +322,8 @@ var buildings = [{
     "footprintArea": 1652.2681530978637,
     "height": 30,
     "totalArea": 4956.804459293591,
-    "bldgFootprint": "trap"
+    "bldgFootprint": "trap",
+    "windowWallRatio": 0.25
 }, {
     "polygon": {
         "path": [{
@@ -349,10 +354,11 @@ var buildings = [{
     "footprintArea": 2203.073070324189,
     "height": 80,
     "totalArea": 17624.58456259351,
-    "bldgFootprint": "triangle"
+    "bldgFootprint": "triangle",
+    "windowWallRatio": 0.25
 }];
 
-buildSTL([buildings[1]], Math.PI / 4)
+buildSTL([buildings[0]], Math.PI / 4)
 
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

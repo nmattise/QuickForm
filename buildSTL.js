@@ -1,7 +1,12 @@
 //Dependencies
 var fs = require('fs'),
     stl = require('stl'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    norby = require('norby');
+
+norby.require('openstudio');
+norby.require('./temperature.rb');
+
 //Export Function
 module.exports.buildSTL = buildSTL;
 
@@ -722,9 +727,9 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallMaterial(bldg.name, rotatedH.length - 1, rotatedH[rotatedH.length - 1], rotatedH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof & Floor
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[11], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], rotatedU[9], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[4], rotatedU[5], rotatedU[7], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
 
                 break;
             case "cross":
@@ -774,9 +779,9 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallMaterial(bldg.name, rotatedCross.length - 1, rotatedCross[rotatedCross.length - 1], rotatedCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof & Walls
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[10], rotatedU[11], rotatedU[9], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], rotatedU[5], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[10], rotatedH[11], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[5], gridSize, bldg.height, "asphalt", "concrete")
 
                 break;
 
@@ -829,16 +834,26 @@ function buildSTL(buildings, windwardDirection) {
             floorHeight: bldg.flrToFlrHeight,
             wwr: bldg.windowWallRatio
         };
+
         console.log(tempBuilding);
-        execRuby('./temperature.rb', tempBuilding, function(err, stdout, stderr) {
+        var model = norby.newInstance('OSModel');
+        model.add_geometry(tempBuilding['coords'], tempBuilding['gridSize'], tempBuilding['floors'], tempBuilding['floorHeight'], tempBuilding['wwr']);
+        //model.create_roof_subsurfaces(tempBuilding.floors, tempBuilding.floorHeight)
+        model.add_windows(tempBuilding['coords'], tempBuilding['gridSize'], tempBuilding['floors'], tempBuilding['floorHeight'], tempBuilding['wwr'], "Above Floor");
+        model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
+        model.remove_extra_floors_ceilings();
+        model.set_runperiod(2, 1);
+        model.set_solarDist();
+        model.save_openstudio_osm('./', tempBuilding['fileName']);
+        model.translate_to_energyplus_and_save_idf('./', tempBuilding['fileName']);
+        model.add_temperature_variable('./', tempBuilding['fileName']);
+
+        //model.grid(tempBuilding.coords[0], tempBuilding.coords[1], tempBuilding.coords[2], tempBuilding.coords[3], tempBuilding.gridSize);
+        //Run EnergyPlus
+        execEnergyPlus('./' + tempBuilding.fileName + '.idf', 'USA_PA_State.College-Penn.State.University.725128_TMY3.epw', function(err, stdout, stderr) {
             if (err) throw err;
             console.log(stdout);
-            execEnergyPlus(bldg.name + '.idf', 'USA_PA_State.College-Penn.State.University.725128_TMY3.epw', function(err, stdout, stderr) {
-                if (err) throw err;
-                console.log(stdout);
-            });
         });
-
         //Ground Stats for This Building
         minMaxPts = minMaxPoints(bldg.windwardCoords);
         minXPts.push(minMaxPts[0]);
