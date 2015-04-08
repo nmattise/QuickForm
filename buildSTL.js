@@ -4,8 +4,8 @@ var fs = require('fs'),
     exec = require('child_process').exec,
     norby = require('norby');
 
-norby.require('openstudio');
-norby.require('./temperature.rb');
+/*norby.require('openstudio');
+norby.require('./temperature.rb');*/
 
 //Export Function
 module.exports.buildSTL = buildSTL;
@@ -596,7 +596,11 @@ function buildSTL(buildings, windwardDirection) {
                 var dx = (rotatedL[5][0] - rotatedL[0][0]) / l5,
                     dy = (rotatedL[5][1] - rotatedL[0][1]) / l5,
                     pt7 = [(dx * l1) + rotatedL[0][0], (dy * l1) + rotatedL[0][1]];
-
+                bldg.roofCoords = [
+                    [rotatedL[0], rotatedL[1], pt7],
+                    [pt7, rotatedL[3], rotatedL[5]]
+                ];
+                console.log(bldg.roofCoords);
                 allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, "asphalt", "concrete")
 
@@ -828,29 +832,30 @@ function buildSTL(buildings, windwardDirection) {
         //Create OSM & IDF and Simulate for Temperature
         var tempBuilding = {
             fileName: bldg.name,
-            coords: points,
+            coords: bldg.windwardCoords,
             gridSize: gridSize,
             floors: bldg.numFloors,
             floorHeight: bldg.flrToFlrHeight,
-            wwr: bldg.windowWallRatio
+            wwr: bldg.windowWallRatio,
+            height: bldg.height,
+            shape: bldg.bldgFootprint,
+            roofCoords: bldg.roofCoords
         };
 
-        console.log(tempBuilding);
-        var model = norby.newInstance('OSModel');
+        console.log(tempBuilding.roofCoords);
+        /*var model = norby.newInstance('OSModel');
         model.add_geometry(tempBuilding['coords'], tempBuilding['gridSize'], tempBuilding['floors'], tempBuilding['floorHeight'], tempBuilding['wwr']);
-        //model.create_roof_subsurfaces(tempBuilding.floors, tempBuilding.floorHeight)
-        model.add_windows(tempBuilding['coords'], tempBuilding['gridSize'], tempBuilding['floors'], tempBuilding['floorHeight'], tempBuilding['wwr'], "Above Floor");
         model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
-        model.remove_extra_floors_ceilings();
-        model.set_runperiod(2, 1);
+        model.add_grid_roof(tempBuilding.coords, tempBuilding.gridSize, tempBuilding.height, tempBuilding.shape)
+        model.set_runperiod(31, 1);
         model.set_solarDist();
         model.save_openstudio_osm('./', tempBuilding['fileName']);
         model.translate_to_energyplus_and_save_idf('./', tempBuilding['fileName']);
-        model.add_temperature_variable('./', tempBuilding['fileName']);
+        model.add_temperature_variable('./', tempBuilding['fileName']);*/
 
         //model.grid(tempBuilding.coords[0], tempBuilding.coords[1], tempBuilding.coords[2], tempBuilding.coords[3], tempBuilding.gridSize);
         //Run EnergyPlus
-        execEnergyPlus('./' + tempBuilding.fileName + '.idf', 'USA_PA_State.College-Penn.State.University.725128_TMY3.epw', function(err, stdout, stderr) {
+        execEnergyPlus('./' + tempBuilding.fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
             if (err) throw err;
             console.log(stdout);
         });
