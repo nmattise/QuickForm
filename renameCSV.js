@@ -2,7 +2,7 @@ var fs = require('fs');
 var csv = require('csv');
 
 
-var csvData = fs.readFileSync('./Output/LShape.csv', 'utf8');
+var csvData = fs.readFileSync('./Output/Rectangle.csv', 'utf8');
 
 Array.prototype.clean = function(deleteValue) {
     for (var i = 0; i < this.length; i++) {
@@ -51,6 +51,6 @@ csv.parse(csvData, function(err, data) {
 
     console.log(organizedData[0]);
     csv.stringify(organizedData, function(err, output) {
-        fs.writeFileSync('./Output/LShape_new.csv', output);
+        fs.writeFileSync('./Output/Rectangle_new.csv', output);
     })
 });
