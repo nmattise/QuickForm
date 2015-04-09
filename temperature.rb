@@ -5,7 +5,6 @@ class OSModel < OpenStudio::Model::Model
 
   def add_geometry(coords, gridSize, floors, floorHeight, wwr)
   	
-  	floor = 0
   	winH = floorHeight * wwr
   	wallH = (floorHeight - winH) / 2
   	bldgH = floors * floorHeight
@@ -22,9 +21,8 @@ class OSModel < OpenStudio::Model::Model
     	z2 = z1 + winH
     	heights = [z0, z1, z2]
     	heights.each do |z|
-            #Surfaces Count (excludes subsurfaces) before this height is added
-            surface_count = count_surfaces(self)
-            puts "Surface Count: #{surface_count}"
+        #Surfaces Count (excludes subsurfaces) before this height is added
+        surface_count = self.getSurfaces.length
     		#Height Adjustment
             if z == z0 || z ==z2
     			height = wallH
@@ -104,126 +102,65 @@ class OSModel < OpenStudio::Model::Model
     
   end # end add_geometry method  
 
+  def add_grid_roof(roofCoords, gridSize, height, shape)
+    #Switch Case for Different Shapes
+    case shape
+    when "rect"
+      #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0], roofCoords[1], roofCoords[2], gridSize,height, self)
+      
+    when "l"
+      #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces1 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
 
-  def add_windows(coords, gridSize, floors, floorHeight, wwr, application_type)
-  	#input checking
 
-    if wwr <= 0 or wwr >= 1
+    when "t"
+      #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces1 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
+    when "u"
+      #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces1 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces2 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self)
+    when "h"
+      #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces1 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces2 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self)
+    when "cross" 
+    #Surface count before addition
+      surfaces = self.getSurfaces.length
+      construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces1 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
+      #Surface count before addition
+      surfaces2 = self.getSurfaces.length
+      construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self) 
+    else
       return false
     end
-
-    heightOffsetFromFloor = nil
-    if application_type == "Above Floor"
-      heightOffsetFromFloor = true
-    else
-      heightOffsetFromFloor = false
-    end
-    winH = floorHeight * wwr
-    wallH = (floorHeight - winH) / 2
-    bldgH = floors * floorHeight
-    wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
-
-    numb_patches = get_num_patches(coords, gridSize)
-    puts "Number Patches #{numb_patches}"
-    for floor in (0..floors -1)
-        self.getSurfaces.each do |s|
-            next if not s.outsideBoundaryCondition == "Outdoors"
-            startNumb = numb_patches + 3 + (floor * ((numb_patches * 3) + 6))
-            endNum = startNumb + numb_patches
-            next if not s.name.to_s.split(" ")[1].to_i.between?(startNumb,endNum)
-            #puts "start Numbers: #{startNumb}"
-            #puts "End Numbers: #{endNum}"
-            new_window = s.setWindowToWallRatio(wwrSub, 0.025, heightOffsetFromFloor)
-        end
-    end
-
-  end # end add_windows method 
-  def remove_extra_floors_ceilings()
-    patches = self.getSurfaces.length
-    numb_roofCelFloor = 0
-    puts "Patches: #{patches}"
-    self.getSurfaces.each do |s|
-        next if s.name.to_s.split(" ")[1].to_i == 1 #||s.name.to_s.split(" ")[1].to_i == patches
-        next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
-        s.remove
-    end
-    
-  end
-
-  def add_grid_roof(roofCoords, gridSize, height, shape)
-    #Surface count before addition
-    surfaces = count_surfaces(self)
-    #Switch Case for Different Shapes
-      grid_points = all_the_grids(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize)
-      #all_the_grids(coords[0], coords[1], coords[3], gridSize)
-    #loop through grid points
-      grid_points.each do |square|
-        os_points  = Array.new
-        #Loop through square to make footprint
-        square.each do |sq|
-          os_points.push(OpenStudio::Point3d.new(sq[0], sq[1], height-0.1))
-        end
-        # Identity matrix for setting space origins
-        m = OpenStudio::Matrix.new(4,4,0)
-        m[0,0] = 1
-        m[1,1] = 1
-        m[2,2] = 1
-        m[3,3] = 1
-    
-        # Minimal zones
-        core_polygon = OpenStudio::Point3dVector.new
-        os_points.each do |point|
-          core_polygon << point
-        end
-        core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, 0.1, self)
-        core_space = core_space.get
-        m[0,3] = os_points[0].x
-        m[1,3] = os_points[0].y
-        m[2,3] = os_points[0].z
-        core_space.changeTransformation(OpenStudio::Transformation.new(m))
-  
-        core_space.setName("Roof")
-
-        
-      end
-
-    #Surface count before addition
-    surfaces1 = count_surfaces(self)
-    #Switch Case for Different Shapes
-      grid_points = all_the_grids(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize)
-      #all_the_grids(coords[0], coords[1], coords[3], gridSize)
-    #loop through grid points
-      grid_points.each do |square|
-        os_points  = Array.new
-        #Loop through square to make footprint
-        square.each do |sq|
-          os_points.push(OpenStudio::Point3d.new(sq[0], sq[1], height-0.1))
-        end
-        # Identity matrix for setting space origins
-        m = OpenStudio::Matrix.new(4,4,0)
-        m[0,0] = 1
-        m[1,1] = 1
-        m[2,2] = 1
-        m[3,3] = 1
-    
-        # Minimal zones
-        core_polygon = OpenStudio::Point3dVector.new
-        os_points.each do |point|
-          core_polygon << point
-        end
-        core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, 0.1, self)
-        core_space = core_space.get
-        m[0,3] = os_points[0].x
-        m[1,3] = os_points[0].y
-        m[2,3] = os_points[0].z
-        core_space.changeTransformation(OpenStudio::Transformation.new(m))
-  
-        core_space.setName("Roof")
-
-        
-      end
       
-    #Put all of the spaces in the model into a vector
+      #Put all of the spaces in the model into a vector
       spaces = OpenStudio::Model::SpaceVector.new
       self.getSpaces.each { |space| spaces << space }
 
@@ -237,28 +174,25 @@ class OSModel < OpenStudio::Model::Model
             space.setThermalZone(new_thermal_zone)
         end
       end
-      puts "Surface Count :  #{surfaces}"
-      puts "Surface Count 1:  #{surfaces1}"
-
-      #remove new surfaces but the roof surfaces
-      self.getSurfaces.each do |s|
-        next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
-        next if s.surfaceType == "RoofCeiling"
-        next if not s.name.to_s.split(" ")[1].to_i.between?(surfaces, surfaces1) || s.name.to_s.split(" ")[1].to_i > surfaces1
-        s.remove
-      end
-  
-      #remove the old interior surfaces
-      self.getSurfaces.each do |s|
-          next if s.name.to_s.split(" ")[1].to_i == 1 ||s.name.to_s.split(" ")[1].to_i.between?(surfaces, surfaces1) || s.name.to_s.split(" ")[1].to_i > surfaces1
-          next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
-          s.remove
-      end
-      
-     
     
   end
 
+  def add_ground(bounds, gridSize)
+    #Surface count before addition
+    surfaces = self.getSurfaces.length
+    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.1, self)
+    #remove new surfaces but the roof surfaces
+      self.getSurfaces.each do |s|
+        next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
+        next if s.surfaceType == "RoofCeiling"
+        next if not s.name.to_s.split(" ")[1].to_i > surfaces
+        s.remove
+      end
+  
+
+    
+    
+  end
 
   def add_constructions(construction_library_path, degree_to_north)
 	  
@@ -326,10 +260,12 @@ end
 
 def count_surfaces(model)
     count = 0
+    puts "surfaces Length #{model.getSurfaces.length}"
     model.getSurfaces.each do |s|
         next if not s.name.to_s.index('SUB') == nil
         count += 1
     end
+    puts "count : #{count}"
     return count
 end
 
@@ -347,7 +283,6 @@ end
 
 
 #Do Grid for One Length
-
 def get_num_patches(coords, gridSize)
     numb_patches = 0 
     orgGridSize = gridSize
@@ -451,52 +386,40 @@ def all_the_grids(pt0, pt1, pt3, gridSize)
   return all_grids
 end
 
+def construct_grid_roof(pt1, pt2, pt3, gridSize, height, model)
+  grid_points = all_the_grids(pt1, pt2, pt3, gridSize)
+  #all_the_grids(coords[0], coords[1], coords[3], gridSize)
+  #loop through grid points
+  grid_points.each do |square|
+    os_points  = Array.new
+    #Loop through square to make footprint
+    square.each do |sq|
+      os_points.push(OpenStudio::Point3d.new(sq[0], sq[1], height-0.1))
+    end
+    # Identity matrix for setting space origins
+    m = OpenStudio::Matrix.new(4,4,0)
+    m[0,0] = 1
+    m[1,1] = 1
+    m[2,2] = 1
+    m[3,3] = 1
 
-
-def sub_grids(pt0, pt1, pt3, gridSize)
-      #final array
-      grids = Array.new()
-      #Length Side 0
-      l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1])
-      gridLength0 = ((l0 % gridSize) / ((l0 / gridSize).to_i)) + gridSize
-      #make min of 2 grids
-      if (gridSize * 2) > l0
-        gridLength0 = l0/2
-      end
-      deltaX0 = pt1[0] - pt0[0]
-      deltaY0 = pt1[1] - pt0[1]
-      xIt0 = deltaX0 / (l0 / gridLength0)
-      yIt0 = deltaY0 / (l0 / gridLength0)
-      iterator0 = (l0 / gridLength0).to_i
-      #Infinity Check
-      #Zero Check
-      #Length Side 3
-      l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1])
-      gridLength3 = ((l3 % gridSize) / ((l3 / gridSize).to_i)) + gridSize
-      if (gridSize * 2) > l3
-        gridLength3 = l3/2
-      end
-      deltaX3 = pt3[0] - pt0[0]
-      deltaY3 = pt3[1] - pt0[1]
-      xIt3 = deltaX3 / (l3 / gridLength3)
-      yIt3 = deltaY3 / (l3 / gridLength3)
-      iterator3 = (l3 / gridLength3).to_i
-      for i in (0..iterator0-1)
-        x = 0 + xIt0 * i
-        y = 0 + yIt0 * i
-        for j in (0..iterator3-1)
-          point4 = [x + (xIt3 * j) , y + (yIt3 * j)]
-          point1 = [point4[0] + xIt3 , point4[1] + yIt3 ]
-          point2 = [point1[0] + xIt0 , point1[1] + yIt0 ]
-          point3 = [point4[0] + xIt0, point4[1] + yIt0 ]
-          grids.push([point4,  point3,point2, point1])
-        end
-      end
-      return grids
+    # Minimal zones
+    core_polygon = OpenStudio::Point3dVector.new
+    os_points.each do |point|
+      core_polygon << point
+    end
+    core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, 0.1, model)
+    core_space = core_space.get
+    m[0,3] = os_points[0].x
+    m[1,3] = os_points[0].y
+    m[2,3] = os_points[0].z
+    core_space.changeTransformation(OpenStudio::Transformation.new(m))
+    core_space.setName("Roof")
+  end
 end
 
 
-
+=begin
 
 coords = [ -55.05533398318459, 11.667261889578032 ],[ -39.40926006632459, 27.313335806438033 ],[ 4.418830129700869, -16.514754389587424 ],[ 36.62267209573454, 15.689087576446246 ],[ 49.55271547867645, 2.759044193504348 ],[ 1.7027995957827713, -45.090871689389324 ]
 gridSize = 5
@@ -512,12 +435,13 @@ model = OSModel.new
 
 model.add_geometry(coords, gridSize, floors, floorHeight, wwr)
 model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
-model.add_grid_roof(roofCoords,gridSize, 12,"rect")
+model.add_grid_roof(roofCoords,gridSize, 12,"l")
 model.set_runperiod(31, 1);
 model.set_solarDist();
 model.save_openstudio_osm('./', fileName)
 model.translate_to_energyplus_and_save_idf('./', fileName)
 model.add_temperature_variable('./', fileName)
+=end
 
 
 
