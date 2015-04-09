@@ -70,10 +70,10 @@ var buildings = [{
     "id": 1,
     "name": "LShape",
     "numFloors": 5,
-    "flrToFlrHeight": 10,
+    "flrToFlrHeight": 3.33,
     "shape": "l",
     "footprintArea": 2647.8601668192987,
-    "height": 50,
+    "height": 16.65,
     "totalArea": 13239.300834096493,
     "bldgFootprint": "l",
     "windowWallRatio": 0.25
@@ -117,10 +117,10 @@ var buildings = [{
     "id": 2,
     "name": "TSHape",
     "numFloors": 3,
-    "flrToFlrHeight": 12,
+    "flrToFlrHeight": 4,
     "shape": "t",
     "footprintArea": 2203.060839783086,
-    "height": 36,
+    "height": 12,
     "totalArea": 6609.182519349259,
     "bldgFootprint": "t",
     "windowWallRatio": 0.25
@@ -358,7 +358,7 @@ var buildings = [{
     "windowWallRatio": 0.25
 }];
 
-buildSTL([buildings[1]], Math.PI / 4)
+buildSTL([buildings[0]], Math.PI / 4)
 
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

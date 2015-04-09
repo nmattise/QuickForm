@@ -4,8 +4,8 @@ var fs = require('fs'),
     exec = require('child_process').exec,
     norby = require('norby');
 
-/*norby.require('openstudio');
-norby.require('./temperature.rb');*/
+norby.require('openstudio');
+norby.require('./temperature.rb');
 
 //Export Function
 module.exports.buildSTL = buildSTL;
@@ -502,6 +502,10 @@ function buildSTL(buildings, windwardDirection) {
     centerLng = lng / pathCount;
     //Make Center Latitude and Longitude the Origin Point for LatLng
     origin = new latLon(centerLat, centerLng);
+
+    //Make new OpenStudio Model
+    var model = norby.newInstance('OSModel');
+
     //Go through Each Building
 
     for (var i = 0; i < buildings.length; i++) {
@@ -557,7 +561,7 @@ function buildSTL(buildings, windwardDirection) {
                     allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedRect[j - 1], rotatedRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
                 }
                 allBldgSTL += createWallMaterial(bldg.name, rotatedRect.length - 1, rotatedRect[rotatedRect.length - 1], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-
+                bldg.roofCoords = [rotatedRect[0], rotatedRect[1], rotatedRect[3]];
                 //Roof and Floor
                 allBldgSTL += createRoofFloor(bldg.name, rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
                 break;
@@ -600,7 +604,6 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedL[0], rotatedL[1], pt7],
                     [pt7, rotatedL[3], rotatedL[5]]
                 ];
-                console.log(bldg.roofCoords);
                 allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, "asphalt", "concrete")
 
@@ -635,8 +638,12 @@ function buildSTL(buildings, windwardDirection) {
                 for (var j = 1; j < rotatedT.length; j++) {
                     allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedT[j - 1], rotatedT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
                 };
-                allBldgSTL += createWallMaterial(bldg.name, rotatedT.length - 1, rotatedT[rotatedT.length - 1], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                    //Roof
+                allBldgSTL += createWallMaterial(bldg.name, rotatedT.length - 1, rotatedT[rotatedT.length - 1], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass");
+                //Roof
+                bldg.roofCoords = [
+                    [rotatedT[0], rotatedT[1], rotatedT[7]],
+                    [rotatedT[6], rotatedT[3], rotatedT[5]]
+                ];
                 allBldgSTL += createRoofFloor(bldg.name, rotatedT[0], rotatedT[1], rotatedT[7], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedT[6], rotatedT[3], rotatedT[5], gridSize, bldg.height, "asphalt", "concrete")
 
@@ -681,7 +688,11 @@ function buildSTL(buildings, windwardDirection) {
                 pt6_2 = [pt6[0] + (l4 + l2) * -Math.cos(theta), pt6[1] + (l4 + l2) * -Math.sin(theta)];
                 pt6_2 = rotatePoint([0, 0], pt6_2, windwardDirection);
                 pt6_3 = rotatePoint([0, 0], pt6_3, windwardDirection);
-
+                bldg.roofCoords = [
+                    [rotatedU[0], rotatedU[1], rotatedU[7]],
+                    [rotatedU[2], rotatedU[3], pt6_2],
+                    [rotatedU[4], rotatedU[5], pt6_3]
+                ]
                 allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], pt6_2, gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedU[4], rotatedU[5], pt6_3, gridSize, bldg.height, "asphalt", "concrete")
@@ -731,6 +742,11 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallMaterial(bldg.name, rotatedH.length - 1, rotatedH[rotatedH.length - 1], rotatedH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof & Floor
+                bldg.roofCoords = [
+                    [rotatedH[0], rotatedH[1], rotatedH[11]],
+                    [rotatedH[2], rotatedH[3], rotatedH[9]],
+                    [rotatedH[4], rotatedH[5], rotatedH[7]]
+                ]
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
@@ -783,6 +799,11 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallMaterial(bldg.name, rotatedCross.length - 1, rotatedCross[rotatedCross.length - 1], rotatedCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof & Walls
+                bldg.roofCoords = [
+                    [rotatedH[10], rotatedH[11], rotatedH[9]],
+                    [rotatedH[0], rotatedH[1], rotatedH[7]],
+                    [rotatedH[2], rotatedH[3], rotatedH[5]]
+                ]
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[10], rotatedH[11], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
                 allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[5], gridSize, bldg.height, "asphalt", "concrete")
@@ -829,36 +850,11 @@ function buildSTL(buildings, windwardDirection) {
 
                 break;
         }
-        //Create OSM & IDF and Simulate for Temperature
-        var tempBuilding = {
-            fileName: bldg.name,
-            coords: bldg.windwardCoords,
-            gridSize: gridSize,
-            floors: bldg.numFloors,
-            floorHeight: bldg.flrToFlrHeight,
-            wwr: bldg.windowWallRatio,
-            height: bldg.height,
-            shape: bldg.bldgFootprint,
-            roofCoords: bldg.roofCoords
-        };
 
-        console.log(tempBuilding.roofCoords);
-        /*var model = norby.newInstance('OSModel');
-        model.add_geometry(tempBuilding['coords'], tempBuilding['gridSize'], tempBuilding['floors'], tempBuilding['floorHeight'], tempBuilding['wwr']);
-        model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
-        model.add_grid_roof(tempBuilding.coords, tempBuilding.gridSize, tempBuilding.height, tempBuilding.shape)
-        model.set_runperiod(31, 1);
-        model.set_solarDist();
-        model.save_openstudio_osm('./', tempBuilding['fileName']);
-        model.translate_to_energyplus_and_save_idf('./', tempBuilding['fileName']);
-        model.add_temperature_variable('./', tempBuilding['fileName']);*/
+        //OpenStudio Geometries for Building
+        model.add_geometry(bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.windowWallRatio);
+        model.add_grid_roof(bldg.roofCoords, gridSize, bldg.height, bldg.bldgFootprint);
 
-        //model.grid(tempBuilding.coords[0], tempBuilding.coords[1], tempBuilding.coords[2], tempBuilding.coords[3], tempBuilding.gridSize);
-        //Run EnergyPlus
-        execEnergyPlus('./' + tempBuilding.fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
-            if (err) throw err;
-            console.log(stdout);
-        });
         //Ground Stats for This Building
         minMaxPts = minMaxPoints(bldg.windwardCoords);
         minXPts.push(minMaxPts[0]);
@@ -892,10 +888,26 @@ function buildSTL(buildings, windwardDirection) {
         [maxX, minY],
         [minX, minY]
     ];
-    //Call CreateGound
+    
+    //Ground OSM
+    //Generate Bounds
+    model.add_ground(innerBounds, 25);
+    
+    //Complete and Save OpenStudio Model
+    model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
+    model.set_runperiod(31, 1);
+    model.set_solarDist();
+    model.save_openstudio_osm('./', fileName);
+    model.translate_to_energyplus_and_save_idf('./', fileName);
+    model.add_temperature_variable('./', fileName);
+    //Run EnergyPlus on 
+    /*execEnergyPlus('./' + fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
+            if (err) throw err;
+            console.log(stdout);
+    });*/
+
+    //Call CreateGound and create ground STL
     var groundSTL = createGround(innerBounds, maxHeight, groundGridSize);
-
-
     //Write Files
     //Write All Buildings in One STL File
     fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
