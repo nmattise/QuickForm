@@ -69,11 +69,11 @@ var buildings = [{
     },
     "id": 1,
     "name": "LShape",
-    "numFloors": 5,
+    "numFloors": 8,
     "flrToFlrHeight": 3.33,
     "shape": "l",
     "footprintArea": 2647.8601668192987,
-    "height": 16.65,
+    "height": 26.64,
     "totalArea": 13239.300834096493,
     "bldgFootprint": "l",
     "windowWallRatio": 0.25
@@ -358,7 +358,7 @@ var buildings = [{
     "windowWallRatio": 0.25
 }];
 
-buildSTL([buildings[0]], Math.PI / 4)
+buildSTL([buildings[0],buildings[1]], Math.PI / 8)
 
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

@@ -180,7 +180,7 @@ class OSModel < OpenStudio::Model::Model
   def add_ground(bounds, gridSize)
     #Surface count before addition
     surfaces = self.getSurfaces.length
-    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.1, self)
+    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.0, self)
     #remove new surfaces but the roof surfaces
       self.getSurfaces.each do |s|
         next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
@@ -188,7 +188,22 @@ class OSModel < OpenStudio::Model::Model
         next if not s.name.to_s.split(" ")[1].to_i > surfaces
         s.remove
       end
-  
+     #Put all of the spaces in the model into a vector
+      spaces = OpenStudio::Model::SpaceVector.new
+      self.getSpaces.each { |space| spaces << space }
+
+      #Match surfaces for each space in the vector
+      OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
+   
+      #Apply a thermal zone to each space in the model if that space has no thermal zone already
+      self.getSpaces.each do |space|
+        if space.thermalZone.empty?
+            new_thermal_zone = OpenStudio::Model::ThermalZone.new(self)
+            space.setThermalZone(new_thermal_zone)
+        end
+      end
+
+      #Set Ground as the Outside Boundary COndition
 
     
     

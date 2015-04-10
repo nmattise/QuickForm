@@ -292,6 +292,7 @@ function createRoofFloor(buildingName, pt0, pt1, pt3, gridSize, height, roofMate
                 facets: triRoof[1]
             };
             stlString += stl.fromObject(stlObj) + "\n";
+            //Floor STL
             /*var stlObj = {
                 description: buildingName + ':' + 'floor' + ':' + floorMaterial + ':' + i + ':' + j + ':0',
                 facets: triFloor[0]
@@ -891,7 +892,38 @@ function buildSTL(buildings, windwardDirection) {
     
     //Ground OSM
     //Generate Bounds
+    var xPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    var yPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    var leftBounds = [
+        [innerBounds[0][0] - xPrime, innerBounds[0][1] + yPrime],
+        [innerBounds[0][0], innerBounds[0][1] + yPrime],
+        [innerBounds[3][0], innerBounds[3][1]],
+        [innerBounds[3][0]-xPrime, innerBounds[3][1]]
+    ];
+    var topBounds = [
+        [innerBounds[0][0], innerBounds[0][1] + yPrime],
+        [innerBounds[1][0], innerBounds[1][1] + yPrime],
+        [innerBounds[1][0], innerBounds[1][1]],
+        [innerBounds[0][0], innerBounds[0][1]]
+    ];
+    var rightBounds = [
+        [innerBounds[1][0], innerBounds[1][1] + yPrime],
+        [innerBounds[1][0] + xPrime, innerBounds[1][1] + yPrime],
+        [innerBounds[2][0] + xPrime, innerBounds[2][1]],
+        [innerBounds[2][0], innerBounds[2][1]]
+    ];
+    var bottomBounds = [
+        [innerBounds[3][0] - xPrime, innerBounds[3][1]],
+        [innerBounds[2][0] + xPrime, innerBounds[2][1] ],
+        [innerBounds[2][0] + xPrime, innerBounds[2][1] - yPrime],
+        [innerBounds[3][0] - xPrime, innerBounds[3][1] - yPrime]
+    ];
+    //Add Grounds to OSM
     model.add_ground(innerBounds, 25);
+    model.add_ground(leftBounds, 25);
+    model.add_ground(topBounds, 25);
+    model.add_ground(rightBounds, 25);
+    model.add_ground(bottomBounds, 25);
     
     //Complete and Save OpenStudio Model
     model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
