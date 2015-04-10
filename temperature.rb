@@ -174,17 +174,17 @@ class OSModel < OpenStudio::Model::Model
             space.setThermalZone(new_thermal_zone)
         end
       end
-    
+  
   end
 
   def add_ground(bounds, gridSize)
     #Surface count before addition
     surfaces = self.getSurfaces.length
-    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.0, self)
+    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.1, self)
     #remove new surfaces but the roof surfaces
       self.getSurfaces.each do |s|
         next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
-        next if s.surfaceType == "RoofCeiling"
+        next if s.surfaceType == "Floor"
         next if not s.name.to_s.split(" ")[1].to_i > surfaces
         s.remove
       end
