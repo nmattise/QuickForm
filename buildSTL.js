@@ -855,7 +855,7 @@ function buildSTL(buildings, windwardDirection) {
         //OpenStudio Geometries for Building
         model.add_geometry(bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.windowWallRatio);
         model.add_grid_roof(bldg.roofCoords, gridSize, bldg.height, bldg.bldgFootprint);
-
+        
         //Ground Stats for This Building
         minMaxPts = minMaxPoints(bldg.windwardCoords);
         minXPts.push(minMaxPts[0]);
@@ -866,6 +866,9 @@ function buildSTL(buildings, windwardDirection) {
         //Building Heights
         bldgHeights.push(bldg.height);
     }
+
+    
+
     //Create Gound STL
     //Find Max Building Height as Characteristic Length for Ground Dimensions
     maxHeight = Math.max.apply(null, bldgHeights);
@@ -924,6 +927,14 @@ function buildSTL(buildings, windwardDirection) {
     model.add_ground(topBounds, 25);
     model.add_ground(rightBounds, 25);
     model.add_ground(bottomBounds, 25);
+
+    //testRemove extras
+    model.remove_building_extras(1, 210)
+    model.remove_building_extras(460, 1135)
+    model.remove_building_extras(460, 1135)
+    model.remove_building_extras(230, 440)
+    
+    
     
     //Complete and Save OpenStudio Model
     model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
@@ -932,6 +943,7 @@ function buildSTL(buildings, windwardDirection) {
     model.save_openstudio_osm('./', fileName);
     model.translate_to_energyplus_and_save_idf('./', fileName);
     model.add_temperature_variable('./', fileName);
+
     //Run EnergyPlus on 
     /*execEnergyPlus('./' + fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
             if (err) throw err;
