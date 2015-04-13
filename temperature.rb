@@ -9,9 +9,6 @@ class OSModel < OpenStudio::Model::Model
   	wallH = (floorHeight - winH) / 2
   	bldgH = floors * floorHeight
   	wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
-  	puts winH
-  	puts gridSize
-  	puts wwrSub
   	num_surfaces = 0
     previous_num_surfaces = 0
     #Loop through Floors
@@ -165,13 +162,6 @@ class OSModel < OpenStudio::Model::Model
       #Match surfaces for each space in the vector
       OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
    
-      #Apply a thermal zone to each space in the model if that space has no thermal zone already
-      self.getSpaces.each do |space|
-        if space.thermalZone.empty?
-            new_thermal_zone = OpenStudio::Model::ThermalZone.new(self)
-            space.setThermalZone(new_thermal_zone)
-        end
-      end
   
   end
 
@@ -187,15 +177,7 @@ class OSModel < OpenStudio::Model::Model
       #Match surfaces for each space in the vector
       OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
    
-      #Apply a thermal zone to each space in the model if that space has no thermal zone already
-      self.getSpaces.each do |space|
-        if space.thermalZone.empty?
-            new_thermal_zone = OpenStudio::Model::ThermalZone.new(self)
-            space.setThermalZone(new_thermal_zone)
-        end
-      end
 
-      #Set Ground as the Outside Boundary COndition
   end
 
   def remove_building_extras(startSurface, endSurface)
@@ -205,10 +187,23 @@ class OSModel < OpenStudio::Model::Model
         next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
         s.remove
       end
+  end
 
-      
-        
-    
+  def remove_grid_roof_interor(startSurface, endSurface)
+    #remove new surfaces but the roof surfaces
+      self.getSurfaces.each do |s|
+        next if s.surfaceType == "RoofCeiling"
+        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+        s.remove
+      end
+  end
+  def remove_ground_extra(startSurface, endSurface)
+    #remove new surfaces but the roof surfaces
+      self.getSurfaces.each do |s|
+        next if  s.surfaceType == "Floor"
+        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+        s.remove
+      end
   end
 
   def add_constructions(construction_library_path, degree_to_north)
@@ -236,6 +231,10 @@ class OSModel < OpenStudio::Model::Model
 	building.setNorthAxis(degree_to_north)
   
   end #end Constructions
+
+  def num_surfaces()
+    return self.getSurfaces.length
+  end
 
   def set_runperiod(day, month)
     #From https://github.com/buildsci/openstudio_scripts/blob/master/newMethods/newMethods.rb
@@ -274,6 +273,8 @@ class OSModel < OpenStudio::Model::Model
   end
 
 end
+
+
 
 def count_surfaces(model)
     count = 0
@@ -436,29 +437,70 @@ def construct_grid_roof(pt1, pt2, pt3, gridSize, height, model)
 end
 
 
-=begin
+file = File.read("Rectangle_LShape_.json")
 
-coords = [ -55.05533398318459, 11.667261889578032 ],[ -39.40926006632459, 27.313335806438033 ],[ 4.418830129700869, -16.514754389587424 ],[ 36.62267209573454, 15.689087576446246 ],[ 49.55271547867645, 2.759044193504348 ],[ 1.7027995957827713, -45.090871689389324 ]
-gridSize = 5
-floors = 4
-floorHeight =3
-wwr = 0.33
-fileName = 'test'
-roofCoords = [ [ [ -55.05533398318459, 11.667261889578032 ],[ -39.40926006632459, 27.313335806438033 ],[ -11.227243787159125, -32.16082830644743 ] ],[ [ -11.227243787159125, -32.16082830644743 ],[ 36.62267209573454, 15.689087576446246 ],[ 1.7027995957827713, -45.090871689389324 ] ] ]
+buildings = JSON.parse(file)
+
+startSurface = []
+roofSurface = []
+endSurface = []
+
 
 #initialize and make OSModel
-
 model = OSModel.new
 
-model.add_geometry(coords, gridSize, floors, floorHeight, wwr)
-model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0)
-model.add_grid_roof(roofCoords,gridSize, 12,"l")
-model.set_runperiod(31, 1);
-model.set_solarDist();
-model.save_openstudio_osm('./', fileName)
-model.translate_to_energyplus_and_save_idf('./', fileName)
-model.add_temperature_variable('./', fileName)
-=end
+#Loop through Buildings
+buildings['buildings'].each do |building|
+  startSurface.push(model.num_surfaces)
+  model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'])
+  roofSurface.push(model.num_surfaces)
+  model.add_grid_roof(building['roofCoords'],building['gridSize'], building['height'],building['shape'])    
+  endSurface.push(model.num_surfaces)
+end
+puts "start Surf: #{startSurface}"
+puts "roof Surf: #{roofSurface}"
+puts "end Surf: #{endSurface}"
 
+startGround = []
+endGround = []
+#Add Ground
+startGround.push(model.num_surfaces)
+model.add_ground(buildings['ground']['bounds']['inner'], buildings['ground']['innerGridSize'])
+endGround.push(model.num_surfaces)
+startGround.push(model.num_surfaces)
+model.add_ground(buildings['ground']['bounds']['top'], buildings['ground']['gridSize'])
+endGround.push(model.num_surfaces)
+startGround.push(model.num_surfaces)
+model.add_ground(buildings['ground']['bounds']['left'], buildings['ground']['gridSize'])
+endGround.push(model.num_surfaces)
+startGround.push(model.num_surfaces)
+model.add_ground(buildings['ground']['bounds']['right'], buildings['ground']['gridSize'])
+endGround.push(model.num_surfaces)
+startGround.push(model.num_surfaces)
+model.add_ground(buildings['ground']['bounds']['bottom'], buildings['ground']['gridSize'])
+endGround.push(model.num_surfaces)
+
+#Remove Interiors, Extras, etc
+model.remove_building_extras(startSurface[0], roofSurface[0]-1)
+model.remove_grid_roof_interor(roofSurface[0], endSurface[0])
+model.remove_building_extras(startSurface[1], roofSurface[1]-1)
+model.remove_grid_roof_interor(roofSurface[1], endSurface[1])
+
+model.remove_ground_extra(startGround[0], endGround[0])
+model.remove_ground_extra(startGround[1], endGround[1])
+model.remove_ground_extra(startGround[2], endGround[2])
+model.remove_ground_extra(startGround[3], endGround[3])
+model.remove_ground_extra(startGround[4], endGround[4])
+
+#Set Simulation Aspects
+model.add_constructions(buildings['construction'], buildings['orientation'])
+model.set_runperiod(buildings['runPeriod']['day'], buildings['runPeriod']['month']);
+model.set_solarDist();
+
+
+#Save and Translate and Adjust
+model.save_openstudio_osm('./', buildings['fileName'])
+model.translate_to_energyplus_and_save_idf('./', buildings['fileName'])
+model.add_temperature_variable('./', buildings['fileName'])
 
 
