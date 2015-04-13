@@ -1,11 +1,7 @@
 //Dependencies
 var fs = require('fs'),
     stl = require('stl'),
-    exec = require('child_process').exec,
-    norby = require('norby');
-
-norby.require('openstudio');
-norby.require('./temperature.rb');
+    exec = require('child_process').exec;
 
 //Export Function
 module.exports.buildSTL = buildSTL;
@@ -464,6 +460,32 @@ function createGround(innerBounds, maxHeight, gridSize) {
     return stlString;
 }
 
+//building OSM object
+function Building(name, coords, roofCoords, gridSize, numFloors, floorHeight, windowWallRatio, height, shape) {
+    this.name = name;
+    this.shape = shape;
+    this.coords = coords;
+    this.roofCoords = roofCoords;
+    this.gridSize = gridSize;
+    this.floors = numFloors;
+    this.floorHeight = floorHeight;
+    this.wwr = windowWallRatio;
+    this.height = height;
+}
+
+function Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, gridSize, innerGridSize, maxHeight) {
+    this.bounds = {
+        inner: innerBounds,
+        left: leftBounds,
+        right: rightBounds,
+        top: topBounds,
+        bottom: bottomBounds
+    };
+    this.gridSize = gridSize;
+    this.innerGridSize = innerGridSize;
+    this.maxHeight = maxHeight
+}
+
 //Final Function
 function buildSTL(buildings, windwardDirection) {
     //Initialize Variables
@@ -489,7 +511,20 @@ function buildSTL(buildings, windwardDirection) {
         fileName = '',
         bldgHeights = [];
 
-    //Set Grid Size
+    //Building Object for OSM JSON
+    var osmObject = {
+            buildings: [],
+            ground: {},
+            fileName: String,
+            runPeriod: {
+                month: Number,
+                day: Number
+            },
+            construction: String,
+            orientation: Number
+
+        }
+        //Set Grid Size
     var gridSize = 10;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
@@ -503,9 +538,6 @@ function buildSTL(buildings, windwardDirection) {
     centerLng = lng / pathCount;
     //Make Center Latitude and Longitude the Origin Point for LatLng
     origin = new latLon(centerLat, centerLng);
-
-    //Make new OpenStudio Model
-    var model = norby.newInstance('OSModel');
 
     //Go through Each Building
 
@@ -853,9 +885,8 @@ function buildSTL(buildings, windwardDirection) {
         }
 
         //OpenStudio Geometries for Building
-        model.add_geometry(bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.windowWallRatio);
-        model.add_grid_roof(bldg.roofCoords, gridSize, bldg.height, bldg.bldgFootprint);
-        
+        osmObject.buildings.push(new Building(bldg.name, bldg.windwardCoords, bldg.roofCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.windowWallRatio, bldg.height, bldg.bldgFootprint));
+
         //Ground Stats for This Building
         minMaxPts = minMaxPoints(bldg.windwardCoords);
         minXPts.push(minMaxPts[0]);
@@ -867,7 +898,7 @@ function buildSTL(buildings, windwardDirection) {
         bldgHeights.push(bldg.height);
     }
 
-    
+
 
     //Create Gound STL
     //Find Max Building Height as Characteristic Length for Ground Dimensions
@@ -892,8 +923,10 @@ function buildSTL(buildings, windwardDirection) {
         [maxX, minY],
         [minX, minY]
     ];
-    
-    //Ground OSM
+    //Call CreateGound and create ground STL
+    var groundSTL = createGround(innerBounds, maxHeight, groundGridSize);
+
+    //Ground OSM Bounds Calculation
     //Generate Bounds
     var xPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
     var yPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
@@ -901,7 +934,7 @@ function buildSTL(buildings, windwardDirection) {
         [innerBounds[0][0] - xPrime, innerBounds[0][1] + yPrime],
         [innerBounds[0][0], innerBounds[0][1] + yPrime],
         [innerBounds[3][0], innerBounds[3][1]],
-        [innerBounds[3][0]-xPrime, innerBounds[3][1]]
+        [innerBounds[3][0] - xPrime, innerBounds[3][1]]
     ];
     var topBounds = [
         [innerBounds[0][0], innerBounds[0][1] + yPrime],
@@ -917,32 +950,20 @@ function buildSTL(buildings, windwardDirection) {
     ];
     var bottomBounds = [
         [innerBounds[3][0] - xPrime, innerBounds[3][1]],
-        [innerBounds[2][0] + xPrime, innerBounds[2][1] ],
+        [innerBounds[2][0] + xPrime, innerBounds[2][1]],
         [innerBounds[2][0] + xPrime, innerBounds[2][1] - yPrime],
         [innerBounds[3][0] - xPrime, innerBounds[3][1] - yPrime]
     ];
-    //Add Grounds to OSM
-    model.add_ground(innerBounds, 25);
-    model.add_ground(leftBounds, 25);
-    model.add_ground(topBounds, 25);
-    model.add_ground(rightBounds, 25);
-    model.add_ground(bottomBounds, 25);
 
-    //testRemove extras
-    model.remove_building_extras(1, 210)
-    model.remove_building_extras(460, 1135)
-    model.remove_building_extras(460, 1135)
-    model.remove_building_extras(230, 440)
-    
-    
-    
-    //Complete and Save OpenStudio Model
-    model.add_constructions('./ASHRAE_90.1-2004_Construction.osm', 0);
-    model.set_runperiod(31, 1);
-    model.set_solarDist();
-    model.save_openstudio_osm('./', fileName);
-    model.translate_to_energyplus_and_save_idf('./', fileName);
-    model.add_temperature_variable('./', fileName);
+    //Add Ground to OSM Object & Complete
+    var innerGridSize = 10;
+    osmObject.ground = new Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, gridSize, innerGridSize, maxHeight);
+
+    osmObject.construction = "./ASHRAE_90.1-2004_Construction.osm";
+    osmObject.orientation = 0;
+    osmObject.runPeriod.month = 1;
+    osmObject.runPeriod.day = 21;
+    osmObject.fileName = fileName;
 
     //Run EnergyPlus on 
     /*execEnergyPlus('./' + fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
@@ -950,9 +971,10 @@ function buildSTL(buildings, windwardDirection) {
             console.log(stdout);
     });*/
 
-    //Call CreateGound and create ground STL
-    var groundSTL = createGround(innerBounds, maxHeight, groundGridSize);
+
     //Write Files
+    //Write JSON for OSM use
+    fs.writeFileSync(fileName + ".json", JSON.stringify(osmObject, null, 4));
     //Write All Buildings in One STL File
     fs.writeFileSync("stlFiles/" + fileName + ".stl", allBldgSTL);
     //Write Ground STL File for All Buildings
