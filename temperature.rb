@@ -117,8 +117,6 @@ class OSModel < OpenStudio::Model::Model
       #Surface count before addition
       surfaces1 = self.getSurfaces.length
       construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
-
-
     when "t"
       #Surface count before addition
       surfaces = self.getSurfaces.length
@@ -181,13 +179,7 @@ class OSModel < OpenStudio::Model::Model
     #Surface count before addition
     surfaces = self.getSurfaces.length
     construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.1, self)
-    #remove new surfaces but the roof surfaces
-      self.getSurfaces.each do |s|
-        next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
-        next if s.surfaceType == "Floor"
-        next if not s.name.to_s.split(" ")[1].to_i > surfaces
-        s.remove
-      end
+    
      #Put all of the spaces in the model into a vector
       spaces = OpenStudio::Model::SpaceVector.new
       self.getSpaces.each { |space| spaces << space }
@@ -204,8 +196,18 @@ class OSModel < OpenStudio::Model::Model
       end
 
       #Set Ground as the Outside Boundary COndition
+  end
 
-    
+  def remove_building_extras(startSurface, endSurface)
+
+      self.getSurfaces.each do |s|
+        next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
+        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+        s.remove
+      end
+
+      
+        
     
   end
 
