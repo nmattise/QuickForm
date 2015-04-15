@@ -1,6 +1,6 @@
 //Dependencies
 var fs = require('fs'),
-    stl = require('stl'),
+    stl = require('stl2'),
     exec = require('child_process').exec;
 
 //Export Function
@@ -147,7 +147,7 @@ function findRotation(pt1, pt2) {
 
 //STL Format Creation
 
-function createVertPlane(pt1, pt2, z1, z2, material) {
+function createVertPlane(pt1, pt2, z1, z2) {
     var tri1, tri2, facets;
     tri1 = [
         [pt1[0], pt1[1], z1],
@@ -368,12 +368,12 @@ function createWallMaterial(buildingName, faceNum, point1, point2, gridSize, hei
             };
             stlString += stl.fromObject(stlObj) + "\n";
             var stlObj = {
-                description: buildingName + ':' + faceNum + ':' + wallMaterial + ':' + i + ':' + (t * 3 + 1) + ':0',
+                description: buildingName + ':' + faceNum + ':' + windowMaterial + ':' + i + ':' + (t * 3 + 1) + ':0',
                 facets: tri2[0]
             };
             stlString += stl.fromObject(stlObj) + "\n";
             var stlObj = {
-                description: buildingName + ':' + faceNum + ':' + wallMaterial + ':' + i + ':' + (t * 3 + 1) + ':1',
+                description: buildingName + ':' + faceNum + ':' + windowMaterial + ':' + i + ':' + (t * 3 + 1) + ':1',
                 facets: tri2[1]
             };
             stlString += stl.fromObject(stlObj) + "\n";

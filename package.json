@@ -20,6 +20,6 @@
     "statsjs": "^1.0.6",
     "stl": "git://github.com/nmattise/stl#master"
   },
-  "keywords": [],
+  "keywords": ["git://github.com/nmattise/stl#master"],
   "readmeFilename": "README.md"
 }

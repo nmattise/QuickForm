@@ -4,7 +4,7 @@ require 'json'
 class OSModel < OpenStudio::Model::Model
 
   def add_geometry(coords, gridSize, floors, floorHeight, wwr, name)
-  	
+
   	winH = floorHeight * wwr
   	wallH = (floorHeight - winH) / 2
   	bldgH = floors * floorHeight
@@ -21,7 +21,7 @@ class OSModel < OpenStudio::Model::Model
         #Surfaces Count (excludes subsurfaces) before this height is added
         surface_count = self.getSurfaces.length
     		#Height Adjustment
-            if z == z0 || z ==z2
+        if z == z0 || z ==z2
     			height = wallH
     		else
     			height = winH
@@ -78,7 +78,7 @@ class OSModel < OpenStudio::Model::Model
                 end
             end
     	end # End of heights Loop
-    	
+
 
     end #End of Floors Loop
 
@@ -88,7 +88,7 @@ class OSModel < OpenStudio::Model::Model
 
     #Match surfaces for each space in the vector
     OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
-    
+
     #Apply a thermal zone to each space in the model if that space has no thermal zone already
     self.getSpaces.each do |space|
       if space.thermalZone.empty?
@@ -96,8 +96,8 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-    
-  end # end add_geometry method  
+
+  end # end add_geometry method
 
   def add_grid_roof(roofCoords, gridSize, height, shape)
     #Switch Case for Different Shapes
@@ -106,7 +106,7 @@ class OSModel < OpenStudio::Model::Model
       #Surface count before addition
       surfaces = self.getSurfaces.length
       construct_grid_roof(roofCoords[0], roofCoords[1], roofCoords[2], gridSize,height, self)
-      
+
     when "l"
       #Surface count before addition
       surfaces = self.getSurfaces.length
@@ -141,7 +141,7 @@ class OSModel < OpenStudio::Model::Model
       #Surface count before addition
       surfaces2 = self.getSurfaces.length
       construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self)
-    when "cross" 
+    when "cross"
     #Surface count before addition
       surfaces = self.getSurfaces.length
       construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
@@ -150,7 +150,7 @@ class OSModel < OpenStudio::Model::Model
       construct_grid_roof(roofCoords[1][0], roofCoords[1][1], roofCoords[1][2], gridSize,height, self)
       #Surface count before addition
       surfaces2 = self.getSurfaces.length
-      construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self) 
+      construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self)
     else
       return false
     end
@@ -160,7 +160,7 @@ class OSModel < OpenStudio::Model::Model
 
     #Match surfaces for each space in the vector
     OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
-    
+
     #Apply a thermal zone to each space in the model if that space has no thermal zone already
     self.getSpaces.each do |space|
       if space.thermalZone.empty?
@@ -168,22 +168,22 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-   
-  
+
+
   end
 
   def add_ground(bounds, gridSize)
     #Surface count before addition
     surfaces = self.getSurfaces.length
     construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.0, self)
-    
+
     #Put all of the spaces in the model into a vector
     spaces = OpenStudio::Model::SpaceVector.new
     self.getSpaces.each { |space| spaces << space }
 
     #Match surfaces for each space in the vector
     OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
-    
+
     #Apply a thermal zone to each space in the model if that space has no thermal zone already
     self.getSpaces.each do |space|
       if space.thermalZone.empty?
@@ -191,7 +191,7 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-   
+
 
   end
 
@@ -231,8 +231,8 @@ class OSModel < OpenStudio::Model::Model
   end
 
   def add_constructions(construction_library_path, degree_to_north)
-	  
-  
+
+
     #input error checking
     if not construction_library_path
       return false
@@ -247,13 +247,13 @@ class OSModel < OpenStudio::Model::Model
 
     #add the objects in the construction library to the model
     self.addObjects(construction_library.objects)
-    
+
     #apply the newly-added construction set to the model
     building = self.getBuilding
     default_construction_set = OpenStudio::Model::getDefaultConstructionSets(self)[0]
     building.setDefaultConstructionSet(default_construction_set)
 	building.setNorthAxis(degree_to_north)
-  
+
   end #end Constructions
 
   def num_surfaces()
@@ -267,22 +267,22 @@ class OSModel < OpenStudio::Model::Model
     runPeriod.setEndMonth(month)
   end
 
-  
+
 
   def save_openstudio_osm(dir, name)
     save_path = OpenStudio::Path.new("#{dir}/#{name}")
     self.save(save_path,true)
-    
+
   end
-  
+
   def translate_to_energyplus_and_save_idf(dir,name)
-  
+
     #make a forward translator and convert openstudio model to energyplus
     forward_translator = OpenStudio::EnergyPlus::ForwardTranslator.new()
     workspace = forward_translator.translateModel(self)
     idf_save_path = OpenStudio::Path.new("#{dir}/#{name}")
     workspace.save(idf_save_path,true)
-  
+
   end
 
   def add_temperature_variable(dir, name)
@@ -326,9 +326,9 @@ end
 
 #Do Grid for One Length
 def get_num_patches(coords, gridSize)
-    numb_patches = 0 
+    numb_patches = 0
     orgGridSize = gridSize
-    
+
     for pt in (1..coords.length-1)
         gridSize = orgGridSize
         sideLength = distanceFormula(coords[pt-1][0],coords[pt-1][1],coords[pt][0],coords[pt][1])
@@ -349,7 +349,7 @@ def get_num_patches(coords, gridSize)
         gridSize = gridLength
     end
     iterator = (sideLength / gridSize).to_i
-    numb_patches +=iterator  
+    numb_patches +=iterator
     return numb_patches
 end
 
@@ -403,12 +403,12 @@ def all_the_grids(pt0, pt1, pt3, gridSize)
   if (gridSize * 2) > l3
       gridLength3 = l3/2
       gridSize3 = gridLength3
-  end 
+  end
   deltaX3 = pt0[0] - pt3[0]
   deltaY3 = pt0[1] - pt3[1]
   xIt3 = deltaX0 / (l3/gridSize3).to_i
   yIt3 = deltaY0 / (l3/gridSize3).to_i
-  iterator3 = (l3/gridSize3).to_i  
+  iterator3 = (l3/gridSize3).to_i
 
   #Rotations
   theta0 = findRotation(pt0, pt1)
@@ -478,7 +478,7 @@ buildings['buildings'].each do |building|
   startSurface.push(model.num_surfaces)
   model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'], building['name'])
   roofSurface.push(model.num_surfaces)
-  model.add_grid_roof(building['roofCoords'],building['gridSize'], building['height'],building['shape'])    
+  model.add_grid_roof(building['roofCoords'],building['gridSize'], building['height'],building['shape'])
   endSurface.push(model.num_surfaces)
 end
 puts "start Surf: #{startSurface}"
@@ -534,5 +534,3 @@ model.set_solarDist();
 model.save_openstudio_osm('./', buildings['fileName'])
 model.translate_to_energyplus_and_save_idf('./', buildings['fileName'])
 model.add_temperature_variable('./', buildings['fileName'])
-
-
