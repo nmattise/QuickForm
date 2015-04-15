@@ -3,7 +3,7 @@ require 'json'
 
 class OSModel < OpenStudio::Model::Model
 
-  def add_geometry(coords, gridSize, floors, floorHeight, wwr)
+  def add_geometry(coords, gridSize, floors, floorHeight, wwr, name)
   	
   	winH = floorHeight * wwr
   	wallH = (floorHeight - winH) / 2
@@ -30,7 +30,7 @@ class OSModel < OpenStudio::Model::Model
     		#Create a new story within the building
     		story = OpenStudio::Model::BuildingStory.new(self)
     		story.setNominalFloortoFloorHeight(height)
-    		story.setName("Story #{floor+1}")
+    		story.setName("#{name}:Story #{floor+1}")
     		#Loop Trough Sides
     		#loop through 3 iterations of sides
 
@@ -154,13 +154,20 @@ class OSModel < OpenStudio::Model::Model
     else
       return false
     end
-      
-      #Put all of the spaces in the model into a vector
-      spaces = OpenStudio::Model::SpaceVector.new
-      self.getSpaces.each { |space| spaces << space }
+    #Put all of the spaces in the model into a vector
+    spaces = OpenStudio::Model::SpaceVector.new
+    self.getSpaces.each { |space| spaces << space }
 
-      #Match surfaces for each space in the vector
-      OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
+    #Match surfaces for each space in the vector
+    OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
+    
+    #Apply a thermal zone to each space in the model if that space has no thermal zone already
+    self.getSpaces.each do |space|
+      if space.thermalZone.empty?
+        new_thermal_zone = OpenStudio::Model::ThermalZone.new(self)
+        space.setThermalZone(new_thermal_zone)
+      end
+    end # end space loop
    
   
   end
@@ -168,14 +175,22 @@ class OSModel < OpenStudio::Model::Model
   def add_ground(bounds, gridSize)
     #Surface count before addition
     surfaces = self.getSurfaces.length
-    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.1, self)
+    construct_grid_roof(bounds[0], bounds[1], bounds[3], gridSize,0.0, self)
     
-     #Put all of the spaces in the model into a vector
-      spaces = OpenStudio::Model::SpaceVector.new
-      self.getSpaces.each { |space| spaces << space }
+    #Put all of the spaces in the model into a vector
+    spaces = OpenStudio::Model::SpaceVector.new
+    self.getSpaces.each { |space| spaces << space }
 
-      #Match surfaces for each space in the vector
-      OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
+    #Match surfaces for each space in the vector
+    OpenStudio::Model.matchSurfaces(spaces) # Match surfaces and sub-surfaces within spaces
+    
+    #Apply a thermal zone to each space in the model if that space has no thermal zone already
+    self.getSpaces.each do |space|
+      if space.thermalZone.empty?
+        new_thermal_zone = OpenStudio::Model::ThermalZone.new(self)
+        space.setThermalZone(new_thermal_zone)
+      end
+    end # end space loop
    
 
   end
@@ -204,6 +219,15 @@ class OSModel < OpenStudio::Model::Model
         next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
         s.remove
       end
+  end
+
+  def rename(startSurface, endSurface)
+    self.getSurfaces.each do |s|
+      next if  s.surfaceType == "Floor"
+      next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+      numb = s.name.to_s.split(" ")[1].to_i
+      s.setName("Building 1 Surface : #{numb}")
+    end
   end
 
   def add_constructions(construction_library_path, degree_to_north)
@@ -452,7 +476,7 @@ model = OSModel.new
 #Loop through Buildings
 buildings['buildings'].each do |building|
   startSurface.push(model.num_surfaces)
-  model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'])
+  model.add_geometry(building['coords'], building['gridSize'], building['floors'], building['floorHeight'], building['wwr'], building['name'])
   roofSurface.push(model.num_surfaces)
   model.add_grid_roof(building['roofCoords'],building['gridSize'], building['height'],building['shape'])    
   endSurface.push(model.num_surfaces)
@@ -480,18 +504,26 @@ startGround.push(model.num_surfaces)
 model.add_ground(buildings['ground']['bounds']['bottom'], buildings['ground']['gridSize'])
 endGround.push(model.num_surfaces)
 
+
+
+
+
 #Remove Interiors, Extras, etc
-model.remove_building_extras(startSurface[0], roofSurface[0]-1)
-model.remove_grid_roof_interor(roofSurface[0], endSurface[0])
-model.remove_building_extras(startSurface[1], roofSurface[1]-1)
-model.remove_grid_roof_interor(roofSurface[1], endSurface[1])
+#model.remove_building_extras(startSurface[0], roofSurface[0]-1)
+#model.remove_grid_roof_interor(roofSurface[0], endSurface[0])
+#model.remove_building_extras(startSurface[1], roofSurface[1]-1)
+#model.remove_grid_roof_interor(roof Surface[1], endSurface[1])
+=begin
 
 model.remove_ground_extra(startGround[0], endGround[0])
 model.remove_ground_extra(startGround[1], endGround[1])
 model.remove_ground_extra(startGround[2], endGround[2])
 model.remove_ground_extra(startGround[3], endGround[3])
 model.remove_ground_extra(startGround[4], endGround[4])
+=end
 
+#Rename
+#model.rename(startSurface[0], roofSurface[0]-1, "Building 1")
 #Set Simulation Aspects
 model.add_constructions(buildings['construction'], buildings['orientation'])
 model.set_runperiod(buildings['runPeriod']['day'], buildings['runPeriod']['month']);
