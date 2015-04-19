@@ -1,6 +1,6 @@
 //Dependencies
 var fs = require('fs'),
-    stl = require('stl2'),
+    stl = require('stl'),
     exec = require('child_process').exec;
 
 //Export Function
