@@ -20,6 +20,7 @@ class OSModel < OpenStudio::Model::Model
     	heights.each do |z|
         #Surfaces Count (excludes subsurfaces) before this height is added
         surface_count = self.getSurfaces.length
+        puts "surface Count: #{surface_count}"
     		#Height Adjustment
         if z == z0 || z ==z2
     			height = wallH
@@ -77,6 +78,16 @@ class OSModel < OpenStudio::Model::Model
                     new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
                 end
             end
+=begin
+        self.getSurfaces.each do |s|
+          puts s.name
+          next if not s.name.to_s.split(" ")[1].to_i >= surface_count #Ignore surfaces before this current height
+          number = s.name.to_s.split(" ")[1].to_i
+          s.setName("#{name}:material:#{floor}:#{z}: #{number}")
+          puts s.name.to_s.split(" ")[1].to_i
+        end
+=end
+
     	end # End of heights Loop
 
 
@@ -461,7 +472,7 @@ def construct_grid_roof(pt1, pt2, pt3, gridSize, height, model)
 end
 
 
-file = File.read("Rectangle_LShape_.json")
+file = File.read("LShape_.json")
 
 buildings = JSON.parse(file)
 
