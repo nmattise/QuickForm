@@ -436,7 +436,7 @@ function createGround(innerBounds, maxHeight, gridSize) {
         pt4,
         tri,
         facets = [];
-    var innerGridSize = 5;
+    var innerGridSize = 15;
     console.log(innerBounds);
     var stlString = '';
     //Inner Grid Dimensions
@@ -910,7 +910,7 @@ function buildSTL(buildings, windwardDirection) {
     maxX = Math.max.apply(null, maxXPts);
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
-    var groundGridSize = 20;
+    var groundGridSize = 30;
     //Round these min and max points to next 5 
     minX = groundGridSize * Math.floor(minX / groundGridSize);
     maxX = groundGridSize * Math.ceil(maxX / groundGridSize);
@@ -956,13 +956,13 @@ function buildSTL(buildings, windwardDirection) {
     ];
 
     //Add Ground to OSM Object & Complete
-    var innerGridSize = 10;
-    osmObject.ground = new Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, gridSize, innerGridSize, maxHeight);
+    var innerGridSize = 15;
+    osmObject.ground = new Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, 30, innerGridSize, maxHeight);
 
     osmObject.construction = "./ASHRAE_90.1-2004_Construction.osm";
     osmObject.orientation = 0;
-    osmObject.runPeriod.month = 1;
-    osmObject.runPeriod.day = 21;
+    osmObject.runPeriod.month = 12;
+    osmObject.runPeriod.day = 31;
     osmObject.fileName = fileName;
 
     //Run EnergyPlus on 

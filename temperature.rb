@@ -307,6 +307,16 @@ class OSModel < OpenStudio::Model::Model
     simControl.setSolarDistribution("FullExteriorWithReflections")
   end
 
+  def get_surface_numbers(startSurface, endSurface, type)
+    surfaceArray = []
+    self.getSurfaces.each do |s|
+      next if not  s.surfaceType == type
+      next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+        surfaceArray.push(s.name.to_s.split(" ")[1].to_i)
+    end
+    return surfaceArray
+  end
+
 end
 
 
@@ -472,7 +482,7 @@ def construct_grid_roof(pt1, pt2, pt3, gridSize, height, model)
 end
 
 
-file = File.read("LShape_.json")
+file = File.read("Rectangle_.json")
 
 buildings = JSON.parse(file)
 
@@ -515,23 +525,50 @@ startGround.push(model.num_surfaces)
 model.add_ground(buildings['ground']['bounds']['bottom'], buildings['ground']['gridSize'])
 endGround.push(model.num_surfaces)
 
+puts "start Ground Array : #{startGround}"
+puts "End Ground Array : #{endGround}"
 
 
+#Name Primary Surfaces in Model
+#Walls
+wallsFloor0Z0 = model.get_surface_numbers(0, 26, "Wall")
+wallsFloor0Z1 = model.get_surface_numbers(26, 52, "Wall")
+wallsFloor0Z2 = model.get_surface_numbers(52, 78, "Wall")
+wallsFloor1Z0 = model.get_surface_numbers(78, 104, "Wall")
+wallsFloor1Z1 = model.get_surface_numbers(104, 130, "Wall")
+wallsFloor1Z2 = model.get_surface_numbers(130, 156, "Wall")
+wallsFloor2Z0 = model.get_surface_numbers(156, 182, "Wall")
+wallsFloor2Z1 = model.get_surface_numbers(182, 208, "Wall")
+wallsFloor2Z2 = model.get_surface_numbers(208, 234, "Wall")
+#Roof
+roofSegment1 = model.get_surface_numbers(234 + 1, 444, "RoofCeiling")
+#Ground
+innerGround = model.get_surface_numbers(444+ 1, 828, "RoofCeiling")
+topGround = model.get_surface_numbers(828+ 1, 876, "RoofCeiling")
+leftGround = model.get_surface_numbers(876+ 1, 936, "RoofCeiling")
+rightGround = model.get_surface_numbers(936+ 1, 996, "RoofCeiling")
+bottomGround = model.get_surface_numbers(996+ 1, 1080, "RoofCeiling")
 
 
-#Remove Interiors, Extras, etc
-#model.remove_building_extras(startSurface[0], roofSurface[0]-1)
-#model.remove_grid_roof_interor(roofSurface[0], endSurface[0])
-#model.remove_building_extras(startSurface[1], roofSurface[1]-1)
-#model.remove_grid_roof_interor(roof Surface[1], endSurface[1])
-=begin
+puts "wallsFloor0Z0:#{wallsFloor0Z0}"
+puts "wallsFloor0Z1:#{wallsFloor0Z1}"
+puts "wallsFloor0Z2:#{wallsFloor0Z2}"
+puts "wallsFloor1Z0:#{wallsFloor1Z0}"
+puts "wallsFloor1Z1:#{wallsFloor1Z1}"
+puts "wallsFloor1Z2:#{wallsFloor1Z2}"
+puts "wallsFloor2Z0:#{wallsFloor2Z0}"
+puts "wallsFloor2Z1:#{wallsFloor2Z1}"
+puts "wallsFloor2Z2:#{wallsFloor2Z2}"
 
-model.remove_ground_extra(startGround[0], endGround[0])
-model.remove_ground_extra(startGround[1], endGround[1])
-model.remove_ground_extra(startGround[2], endGround[2])
-model.remove_ground_extra(startGround[3], endGround[3])
-model.remove_ground_extra(startGround[4], endGround[4])
-=end
+puts "roofSegment1:#{roofSegment1}"
+
+puts "innerGround:#{innerGround}"
+puts "topGround:#{topGround}"
+puts "leftGround:#{leftGround}"
+puts "rightGround:#{rightGround}"
+puts "bottomGround:#{bottomGround}"
+
+
 
 #Rename
 #model.rename(startSurface[0], roofSurface[0]-1, "Building 1")

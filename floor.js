@@ -2,12 +2,10 @@ var stl = require('stl'),
     fs = require('fs');
 
 var coords = [
-    [-85.58820479481972, -24.126483374085005],
-    [-69.94211190398968, -8.480390483254986],
-    [-26.10964979828941, -52.31285258895526],
-    [6.101244261586116, -20.10195852907973],
-    [19.030451268759137, -33.03116553625275],
-    [-28.826535681946407, -80.88815248695829]
+    [5.925554826343262, 47.30544366138003],
+    [47.305443661380025, 5.925554826343273],
+    [-5.925554826343259, -47.30544366138004],
+    [-47.305443661380025, -5.9255548263432765]
 ];
 
 function distanceFormula(x1, y1, x2, y2) {
@@ -266,6 +264,6 @@ function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofS
 }
 
 
-var stlString = createWallGeometry("test", coords, 5, 4, 4, 16, 0.33);
-stlString += createRoofGeometry("test", coords[0], coords[1], coords[3], 5, 16, 0, 'asphalt')
-fs.writeFileSync('newTest.stl', stlString)
+var stlString = createWallGeometry("Rectangle", coords, 10, 3, 3.33, 9.99, 0.25, "glass", "brick");
+stlString += createRoofGeometry("Rectangle", coords[0], coords[1], coords[3], 5, 16, 0, 'asphalt')
+fs.writeFileSync('Rectangle.stl', stlString)

@@ -52,5 +52,5 @@ csv.parse(csvData, function(err, data) {
     console.log(organizedData[0]);
     csv.stringify(organizedData, function(err, output) {
         fs.writeFileSync('./Output/Rectangle_new.csv', output);
-    })
+    });
 });
