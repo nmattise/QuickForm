@@ -15,14 +15,13 @@
     "csv": "^0.4.1",
     "express": "4.9.8",
     "fast-csv": "^0.6.0",
+
     "norby": "^0.2.1",
     "poly2tri": "1.3.5",
     "request": "^2.46.0",
     "statsjs": "^1.0.6",
     "stl": "git://github.com/nmattise/stl#master"
   },
-  "keywords": [
-    "git://github.com/nmattise/stl#master"
-  ],
+  "keywords": ["git://github.com/nmattise/stl#master"],
   "readmeFilename": "README.md"
 }

@@ -264,6 +264,8 @@ function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofS
 }
 
 
+
 var stlString = createWallGeometry("Rectangle", coords, 10, 3, 3.33, 9.99, 0.25, "glass", "brick");
 stlString += createRoofGeometry("Rectangle", coords[0], coords[1], coords[3], 5, 16, 0, 'asphalt')
 fs.writeFileSync('Rectangle.stl', stlString)
+

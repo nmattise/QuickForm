@@ -399,6 +399,7 @@ function createGroundGrid(fileName, segment, groundMaterial, xMin, xMax, yMin, y
     var stlString = '';
     var row = 0,
         column = 0;
+
     for (xpt = xMin; xpt < xMax; xpt += step) {
         for (ypt = yMax; ypt > yMin; ypt -= step) {
             pt1 = [xpt, ypt];
@@ -409,11 +410,14 @@ function createGroundGrid(fileName, segment, groundMaterial, xMin, xMax, yMin, y
             facets.push(tri[0]);
             facets.push(tri[1]);
             var stlObj = {
+
                 description: fileName + ':' + groundMaterial + ':ground:' + ':' + segment + ':' + row + ':' + column,
+
                 facets: tri[0]
             };
             stlString += stl.fromObject(stlObj) + "\n";
             var stlObj = {
+
                 description: fileName + ':' + groundMaterial + ':ground:' + ':' + segment + ':' + row + ':' + column,
                 facets: tri[1]
             };
@@ -665,7 +669,6 @@ function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofS
             stlString += stl.fromObject(stlObj) + "\n";
         }
     }
-    return stlString;
 }
 
 //building OSM object
@@ -802,6 +805,7 @@ function buildSTL(buildings, windwardDirection) {
                     //Roof and Floor
                 bldg.roofCoords = [rotatedRect[0], rotatedRect[1], rotatedRect[3]];
                 allBldgSTL += createRoofGeometry(bldg.name, rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, 0, "asphalt")
+
                 break;
             case 'l':
                 //Average 1 & 3+5
@@ -841,6 +845,7 @@ function buildSTL(buildings, windwardDirection) {
                 ];
                 allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, 0, "asphalt")
                 allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, 1, "asphalt")
+
 
                 break;
             case "t":
@@ -1063,6 +1068,7 @@ function buildSTL(buildings, windwardDirection) {
                 //Add Walls
                 allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
 
+
                 break;
         }
 
@@ -1093,6 +1099,7 @@ function buildSTL(buildings, windwardDirection) {
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
     var groundGridSize = 30;
+
     //Round these min and max points to next 5 
     minX = groundGridSize * Math.floor(minX / groundGridSize);
     maxX = groundGridSize * Math.ceil(maxX / groundGridSize);
@@ -1148,6 +1155,7 @@ function buildSTL(buildings, windwardDirection) {
     osmObject.fileName = fileName;
 
     console.log(fileName);
+
     //Write Files
     //Write JSON for OSM use
     fs.writeFileSync(fileName + ".json", JSON.stringify(osmObject, null, 4));

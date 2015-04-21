@@ -360,5 +360,6 @@ var buildings = [{
 
 buildSTL([buildings[0]], Math.PI / 4)
 
+
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

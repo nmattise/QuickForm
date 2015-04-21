@@ -317,6 +317,7 @@ class OSModel < OpenStudio::Model::Model
     return surfaceArray
   end
 
+
 end
 
 
@@ -482,7 +483,9 @@ def construct_grid_roof(pt1, pt2, pt3, gridSize, height, model)
 end
 
 
+
 file = File.read("Rectangle_.json")
+
 
 buildings = JSON.parse(file)
 
@@ -524,6 +527,7 @@ endGround.push(model.num_surfaces)
 startGround.push(model.num_surfaces)
 model.add_ground(buildings['ground']['bounds']['bottom'], buildings['ground']['gridSize'])
 endGround.push(model.num_surfaces)
+
 
 puts "start Ground Array : #{startGround}"
 puts "End Ground Array : #{endGround}"
@@ -569,6 +573,21 @@ puts "rightGround:#{rightGround}"
 puts "bottomGround:#{bottomGround}"
 
 
+
+
+#Remove Interiors, Extras, etc
+#model.remove_building_extras(startSurface[0], roofSurface[0]-1)
+#model.remove_grid_roof_interor(roofSurface[0], endSurface[0])
+#model.remove_building_extras(startSurface[1], roofSurface[1]-1)
+#model.remove_grid_roof_interor(roof Surface[1], endSurface[1])
+=begin
+
+model.remove_ground_extra(startGround[0], endGround[0])
+model.remove_ground_extra(startGround[1], endGround[1])
+model.remove_ground_extra(startGround[2], endGround[2])
+model.remove_ground_extra(startGround[3], endGround[3])
+model.remove_ground_extra(startGround[4], endGround[4])
+=end
 
 #Rename
 #model.rename(startSurface[0], roofSurface[0]-1, "Building 1")
