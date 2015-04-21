@@ -394,9 +394,11 @@ function createWallMaterial(buildingName, faceNum, point1, point2, gridSize, hei
 
 
 
-function createGroundGrid(face, groundMaterial, xMin, xMax, yMin, yMax, step) {
+function createGroundGrid(fileName, segment, groundMaterial, xMin, xMax, yMin, yMax, step) {
     var xpt, ypt, pt1, pt2, pt3, pt4, tri, facets = [];
     var stlString = '';
+    var row = 0,
+        column = 0;
     for (xpt = xMin; xpt < xMax; xpt += step) {
         for (ypt = yMax; ypt > yMin; ypt -= step) {
             pt1 = [xpt, ypt];
@@ -407,22 +409,25 @@ function createGroundGrid(face, groundMaterial, xMin, xMax, yMin, yMax, step) {
             facets.push(tri[0]);
             facets.push(tri[1]);
             var stlObj = {
-                description: 'Ground' + ':' + face + ':' + groundMaterial + ':' + xpt + ':' + ypt + ':0',
+                description: fileName + ':' + groundMaterial + ':ground:' + ':' + segment + ':' + row + ':' + column,
                 facets: tri[0]
             };
             stlString += stl.fromObject(stlObj) + "\n";
             var stlObj = {
-                description: 'Ground' + ':' + face + ':' + groundMaterial + ':' + xpt + ':' + ypt + ':1',
+                description: fileName + ':' + groundMaterial + ':ground:' + ':' + segment + ':' + row + ':' + column,
                 facets: tri[1]
             };
             stlString += stl.fromObject(stlObj) + "\n";
+            column++;
         }
+        column = 0;
+        row++;
     }
     return stlString;
 }
 
 
-function createGround(innerBounds, maxHeight, gridSize) {
+function createGround(fileName, innerBounds, maxHeight, gridSize) {
     var boundDistances = [],
         gridSizes = [],
         smallGridBound = [],
@@ -448,15 +453,218 @@ function createGround(innerBounds, maxHeight, gridSize) {
     var yPrime2 = gridSize * Math.ceil((maxHeight * 5) / gridSize);
     console.log(yPrime2);
     //Left
-    stlString += createGroundGrid('left', 'grass', innerBounds[0][0] - xPrime, innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + yPrime1, gridSize);
+    stlString += createGroundGrid(fileName, 'left', 'grass', innerBounds[0][0] - xPrime, innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + yPrime1, gridSize);
     //Inner Grid
-    stlString += createGroundGrid('innerGrid', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], innerGridSize);
+    stlString += createGroundGrid(fileName, 'inner', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], innerGridSize);
     //Windward Top
-    stlString += createGroundGrid('top', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + xPrime, gridSize);
+    stlString += createGroundGrid(fileName, 'top', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + xPrime, gridSize);
     //Right
-    stlString += createGroundGrid('right', 'grass', innerBounds[2][0], innerBounds[2][0] + xPrime, innerBounds[2][1], innerBounds[1][1] + xPrime, gridSize);
+    stlString += createGroundGrid(fileName, 'right', 'grass', innerBounds[2][0], innerBounds[2][0] + xPrime, innerBounds[2][1], innerBounds[1][1] + xPrime, gridSize);
     //LeeWardBottom
-    stlString += createGroundGrid('bottom', 'grass', innerBounds[3][0] - xPrime, innerBounds[2][0] + xPrime, innerBounds[3][1] - yPrime2, innerBounds[3][1], gridSize);
+    stlString += createGroundGrid(fileName, 'bottom', 'grass', innerBounds[3][0] - xPrime, innerBounds[2][0] + xPrime, innerBounds[3][1] - yPrime2, innerBounds[3][1], gridSize);
+    return stlString;
+}
+
+function createRectangularGrid(pt0, pt1, pt3, gridSize) {
+    var l0, gridLength0, gridSize0, deltaX0, deltaY0, iterator0, xIt0, yIt0, theta0, l3, gridLength3, gridSize3, deltaX3, deltaY3, iterator3, xIt3, yIt3, theta3, allGrids = [];
+    //Side1
+    l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
+    gridLength0 = ((l0 % gridSize) / parseInt(l0 / gridSize)) + gridSize;
+    gridSize0 = gridSize;
+    //Number of Grid Checks, min 2
+    if ((gridSize * 2) > l0) {
+        gridLength0 = l0 / 2;
+        gridSize0 = gridLength0;
+    };
+    deltaX0 = pt1[0] - pt0[0];
+    deltaY0 = pt1[1] - pt0[1];
+    iterator0 = parseInt(l0 / gridSize0);
+    xIt0 = deltaX0 / iterator0;
+    yIt0 = deltaY0 / iterator0;
+
+    //Side 4
+    l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1]);
+    gridLength3 = ((l3 % gridSize) / parseInt(l3 / gridSize)) + gridSize;
+    gridSize3 = gridSize;
+    //Number of Grid Checks, min 2
+    if ((gridSize * 2) > l3) {
+        gridLength3 = l3 / 2;
+        gridSize3 = gridLength3;
+    };
+    deltaX3 = pt0[0] - pt3[0];
+    deltaY3 = pt0[1] - pt3[1];
+    iterator3 = parseInt(l3 / gridSize3);
+    xIt3 = deltaX3 / iterator3;
+    yIt3 = deltaY3 / iterator3;
+
+    //Rotations
+    theta0 = findRotation(pt0, pt1)
+    theta3 = findRotation(pt0, pt3)
+
+    //Loop3
+    for (var i = 0; i < iterator3; i++) {
+        var point0 = [pt0[0] + (gridLength3 * j * Math.cos(theta3)), pt0[1] + (gridLength3 * j * Math.sin(theta3))];
+        var point3 = [pt0[0] + (gridLength3 * (j + 1) * Math.cos(theta3)), pt0[1] + (gridLength3 * (j + 1) * Math.sin(theta3))];
+        //Loop0
+        for (var j = 0; j < iterator0; j++) {
+            point0_1 = [point0[0] + (gridLength0 * i * Math.cos(theta0)), point0[1] + (gridLength0 * i * Math.sin(theta0))];
+            point1 = [point0[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point0[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
+        }
+    }
+
+}
+
+function createWallGrid(point1, point2, gridSize) {
+    var sideLength, gridLength, deltaX, deltaY, xIt, yIt, iterator, points = [];
+    sideLength = distanceFormula(point1[0], point1[1], point2[0], point2[1]);
+    gridLength = ((sideLength % gridSize) / parseInt(sideLength / gridSize)) + gridSize;
+
+    //Number of Grid Checks, min 2
+    if ((gridSize * 2) > sideLength) {
+        gridLength = sideLength / 2;
+        gridSize = gridLength;
+    };
+    //Deltas and Iterators
+    deltaX = point2[0] - point1[0];
+    deltaY = point2[1] - point1[1];
+    iterator = parseInt(sideLength / gridSize);
+    xIt = deltaX / iterator;
+    yIt = deltaY / iterator;
+
+    //Loop and create grid
+    for (i = 0; i <= iterator; i++) {
+        points[i] = [point1[0] + (xIt * i), point1[1] + (yIt * i)];
+    };
+    return points
+}
+
+function createWallGeometry(name, coords, gridSize, floors, floorHeight, height, wwr, wallMaterial, windowMaterial) {
+    var winH, wallH, z0, z1, z2, heights,
+        points = [],
+        facets = [],
+        stlString = '';
+    winH = floorHeight * wwr;
+    wallH = (floorHeight - winH) / 2;
+
+    //Loop Floors
+    for (var floor = 0; floor < floors; floor++) {
+        //Define z Heights
+        z0 = floorHeight * floor;
+        z1 = z0 + wallH;
+        z2 = z1 + winH;
+        z3 = z2 + wallH;
+        heights = [z0, z1, z2, z3];
+        //Loop Different Sections of Floor (Wall --> Window --> Wall)
+        for (var z = 1; z < heights.length; z++) {
+            //Floor Surface Count
+            var count = 0;
+            //Material Set
+            var material = 'brick';
+            if (heights[z] == z2) material = 'glass';
+            //Loop through coords
+            for (var c = 1; c < coords.length; c++) {
+                var points = createWallGrid(coords[c - 1], coords[c], gridSize);
+                for (var pt = 1; pt < points.length; pt++) {
+                    createVertPlane(points[pt - 1], points[pt], heights[z - 1], heights[z]).forEach(function(facet) {
+                        //Description BuildingName:FacetMaterial:Floor#:ZNumber:FloorPatchCount
+                        var stlObj = {
+                            description: name + ':' + material + ':' + floor + ':' + (z - 1) + ':' + Math.floor(count / 2),
+                            facets: facet
+                        };
+                        stlString += stl.fromObject(stlObj) + "\n";
+                        count++;
+                    });
+
+                };
+            };
+            var points = createWallGrid(coords[coords.length - 1], coords[0], gridSize);
+            for (var pt = 1; pt < points.length; pt++) {
+                createVertPlane(points[pt - 1], points[pt], heights[z - 1], heights[z]).forEach(function(facet) {
+                    var stlObj = {
+                        description: name + ':' + material + ':' + floor + ':' + (z - 1) + ':' + Math.floor(count / 2),
+                        facets: facet
+                    };
+                    stlString += stl.fromObject(stlObj) + "\n";
+                    count++;
+                });
+            };
+        };
+    }
+    return stlString;
+}
+
+function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofSegmentNum, roofMaterial) {
+    var l0, l3, gridLength0, deltaX0, deltaY0, xIt0, yIt0, iterator0, deltaX3, deltaY3, xIt3, yIt3, iterator3, gridLength3, theta0, theta3, triFloor, triRoof, facets = [];
+    var stlString = '';
+    //Lengths of Square
+    l0 = distanceFormula(pt0[0], pt0[1], pt1[0], pt1[1]);
+    l3 = distanceFormula(pt0[0], pt0[1], pt3[0], pt3[1]);
+    //GridLength & Iterators for Side 0
+    gridLength0 = ((l0 % gridSize) / (parseInt(l0 / gridSize))) + gridSize;
+    if ((gridSize * 2) > l0) {
+        gridLength0 = l0 / 2;
+        gridSize = gridLength0;
+    }
+    deltaX0 = pt1[0] - pt0[0];
+    deltaY0 = pt1[1] - pt0[1];
+    iterator0 = parseInt(l0 / gridSize);
+    xIt0 = deltaX0 / iterator0;
+    yIt0 = deltaY0 / iterator0;
+
+    //Infinity Check
+    if (!isFinite(xIt0)) xIt0 = 0;
+    if (!isFinite(yIt0)) yIt0 = 0;
+    if (!isFinite(gridLength0)) gridLength0 = l0;
+    //0 Check
+    if (xIt0 == 0 && yIt0 == 0) {
+        xIt0 = deltaX0;
+        yIt0 = deltaY0;
+        iterator0 = 1;
+    };
+    //GridLength & Iterators for Side 3
+    gridLength3 = ((l3 % gridSize) / (parseInt(l3 / gridSize))) + gridSize;
+    if ((gridSize * 2) > l3) {
+        gridLength3 = l3 / 2;
+        gridSize = gridLength3;
+    }
+    deltaX3 = pt0[0] - pt3[0];
+    deltaY3 = pt0[1] - pt3[1];
+    iterator3 = parseInt(l3 / gridSize);
+    xIt3 = deltaX3 / iterator3;
+    yIt3 = deltaY3 / iterator3;
+
+
+    //Rotation
+    theta0 = findRotation(pt0, pt1);
+    theta3 = findRotation(pt0, pt3);
+    //Loop Along side 3
+    for (var j = 0; j < iterator3; j++) {
+        var point0, point3;
+        point0 = [pt0[0] + (gridLength3 * j * Math.cos(theta3)), pt0[1] + (gridLength3 * j * Math.sin(theta3))];
+        point3 = [pt0[0] + (gridLength3 * (j + 1) * Math.cos(theta3)), pt0[1] + (gridLength3 * (j + 1) * Math.sin(theta3))];
+        //Loop Along side 0
+        for (var i = 0; i < iterator0; i++) {
+            var point0_1, point3_1, point1, point2;
+            point0_1 = [point0[0] + (gridLength0 * i * Math.cos(theta0)), point0[1] + (gridLength0 * i * Math.sin(theta0))];
+            point1 = [point0[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point0[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point2 = [point3[0] + (gridLength0 * (i + 1) * Math.cos(theta0)), point3[1] + (gridLength0 * (i + 1) * Math.sin(theta0))];
+            point3_1 = [point3[0] + (gridLength0 * i * Math.cos(theta0)), point3[1] + (gridLength0 * i * Math.sin(theta0))];
+            //Roof
+            triRoof = createHorPlaneUp(point0_1, point1, point2, point3_1, height);
+            var stlObj = {
+                description: buildingName + ':' + roofMaterial + ':' + 'roof' + ':' + roofSegmentNum + ':' + i + ':' + j,
+                facets: triRoof[0]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
+            var stlObj = {
+                description: buildingName + ':' + roofMaterial + ':' + 'roof' + ':' + roofSegmentNum + ':' + i + ':' + j,
+                facets: triRoof[1]
+            };
+            stlString += stl.fromObject(stlObj) + "\n";
+        }
+    }
     return stlString;
 }
 
@@ -513,18 +721,18 @@ function buildSTL(buildings, windwardDirection) {
 
     //Building Object for OSM JSON
     var osmObject = {
-            buildings: [],
-            ground: {},
-            fileName: String,
-            runPeriod: {
-                month: Number,
-                day: Number
-            },
-            construction: String,
-            orientation: Number
+        buildings: [],
+        ground: {},
+        fileName: String,
+        runPeriod: {
+            month: Number,
+            day: Number
+        },
+        construction: String,
+        orientation: Number
 
-        }
-        //Set Grid Size
+    };
+    //Set Grid Size
     var gridSize = 10;
     //Find Center of Latitude and Longitude Points
     for (var i = 0; i < buildings.length; i++) {
@@ -590,13 +798,10 @@ function buildSTL(buildings, windwardDirection) {
 
                 //Create Grids for Radiance STL Creation
                 //Walls
-                for (var j = 1; j < rotatedRect.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedRect[j - 1], rotatedRect[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedRect.length - 1, rotatedRect[rotatedRect.length - 1], rotatedRect[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
+                    //Roof and Floor
                 bldg.roofCoords = [rotatedRect[0], rotatedRect[1], rotatedRect[3]];
-                //Roof and Floor
-                allBldgSTL += createRoofFloor(bldg.name, rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedRect[0], rotatedRect[1], rotatedRect[3], gridSize, bldg.height, 0, "asphalt")
                 break;
             case 'l':
                 //Average 1 & 3+5
@@ -624,10 +829,7 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedL;
 
                 //Add Walls
-                for (var j = 1; j < rotatedL.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedL[j - 1], rotatedL[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedL.length - 1, rotatedL[rotatedL.length - 1], rotatedL[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof and Floor
                 var dx = (rotatedL[5][0] - rotatedL[0][0]) / l5,
@@ -637,8 +839,8 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedL[0], rotatedL[1], pt7],
                     [pt7, rotatedL[3], rotatedL[5]]
                 ];
-                allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, 1, "asphalt")
 
                 break;
             case "t":
@@ -668,17 +870,14 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.cardinalCoords = orthT;
                 bldg.windwardCoords = rotatedT;
                 //Add Walls
-                for (var j = 1; j < rotatedT.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedT[j - 1], rotatedT[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                };
-                allBldgSTL += createWallMaterial(bldg.name, rotatedT.length - 1, rotatedT[rotatedT.length - 1], rotatedT[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass");
-                //Roof
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
+                    //Roof
                 bldg.roofCoords = [
                     [rotatedT[0], rotatedT[1], rotatedT[7]],
                     [rotatedT[6], rotatedT[3], rotatedT[5]]
                 ];
-                allBldgSTL += createRoofFloor(bldg.name, rotatedT[0], rotatedT[1], rotatedT[7], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedT[6], rotatedT[3], rotatedT[5], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedT[0], rotatedT[1], rotatedT[7], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedT[6], rotatedT[3], rotatedT[5], gridSize, bldg.height, 1, "asphalt")
 
                 break;
             case "u":
@@ -710,11 +909,9 @@ function buildSTL(buildings, windwardDirection) {
                 };
                 bldg.cardinalCoords = orthU;
                 bldg.windwardCoords = rotatedU;
-                //Add Walls
-                for (var j = 1; j < rotatedU.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedU[j - 1], rotatedU[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedU.length - 1, rotatedU[rotatedU.length - 1], rotatedU[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
+
+                //Walls
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
 
                 //Roof & Floor
                 pt6_3 = [pt6[0] + (l4) * -Math.cos(theta), pt6[1] + (l4) * -Math.sin(theta)];
@@ -726,9 +923,9 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedU[2], rotatedU[3], pt6_2],
                     [rotatedU[4], rotatedU[5], pt6_3]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], pt6_2, gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[4], rotatedU[5], pt6_3, gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], pt6_2, gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedU[4], rotatedU[5], pt6_3, gridSize, bldg.height, 2, "asphalt")
                 break;
             case "h":
                 console.log(lengths)
@@ -769,20 +966,16 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.cardinalCoords = orthH;
                 bldg.windwardCoords = rotatedH;
                 //Add Walls
-                for (var j = 1; j < rotatedH.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedH[j - 1], rotatedH[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedH.length - 1, rotatedH[rotatedH.length - 1], rotatedH[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-
-                //Roof & Floor
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
+                    //Roof & Floor
                 bldg.roofCoords = [
                     [rotatedH[0], rotatedH[1], rotatedH[11]],
                     [rotatedH[2], rotatedH[3], rotatedH[9]],
                     [rotatedH[4], rotatedH[5], rotatedH[7]]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, 2, "asphalt")
 
                 break;
             case "cross":
@@ -826,20 +1019,16 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.cardinalCoords = orthCross;
                 bldg.windwardCoords = rotatedCross;
                 //Add Walls
-                for (var j = 1; j < rotatedCross.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedCross[j - 1], rotatedCross[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedCross.length - 1, rotatedCross[rotatedCross.length - 1], rotatedCross[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-
-                //Roof & Walls
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
+                    //Roof 
                 bldg.roofCoords = [
                     [rotatedH[10], rotatedH[11], rotatedH[9]],
                     [rotatedH[0], rotatedH[1], rotatedH[7]],
                     [rotatedH[2], rotatedH[3], rotatedH[5]]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[10], rotatedH[11], rotatedH[9], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[7], gridSize, bldg.height, "asphalt", "concrete")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[5], gridSize, bldg.height, "asphalt", "concrete")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[10], rotatedH[11], rotatedH[9], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[7], gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[5], gridSize, bldg.height, 2, "asphalt")
 
                 break;
 
@@ -861,11 +1050,7 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.cardinalCoords = points;
                 bldg.windwardCoords = rotatedTrap;
                 //Add Walls
-                for (var j = 1; j < rotatedTrap.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedTrap[j - 1], rotatedTrap[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedTrap.length - 1, rotatedTrap[3], rotatedTrap[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
                 break;
 
             case "triangle":
@@ -876,10 +1061,7 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.cardinalCoords = points;
                 bldg.windwardCoords = rotatedTri;
                 //Add Walls
-                for (var j = 1; j < rotatedTri.length; j++) {
-                    allBldgSTL += createWallMaterial(bldg.name, j - 1, rotatedTri[j - 1], rotatedTri[j], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
-                }
-                allBldgSTL += createWallMaterial(bldg.name, rotatedTri.length - 1, rotatedTri[2], rotatedTri[0], gridSize, bldg.height, bldg.flrToFlrHeight, bldg.numFloors, bldg.windowWallRatio, "brick", "glass")
+                allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
 
                 break;
         }
@@ -924,7 +1106,7 @@ function buildSTL(buildings, windwardDirection) {
         [minX, minY]
     ];
     //Call CreateGound and create ground STL
-    var groundSTL = createGround(innerBounds, maxHeight, groundGridSize);
+    var groundSTL = createGround(fileName, innerBounds, maxHeight, groundGridSize);
 
     //Ground OSM Bounds Calculation
     //Generate Bounds
@@ -965,13 +1147,7 @@ function buildSTL(buildings, windwardDirection) {
     osmObject.runPeriod.day = 31;
     osmObject.fileName = fileName;
 
-    //Run EnergyPlus on 
-    /*execEnergyPlus('./' + fileName + '.idf', 'MD_COLLEGE-PARK_722244_14.epw', function(err, stdout, stderr) {
-            if (err) throw err;
-            console.log(stdout);
-    });*/
-
-
+    console.log(fileName);
     //Write Files
     //Write JSON for OSM use
     fs.writeFileSync(fileName + ".json", JSON.stringify(osmObject, null, 4));

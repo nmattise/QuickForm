@@ -101,8 +101,40 @@ var building = {
             names: []
         }
     },
-    ground: {}
+    ground: {
+        innerGround: {
+            surfaces: ground.innerGround.sort(function(a, b) {
+                return a - b
+            }),
+            names: []
+        },
+        leftGround: {
+            surfaces: ground.leftGround.sort(function(a, b) {
+                return a - b
+            }),
+            names: []
+        },
+        topGround: {
+            surfaces: ground.topGround.sort(function(a, b) {
+                return a - b
+            }),
+            names: []
+        },
+        rightGround: {
+            surfaces: ground.rightGround.sort(function(a, b) {
+                return a - b
+            }),
+            names: []
+        },
+        bottomGround: {
+            surfaces: ground.bottomGround.sort(function(a, b) {
+                return a - b
+            }),
+            names: []
+        }
+    }
 };
+//Roof Names
 var column = -1,
     row = 0;
 for (var i = 0; i < building.roof.roofSegment1.surfaces.length; i++) {
@@ -114,7 +146,64 @@ for (var i = 0; i < building.roof.roofSegment1.surfaces.length; i++) {
     row = parseInt(i / 5);
     building.roof.roofSegment1.names[i] = "Rectangle:asphalt:roof:0:" + row + ":" + column
 }
+//Ground Names
+var column = -1,
+    row = 0;
+for (var i = 0; i < building.ground.innerGround.surfaces.length; i++) {
+    if (parseInt(i / 8) != row) {
+        column = 0;
+    } else {
+        column++;
+    }
+    row = parseInt(i / 8);
+    building.ground.innerGround.names[i] = "Rectangle_:grass:ground:inner:" + row + ":" + column
+}
+var column = -1,
+    row = 0;
+for (var i = 0; i < building.ground.leftGround.surfaces.length; i++) {
+    if (parseInt(i / 5) != row) {
+        column = 0;
+    } else {
+        column++;
+    }
+    row = parseInt(i / 5);
+    building.ground.leftGround.names[i] = "Rectangle_:grass:ground:left:" + row + ":" + column
+}
+var column = -1,
+    row = 0;
+for (var i = 0; i < building.ground.topGround.surfaces.length; i++) {
+    if (parseInt(i / 2) != row) {
+        column = 0;
+    } else {
+        column++;
+    }
+    row = parseInt(i / 2);
+    building.ground.topGround.names[i] = "Rectangle_:grass:ground:top:" + row + ":" + column
+}
+var column = -1,
+    row = 0;
+for (var i = 0; i < building.ground.rightGround.surfaces.length; i++) {
+    if (parseInt(i / 5) != row) {
+        column = 0;
+    } else {
+        column++;
+    }
+    row = parseInt(i / 5);
+    building.ground.rightGround.names[i] = "Rectangle_:grass:ground:right:" + row + ":" + column
+}
+var column = -1,
+    row = 0;
+for (var i = 0; i < building.ground.bottomGround.surfaces.length; i++) {
+    if (parseInt(i / 2) != row) {
+        column = 0;
+    } else {
+        column++;
+    }
+    row = parseInt(i / 2);
+    building.ground.bottomGround.names[i] = "Rectangle_:grass:ground:bottom:" + row + ":" + column
+}
 
+//wall Names
 for (var i = 0; i < building.walls.wallsFloor0Z0.surfaces.length; i++) {
     building.walls.wallsFloor0Z0.names[i] = "Rectangle:brick:0:0:" + i
 }
@@ -150,18 +239,30 @@ for (var i = 0; i < building.walls.wallsFloor2Z2.surfaces.length; i++) {
 
 //var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/Output/Rectangle_.csv");
 var csv = require("fast-csv");
-var stream = fs.createReadStream("testRect.csv");
-var wstream = fs.createWriteStream('streamOut.json');
+//var stream = fs.createReadStream("testRect.csv");
+var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/QuickForm/Output/Rectangle_.csv");
+var csvStream = csv.createWriteStream(), //{headers: true}
+    wstream = fs.createWriteStream('streamOut.csv');
 var arr = [];
+csvStream.pipe(wstream);
 csv
     .fromStream(stream) //, {headers : true}
+    .transform(function(data) {
+        var dataArray = [];
+        data.forEach(function(d) {
+            if (!isNaN(d)) d = Number(d)
+            dataArray.push(d)
+        });
+        return dataArray
+    })
     .on("data", function(data) {
         //console.log(data)
+        //if (arr.length == 0) arr.push(data);
         arr.push(data)
     })
     .on("end", function() {
         console.log("done");
-        console.log(arr)
+        //console.log(arr)
         for (var i = 0; i <= arr[0].length - 1; i++) {
             if (arr[0][i].indexOf('SUB') >= 0) {
                 arr[0][i] = arr[0][i - 1];
@@ -173,28 +274,64 @@ csv
         //Remove Undefined Columns
         for (var j = 0; j < arr.length; j++) {
             arr[j].clean(undefined);
-        }
-        console.log(arr)
-    });
-
-/*csv.parse(file, function(err, data) {
-
-    //Delete Surfaces containing subsurfaces and rename subsurfac
-    for (var i = 0; i <= data[0].length - 1; i++) {
-        if (data[0][i].indexOf('SUB') >= 0) {
-            data[0][i] = data[0][i - 1];
-            data.forEach(function(row) {
-                delete row[i - 1];
-            });
         };
-    };
-    //Remove Undefined Columns
-    for (var j = 0; j < data.length; j++) {
-        data[j].clean(undefined);
-    }
-    csv.stringify(data, function(err, output) {
-        fs.writeFileSync('./parsed.csv', output);
+
+        //Reduce column Names to Surface #
+        for (var i = 0; i <= arr[0].length - 1; i++) {
+            var sNum = arr[0][i].split(":")[0].split(" ")[1]
+            arr[0][i] = Number(sNum)
+        }
+
+        //Rename Walls
+
+        for (var wall in building.walls) {
+            console.log(wall);
+            for (var i = 0; i < building.walls[wall].surfaces.length; i++) {
+                if (arr[0].indexOf(building.walls[wall].surfaces[i]) >= 0) {
+                    arr[0][arr[0].indexOf(building.walls[wall].surfaces[i])] = building.walls[wall].names[i]
+                }
+            }
+
+        }
+
+        //Rename Roof
+        for (var segment in building.roof) {
+            console.log(segment);
+            for (var i = 0; i < building.roof[segment].surfaces.length; i++) {
+                if (arr[0].indexOf(building.roof[segment].surfaces[i]) >= 0) {
+                    arr[0][arr[0].indexOf(building.roof[segment].surfaces[i])] = building.roof[segment].names[i]
+                }
+            }
+
+        }
+        //Rename Ground
+        for (var segment in building.ground) {
+            console.log(segment);
+            for (var i = 0; i < building.ground[segment].surfaces.length; i++) {
+                if (arr[0].indexOf(building.ground[segment].surfaces[i]) >= 0) {
+                    arr[0][arr[0].indexOf(building.ground[segment].surfaces[i])] = building.ground[segment].names[i]
+                }
+            }
+
+        }
+
+        //Remove all non renamed columns
+        for (var i = 1; i <= arr[0].length - 1; i++) {
+            if (isNaN(arr[0][i]) == false) {
+                arr.forEach(function(row) {
+                    delete row[i];
+                });
+            };
+        };
+        for (var j = 0; j < arr.length; j++) {
+            arr[j].clean(undefined);
+        };
+
+
+        //console.log(arr)
+        csv.write(arr).pipe(wstream);
+        //fs.writeFileSync('streamOut.json', JSON.stringify(arr, null, 4))
     });
-})
-*/
+
+
 //Shift Subsurfaces to Surfaces
