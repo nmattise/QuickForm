@@ -431,7 +431,7 @@ function createGroundGrid(fileName, segment, groundMaterial, xMin, xMax, yMin, y
 }
 
 
-function createGround(fileName, innerBounds, maxHeight, gridSize) {
+function createGround(fileName, innerBounds, topBounds, leftBounds, rightBounds, bottomBounds, maxHeight, innerGridSize, gridSize) {
     var boundDistances = [],
         gridSizes = [],
         smallGridBound = [],
@@ -445,7 +445,6 @@ function createGround(fileName, innerBounds, maxHeight, gridSize) {
         pt4,
         tri,
         facets = [];
-    var innerGridSize = 15;
     console.log(innerBounds);
     var stlString = '';
     //Inner Grid Dimensions
@@ -455,17 +454,19 @@ function createGround(fileName, innerBounds, maxHeight, gridSize) {
     console.log(xPrime);
     var yPrime1 = gridSize * Math.ceil((maxHeight * 5) / gridSize);
     var yPrime2 = gridSize * Math.ceil((maxHeight * 5) / gridSize);
-    console.log(yPrime2);
-    //Left
-    stlString += createGroundGrid(fileName, 'left', 'grass', innerBounds[0][0] - xPrime, innerBounds[0][0], innerBounds[3][1], innerBounds[0][1] + yPrime1, gridSize);
+    console.log("Max Height: " + maxHeight);
+    console.log("gris size: " + gridSize);
+    console.log("yprime2: " + yPrime2);
     //Inner Grid
     stlString += createGroundGrid(fileName, 'inner', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[3][1], innerBounds[0][1], innerGridSize);
     //Windward Top
-    stlString += createGroundGrid(fileName, 'top', 'grass', innerBounds[0][0], innerBounds[1][0], innerBounds[0][1], innerBounds[0][1] + xPrime, gridSize);
+    stlString += createGroundGrid(fileName, 'top', 'grass', topBounds[0][0], topBounds[1][0], topBounds[3][1], topBounds[0][1], gridSize);
+    //Left
+    stlString += createGroundGrid(fileName, 'left', 'grass', leftBounds[0][0], leftBounds[1][0], leftBounds[3][1], leftBounds[0][1], gridSize);
     //Right
-    stlString += createGroundGrid(fileName, 'right', 'grass', innerBounds[2][0], innerBounds[2][0] + xPrime, innerBounds[2][1], innerBounds[1][1] + xPrime, gridSize);
+    stlString += createGroundGrid(fileName, 'right', 'grass', rightBounds[0][0], rightBounds[1][0], rightBounds[3][1], rightBounds[0][1], gridSize);
     //LeeWardBottom
-    stlString += createGroundGrid(fileName, 'bottom', 'grass', innerBounds[3][0] - xPrime, innerBounds[2][0] + xPrime, innerBounds[3][1] - yPrime2, innerBounds[3][1], gridSize);
+    stlString += createGroundGrid(fileName, 'bottom', 'grass', bottomBounds[0][0], bottomBounds[1][0], bottomBounds[3][1], bottomBounds[0][1], gridSize);
     return stlString;
 }
 
@@ -643,7 +644,9 @@ function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofS
     //Rotation
     theta0 = findRotation(pt0, pt1);
     theta3 = findRotation(pt0, pt3);
-    //Loop Along side 3
+    console.log("Roof Work  " + iterator3)
+    console.log("Roof Work  " + iterator0)
+        //Loop Along side 3
     for (var j = 0; j < iterator3; j++) {
         var point0, point3;
         point0 = [pt0[0] + (gridLength3 * j * Math.cos(theta3)), pt0[1] + (gridLength3 * j * Math.sin(theta3))];
@@ -669,6 +672,7 @@ function createRoofGeometry(buildingName, pt0, pt1, pt3, gridSize, height, roofS
             stlString += stl.fromObject(stlObj) + "\n";
         }
     }
+    return stlString;
 }
 
 //building OSM object
@@ -1098,6 +1102,7 @@ function buildSTL(buildings, windwardDirection) {
     maxX = Math.max.apply(null, maxXPts);
     minY = Math.min.apply(null, minYPts);
     maxY = Math.max.apply(null, maxYPts);
+    var innerGridSize = 15;
     var groundGridSize = 30;
 
     //Round these min and max points to next 5 
@@ -1112,13 +1117,15 @@ function buildSTL(buildings, windwardDirection) {
         [maxX, minY],
         [minX, minY]
     ];
-    //Call CreateGound and create ground STL
-    var groundSTL = createGround(fileName, innerBounds, maxHeight, groundGridSize);
-
-    //Ground OSM Bounds Calculation
     //Generate Bounds
-    var xPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
-    var yPrime = gridSize * Math.ceil((maxHeight * 5) / gridSize);
+    var xPrime = groundGridSize * Math.ceil((maxHeight * 5) / groundGridSize);
+    var yPrime = groundGridSize * Math.ceil((maxHeight * 5) / groundGridSize);
+    console.log("Prime:  " + xPrime);
+    console.log("Prime:  " + yPrime);
+    console.log("height:  " + maxHeight);
+    console.log("grid:  " + groundGridSize);
+    
+
     var leftBounds = [
         [innerBounds[0][0] - xPrime, innerBounds[0][1] + yPrime],
         [innerBounds[0][0], innerBounds[0][1] + yPrime],
@@ -1143,10 +1150,12 @@ function buildSTL(buildings, windwardDirection) {
         [innerBounds[2][0] + xPrime, innerBounds[2][1] - yPrime],
         [innerBounds[3][0] - xPrime, innerBounds[3][1] - yPrime]
     ];
+    //Call CreateGound and create ground STL
+    var groundSTL = createGround(fileName, innerBounds, topBounds, leftBounds, rightBounds, bottomBounds, maxHeight, innerGridSize, groundGridSize);
+
 
     //Add Ground to OSM Object & Complete
-    var innerGridSize = 15;
-    osmObject.ground = new Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, 30, innerGridSize, maxHeight);
+    osmObject.ground = new Ground(innerBounds, leftBounds, rightBounds, topBounds, bottomBounds, groundGridSize, innerGridSize, maxHeight);
 
     osmObject.construction = "./ASHRAE_90.1-2004_Construction.osm";
     osmObject.orientation = 0;
