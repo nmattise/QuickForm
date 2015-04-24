@@ -28,12 +28,11 @@ var roof = {
 };
 
 var ground = {
-    innerGround: [576, 672, 516, 618, 486, 600, 708, 702, 768, 642, 612, 480, 774, 696, 714, 594, 756, 450, 690, 510, 654, 624, 792, 528, 606, 468, 750, 636, 660, 462, 498, 666, 630, 780, 726, 762, 456, 558, 684, 720, 822, 474, 738, 588, 810, 786, 582, 678, 732, 522, 744, 798, 540, 534, 804, 492, 564, 570, 552, 504, 828, 546, 816, 648],
-    topGround:[858, 876, 852, 870, 834, 864, 846, 840],
-    topGround: [900, 912, 930, 936, 888, 918, 882, 894, 924, 906],
-    leftGround: [954, 960, 942, 996, 984, 966, 990, 972, 948, 978],
-    rightGround: [954, 996, 990, 942, 984, 972, 960, 948, 978, 936, 966],
-    bottomGround: [1032, 1050, 1044, 1068, 1056, 1002, 1074, 1014, 1020, 1038, 1008, 1026, 1062, 1080]
+    innerGround: [450, 456, 462, 468, 474, 480, 486, 492, 498, 504, 510, 516, 522, 528, 534, 540, 546, 552, 558, 564, 570, 576, 582, 588, 594, 600, 606, 612, 618, 624, 630, 636, 642, 648, 654, 660, 666, 672, 678, 684, 690, 696, 702, 708, 714, 720, 726, 732, 738, 744, 750, 756, 762, 768, 774, 780, 786, 792, 798, 804, 810, 816, 822, 828],
+    topGround: [834, 840, 846, 852, 858, 864, 870, 876],
+    leftGround: [882, 888, 894, 900, 906, 912, 918, 924, 930, 936, 942, 948],
+    rightGround: [954, 960, 966, 972, 978, 984, 990, 996, 1002, 1008, 1014, 1020],
+    bottomGround: [1026, 1032, 1038, 1044, 1050, 1056, 1062, 1068, 1074, 1080, 1086, 1092, 1098, 1104, 1110, 1116]
 };
 
 var building = {
@@ -240,12 +239,10 @@ for (var i = 0; i < building.walls.wallsFloor2Z2.surfaces.length; i++) {
 
 //var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/Output/Rectangle_.csv");
 var csv = require("fast-csv");
-//var stream = fs.createReadStream("testRect.csv");
 var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/QuickForm/Output/Rectangle_.csv");
-var csvStream = csv.createWriteStream(), //{headers: true}
-    wstream = fs.createWriteStream('streamOut.csv');
+var groundStream = fs.createWriteStream('groundOut.csv'),
+    buildingStream = fs.createWriteStream('buildingOut.csv');
 var arr = [];
-csvStream.pipe(wstream);
 csv
     .fromStream(stream) //, {headers : true}
     .transform(function(data) {
@@ -264,6 +261,8 @@ csv
     .on("end", function() {
         console.log("done");
         //console.log(arr)
+
+        //Remove Covering surfaces and shift sub surfaces to their spot
         for (var i = 0; i <= arr[0].length - 1; i++) {
             if (arr[0][i].indexOf('SUB') >= 0) {
                 arr[0][i] = arr[0][i - 1];
@@ -281,15 +280,65 @@ csv
         for (var i = 0; i <= arr[0].length - 1; i++) {
             var sNum = arr[0][i].split(":")[0].split(" ")[1]
             arr[0][i] = Number(sNum)
+        };
+        //Spit into two arrays, then delete data
+        var groundArray = new Array(arr.length);
+        for (var i = 0; i < groundArray.length; i++) {
+            groundArray[i] = new Array(arr[0].length)
+        }
+        for (var i = 0; i < arr[0].length; i++) {
+            if (arr[0][i] >= 450) {
+                for (var j = 0; j < arr.length; j++) {
+                    groundArray[j][arr[0][i]] = arr[j][i]
+                }
+            }
+        }
+
+        //Rename Ground
+        for (var segment in building.ground) {
+            console.log(segment);
+            for (var i = 0; i < building.ground[segment].surfaces.length; i++) {
+                if (groundArray[0].indexOf(building.ground[segment].surfaces[i]) >= 0) {
+                    groundArray[0][groundArray[0].indexOf(building.ground[segment].surfaces[i])] = building.ground[segment].names[i]
+                }
+            }
+
+        };
+
+        //Remove all non renamed columns
+        for (var i = 1; i <= groundArray[0].length - 1; i++) {
+            if (isNaN(groundArray[0][i]) == false) {
+                groundArray.forEach(function(row) {
+                    delete row[i];
+                });
+            };
+        };
+        console.log(groundArray[1][2])
+        for (var j = 0; j < groundArray.length; j++) {
+            groundArray[j].clean(undefined);
+        };
+
+        csv.write(groundArray).pipe(groundStream);
+
+
+        var buildingArray = new Array(arr.length);
+        for (var i = 0; i < buildingArray.length; i++) {
+            buildingArray[i] = new Array(arr[0].length)
+        }
+        for (var i = 0; i < arr[0].length; i++) {
+            if (arr[0][i] < 450) {
+                for (var j = 0; j < arr.length; j++) {
+                    buildingArray[j][arr[0][i]] = arr[j][i]
+                }
+            }
         }
 
         //Rename Walls
-
         for (var wall in building.walls) {
             console.log(wall);
             for (var i = 0; i < building.walls[wall].surfaces.length; i++) {
-                if (arr[0].indexOf(building.walls[wall].surfaces[i]) >= 0) {
-                    arr[0][arr[0].indexOf(building.walls[wall].surfaces[i])] = building.walls[wall].names[i]
+                if (buildingArray[0].indexOf(building.walls[wall].surfaces[i]) >= 0) {
+                    buildingArray[0][buildingArray[0].indexOf(building.walls[wall].surfaces[i])] = building.walls[wall].names[i]
                 }
             }
 
@@ -299,40 +348,24 @@ csv
         for (var segment in building.roof) {
             console.log(segment);
             for (var i = 0; i < building.roof[segment].surfaces.length; i++) {
-                if (arr[0].indexOf(building.roof[segment].surfaces[i]) >= 0) {
-                    arr[0][arr[0].indexOf(building.roof[segment].surfaces[i])] = building.roof[segment].names[i]
+                if (buildingArray[0].indexOf(building.roof[segment].surfaces[i]) >= 0) {
+                    buildingArray[0][buildingArray[0].indexOf(building.roof[segment].surfaces[i])] = building.roof[segment].names[i]
                 }
             }
 
         }
-        //Rename Ground
-        for (var segment in building.ground) {
-            console.log(segment);
-            for (var i = 0; i < building.ground[segment].surfaces.length; i++) {
-                if (arr[0].indexOf(building.ground[segment].surfaces[i]) >= 0) {
-                    arr[0][arr[0].indexOf(building.ground[segment].surfaces[i])] = building.ground[segment].names[i]
-                }
-            }
-
-        }
-
-        //Remove all non renamed columns
-        for (var i = 1; i <= arr[0].length - 1; i++) {
-            if (isNaN(arr[0][i]) == false) {
-                arr.forEach(function(row) {
+         //Remove all non renamed columns
+        for (var i = 1; i <= buildingArray[0].length - 1; i++) {
+            if (isNaN(buildingArray[0][i]) == false) {
+                buildingArray.forEach(function(row) {
                     delete row[i];
                 });
             };
         };
-        for (var j = 0; j < arr.length; j++) {
-            arr[j].clean(undefined);
+        for (var j = 0; j < buildingArray.length; j++) {
+            buildingArray[j].clean(undefined);
         };
 
-
-        //console.log(arr)
-        csv.write(arr).pipe(wstream);
+        csv.write(buildingArray).pipe(buildingStream);
         //fs.writeFileSync('streamOut.json', JSON.stringify(arr, null, 4))
     });
-
-
-//Shift Subsurfaces to Surfaces
