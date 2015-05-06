@@ -358,7 +358,7 @@ var buildings = [{
     "windowWallRatio": 0.25
 }];
 
-buildSTL([buildings[0]], Math.PI / 4)
+buildSTL([buildings[0],buildings[1],buildings[2],buildings[3],buildings[4],buildings[5]], Math.PI / 4)
 
 
 //buildSTL([buildings[0]], Math.PI / 4);

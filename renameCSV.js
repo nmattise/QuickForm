@@ -2,7 +2,7 @@ var fs = require('fs');
 var csv = require('csv');
 
 
-var csvData = fs.readFileSync('./Output/Rectangle.csv', 'utf8');
+var csvData = fs.readFileSync('./Output/Rectangle_.csv', 'utf8');
 
 Array.prototype.clean = function(deleteValue) {
     for (var i = 0; i < this.length; i++) {

@@ -21770,7 +21770,7 @@ RunPeriod,
   Run Period 1,                           !- Name
   1,                                      !- Begin Month
   1,                                      !- Begin Day of Month
-  12,                                     !- End Month
+  1,                                     !- End Month
   31,                                     !- End Day of Month
   Thursday,                               !- Day of Week for Start Day
   No,                                     !- Use Weather File Holidays and Special Days
@@ -21781,7 +21781,7 @@ RunPeriod,
   1;                                      !- Number of Times Runperiod to be Repeated
 
 ProgramControl,
-  1;                                      !- Number of Threads Allowed
+  4;                                      !- Number of Threads Allowed
 
 Sizing:Parameters,
   1.25,                                   !- Heating Sizing Factor

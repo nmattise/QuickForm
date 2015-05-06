@@ -847,11 +847,10 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedL[0], rotatedL[1], pt7],
                     [pt7, rotatedL[3], rotatedL[5]]
                 ];
-                allBldgSTL += createRoofFloor(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, 0, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, 1, "asphalt")
-
-
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedL[0], rotatedL[1], pt7, gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, pt7, rotatedL[3], rotatedL[5], gridSize, bldg.height, 1, "asphalt")
                 break;
+
             case "t":
                 var l0 = (lengths[0] + (lengths[2] + lengths[4] + lengths[6])) / 2,
                     l1 = (lengths[1] + lengths[1]) / 2,
@@ -932,9 +931,9 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedU[2], rotatedU[3], pt6_2],
                     [rotatedU[4], rotatedU[5], pt6_3]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, 0, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[2], rotatedU[3], pt6_2, gridSize, bldg.height, 1, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedU[4], rotatedU[5], pt6_3, gridSize, bldg.height, 2, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedU[0], rotatedU[1], rotatedU[7], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedU[2], rotatedU[3], pt6_2, gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedU[4], rotatedU[5], pt6_3, gridSize, bldg.height, 2, "asphalt")
                 break;
             case "h":
                 console.log(lengths)
@@ -982,9 +981,9 @@ function buildSTL(buildings, windwardDirection) {
                     [rotatedH[2], rotatedH[3], rotatedH[9]],
                     [rotatedH[4], rotatedH[5], rotatedH[7]]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, 0, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, 1, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, 2, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedH[0], rotatedH[1], rotatedH[11], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedH[2], rotatedH[3], rotatedH[9], gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedH[4], rotatedH[5], rotatedH[7], gridSize, bldg.height, 2, "asphalt")
 
                 break;
             case "cross":
@@ -1031,13 +1030,13 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
                     //Roof 
                 bldg.roofCoords = [
-                    [rotatedH[10], rotatedH[11], rotatedH[9]],
-                    [rotatedH[0], rotatedH[1], rotatedH[7]],
-                    [rotatedH[2], rotatedH[3], rotatedH[5]]
+                    [rotatedCross[10], rotatedCross[11], rotatedCross[9]],
+                    [rotatedCross[0], rotatedCross[1], rotatedCross[7]],
+                    [rotatedCross[2], rotatedCross[3], rotatedCross[5]]
                 ]
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[10], rotatedH[11], rotatedH[9], gridSize, bldg.height, 0, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[0], rotatedH[1], rotatedH[7], gridSize, bldg.height, 1, "asphalt")
-                allBldgSTL += createRoofFloor(bldg.name, rotatedH[2], rotatedH[3], rotatedH[5], gridSize, bldg.height, 2, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedCross[10], rotatedCross[11], rotatedCross[9], gridSize, bldg.height, 0, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedCross[0], rotatedCross[1], rotatedCross[7], gridSize, bldg.height, 1, "asphalt")
+                allBldgSTL += createRoofGeometry(bldg.name, rotatedCross[2], rotatedCross[3], rotatedCross[5], gridSize, bldg.height, 2, "asphalt")
 
                 break;
 
@@ -1071,9 +1070,15 @@ function buildSTL(buildings, windwardDirection) {
                 bldg.windwardCoords = rotatedTri;
                 //Add Walls
                 allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
-
-
                 break;
+            case "courtyard":
+            
+                break;
+            case "circle":
+                break;
+            case "custom":
+                break;
+
         }
 
         //OpenStudio Geometries for Building
@@ -1124,7 +1129,7 @@ function buildSTL(buildings, windwardDirection) {
     console.log("Prime:  " + yPrime);
     console.log("height:  " + maxHeight);
     console.log("grid:  " + groundGridSize);
-    
+
 
     var leftBounds = [
         [innerBounds[0][0] - xPrime, innerBounds[0][1] + yPrime],

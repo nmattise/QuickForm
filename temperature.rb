@@ -20,7 +20,7 @@ class OSModel < OpenStudio::Model::Model
     	heights.each do |z|
         #Surfaces Count (excludes subsurfaces) before this height is added
         surface_count = self.getSurfaces.length
-        puts "surface Count: #{surface_count}"
+        #puts "surface Count: #{surface_count}"
     		#Height Adjustment
         if z == z0 || z ==z2
     			height = wallH
@@ -483,7 +483,7 @@ end
 
 
 
-file = File.read("Rectangle_.json")
+file = File.read("Rectangles.json")
 
 
 buildings = JSON.parse(file)
@@ -534,6 +534,7 @@ puts "End Ground Array : #{endGround}"
 
 #Name Primary Surfaces in Model
 #Walls
+=begin
 wallsFloor0Z0 = model.get_surface_numbers(0, 26, "Wall")
 wallsFloor0Z1 = model.get_surface_numbers(26, 52, "Wall")
 wallsFloor0Z2 = model.get_surface_numbers(52, 78, "Wall")
@@ -570,6 +571,7 @@ puts "topGround:#{topGround}"
 puts "leftGround:#{leftGround}"
 puts "rightGround:#{rightGround}"
 puts "bottomGround:#{bottomGround}"
+=end
 
 
 

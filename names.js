@@ -239,7 +239,7 @@ for (var i = 0; i < building.walls.wallsFloor2Z2.surfaces.length; i++) {
 
 //var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/Output/Rectangle_.csv");
 var csv = require("fast-csv");
-var stream = fs.createReadStream("/Users/nicholasmattise/Desktop/QuickForm/Output/Rectangle_.csv");
+var stream = fs.createReadStream("/Users/nicholasmattise/QuickForm/Output/Rectangle_.csv");
 var groundStream = fs.createWriteStream('groundOut.csv'),
     buildingStream = fs.createWriteStream('buildingOut.csv');
 var arr = [];
