@@ -354,7 +354,7 @@ csv
             }
 
         }
-         //Remove all non renamed columns
+        //Remove all non renamed columns
         for (var i = 1; i <= buildingArray[0].length - 1; i++) {
             if (isNaN(buildingArray[0][i]) == false) {
                 buildingArray.forEach(function(row) {
