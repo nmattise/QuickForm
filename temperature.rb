@@ -483,7 +483,7 @@ end
 
 
 
-file = File.read("Rectangles.json")
+file = File.read("varried.json")
 
 
 buildings = JSON.parse(file)

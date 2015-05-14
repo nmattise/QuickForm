@@ -38,7 +38,7 @@ for (var i = 116; i < 354; i += 10) {
         walls1[walls1.length - 1].push(i + x);
     }
 }
-// console.log(walls1);
+console.log(walls1);
 
 var roof1 = [];
 for (var i = 96; i <= 114; i += 6) {
@@ -168,63 +168,63 @@ var building2 = {
             names: []
         },
         wallsFloor4Z0: {
-            surfaces: walls1[0],
+            surfaces: walls1[9],
             names: []
         },
         wallsFloor4Z1: {
-            surfaces: walls1[1],
+            surfaces: walls1[10],
             names: []
         },
         wallsFloor4Z2: {
-            surfaces: walls1[2],
+            surfaces: walls1[11],
             names: []
         },
         wallsFloor5Z0: {
-            surfaces: walls1[3],
+            surfaces: walls1[12],
             names: []
         },
         wallsFloor5Z1: {
-            surfaces: walls1[4],
+            surfaces: walls1[13],
             names: []
         },
         wallsFloor5Z2: {
-            surfaces: walls1[5],
+            surfaces: walls1[14],
             names: []
         },
         wallsFloor6Z0: {
-            surfaces: walls1[6],
+            surfaces: walls1[15],
             names: []
         },
         wallsFloor6Z1: {
-            surfaces: walls1[7],
+            surfaces: walls1[16],
             names: []
         },
         wallsFloor6Z2: {
-            surfaces: walls1[8],
+            surfaces: walls1[17],
             names: []
         },
         wallsFloor7Z0: {
-            surfaces: walls1[0],
+            surfaces: walls1[18],
             names: []
         },
         wallsFloor7Z1: {
-            surfaces: walls1[1],
+            surfaces: walls1[19],
             names: []
         },
         wallsFloor7Z2: {
-            surfaces: walls1[2],
+            surfaces: walls1[20],
             names: []
         },
         wallsFloor8Z0: {
-            surfaces: walls1[3],
+            surfaces: walls1[21],
             names: []
         },
         wallsFloor8Z1: {
-            surfaces: walls1[4],
+            surfaces: walls1[22],
             names: []
         },
         wallsFloor8Z2: {
-            surfaces: walls1[5],
+            surfaces: walls1[23],
             names: []
         }
 
@@ -417,8 +417,8 @@ csv.fromStream(stream).transform(function(data) {
         var sNum = arr[0][i].split(":")[0].split(" ")[1]
         arr[0][i] = Number(sNum)
     };
-    console.log(arr[0][1])
-        //Spit into two arrays, then delete data
+
+    //Spit into two arrays, then delete data
     var groundArray = new Array(arr.length);
     for (var i = 0; i < groundArray.length; i++) {
         groundArray[i] = new Array(arr[0].length)
@@ -452,6 +452,7 @@ csv.fromStream(stream).transform(function(data) {
     for (var j = 0; j < groundArray.length; j++) {
         groundArray[j].clean(undefined);
     };
+    console.log("Ground array patches: " + groundArray[0].length)
     csv.write(groundArray).pipe(groundStream);
     groundArray = null;
     //make building array
@@ -516,7 +517,6 @@ csv.fromStream(stream).transform(function(data) {
     for (var j = 0; j < buildingArray.length; j++) {
         buildingArray[j].clean(undefined);
     };
-    console.log(buildingArray[0])
-    console.log(buildingArray[0].length)
+    console.log("building array patches: " + buildingArray[0].length)
     csv.write(buildingArray).pipe(buildingStream);
 })

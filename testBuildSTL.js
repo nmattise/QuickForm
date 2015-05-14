@@ -357,9 +357,9 @@ var buildings = [{
     "bldgFootprint": "triangle",
     "windowWallRatio": 0.25
 }];
-
-buildSTL([buildings[0],buildings[1],buildings[2],buildings[3],buildings[4],buildings[5]], Math.PI / 4)
-
+//var stlBuildings = JSON.parse(fs.readFileSync('stlBuildings.json'));
+var varriedBuildings = JSON.parse(fs.readFileSync('varriedBuildings.json'));
+buildSTL(varriedBuildings, 0);
 
 //buildSTL([buildings[0]], Math.PI / 4);
 //buildSTL([buildings[0],buildings[1],buildings[2],buildings[4]], Math.PI/4);

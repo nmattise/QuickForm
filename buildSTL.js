@@ -784,7 +784,7 @@ function buildSTL(buildings, windwardDirection) {
         theta = findRotation(points[0], points[1]);
         console.log("ID:  " + bldg.id);
         console.log("theta: " + theta);
-        console.log(bldg.windowWallRatio);
+        console.log(bldg.architecture.windowWallRatio);
 
         switch (bldg.bldgFootprint) {
             case 'rect':
@@ -1072,7 +1072,7 @@ function buildSTL(buildings, windwardDirection) {
                 allBldgSTL += createWallGeometry(bldg.name, bldg.windwardCoords, gridSize, bldg.numFloors, bldg.flrToFlrHeight, bldg.height, bldg.windowWallRatio, "brick", "glass")
                 break;
             case "courtyard":
-            
+
                 break;
             case "circle":
                 break;
