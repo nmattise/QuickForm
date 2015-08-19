@@ -573,9 +573,9 @@ function createWallGeometry(name, coords, gridSize, floors, floorHeight, height,
                 var points = createWallGrid(coords[c - 1], coords[c], gridSize);
                 for (var pt = 1; pt < points.length; pt++) {
                     createVertPlane(points[pt - 1], points[pt], heights[z - 1], heights[z]).forEach(function(facet) {
-                        //Description BuildingName:FacetMaterial:Floor#:ZNumber:FloorPatchCount
+                        //Description BuildingName:FacetMaterial:Floor#:ZNumber:FloorPatchCount:FaceNumber
                         var stlObj = {
-                            description: name + ':' + material + ':' + floor + ':' + (z - 1) + ':' + Math.floor(count / 2),
+                            description: name + ':' + material + ':' + floor + ':' + (z - 1) + ':' + Math.floor(count / 2) + ':' + (c - 1),
                             facets: facet
                         };
                         stlString += stl.fromObject(stlObj) + "\n";

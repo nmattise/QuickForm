@@ -5,79 +5,79 @@ class OSModel < OpenStudio::Model::Model
 
   def add_geometry(coords, gridSize, floors, floorHeight, wwr, name)
 
-  	winH = floorHeight * wwr
-  	wallH = (floorHeight - winH) / 2
-  	bldgH = floors * floorHeight
-  	wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
-  	num_surfaces = 0
+    winH = floorHeight * wwr
+    wallH = (floorHeight - winH) / 2
+    bldgH = floors * floorHeight
+    wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
+    num_surfaces = 0
     previous_num_surfaces = 0
     #Loop through Floors
     for floor in (0..floors -1)
-    	z0 = floor *  floorHeight
-    	z1 = z0 + wallH
-    	z2 = z1 + winH
-    	heights = [z0, z1, z2]
-    	heights.each do |z|
+      z0 = floor *  floorHeight
+      z1 = z0 + wallH
+      z2 = z1 + winH
+      heights = [z0, z1, z2]
+      heights.each do |z|
         #Surfaces Count (excludes subsurfaces) before this height is added
         surface_count = self.getSurfaces.length
         #puts "surface Count: #{surface_count}"
-    		#Height Adjustment
+        #Height Adjustment
         if z == z0 || z ==z2
-    			height = wallH
-    		else
-    			height = winH
-    		end
-    		osPoints = Array.new
-    		#Create a new story within the building
-    		story = OpenStudio::Model::BuildingStory.new(self)
-    		story.setNominalFloortoFloorHeight(height)
-    		story.setName("#{name}:Story #{floor+1}")
-    		#Loop Trough Sides
-    		#loop through 3 iterations of sides
+          height = wallH
+        else
+          height = winH
+        end
+        osPoints = Array.new
+        #Create a new story within the building
+        story = OpenStudio::Model::BuildingStory.new(self)
+        story.setNominalFloortoFloorHeight(height)
+        story.setName("#{name}:Story #{floor+1}")
+        #Loop Trough Sides
+        #loop through 3 iterations of sides
 
-    		for i in (1..coords.length-1)
-    		 points = createWallGrid(coords[i -1], coords[i], gridSize)
-    		 points.pop
-    		 points.each do |point|
-    		 	osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
-    		 end
-    		end
-    		points = createWallGrid(coords[coords.length-1], coords[0], gridSize)
-    		points.pop
-    		points.each do |point|
-	    		osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
-    		end
-	    	# Identity matrix for setting space origins
-	    	m = OpenStudio::Matrix.new(4,4,0)
-	    	m[0,0] = 1
-    		m[1,1] = 1
-	    	m[2,2] = 1
-    		m[3,3] = 1
-    		# Minimal zones
-    		core_polygon = OpenStudio::Point3dVector.new
-    		osPoints.each do |point|
-	    		core_polygon << point
-	    	end
-			core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, height, self)
-			core_space = core_space.get
-    		m[0,3] = osPoints[0].x
-    		m[1,3] = osPoints[0].y
-    		m[2,3] = osPoints[0].z
-    		core_space.changeTransformation(OpenStudio::Transformation.new(m))
-	    	core_space.setBuildingStory(story)
-    		core_space.setName("#{floor} Core Space")
+        for i in (1..coords.length-1)
+          points = createWallGrid(coords[i -1], coords[i], gridSize)
+          points.pop
+          points.each do |point|
+            osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
+          end
+        end
+        points = createWallGrid(coords[coords.length-1], coords[0], gridSize)
+        points.pop
+        points.each do |point|
+          osPoints.push(OpenStudio::Point3d.new(point[0], point[1], z))
+        end
+        # Identity matrix for setting space origins
+        m = OpenStudio::Matrix.new(4,4,0)
+        m[0,0] = 1
+        m[1,1] = 1
+        m[2,2] = 1
+        m[3,3] = 1
+        # Minimal zones
+        core_polygon = OpenStudio::Point3dVector.new
+        osPoints.each do |point|
+          core_polygon << point
+        end
+        core_space = OpenStudio::Model::Space::fromFloorPrint(core_polygon, height, self)
+        core_space = core_space.get
+        m[0,3] = osPoints[0].x
+        m[1,3] = osPoints[0].y
+        m[2,3] = osPoints[0].z
+        core_space.changeTransformation(OpenStudio::Transformation.new(m))
+        core_space.setBuildingStory(story)
+        core_space.setName("#{floor} Core Space")
 
-    		#Set vertical story position
-    		story.setNominalZCoordinate(z)
+        #Set vertical story position
+        story.setNominalZCoordinate(z)
 
-            #Add Windows to z1 level to surfaces above the surface count
-            if z == z1
-                self.getSurfaces.each do |s|
-                    next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
-                    next if not s.name.to_s.split(" ")[1].to_i >= surface_count #Ignore surfaces before this current height
-                    new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
-                end
-            end
+        #Add Windows to z1 level to surfaces above the surface count
+        if z == z1
+          self.getSurfaces.each do |s|
+            next if not s.name.to_s.index('SUB') == nil #Ignore Subsurfaces
+            next if not s.name.to_s.split(" ")[1].to_i >= surface_count #Ignore surfaces before this current height
+            new_window = s.setWindowToWallRatio(wwrSub, 0.025, true)
+          end
+        end
 =begin
         self.getSurfaces.each do |s|
           puts s.name
@@ -88,7 +88,7 @@ class OSModel < OpenStudio::Model::Model
         end
 =end
 
-    	end # End of heights Loop
+      end # End of heights Loop
 
 
     end #End of Floors Loop
@@ -153,7 +153,7 @@ class OSModel < OpenStudio::Model::Model
       surfaces2 = self.getSurfaces.length
       construct_grid_roof(roofCoords[2][0], roofCoords[2][1], roofCoords[2][2], gridSize,height, self)
     when "cross"
-    #Surface count before addition
+      #Surface count before addition
       surfaces = self.getSurfaces.length
       construct_grid_roof(roofCoords[0][0], roofCoords[0][1], roofCoords[0][2], gridSize,height, self)
       #Surface count before addition
@@ -179,8 +179,6 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-
-
   end
 
   def add_ground(bounds, gridSize)
@@ -202,34 +200,32 @@ class OSModel < OpenStudio::Model::Model
         space.setThermalZone(new_thermal_zone)
       end
     end # end space loop
-
-
   end
 
   def remove_building_extras(startSurface, endSurface)
 
-      self.getSurfaces.each do |s|
-        next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
-        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
-        s.remove
-      end
+    self.getSurfaces.each do |s|
+      next if not s.surfaceType == "Floor" || s.surfaceType == "RoofCeiling"
+      next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+      s.remove
+    end
   end
 
   def remove_grid_roof_interor(startSurface, endSurface)
     #remove new surfaces but the roof surfaces
-      self.getSurfaces.each do |s|
-        next if s.surfaceType == "RoofCeiling"
-        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
-        s.remove
-      end
+    self.getSurfaces.each do |s|
+      next if s.surfaceType == "RoofCeiling"
+      next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+      s.remove
+    end
   end
   def remove_ground_extra(startSurface, endSurface)
     #remove new surfaces but the roof surfaces
-      self.getSurfaces.each do |s|
-        next if  s.surfaceType == "Floor"
-        next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
-        s.remove
-      end
+    self.getSurfaces.each do |s|
+      next if  s.surfaceType == "Floor"
+      next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
+      s.remove
+    end
   end
 
   def rename(startSurface, endSurface)
@@ -263,7 +259,8 @@ class OSModel < OpenStudio::Model::Model
     building = self.getBuilding
     default_construction_set = OpenStudio::Model::getDefaultConstructionSets(self)[0]
     building.setDefaultConstructionSet(default_construction_set)
-	building.setNorthAxis(degree_to_north)
+    building.setNorthAxis(degree_to_north)
+    # OpenStudio::model::RoofVegetation::RoofVegetation(self ,"Smooth")
 
   end #end Constructions
 
@@ -297,7 +294,7 @@ class OSModel < OpenStudio::Model::Model
   end
 
   def add_temperature_variable(dir, name)
-  	# Open a file and read from it\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Conduction Heat Loss Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Conduction Heat Transfer Rate per Area,hourly; !- Zone Average [W/m2]
+    # Open a file and read from it\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Convection Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Solar Radiation Heat Gain Rate per Area,hourly; !- Zone Average [W/m2]\nOutput:Variable,*,Surface Outside Face Conduction Heat Loss Rate,hourly; !- Zone Average [W]\nOutput:Variable,*,Surface Outside Face Conduction Heat Transfer Rate per Area,hourly; !- Zone Average [W/m2]
     File.open("#{dir}#{name}.idf", 'a') {|f| f.write("Output:Variable,*,Surface Outside Face Temperature,hourly; !- Zone Average [C]") }
   end
 
@@ -311,7 +308,7 @@ class OSModel < OpenStudio::Model::Model
     self.getSurfaces.each do |s|
       next if not  s.surfaceType == type
       next if not s.name.to_s.split(" ")[1].to_i.between?(startSurface, endSurface)
-        surfaceArray.push(s.name.to_s.split(" ")[1].to_i)
+      surfaceArray.push(s.name.to_s.split(" ")[1].to_i)
     end
     return surfaceArray
   end
@@ -322,19 +319,19 @@ end
 
 
 def count_surfaces(model)
-    count = 0
-    puts "surfaces Length #{model.getSurfaces.length}"
-    model.getSurfaces.each do |s|
-        next if not s.name.to_s.index('SUB') == nil
-        count += 1
-    end
-    puts "count : #{count}"
-    return count
+  count = 0
+  puts "surfaces Length #{model.getSurfaces.length}"
+  model.getSurfaces.each do |s|
+    next if not s.name.to_s.index('SUB') == nil
+    count += 1
+  end
+  puts "count : #{count}"
+  return count
 end
 
 
 def distanceFormula(x1,y1,x2,y2)
-	return Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)))
+  return Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)))
 end
 
 def findRotation(pt1, pt2)
@@ -347,56 +344,56 @@ end
 
 #Do Grid for One Length
 def get_num_patches(coords, gridSize)
-    numb_patches = 0
-    orgGridSize = gridSize
+  numb_patches = 0
+  orgGridSize = gridSize
 
-    for pt in (1..coords.length-1)
-        gridSize = orgGridSize
-        sideLength = distanceFormula(coords[pt-1][0],coords[pt-1][1],coords[pt][0],coords[pt][1])
-        gridLength = ((sideLength % gridSize) / ((sideLength / gridSize).to_i)) + gridSize
-        #Number of Grid Checks
-        if (gridSize * 2) > sideLength
-            gridLength = sideLength / 2
-            gridSize = gridLength
-        end
-        iterator = (sideLength / gridSize).to_i
-        numb_patches += iterator
-    end
+  for pt in (1..coords.length-1)
     gridSize = orgGridSize
-    sideLength = distanceFormula(coords[coords.length-1][0],coords[coords.length-1][1],coords[0][0],coords[0][1])
+    sideLength = distanceFormula(coords[pt-1][0],coords[pt-1][1],coords[pt][0],coords[pt][1])
+    gridLength = ((sideLength % gridSize) / ((sideLength / gridSize).to_i)) + gridSize
     #Number of Grid Checks
     if (gridSize * 2) > sideLength
-        gridLength = sideLength / 2
-        gridSize = gridLength
+      gridLength = sideLength / 2
+      gridSize = gridLength
     end
     iterator = (sideLength / gridSize).to_i
-    numb_patches +=iterator
-    return numb_patches
+    numb_patches += iterator
+  end
+  gridSize = orgGridSize
+  sideLength = distanceFormula(coords[coords.length-1][0],coords[coords.length-1][1],coords[0][0],coords[0][1])
+  #Number of Grid Checks
+  if (gridSize * 2) > sideLength
+    gridLength = sideLength / 2
+    gridSize = gridLength
+  end
+  iterator = (sideLength / gridSize).to_i
+  numb_patches +=iterator
+  return numb_patches
 end
 
 def createWallGrid(point1, point2, gridSize)
-	sideLength = distanceFormula(point1[0],point1[1],point2[0],point2[1])
-	gridLength = ((sideLength % gridSize) / ((sideLength / gridSize).to_i)) + gridSize
-	#Number of Grid Checks
-    if (gridSize * 2) > sideLength
-    	gridLength = sideLength / 2
-    	gridSize = gridLength
-    end
-	#Deltas and Iterators
-	deltaX = point2[0] - point1[0]
-    deltaY = point2[1] - point1[1]
-    xIt = deltaX / (sideLength / gridSize).to_i
-    yIt = deltaY / (sideLength / gridSize).to_i
-    iterator = (sideLength / gridSize).to_i
-    #Infinity Check
-    #Zero Check
+  sideLength = distanceFormula(point1[0],point1[1],point2[0],point2[1])
+  gridLength = ((sideLength % gridSize) / ((sideLength / gridSize).to_i)) + gridSize
+  #Number of Grid Checks
+  if (gridSize * 2) > sideLength
+    gridLength = sideLength / 2
+    gridSize = gridLength
+  end
+  #Deltas and Iterators
+  deltaX = point2[0] - point1[0]
+  deltaY = point2[1] - point1[1]
+  xIt = deltaX / (sideLength / gridSize).to_i
+  yIt = deltaY / (sideLength / gridSize).to_i
+  iterator = (sideLength / gridSize).to_i
+  #Infinity Check
+  #Zero Check
 
-    points = Array.new
-    #Loop Wall
-    for i in (0..iterator)
-    	points[i] = [point1[0] + (xIt * i), point1[1] + (yIt * i)]
-    end
-    return points
+  points = Array.new
+  #Loop Wall
+  for i in (0..iterator)
+    points[i] = [point1[0] + (xIt * i), point1[1] + (yIt * i)]
+  end
+  return points
 end
 
 
@@ -408,8 +405,8 @@ def all_the_grids(pt0, pt1, pt3, gridSize)
   #Make sure of a min of 2 patches
   gridSize0 = gridSize
   if (gridSize * 2) > l0
-      gridLength0 = l0/2
-      gridSize0 = gridLength0
+    gridLength0 = l0/2
+    gridSize0 = gridLength0
   end
   deltaX0 = pt1[0] - pt0[0]
   deltaY0 = pt1[1] - pt0[1]
@@ -422,8 +419,8 @@ def all_the_grids(pt0, pt1, pt3, gridSize)
   #Make sure of a min of 2 patches
   gridSize3 = gridSize
   if (gridSize * 2) > l3
-      gridLength3 = l3/2
-      gridSize3 = gridLength3
+    gridLength3 = l3/2
+    gridSize3 = gridLength3
   end
   deltaX3 = pt0[0] - pt3[0]
   deltaY3 = pt0[1] - pt3[1]
@@ -483,7 +480,7 @@ end
 
 
 
-file = File.read("varried.json")
+file = File.read("osmObj.json")
 
 
 buildings = JSON.parse(file)

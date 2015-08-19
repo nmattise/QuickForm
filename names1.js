@@ -21,63 +21,102 @@ Array.prototype.clean = function(deleteValue) {
 //building1 : 3 floors
 //building2 : 8 floorse
 
+//Mitchell
+// start Surf: [0, 294, 741, 1035]
+// roof Surf: [198, 573, 939, 1269]
+// end Surf: [294, 741, 1035, 1389]
+
+// 3 floors 20 columns
+// 3 floors 29 columns
+// 3 floors 20 columns
+// 3 floors 24 columns
+// start Ground Array : [1389, 4845, 5277, 5583, 5889]
+// End Ground Array : [4845, 5277, 5583, 5889, 6141]
+
+
 //Get Wall and Roof and Ground Numbers
 var walls = [];
-for (var i = 2; i < 90; i += 10) {
+for (var i = 2; i < 198; i += 22) {
     walls.push([])
-    for (var x = 0; x < 8; x++) {
+    for (var x = 0; x < 20; x++) {
         walls[walls.length - 1].push(i + x);
     }
 }
 // console.log(walls);
 
 var walls1 = [];
-for (var i = 116; i < 354; i += 10) {
+for (var i = 296; i < 573; i += 31) {
     walls1.push([])
-    for (var x = 0; x < 8; x++) {
+    for (var x = 0; x < 29; x++) {
         walls1[walls1.length - 1].push(i + x);
     }
 }
 console.log(walls1);
+var walls2 = [];
+for (var i = 116; i < 354; i += 10) {
+    walls2.push([])
+    for (var x = 0; x < 20; x++) {
+        walls2[walls2.length - 1].push(i + x);
+    }
+}
+console.log(walls2);
+var walls3 = [];
+for (var i = 116; i < 354; i += 10) {
+    walls3.push([])
+    for (var x = 0; x < 24; x++) {
+        walls3[walls3.length - 1].push(i + x);
+    }
+}
+console.log(walls3);
+
+var roof = [];
+for (var i = 204; i <= 294; i += 6) {
+    roof.push(i);
+}
+// console.log(roof);
 
 var roof1 = [];
-for (var i = 96; i <= 114; i += 6) {
+for (var i = 579; i <= 741; i += 6) {
     roof1.push(i);
 }
 // console.log(roof1);
-
 var roof2 = [];
-for (var i = 360; i <= 378; i += 6) {
+for (var i = 945; i <= 1035; i += 6) {
     roof2.push(i);
 }
 // console.log(roof2);
+var roof3 = [];
+for (var i = 1275; i <= 1389; i += 6) {
+    roof3.push(i);
+}
+// console.log(roof3);
 
 var innerGround = [];
-for (var i = 384; i < 480; i += 6) {
+for (var i = 1389; i < 4845; i += 6) {
     innerGround.push(i);
 }
 // console.log(innerGround);
 
 var leftGround = [];
-for (var i = 540; i < 750; i += 6) {
+for (var i = 5277; i < 5583; i += 6) {
     leftGround.push(i);
 }
 // console.log(leftGround);
 
 var topGround = [];
-for (var i = 480; i < 540; i += 6) {
+for (var i = 4845; i < 5277; i += 6) {
     topGround.push(i);
 }
 // console.log(topGround);
 
 var rightGround = [];
-for (var i = 750; i < 960; i += 6) {
+for (var i = 5583; i < 5889; i += 6) {
     rightGround.push(i);
 }
 // console.log(rightGround);
 
 var bottomGround = [];
-for (var i = 960; i <= 1314; i += 6) {
+for (var i = 5889; i <= 6141; i += 6) {
     bottomGround.push(i);
 }
 // console.log(bottomGround);
@@ -166,70 +205,108 @@ var building2 = {
         wallsFloor3Z2: {
             surfaces: walls1[8],
             names: []
-        },
-        wallsFloor4Z0: {
-            surfaces: walls1[9],
+        }
+
+    },
+    roof: {
+        roofSegment1: {
+            surfaces: roof2,
+            names: []
+        }
+    }
+};
+var building3 = {
+    walls: {
+        wallsFloor0Z0: {
+            surfaces: walls2[0],
             names: []
         },
-        wallsFloor4Z1: {
-            surfaces: walls1[10],
+        wallsFloor0Z1: {
+            surfaces: walls2[1],
             names: []
         },
-        wallsFloor4Z2: {
-            surfaces: walls1[11],
+        wallsFloor0Z2: {
+            surfaces: walls2[2],
             names: []
         },
-        wallsFloor5Z0: {
-            surfaces: walls1[12],
+        wallsFloor1Z0: {
+            surfaces: walls2[3],
             names: []
         },
-        wallsFloor5Z1: {
-            surfaces: walls1[13],
+        wallsFloor1Z1: {
+            surfaces: walls2[4],
             names: []
         },
-        wallsFloor5Z2: {
-            surfaces: walls1[14],
+        wallsFloor1Z2: {
+            surfaces: walls2[5],
             names: []
         },
-        wallsFloor6Z0: {
-            surfaces: walls1[15],
+        wallsFloor3Z0: {
+            surfaces: walls2[6],
             names: []
         },
-        wallsFloor6Z1: {
-            surfaces: walls1[16],
+        wallsFloor3Z1: {
+            surfaces: walls2[7],
             names: []
         },
-        wallsFloor6Z2: {
-            surfaces: walls1[17],
-            names: []
-        },
-        wallsFloor7Z0: {
-            surfaces: walls1[18],
-            names: []
-        },
-        wallsFloor7Z1: {
-            surfaces: walls1[19],
-            names: []
-        },
-        wallsFloor7Z2: {
-            surfaces: walls1[20],
-            names: []
-        },
-        wallsFloor8Z0: {
-            surfaces: walls1[21],
-            names: []
-        },
-        wallsFloor8Z1: {
-            surfaces: walls1[22],
-            names: []
-        },
-        wallsFloor8Z2: {
-            surfaces: walls1[23],
+        wallsFloor3Z2: {
+            surfaces: walls2[8],
             names: []
         }
 
     },
     roof: {
+        roofSegment1: {
+            surfaces: roof2,
+            names: []
+        }
+    }
+};
+var building4 = {
+    walls: {
+        wallsFloor0Z0: {
+            surfaces: walls3[0],
+            names: []
+        },
+        wallsFloor0Z1: {
+            surfaces: walls3[1],
+            names: []
+        },
+        wallsFloor0Z2: {
+            surfaces: walls3[2],
+            names: []
+        },
+        wallsFloor1Z0: {
+            surfaces: walls3[3],
+            names: []
+        },
+        wallsFloor1Z1: {
+            surfaces: walls3[4],
+            names: []
+        },
+        wallsFloor1Z2: {
+            surfaces: walls3[5],
+            names: []
+        },
+        wallsFloor3Z0: {
+            surfaces: walls3[6],
+            names: []
+        },
+        wallsFloor3Z1: {
+            surfaces: walls3[7],
+            names: []
+        },
+        wallsFloor3Z2: {
+            surfaces: walls3[8],
+            names: []
+        }
+
+    },
+    roof: {
+        roofSegment1: {
+            surfaces: roof2,
+            names: []
+        },
         roofSegment1: {
             surfaces: roof2,
             names: []
@@ -330,7 +407,7 @@ for (var i = 0; i < ground.innerGround.surfaces.length; i++) {
         column++;
     }
     row = parseInt(i / 8);
-    ground.innerGround.names[i] = "rectangle1_rectangle2_:grass:ground:inner:" + row + ":" + column
+    ground.innerGround.names[i] = "Mitchell:asphalt:ground:inner:" + row + ":" + column
 }
 var column = -1,
     row = 0;
@@ -341,7 +418,7 @@ for (var i = 0; i < ground.leftGround.surfaces.length; i++) {
         column++;
     }
     row = parseInt(i / 5);
-    ground.leftGround.names[i] = "rectangle1_rectangle2_:grass:ground:left:" + row + ":" + column
+    ground.leftGround.names[i] = "Mitchell:grass:ground:left:" + row + ":" + column
 }
 var column = -1,
     row = 0;
@@ -352,7 +429,7 @@ for (var i = 0; i < ground.topGround.surfaces.length; i++) {
         column++;
     }
     row = parseInt(i / 2);
-    ground.topGround.names[i] = "rectangle1_rectangle2_:grass:ground:top:" + row + ":" + column
+    ground.topGround.names[i] = "Mitchell:grass:ground:top:" + row + ":" + column
 }
 var column = -1,
     row = 0;
@@ -363,7 +440,7 @@ for (var i = 0; i < ground.rightGround.surfaces.length; i++) {
         column++;
     }
     row = parseInt(i / 5);
-    ground.rightGround.names[i] = "rectangle1_rectangle2_:grass:ground:right:" + row + ":" + column
+    ground.rightGround.names[i] = "Mitchell:grass:ground:right:" + row + ":" + column
 }
 var column = -1,
     row = 0;
@@ -374,15 +451,15 @@ for (var i = 0; i < ground.bottomGround.surfaces.length; i++) {
         column++;
     }
     row = parseInt(i / 2);
-    ground.bottomGround.names[i] = "rectangle1_rectangle2_:grass:ground:bottom:" + row + ":" + column
+    ground.bottomGround.names[i] = "Mitchell:grass:ground:bottom:" + row + ":" + column
 }
 //console.log(ground)
 
 
 //create csv read and write streams
-var stream = fs.createReadStream("Output/rectangle1_rectangle2_.csv"),
-    groundStream = fs.createWriteStream('groundOut.csv'),
-    buildingStream = fs.createWriteStream('buildingOut.csv');
+var stream = fs.createReadStream("../virtualPulse/server/cfd/Output/Mitchell.csv"),
+    groundStream = fs.createWriteStream('mitchellGroundOut.csv'),
+    buildingStream = fs.createWriteStream('mitchellBuildingsOut.csv');
 var arr = [];
 
 //Start parsingcsv
@@ -446,7 +523,7 @@ csv.fromStream(stream).transform(function(data) {
         if (isNaN(groundArray[0][i]) == false) {
             groundArray.forEach(function(row) {
                 delete row[i];
-            });
+            });p
         };
     };
     for (var j = 0; j < groundArray.length; j++) {

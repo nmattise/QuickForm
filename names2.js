@@ -1,13 +1,25 @@
 var fs = require('fs'),
     csv = require('fast-csv');
 
+// Varried JSON
 // start Surf: [0, 852, 996, 1173]
 // roof Surf: [720, 960, 1065, 2013]
 // end Surf: [852, 996, 1173, 2169]
+// start Ground Array : [2169, 3177, 3429, 3861, 4293]
+// End Ground Array : [3177, 3429, 3861, 4293, 4977]
+
+// Saber JSON
+// start Surf: [0, 624, 708]
+// roof Surf: [528, 684, 780]
+// end Surf: [624, 708, 816]
+// start Ground Array : [816, 1200, 1320, 1590, 1860]
+// End Ground Array : [1200, 1320, 1590, 1860, 2280]
 
 var start = [0, 852, 996, 1173],
     roof = [720, 960, 1065, 2013],
     end = [852, 996, 1173, 2169];
+var startGround = [2169, 3177, 3429, 3861, 4293],
+    endGround = [3177, 3429, 3861, 4293, 4977];
 
 var numBldg = 4;
 
