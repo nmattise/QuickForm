@@ -2,3 +2,8 @@
 public/libs
 node_modules
 Output/
+*.csv
+
+buildings.csv
+
+ground.csv
