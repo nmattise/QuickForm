@@ -21,8 +21,8 @@ var csvStream = csv.createWriteStream({
   csvStream1 = csv.createWriteStream({
     headers: true
   }),
-  buildingStream = fs.createWriteStream("buildings0.csv"),
-  groundStream = fs.createWriteStream("ground0.csv");
+  buildingStream = fs.createWriteStream("buildings8334.csv"),
+  groundStream = fs.createWriteStream("ground8334.csv");
 
 buildingStream.on("finish", function() {
   console.log("DONE!");
@@ -142,12 +142,12 @@ fs.writeFileSync('mitchell.json', JSON.stringify([buildings, grounds], null, 4))
 
 
 
-var count = 8760;
+var count = 8334;
 csvStream.pipe(buildingStream);
 csvStream1.pipe(groundStream);
 db.serialize(function() {
   async.whilst(function() {
-    return count < 8762; //Number of days to pull data for
+    return count < 8761; //Number of days to pull data for
   }, function(callback) {
     console.log(count);
     db.all("SELECT KeyValue, Value FROM ReportVariableWithTime Where TimeIndex IS '" + count + "'", function(err, rows) {
