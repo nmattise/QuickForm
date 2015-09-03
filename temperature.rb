@@ -22,7 +22,7 @@ class OSModel < OpenStudio::Model::Model
         surface_count = self.getSurfaces.length
         #puts "surface Count: #{surface_count}"
         #Height Adjustment
-        if z == z0 || z ==z2
+        if z == z0 || z == z2
           height = wallH
         else
           height = winH
