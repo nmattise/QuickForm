@@ -141,7 +141,7 @@ fs.writeFileSync('mitchell.json', JSON.stringify([buildings, grounds], null, 4))
 
 var count = 8760;
 var dayStart = 1;
-var dayEnd = 24;
+var dayEnd = 48;
 var surfaces = 6372;
 csvStream.pipe(buildingStream);
 csvStream1.pipe(groundStream);
@@ -192,8 +192,8 @@ db.serialize(function() {
                     var groundObj = {};
                 }
             };
-            dayStart += 24;
-            dayEnd += 24;
+            dayStart += 48;
+            dayEnd += 48;
             callback();
         })
     }, function(err) {

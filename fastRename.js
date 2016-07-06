@@ -21,8 +21,8 @@ var csvStream = csv.createWriteStream({
     csvStream1 = csv.createWriteStream({
         headers: true
     }),
-    buildingStream = fs.createWriteStream("buildings_new.csv"),
-    groundStream = fs.createWriteStream("ground_new.csv");
+    buildingStream = fs.createWriteStream("buildings_fast.csv"),
+    groundStream = fs.createWriteStream("ground_fast.csv");
 
 buildingStream.on("finish", function() {
     console.log("DONE!");
@@ -205,8 +205,8 @@ db.serialize(function() {
                 csvStream.write(buildingObj);
             };
 
-            dayStart += 24;
-            dayEnd += 24;
+            dayStart += 192;
+            dayEnd += 192;
             callback();
         });
 

@@ -11,29 +11,29 @@ class OSModel < OpenStudio::Model::Model
     wwrSub = (((winH - 0.05)* (gridSize - 0.05)) / (winH * gridSize)) - 0.01
     num_surfaces = 0
     previous_num_surfaces = 0
-    #Loop through Floors
+    # Loop through Floors
     for floor in (0..floors -1)
       z0 = floor *  floorHeight
       z1 = z0 + wallH
       z2 = z1 + winH
       heights = [z0, z1, z2]
       heights.each do |z|
-        #Surfaces Count (excludes subsurfaces) before this height is added
+        # Surfaces Count (excludes subsurfaces) before this height is added
         surface_count = self.getSurfaces.length
-        #puts "surface Count: #{surface_count}"
-        #Height Adjustment
+        # puts "surface Count: #{surface_count}"
+        # Height Adjustment
         if z == z0 || z == z2
           height = wallH
         else
           height = winH
         end
         osPoints = Array.new
-        #Create a new story within the building
+        # Create a new story within the building
         story = OpenStudio::Model::BuildingStory.new(self)
         story.setNominalFloortoFloorHeight(height)
         story.setName("#{name}:Story #{floor+1}")
-        #Loop Trough Sides
-        #loop through 3 iterations of sides
+        # Loop Trough Sides
+        # loop through 3 iterations of sides
 
         for i in (1..coords.length-1)
           points = createWallGrid(coords[i -1], coords[i], gridSize)
@@ -507,7 +507,7 @@ puts "end Surf: #{endSurface}"
 
 startGround = []
 endGround = []
-#Add Ground
+# Add Ground
 startGround.push(model.num_surfaces)
 model.add_ground(buildings['ground']['bounds']['inner'], buildings['ground']['innerGridSize'])
 endGround.push(model.num_surfaces)
